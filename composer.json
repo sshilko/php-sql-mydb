@@ -1,0 +1,74 @@
+{
+    "name": "sshilko/php-sql-mydb",
+    "type": "library",
+    "description": "Simple yet powerful PHP wrapper for MySQL",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergei Shilko",
+            "email": "contact@sshilko.com",
+            "homepage": "https://github.com/sshilko",
+            "role": "Developer"
+        }
+    ],
+    "keywords": ["mysql", "php", "connect", "database", "mysqli", "class", "adapter", "builder", "active"],
+    "config": {
+        "vendor-dir": "vendor",
+        "preferred-install": {
+            "*": "dist"
+        },
+        "prepend-autoloader": false,
+        "optimize-autoloader": true,
+        "classmap-authoritative": true,
+        "process-timeout": 300,
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "pre-commit": [
+            "pre-commit run --config build/.pre-commit-config.yaml"
+        ],
+        "psalm":[
+            "php ./vendor/bin/psalm.phar --config build/psalm.xml --memory-limit=-1 --no-cache --no-diff --show-info=true"
+        ],
+        "psalm-alter": [
+            "php ./vendor/bin/psalm.phar --config build/psalm.xml --alter --issues=MissingReturnType,InvalidReturnType,InvalidNullableReturnType,InvalidFalsableReturnType,PossiblyUndefinedVariable,UnnecessaryVarAnnotation,ParamNameMismatch"
+        ],
+        "psalm-taint": [
+            "php ./vendor/bin/psalm.phar --config build/psalm.xml --taint-analysis"
+        ],
+        "phpmd": [
+            "php ./vendor/phpmd/phpmd/src/bin/phpmd src/ ansi build/phpmd-rulesets.xml"
+        ],
+        "phpunit": [
+            "php ./vendor/phpunit/phpunit/phpunit --testdox --configuration test/phpunit.xml"
+        ],
+        "phpunit-filter": [
+            "php ./vendor/phpunit/phpunit/phpunit --testdox --configuration test/phpunit.xml --filter $1"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "phpmd/phpmd": "^2.13",
+        "phpstan/phpstan": "*",
+        "phpunit/phpunit": "^9",
+        "psalm/phar": "*",
+        "slevomat/coding-standard": "^8.4",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "require": {
+        "php": ">=7.4",
+        "ext-ctype": "*",
+        "ext-mysqli": "*",
+        "ext-mysqlnd": "*",
+        "psr/log": "^1"
+    },
+    "autoload": {
+        "psr-4": {
+            "sql\\": "src/sql"
+        }
+    }
+}

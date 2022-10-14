@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of the sshilko/php-sql-mydb package.
+
+ (c) Sergei Shilko <contact@sshilko.com>
+
+ MIT License
+
+ For the full copyright and license information, please view the LICENSE
+ file that was distributed with this source code.
+-->
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         name="PHP_CodeSniffer"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+    <description>PSR1, PSR2, PSR-12, Squizlabs, SlevomatCodingStandard</description>
+    <ini name="memory_limit" value="-1" />
+    <arg name="tab-width" value="4"/>
+    <rule ref="PSR1"/>
+    <rule ref="PSR2"/>
+    <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint" />
+        <exclude name="SlevomatCodingStandard.Commenting" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" />
+        <exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions" />
+        <exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces" />
+        <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming" />
+        <exclude name="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces" />
+        <exclude name="SlevomatCodingStandard.Classes.ClassLength" />
+        <exclude name="SlevomatCodingStandard.Files.FileLength" />
+        <exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName" />
+        <exclude name="SlevomatCodingStandard.Files.FunctionLength" />
+        <exclude name="SlevomatCodingStandard.Functions.DisallowTrailingCommaInCall" />
+        <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall" />
+        <exclude name="SlevomatCodingStandard.Functions.FunctionLength" />
+        <exclude name="SlevomatCodingStandard.Functions.RequireArrowFunction" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.RequireSingleLineCondition" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses" />
+        <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator" />
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Complexity.Cognitive">
+        <properties>
+            <property name="maxComplexity" value="10"/>
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Functions.FunctionLength">
+        <properties>
+            <property name="maxLinesLength" value="120"/>
+        </properties>
+    </rule>
+
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndFile">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="ignoreIndentationTokens" type="array">
+                <element value="T_COMMENT"/>
+                <element value="T_DOC_COMMENT_OPEN_TAG"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+    <rule ref="Generic.PHP.LowerCaseKeyword"/>
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
+    <rule ref="Generic.PHP.LowerCaseType"/>
+    <rule ref="Squiz.Scope.MethodScope"/>
+    <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
+    <rule ref="Squiz.Functions.FunctionDeclaration"/>
+    <rule ref="Squiz.Functions.LowercaseFunctionKeywords"/>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+        <properties>
+            <property name="equalsSpacing" value="1"/>
+        </properties>
+    </rule>
+    <rule ref="PEAR.Functions.ValidDefaultValue"/>
+    <rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
+
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing" >
+        <severity>0</severity>
+    </rule>
+
+    <rule ref="Squiz.ControlStructures.ControlSignature"/>
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen"/>
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing.SpacingBeforeClose"/>
+    <rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration"/>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingAfterOpen">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingBeforeClose">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.AsNotLower">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceAfterOpen">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceBeforeClose">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
+    <rule ref="Squiz.WhiteSpace.CastSpacing"/>
+    <rule ref="Generic.Formatting.MultipleStatementAlignment.NotSame" />
+    <rule ref="Generic.Arrays.ArrayIndent.CloseBraceIncorrect" />
+    <rule ref="Generic.Arrays.ArrayIndent.KeyIncorrect" />
+
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="forbiddenFunctions" type="array" extend="true">
+                <element key="sizeof" value="count"/>
+            </property>
+        </properties>
+    </rule>
+</ruleset>

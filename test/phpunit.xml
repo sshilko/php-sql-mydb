@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of the sshilko/php-sql-mydb package.
+
+ (c) Sergei Shilko <contact@sshilko.com>
+
+ MIT License
+
+ For the full copyright and license information, please view the LICENSE
+ file that was distributed with this source code.
+-->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/9.5/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         bootstrap="phpunit.xml.bootstrap.php"
+         backupStaticAttributes="false"
+         cacheResult="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         forceCoversAnnotation="false"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         stopOnRisky="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         timeoutForSmallTests="5"
+         timeoutForMediumTests="20"
+         timeoutForLargeTests="120"
+         verbose="true">
+    <testsuite name="sshilko/php-sql-mydb">
+        <directory>phpunit</directory>
+    </testsuite>
+    <coverage cacheDirectory="/tmp"
+              includeUncoveredFiles="true"
+              processUncoveredFiles="true"
+              pathCoverage="false"
+              ignoreDeprecatedCodeUnits="true"
+              disableCodeCoverageIgnore="true">
+        <include>
+            <directory suffix=".php">../src/sql</directory>
+        </include>
+        <exclude>
+            <directory>../test</directory>
+            <directory>../vendor</directory>
+        </exclude>
+    </coverage>
+    <php>
+        <includePath>phpunit/base/</includePath>
+
+        <const name="PHPUNIT_MYSQL_MYDB1_PORT" value="3306" />
+        <const name="PHPUNIT_MYSQL_MYDB1_NAME" value="mydb" />
+        <const name="PHPUNIT_MYSQL_MYDB1_HOST" value="host.docker.internal" />
+        <const name="PHPUNIT_MYSQL_MYDB1_USER" value="test" />
+        <const name="PHPUNIT_MYSQL_MYDB1_PASS" value="pass" />
+        <const name="PHPUNIT_MYSQL_ROOT_USER" value="root" />
+        <const name="PHPUNIT_MYSQL_ROOT_PASS" value="root" />
+
+        <ini name="error_reporting" value="-1" />
+        <ini name="intl.default_locale" value="en" />
+        <ini name="intl.error_level" value="0" />
+        <ini name="memory_limit" value="-1" />
+        <ini name="date.timezone" value="Etc/UTC" />
+
+    </php>
+</phpunit>
