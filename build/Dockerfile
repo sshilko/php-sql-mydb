@@ -1,3 +1,11 @@
+# This file is part of the sshilko/php-sql-mydb package.
+#
+# (c) Sergei Shilko <contact@sshilko.com>
+#
+# MIT License
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
 FROM composer:2.4
 
 FROM php:7.4-cli

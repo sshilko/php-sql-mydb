@@ -24,7 +24,7 @@ Simple class to work with MySQL database.
 ##### Compatibility
 
 - [+] PHP 7.4
-- [+] TCP connection only (no socket)
+- [+] MySQL <-> PHP via TCP
 - [+] MySQL >=5.7.8
 - [?] MySQL 8.0
 
@@ -44,14 +44,17 @@ Simple class to work with MySQL database.
 #### Installation
 
 ```
-composer install
+composer install --no-dev
 ```
 
 #### Development setup
 
-- Install PHPStorm with [PHP Inspections](https://github.com/kalessil/phpinspectionsea)
+- Install [PHP](https://www.php.net/) & [Composer](https://getcomposer.org/) & [Docker Compose](https://docs.docker.com/compose/install/)
+- Install [PHPStorm IDE](https://www.jetbrains.com/phpstorm/) with [PHP Inspections](https://github.com/kalessil/phpinspectionsea) or [VSCode IDE](https://code.visualstudio.com/)
 
 ```
+composer install --dev
+
 docker-compose build
 docker-compose up -d
 ...
