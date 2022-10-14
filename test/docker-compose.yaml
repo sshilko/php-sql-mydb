@@ -68,6 +68,3 @@ services:
       nofile:
         soft: 262140
         hard: 262140
-volumes:
-  db-data:
-    external: false

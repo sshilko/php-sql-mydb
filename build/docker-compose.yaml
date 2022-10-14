@@ -3,5 +3,9 @@ services:
   app:
     build:
       context: .
+    tmpfs:
+      - /tmp
     volumes:
-      - ./../:/app
+      - ./../:/app:rw,cached
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

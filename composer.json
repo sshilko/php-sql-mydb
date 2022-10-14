@@ -31,7 +31,7 @@
             "pre-commit run --config build/.pre-commit-config.yaml"
         ],
         "psalm":[
-            "php ./vendor/bin/psalm.phar --config build/psalm.xml --memory-limit=-1 --no-cache --no-diff --show-info=true"
+            "php ./vendor/bin/psalm.phar --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true"
         ],
         "psalm-alter": [
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --alter --issues=MissingReturnType,InvalidReturnType,InvalidNullableReturnType,InvalidFalsableReturnType,PossiblyUndefinedVariable,UnnecessaryVarAnnotation,ParamNameMismatch"

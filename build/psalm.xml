@@ -21,6 +21,7 @@
     reportInfo="true"
     disableSuppressAll="true"
     errorLevel="3"
+    cacheDirectory="/tmp/psalm-php-sql-mydb" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config">
