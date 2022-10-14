@@ -68,3 +68,4 @@ services:
       nofile:
         soft: 262140
         hard: 262140
+    restart: "no"

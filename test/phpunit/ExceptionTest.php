@@ -40,12 +40,8 @@ final class ExceptionTest extends includes\BaseTestCase
     public function testMySqlWarning(): void
     {
         $db = $this->getDefaultDb();
-        $logger = $db->getOptions()->getLogger();
-        /**
-         * @var MockObject $logger
-         */
-        $logger->expects(self::once())->method('warning')->with('Division by 0');
-        $x = $db->select("SELECT 1/0 as x");
+        $this->logger->expects(self::once())->method('warning')->with('Division by 0');
+        $x = $db->select("select 1/0 as x");
         self::assertSame($x[0]['x'], null);
     }
 
@@ -61,30 +57,17 @@ final class ExceptionTest extends includes\BaseTestCase
     {
         $db = $this->getRootDb();
 
-        $oldPacket = $db->select("SELECT @@max_allowed_packet as mpac");
-        $maxPacket = $oldPacket[0]['mpac'];
-
-
         $netBuffer = $db->select("SELECT @@net_buffer_length as len");
         $minPacket = $netBuffer[0]['len'];
         $bigPacket = $minPacket + 1;
 
-        $db->command("SET GLOBAL max_allowed_packet=" . $minPacket);
-
-        $logger = $db->getOptions()->getLogger();
         /**
          * @var MockObject $logger
          */
-        $logger->expects(self::once())->method('warning')->with(
-            'Result of repeat() was larger than max_allowed_packet (' . $minPacket . ') - truncated'
-        );
-        $result = $db->select("SELECT REPEAT('x', " . $bigPacket . ") as x");
+        $this->logger->expects(self::once())->method('error');
 
-        self::assertSame($result[0]['x'], null);
-        $db->command("SET GLOBAL max_allowed_packet=" . $maxPacket);
-
-        $randomSmall = random_int(2, 256);
-        $result = $db->select("SELECT REPEAT('y', " . $randomSmall . ") as y");
-        self::assertSame($result[0]['y'], str_repeat('y', $randomSmall));
+        $this->expectExceptionMessage("Got a packet bigger than 'max_allowed_packet' bytes");
+        $this->expectException(\sql\MydbException::class);
+        $db->select("SELECT '" . str_repeat('.', $bigPacket) . "' as x");
     }
 }

@@ -14,8 +14,6 @@ declare(strict_types = 1);
 
 namespace sql;
 
-use mysqli;
-
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
@@ -23,8 +21,6 @@ use mysqli;
  */
 interface MydbInterface
 {
-    public function getOptions(): MydbOptions;
-
     /**
      * @throws MydbException
      */
@@ -150,11 +146,6 @@ interface MydbInterface
      * @throws MydbException
      */
     public function escape(string $unescaped): string;
-
-    /**
-     * @throws MydbException
-     */
-    public function getMysqliResource(?callable $closeCallback = null): ?mysqli;
 
     /**
      * @throws MydbException

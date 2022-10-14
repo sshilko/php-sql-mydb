@@ -53,10 +53,9 @@ composer install --no-dev
 - Install [PHPStorm IDE](https://www.jetbrains.com/phpstorm/) with [PHP Inspections](https://github.com/kalessil/phpinspectionsea) or [VSCode IDE](https://code.visualstudio.com/)
 
 ```
-composer install --dev
-
 docker-compose build
 docker-compose up -d
+docker-compose exec app composer install --dev
 ...
 docker-compose stop
 ```

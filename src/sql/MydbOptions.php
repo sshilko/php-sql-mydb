@@ -18,9 +18,6 @@ use Psr\Log\LoggerInterface;
 use function ini_set;
 use const E_ALL;
 use const E_WARNING;
-use const MYSQLI_REPORT_ALL;
-use const MYSQLI_REPORT_INDEX;
-use const MYSQLI_REPORT_STRICT;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -84,7 +81,9 @@ class MydbOptions
      */
     protected int $internalNetReadBuffer = 49152;
 
-    protected int $internalClientErrorLevel = MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_STRICT ^ MYSQLI_REPORT_INDEX;
+    protected int $internalClientErrorLevel = MydbMysqli::MYSQLI_REPORT_ALL ^ 
+                                              MydbMysqli::MYSQLI_REPORT_STRICT ^ 
+                                              MydbMysqli::MYSQLI_REPORT_INDEX;
 
     protected string $timeZone = 'UTC';
 

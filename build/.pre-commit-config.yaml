@@ -8,7 +8,7 @@
 # file that was distributed with this source code.
 ---
 # https://pre-commit.com/#installation
-default_stages: [commit, push]
+#default_stages: [commit, push]
 default_language_version:
   # force all unspecified Python hooks to run python3
   python: python3
@@ -48,7 +48,7 @@ repos:
                                                                --show-info=true
         language: system
         types: [php]
-        verbose: true
+        verbose: false
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks:

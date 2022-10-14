@@ -63,14 +63,20 @@ class BaseTestCase extends TestCase
      */
     private const ROOT_PASS = PHPUNIT_MYSQL_ROOT_PASS;
 
+    /**
+     * @var MockObject|LoggerInterface
+     */
+    protected LoggerInterface $logger;
+
     private static ?MydbRegistry $registry = null;
 
-    public static function setUpBeforeClass(): void
+    protected function setUp(): void
     {
         static::$registry = new MydbRegistry();
+        $this->logger = $this->createMock(LoggerInterface::class);
     }
 
-    public static function tearDownAfterClass(): void
+    protected function tearDown(): void
     {
         foreach (static::$registry::listInstances() as $dbId) {
             if (!static::$registry::hasInstance($dbId)) {
@@ -86,7 +92,7 @@ class BaseTestCase extends TestCase
     protected function getDefaultDb(): MydbInterface
     {
         if (!static::$registry::hasInstance('db0')) {
-            $options = new MydbOptions($this->getLoggerMock());
+            $options = new MydbOptions($this->logger);
             static::$registry::setInstance(
                 'db0',
                 new Mydb(self::HOST, (int) self::PORT, self::USER, self::PASS, self::NAME, $options)
@@ -99,7 +105,7 @@ class BaseTestCase extends TestCase
     protected function getNoConnectDb(): MydbInterface
     {
         if (!static::$registry::hasInstance('db1')) {
-            $options = new MydbOptions($this->getLoggerMock());
+            $options = new MydbOptions($this->logger);
             $options->setTimeoutConnectSeconds(1);
             static::$registry::setInstance(
                 'db1',
@@ -113,7 +119,8 @@ class BaseTestCase extends TestCase
     protected function getRootDb(): MydbInterface
     {
         if (!static::$registry::hasInstance('db2')) {
-            $options = new MydbOptions($this->getLoggerMock());
+            $options = new MydbOptions($this->logger);
+            $options->setAutocommit(true);
             $options->setTimeoutConnectSeconds(1);
             static::$registry::setInstance(
                 'db2',
@@ -127,13 +134,5 @@ class BaseTestCase extends TestCase
     protected static function getDbName(): string
     {
         return self::NAME;
-    }
-
-    /**
-     * @return LoggerInterface|MockObject
-     */
-    private function getLoggerMock(): LoggerInterface
-    {
-        return $this->createMock(LoggerInterface::class);
     }
 }

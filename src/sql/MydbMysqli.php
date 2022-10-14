@@ -18,7 +18,21 @@ use mysqli;
 use function mysqli_init;
 use function mysqli_query;
 use function mysqli_report;
+use const MYSQLI_ASSOC;
 use const MYSQLI_ASYNC;
+use const MYSQLI_INIT_COMMAND;
+use const MYSQLI_OPT_CONNECT_TIMEOUT;
+use const MYSQLI_OPT_NET_CMD_BUFFER_SIZE;
+use const MYSQLI_OPT_NET_READ_BUFFER_SIZE;
+use const MYSQLI_OPT_READ_TIMEOUT;
+use const MYSQLI_STORE_RESULT_COPY_DATA;
+use const MYSQLI_TRANS_COR_NO_RELEASE;
+use const MYSQLI_TRANS_COR_RELEASE;
+use const MYSQLI_TRANS_START_READ_ONLY;
+
+use const MYSQLI_REPORT_ALL;
+use const MYSQLI_REPORT_INDEX;
+use const MYSQLI_REPORT_STRICT;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -27,6 +41,20 @@ use const MYSQLI_ASYNC;
  */
 class MydbMysqli
 {
+    public const MYSQLI_ASSOC = MYSQLI_ASSOC;
+    public const MYSQLI_INIT_COMMAND = MYSQLI_INIT_COMMAND;
+    public const MYSQLI_OPT_CONNECT_TIMEOUT = MYSQLI_OPT_CONNECT_TIMEOUT;
+    public const MYSQLI_OPT_NET_CMD_BUFFER_SIZE = MYSQLI_OPT_NET_CMD_BUFFER_SIZE;
+    public const MYSQLI_OPT_NET_READ_BUFFER_SIZE = MYSQLI_OPT_NET_READ_BUFFER_SIZE;
+    public const MYSQLI_OPT_READ_TIMEOUT = MYSQLI_OPT_READ_TIMEOUT;
+    public const MYSQLI_STORE_RESULT_COPY_DATA = MYSQLI_STORE_RESULT_COPY_DATA;
+    public const MYSQLI_TRANS_COR_RELEASE = MYSQLI_TRANS_COR_RELEASE;
+    public const MYSQLI_TRANS_START_READ_ONLY = MYSQLI_TRANS_START_READ_ONLY;
+    public const MYSQLI_TRANS_COR_NO_RELEASE = MYSQLI_TRANS_COR_NO_RELEASE;
+    public const MYSQLI_REPORT_ALL = MYSQLI_REPORT_ALL;
+    public const MYSQLI_REPORT_INDEX = MYSQLI_REPORT_INDEX;
+    public const MYSQLI_REPORT_STRICT = MYSQLI_REPORT_STRICT;
+
     private ?mysqli $mysqli = null;
     private bool $isConnected = false;
     private bool $isTransaction = false;
@@ -88,16 +116,13 @@ class MydbMysqli
         return false;
     }
 
-    /**
-     * @return \mysqli_result|false
-     */
-    public function storeResult(int $mode = 0)
+    public function storeResult(int $mode = 0): ?\mysqli_result
     {
         if ($this->mysqli && $this->isConnected()) {
             return $this->mysqli->store_result($mode);
         }
 
-        return false;
+        return null;
     }
 
     public function realEscapeString(string $string): ?string
@@ -211,6 +236,11 @@ class MydbMysqli
         return $this->mysqli
             ? $this->mysqli->server_version
             : null;
+    }
+
+    public function isServerGone(): bool
+    {
+        return in_array($this->getErrNo(), [2002, 2006], true);
     }
 
     public function getError(): ?string
