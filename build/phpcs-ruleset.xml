@@ -41,8 +41,13 @@
         <exclude name="SlevomatCodingStandard.ControlStructures.RequireSingleLineCondition" />
         <exclude name="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing" />
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator" />
         <exclude name="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses" />
         <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator" />
+    </rule>
+
+    <rule ref="PSR1.Methods.CamelCapsMethodName">
+        <exclude-pattern>./../src/sql/MydbEnvironment.php</exclude-pattern>
     </rule>
 
     <rule ref="SlevomatCodingStandard.Complexity.Cognitive">

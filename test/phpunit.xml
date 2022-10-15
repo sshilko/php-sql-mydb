@@ -52,13 +52,13 @@
     <php>
         <includePath>phpunit/base/</includePath>
 
-        <const name="PHPUNIT_MYSQL_MYDB1_PORT" value="3306" />
-        <const name="PHPUNIT_MYSQL_MYDB1_NAME" value="mydb" />
-        <const name="PHPUNIT_MYSQL_MYDB1_HOST" value="host.docker.internal" />
-        <const name="PHPUNIT_MYSQL_MYDB1_USER" value="test" />
-        <const name="PHPUNIT_MYSQL_MYDB1_PASS" value="pass" />
-        <const name="PHPUNIT_MYSQL_ROOT_USER" value="root" />
-        <const name="PHPUNIT_MYSQL_ROOT_PASS" value="root" />
+        <const name="PHPUNIT_MYSQL_MYDB1_HOST" value="host.docker.internal"/>
+        <const name="PHPUNIT_MYSQL_MYDB1_USER" value="test"/>
+        <const name="PHPUNIT_MYSQL_MYDB1_PORT" value="3306"/>
+        <const name="PHPUNIT_MYSQL_MYDB1_NAME" value="mydb"/>
+        <const name="PHPUNIT_MYSQL_MYDB1_PASS" value="pass"/>
+        <const name="PHPUNIT_MYSQL_ROOT_USER" value="root"/>
+        <const name="PHPUNIT_MYSQL_ROOT_PASS" value="root"/>
 
         <ini name="error_reporting" value="-1" />
         <ini name="intl.default_locale" value="en" />

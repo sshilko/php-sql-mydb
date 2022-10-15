@@ -19,7 +19,7 @@ namespace sql;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbConnectionException extends MydbException
+class MydbExceptionConnection extends MydbException
 {
 
 }

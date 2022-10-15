@@ -10,6 +10,7 @@ version: '3.7'
 services:
   #@see https://hub.docker.com/_/mysql
   mysql:
+    container_name: mysql57
     tty: true
     dns: 1.1.1.1
     image: "mysql:5.7"
@@ -41,8 +42,8 @@ services:
       - --skip-name-resolve
     healthcheck:
       test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
-      timeout: 15s
-      start_period: 10s
+      timeout: 5s
+      start_period: 5s
     logging:
       options:
         max-size: "50m"

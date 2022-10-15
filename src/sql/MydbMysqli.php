@@ -25,14 +25,13 @@ use const MYSQLI_OPT_CONNECT_TIMEOUT;
 use const MYSQLI_OPT_NET_CMD_BUFFER_SIZE;
 use const MYSQLI_OPT_NET_READ_BUFFER_SIZE;
 use const MYSQLI_OPT_READ_TIMEOUT;
+use const MYSQLI_REPORT_ALL;
+use const MYSQLI_REPORT_INDEX;
+use const MYSQLI_REPORT_STRICT;
 use const MYSQLI_STORE_RESULT_COPY_DATA;
 use const MYSQLI_TRANS_COR_NO_RELEASE;
 use const MYSQLI_TRANS_COR_RELEASE;
 use const MYSQLI_TRANS_START_READ_ONLY;
-
-use const MYSQLI_REPORT_ALL;
-use const MYSQLI_REPORT_INDEX;
-use const MYSQLI_REPORT_STRICT;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -54,6 +53,8 @@ class MydbMysqli
     public const MYSQLI_REPORT_ALL = MYSQLI_REPORT_ALL;
     public const MYSQLI_REPORT_INDEX = MYSQLI_REPORT_INDEX;
     public const MYSQLI_REPORT_STRICT = MYSQLI_REPORT_STRICT;
+
+    protected const SQL_MODE = 'TRADITIONAL';
 
     private ?mysqli $mysqli = null;
     private bool $isConnected = false;
@@ -89,6 +90,39 @@ class MydbMysqli
         return false;
     }
 
+    public function setTransportOptions(MydbOptions $options, MydbEnvironment $environment): bool
+    {
+        if (null === $this->mysqli) {
+            return false;
+        }
+
+        $ignoreUserAbort = $environment->ignore_user_abort();
+        $selectTimeout = $options->getServerSideSelectTimeout();
+
+        /**
+         * Prevent entry of invalid values such as those that are out of range, or NULL specified for NOT NULL columns
+         * TRADITIONAL = strict mode
+         *
+         * @see https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional
+         */
+        $mysqliInit = sprintf('SET SESSION sql_mode = %s', self::SQL_MODE);
+        if ($ignoreUserAbort < 1) {
+            $mysqliInit .= sprintf(', SESSION max_execution_time = %s', $selectTimeout * 10000);
+        }
+
+        $connectTimeout = $options->getConnectTimeout();
+        $readTimeout = $options->getReadTimeout();
+        $netReadTimeout = (string) (max($selectTimeout, $readTimeout) + $connectTimeout);
+
+        return
+            $environment->setMysqlndNetReadTimeout($netReadTimeout) &&
+            $this->mysqli->options(self::MYSQLI_INIT_COMMAND, $mysqliInit) &&
+            $this->mysqli->options(self::MYSQLI_OPT_CONNECT_TIMEOUT, $connectTimeout) &&
+            $this->mysqli->options(self::MYSQLI_OPT_READ_TIMEOUT, $readTimeout) &&
+            $this->mysqli->options(self::MYSQLI_OPT_NET_CMD_BUFFER_SIZE, $options->getNetworkBufferSize()) &&
+            $this->mysqli->options(self::MYSQLI_OPT_NET_READ_BUFFER_SIZE, $options->getNetworkReadBuffer());
+    }
+
     public function isTransactionOpen(): bool
     {
         /**
@@ -116,7 +150,7 @@ class MydbMysqli
         return false;
     }
 
-    public function storeResult(int $mode = 0): ?\mysqli_result
+    public function storeResult(int $mode = self::MYSQLI_STORE_RESULT_COPY_DATA): ?\mysqli_result
     {
         if ($this->mysqli && $this->isConnected()) {
             return $this->mysqli->store_result($mode);
@@ -207,8 +241,15 @@ class MydbMysqli
 
     public function close(): bool
     {
-        if ($this->mysqli && $this->isConnected() && $this->mysqli->close()) {
-            $this->isConnected = false;
+        if ($this->mysqli) {
+            if ($this->isConnected()) {
+                /**
+                 * Ignore close() success/failure
+                 */
+                $this->mysqli->close();
+                $this->isConnected = false;
+            }
+
             $this->mysqli = null;
 
             return true;
