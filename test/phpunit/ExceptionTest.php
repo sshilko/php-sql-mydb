@@ -27,8 +27,8 @@ final class ExceptionTest extends includes\BaseTestCase
     public function testTableDoesNotExist(): void
     {
         $db = $this->getDefaultDb();
-        $tableName = 'a' . time();
-        $this->expectExceptionMessage("Table '" . self::getDbName(). "." . $tableName . " doesn't exist");
+        $tableName = 'notable' . time();
+        $this->expectExceptionMessage("Table '" . self::getDbName(). "." . $tableName . "' doesn't exist");
         $db->select("SELECT * from " . $tableName);
     }
 
