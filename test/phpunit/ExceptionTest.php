@@ -28,8 +28,8 @@ final class ExceptionTest extends includes\BaseTestCase
     {
         $db = $this->getDefaultDb();
         $tableName = 'a' . time();
-        $this->expectExceptionMessage("Table '" . self::getDbName(). ".$tableName' doesn't exist");
-        $db->select("SELECT * from $tableName");
+        $this->expectExceptionMessage("Table '" . self::getDbName(). "." . $tableName . " doesn't exist");
+        $db->select("SELECT * from " . $tableName);
     }
 
     /**

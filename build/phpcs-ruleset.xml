@@ -15,7 +15,11 @@
 <description>PSR1, PSR2, PSR-12, Squizlabs, SlevomatCodingStandard</description>
 <!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset -->
 <!-- https://github.com/slevomat/coding-standard -->
+<!-- https://github.com/symplify/easy-coding-standard#ignore-what-you-cant-fix -->
     <exclude-pattern>*/vendor/*</exclude-pattern>
+
+    <arg name="error-severity" value="1" />
+    <arg name="warning-severity" value="1" />
 
     <arg name="cache" value="/tmp/phpcs-tempfile" />
     <arg name="encoding" value="utf8" />
@@ -24,7 +28,7 @@
     <arg name="extensions" value="php" />
     <!-- "full", "xml", "checkstyle", "csv", "json", "junit", "emacs", "source", "summary", "diff",
          "svnblame", "gitblame", "hgblame" or "notifysend" -->
-    <arg name="report" value="full"/>
+    <arg name="report" value="full,csv,source,summary"/>
     <arg name="tab-width" value="4"/>
     <arg name="parallel" value="1" />
 
@@ -39,11 +43,6 @@
         <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification" />
 
         <exclude name="SlevomatCodingStandard.Commenting" />
-
-        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants" />
-        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" />
-        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions" />
-        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions" />
 
         <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming" />
@@ -63,6 +62,15 @@
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator" />
         <exclude name="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses" />
         <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator" />
+
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions" />
+
+        <!-- following 2 lines allow phpcbf and phpcs behaviour to match regarding "use" statements -->
+        <exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedNameWithoutNamespace" />
+        <exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces.NonFullyQualified" />
     </rule>
 
     <!-- https://tideways.com/profiler/blog/compiler-optimized-php-functions -->
@@ -109,13 +117,13 @@
     </rule>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
-        <severity>9</severity>
+        <severity>5</severity>
     </rule>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndFile">
-        <severity>9</severity>
+        <severity>5</severity>
     </rule>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
-        <severity>9</severity>
+        <severity>5</severity>
     </rule>
     <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
     <rule ref="Generic.WhiteSpace.ScopeIndent">
@@ -143,7 +151,7 @@
     <rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
 
     <rule ref="Generic.Functions.FunctionCallArgumentSpacing" >
-        <severity>9</severity>
+        <severity>5</severity>
     </rule>
 
     <rule ref="Squiz.ControlStructures.ControlSignature"/>
@@ -157,22 +165,22 @@
         </properties>
     </rule>
     <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingAfterOpen">
-        <severity>9</severity>
+        <severity>5</severity>
     </rule>
     <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingBeforeClose">
-        <severity>9</severity>
+        <severity>5</severity>
     </rule>
     <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
 
     <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.AsNotLower">
-        <severity>9</severity>
+        <severity>5</severity>
     </rule>
     <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceAfterOpen">
-        <severity>9</severity>
+        <severity>5</severity>
     </rule>
     <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceBeforeClose">
-        <severity>9</severity>
+        <severity>5</severity>
     </rule>
     <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
     <rule ref="Squiz.WhiteSpace.CastSpacing"/>
@@ -242,7 +250,7 @@
     <rule ref="PSR12.Properties.ConstantVisibility" />
     <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar" />
     <rule ref="Internal.NoCodeFound">
-        <severity>9</severity>
+        <severity>5</severity>
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing">
         <properties>
@@ -250,8 +258,7 @@
         </properties>
     </rule>
     <rule ref="Generic.NamingConventions.CamelCapsFunctionName">
-        <properties>
-            <property name="strict" value="true" />
-        </properties>
+        <!-- Duplicated by PSR1.Methods.CamelCapsMethodName.NotCamelCaps -->
+        <severity>0</severity>
     </rule>
 </ruleset>
