@@ -31,6 +31,7 @@ use function preg_match;
 use function preg_replace;
 use function sprintf;
 use function strpos;
+use function strtolower;
 use function strtoupper;
 use function substr;
 

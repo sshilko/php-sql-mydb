@@ -15,6 +15,7 @@ declare(strict_types = 1);
 namespace sql;
 
 use const E_ALL;
+use const E_NOTICE;
 use const E_WARNING;
 
 /**
