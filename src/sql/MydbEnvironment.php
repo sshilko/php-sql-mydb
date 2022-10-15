@@ -14,7 +14,13 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use function error_reporting;
+use function gc_collect_cycles;
+use function gc_enabled;
+use function ignore_user_abort;
+use function ini_get;
 use function ini_set;
+use function set_error_handler;
 use const E_ALL;
 use const E_STRICT;
 

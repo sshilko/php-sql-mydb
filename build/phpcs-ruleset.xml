@@ -44,7 +44,6 @@
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" />
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions" />
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions" />
-<!--        <exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces" /> -->
 
         <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming" />
@@ -66,9 +65,24 @@
         <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator" />
     </rule>
 
-    <rule ref="PSR1.Methods.CamelCapsMethodName">
-        <exclude-pattern>./../src/sql/MydbEnvironment.php</exclude-pattern>
+    <!-- https://tideways.com/profiler/blog/compiler-optimized-php-functions -->
+    <!-- https://github.com/slevomat/coding-standard/blob/master/doc/namespaces.md -->
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
+        <properties>
+            <property name="allowPartialUses" value="true"/>
+            <property name="allowFallbackGlobalConstants" value="false"/>
+            <property name="allowFallbackGlobalFunctions" value="false"/>
+            <property name="allowFullyQualifiedGlobalClasses" value="false"/>
+            <property name="allowFullyQualifiedGlobalConstants" value="false"/>
+            <property name="allowFullyQualifiedGlobalFunctions" value="false"/>
+            <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
+            <property name="allowFullyQualifiedNameForCollidingConstants" value="true"/>
+            <property name="allowFullyQualifiedNameForCollidingFunctions" value="true"/>
+            <property name="searchAnnotations" value="true"/>
+        </properties>
     </rule>
+
+    <rule ref="PSR1.Methods.CamelCapsMethodName" />
 
     <rule ref="SlevomatCodingStandard.Complexity.Cognitive">
         <properties>
@@ -95,13 +109,13 @@
     </rule>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
-        <severity>1</severity>
+        <severity>9</severity>
     </rule>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndFile">
-        <severity>1</severity>
+        <severity>9</severity>
     </rule>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
-        <severity>1</severity>
+        <severity>9</severity>
     </rule>
     <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
     <rule ref="Generic.WhiteSpace.ScopeIndent">
@@ -129,7 +143,7 @@
     <rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
 
     <rule ref="Generic.Functions.FunctionCallArgumentSpacing" >
-        <severity>0</severity>
+        <severity>9</severity>
     </rule>
 
     <rule ref="Squiz.ControlStructures.ControlSignature"/>
@@ -143,22 +157,22 @@
         </properties>
     </rule>
     <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingAfterOpen">
-        <severity>0</severity>
+        <severity>9</severity>
     </rule>
     <rule ref="Squiz.ControlStructures.ForLoopDeclaration.SpacingBeforeClose">
-        <severity>0</severity>
+        <severity>9</severity>
     </rule>
     <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
 
     <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.AsNotLower">
-        <severity>0</severity>
+        <severity>9</severity>
     </rule>
     <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceAfterOpen">
-        <severity>0</severity>
+        <severity>9</severity>
     </rule>
     <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceBeforeClose">
-        <severity>0</severity>
+        <severity>9</severity>
     </rule>
     <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
     <rule ref="Squiz.WhiteSpace.CastSpacing"/>
@@ -228,7 +242,7 @@
     <rule ref="PSR12.Properties.ConstantVisibility" />
     <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar" />
     <rule ref="Internal.NoCodeFound">
-        <severity>1</severity>
+        <severity>9</severity>
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing">
         <properties>

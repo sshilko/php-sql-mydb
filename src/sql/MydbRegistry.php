@@ -14,6 +14,8 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use function array_keys;
+
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb

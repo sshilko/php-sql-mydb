@@ -15,6 +15,7 @@ declare(strict_types = 1);
 namespace phpunit;
 
 use sql\MydbConnectException;
+use function time;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>

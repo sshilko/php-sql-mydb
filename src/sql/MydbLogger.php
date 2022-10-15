@@ -16,6 +16,13 @@ namespace sql;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
+use function count;
+use function fwrite;
+use function is_scalar;
+use function print_r;
+use const PHP_EOL;
+use const STDERR;
+use const STDOUT;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
