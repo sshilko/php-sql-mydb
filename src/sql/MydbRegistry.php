@@ -42,25 +42,25 @@ class MydbRegistry
     }
 
     /**
-     * @throws MydbException
+     * @throws MydbCommonException
      */
     public static function getInstance(string $id): MydbInterface
     {
         if (!isset(static::$instance[$id])) {
-            throw new MydbException('Instance id=' . $id . '  is not set');
+            throw new MydbCommonException('Instance id=' . $id . '  is not set');
         }
 
         return static::$instance[$id];
     }
 
     /**
-     * @throws MydbException
+     * @throws MydbCommonException
      */
     public static function setInstance(string $id, ?MydbInterface $instance): void
     {
         if (isset(static::$instance[$id])) {
             if (null !== $instance) {
-                throw new MydbException('Instance id=' . $id . '  already set');
+                throw new MydbCommonException('Instance id=' . $id . '  already set');
             }
             unset(static::$instance[$id]);
 
@@ -68,9 +68,6 @@ class MydbRegistry
         }
 
         if (null === $instance) {
-            /**
-             * Nothing there, but lets unset
-             */
             unset(static::$instance[$id]);
         } else {
             static::$instance[$id] = $instance;

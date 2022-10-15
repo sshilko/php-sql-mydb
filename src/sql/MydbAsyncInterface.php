@@ -19,17 +19,7 @@ namespace sql;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbExpression
+interface MydbAsyncInterface
 {
-    protected string $input;
-
-    public function __construct(string $input)
-    {
-        $this->input = $input;
-    }
-
-    public function __toString(): string
-    {
-        return $this->input;
-    }
+    public function async(string $command): void;
 }

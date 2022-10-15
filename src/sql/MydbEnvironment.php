@@ -15,6 +15,8 @@ declare(strict_types = 1);
 namespace sql;
 
 use function ini_set;
+use const E_ALL;
+use const E_STRICT;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -25,6 +27,20 @@ use function ini_set;
  */
 class MydbEnvironment
 {
+    public function gc_collect_cycles(): void
+    {
+        if (!gc_enabled()) {
+            return;
+        }
+
+        gc_collect_cycles();
+    }
+
+    public function set_error_handler(?callable $callback, int $error_levels = E_ALL|E_STRICT): ?callable
+    {
+        return set_error_handler($callback, $error_levels);
+    }
+
     public function setMysqlndNetReadTimeout(string $timeoutSeconds): bool
     {
         return $this->ini_set('mysqlnd.net_read_timeout', $timeoutSeconds);

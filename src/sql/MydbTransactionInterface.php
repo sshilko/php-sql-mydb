@@ -19,17 +19,11 @@ namespace sql;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbExpression
+interface MydbTransactionInterface
 {
-    protected string $input;
+    public function beginTransaction(): void;
 
-    public function __construct(string $input)
-    {
-        $this->input = $input;
-    }
+    public function commitTransaction(): void;
 
-    public function __toString(): string
-    {
-        return $this->input;
-    }
+    public function rollbackTransaction(): void;
 }

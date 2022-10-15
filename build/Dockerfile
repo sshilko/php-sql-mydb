@@ -32,6 +32,7 @@ path-exclude /usr/share/linda/*                     \n\
     find /usr/share/locale -maxdepth 1 -mindepth 1 ! -name 'en' |xargs rm -rf && \
     apt-get update                                           && \
     docker-php-ext-install mysqli                            && \
+    docker-php-ext-install pcntl                             && \
     apt-get install -y --no-install-recommends                  \
     unzip                                                       \
     python3-pip                                                 \
