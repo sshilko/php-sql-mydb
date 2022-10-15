@@ -19,7 +19,7 @@ namespace sql;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbExceptionConnection extends MydbException
+interface MydbCommandInterface
 {
-
+    public function command(string $query): bool;
 }

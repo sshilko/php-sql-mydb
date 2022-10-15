@@ -21,21 +21,25 @@ namespace sql;
  */
 interface MydbInterface
 {
+    /**
+     * Open connection
+     */
     public function open(int $retry): bool;
 
+    /**
+     * Close connection
+     */
     public function close(): void;
 
+    /**
+     * Get table primary key
+     */
     public function getPrimaryKey(string $table): ?string;
 
-    /** @return array<string> */
-    public function getEnumValues(string $table, string $column): array;
-
-    public function command(string $query, ?int $retry = null): bool;
-
     /**
-     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
+     * @return array<string>
      */
-    public function query(string $query): array;
+    public function getEnumValues(string $table, string $column): array;
 
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void;
 
@@ -51,7 +55,7 @@ interface MydbInterface
         array $columns,
         string $table,
         bool $ignore = false,
-        ?string $onDuplicateKeyUpdate = null
+        ?string $onDuplicate = null
     ): void;
 
     /**
@@ -71,8 +75,6 @@ interface MydbInterface
      * or if the query did not update an AUTO_INCREMENT value.
      */
     public function replaceOne(array $data, string $table): ?string;
-
-    public function async(string $command): void;
 
     /**
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
@@ -102,12 +104,4 @@ interface MydbInterface
     public function replace(string $query): ?string;
 
     public function escape(string $unescaped): string;
-
-    public function beginTransaction(): void;
-
-    public function commitTransaction(): void;
-
-    public function rollbackTransaction(): void;
-
-    public function setAutoCommit(bool $autocommit): bool;
 }

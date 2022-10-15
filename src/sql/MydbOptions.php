@@ -77,19 +77,11 @@ class MydbOptions
 
     protected string $timeZone = 'UTC';
 
-//    /**
-//     * Connection flags
-//     * MYSQLI_CLIENT_COMPRESS
-//     *
-//     * @see https://www.php.net/manual/en/mysqli.real-connect
-//     */
-//    protected ?int $internalWireFlags = null;
-
     /**
      * The number of seconds the server waits for activity
      * on a non-interactive TCP/IP or UNIX File connection before closing it
      */
-    protected int $internalNonInteractiveTimeout = 7200;
+    protected int $nonInteractiveTimeout = 7200;
 
     /**
      * Recommended defaults:
@@ -114,14 +106,14 @@ class MydbOptions
      */
     protected bool $readonly = false;
 
-    public function getInternalNonInteractiveTimeout(): int
+    public function getNonInteractiveTimeout(): int
     {
-        return $this->internalNonInteractiveTimeout;
+        return $this->nonInteractiveTimeout;
     }
 
-    public function setInternalNonInteractiveTimeout(int $internalNonInteractiveTimeout): void
+    public function setNonInteractiveTimeout(int $nonInteractiveTimeout): void
     {
-        $this->internalNonInteractiveTimeout = $internalNonInteractiveTimeout;
+        $this->nonInteractiveTimeout = $nonInteractiveTimeout;
     }
 
     public function getServerSideSelectTimeout(): int

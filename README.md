@@ -30,6 +30,7 @@ Simple class to work with MySQL database.
 
 ##### Roadmap 2022-2023
 
+- PHP documentor
 - Test coverage report
 - More tests
 - Usage example

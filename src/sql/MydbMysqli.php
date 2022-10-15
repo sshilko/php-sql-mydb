@@ -56,9 +56,9 @@ class MydbMysqli
 
     protected const SQL_MODE = 'TRADITIONAL';
 
-    private ?mysqli $mysqli = null;
-    private bool $isConnected = false;
-    private bool $isTransaction = false;
+    protected ?mysqli $mysqli = null;
+    protected bool $isConnected = false;
+    protected bool $isTransaction = false;
 
     public function __construct(?mysqli $resource = null)
     {

@@ -28,9 +28,12 @@
          stopOnRisky="true"
          failOnRisky="true"
          failOnWarning="true"
-         timeoutForSmallTests="5"
-         timeoutForMediumTests="20"
-         timeoutForLargeTests="120"
+         defaultTimeLimit="5"
+         timeoutForSmallTests="1"
+         timeoutForMediumTests="5"
+         timeoutForLargeTests="10"
+         enforceTimeLimit="true"
+         beStrictAboutChangesToGlobalState="true"
          verbose="true">
     <testsuite name="sshilko/php-sql-mydb">
         <directory>phpunit</directory>

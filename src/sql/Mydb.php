@@ -29,21 +29,24 @@ use function is_numeric;
 use function is_string;
 use function preg_match;
 use function preg_replace;
-use function random_int;
 use function sprintf;
 use function strpos;
 use function strtoupper;
 use function substr;
-use function usleep;
 
 /**
- * Simple wrapper around PHP MySQL client
+ * Simple wrapper around PHP MySQLi client
  *
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class Mydb implements MydbInterface
+class Mydb implements
+    MydbInterface,
+    MydbCommandInterface,
+    MydbQueryInterface,
+    MydbTransactionInterface,
+    MydbAsyncInterface
 {
     protected MydbMysqli $mysqli;
 
@@ -54,6 +57,8 @@ class Mydb implements MydbInterface
     protected LoggerInterface $logger;
 
     protected MydbEnvironment $environment;
+
+    protected bool $terminating = false;
 
     public function __construct(
         MydbCredentials $credentials,
@@ -74,10 +79,11 @@ class Mydb implements MydbInterface
      *
      * @see http://php.net/manual/en/mysqli.close.php
      * @see http://php.net/manual/en/mysqli.ping.php (MysqlND not supports reconnect)
-     * @throws MydbException
+     * @throws MydbCommonException
      */
     public function __destruct()
     {
+        $this->terminating = true;
         $this->close();
     }
 
@@ -90,22 +96,22 @@ class Mydb implements MydbInterface
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      *
-     * @throws MydbException
-     * @throws MydbExceptionConnection
-     *
      * @return array<array<(float|int|string|null)>>
      *
      * @psalm-return list<array<(float|int|string|null)>>
+     *@throws MydbConnectException
+     *
+     * @throws MydbCommonException
      */
     public function query(string $query): array
     {
         if (!$this->connect()) {
-            throw new MydbExceptionConnection();
+            throw new MydbConnectException();
         }
 
         $result = false;
 
-        $originalHandler = set_error_handler(static function () {
+        $originalHandler = $this->environment->set_error_handler(static function () {
             return true;
         });
         if ($this->mysqli->realQuery($query)) {
@@ -114,15 +120,15 @@ class Mydb implements MydbInterface
                 $this->onError('Failed to mysqli.store_result from mysqlnd to php userland', $query);
             }
         }
-        set_error_handler($originalHandler);
+        $this->environment->set_error_handler($originalHandler);
 
         $sqlerror = $this->mysqli->getError();
         if ($sqlerror) {
             $this->onError($sqlerror, $query);
         }
 
-        $haswarnings = $this->mysqli->getWarningCount();
-        if ($haswarnings > 0) {
+        $hasWarnings = $this->mysqli->getWarningCount();
+        if ($hasWarnings > 0) {
             $warnings = $this->mysqli->getWarnings();
             if ($warnings) {
                 do {
@@ -131,7 +137,7 @@ class Mydb implements MydbInterface
             }
         }
 
-        if (!$result) {
+        if (false === $result) {
             return [];
         }
 
@@ -152,19 +158,21 @@ class Mydb implements MydbInterface
     /**
      * With MYSQLI_ASYNC (available with mysqlnd), it is possible to perform query asynchronously.
      * mysqli_poll() is then used to get results from such queries.
-     * @throws MydbException
-     * @throws MydbExceptionConnection
+     * @throws MydbCommonException
+     * @throws MydbConnectException
      */
     public function async(string $command): void
     {
+        if (!$this->connect()) {
+            throw new MydbConnectException();
+        }
+
         if (false === $this->options->isAutocommit() ||
             $this->options->isPersistent() ||
             $this->options->isReadonly()) {
-            throw new MydbException('Async is safe only with autocommit=true & non-persistent & rw configuration');
-        }
-
-        if (!$this->connect()) {
-            throw new MydbExceptionConnection();
+            throw new MydbCommonException(
+                'Async is safe only with autocommit=true & non-persistent & rw configuration'
+            );
         }
 
         $this->mysqli->mysqliQueryAsync($command);
@@ -220,68 +228,23 @@ class Mydb implements MydbInterface
 
     /**
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
-     * @throws MydbException
-     * @throws MydbExceptionConnection
+     * @throws MydbCommonException
+     * @throws MydbConnectException
      */
-    public function command(string $query, ?int $retry = null): bool
+    public function command(string $query): bool
     {
         if (!$this->connect()) {
-            throw new MydbExceptionConnection();
+            throw new MydbConnectException();
         }
 
-        $someresult = $this->mysqli->realQuery($query);
-
-        if (false === $someresult) {
-            $mysqlError = $this->mysqli->getError();
-
-            if (null === $retry || $retry > 0) {
-                if ($mysqlError) {
-                    $this->onError($mysqlError, $query);
-                }
-
-                if (false !== strpos((string) $mysqlError, 'try restarting') ||
-                    false !== strpos((string) $mysqlError, 'execution was interrupted')) {
-                    $this->onCommandFailedRetry((string) $mysqlError, $query, $retry);
-                } elseif (false !== strpos((string) $mysqlError, 'uplicate entry') ||
-                    false !== strpos((string) $mysqlError, 'error in your SQL syntax')) {
-                    $retry = -1;
-                } elseif ($this->mysqli->isServerGone()) {
-                    /**
-                     * MySQL server has gone away; Connection closed from server-side
-                     * All state is lost
-                     */
-                    if ($this->options->isAutocommit()) {
-                        /**
-                         * If there was autocommit, we only lost last transmission; lets disconnect & retry
-                         */
-                        $this->mysqli->close();
-                    } else {
-                        /**
-                         * No autocommit == lost all changes, no need to retry anything
-                         */
-                        $retry = -1;
-                    }
-                } else {
-                    /**
-                     * Generic sleep, including 'MySQL server has gone away' and others
-                     */
-                    //usleep(abs($this->options->getRetryWait()));
-                }
-
-                $retry = $retry > 0
-                    ? $retry - 1
-                    : 0;
-
-                return $this->command($query, $retry);
+        if (false === $this->mysqli->realQuery($query)) {
+            if ($this->mysqli->isServerGone()) {
+                $this->mysqli->close();
             }
 
-            if (0 === $retry || $retry <= 0) {
-                if (false !== strpos((string) $mysqlError, 'try restarting') ||
-                    false !== strpos((string) $mysqlError, 'execution was interrupted')) {
-                    $this->onError((string) $mysqlError, $query);
-                }
-
-                $this->onError((string) $mysqlError, $query);
+            $mysqlError = $this->mysqli->getError();
+            if ($mysqlError) {
+                $this->onError($mysqlError, $query);
             }
 
             return false;
@@ -293,7 +256,7 @@ class Mydb implements MydbInterface
     /**
      * @return array<string>
      *
-     * @throws MydbException
+     * @throws MydbCommonException
      *
      * @psalm-return list<string>
      */
@@ -331,7 +294,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws MydbExceptionConnection
+     * @throws MydbConnectException
      */
     public function escape(string $unescaped): string
     {
@@ -344,7 +307,7 @@ class Mydb implements MydbInterface
         }
 
         if (!$this->connect()) {
-            throw new MydbExceptionConnection();
+            throw new MydbConnectException();
         }
 
         return (string) $this->mysqli->realEscapeString($unescaped);
@@ -388,7 +351,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws MydbException
+     * @throws MydbCommonException
      */
     public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool
     {
@@ -447,7 +410,7 @@ class Mydb implements MydbInterface
      * @param array $columnSetWhere ['col1' => [ ['current1', 'new1'], ['current2', 'new2']]
      * @param array $where ['col2' => 'value2', 'col3' => ['v3', 'v4']]
      * @param string $table 'mytable'
-     * @throws MydbException
+     * @throws MydbCommonException
      */
     public function updateWhereMany(array $columnSetWhere, array $where, string $table): void
     {
@@ -496,7 +459,7 @@ class Mydb implements MydbInterface
         array $columns,
         string $table,
         bool $ignore = false,
-        ?string $onDuplicateKeyUpdate = null
+        ?string $onDuplicate = null
     ): void {
         $me = $this;
         /**
@@ -523,8 +486,8 @@ class Mydb implements MydbInterface
             $columns,
         ) . "`) VALUES " . implode(', ', $values);
 
-        if ($onDuplicateKeyUpdate) {
-            $query .= ' ON DUPLICATE KEY UPDATE ' . $onDuplicateKeyUpdate;
+        if ($onDuplicate) {
+            $query .= ' ON DUPLICATE KEY UPDATE ' . $onDuplicate;
         }
         $this->insert($query);
     }
@@ -580,31 +543,13 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws MydbExceptionConnection
-     */
-    public function setAutoCommit(bool $autocommit): bool
-    {
-        if (!$this->connect()) {
-            throw new MydbExceptionConnection();
-        }
-
-        if ($this->mysqli->autocommit($autocommit)) {
-            $this->options->setAutocommit($autocommit);
-
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * @throws MydbExceptionConnection
-     * @throws MydbException
+     * @throws MydbConnectException
+     * @throws MydbCommonException
      */
     public function beginTransaction(): void
     {
         if (!$this->connect()) {
-            throw new MydbExceptionConnection();
+            throw new MydbConnectException();
         }
 
         if ($this->mysqli->beginTransaction()) {
@@ -615,13 +560,13 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws MydbExceptionConnection
-     * @throws MydbException
+     * @throws MydbConnectException
+     * @throws MydbCommonException
      */
     public function rollbackTransaction(): void
     {
         if (!$this->mysqli->isConnected()) {
-            throw new MydbExceptionConnection();
+            throw new MydbConnectException();
         }
 
         if ($this->mysqli->rollback()) {
@@ -632,13 +577,13 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws MydbExceptionConnection
-     * @throws MydbException
+     * @throws MydbConnectException
+     * @throws MydbCommonException
      */
     public function commitTransaction(): void
     {
         if (!$this->mysqli->isConnected()) {
-            throw new MydbExceptionConnection();
+            throw new MydbConnectException();
         }
 
         if ($this->mysqli->commit()) {
@@ -649,7 +594,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws MydbException
+     * @throws MydbCommonException
      */
     public function close(): void
     {
@@ -678,24 +623,22 @@ class Mydb implements MydbInterface
                 }
             }
 
-            if (!$this->options->isPersistent()) {
-                /**
-                 * Explicitly closing open connections and freeing result sets is optional but recommended
-                 * Server already closed connection from server-side
-                 */
-                if (!$this->mysqli->close()) {
-                    $this->onError('Failed to final close database during controlled disconnect');
-                }
+            /**
+             * Explicitly closing open connections and freeing result sets is optional but recommended
+             * Server already closed connection from server-side
+             */
+            if (false === $this->mysqli->close()) {
+                throw new MydbDisconnectException();
             }
         } catch (Throwable $e) {
             $this->onError($e->getMessage());
         }
-    }
 
-    protected function onCommandFailedRetry(string $message, string $query, ?int $atttempt = null): void
-    {
-        $this->onWarning($message, $query);
-        usleep(random_int(50000, 100000 * min(1, abs((int) $atttempt))));
+        if (false !== $this->terminating) {
+            return;
+        }
+
+        $this->environment->gc_collect_cycles();
     }
 
     /**
@@ -723,17 +666,17 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws MydbException
+     * @throws MydbCommonException
      */
     protected function onError(string $errorMessage, ?string $sql = null): void
     {
         $this->logger->error($errorMessage, ['sql' => $sql]);
 
-        throw new MydbException($errorMessage);
+        throw new MydbCommonException($errorMessage);
     }
 
     /**
-     * @throws MydbException
+     * @throws MydbCommonException
      */
     protected function afterConnectionSuccess(): void
     {
@@ -748,7 +691,7 @@ class Mydb implements MydbInterface
          * @todo error handling for query executions
          */
         $c->query(sprintf("SET session time_zone = '%s'", $this->options->getTimeZone()));
-        $c->query(sprintf('SET session wait_timeout = %s', $this->options->getInternalNonInteractiveTimeout()));
+        $c->query(sprintf('SET session wait_timeout = %s', $this->options->getNonInteractiveTimeout()));
         $c->set_charset($this->options->getCharset());
 
         if (!$isReadonly) {
@@ -757,7 +700,7 @@ class Mydb implements MydbInterface
 
         if (false === $this->options->isPersistent()) {
             if (false === $c->autocommit(true)) {
-                throw new MydbException('Failed setting db autocommit state for read-only scenario');
+                throw new MydbCommonException('Failed setting db autocommit state for read-only scenario');
             }
         }
 
@@ -770,9 +713,9 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws MydbException
+     * @throws MydbCommonException
      */
-    private function connect(int $retry = 0): bool
+    protected function connect(int $retry = 0): bool
     {
         if ($this->mysqli->isConnected()) {
             return true;
@@ -802,8 +745,8 @@ class Mydb implements MydbInterface
             $errorNumber = (string) ($this->mysqli->getConnectErrno() ?: $this->mysqli->getErrNo());
             $errorText = (string) ($this->mysqli->getConnectError() ?: $this->mysqli->getError());
 
-            if (!$this->mysqli->close()) {
-                $this->onError('Failed to close database after connection error');
+            if (false === $this->mysqli->close()) {
+                throw new MydbDisconnectException();
             }
 
             $this->onWarning($errorNumber . ':' . $errorText);
@@ -823,7 +766,7 @@ class Mydb implements MydbInterface
 
         if (!$this->options->isAutocommit()) {
             if (false === $this->mysqli->autocommit(false)) {
-                throw new MydbException('Failed setting db autocommit state');
+                throw new MydbCommonException('Failed setting db autocommit state');
             }
         }
 
@@ -834,20 +777,20 @@ class Mydb implements MydbInterface
 
     /**
      * @return void
-     * @throws MydbException
+     * @throws MydbCommonException
      */
-    private function checkServerVersion(): void
+    protected function checkServerVersion(): void
     {
         if ($this->mysqli->isConnected() && $this->mysqli->getServerVersion() < '50708') {
             /**
              * Minimum version
              * max_statement_time added MySQL 5.7.4; renamed max_execution_time MySQL 5.7.8
              */
-            throw new MydbException('Minimum required MySQL server version is 50708');
+            throw new MydbCommonException('Minimum required MySQL server version is 50708');
         }
     }
 
-    private function buildWhereQuery(array $fields = [], array $negativeFields = [], array $likeFields = []): string
+    protected function buildWhereQuery(array $fields = [], array $negativeFields = [], array $likeFields = []): string
     {
         $where = [];
 

@@ -14,7 +14,7 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
-use sql\MydbExceptionConnection;
+use sql\MydbConnectException;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -31,6 +31,9 @@ final class ExceptionTest extends includes\BaseTestCase
         $db->select("SELECT * from $tableName");
     }
 
+    /**
+     * @medium
+     */
     public function testFailedToConnect(): void
     {
         $db = $this->getNoConnectDb();
@@ -39,6 +42,9 @@ final class ExceptionTest extends includes\BaseTestCase
         self::assertSame(false, $result);
     }
 
+    /**
+     * @medium
+     */
     public function testFailedToConnectAfterRetry(): void
     {
         $retry = 2;
@@ -48,10 +54,13 @@ final class ExceptionTest extends includes\BaseTestCase
         self::assertSame(false, $result);
     }
 
+    /**
+     * @medium
+     */
     public function testFailedToConnectLazy(): void
     {
         $db = $this->getNoConnectDb();
-        $this->expectException(MydbExceptionConnection::class);
+        $this->expectException(MydbConnectException::class);
         $this->logger->expects(self::once())->method('warning')->with('2002:Connection timed out');
         $db->select("SELECT 1");
     }
@@ -70,23 +79,5 @@ final class ExceptionTest extends includes\BaseTestCase
         $random = 'a' . time();
         $this->expectExceptionMessage("Unknown system variable '" . $random . "'");
         $db->select("SELECT @@" . $random);
-    }
-
-    public function testPacketSizeTooLarge(): void
-    {
-        $db = $this->getRootDb();
-
-        $netBuffer = $db->select("SELECT @@max_allowed_packet as len");
-        $minPacket = $netBuffer[0]['len'];
-        $bigPacket = $minPacket * 2;
-
-        /**
-         * @var MockObject $logger
-         */
-        $this->logger->expects(self::once())->method('error');
-
-        $this->expectExceptionMessage("Got a packet bigger than 'max_allowed_packet' bytes");
-        $this->expectException(\sql\MydbException::class);
-        $db->select("SELECT '" . str_repeat('.', $bigPacket) . "' as x");
     }
 }
