@@ -39,6 +39,15 @@
         "psalm-taint": [
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --taint-analysis"
         ],
+        "phpcbf":[
+            "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpcbf"
+        ],
+        "phpcs":[
+            "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpcs"
+        ],
+        "phpstan":[
+            "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpstan"
+        ],
         "phpmd": [
             "php ./vendor/phpmd/phpmd/src/bin/phpmd src/ ansi build/phpmd-rulesets.xml"
         ],

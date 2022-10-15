@@ -17,35 +17,35 @@ exclude: ^(vendor/.*)$
 repos:
   - repo: local
     hooks:
-      - id: php-syntax-check
+      - id: php-code-syntax-check
         name: php-code-syntax-check
         entry: php -l -d display_errors=0
         language: system
         types: [php]
-      - id: phpcbf
+      - id: php-code-phpcbf
         name: php-code-phpcbf
-        entry: php -dopcache.enable_cli=1 ./vendor/bin/phpcbf --standard=build/phpcs-ruleset.xml
+        entry: php ./vendor/bin/phpcbf --standard=build/phpcs-ruleset.xml
         language: system
         types: [php]
-      - id: phpcs
+      - id: php-code-phpcs
         name: php-code-phpcs
-        entry: php -dopcache.enable_cli=1 ./vendor/bin/phpcs --standard=build/phpcs-ruleset.xml
+        entry: php ./vendor/bin/phpcs --standard=build/phpcs-ruleset.xml
         language: system
         types: [php]
-      - id: phpstan
+      - id: php-code-phpstan
         name: php-code-phpstan
-        entry: php -dopcache.enable_cli=1 ./vendor/bin/phpstan analyse --memory-limit=-1 --no-progress -c build/phpstan.neon
+        entry: php ./vendor/bin/phpstan analyse --memory-limit=-1 --no-progress -c build/phpstan.neon
         language: system
         types: [php]
-      - id: psalm-single-file
+      - id: php-code-psalm-single-changed-file-check
         name: php-code-psalm-single-changed-file-check
         entry: |
-            php -dopcache.enable_cli=1 ./vendor/bin/psalm.phar --config build/psalm.xml
-                                                               --memory-limit=-1
-                                                               --no-cache
-                                                               --no-diff
-                                                               --no-progress
-                                                               --show-info=true
+            php ./vendor/bin/psalm.phar --config build/psalm.xml
+                                        --memory-limit=-1
+                                        --no-cache
+                                        --no-diff
+                                        --no-progress
+                                        --show-info=true
         language: system
         types: [php]
         verbose: false

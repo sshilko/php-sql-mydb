@@ -45,8 +45,8 @@ path-exclude /usr/share/linda/*                     \n\
     rm -rf /tmp/* /var/tmp/*                                 && \
     echo "* hard nofile 524280" >> /etc/security/limits.conf && \
     echo "* soft nofile 262140" >> /etc/security/limits.conf && \
-    echo 'en_US.UTF-8' > /etc/locale.gen                     && \
-    locale-gen                                               && \
+    echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen               && \
+    /usr/sbin/locale-gen                                     && \
     echo "TZ=Etc/UTC" >> /etc/environment                    && \
     echo 'Done'
 
