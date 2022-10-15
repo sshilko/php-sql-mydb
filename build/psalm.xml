@@ -13,7 +13,7 @@
     phpVersion="7.4"
     threads="1"
     findUnusedCode="false"
-    findUnusedVariablesAndParams="false"
+    findUnusedVariablesAndParams="true"
     checkForThrowsDocblock="false"
     ensureArrayIntOffsetsExist="true"
     ensureArrayStringOffsetsExist="true"

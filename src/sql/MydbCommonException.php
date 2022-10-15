@@ -14,12 +14,14 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Exception;
+
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbCommonException extends \Exception
+class MydbCommonException extends Exception
 {
 
 }

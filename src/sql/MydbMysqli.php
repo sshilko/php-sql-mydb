@@ -15,6 +15,8 @@ declare(strict_types = 1);
 namespace sql;
 
 use mysqli;
+use mysqli_result;
+use mysqli_warning;
 use function mysqli_init;
 use function mysqli_query;
 use function mysqli_report;
@@ -150,7 +152,7 @@ class MydbMysqli
         return false;
     }
 
-    public function storeResult(int $mode = self::MYSQLI_STORE_RESULT_COPY_DATA): ?\mysqli_result
+    public function storeResult(int $mode = self::MYSQLI_STORE_RESULT_COPY_DATA): ?mysqli_result
     {
         if ($this->mysqli && $this->isConnected()) {
             return $this->mysqli->store_result($mode);
@@ -312,7 +314,7 @@ class MydbMysqli
             : null;
     }
 
-    public function getWarnings(): ?\mysqli_warning
+    public function getWarnings(): ?mysqli_warning
     {
         return $this->mysqli
             ? $this->mysqli->get_warnings()
