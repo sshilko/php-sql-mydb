@@ -12,6 +12,14 @@ MyDb - Component
 =================
 Simple class to work with MySQL database.
 
+<p align="center">
+	<a href="https://packagist.org/packages/sshilko/php-sql-mydb"><img src="https://poser.pugx.org/sshilko/php-sql-mydb/v/stable" alt="Latest Stable Version"></a>
+	<a href="https://packagist.org/packages/sshilko/php-sql-mydb/stats"><img src="https://poser.pugx.org/sshilko/php-sql-mydb/downloads" alt="Total Downloads"></a>
+	<a href="https://choosealicense.com/licenses/mit/"><img src="https://poser.pugx.org/phpstan/phpstan/license" alt="License"></a>
+	<a href="https://phpstan.org/"><img src="https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat" alt="PHPStan Enabled"></a>
+</p>
+
+
 ### This client wrappers helps you talk SQL to MySQL server
 
 - Raw DB access with minimal abstraction for developer convenience
@@ -30,10 +38,21 @@ Simple class to work with MySQL database.
 
 ##### Roadmap 2022-2023
 
+- Psalm etc. free ci/cd & github badges
 - PHP documentor (phpcs generator documentation)
-- Test coverage report
+- Test coverage report https://coveralls.io
 - More tests
 - Usage example
+- phan/phan https://github.com/phan/phan
+- exacat io 
+- https://codeclimate.com
+- https://app.codecov.io/
+- https://shepherd.dev/
+- https://github.com/EdgedesignCZ/phpqa
+- https://scrutinizer-ci.com
+- https://github.com/pdepend/pdepend
+- https://github.com/sebastianbergmann/phpcpd
+- phpmnd https://github.com/povils/phpmnd
 - Performance benchmarks
 - Run tests against MySQL8
 - PHP8 compatiblity
@@ -75,8 +94,8 @@ docker-compose exec app composer phpunit
 #### Run PHP Code Beautifier & PHP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (all files)
 
 ```
-docker-compose exec app composer phpcs
 docker-compose exec app composer phpcbf
+docker-compose exec app composer phpcs
 ```
 
 #### Run [Psalm](https://psalm.dev) - a static analysis tool for PHP (all files)
