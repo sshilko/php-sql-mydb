@@ -30,7 +30,7 @@ Simple class to work with MySQL database.
 
 ##### Roadmap 2022-2023
 
-- PHP documentor
+- PHP documentor (phpcs generator documentation)
 - Test coverage report
 - More tests
 - Usage example

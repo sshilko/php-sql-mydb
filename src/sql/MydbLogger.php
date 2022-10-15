@@ -15,6 +15,7 @@ declare(strict_types = 1);
 namespace sql;
 
 use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -65,17 +66,17 @@ class MydbLogger implements LoggerInterface
 
     public function notice($message, array $context = []): void
     {
-        $this->log(\Psr\Log\LogLevel::NOTICE, $message, $context);
+        $this->log(LogLevel::NOTICE, $message, $context);
     }
 
     public function info($message, array $context = []): void
     {
-        $this->log(\Psr\Log\LogLevel::INFO, $message, $context);
+        $this->log(LogLevel::INFO, $message, $context);
     }
 
     public function debug($message, array $context = []): void
     {
-        $this->log(\Psr\Log\LogLevel::DEBUG, $message, $context);
+        $this->log(LogLevel::DEBUG, $message, $context);
     }
 
     /**
