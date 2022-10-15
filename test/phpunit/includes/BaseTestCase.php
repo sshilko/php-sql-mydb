@@ -17,6 +17,7 @@ namespace phpunit\includes;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use sql\Mydb;
+use sql\MydbCredentials;
 use sql\MydbInterface;
 use sql\MydbOptions;
 use sql\MydbRegistry;
@@ -56,12 +57,12 @@ class BaseTestCase extends TestCase
     /**
      * @psalm-suppress UndefinedConstant
      */
-    private const ROOT_USER = PHPUNIT_MYSQL_ROOT_USER;
+    private const ROOT_U = PHPUNIT_MYSQL_ROOT_USER;
 
     /**
      * @psalm-suppress UndefinedConstant
      */
-    private const ROOT_PASS = PHPUNIT_MYSQL_ROOT_PASS;
+    private const ROOT_P = PHPUNIT_MYSQL_ROOT_PASS;
 
     /**
      * @var MockObject|LoggerInterface
@@ -92,10 +93,11 @@ class BaseTestCase extends TestCase
     protected function getDefaultDb(): MydbInterface
     {
         if (!static::$registry::hasInstance('db0')) {
-            $options = new MydbOptions($this->logger);
+            $options = new MydbOptions();
+            $credentials = new MydbCredentials(self::HOST, self::USER, self::PASS, self::NAME, (int) self::PORT);
             static::$registry::setInstance(
                 'db0',
-                new Mydb(self::HOST, (int) self::PORT, self::USER, self::PASS, self::NAME, $options)
+                new Mydb($credentials, $options, $this->logger)
             );
         }
 
@@ -105,11 +107,12 @@ class BaseTestCase extends TestCase
     protected function getNoConnectDb(): MydbInterface
     {
         if (!static::$registry::hasInstance('db1')) {
-            $options = new MydbOptions($this->logger);
-            $options->setTimeoutConnectSeconds(1);
+            $options = new MydbOptions();
+            $credentials = new MydbCredentials('1.2.3.4', self::USER, self::PASS, self::NAME, (int) self::PORT);
+            $options->setConnectTimeout(1);
             static::$registry::setInstance(
                 'db1',
-                new Mydb('129.1.2.3', (int) self::PORT, self::USER, self::PASS, self::NAME, $options)
+                new Mydb($credentials, $options, $this->logger)
             );
         }
 
@@ -119,12 +122,12 @@ class BaseTestCase extends TestCase
     protected function getRootDb(): MydbInterface
     {
         if (!static::$registry::hasInstance('db2')) {
-            $options = new MydbOptions($this->logger);
+            $options = new MydbOptions();
             $options->setAutocommit(true);
-            $options->setTimeoutConnectSeconds(1);
+            $credentials = new MydbCredentials(self::HOST, self::ROOT_U, self::ROOT_P, self::NAME, (int) self::PORT);
             static::$registry::setInstance(
                 'db2',
-                new Mydb(self::HOST, (int) self::PORT, self::ROOT_USER, self::ROOT_PASS, self::NAME, $options)
+                new Mydb($credentials, $options, $this->logger)
             );
         }
 

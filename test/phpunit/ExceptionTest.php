@@ -14,6 +14,8 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use sql\MydbExceptionConnection;
+
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
@@ -32,9 +34,26 @@ final class ExceptionTest extends includes\BaseTestCase
     public function testFailedToConnect(): void
     {
         $db = $this->getNoConnectDb();
-        $tableName = 'a' . time();
-        $this->expectExceptionMessage("Connection timed out");
-        $db->select("SELECT * from $tableName");
+        $this->logger->expects(self::once())->method('warning')->with('2002:Connection timed out');
+        $result = $db->open();
+        self::assertSame(false, $result);
+    }
+
+    public function testFailedToConnectAfterRetry(): void
+    {
+        $retry = 2;
+        $db = $this->getNoConnectDb();
+        $this->logger->expects(self::exactly($retry + 1))->method('warning')->with('2002:Connection timed out');
+        $result = $db->open($retry);
+        self::assertSame(false, $result);
+    }
+
+    public function testFailedToConnectLazy(): void
+    {
+        $db = $this->getNoConnectDb();
+        $this->expectException(MydbExceptionConnection::class);
+        $this->logger->expects(self::once())->method('warning')->with('2002:Connection timed out');
+        $db->select("SELECT 1");
     }
 
     public function testMySqlWarning(): void
@@ -57,9 +76,9 @@ final class ExceptionTest extends includes\BaseTestCase
     {
         $db = $this->getRootDb();
 
-        $netBuffer = $db->select("SELECT @@net_buffer_length as len");
+        $netBuffer = $db->select("SELECT @@max_allowed_packet as len");
         $minPacket = $netBuffer[0]['len'];
-        $bigPacket = $minPacket + 1;
+        $bigPacket = $minPacket * 2;
 
         /**
          * @var MockObject $logger

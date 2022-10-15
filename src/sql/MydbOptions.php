@@ -14,8 +14,6 @@ declare(strict_types = 1);
 
 namespace sql;
 
-use Psr\Log\LoggerInterface;
-use function ini_set;
 use const E_ALL;
 use const E_WARNING;
 
@@ -26,39 +24,31 @@ use const E_WARNING;
  */
 class MydbOptions
 {
-    protected const PHP_INI_MYSQL_TIMEOUT = 'mysqlnd.net_read_timeout';
-
     /**
-     * MAX_EXECUTION_TIME
-     * Milliseconds
-     *
-     * The execution timeout ONLY APPLIES TO "SELECT" statements
+     * The execution timeout ONLY APPLIES TO "SELECT" statements, seconds
      * X > 0, enabled
      * X = 0, not enabled.
      *
      * @see https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_max_execution_time
      */
-    protected int $maxExecutionTime = 890000;
+    protected int $serverSideSelectTimeout = 89;
 
-    protected int $retryTimes = 2;
-    protected int $retryWait = 250000;
-
-    protected int $timeoutConnectSeconds = 3;
+    /**
+     * MySql client connection timeout, seconds
+     */
+    protected int $connectTimeout = 5;
 
     protected int $errorReporting = E_ALL & ~E_WARNING & ~E_NOTICE;
 
     /**
      * The timeout in seconds for each attempt to read from the server.
-     * There are retries if necessary.
-     *
      * @see https://dev.mysql.com/doc/c-api/8.0/en/mysql-options.html
-     *
      * @see https://github.com/php/php-src/blob/12ab4cbd00e0dae52a5db98dda6da885acb408f6/
      *      ext/mysqli/mysqli.c#L654
      * @see https://github.com/php/php-src/blob/a03c1ed7aa2325d91595dcf9371297ab45543517/
      *      ext/mysqli/tests/mysqli_constants.phpt#L24
      */
-    protected int $timeoutReadSeconds = 89;
+    protected int $readTimeout = 90;
 
     /**
      * Internal network buffer of mysqlnd.net_cmd_buffer_size bytes for every connection
@@ -67,7 +57,7 @@ class MydbOptions
      *
      * @see http://php.net/manual/en/mysqlnd.config.php
      */
-    protected int $internalCmdBufferSuze = 6144;
+    protected int $networkBufferSize = 6144;
 
     /**
      * More memory for better performance
@@ -79,10 +69,10 @@ class MydbOptions
      * If a packet body is larger than mysqlnd.net_read_buffer_size bytes,
      * mysqlnd has to call read() multiple times
      */
-    protected int $internalNetReadBuffer = 49152;
+    protected int $networkReadBuffer = 49152;
 
-    protected int $internalClientErrorLevel = MydbMysqli::MYSQLI_REPORT_ALL ^ 
-                                              MydbMysqli::MYSQLI_REPORT_STRICT ^ 
+    protected int $internalClientErrorLevel = MydbMysqli::MYSQLI_REPORT_ALL ^
+                                              MydbMysqli::MYSQLI_REPORT_STRICT ^
                                               MydbMysqli::MYSQLI_REPORT_INDEX;
 
     protected string $timeZone = 'UTC';
@@ -100,20 +90,6 @@ class MydbOptions
      * on a non-interactive TCP/IP or UNIX File connection before closing it
      */
     protected int $internalNonInteractiveTimeout = 7200;
-
-//    /**
-//     * Number of seconds the server waits for activity
-//     * on an interactive connection before closing it
-//     */
-//    protected int $internalInteractiveTimeout = 14400;
-
-    /**
-     * Prevent entry of invalid values such as those that are out of range, or NULL specified for NOT NULL columns
-     * TRADITIONAL = strict mode
-     *
-     * @see https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional
-     */
-    protected string $internalClientSQLMode = 'TRADITIONAL';
 
     /**
      * Recommended defaults:
@@ -138,29 +114,6 @@ class MydbOptions
      */
     protected bool $readonly = false;
 
-    protected LoggerInterface $logger;
-
-    protected MydbMysqli $mydbMysqli;
-
-    protected int $ignoreUserAbort;
-
-    protected string $internalTransactionIsolationLevelReadonly = 'READ COMMITTED';
-
-    public function __construct(?LoggerInterface $logger = null, ?MydbMysqli $mydbMysqli = null)
-    {
-        $this->ignoreUserAbort = ignore_user_abort();
-        $this->logger = $logger ?? new MydbLogger();
-        $this->mydbMysqli = $mydbMysqli ?? new MydbMysqli();
-        $this->setNetReadTimeout();
-    }
-
-    public function getMydbMysqli(): MydbMysqli
-    {
-        return $this->mydbMysqli;
-    }
-
-    /**
-     */
     public function getInternalNonInteractiveTimeout(): int
     {
         return $this->internalNonInteractiveTimeout;
@@ -169,69 +122,26 @@ class MydbOptions
     public function setInternalNonInteractiveTimeout(int $internalNonInteractiveTimeout): void
     {
         $this->internalNonInteractiveTimeout = $internalNonInteractiveTimeout;
-        $this->setNetReadTimeout();
     }
 
-    public function getInternalTransactionIsolationLevelReadonly(): string
+    public function getServerSideSelectTimeout(): int
     {
-        return $this->internalTransactionIsolationLevelReadonly;
+        return $this->serverSideSelectTimeout;
     }
 
-    public function setInternalTransactionIsolationLevelReadonly(string $level): void
+    public function setServerSideSelectTimeout(int $seconds): void
     {
-        $this->internalTransactionIsolationLevelReadonly = $level;
+        $this->serverSideSelectTimeout = $seconds;
     }
 
-    public function getIgnoreUserAbort(): int
+    public function getConnectTimeout(): int
     {
-        return $this->ignoreUserAbort;
+        return $this->connectTimeout;
     }
 
-    public function setIgnoreUserAbort(int $ignoreUserAbort): void
+    public function setConnectTimeout(int $seconds): void
     {
-        $this->ignoreUserAbort = $ignoreUserAbort;
-    }
-
-    public function getMaxExecutionTime(): int
-    {
-        return $this->maxExecutionTime;
-    }
-
-    public function setMaxExecutionTime(int $maxExecutionTime): void
-    {
-        $this->maxExecutionTime = $maxExecutionTime;
-        $this->setNetReadTimeout();
-    }
-
-    public function getRetryTimes(): int
-    {
-        return $this->retryTimes;
-    }
-
-    public function setRetryTimes(int $retryTimes): void
-    {
-        $this->retryTimes = $retryTimes;
-    }
-
-    public function getRetryWait(): int
-    {
-        return $this->retryWait;
-    }
-
-    public function setRetryWait(int $retryWait): void
-    {
-        $this->retryWait = $retryWait;
-    }
-
-    public function getTimeoutConnectSeconds(): int
-    {
-        return $this->timeoutConnectSeconds;
-    }
-
-    public function setTimeoutConnectSeconds(int $timeoutConnectSeconds): void
-    {
-        $this->timeoutConnectSeconds = $timeoutConnectSeconds;
-        $this->setNetReadTimeout();
+        $this->connectTimeout = $seconds;
     }
 
     public function getErrorReporting(): int
@@ -244,35 +154,34 @@ class MydbOptions
         $this->errorReporting = $errorReporting;
     }
 
-    public function getTimeoutReadSeconds(): int
+    public function getReadTimeout(): int
     {
-        return $this->timeoutReadSeconds;
+        return $this->readTimeout;
     }
 
-    public function setTimeoutReadSeconds(int $timeoutReadSeconds): void
+    public function setReadTimeout(int $readTimeout): void
     {
-        $this->timeoutReadSeconds = $timeoutReadSeconds;
-        $this->setNetReadTimeout();
+        $this->readTimeout = $readTimeout;
     }
 
-    public function getInternalCmdBufferSuze(): int
+    public function getNetworkBufferSize(): int
     {
-        return $this->internalCmdBufferSuze;
+        return $this->networkBufferSize;
     }
 
-    public function setInternalCmdBufferSuze(int $internalCmdBufferSuze): void
+    public function setNetworkBufferSize(int $networkBufferSize): void
     {
-        $this->internalCmdBufferSuze = $internalCmdBufferSuze;
+        $this->networkBufferSize = $networkBufferSize;
     }
 
-    public function getInternalNetReadBuffer(): int
+    public function getNetworkReadBuffer(): int
     {
-        return $this->internalNetReadBuffer;
+        return $this->networkReadBuffer;
     }
 
-    public function setInternalNetReadBuffer(int $internalNetReadBuffer): void
+    public function setNetworkReadBuffer(int $networkReadBuffer): void
     {
-        $this->internalNetReadBuffer = $internalNetReadBuffer;
+        $this->networkReadBuffer = $networkReadBuffer;
     }
 
     public function getInternalClientErrorLevel(): int
@@ -293,16 +202,6 @@ class MydbOptions
     public function setTimeZone(string $timeZone): void
     {
         $this->timeZone = $timeZone;
-    }
-
-    public function getInternalClientSQLMode(): string
-    {
-        return $this->internalClientSQLMode;
-    }
-
-    public function setInternalClientSQLMode(string $internalClientSQLMode): void
-    {
-        $this->internalClientSQLMode = $internalClientSQLMode;
     }
 
     public function isAutocommit(): bool
@@ -343,28 +242,5 @@ class MydbOptions
     public function setReadonly(bool $readonly): void
     {
         $this->readonly = $readonly;
-    }
-
-    public function getLogger(): LoggerInterface
-    {
-        return $this->logger;
-    }
-
-    protected function phpIniSet(string $key, string $value): void
-    {
-        if (false === ini_set($key, $value)) {
-            throw new MydbException('Failed to ini_set ' . $key);
-        }
-    }
-
-    private function setNetReadTimeout(): void
-    {
-        $timeoutSeconds = (int) (max(
-            round($this->maxExecutionTime / 1000),
-            $this->getInternalNonInteractiveTimeout(),
-            $this->getTimeoutReadSeconds()
-        )) + $this->getTimeoutConnectSeconds();
-
-        $this->phpIniSet(self::PHP_INI_MYSQL_TIMEOUT, (string) $timeoutSeconds);
     }
 }
