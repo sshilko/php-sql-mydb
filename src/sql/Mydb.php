@@ -137,7 +137,7 @@ class Mydb implements
             }
         }
 
-        if (false === $result) {
+        if (false === $result || null === $result) {
             return [];
         }
 
@@ -634,7 +634,7 @@ class Mydb implements
             $this->onError($e->getMessage());
         }
 
-        if (false !== $this->terminating) {
+        if ($this->terminating) {
             return;
         }
 

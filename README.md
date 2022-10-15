@@ -62,12 +62,36 @@ docker-compose exec app composer dump-autoload
 docker-compose stop
 ```
 
-#### PHPUNIT PHPCBF PHPCS PHPSTAN PSALM PHPMD
+#### Apply coding standards to modified files
+
+`docker-compose exec app composer pre-commit`
+
+#### Run [PHPUnit](https://phpunit.de) test suite
+
 ```
 docker-compose exec app composer phpunit
-docker-compose exec app composer pre-commit
+```
+
+#### Run PHP Code Beautifier & PHP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (all files)
+
+```
+docker-compose exec app composer phpcs
+docker-compose exec app composer phpcbf
+```
+
+#### Run [Psalm](https://psalm.dev) - a static analysis tool for PHP (all files)
+
+```
 docker-compose exec app composer psalm
 docker-compose exec app composer psalm-alter
 docker-compose exec app composer psalm-taint
-docker-compose exec app composer phpmd
 ```
+
+#### Run [PHPStan](https://phpstan.org) - PHP Static Analysis Tool (all files)
+
+`docker-compose exec app composer phpstan`
+
+#### Run [PHPMD](https://phpmd.org) - PHP Mess Detector
+
+`docker-compose exec app composer phpmd`
+
