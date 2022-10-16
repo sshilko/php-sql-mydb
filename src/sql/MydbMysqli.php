@@ -15,15 +15,13 @@ declare(strict_types = 1);
 namespace sql;
 
 use mysqli;
-use mysqli_result;
-use mysqli_warning;
+use function array_merge;
 use function in_array;
 use function max;
 use function mysqli_init;
 use function mysqli_query;
 use function mysqli_report;
 use function sprintf;
-use const MYSQLI_ASSOC;
 use const MYSQLI_ASYNC;
 use const MYSQLI_INIT_COMMAND;
 use const MYSQLI_OPT_CONNECT_TIMEOUT;
@@ -45,7 +43,6 @@ use const MYSQLI_TRANS_START_READ_ONLY;
  */
 class MydbMysqli
 {
-    public const MYSQLI_ASSOC = MYSQLI_ASSOC;
     public const MYSQLI_INIT_COMMAND = MYSQLI_INIT_COMMAND;
     public const MYSQLI_OPT_CONNECT_TIMEOUT = MYSQLI_OPT_CONNECT_TIMEOUT;
     public const MYSQLI_OPT_NET_CMD_BUFFER_SIZE = MYSQLI_OPT_NET_CMD_BUFFER_SIZE;
@@ -155,10 +152,44 @@ class MydbMysqli
         return false;
     }
 
-    public function storeResult(int $mode = self::MYSQLI_STORE_RESULT_COPY_DATA): ?mysqli_result
+    public function readServerResponse(MydbEnvironment $environment): ?MydbMysqliResult
     {
         if ($this->mysqli && $this->isConnected()) {
-            return $this->mysqli->store_result($mode);
+            $phpWarnings = [];
+            /**
+             * @phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
+             */
+            $oldHandler = $environment->set_error_handler(static function ($errno, $error) use (&$phpWarnings) {
+                $phpWarnings[] = $error;
+
+                return true;
+            });
+            $result = $this->mysqli->store_result(self::MYSQLI_STORE_RESULT_COPY_DATA);
+            $environment->set_error_handler($oldHandler);
+
+            $fieldsCount = $this->getFieldCount();
+
+            $warnings = [];
+            if ($this->getWarningCount() > 0) {
+                $warnings = array_merge($warnings, $this->getWarnings());
+            }
+            if ($phpWarnings) {
+                $warnings = array_merge($warnings, $phpWarnings);
+            }
+
+            $response = new MydbMysqliResult(false === $result ? null : $result, $warnings, $fieldsCount);
+
+            $error = $this->getError();
+            if ($error) {
+                $response->setErrorMessage($error);
+            }
+
+            $errno = $this->getErrNo();
+            if ($errno > 0) {
+                $response->setErrorNumber($errno);
+            }
+
+            return $response;
         }
 
         return null;
@@ -303,27 +334,6 @@ class MydbMysqli
             : null;
     }
 
-    public function getFieldCount(): ?int
-    {
-        return $this->mysqli
-            ? $this->mysqli->field_count
-            : null;
-    }
-
-    public function getWarningCount(): ?int
-    {
-        return $this->mysqli
-            ? $this->mysqli->warning_count
-            : null;
-    }
-
-    public function getWarnings(): ?mysqli_warning
-    {
-        return $this->mysqli
-            ? $this->mysqli->get_warnings()
-            : null;
-    }
-
     public function getAffectedRows(): ?int
     {
         return $this->mysqli
@@ -356,5 +366,49 @@ class MydbMysqli
         }
 
         return false;
+    }
+
+    /**
+     * Returns fields count caused by query execution
+     * Requires store_result to be called first
+     * @see mysqli::store_result()
+     */
+    protected function getFieldCount(): ?int
+    {
+        return $this->mysqli
+            ? $this->mysqli->field_count
+            : null;
+    }
+
+    /**
+     * Returns warnings caused by query execution
+     * Requires store_result to be called first
+     * @see mysqli::store_result()
+     */
+    protected function getWarningCount(): ?int
+    {
+        return $this->mysqli
+            ? $this->mysqli->warning_count
+            : null;
+    }
+
+    protected function getWarnings(): array
+    {
+        if ($this->mysqli) {
+            /**
+             * This can be fetched only ONCE, after that it returns (bool) false
+             */
+            $warnings = $this->mysqli->get_warnings();
+            if ($warnings) {
+                $array = [];
+                do {
+                    $array[] = $warnings->message;
+                } while ($warnings->next());
+
+                return $array;
+            }
+        }
+
+        return [];
     }
 }

@@ -15,6 +15,7 @@ declare(strict_types = 1);
 namespace phpunit;
 
 use sql\MydbConnectException;
+use function sprintf;
 use function time;
 
 /**
@@ -27,9 +28,21 @@ final class ExceptionTest extends includes\BaseTestCase
     public function testTableDoesNotExist(): void
     {
         $db = $this->getDefaultDb();
-        $tableName = 'notable' . time();
-        $this->expectExceptionMessage("Table '" . self::getDbName(). "." . $tableName . "' doesn't exist");
-        $db->select("SELECT * from " . $tableName);
+        $tableName = 'table' . time();
+        $sql = "SELECT * from " . $tableName;
+        $this->logger
+            ->expects(self::once())
+            ->method('warning')
+            ->with(
+                sprintf(
+                    "mysqli::store_result(): (42S02/1146): Table '%s.%s' doesn't exist",
+                    $this->getDbName(),
+                    $tableName
+                )
+            );
+
+        $this->expectExceptionMessage("1146 Table '" . self::getDbName(). "." . $tableName . "' doesn't exist");
+        $db->select($sql);
     }
 
     /**

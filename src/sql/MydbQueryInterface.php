@@ -24,5 +24,5 @@ interface MydbQueryInterface
     /**
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      */
-    public function query(string $query): array;
+    public function query(string $query): ?array;
 }

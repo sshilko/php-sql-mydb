@@ -97,63 +97,34 @@ class Mydb implements
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      *
-     * @return array<array<(float|int|string|null)>>
-     *
-     * @psalm-return list<array<(float|int|string|null)>>
-     *@throws MydbConnectException
-     *
+     * @return array<array<(float|int|string|null)>>|null
+     * @psalm-return list<array<(float|int|string|null)>>|null
+     * @throws MydbConnectException
      * @throws MydbCommonException
      */
-    public function query(string $query): array
+    public function query(string $query): ?array
     {
         if (!$this->connect()) {
             throw new MydbConnectException();
         }
 
-        $result = false;
+        $result = $this->sendClientRequest($query);
+        $packet = $this->readServerResponse($query);
 
-        $originalHandler = $this->environment->set_error_handler(static function () {
-            return true;
-        });
-        if ($this->mysqli->realQuery($query)) {
-            $result = $this->mysqli->storeResult();
-            if (null === $result) {
-                $this->onError('Failed to mysqli.store_result from mysqlnd to php userland', $query);
+        if (false === $result || null === $packet) {
+            return null;
+        }
+
+        if ($packet->getFieldCount() > 0) {
+            $payload = $packet->getResult();
+            if (null === $payload) {
+                $this->onError($packet->getError() ?? 'Reading of the result set failed', $query);
             }
-        }
-        $this->environment->set_error_handler($originalHandler);
 
-        $sqlerror = $this->mysqli->getError();
-        if ($sqlerror) {
-            $this->onError($sqlerror, $query);
+            return $payload;
         }
 
-        $hasWarnings = $this->mysqli->getWarningCount();
-        if ($hasWarnings > 0) {
-            $warnings = $this->mysqli->getWarnings();
-            if ($warnings) {
-                do {
-                    $this->onWarning($warnings->message, $query);
-                } while ($warnings->next());
-            }
-        }
-
-        if (false === $result || null === $result) {
-            return [];
-        }
-
-        if (0 === $result->num_rows) {
-            return [];
-        }
-
-        $resultArray = [];
-
-        if ($this->mysqli->getFieldCount()) {
-            $resultArray = $result->fetch_all(MydbMysqli::MYSQLI_ASSOC);
-            $result->free_result();
-        }
-
-        return $resultArray;
+        return null;
     }
 
     /**
@@ -182,11 +153,11 @@ class Mydb implements
     /**
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      *
-     * @return array<array<(float|int|string|null)>>
+     * @return array<array<(float|int|string|null)>>|null
      *
-     * @psalm-return list<array<(float|int|string|null)>>
+     * @psalm-return list<array<(float|int|string|null)>>|null
      */
-    public function select(string $query): array
+    public function select(string $query): ?array
     {
         return $this->query($query);
     }
@@ -238,20 +209,10 @@ class Mydb implements
             throw new MydbConnectException();
         }
 
-        if (false === $this->mysqli->realQuery($query)) {
-            if ($this->mysqli->isServerGone()) {
-                $this->mysqli->close();
-            }
+        $result = $this->sendClientRequest($query);
+        $packet = $this->readServerResponse($query);
 
-            $mysqlError = $this->mysqli->getError();
-            if ($mysqlError) {
-                $this->onError($mysqlError, $query);
-            }
-
-            return false;
-        }
-
-        return true;
+        return false !== $result && null !== $packet;
     }
 
     /**
@@ -335,6 +296,10 @@ class Mydb implements
         $sql = 'SHOW KEYS FROM `' . $table . '`';
 
         $result = $this->query($sql);
+
+        if (null === $result) {
+            return null;
+        }
 
         foreach ($result as $row) {
             if (!isset($row['Key_name'])) {
@@ -640,6 +605,40 @@ class Mydb implements
         }
 
         $this->environment->gc_collect_cycles();
+    }
+
+    /**
+     * @throws MydbCommonException
+     */
+    protected function sendClientRequest(string $query): bool
+    {
+        $originalHandler = $this->environment->set_error_handler();
+        $result = $this->mysqli->realQuery($query);
+        $this->environment->set_error_handler($originalHandler);
+
+        return $result;
+    }
+
+    protected function readServerResponse(string $query): ?MydbMysqliResult
+    {
+        $packet = $this->mysqli->readServerResponse($this->environment);
+
+        $warnings = $packet->getWarnings();
+        if (count($warnings) > 0) {
+            foreach ($warnings as $warningMessage) {
+                $this->onWarning($warningMessage, $query);
+            }
+        }
+
+        $errorMessage = $packet->getError();
+        if (null !== $errorMessage) {
+            if ($this->mysqli->isServerGone()) {
+                $this->mysqli->close();
+            }
+            $this->onError($errorMessage, $query);
+        }
+
+        return $packet;
     }
 
     /**

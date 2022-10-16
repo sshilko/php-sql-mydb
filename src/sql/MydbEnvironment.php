@@ -47,9 +47,9 @@ class MydbEnvironment
     /**
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
-    public function set_error_handler(?callable $callback, int $error_levels = E_ALL|E_STRICT): ?callable
+    public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): ?callable
     {
-        return set_error_handler($callback, $error_levels);
+        return set_error_handler($callback ?? $this->getNullErrorHandler(), $error_levels);
     }
 
     public function setMysqlndNetReadTimeout(string $timeoutSeconds): bool
@@ -92,5 +92,12 @@ class MydbEnvironment
         }
 
         return $ini;
+    }
+
+    protected function getNullErrorHandler(): callable
+    {
+        return static function () {
+            return true;
+        };
     }
 }
