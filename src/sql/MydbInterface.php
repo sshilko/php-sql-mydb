@@ -79,7 +79,7 @@ interface MydbInterface
     /**
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      */
-    public function select(string $query): array;
+    public function select(string $query): ?array;
 
     public function delete(string $query): ?int;
 
