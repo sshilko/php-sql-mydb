@@ -12,7 +12,7 @@
 
 declare(strict_types = 1);
 
-namespace sql\MydbException;
+namespace sql;
 
 use Exception;
 
@@ -21,7 +21,7 @@ use Exception;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class CommonException extends Exception
+class MydbException extends Exception
 {
 
 }

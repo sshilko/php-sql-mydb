@@ -15,11 +15,14 @@ declare(strict_types = 1);
 namespace sql;
 
 use Psr\Log\LoggerInterface;
-use sql\MydbException\CommonException;
 use sql\MydbException\ConnectException;
 use sql\MydbException\DisconnectException;
 use sql\MydbException\InternalException;
+use sql\MydbException\TransactionBeginException;
+use sql\MydbException\TransactionCommitException;
 use sql\MydbException\TransactionException;
+use sql\MydbException\TransactionRollbackException;
+use sql\MydbMysqli\MydbMysqliResult;
 use Throwable;
 use function array_map;
 use function count;
@@ -78,7 +81,7 @@ class Mydb implements MydbInterface
      *
      * @see http://php.net/manual/en/mysqli.close.php
      * @see http://php.net/manual/en/mysqli.ping.php (MysqlND not supports reconnect)
-     * @throws CommonException
+     * @throws MydbException
      */
     public function __destruct()
     {
@@ -89,7 +92,7 @@ class Mydb implements MydbInterface
     /**
      * Open connection to remote server
      * @param int $retry retry failed connection attempts
-     * @throws CommonException
+     * @throws MydbException
      */
     public function open(int $retry = 0): bool
     {
@@ -105,7 +108,7 @@ class Mydb implements MydbInterface
      * @return array<array<(float|int|string|null)>>|null
      * @psalm-return list<array<(float|int|string|null)>>|null
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function query(string $query): ?array
     {
@@ -138,7 +141,7 @@ class Mydb implements MydbInterface
     /**
      * With MYSQLI_ASYNC (available with mysqlnd), it is possible to perform query asynchronously.
      * mysqli_poll() is then used to get results from such queries.
-     * @throws CommonException
+     * @throws MydbException
      * @throws ConnectException
      */
     public function async(string $command): void
@@ -150,7 +153,7 @@ class Mydb implements MydbInterface
         if (false === $this->options->isAutocommit() ||
             $this->options->isPersistent() ||
             $this->options->isReadonly()) {
-            throw new CommonException('Async is safe only with autocommit=true & non-persistent & rw configuration');
+            throw new MydbException('Async is safe only with autocommit=true & non-persistent & rw configuration');
         }
 
         $this->mysqli->mysqliQueryAsync($command);
@@ -158,7 +161,7 @@ class Mydb implements MydbInterface
 
     /**
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
-     * @throws CommonException
+     * @throws MydbException
      * @throws ConnectException
      */
     public function select(string $query): ?array
@@ -167,7 +170,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      * @throws ConnectException
      */
     public function table(string $query): ?array
@@ -176,7 +179,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      * @throws ConnectException
      */
     public function values(string $query): ?array
@@ -186,14 +189,14 @@ class Mydb implements MydbInterface
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function delete(string $query): ?int
     {
         if ($this->command($query)) {
             $rows = $this->mysqli->getAffectedRows();
             if (null === $rows) {
-                $this->onError(new CommonException('Delete query returned error'), $query);
+                $this->onError(new MydbException('Delete query returned error'), $query);
             }
 
             return $rows;
@@ -204,7 +207,7 @@ class Mydb implements MydbInterface
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function call(string $query): void
     {
@@ -213,7 +216,7 @@ class Mydb implements MydbInterface
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function do(string $query): void
     {
@@ -222,7 +225,7 @@ class Mydb implements MydbInterface
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function handler(string $query): void
     {
@@ -231,7 +234,7 @@ class Mydb implements MydbInterface
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function dds(string $statement): void
     {
@@ -240,14 +243,14 @@ class Mydb implements MydbInterface
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function update(string $query): ?int
     {
         if ($this->command($query)) {
             $rows = $this->mysqli->getAffectedRows();
             if (null === $rows) {
-                $this->onError(new CommonException('Update query returned error'), $query);
+                $this->onError(new MydbException('Update query returned error'), $query);
             }
 
             return $rows;
@@ -258,7 +261,7 @@ class Mydb implements MydbInterface
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function insert(string $query): ?string
     {
@@ -271,7 +274,7 @@ class Mydb implements MydbInterface
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function replace(string $query): ?string
     {
@@ -284,7 +287,7 @@ class Mydb implements MydbInterface
 
     /**
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
-     * @throws CommonException
+     * @throws MydbException
      * @throws ConnectException
      */
     public function command(string $query): bool
@@ -307,7 +310,7 @@ class Mydb implements MydbInterface
     /**
      * @return array<string>
      *
-     * @throws CommonException
+     * @throws MydbException
      *
      * @psalm-return list<string>
      */
@@ -327,7 +330,7 @@ class Mydb implements MydbInterface
             )
         ) {
             $this->onError(
-                new CommonException("Column not of type 'enum' or 'set'"),
+                new MydbException("Column not of type 'enum' or 'set'"),
                 $query
             );
         }
@@ -349,7 +352,7 @@ class Mydb implements MydbInterface
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function escape(string $unescaped): string
     {
@@ -369,7 +372,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      * @throws ConnectException
      */
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void
@@ -388,7 +391,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      * @throws ConnectException
      */
     public function getPrimaryKey(string $table): ?string
@@ -417,7 +420,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      */
     public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool
     {
@@ -461,7 +464,7 @@ class Mydb implements MydbInterface
      * @param array $columnSetWhere ['col1' => [ ['current1', 'new1'], ['current2', 'new2']]
      * @param array $where ['col2' => 'value2', 'col3' => ['v3', 'v4']]
      * @param string $table 'mytable'
-     * @throws CommonException
+     * @throws MydbException
      */
     public function updateWhereMany(array $columnSetWhere, array $where, string $table): void
     {
@@ -544,7 +547,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      * @throws ConnectException
      */
     public function replaceOne(array $data, string $table): ?string
@@ -599,7 +602,7 @@ class Mydb implements MydbInterface
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function beginTransaction(): void
     {
@@ -611,12 +614,12 @@ class Mydb implements MydbInterface
             return;
         }
 
-        $this->onError(TransactionException::getBeginException());
+        $this->onError(new TransactionBeginException());
     }
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function rollbackTransaction(): void
     {
@@ -628,12 +631,12 @@ class Mydb implements MydbInterface
             return;
         }
 
-        $this->onError(TransactionException::getRollbackException());
+        $this->onError(new TransactionRollbackException());
     }
 
     /**
      * @throws ConnectException
-     * @throws CommonException
+     * @throws MydbException
      */
     public function commitTransaction(): void
     {
@@ -645,11 +648,11 @@ class Mydb implements MydbInterface
             return;
         }
 
-        $this->onError(TransactionException::getCommitException());
+        $this->onError(new TransactionCommitException());
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      */
     public function close(): void
     {
@@ -674,7 +677,7 @@ class Mydb implements MydbInterface
                     MydbMysqli::MYSQLI_TRANS_COR_RELEASE);
 
                 if (false === $commit) {
-                    $this->onError(TransactionException::getCommitException());
+                    $this->onError(new TransactionCommitException());
                 }
             }
 
@@ -685,7 +688,7 @@ class Mydb implements MydbInterface
             if (false === $this->mysqli->close()) {
                 throw new DisconnectException();
             }
-        } catch (CommonException $e) {
+        } catch (MydbException $e) {
             $this->onError($e);
         } catch (Throwable $e) {
             $this->onError(new InternalException($e->getMessage()));
@@ -708,7 +711,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      */
     protected function readServerResponse(string $query): ?MydbMysqliResult
     {
@@ -760,9 +763,9 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      */
-    protected function onError(CommonException $exception, ?string $sql = null): void
+    protected function onError(MydbException $exception, ?string $sql = null): void
     {
         $this->logger->error($exception->getMessage(), ['sql' => $sql]);
 
@@ -770,7 +773,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      */
     protected function afterConnectionSuccess(): void
     {
@@ -794,7 +797,7 @@ class Mydb implements MydbInterface
 
         if (false === $this->options->isPersistent()) {
             if (false === $c->autocommit(true)) {
-                throw new CommonException('Failed setting db autocommit state for read-only scenario');
+                throw new MydbException('Failed setting db autocommit state for read-only scenario');
             }
         }
 
@@ -807,7 +810,7 @@ class Mydb implements MydbInterface
     }
 
     /**
-     * @throws CommonException
+     * @throws MydbException
      */
     protected function connect(int $retry = 0): bool
     {
@@ -860,7 +863,7 @@ class Mydb implements MydbInterface
 
         if (!$this->options->isAutocommit()) {
             if (false === $this->mysqli->autocommit(false)) {
-                throw new CommonException('Failed setting db autocommit state');
+                throw new MydbException('Failed setting db autocommit state');
             }
         }
 
@@ -871,7 +874,7 @@ class Mydb implements MydbInterface
 
     /**
      * @return void
-     * @throws CommonException
+     * @throws MydbException
      */
     protected function checkServerVersion(): void
     {
@@ -880,7 +883,7 @@ class Mydb implements MydbInterface
              * Minimum version
              * max_statement_time added MySQL 5.7.4; renamed max_execution_time MySQL 5.7.8
              */
-            throw new CommonException('Minimum required MySQL server version is 50708');
+            throw new MydbException('Minimum required MySQL server version is 50708');
         }
     }
 
