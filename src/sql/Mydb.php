@@ -160,9 +160,7 @@ class Mydb implements
         if (false === $this->options->isAutocommit() ||
             $this->options->isPersistent() ||
             $this->options->isReadonly()) {
-            throw new CommonException(
-                'Async is safe only with autocommit=true & non-persistent & rw configuration'
-            );
+            throw new CommonException('Async is safe only with autocommit=true & non-persistent & rw configuration');
         }
 
         $this->mysqli->mysqliQueryAsync($command);
@@ -296,9 +294,14 @@ class Mydb implements
         }
 
         $result = $this->sendClientRequest($query);
+
+        if (false === $result) {
+            return false;
+        }
+
         $packet = $this->readServerResponse($query);
 
-        return false !== $result && null !== $packet;
+        return null !== $packet;
     }
 
     /**
@@ -705,6 +708,9 @@ class Mydb implements
     protected function readServerResponse(string $query): ?MydbMysqliResult
     {
         $packet = $this->mysqli->readServerResponse($this->environment);
+        if (null === $packet) {
+            return null;
+        }
 
         $warnings = $packet->getWarnings();
         if (count($warnings) > 0) {

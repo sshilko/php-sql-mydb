@@ -16,6 +16,7 @@ namespace sql;
 
 use mysqli;
 use function array_merge;
+use function array_values;
 use function in_array;
 use function max;
 use function mysqli_init;
@@ -155,12 +156,9 @@ class MydbMysqli
     public function readServerResponse(MydbEnvironment $environment): ?MydbMysqliResult
     {
         if ($this->mysqli && $this->isConnected()) {
-            $phpWarnings = [];
-            /**
-             * @phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
-             */
-            $oldHandler = $environment->set_error_handler(static function ($errno, $error) use (&$phpWarnings) {
-                $phpWarnings[] = $error;
+            $events = [];
+            $oldHandler = $environment->set_error_handler(static function (int $errno, string $error) use (&$events) {
+                $events[$errno] = $error;
 
                 return true;
             });
@@ -173,11 +171,11 @@ class MydbMysqli
             if ($this->getWarningCount() > 0) {
                 $warnings = array_merge($warnings, $this->getWarnings());
             }
-            if ($phpWarnings) {
-                $warnings = array_merge($warnings, $phpWarnings);
+            if ($events) {
+                $warnings = array_merge($warnings, array_values($events));
             }
 
-            $response = new MydbMysqliResult(false === $result ? null : $result, $warnings, $fieldsCount);
+            $response = new MydbMysqliResult(false === $result ? null : $result, $warnings, $fieldsCount ?? 0);
 
             $error = $this->getError();
             if ($error) {
@@ -395,18 +393,13 @@ class MydbMysqli
     protected function getWarnings(): array
     {
         if ($this->mysqli) {
-            /**
-             * This can be fetched only ONCE, after that it returns (bool) false
-             */
             $warnings = $this->mysqli->get_warnings();
-            if ($warnings) {
-                $array = [];
-                do {
-                    $array[] = $warnings->message;
-                } while ($warnings->next());
+            $array = [];
+            do {
+                $array[] = $warnings->message;
+            } while ($warnings->next());
 
-                return $array;
-            }
+            return $array;
         }
 
         return [];

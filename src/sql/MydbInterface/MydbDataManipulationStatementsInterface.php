@@ -28,16 +28,19 @@ namespace sql\MydbInterface;
  */
 interface MydbDataManipulationStatementsInterface
 {
-    /**
-     * @param array<array-key, float|int|string|MydbExpression> $update
-     */
     public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool;
 
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void;
 
     public function updateWhereMany(array $columnSetWhere, array $where, string $table): void;
 
-    public function insertMany(array $data, array $columns, string $table, bool $ignore = false, ?string $onDuplicate = null): void;
+    public function insertMany(
+        array $data,
+        array $columns,
+        string $table,
+        bool $ignore = false,
+        ?string $onDuplicate = null
+    ): void;
 
     public function insertOne(array $data, string $table): ?string;
 

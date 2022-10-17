@@ -31,5 +31,4 @@ interface MydbAdministrationStatementsInterface
      * @return array<string>
      */
     public function getEnumValues(string $table, string $column): array;
-
 }
