@@ -46,22 +46,25 @@ Simple class to work with MySQL database.
 
 #### What is the best use-case for this library
 
-- MySQL server and CRUD php application
-- No prepared statements
-- No dependencies
-- No abstractions
-- No reflections
+- MySQL server 
+- High performance, low-latency data-intensive applications
+- API first applications with existing user-input marshalling
+- No prepared statements requirement
+- No 3rd party dependencies
+- Minimum abstractions, no ORM no ActiveRecord patterns
+- No run-time/compile-time steps
 - Minimum code, maximum-performance
 
-MySQL database is fast, reliable and scalable, php runtime is the same.
+#### Why this library exists
 
-Measure your app performance with real-world datasets and organic user load.
+* I know that MySQL database is fast, reliable and scalable, php runtime is the same
+* I value developers time and do not add complexity where possible
+* I measure my app's performance with real-world datasets and organic load
+* I optimize for my use-case, focus on bottlenecks, remember that there is no ~~NoSQL~~ silver bullet
+* I do not optimize early because resources like CPU & memory are cheap 
+* I focus on building architecture, learn from others and improve over time
 
-Optimize for your use-case, focus on bottlenecks, there is no ~~NoSQL~~ silver bullet.
-
-Do not optimize early, resources like CPU & memory are cheap, build an architecture instead.
-
-##### Compatibility
+##### Is it compatible?
 
 - [+] PHP 7.4
 - [+] MySQL <-> PHP via TCP
