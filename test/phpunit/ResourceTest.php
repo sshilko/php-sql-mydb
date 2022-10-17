@@ -26,4 +26,17 @@ final class ResourceTest extends includes\BaseTestCase
         $db = $this->getDefaultDb();
         self::assertTrue($db->open());
     }
+
+    public function testClose(): void
+    {
+        $db = $this->getDefaultDb();
+        self::assertNull($db->close());
+    }
+
+    public function testOpenClose(): void
+    {
+        $db = $this->getDefaultDb();
+        self::assertTrue($db->open());
+        self::assertNull($db->close());
+    }
 }

@@ -20,7 +20,6 @@ use sql\MydbException\DisconnectException;
 use sql\MydbException\InternalException;
 use sql\MydbException\TransactionBeginException;
 use sql\MydbException\TransactionCommitException;
-use sql\MydbException\TransactionException;
 use sql\MydbException\TransactionRollbackException;
 use sql\MydbMysqli\MydbMysqliResult;
 use Throwable;
@@ -38,8 +37,8 @@ use function is_string;
 use function preg_match;
 use function preg_replace;
 use function sprintf;
+use function stripos;
 use function strpos;
-use function strtolower;
 use function strtoupper;
 use function substr;
 
@@ -309,45 +308,22 @@ class Mydb implements MydbInterface
 
     /**
      * @return array<string>
-     *
      * @throws MydbException
-     *
+     * @psalm-return list<string>
+     */
+    public function getSetValues(string $table, string $column): array
+    {
+        return $this->getIterableValues($table, $column, 'set');
+    }
+
+    /**
+     * @return array<string>
+     * @throws MydbException
      * @psalm-return list<string>
      */
     public function getEnumValues(string $table, string $column): array
     {
-        $query = "SHOW COLUMNS FROM `" . $table . "` LIKE '" . $column . "'";
-
-        $resultArray = $this->query($query);
-
-        if (!isset($resultArray[0]['Type'])) {
-            return [];
-        }
-
-        $type = strtolower((string) $resultArray[0]['Type']);
-        if (!(
-                0 === strpos($type, 'set(') || (0 === strpos($type, 'enum('))
-            )
-        ) {
-            $this->onError(
-                new MydbException("Column not of type 'enum' or 'set'"),
-                $query
-            );
-        }
-
-        /**
-         * @psalm-suppress PossiblyFalseOperand
-         */
-        $values = explode(
-            ',',
-            preg_replace(
-                "/'/",
-                '',
-                substr((string) $resultArray[0]['Type'], strpos((string) $resultArray[0]['Type'], '(') + 1, -1),
-            ),
-        );
-
-        return array_map('strval', $values);
+        return $this->getIterableValues($table, $column, 'enum');
     }
 
     /**
@@ -378,7 +354,7 @@ class Mydb implements MydbInterface
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void
     {
         /** @lang text */
-        $query = 'DELETE FROM `' . $table . '`';
+        $query = 'DELETE FROM `' . $this->escape($table) . '`';
 
         $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
 
@@ -396,7 +372,10 @@ class Mydb implements MydbInterface
      */
     public function getPrimaryKey(string $table): ?string
     {
-        $sql = 'SHOW KEYS FROM `' . $table . '`';
+        /**
+         * @todo refactor to composite keys, unique keys etc. multiple-values
+         */
+        $sql = 'SHOW KEYS FROM `' . $this->escape($table) . '`';
 
         $result = $this->query($sql);
 
@@ -699,6 +678,34 @@ class Mydb implements MydbInterface
         }
 
         $this->environment->gc_collect_cycles();
+    }
+
+    /**
+     * @throws MydbException
+     * @throws ConnectException
+     * @psalm-return list<string>
+     */
+    protected function getIterableValues(string $table, string $column, string $type): array
+    {
+        $query = "SHOW COLUMNS FROM `" . $this->escape($table) . "` LIKE '" . $this->escape($column) . "'";
+        $resultArray = $this->query($query);
+        $result = isset($resultArray[0]['Type'])
+            ? (string) $resultArray[0]['Type']
+            : null;
+
+        if (0 !== stripos((string) $result, $type . '(')) {
+            $this->onError(new MydbException("Column not of type '" . $type . "'"));
+        }
+
+        /**
+         * @psalm-suppress PossiblyFalseOperand
+         */
+        $values = explode(
+            ',',
+            preg_replace("/'/", '', substr((string) $result, strpos((string) $result, '(') + 1, -1))
+        );
+
+        return array_map('strval', $values);
     }
 
     protected function sendClientRequest(string $query): bool
