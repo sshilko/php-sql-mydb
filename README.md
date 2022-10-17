@@ -42,13 +42,15 @@ Simple class to work with MySQL database.
     - MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_STRICT ^ MYSQLI_REPORT_INDEX
 - Configurable connection retry
 - Better memory usage - copy results from the mysqlnd buffer into the PHP variables MYSQLI_STORE_RESULT_COPY_DATA
-- Catch mysqli warnings and MySQL server warnings
-- Raw DB access with minimal syntax sugar
-- No prepared statements overhead
-- No dependencies overhead
-- No abstractions overhead
-- No reflections overhead
 - unit-tested, static analysed codebase source
+
+#### What is the best use-case for this library
+
+- MySQL server and CRUD php application
+- No prepared statements
+- No dependencies
+- No abstractions
+- No reflections
 - Minimum code, maximum-performance
 
 MySQL database is fast, reliable and scalable, php runtime is the same.
@@ -56,6 +58,8 @@ MySQL database is fast, reliable and scalable, php runtime is the same.
 Measure your app performance with real-world datasets and organic user load.
 
 Optimize for your use-case, focus on bottlenecks, there is no ~~NoSQL~~ silver bullet.
+
+Do not optimize early, resources like CPU & memory are cheap, build an architecture instead.
 
 ##### Compatibility
 
