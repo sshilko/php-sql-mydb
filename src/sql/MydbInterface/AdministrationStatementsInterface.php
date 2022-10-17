@@ -31,4 +31,9 @@ interface AdministrationStatementsInterface
      * @return array<string>
      */
     public function getEnumValues(string $table, string $column): array;
+
+    /**
+     * @return array<string>
+     */
+    public function getSetValues(string $table, string $column): array;
 }

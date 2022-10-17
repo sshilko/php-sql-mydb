@@ -55,7 +55,7 @@ final class MetaTest extends includes\BaseTestCase
     public function testSet(): void
     {
         $db = $this->getDefaultDb();
-        $actual = $db->getEnumValues('myusers_devices', 'provider');
+        $actual = $db->getSetValues('myusers_devices', 'provider');
         self::assertSame(['Sansunk', 'Hookle', 'Sany'], $actual);
     }
 
