@@ -26,7 +26,7 @@ namespace sql\MydbInterface;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbDataManipulationStatementsInterface
+interface DataManipulationStatementsInterface
 {
     public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool;
 

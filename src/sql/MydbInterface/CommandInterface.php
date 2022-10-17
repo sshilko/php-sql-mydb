@@ -19,7 +19,7 @@ namespace sql\MydbInterface;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbCommandInterface
+interface CommandInterface
 {
     public function command(string $query): bool;
 }

@@ -18,13 +18,8 @@ use Psr\Log\LoggerInterface;
 use sql\MydbException\CommonException;
 use sql\MydbException\ConnectException;
 use sql\MydbException\DisconnectException;
-use sql\MydbInterface\MydbAdministrationStatementsInterface;
-use sql\MydbInterface\MydbAsyncInterface;
-use sql\MydbInterface\MydbCommandInterface;
-use sql\MydbInterface\MydbDataDefinitionStatementsSInterface;
-use sql\MydbInterface\MydbDataManipulationStatementsInterface;
-use sql\MydbInterface\MydbQueryInterface;
-use sql\MydbInterface\MydbTransactionInterface;
+use sql\MydbException\InternalException;
+use sql\MydbException\TransactionException;
 use Throwable;
 use function array_map;
 use function count;
@@ -50,15 +45,7 @@ use function substr;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class Mydb implements
-    MydbInterface,
-    MydbCommandInterface,
-    MydbQueryInterface,
-    MydbDataManipulationStatementsInterface,
-    MydbDataDefinitionStatementsSInterface,
-    MydbTransactionInterface,
-    MydbAsyncInterface,
-    MydbAdministrationStatementsInterface
+class Mydb implements MydbInterface
 {
     protected MydbMysqli $mysqli;
 
@@ -136,7 +123,10 @@ class Mydb implements
         if ($packet->getFieldCount() > 0) {
             $payload = $packet->getResult();
             if (null === $payload) {
-                $this->onError($packet->getError() ?? 'Reading of the result set failed', $query);
+                $this->onError(
+                    new InternalException($packet->getError() ?? 'Reading of the result set failed'),
+                    $query
+                );
             }
 
             return $payload;
@@ -201,7 +191,12 @@ class Mydb implements
     public function delete(string $query): ?int
     {
         if ($this->command($query)) {
-            return $this->mysqli->getAffectedRows();
+            $rows = $this->mysqli->getAffectedRows();
+            if (null === $rows) {
+                $this->onError(new CommonException('Delete query returned error'), $query);
+            }
+
+            return $rows;
         }
 
         return null;
@@ -250,7 +245,12 @@ class Mydb implements
     public function update(string $query): ?int
     {
         if ($this->command($query)) {
-            return $this->mysqli->getAffectedRows();
+            $rows = $this->mysqli->getAffectedRows();
+            if (null === $rows) {
+                $this->onError(new CommonException('Update query returned error'), $query);
+            }
+
+            return $rows;
         }
 
         return null;
@@ -326,7 +326,10 @@ class Mydb implements
                 0 === strpos($type, 'set(') || (0 === strpos($type, 'enum('))
             )
         ) {
-            $this->onError("get_possible_values: requested row is not of type 'enum' or 'set'", $query);
+            $this->onError(
+                new CommonException("Column not of type 'enum' or 'set'"),
+                $query
+            );
         }
 
         /**
@@ -346,6 +349,7 @@ class Mydb implements
 
     /**
      * @throws ConnectException
+     * @throws CommonException
      */
     public function escape(string $unescaped): string
     {
@@ -353,7 +357,7 @@ class Mydb implements
             return $unescaped;
         }
 
-        if (preg_match('/^([a-zA-Z0-9_])*$/', $unescaped)) {
+        if (preg_match('/^(\w)*$/', $unescaped)) {
             return $unescaped;
         }
 
@@ -364,11 +368,14 @@ class Mydb implements
         return (string) $this->mysqli->realEscapeString($unescaped);
     }
 
+    /**
+     * @throws CommonException
+     * @throws ConnectException
+     */
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void
     {
         /** @lang text */
-        $query =
-            'DELETE FROM `' . $table . '`';
+        $query = 'DELETE FROM `' . $table . '`';
 
         $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
 
@@ -380,6 +387,10 @@ class Mydb implements
         $this->delete($query);
     }
 
+    /**
+     * @throws CommonException
+     * @throws ConnectException
+     */
     public function getPrimaryKey(string $table): ?string
     {
         $sql = 'SHOW KEYS FROM `' . $table . '`';
@@ -440,22 +451,7 @@ class Mydb implements
             $query = 'UPDATE `' . $table . '` SET ' . $queryUpdate . ' WHERE ' . $queryWhere;
             $affectedRows = $this->update($query);
 
-            /**
-             * mysqli_affected_rows
-             * An integer greater than zero indicates the number of rows affected or retrieved.
-             * Zero indicates that no records where updated for an UPDATE statement,
-             * no rows matched the WHERE clause in the query or that no query has yet been executed.
-             * -1 indicates that the query returned an error.
-             */
-            if ($affectedRows >= 0) {
-                return true;
-            }
-
-            if (-1 === $affectedRows) {
-                $this->onError('query returned an error', $query);
-            }
-
-            return false;
+            return $affectedRows >= 0;
         }
 
         return false;
@@ -547,6 +543,10 @@ class Mydb implements
         $this->insert($query);
     }
 
+    /**
+     * @throws CommonException
+     * @throws ConnectException
+     */
     public function replaceOne(array $data, string $table): ?string
     {
         $names = [];
@@ -611,7 +611,7 @@ class Mydb implements
             return;
         }
 
-        $this->onError('Cannot start db transaction');
+        $this->onError(TransactionException::getBeginException());
     }
 
     /**
@@ -628,7 +628,7 @@ class Mydb implements
             return;
         }
 
-        $this->onError('Cannot rollback db transaction');
+        $this->onError(TransactionException::getRollbackException());
     }
 
     /**
@@ -645,7 +645,7 @@ class Mydb implements
             return;
         }
 
-        $this->onError('Cannot commit db transaction');
+        $this->onError(TransactionException::getCommitException());
     }
 
     /**
@@ -665,16 +665,16 @@ class Mydb implements
              * Default: commit all commands
              */
             if (false === $this->options->isAutocommit() && false === $this->mysqli->isTransactionOpen()) {
-                if (false === $this->mysqli->commit(
-                    /**
-                     * RELEASE clause causes the server to disconnect the current client session
-                     * after terminating the current transaction.
-                     */
-                    $this->options->isPersistent() ?
+                /**
+                 * RELEASE clause causes the server to disconnect the current client session
+                 * after terminating the current transaction.
+                 */
+                $commit = $this->mysqli->commit($this->options->isPersistent() ?
                     MydbMysqli::MYSQLI_TRANS_COR_NO_RELEASE :
-                    MydbMysqli::MYSQLI_TRANS_COR_RELEASE
-                )) {
-                    $this->onError('Failed to commit to database during controlled disconnect');
+                    MydbMysqli::MYSQLI_TRANS_COR_RELEASE);
+
+                if (false === $commit) {
+                    $this->onError(TransactionException::getCommitException());
                 }
             }
 
@@ -685,8 +685,10 @@ class Mydb implements
             if (false === $this->mysqli->close()) {
                 throw new DisconnectException();
             }
+        } catch (CommonException $e) {
+            $this->onError($e);
         } catch (Throwable $e) {
-            $this->onError($e->getMessage());
+            $this->onError(new InternalException($e->getMessage()));
         }
 
         if ($this->terminating) {
@@ -705,6 +707,9 @@ class Mydb implements
         return $result;
     }
 
+    /**
+     * @throws CommonException
+     */
     protected function readServerResponse(string $query): ?MydbMysqliResult
     {
         $packet = $this->mysqli->readServerResponse($this->environment);
@@ -724,7 +729,7 @@ class Mydb implements
             if ($this->mysqli->isServerGone()) {
                 $this->mysqli->close();
             }
-            $this->onError($errorMessage, $query);
+            $this->onError(new InternalException($errorMessage), $query);
         }
 
         return $packet;
@@ -757,11 +762,11 @@ class Mydb implements
     /**
      * @throws CommonException
      */
-    protected function onError(string $errorMessage, ?string $sql = null): void
+    protected function onError(CommonException $exception, ?string $sql = null): void
     {
-        $this->logger->error($errorMessage, ['sql' => $sql]);
+        $this->logger->error($exception->getMessage(), ['sql' => $sql]);
 
-        throw new CommonException($errorMessage);
+        throw $exception;
     }
 
     /**

@@ -12,23 +12,17 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbInterface;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbInterface extends
-    MydbInterface\EncoderInterface,
-    MydbInterface\CommandInterface,
-    MydbInterface\QueryInterface,
-    MydbInterface\DataManipulationStatementsInterface,
-    MydbInterface\DataDefinitionStatementsSInterface,
-    MydbInterface\TransactionInterface,
-    MydbInterface\AsyncInterface,
-    MydbInterface\AdministrationStatementsInterface,
-    MydbInterface\RemoteResourceInterface
+interface QueryInterface
 {
-
+    /**
+     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
+     */
+    public function query(string $query): ?array;
 }
