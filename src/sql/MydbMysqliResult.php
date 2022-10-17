@@ -75,7 +75,11 @@ class MydbMysqliResult
         }
 
         if ($this->errorNumber > 0 || null !== $this->errorMessage) {
-            return $this->errorNumber . ' ' . $this->errorMessage;
+            if ($this->errorMessage) {
+                return ((string) $this->errorNumber) . ' ' . $this->errorMessage;
+            }
+
+            return (string) $this->errorNumber;
         }
 
         return null;
