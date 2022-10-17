@@ -14,7 +14,7 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
-use sql\MydbException\MydbConnectException;
+use sql\MydbException\ConnectException;
 use function sprintf;
 use function time;
 
@@ -74,7 +74,7 @@ final class ExceptionTest extends includes\BaseTestCase
     public function testFailedToConnectLazy(): void
     {
         $db = $this->getNoConnectDb();
-        $this->expectException(MydbConnectException::class);
+        $this->expectException(ConnectException::class);
         $this->logger->expects(self::once())->method('warning')->with('2002:Connection timed out');
         $db->select("SELECT 1");
     }

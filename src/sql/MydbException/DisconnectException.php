@@ -19,7 +19,7 @@ namespace sql\MydbException;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbDisconnectException extends MydbCommonException
+class DisconnectException extends CommonException
 {
 
 }
