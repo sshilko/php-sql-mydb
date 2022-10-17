@@ -14,7 +14,7 @@ declare(strict_types = 1);
 
 namespace sql;
 
-use sql\MydbException\MydbCommonException;
+use sql\MydbException\CommonException;
 use function array_keys;
 
 /**
@@ -45,25 +45,25 @@ class MydbRegistry
     }
 
     /**
-     * @throws MydbCommonException
+     * @throws CommonException
      */
     public static function getInstance(string $id): MydbInterface
     {
         if (!isset(static::$instance[$id])) {
-            throw new MydbCommonException('Instance id=' . $id . '  is not set');
+            throw new CommonException('Instance id=' . $id . '  is not set');
         }
 
         return static::$instance[$id];
     }
 
     /**
-     * @throws MydbCommonException
+     * @throws CommonException
      */
     public static function setInstance(string $id, ?MydbInterface $instance): void
     {
         if (isset(static::$instance[$id])) {
             if (null !== $instance) {
-                throw new MydbCommonException('Instance id=' . $id . '  already set');
+                throw new CommonException('Instance id=' . $id . '  already set');
             }
             unset(static::$instance[$id]);
 
