@@ -15,6 +15,16 @@ declare(strict_types = 1);
 namespace sql;
 
 use Psr\Log\LoggerInterface;
+use sql\MydbException\MydbCommonException;
+use sql\MydbException\MydbConnectException;
+use sql\MydbException\MydbDisconnectException;
+use sql\MydbInterface\MydbAdministrationStatementsInterface;
+use sql\MydbInterface\MydbAsyncInterface;
+use sql\MydbInterface\MydbCommandInterface;
+use sql\MydbInterface\MydbDataDefinitionStatementsSInterface;
+use sql\MydbInterface\MydbDataManipulationStatementsInterface;
+use sql\MydbInterface\MydbQueryInterface;
+use sql\MydbInterface\MydbTransactionInterface;
 use Throwable;
 use function array_map;
 use function count;
@@ -36,8 +46,6 @@ use function strtoupper;
 use function substr;
 
 /**
- * Simple wrapper around PHP MySQLi client
- *
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
@@ -46,8 +54,11 @@ class Mydb implements
     MydbInterface,
     MydbCommandInterface,
     MydbQueryInterface,
+    MydbDataManipulationStatementsInterface,
+    MydbDataDefinitionStatementsSInterface,
     MydbTransactionInterface,
-    MydbAsyncInterface
+    MydbAsyncInterface,
+    MydbAdministrationStatementsInterface
 {
     protected MydbMysqli $mysqli;
 
@@ -88,12 +99,19 @@ class Mydb implements
         $this->close();
     }
 
+    /**
+     * Open connection to remote server
+     * @param int $retry retry failed connection attempts
+     * @throws MydbCommonException
+     */
     public function open(int $retry = 0): bool
     {
         return $this->connect($retry);
     }
 
     /**
+     * Execute raw SQL query and return results
+     *
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      *
@@ -152,16 +170,36 @@ class Mydb implements
 
     /**
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
-     *
-     * @return array<array<(float|int|string|null)>>|null
-     *
-     * @psalm-return list<array<(float|int|string|null)>>|null
+     * @throws MydbCommonException
+     * @throws MydbConnectException
      */
     public function select(string $query): ?array
     {
         return $this->query($query);
     }
 
+    /**
+     * @throws MydbCommonException
+     * @throws MydbConnectException
+     */
+    public function table(string $query): ?array
+    {
+        return $this->query($query);
+    }
+
+    /**
+     * @throws MydbCommonException
+     * @throws MydbConnectException
+     */
+    public function values(string $query): ?array
+    {
+        return $this->query($query);
+    }
+
+    /**
+     * @throws MydbConnectException
+     * @throws MydbCommonException
+     */
     public function delete(string $query): ?int
     {
         if ($this->command($query)) {
@@ -171,6 +209,46 @@ class Mydb implements
         return null;
     }
 
+    /**
+     * @throws MydbConnectException
+     * @throws MydbCommonException
+     */
+    public function call(string $query): void
+    {
+        $this->command($query);
+    }
+
+    /**
+     * @throws MydbConnectException
+     * @throws MydbCommonException
+     */
+    public function do(string $query): void
+    {
+        $this->command($query);
+    }
+
+    /**
+     * @throws MydbConnectException
+     * @throws MydbCommonException
+     */
+    public function handler(string $query): void
+    {
+        $this->command($query);
+    }
+
+    /**
+     * @throws MydbConnectException
+     * @throws MydbCommonException
+     */
+    public function dds(string $statement): void
+    {
+        $this->command($statement);
+    }
+
+    /**
+     * @throws MydbConnectException
+     * @throws MydbCommonException
+     */
     public function update(string $query): ?int
     {
         if ($this->command($query)) {
@@ -180,6 +258,10 @@ class Mydb implements
         return null;
     }
 
+    /**
+     * @throws MydbConnectException
+     * @throws MydbCommonException
+     */
     public function insert(string $query): ?string
     {
         if ($this->command($query)) {
@@ -189,6 +271,10 @@ class Mydb implements
         return null;
     }
 
+    /**
+     * @throws MydbConnectException
+     * @throws MydbCommonException
+     */
     public function replace(string $query): ?string
     {
         if ($this->command($query)) {
@@ -607,9 +693,6 @@ class Mydb implements
         $this->environment->gc_collect_cycles();
     }
 
-    /**
-     * @throws MydbCommonException
-     */
     protected function sendClientRequest(string $query): bool
     {
         $originalHandler = $this->environment->set_error_handler();

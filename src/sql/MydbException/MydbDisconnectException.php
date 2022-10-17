@@ -12,17 +12,14 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbException;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbQueryInterface
+class MydbDisconnectException extends MydbCommonException
 {
-    /**
-     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
-     */
-    public function query(string $query): ?array;
+
 }

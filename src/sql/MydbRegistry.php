@@ -14,6 +14,7 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use sql\MydbException\MydbCommonException;
 use function array_keys;
 
 /**

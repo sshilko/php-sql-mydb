@@ -14,7 +14,7 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
-use sql\MydbConnectException;
+use sql\MydbException\MydbConnectException;
 use function sprintf;
 use function time;
 

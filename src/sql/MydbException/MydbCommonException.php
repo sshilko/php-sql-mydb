@@ -12,18 +12,16 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbException;
+
+use Exception;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbTransactionInterface
+class MydbCommonException extends Exception
 {
-    public function beginTransaction(): void;
 
-    public function commitTransaction(): void;
-
-    public function rollbackTransaction(): void;
 }

@@ -12,7 +12,7 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbInterface;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>

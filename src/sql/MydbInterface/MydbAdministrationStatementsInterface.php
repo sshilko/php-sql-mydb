@@ -12,14 +12,24 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbInterface;
 
 /**
+ * @see https://dev.mysql.com/doc/refman/8.0/en/sql-server-administration-statements.html
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbCommandInterface
+interface MydbAdministrationStatementsInterface
 {
-    public function command(string $query): bool;
+    /**
+     * Get table primary key
+     */
+    public function getPrimaryKey(string $table): ?string;
+
+    /**
+     * @return array<string>
+     */
+    public function getEnumValues(string $table, string $column): array;
+
 }
