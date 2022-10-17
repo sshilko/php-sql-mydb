@@ -19,10 +19,11 @@ namespace sql\MydbInterface;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbQueryInterface
+interface TransactionInterface
 {
-    /**
-     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
-     */
-    public function query(string $query): ?array;
+    public function beginTransaction(): void;
+
+    public function commitTransaction(): void;
+
+    public function rollbackTransaction(): void;
 }

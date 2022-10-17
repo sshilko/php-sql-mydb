@@ -25,7 +25,7 @@ namespace sql\MydbInterface;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbDataDefinitionStatementsSInterface
+interface DataDefinitionStatementsSInterface
 {
     public function dds(string $statement): void;
 }

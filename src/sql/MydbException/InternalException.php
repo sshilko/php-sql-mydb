@@ -12,14 +12,16 @@
 
 declare(strict_types = 1);
 
-namespace sql\MydbInterface;
+namespace sql\MydbException;
+
+use Exception;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbAsyncInterface
+class InternalException extends CommonException
 {
-    public function async(string $command): void;
+
 }

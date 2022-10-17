@@ -334,9 +334,21 @@ class MydbMysqli
 
     public function getAffectedRows(): ?int
     {
-        return $this->mysqli
+        $rows = $this->mysqli
             ? $this->mysqli->affected_rows
             : null;
+        if (0 === $rows || $rows > 0) {
+            return $rows;
+        }
+
+        /**
+         * mysqli_affected_rows
+         * An integer greater than zero indicates the number of rows affected or retrieved.
+         * Zero indicates that no records where updated for an UPDATE statement,
+         * no rows matched the WHERE clause in the query or that no query has yet been executed.
+         * -1 indicates that the query returned an error.
+         */
+        return null;
     }
 
     /**

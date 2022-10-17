@@ -12,23 +12,22 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace phpunit;
+
+use sql\MydbException\ConnectException;
+use function sprintf;
+use function time;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbInterface extends
-    MydbInterface\EncoderInterface,
-    MydbInterface\CommandInterface,
-    MydbInterface\QueryInterface,
-    MydbInterface\DataManipulationStatementsInterface,
-    MydbInterface\DataDefinitionStatementsSInterface,
-    MydbInterface\TransactionInterface,
-    MydbInterface\AsyncInterface,
-    MydbInterface\AdministrationStatementsInterface,
-    MydbInterface\RemoteResourceInterface
+final class ResourceTest extends includes\BaseTestCase
 {
-
+    public function testOpen(): void
+    {
+        $db = $this->getDefaultDb();
+        self::assertTrue($db->open());
+    }
 }
