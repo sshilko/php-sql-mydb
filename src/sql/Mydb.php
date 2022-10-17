@@ -63,14 +63,14 @@ class Mydb implements MydbInterface
 
     public function __construct(
         MydbCredentials $credentials,
-        MydbOptions $options,
         LoggerInterface $logger,
+        ?MydbOptions $options = null,
         ?MydbMysqli $mysqli = null,
         ?MydbEnvironment $environment = null
     ) {
         $this->credentials = $credentials;
-        $this->options = $options;
         $this->logger = $logger;
+        $this->options = $options ?? new MydbOptions();
         $this->mysqli = $mysqli ?? new MydbMysqli();
         $this->environment = $environment ?? new MydbEnvironment();
     }
@@ -644,7 +644,7 @@ class Mydb implements MydbInterface
              * No autocommit
              * No transaction
              *
-             * Default: commit all commands
+             * Default: commit all commands if transaction was NOT open
              */
             if (false === $this->options->isAutocommit() && false === $this->mysqli->isTransactionOpen()) {
                 /**

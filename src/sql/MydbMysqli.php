@@ -58,10 +58,22 @@ class MydbMysqli
     public const MYSQLI_REPORT_INDEX = MYSQLI_REPORT_INDEX;
     public const MYSQLI_REPORT_STRICT = MYSQLI_REPORT_STRICT;
 
+    /**
+     * Safe MySQL SQL_MODE
+     * @see https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional
+     */
     protected const SQL_MODE = 'TRADITIONAL';
 
     protected ?mysqli $mysqli = null;
+
+    /**
+     * Is connected to remove server
+     */
     protected bool $isConnected = false;
+
+    /**
+     * Is transaction started
+     */
     protected bool $isTransaction = false;
 
     public function __construct(?mysqli $resource = null)

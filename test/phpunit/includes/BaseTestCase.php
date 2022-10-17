@@ -18,7 +18,9 @@ use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use sql\Mydb;
 use sql\MydbCredentials;
+use sql\MydbEnvironment;
 use sql\MydbInterface;
+use sql\MydbMysqli;
 use sql\MydbOptions;
 use sql\MydbRegistry;
 
@@ -90,14 +92,16 @@ class BaseTestCase extends TestCase
         static::$registry = null;
     }
 
-    protected function getDefaultDb(): MydbInterface
-    {
+    protected function getDefaultDb(
+        ?MydbMysqli $mysqli = null,
+        ?MydbOptions $options = null,
+        ?MydbEnvironment $environment = null
+    ): MydbInterface {
         if (!static::$registry::hasInstance('db0')) {
-            $options = new MydbOptions();
             $credentials = new MydbCredentials(self::HOST, self::USER, self::PASS, self::NAME, (int) self::PORT);
             static::$registry::setInstance(
                 'db0',
-                new Mydb($credentials, $options, $this->logger)
+                new Mydb($credentials, $this->logger, $options, $mysqli, $environment)
             );
         }
 
@@ -112,7 +116,7 @@ class BaseTestCase extends TestCase
             $options->setConnectTimeout(1);
             static::$registry::setInstance(
                 'db1',
-                new Mydb($credentials, $options, $this->logger)
+                new Mydb($credentials, $this->logger, $options)
             );
         }
 
@@ -127,7 +131,7 @@ class BaseTestCase extends TestCase
             $credentials = new MydbCredentials(self::HOST, self::ROOT_U, self::ROOT_P, self::NAME, (int) self::PORT);
             static::$registry::setInstance(
                 'db2',
-                new Mydb($credentials, $options, $this->logger)
+                new Mydb($credentials, $this->logger, $options)
             );
         }
 
