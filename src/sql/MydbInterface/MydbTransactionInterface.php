@@ -12,14 +12,18 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbInterface;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbDisconnectException extends MydbCommonException
+interface MydbTransactionInterface
 {
+    public function beginTransaction(): void;
 
+    public function commitTransaction(): void;
+
+    public function rollbackTransaction(): void;
 }

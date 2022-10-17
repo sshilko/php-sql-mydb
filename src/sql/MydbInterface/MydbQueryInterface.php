@@ -12,24 +12,17 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbInterface;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbInterface
+interface MydbQueryInterface
 {
     /**
-     * Open connection
+     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      */
-    public function open(int $retry): bool;
-
-    /**
-     * Close connection
-     */
-    public function close(): void;
-
-    public function escape(string $unescaped): string;
+    public function query(string $query): ?array;
 }

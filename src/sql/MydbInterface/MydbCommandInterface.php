@@ -12,14 +12,14 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbInterface;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbConnectException extends MydbCommonException
+interface MydbCommandInterface
 {
-
+    public function command(string $query): bool;
 }
