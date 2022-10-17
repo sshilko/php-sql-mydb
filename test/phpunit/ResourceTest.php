@@ -14,10 +14,6 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
-use sql\MydbException\ConnectException;
-use function sprintf;
-use function time;
-
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb

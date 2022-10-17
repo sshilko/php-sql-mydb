@@ -15,6 +15,7 @@ declare(strict_types = 1);
 namespace sql;
 
 use mysqli;
+use sql\MydbMysqli\MydbMysqliResult;
 use function array_merge;
 use function array_values;
 use function in_array;

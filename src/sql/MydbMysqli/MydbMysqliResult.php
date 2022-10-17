@@ -12,7 +12,7 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbMysqli;
 
 use mysqli_result;
 use const MYSQLI_ASSOC;
