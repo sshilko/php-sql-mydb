@@ -20,14 +20,42 @@ Simple class to work with MySQL database.
 </p>
 
 
-### This client wrappers helps you talk SQL to MySQL server
+### How this client helps you talk SQL to MySQL server
 
-- Raw DB access with minimal abstraction for developer convenience
-- No prepared statements
-- No dependencies
-- Not ActiveRecord
-- Not ORM/Doctrine
+- Quality production defaults
+  - TRADITIONAL [sql mode](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional)
+  - autocommit 0, require commit to accept a transaction
+  - automatically commit when gracefully shutting down
+  - 90s client-side read-timeout for any query
+  - 89s server-side SELECT query timeout
+  - 5s client-side connect-timeout
+  - respect php-fpm client disconnect and script execution shutdown
+  - increased mysqlnd MYSQLI_OPT_NET_READ_BUFFER_SIZE and MYSQLI_OPT_NET_CMD_BUFFER_SIZE
+  - automatic mysqlnd.net_read_timeout value
+  - non-persistent connections
+  - utf8mb4 charset
+  - UTC timezone
+  - 2hours non-interactive connection timeout
+  - read-only transaction optimizations: isolation level READ COMMITTED, TRANSACTION READ ONLY
+  - php error-reporting E_ALL & ~E_WARNING & ~E_NOTICE
+  - Catch and report errors from mysqli function calls
+    - MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_STRICT ^ MYSQLI_REPORT_INDEX
+- Configurable connection retry
+- Better memory usage - copy results from the mysqlnd buffer into the PHP variables MYSQLI_STORE_RESULT_COPY_DATA
+- Catch mysqli warnings and MySQL server warnings
+- Raw DB access with minimal syntax sugar
+- No prepared statements overhead
+- No dependencies overhead
+- No abstractions overhead
+- No reflections overhead
+- unit-tested, static analysed codebase source
 - Minimum code, maximum-performance
+
+MySQL database is fast, reliable and scalable, php runtime is the same.
+
+Measure your app performance with real-world datasets and organic user load.
+
+Optimize for your use-case, focus on bottlenecks, there is no ~~NoSQL~~ silver bullet.
 
 ##### Compatibility
 
