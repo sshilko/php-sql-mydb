@@ -12,14 +12,16 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbException;
+
+use sql\MydbException;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbInterface
+class RegistryException extends MydbException
 {
 
 }
