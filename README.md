@@ -40,6 +40,7 @@ Simple class to work with MySQL database.
   - php error-reporting E_ALL & ~E_WARNING & ~E_NOTICE
   - Catch and report errors from mysqli function calls
     - MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_STRICT ^ MYSQLI_REPORT_INDEX
+  - Catch SIGTERM, SIGINT, SIGHUP termination signals
 - Configurable connection retry
 - Better memory usage - copy results from the mysqlnd buffer into the PHP variables MYSQLI_STORE_RESULT_COPY_DATA
 - unit-tested, static analysed codebase source
@@ -73,10 +74,7 @@ Simple class to work with MySQL database.
 
 ##### Roadmap 2022-2023
 
-- check server version inline and properly shutdown before exception
-- registry has own error classes
 - events with observer/subscribers, allow external observers
-- handle system events CTRL-C etc, also as events, confgurable to enable gracefull shutdown
 - Psalm etc. free ci/cd & github badges
 - PHP documentor (phpcs generator documentation)
 - Test coverage report https://coveralls.io
