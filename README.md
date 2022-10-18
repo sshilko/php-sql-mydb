@@ -73,6 +73,10 @@ Simple class to work with MySQL database.
 
 ##### Roadmap 2022-2023
 
+- check server version inline and properly shutdown before exception
+- registry has own error classes
+- events with observer/subscribers, allow external observers
+- handle system events CTRL-C etc, also as events, confgurable to enable gracefull shutdown
 - Psalm etc. free ci/cd & github badges
 - PHP documentor (phpcs generator documentation)
 - Test coverage report https://coveralls.io

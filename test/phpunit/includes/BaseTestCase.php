@@ -23,6 +23,7 @@ use sql\MydbInterface;
 use sql\MydbMysqli;
 use sql\MydbOptions;
 use sql\MydbRegistry;
+use function count;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -81,13 +82,13 @@ class BaseTestCase extends TestCase
 
     protected function tearDown(): void
     {
-        foreach (static::$registry::listInstances() as $dbId) {
-            if (!static::$registry::hasInstance($dbId)) {
-                continue;
+        if (count(static::$registry)) {
+            /**
+             * @phpcs:disable SlevomatCodingStandard.Variables.UnusedVariable.UnusedVariable
+             */
+            foreach (static::$registry as $index => $value) {
+                static::$registry->offsetUnset($index);
             }
-
-            static::$registry::getInstance($dbId)->close();
-            static::$registry::setInstance($dbId, null);
         }
         static::$registry = null;
     }
@@ -97,45 +98,38 @@ class BaseTestCase extends TestCase
         ?MydbOptions $options = null,
         ?MydbEnvironment $environment = null
     ): MydbInterface {
-        if (!static::$registry::hasInstance('db0')) {
+        if (!isset(static::$registry['db0'])) {
             $credentials = new MydbCredentials(self::HOST, self::USER, self::PASS, self::NAME, (int) self::PORT);
-            static::$registry::setInstance(
-                'db0',
-                new Mydb($credentials, $this->logger, $options, $mysqli, $environment)
-            );
+            static::$registry['db0'] = new Mydb($credentials, $this->logger, $options, $mysqli, $environment);
         }
 
-        return static::$registry::getInstance('db0');
+        return static::$registry['db0'];
     }
 
     protected function getNoConnectDb(): MydbInterface
     {
-        if (!static::$registry::hasInstance('db1')) {
+        if (!isset(static::$registry['db1'])) {
             $options = new MydbOptions();
             $credentials = new MydbCredentials('1.2.3.4', self::USER, self::PASS, self::NAME, (int) self::PORT);
+
             $options->setConnectTimeout(1);
-            static::$registry::setInstance(
-                'db1',
-                new Mydb($credentials, $this->logger, $options)
-            );
+            static::$registry['db1'] = new Mydb($credentials, $this->logger, $options);
         }
 
-        return static::$registry::getInstance('db1');
+        return static::$registry['db1'];
     }
 
     protected function getRootDb(): MydbInterface
     {
-        if (!static::$registry::hasInstance('db2')) {
+        if (!isset(static::$registry['db2'])) {
             $options = new MydbOptions();
             $options->setAutocommit(true);
+
             $credentials = new MydbCredentials(self::HOST, self::ROOT_U, self::ROOT_P, self::NAME, (int) self::PORT);
-            static::$registry::setInstance(
-                'db2',
-                new Mydb($credentials, $this->logger, $options)
-            );
+            static::$registry['db2'] = new Mydb($credentials, $this->logger, $options);
         }
 
-        return static::$registry::getInstance('db2');
+        return static::$registry['db2'];
     }
 
     protected static function getDbName(): string

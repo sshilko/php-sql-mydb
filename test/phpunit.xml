@@ -63,11 +63,13 @@
         <const name="PHPUNIT_MYSQL_ROOT_USER" value="root"/>
         <const name="PHPUNIT_MYSQL_ROOT_PASS" value="root"/>
 
+        <ini name="display_errors" value="On" />
+        <ini name="display_startup_errors" value="On" />
         <ini name="error_reporting" value="-1" />
         <ini name="intl.default_locale" value="en" />
         <ini name="intl.error_level" value="0" />
         <ini name="memory_limit" value="-1" />
-        <ini name="date.timezone" value="Etc/UTC" />
+        <ini name="date.timezone" value="UTC" />
 
     </php>
 </phpunit>

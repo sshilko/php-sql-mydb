@@ -47,7 +47,17 @@ use function substr;
  * @package sshilko/php-sql-mydb
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class Mydb implements MydbInterface
+class Mydb implements
+    MydbInterface,
+    MydbInterface\EncoderInterface,
+    MydbInterface\CommandInterface,
+    MydbInterface\QueryInterface,
+    MydbInterface\DataManipulationStatementsInterface,
+    MydbInterface\DataDefinitionStatementsSInterface,
+    MydbInterface\TransactionInterface,
+    MydbInterface\AsyncInterface,
+    MydbInterface\AdministrationStatementsInterface,
+    MydbInterface\RemoteResourceInterface
 {
     protected MydbMysqli $mysqli;
 
