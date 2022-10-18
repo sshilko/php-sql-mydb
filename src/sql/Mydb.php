@@ -18,6 +18,8 @@ use Psr\Log\LoggerInterface;
 use sql\MydbException\ConnectException;
 use sql\MydbException\DisconnectException;
 use sql\MydbException\InternalException;
+use sql\MydbException\TerminationSignalException;
+use sql\MydbException\TransactionAutocommitException;
 use sql\MydbException\TransactionBeginException;
 use sql\MydbException\TransactionCommitException;
 use sql\MydbException\TransactionRollbackException;
@@ -718,11 +720,21 @@ class Mydb implements
         return array_map('strval', $values);
     }
 
+    /**
+     * @throws MydbException\EnvironmentException
+     * @throws TerminationSignalException
+     */
     protected function sendClientRequest(string $query): bool
     {
+        $this->environment->startSignalsTrap();
         $originalHandler = $this->environment->set_error_handler();
+
         $result = $this->mysqli->realQuery($query);
+
         $this->environment->set_error_handler($originalHandler);
+        if ($this->environment->endSignalsTrap()) {
+            throw new TerminationSignalException();
+        }
 
         return $result;
     }
@@ -747,6 +759,9 @@ class Mydb implements
         $errorMessage = $packet->getError();
         if (null !== $errorMessage) {
             if ($this->mysqli->isServerGone()) {
+                /**
+                 * server closed connection
+                 */
                 $this->mysqli->close();
             }
             $this->onError(new InternalException($errorMessage), $query);
@@ -799,8 +814,6 @@ class Mydb implements
             return;
         }
 
-        $isReadonly = $this->options->isReadonly();
-
         /**
          * @todo error handling for query executions
          */
@@ -808,14 +821,12 @@ class Mydb implements
         $c->query(sprintf('SET session wait_timeout = %s', $this->options->getNonInteractiveTimeout()));
         $c->set_charset($this->options->getCharset());
 
-        if (!$isReadonly) {
+        if (!$this->options->isReadonly()) {
             return;
         }
 
-        if (false === $this->options->isPersistent()) {
-            if (false === $c->autocommit(true)) {
-                throw new MydbException('Failed setting db autocommit state for read-only scenario');
-            }
+        if (false === $c->autocommit(true)) {
+            throw new TransactionAutocommitException();
         }
 
         $c->query('SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED');
@@ -856,8 +867,8 @@ class Mydb implements
         }
 
         if (false === $connected) {
-            $errorNumber = (string) ($this->mysqli->getConnectErrno() ?: $this->mysqli->getErrNo());
-            $errorText = (string) ($this->mysqli->getConnectError() ?: $this->mysqli->getError());
+            $errorNumber = (string)($this->mysqli->getConnectErrno() ?: $this->mysqli->getErrNo());
+            $errorText = (string)($this->mysqli->getConnectError() ?: $this->mysqli->getError());
 
             if (false === $this->mysqli->close()) {
                 throw new DisconnectException();
@@ -874,34 +885,24 @@ class Mydb implements
             return false;
         }
 
-        $this->checkServerVersion();
-
-        $this->mysqli->mysqliReport($this->options->getInternalClientErrorLevel());
-
-        if (!$this->options->isAutocommit()) {
-            if (false === $this->mysqli->autocommit(false)) {
-                throw new MydbException('Failed setting db autocommit state');
-            }
-        }
-
-        $this->afterConnectionSuccess();
-
-        return true;
-    }
-
-    /**
-     * @return void
-     * @throws MydbException
-     */
-    protected function checkServerVersion(): void
-    {
-        if ($this->mysqli->isConnected() && $this->mysqli->getServerVersion() < '50708') {
+        if ($this->mysqli->getServerVersion() < '50708') {
             /**
              * Minimum version
              * max_statement_time added MySQL 5.7.4; renamed max_execution_time MySQL 5.7.8
              */
             throw new MydbException('Minimum required MySQL server version is 50708');
         }
+
+
+        $this->mysqli->mysqliReport($this->options->getInternalClientErrorLevel());
+
+        if (false === $this->mysqli->autocommit($this->options->isAutocommit())) {
+            throw new TransactionAutocommitException();
+        }
+
+        $this->afterConnectionSuccess();
+
+        return true;
     }
 
     protected function buildWhereQuery(array $fields = [], array $negativeFields = [], array $likeFields = []): string
