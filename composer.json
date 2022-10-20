@@ -11,7 +11,7 @@
             "role": "Developer"
         }
     ],
-    "keywords": ["mysql", "php", "connect", "database", "mysqli", "class", "adapter", "builder", "active"],
+    "keywords": ["mysql", "php", "database", "mysqli", "pdo", "mysqlnd"],
     "config": {
         "vendor-dir": "vendor",
         "preferred-install": {
@@ -24,6 +24,9 @@
         "sort-packages": true,
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "7.4"
         }
     },
     "scripts": {
@@ -59,17 +62,22 @@
         ],
         "phpdoc": [
             "/usr/bin/phpdoc --config /app/build/phpdoc.xml"
+        ],
+        "phan": [
+            "php ./vendor/bin/phan --color --color-scheme=vim --long-progress-bar -k ./build/phan.php"
         ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
+        "phan/phan": "^5.4",
         "phpmd/phpmd": "^2.13",
         "phpstan/phpstan": "*",
         "phpunit/phpunit": "^9",
         "psalm/phar": "*",
         "slevomat/coding-standard": "^8.4",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "ext-ast": "*"
     },
     "require": {
         "php": ">=7.4",

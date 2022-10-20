@@ -146,8 +146,18 @@ docker-compose exec app composer psalm-taint
 
 #### Run [PHPMD](https://phpmd.org) - PHP Mess Detector
 
-`docker-compose exec app composer phpmd`
+```
+docker-compose exec app composer phpmd
+```
+
+#### Run [Phan](https://github.com/phan/phan) - PHP Phan static analyzer
+
+```
+docker-compose exec app composer phan
+```
 
 #### Run [phpDocumentor](https://www.phpdoc.org) - [phpDocumentor](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/)
 
-`docker-compose exec app composer phpdoc`
+```
+docker-compose exec app composer phpdoc
+```

@@ -371,7 +371,7 @@ class Mydb implements
 
         $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
 
-        if (!$queryWhere) {
+        if ('' === $queryWhere) {
             return;
         }
 
@@ -442,7 +442,7 @@ class Mydb implements
 
         $queryUpdate = implode(', ', $values);
 
-        if ($queryUpdate && $queryWhere) {
+        if ('' !== $queryUpdate && '' !== $queryWhere) {
             $query = 'UPDATE `' . $table . '` SET ' . $queryUpdate . ' WHERE ' . $queryWhere;
             $affectedRows = $this->update($query);
 

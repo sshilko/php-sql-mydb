@@ -67,4 +67,9 @@ COPY --from=0 /usr/bin/composer /usr/bin/composer
 ADD https://phpdoc.org/phpDocumentor.phar /usr/bin/phpdoc
 RUN chmod +x /usr/bin/phpdoc
 
+#phan/phan php-ast dependency
+#https://github.com/mlocati/docker-php-extension-installer
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+RUN install-php-extensions ast
+
 CMD ["sleep", "infinity"]
