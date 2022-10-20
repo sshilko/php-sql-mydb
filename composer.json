@@ -56,6 +56,9 @@
         ],
         "phpunit-filter": [
             "php ./vendor/phpunit/phpunit/phpunit --testdox --configuration test/phpunit.xml --filter $1"
+        ],
+        "phpdoc": [
+            "/usr/bin/phpdoc --config /app/build/phpdoc.xml"
         ]
     },
     "minimum-stability": "dev",

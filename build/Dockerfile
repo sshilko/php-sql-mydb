@@ -6,6 +6,7 @@
 #
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
+# @license https://opensource.org/licenses/mit-license.php MIT
 FROM library/composer:2.4
 
 FROM library/php:7.4-cli
@@ -15,6 +16,10 @@ LABEL package='sshilko/php-sql-mydb'
 
 STOPSIGNAL SIGTERM
 ENV DEBIAN_FRONTEND noninteractive
+
+# /usr/share/man/man1 needs to be created before installing openjdk-11-jre lest it will fail
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199#23
+RUN mkdir -p /usr/share/man/man1
 
 # https://wiki.ubuntu.com/ReducingDiskFootprint
 RUN echo '\n\
@@ -31,8 +36,8 @@ path-exclude /usr/share/linda/*                     \n\
     echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/no-recommends   && \
     find /usr/share/locale -maxdepth 1 -mindepth 1 ! -name 'en' |xargs rm -rf && \
     apt-get update                                           && \
-    docker-php-ext-install mysqli                            && \
-    docker-php-ext-install pcntl                             && \
+    docker-php-ext-install -j$(nproc) mysqli                 && \
+    docker-php-ext-install -j$(nproc) pcntl                  && \
     apt-get install -y --no-install-recommends                  \
     unzip                                                       \
     python3-pip                                                 \
@@ -57,5 +62,9 @@ ENV TZ "Etc/UTC"
 HEALTHCHECK --interval=10s --timeout=1s --retries=2 --start-period=5s CMD /usr/local/bin/php -v || exit 1
 WORKDIR /app
 COPY --from=0 /usr/bin/composer /usr/bin/composer
+
+#https://www.phpdoc.org
+ADD https://phpdoc.org/phpDocumentor.phar /usr/bin/phpdoc
+RUN chmod +x /usr/bin/phpdoc
 
 CMD ["sleep", "infinity"]

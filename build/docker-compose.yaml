@@ -6,6 +6,7 @@
 #
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
+# @license https://opensource.org/licenses/mit-license.php MIT
 version: "3.7"
 services:
   app:
@@ -17,8 +18,6 @@ services:
       options:
         max-size: "1m"
         max-file: "2"
-    labels:
-      - myapp1
     ulimits:
       nproc: 65535
       nofile:
