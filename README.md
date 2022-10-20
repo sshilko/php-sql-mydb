@@ -76,24 +76,23 @@ Simple class to work with MySQL database.
 
 ##### Roadmap 2022-2023
 
+- tests
+- test coverage
+- usage example
+- tests against MySQL8
+- PHP8 compatiblity
+- Analytics & metrics collector
+
 - Psalm etc. free ci/cd & github badges
-- PHP documentor (phpcs generator documentation)
-- Test coverage report https://coveralls.io
-- More tests
-- Usage example
-- phan/phan https://github.com/phan/phan
-- exacat io
+- https://www.exakat.io/en/
+- https://coveralls.io
 - https://codeclimate.com
 - https://app.codecov.io/
 - https://shepherd.dev/
 - https://github.com/EdgedesignCZ/phpqa
 - https://scrutinizer-ci.com
-- https://github.com/pdepend/pdepend
-- https://github.com/sebastianbergmann/phpcpd
-- Run tests against MySQL8
-- PHP8 compatiblity
+
 - Packagist export
-- Analytics & metrics collector
 
 #### Installation
 
@@ -160,4 +159,16 @@ docker-compose exec app composer phan
 
 ```
 docker-compose exec app composer phpdoc
+```
+
+#### Run [PHPCPD](https://github.com/sebastianbergmann/phpcpd) - PHPCPD Copy/Paste Detector (CPD) for PHP code
+
+```
+docker-compose exec app composer phpcpd
+```
+
+#### Run [Pdepend](https://pdepend.org) - PHP quality of design - extensibility, reusability and maintainability
+
+```
+docker-compose exec app composer pdepend
 ```
