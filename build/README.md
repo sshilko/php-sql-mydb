@@ -18,3 +18,5 @@ file that was distributed with this source code.
 - [PHP MessDetector](https://phpmd.org/)
 - [PHP Psalm](https://psalm.dev/)
 - [phpDocumentor](https://www.phpdoc.org)
+- [phan/phan](https://github.com/phan/phan)
+- [PHPCPD](https://github.com/sebastianbergmann/phpcpd)

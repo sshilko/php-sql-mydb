@@ -65,19 +65,26 @@
         ],
         "phan": [
             "php ./vendor/bin/phan --color --color-scheme=vim --long-progress-bar -k ./build/phan.php"
+        ],
+        "phpcpd": [
+            "php /usr/bin/phpcpd src"
+        ],
+        "pdepend": [
+            "./vendor/bin/pdepend --configuration=/app/build/pdepend.xml --jdepend-chart=doc/pdepend/jdepend.svg --overview-pyramid=doc/pdepend/pyramid.svg src"
         ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
+        "ext-ast": "*",
+        "pdepend/pdepend": "^2.12",
         "phan/phan": "^5.4",
         "phpmd/phpmd": "^2.13",
         "phpstan/phpstan": "*",
         "phpunit/phpunit": "^9",
         "psalm/phar": "*",
         "slevomat/coding-standard": "^8.4",
-        "squizlabs/php_codesniffer": "*",
-        "ext-ast": "*"
+        "squizlabs/php_codesniffer": "*"
     },
     "require": {
         "php": ">=7.4",

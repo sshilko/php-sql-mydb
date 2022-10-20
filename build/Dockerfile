@@ -72,4 +72,7 @@ RUN chmod +x /usr/bin/phpdoc
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 RUN install-php-extensions ast
 
+ADD https://phar.phpunit.de/phpcpd.phar /usr/bin/phpcpd
+RUN chmod +x /usr/bin/phpcpd
+
 CMD ["sleep", "infinity"]
