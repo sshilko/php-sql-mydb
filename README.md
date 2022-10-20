@@ -7,6 +7,8 @@ MIT License
 
 For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
+
+ @license https://opensource.org/licenses/mit-license.php MIT
 -->
 MyDb - Component
 =================
@@ -47,7 +49,7 @@ Simple class to work with MySQL database.
 
 #### What is the best use-case for this library
 
-- MySQL server 
+- MySQL server
 - High performance, low-latency data-intensive applications
 - API first applications with existing user-input marshalling
 - No prepared statements requirement
@@ -62,7 +64,7 @@ Simple class to work with MySQL database.
 * I value developers time and do not add complexity where possible
 * I measure my app's performance with real-world datasets and organic load
 * I optimize for my use-case, focus on bottlenecks, remember that there is no ~~NoSQL~~ silver bullet
-* I do not optimize early because resources like CPU & memory are cheap 
+* I do not optimize early because resources like CPU & memory are cheap
 * I focus on building architecture, learn from others and improve over time
 
 ##### Is it compatible?
@@ -74,14 +76,13 @@ Simple class to work with MySQL database.
 
 ##### Roadmap 2022-2023
 
-- events with observer/subscribers, allow external observers
 - Psalm etc. free ci/cd & github badges
 - PHP documentor (phpcs generator documentation)
 - Test coverage report https://coveralls.io
 - More tests
 - Usage example
 - phan/phan https://github.com/phan/phan
-- exacat io 
+- exacat io
 - https://codeclimate.com
 - https://app.codecov.io/
 - https://shepherd.dev/
@@ -89,14 +90,10 @@ Simple class to work with MySQL database.
 - https://scrutinizer-ci.com
 - https://github.com/pdepend/pdepend
 - https://github.com/sebastianbergmann/phpcpd
-- phpmnd https://github.com/povils/phpmnd
-- Performance benchmarks
 - Run tests against MySQL8
 - PHP8 compatiblity
 - Packagist export
 - Analytics & metrics collector
-- Retry options
-- Compression flag ON/OFF
 
 #### Installation
 
@@ -151,3 +148,6 @@ docker-compose exec app composer psalm-taint
 
 `docker-compose exec app composer phpmd`
 
+#### Run [phpDocumentor](https://www.phpdoc.org) - [phpDocumentor](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/)
+
+`docker-compose exec app composer phpdoc`

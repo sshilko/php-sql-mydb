@@ -8,6 +8,7 @@
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ * @license https://opensource.org/licenses/mit-license.php MIT
  */
 
 declare(strict_types = 1);
@@ -18,7 +19,8 @@ use sql\MydbException;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
- * @package sshilko/php-sql-mydb
+ * @license https://opensource.org/licenses/mit-license.php MIT
+ * @category exceptions
  * @see https://github.com/sshilko/php-sql-mydb
  */
 class TransactionCommitException extends MydbException

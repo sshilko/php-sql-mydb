@@ -7,6 +7,8 @@ MIT License
 
 For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
+
+@license https://opensource.org/licenses/mit-license.php MIT
 -->
 #### Code quality configuration
 
@@ -15,3 +17,4 @@ file that was distributed with this source code.
 - [PHPCS CodeBeautifier](https://github.com/squizlabs/PHP_CodeSniffer)
 - [PHP MessDetector](https://phpmd.org/)
 - [PHP Psalm](https://psalm.dev/)
+- [phpDocumentor](https://www.phpdoc.org)
