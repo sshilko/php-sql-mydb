@@ -26,9 +26,12 @@ use const STDERR;
 use const STDOUT;
 
 /**
+ * Implementation of PSR-3 Logger that will output to STDERR & STDOUT
+ *
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
+ * @see https://www.php-fig.org/psr/psr-3/
  */
 class MydbLogger implements LoggerInterface
 {

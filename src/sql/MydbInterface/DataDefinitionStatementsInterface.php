@@ -27,7 +27,15 @@ namespace sql\MydbInterface;
  * @category interfaces
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface DataDefinitionStatementsSInterface
+interface DataDefinitionStatementsInterface
 {
-    public function dds(string $statement): void;
+    public function alterDefinitionStatement(string $statement): bool;
+
+    public function createDefinitionStatement(string $statement): bool;
+
+    public function dropDefinitionStatement(string $statement): bool;
+
+    public function renameDefinitionStatement(string $statement): bool;
+
+    public function truncateDefinitionStatement(string $statement): bool;
 }

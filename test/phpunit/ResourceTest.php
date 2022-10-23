@@ -55,10 +55,13 @@ final class ResourceTest extends includes\BaseTestCase
         $db = $this->getDefaultDb($mysqli, $options, $envs);
 
         $mysqli->method('isConnected')->willReturn(true);
+
         $options->method('isAutocommit')->willReturn(false);
         $mysqli->method('isTransactionOpen')->willReturn(false);
+
         $options->method('isPersistent')->willReturn(false);
-        $mysqli->expects(self::once())->method('commit')->with(4)->willReturn(true);
+
+        $mysqli->expects(self::once())->method('commitAndRelease')->willReturn(true);
         $mysqli->method('close')->willReturn(true);
         $envs->expects(self::once())->method('gc_collect_cycles');
         $db->close();
@@ -75,7 +78,7 @@ final class ResourceTest extends includes\BaseTestCase
         $options->method('isAutocommit')->willReturn(false);
         $mysqli->method('isTransactionOpen')->willReturn(false);
         $options->method('isPersistent')->willReturn(true);
-        $mysqli->expects(self::once())->method('commit')->with(8)->willReturn(true);
+        $mysqli->expects(self::once())->method('commit')->willReturn(true);
         $mysqli->method('close')->willReturn(true);
         $envs->expects(self::once())->method('gc_collect_cycles');
         $db->close();
@@ -98,7 +101,8 @@ final class ResourceTest extends includes\BaseTestCase
         $db = $this->getDefaultDb($mysqli, null, $envs);
 
         $mysqli->method('isConnected')->willReturn(true);
-        $mysqli->method('commit')->willReturn(true);
+        $mysqli->method('commitAndRelease')->willReturn(true);
+
         $mysqli->method('close')->willReturn(true);
 
         $mysqli->method('isConnected')->willReturn(false);

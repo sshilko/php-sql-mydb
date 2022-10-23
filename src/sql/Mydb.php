@@ -21,7 +21,8 @@ use sql\MydbException\DisconnectException;
 use sql\MydbException\InternalException;
 use sql\MydbException\TerminationSignalException;
 use sql\MydbException\TransactionAutocommitException;
-use sql\MydbException\TransactionBeginException;
+use sql\MydbException\TransactionBeginReadonlyException;
+use sql\MydbException\TransactionBeginReadwriteException;
 use sql\MydbException\TransactionCommitException;
 use sql\MydbException\TransactionRollbackException;
 use sql\MydbMysqli\MydbMysqliResult;
@@ -34,7 +35,6 @@ use function in_array;
 use function is_array;
 use function is_float;
 use function is_int;
-use function is_numeric;
 use function is_string;
 use function preg_match;
 use function preg_replace;
@@ -54,12 +54,16 @@ class Mydb implements
     MydbInterface\CommandInterface,
     MydbInterface\QueryInterface,
     MydbInterface\DataManipulationStatementsInterface,
-    MydbInterface\DataDefinitionStatementsSInterface,
+    MydbInterface\DataDefinitionStatementsInterface,
     MydbInterface\TransactionInterface,
     MydbInterface\AsyncInterface,
     MydbInterface\AdministrationStatementsInterface,
     MydbInterface\RemoteResourceInterface
 {
+
+    use MydbTrait\DataDefinitionStatementsTrait;
+    use MydbTrait\DataManipulationStatementsTrait;
+
     protected MydbMysqli $mysqli;
 
     protected MydbCredentials $credentials;
@@ -181,24 +185,6 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
-     * @throws ConnectException
-     */
-    public function table(string $query): ?array
-    {
-        return $this->query($query);
-    }
-
-    /**
-     * @throws MydbException
-     * @throws ConnectException
-     */
-    public function values(string $query): ?array
-    {
-        return $this->query($query);
-    }
-
-    /**
      * @throws ConnectException
      * @throws MydbException
      */
@@ -214,42 +200,6 @@ class Mydb implements
         }
 
         return null;
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    public function call(string $query): void
-    {
-        $this->command($query);
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    public function do(string $query): void
-    {
-        $this->command($query);
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    public function handler(string $query): void
-    {
-        $this->command($query);
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    public function dds(string $statement): void
-    {
-        $this->command($statement);
     }
 
     /**
@@ -349,7 +299,7 @@ class Mydb implements
             return (string) $unescaped;
         }
 
-        if (is_int($unescaped) || (is_numeric($unescaped) && (int) $unescaped === $unescaped)) {
+        if (is_int($unescaped)) {
             return (string) $unescaped;
         }
 
@@ -375,7 +325,7 @@ class Mydb implements
         }
 
         if (preg_match('/^(\w)*$/', $unescaped)) {
-            return $quote !== ''
+            return '' !== $quote
                 ? $quote . $unescaped . $quote
                 : $unescaped;
         }
@@ -386,7 +336,7 @@ class Mydb implements
 
         $escaped = (string) $this->mysqli->realEscapeString($unescaped);
 
-        return $quote !== ''
+        return '' !== $quote
             ? $quote . $escaped . $quote
             : $escaped;
     }
@@ -602,11 +552,17 @@ class Mydb implements
             throw new ConnectException();
         }
 
-        if ($this->mysqli->beginTransaction()) {
-            return;
+        if ($this->options->isReadonly()) {
+            if ($this->mysqli->beginTransactionReadonly()) {
+                return;
+            }
+            $this->onError(new TransactionBeginReadonlyException());
+        } else {
+            if ($this->mysqli->beginTransactionReadwrite()) {
+                return;
+            }
+            $this->onError(new TransactionBeginReadwriteException());
         }
-
-        $this->onError(new TransactionBeginException());
     }
 
     /**
@@ -664,9 +620,9 @@ class Mydb implements
                  * RELEASE clause causes the server to disconnect the current client session
                  * after terminating the current transaction.
                  */
-                $commit = $this->mysqli->commit($this->options->isPersistent() ?
-                    MydbMysqli::MYSQLI_TRANS_COR_NO_RELEASE :
-                    MydbMysqli::MYSQLI_TRANS_COR_RELEASE);
+                $commit = $this->options->isPersistent()
+                    ? $this->mysqli->commit()
+                    : $this->mysqli->commitAndRelease();
 
                 if (false === $commit) {
                     $this->onError(new TransactionCommitException());
@@ -715,7 +671,7 @@ class Mydb implements
         /**
          * @psalm-suppress PossiblyFalseOperand
          */
-        $input  = substr((string) $result, (int) strpos((string) $result, '(') + 1, -1);
+        $input = substr((string) $result, (int) strpos((string) $result, '(') + 1, -1);
         if (false === $input) {
             throw new InternalException();
         }

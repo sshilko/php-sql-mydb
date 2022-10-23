@@ -26,8 +26,11 @@ use function current;
 use function key;
 use function next;
 use function reset;
+use function serialize;
 
 /**
+ * Singleton or registry helper to manage multiple Mydb instances
+ *
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
@@ -65,6 +68,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
         if (false === $result) {
             return null;
         }
+
         return $result;
     }
 
@@ -77,7 +81,8 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
         if (null === $result) {
             return null;
         }
-        return (string) $result;
+
+        return $result;
     }
 
     /**
