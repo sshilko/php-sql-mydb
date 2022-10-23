@@ -107,6 +107,9 @@ class MydbMysqli
         return false;
     }
 
+    /**
+     * @throws MydbException\EnvironmentException
+     */
     public function setTransportOptions(MydbOptions $options, MydbEnvironment $environment): bool
     {
         if (null === $this->mysqli) {
@@ -192,7 +195,7 @@ class MydbMysqli
             $response = new MydbMysqliResult(false === $result ? null : $result, $warnings, $fieldsCount ?? 0);
 
             $error = $this->getError();
-            if ($error) {
+            if (null !== $error && '' !== $error) {
                 $response->setErrorMessage($error);
             }
 
@@ -263,6 +266,7 @@ class MydbMysqli
      */
     public function realConnect(...$args): bool
     {
+        /* @phan-suppress-next-line PhanPartialTypeMismatchArgumentInternal */
         if ($this->mysqli && !$this->isConnected() && $this->mysqli->real_connect(...$args)) {
             $this->isConnected = true;
 

@@ -64,7 +64,7 @@
             "/usr/bin/phpdoc --config /app/build/phpdoc.xml"
         ],
         "phan": [
-            "php ./vendor/bin/phan --color --color-scheme=vim --long-progress-bar -k ./build/phan.php"
+            "php ./vendor/bin/phan --color --color-scheme=vim --no-progress-bar -k ./build/phan.php"
         ],
         "phpcpd": [
             "php /usr/bin/phpcpd src"
@@ -89,7 +89,6 @@
     "require": {
         "php": ">=7.4",
         "ext-pcntl": "*",
-        "ext-ctype": "*",
         "ext-mysqli": "*",
         "ext-mysqlnd": "*",
         "psr/log": "^1"

@@ -28,13 +28,12 @@ use sql\MydbMysqli\MydbMysqliResult;
 use Throwable;
 use function array_map;
 use function count;
-use function ctype_digit;
-use function ctype_xdigit;
 use function explode;
 use function implode;
 use function in_array;
-use function intval;
 use function is_array;
+use function is_float;
+use function is_int;
 use function is_numeric;
 use function is_string;
 use function preg_match;
@@ -42,7 +41,6 @@ use function preg_replace;
 use function sprintf;
 use function stripos;
 use function strpos;
-use function strtoupper;
 use function substr;
 
 /**
@@ -341,17 +339,17 @@ class Mydb implements
     }
 
     /**
-     * @param float|int|string|null|MydbExpression $unescaped
+     * @param float|int|string|MydbExpression|null $unescaped
      * @throws ConnectException
      * @throws MydbException
      */
-    public function escape($unescaped, bool $quote = true): string
+    public function escape($unescaped, string $quote = "'"): string
     {
         if (is_float($unescaped)) {
             return (string) $unescaped;
         }
 
-        if (is_numeric($unescaped) && (int) $unescaped === $unescaped) {
+        if (is_int($unescaped) || (is_numeric($unescaped) && (int) $unescaped === $unescaped)) {
             return (string) $unescaped;
         }
 
@@ -363,26 +361,34 @@ class Mydb implements
             /**
              * Not quoting '0x...' decimal values
              */
-            if ('0x' === substr($unescaped, 0, 2) && preg_match('/[a-zA-Z0-9]+/', substr($unescaped, 2))) {
+            if ('0x' === substr($unescaped, 0, 2) && preg_match('/[a-zA-Z0-9]+/', $unescaped)) {
                 return $unescaped;
             }
+        }
+
+        if (null === $unescaped) {
+            return '';
         }
 
         if ($unescaped instanceof MydbExpression) {
             return (string) $unescaped;
         }
 
-        if (is_scalar($unescaped) && preg_match('/^(\w)*$/', (string) $unescaped)) {
-            return $quote ? "'" . (string) $unescaped . "'" : (string) $unescaped;
+        if (preg_match('/^(\w)*$/', $unescaped)) {
+            return $quote !== ''
+                ? $quote . $unescaped . $quote
+                : $unescaped;
         }
-
 
         if (!$this->connect()) {
             throw new ConnectException();
         }
 
         $escaped = (string) $this->mysqli->realEscapeString($unescaped);
-        return $quote ? "'" . $escaped . "'" : $escaped;
+
+        return $quote !== ''
+            ? $quote . $escaped . $quote
+            : $escaped;
     }
 
     /**
@@ -392,7 +398,7 @@ class Mydb implements
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void
     {
         /** @lang text */
-        $query = 'DELETE FROM `' . $this->escape($table, false) . '`';
+        $query = 'DELETE FROM `' . $this->escape($table, '') . '`';
 
         $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
 
@@ -413,7 +419,7 @@ class Mydb implements
         /**
          * @todo refactor to composite keys, unique keys etc. multiple-values
          */
-        $sql = 'SHOW KEYS FROM `' . $this->escape($table, false) . '`';
+        $sql = 'SHOW KEYS FROM `' . $this->escape($table, '') . '`';
 
         $result = $this->query($sql);
 
@@ -485,7 +491,6 @@ class Mydb implements
                  */
                 $sql .= ' WHEN (`' . $column . '` = ' . $this->escape($newValueWhere[0]) . ')';
                 $sql .= ' THEN ' . $this->escape($newValueWhere[1]);
-
             }
 
             /**
@@ -498,6 +503,10 @@ class Mydb implements
         $this->update($sql);
     }
 
+    /**
+     * @throws ConnectException
+     * @throws MydbException
+     */
     public function insertMany(
         array $data,
         array $columns,
@@ -511,9 +520,10 @@ class Mydb implements
          * @psalm-suppress MissingClosureParamType
          */
         $values = array_map(
-            fn ($r) => '(' . implode(
+            static fn ($r) => '(' . implode(
                 ', ',
-                array_map(function ($input) use ($me) {
+                array_map(static function ($input) use ($me) {
+                    /** @phan-suppress-next-line PhanThrowTypeAbsentForCall */
                     return $me->escape((string) $input);
                 }, $r),
             ) . ') ',
@@ -525,7 +535,7 @@ class Mydb implements
             $columns,
         ) . "`) VALUES " . implode(', ', $values);
 
-        if ($onDuplicate) {
+        if (null !== $onDuplicate) {
             $query .= ' ON DUPLICATE KEY UPDATE ' . $onDuplicate;
         }
         $this->insert($query);
@@ -557,13 +567,17 @@ class Mydb implements
         return $this->replace($query);
     }
 
+    /**
+     * @throws ConnectException
+     * @throws MydbException
+     */
     public function insertOne(array $data, string $table): ?string
     {
         $names = [];
         $values = [];
 
         foreach ($data as $name => $value) {
-            $names[]  = $name;
+            $names[] = $name;
             $values[] = $this->escape($value);
         }
 
@@ -686,7 +700,7 @@ class Mydb implements
      */
     protected function getIterableValues(string $table, string $column, string $type): array
     {
-        $query  = "SHOW COLUMNS FROM `" . $this->escape($table, false) . "` ";
+        $query = "SHOW COLUMNS FROM `" . $this->escape($table, '') . "` ";
         $query .= "LIKE " . $this->escape($column);
 
         $resultArray = $this->query($query);
@@ -701,10 +715,11 @@ class Mydb implements
         /**
          * @psalm-suppress PossiblyFalseOperand
          */
-        $values = explode(
-            ',',
-            preg_replace("/'/", '', substr((string) $result, strpos((string) $result, '(') + 1, -1))
-        );
+        $input  = substr((string) $result, (int) strpos((string) $result, '(') + 1, -1);
+        if (false === $input) {
+            throw new InternalException();
+        }
+        $values = explode(',', preg_replace("/'/", '', $input));
 
         return array_map('strval', $values);
     }
@@ -875,6 +890,10 @@ class Mydb implements
         return true;
     }
 
+    /**
+     * @throws ConnectException
+     * @throws MydbException
+     */
     protected function buildWhereQuery(array $fields = [], array $negativeFields = [], array $likeFields = []): string
     {
         $where = [];
@@ -894,7 +913,6 @@ class Mydb implements
                     $qvalue = implode('', $value);
                     $queryPart .= ($isNegative ? '!' : '') . '=';
                     $queryPart .= $this->escape($qvalue);
-
                 } else {
                     $queryPart .= ($isNegative ? ' NOT' : '') . " IN (";
                     $inVals = [];
