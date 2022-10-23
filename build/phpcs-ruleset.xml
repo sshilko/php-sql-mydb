@@ -51,6 +51,7 @@
         <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousTraitNaming" />
         <exclude name="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces" />
         <exclude name="SlevomatCodingStandard.Classes.ClassLength" />
         <exclude name="SlevomatCodingStandard.Files.FileLength" />

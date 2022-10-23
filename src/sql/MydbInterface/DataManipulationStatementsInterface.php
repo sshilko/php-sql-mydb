@@ -57,6 +57,4 @@ interface DataManipulationStatementsInterface
     public function delete(string $query): ?int;
 
     public function replace(string $query): ?string;
-
-    public function callStoredProcedure(string $query): void;
 }
