@@ -2,6 +2,7 @@
 /doc export-ignore
 /test export-ignore
 /build export-ignore
+/.github export-ignore
 /.editorconfig export-ignore
 /.env export-ignore
 /.gitattributes export-ignore
