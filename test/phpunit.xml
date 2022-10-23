@@ -18,6 +18,9 @@
          bootstrap="phpunit.xml.bootstrap.php"
          backupStaticAttributes="false"
          cacheResult="false"
+         executionOrder="depends,defects"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="false"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
@@ -37,22 +40,15 @@
          enforceTimeLimit="true"
          beStrictAboutChangesToGlobalState="true"
          verbose="true">
-    <testsuite name="sshilko/php-sql-mydb">
+    <testsuite name="basic">
         <directory>phpunit</directory>
     </testsuite>
-    <coverage cacheDirectory="/tmp"
-              includeUncoveredFiles="true"
-              processUncoveredFiles="true"
-              pathCoverage="false"
-              ignoreDeprecatedCodeUnits="true"
-              disableCodeCoverageIgnore="true">
+
+    <!-- https://phpunit.readthedocs.io/en/9.5/code-coverage-analysis.html -->
+    <coverage processUncoveredFiles="true">
         <include>
             <directory suffix=".php">../src/sql</directory>
         </include>
-        <exclude>
-            <directory>../test</directory>
-            <directory>../vendor</directory>
-        </exclude>
     </coverage>
     <php>
         <includePath>phpunit/base/</includePath>

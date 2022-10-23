@@ -76,4 +76,8 @@ RUN install-php-extensions ast
 ADD https://phar.phpunit.de/phpcpd.phar /usr/bin/phpcpd
 RUN chmod +x /usr/bin/phpcpd
 
+#phpunit coverage requirement
+RUN mkdir /root/tmp && pear config-set temp_dir /root/tmp && install-php-extensions xdebug
+ENV XDEBUG_MODE "coverage"
+
 CMD ["sleep", "infinity"]

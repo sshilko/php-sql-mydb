@@ -34,7 +34,10 @@
             "pre-commit run --config build/.pre-commit-config.yaml"
         ],
         "psalm":[
-            "php ./vendor/bin/psalm.phar --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true"
+            "php ./vendor/bin/psalm.phar --config build/psalm.xml --shepherd --memory-limit=-1 --no-diff --show-info=true"
+        ],
+        "psalm-shepherd":[
+            "php ./vendor/bin/psalm.phar --config build/psalm.xml --shepherd --memory-limit=-1 --no-diff"
         ],
         "psalm-alter": [
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --alter --issues=MissingReturnType,InvalidReturnType,InvalidNullableReturnType,InvalidFalsableReturnType,PossiblyUndefinedVariable,UnnecessaryVarAnnotation,ParamNameMismatch"
@@ -59,6 +62,9 @@
         ],
         "phpunit-filter": [
             "php ./vendor/phpunit/phpunit/phpunit --testdox --configuration test/phpunit.xml --filter $1"
+        ],
+        "phpunit-coverage": [
+            "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml --coverage-clover /tmp/phpcov.xml"
         ],
         "phpdoc": [
             "/usr/bin/phpdoc --config /app/build/phpdoc.xml"
