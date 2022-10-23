@@ -39,6 +39,9 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      */
     protected array $instance = [];
 
+    /**
+     * @throws RegistryException
+     */
     public function serialize(): ?string
     {
         throw new RegistryException();
@@ -50,23 +53,31 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      */
     public function unserialize($data): void
     {
-        throw new RegistryException();
+        throw new RegistryException(serialize($data));
     }
 
     /**
      * Return the current element
      */
-    public function current(): MydbInterface
+    public function current(): ?MydbInterface
     {
-        return current($this->instance);
+        $result = current($this->instance);
+        if (false === $result) {
+            return null;
+        }
+        return $result;
     }
 
     /**
      * Return the key of the current element
      */
-    public function key(): string
+    public function key(): ?string
     {
-        return key($this->instance);
+        $result = key($this->instance);
+        if (null === $result) {
+            return null;
+        }
+        return (string) $result;
     }
 
     /**
@@ -183,6 +194,6 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      */
     public function __unserialize(string $data): void
     {
-        throw new RegistryException();
+        throw new RegistryException(serialize($data));
     }
 }

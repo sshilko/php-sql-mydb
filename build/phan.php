@@ -11,7 +11,7 @@
  * @license https://opensource.org/licenses/mit-license.php MIT
  */
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 use Phan\Issue;
 
@@ -19,6 +19,7 @@ use Phan\Issue;
  * This configuration will be read and overlaid on top of the
  * default configuration. Command-line arguments will be applied
  * after this file is read.
+ * @phpcs:disable
  */
 return [
     // The number of processes to fork off during the analysis
@@ -52,7 +53,7 @@ return [
     // your application should be included in this list.
     'directory_list' => [
         'src',
-        'vendor'
+        'vendor',
     ],
 
     // A regex used to match every file name that you want to
@@ -73,7 +74,7 @@ return [
     //       should be added to both the `directory_list`
     //       and `exclude_analysis_directory_list` arrays.
     'exclude_analysis_directory_list' => [
-        'vendor/'
+        'vendor/',
     ],
 
     # ------------------------------------------------------
@@ -324,5 +325,5 @@ return [
     // If enabled (and warn_about_undocumented_throw_statements is enabled),
     // warn about function/closure/method calls that have (at)throws
     // without the invoking method documenting that exception.
-    'warn_about_undocumented_exceptions_thrown_by_invoked_functions' => true
+    'warn_about_undocumented_exceptions_thrown_by_invoked_functions' => true,
 ];
