@@ -27,9 +27,6 @@ use function time;
  */
 final class ExceptionTest extends includes\BaseTestCase
 {
-    /**
-     * @medium
-     */
     public function testTableDoesNotExist(): void
     {
         $db = $this->getDefaultDb();
