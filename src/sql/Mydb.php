@@ -868,14 +868,14 @@ class Mydb implements
         }
 
         if (false === $connected) {
-            $errorNumber = (string)($this->mysqli->getConnectErrno() ?: $this->mysqli->getErrNo());
-            $errorText = (string)($this->mysqli->getConnectError() ?: $this->mysqli->getError());
+            $errorNumber = (string) ($this->mysqli->getConnectErrno() ?: $this->mysqli->getErrNo());
+            $errorText = (string) ($this->mysqli->getConnectError() ?: $this->mysqli->getError());
 
             if (false === $this->mysqli->close()) {
                 throw new DisconnectException();
             }
 
-            $this->onWarning($errorNumber . ':' . $errorText);
+            $this->onWarning($errorNumber . ' ' . $errorText);
 
             if ($retry > 0) {
                 $retry -= 1;

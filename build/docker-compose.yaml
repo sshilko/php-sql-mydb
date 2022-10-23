@@ -13,11 +13,16 @@ services:
     container_name: app
     tty: true
     dns: 1.1.1.1
-    stop_grace_period: 30s
+    stop_grace_period: 20s
+    platform: linux/amd64
     logging:
       options:
         max-size: "1m"
         max-file: "2"
+    healthcheck:
+      test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
+      timeout: 5s
+      start_period: 5s
     ulimits:
       nproc: 65535
       nofile:
