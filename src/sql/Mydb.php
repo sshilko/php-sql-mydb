@@ -17,6 +17,7 @@ namespace sql;
 
 use Psr\Log\LoggerInterface;
 use sql\MydbException\ConnectException;
+use sql\MydbException\DeleteException;
 use sql\MydbException\DisconnectException;
 use sql\MydbException\InternalException;
 use sql\MydbException\TerminationSignalException;
@@ -25,6 +26,7 @@ use sql\MydbException\TransactionBeginReadonlyException;
 use sql\MydbException\TransactionBeginReadwriteException;
 use sql\MydbException\TransactionCommitException;
 use sql\MydbException\TransactionRollbackException;
+use sql\MydbException\UpdateException;
 use sql\MydbMysqli\MydbMysqliResult;
 use Throwable;
 use function array_map;
@@ -54,15 +56,11 @@ class Mydb implements
     MydbInterface\CommandInterface,
     MydbInterface\QueryInterface,
     MydbInterface\DataManipulationStatementsInterface,
-    MydbInterface\DataDefinitionStatementsInterface,
     MydbInterface\TransactionInterface,
     MydbInterface\AsyncInterface,
     MydbInterface\AdministrationStatementsInterface,
     MydbInterface\RemoteResourceInterface
 {
-
-    use MydbTrait\DataDefinitionStatementsTrait;
-    use MydbTrait\DataManipulationStatementsTrait;
 
     protected MydbMysqli $mysqli;
 
@@ -101,6 +99,27 @@ class Mydb implements
     {
         $this->terminating = true;
         $this->close();
+    }
+
+    /**
+     * With MYSQLI_ASYNC (available with mysqlnd), it is possible to perform query asynchronously.
+     * mysqli_poll() is then used to get results from such queries.
+     * @throws MydbException
+     * @throws ConnectException
+     */
+    public function async(string $command): void
+    {
+        if (!$this->connect()) {
+            throw new ConnectException();
+        }
+
+        if (false === $this->options->isAutocommit() ||
+            $this->options->isPersistent() ||
+            $this->options->isReadonly()) {
+            throw new MydbException('Async is safe only with autocommit=true & non-persistent & rw configuration');
+        }
+
+        $this->mysqli->mysqliQueryAsync($command);
     }
 
     /**
@@ -148,99 +167,6 @@ class Mydb implements
             }
 
             return $payload;
-        }
-
-        return null;
-    }
-
-    /**
-     * With MYSQLI_ASYNC (available with mysqlnd), it is possible to perform query asynchronously.
-     * mysqli_poll() is then used to get results from such queries.
-     * @throws MydbException
-     * @throws ConnectException
-     */
-    public function async(string $command): void
-    {
-        if (!$this->connect()) {
-            throw new ConnectException();
-        }
-
-        if (false === $this->options->isAutocommit() ||
-            $this->options->isPersistent() ||
-            $this->options->isReadonly()) {
-            throw new MydbException('Async is safe only with autocommit=true & non-persistent & rw configuration');
-        }
-
-        $this->mysqli->mysqliQueryAsync($command);
-    }
-
-    /**
-     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
-     * @throws MydbException
-     * @throws ConnectException
-     */
-    public function select(string $query): ?array
-    {
-        return $this->query($query);
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    public function delete(string $query): ?int
-    {
-        if ($this->command($query)) {
-            $rows = $this->mysqli->getAffectedRows();
-            if (null === $rows) {
-                $this->onError(new MydbException('Delete query returned error'), $query);
-            }
-
-            return $rows;
-        }
-
-        return null;
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    public function update(string $query): ?int
-    {
-        if ($this->command($query)) {
-            $rows = $this->mysqli->getAffectedRows();
-            if (null === $rows) {
-                $this->onError(new MydbException('Update query returned error'), $query);
-            }
-
-            return $rows;
-        }
-
-        return null;
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    public function insert(string $query): ?string
-    {
-        if ($this->command($query)) {
-            return (string) $this->mysqli->getInsertId();
-        }
-
-        return null;
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    public function replace(string $query): ?string
-    {
-        if ($this->command($query)) {
-            return (string)$this->mysqli->getInsertId();
         }
 
         return null;
@@ -311,7 +237,7 @@ class Mydb implements
             /**
              * Not quoting '0x...' decimal values
              */
-            if ('0x' === substr($unescaped, 0, 2) && preg_match('/[a-zA-Z0-9]+/', $unescaped)) {
+            if (0 === strpos($unescaped, '0x') && preg_match('/[a-zA-Z0-9]+/', $unescaped)) {
                 return $unescaped;
             }
         }
@@ -345,25 +271,6 @@ class Mydb implements
      * @throws MydbException
      * @throws ConnectException
      */
-    public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void
-    {
-        /** @lang text */
-        $query = 'DELETE FROM `' . $this->escape($table, '') . '`';
-
-        $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
-
-        if ('' === $queryWhere) {
-            return;
-        }
-
-        $query .= ' WHERE ' . $queryWhere;
-        $this->delete($query);
-    }
-
-    /**
-     * @throws MydbException
-     * @throws ConnectException
-     */
     public function getPrimaryKey(string $table): ?string
     {
         /**
@@ -390,156 +297,6 @@ class Mydb implements
         }
 
         return null;
-    }
-
-    /**
-     * @throws MydbException
-     */
-    public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool
-    {
-        $values = [];
-        $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
-
-        foreach ($update as $field => $value) {
-            /**
-             * @psalm-suppress InvalidOperand
-             */
-            $f = '`' . (string) $field . '`' . ' = ' . $this->escape($value);
-            $values[] = $f;
-        }
-
-        $queryUpdate = implode(', ', $values);
-
-        if ('' !== $queryUpdate && '' !== $queryWhere) {
-            $query = 'UPDATE `' . $table . '` SET ' . $queryUpdate . ' WHERE ' . $queryWhere;
-            $affectedRows = $this->update($query);
-
-            return $affectedRows >= 0;
-        }
-
-        return false;
-    }
-
-    /**
-     * @param array $columnSetWhere ['col1' => [ ['current1', 'new1'], ['current2', 'new2']]
-     * @param array $where ['col2' => 'value2', 'col3' => ['v3', 'v4']]
-     * @param string $table 'mytable'
-     * @throws MydbException
-     */
-    public function updateWhereMany(array $columnSetWhere, array $where, string $table): void
-    {
-        $sql = 'UPDATE `' . $table . '`';
-        foreach ($columnSetWhere as $column => $map) {
-            /**
-             * @psalm-suppress InvalidOperand
-             */
-            $sql .= ' SET `' . $column . '` = CASE';
-
-            foreach ($map as $newValueWhere) {
-                /**
-                 * @psalm-suppress InvalidOperand
-                 */
-                $sql .= ' WHEN (`' . $column . '` = ' . $this->escape($newValueWhere[0]) . ')';
-                $sql .= ' THEN ' . $this->escape($newValueWhere[1]);
-            }
-
-            /**
-             * @psalm-suppress InvalidOperand
-             */
-            $sql .= ' ELSE `' . $column . '`';
-        }
-
-        $sql .= ' END WHERE ' . $this->buildWhereQuery($where);
-        $this->update($sql);
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    public function insertMany(
-        array $data,
-        array $columns,
-        string $table,
-        bool $ignore = false,
-        ?string $onDuplicate = null
-    ): void {
-        $me = $this;
-        /**
-         * @phpcs:disable SlevomatCodingStandard.Functions.DisallowArrowFunction
-         * @psalm-suppress MissingClosureParamType
-         */
-        $values = array_map(
-            static fn ($r) => '(' . implode(
-                ', ',
-                array_map(static function ($input) use ($me) {
-                    /** @phan-suppress-next-line PhanThrowTypeAbsentForCall */
-                    return $me->escape((string) $input);
-                }, $r),
-            ) . ') ',
-            $data,
-        );
-
-        $query = "INSERT " . ($ignore ? 'IGNORE ' : '') . "INTO `" . $table . "` (`" . implode(
-            '`, `',
-            $columns,
-        ) . "`) VALUES " . implode(', ', $values);
-
-        if (null !== $onDuplicate) {
-            $query .= ' ON DUPLICATE KEY UPDATE ' . $onDuplicate;
-        }
-        $this->insert($query);
-    }
-
-    /**
-     * @throws MydbException
-     * @throws ConnectException
-     */
-    public function replaceOne(array $data, string $table): ?string
-    {
-        $names = [];
-        $values = [];
-
-        foreach ($data as $name => $value) {
-            $names[] = $name;
-
-            $values[] = $this->escape($value);
-        }
-
-        $query = sprintf(
-        /** @lang text */
-            'REPLACE INTO `%s` (%s) VALUES (%s)',
-            $table,
-            implode(',', $names),
-            implode(',', $values)
-        );
-
-        return $this->replace($query);
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    public function insertOne(array $data, string $table): ?string
-    {
-        $names = [];
-        $values = [];
-
-        foreach ($data as $name => $value) {
-            $names[] = $name;
-            $values[] = $this->escape($value);
-        }
-
-        $query = sprintf(
-            /** @lang text */
-            'INSERT INTO `%s` (%s) VALUES (%s)',
-            $table,
-            implode(',', $names),
-            implode(',', $values)
-        );
-
-        return $this->insert($query);
     }
 
     /**
@@ -647,6 +404,249 @@ class Mydb implements
         }
 
         $this->environment->gc_collect_cycles();
+    }
+
+    /**
+     * @throws ConnectException
+     * @throws MydbException
+     */
+    public function replace(string $query): ?string
+    {
+        if ($this->command($query)) {
+            return (string) $this->mysqli->getInsertId();
+        }
+
+        return null;
+    }
+
+    /**
+     * @throws ConnectException
+     * @throws MydbException
+     */
+    public function insert(string $query): ?string
+    {
+        if ($this->command($query)) {
+            return (string) $this->mysqli->getInsertId();
+        }
+
+        return null;
+    }
+
+    /**
+     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
+     * @throws MydbException
+     * @throws ConnectException
+     */
+    public function select(string $query): ?array
+    {
+        return $this->query($query);
+    }
+
+    /**
+     * @throws ConnectException
+     * @throws DeleteException
+     * @throws MydbException
+     */
+    public function delete(string $query): ?int
+    {
+        if ($this->command($query)) {
+            $rows = $this->mysqli->getAffectedRows();
+            if (null === $rows) {
+                $this->onError(new DeleteException(), $query);
+            }
+
+            return $rows;
+        }
+
+        return null;
+    }
+
+    /**
+     * @throws ConnectException
+     * @throws MydbException
+     * @throws UpdateException
+     */
+    public function update(string $query): ?int
+    {
+        if ($this->command($query)) {
+            $rows = $this->mysqli->getAffectedRows();
+            if (null === $rows) {
+                $this->onError(new UpdateException(), $query);
+            }
+
+            return $rows;
+        }
+
+        return null;
+    }
+
+    /**
+     * @throws MydbException
+     * @throws ConnectException
+     */
+    public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void
+    {
+        /** @lang text */
+        $query = 'DELETE FROM `' . $this->escape($table, '') . '`';
+
+        $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
+
+        if ('' === $queryWhere) {
+            return;
+        }
+
+        $query .= ' WHERE ' . $queryWhere;
+        $this->delete($query);
+    }
+
+    /**
+     * @throws MydbException
+     */
+    public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool
+    {
+        $values = [];
+        $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
+
+        foreach ($update as $field => $value) {
+            /**
+             * @psalm-suppress InvalidOperand
+             */
+            $f = '`' . (string) $field . '`' . ' = ' . $this->escape($value);
+            $values[] = $f;
+        }
+
+        $queryUpdate = implode(', ', $values);
+
+        if ('' !== $queryUpdate && '' !== $queryWhere) {
+            $query = 'UPDATE `' . $table . '` SET ' . $queryUpdate . ' WHERE ' . $queryWhere;
+            $affectedRows = $this->update($query);
+
+            return $affectedRows >= 0;
+        }
+
+        return false;
+    }
+
+    /**
+     * @param array $columnSetWhere ['col1' => [ ['current1', 'new1'], ['current2', 'new2']]
+     * @param array $where ['col2' => 'value2', 'col3' => ['v3', 'v4']]
+     * @param string $table 'mytable'
+     * @throws MydbException
+     */
+    public function updateWhereMany(array $columnSetWhere, array $where, string $table): void
+    {
+        $sql = 'UPDATE `' . $table . '`';
+        foreach ($columnSetWhere as $column => $map) {
+            /**
+             * @psalm-suppress InvalidOperand
+             */
+            $sql .= ' SET `' . $column . '` = CASE';
+
+            foreach ($map as $newValueWhere) {
+                /**
+                 * @psalm-suppress InvalidOperand
+                 */
+                $sql .= ' WHEN (`' . $column . '` = ' . $this->escape($newValueWhere[0]) . ')';
+                $sql .= ' THEN ' . $this->escape($newValueWhere[1]);
+            }
+
+            /**
+             * @psalm-suppress InvalidOperand
+             */
+            $sql .= ' ELSE `' . $column . '`';
+        }
+
+        $sql .= ' END WHERE ' . $this->buildWhereQuery($where);
+        $this->update($sql);
+    }
+
+    /**
+     * @throws ConnectException
+     * @throws MydbException
+     */
+    public function insertMany(
+        array $data,
+        array $columns,
+        string $table,
+        bool $ignore = false,
+        ?string $onDuplicate = null
+    ): void {
+        $me = $this;
+        /**
+         * @phpcs:disable SlevomatCodingStandard.Functions.DisallowArrowFunction
+         * @psalm-suppress MissingClosureParamType
+         */
+        $values = array_map(
+            static fn ($r) => '(' . implode(
+                ', ',
+                array_map(static function ($input) use ($me) {
+                        /** @phan-suppress-next-line PhanThrowTypeAbsentForCall */
+                        return $me->escape((string) $input);
+                }, $r),
+            ) . ') ',
+            $data,
+        );
+
+        $query = "INSERT " . ($ignore ? 'IGNORE ' : '') . "INTO `" . $table . "` (`" . implode(
+            '`, `',
+            $columns,
+        ) . "`) VALUES " . implode(', ', $values);
+
+        if (null !== $onDuplicate) {
+            $query .= ' ON DUPLICATE KEY UPDATE ' . $onDuplicate;
+        }
+        $this->insert($query);
+    }
+
+    /**
+     * @throws MydbException
+     * @throws ConnectException
+     */
+    public function replaceOne(array $data, string $table): ?string
+    {
+        $names = [];
+        $values = [];
+
+        foreach ($data as $name => $value) {
+            $names[] = $name;
+
+            $values[] = $this->escape($value);
+        }
+
+        $query = sprintf(
+        /** @lang text */
+            'REPLACE INTO `%s` (%s) VALUES (%s)',
+            $table,
+            implode(',', $names),
+            implode(',', $values)
+        );
+
+        return $this->replace($query);
+    }
+
+    /**
+     * @throws ConnectException
+     * @throws MydbException
+     */
+    public function insertOne(array $data, string $table): ?string
+    {
+        $names = [];
+        $values = [];
+
+        foreach ($data as $name => $value) {
+            $names[] = $name;
+            $values[] = $this->escape($value);
+        }
+
+        $query = sprintf(
+        /** @lang text */
+            'INSERT INTO `%s` (%s) VALUES (%s)',
+            $table,
+            implode(',', $names),
+            implode(',', $values)
+        );
+
+        return $this->insert($query);
     }
 
     /**
