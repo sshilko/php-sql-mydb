@@ -27,6 +27,9 @@ use function time;
  */
 final class ExceptionTest extends includes\BaseTestCase
 {
+    /**
+     * @medium
+     */
     public function testTableDoesNotExist(): void
     {
         $db = $this->getDefaultDb();
@@ -53,7 +56,7 @@ final class ExceptionTest extends includes\BaseTestCase
     public function testFailedToConnect(): void
     {
         $db = $this->getNoConnectDb();
-        $this->logger->expects(self::once())->method('warning')->with('2002:Connection timed out');
+        $this->logger->expects(self::once())->method('warning')->with('2002 Connection timed out');
         $result = $db->open();
         self::assertSame(false, $result);
     }
@@ -65,7 +68,7 @@ final class ExceptionTest extends includes\BaseTestCase
     {
         $retry = 2;
         $db = $this->getNoConnectDb();
-        $this->logger->expects(self::exactly($retry + 1))->method('warning')->with('2002:Connection timed out');
+        $this->logger->expects(self::exactly($retry + 1))->method('warning')->with('2002 Connection timed out');
         $result = $db->open($retry);
         self::assertSame(false, $result);
     }
@@ -77,7 +80,7 @@ final class ExceptionTest extends includes\BaseTestCase
     {
         $db = $this->getNoConnectDb();
         $this->expectException(ConnectException::class);
-        $this->logger->expects(self::once())->method('warning')->with('2002:Connection timed out');
+        $this->logger->expects(self::once())->method('warning')->with('2002 Connection timed out');
         $db->select("SELECT 1");
     }
 

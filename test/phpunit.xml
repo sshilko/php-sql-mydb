@@ -32,8 +32,8 @@
          failOnWarning="true"
          defaultTimeLimit="5"
          timeoutForSmallTests="1"
-         timeoutForMediumTests="5"
-         timeoutForLargeTests="10"
+         timeoutForMediumTests="6"
+         timeoutForLargeTests="11"
          enforceTimeLimit="true"
          beStrictAboutChangesToGlobalState="true"
          verbose="true">
@@ -57,7 +57,7 @@
     <php>
         <includePath>phpunit/base/</includePath>
 
-        <const name="PHPUNIT_MYSQL_MYDB1_HOST" value="host.docker.internal"/>
+        <const name="PHPUNIT_MYSQL_MYDB1_HOST" value="mysql"/>
         <const name="PHPUNIT_MYSQL_MYDB1_USER" value="test"/>
         <const name="PHPUNIT_MYSQL_MYDB1_PORT" value="3306"/>
         <const name="PHPUNIT_MYSQL_MYDB1_NAME" value="mydb"/>

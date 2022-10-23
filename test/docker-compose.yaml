@@ -11,11 +11,11 @@ version: '3.7'
 services:
   #@see https://hub.docker.com/_/mysql
   mysql:
-    container_name: mysql57
+    platform: linux/amd64
     tty: true
     dns: 1.1.1.1
-    image: "mysql:5.7"
-    stop_grace_period: 30s
+    image: library/mysql:5.7.40-debian
+    stop_grace_period: 20s
     command:
       - --group-concat-max-len=9223372036854775807
       - --innodb-flush-log-at-trx-commit=2
@@ -47,7 +47,7 @@ services:
       start_period: 5s
     logging:
       options:
-        max-size: "50m"
+        max-size: "10m"
         max-file: "2"
     labels:
       - mydb1
@@ -61,7 +61,7 @@ services:
     expose:
       - "3306"
     sysctls:
-      net.core.somaxconn: 4096
+      net.core.somaxconn: 1024
     volumes:
       - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro
       - /tmp/dbdata:/var/lib/mysql/
@@ -71,3 +71,5 @@ services:
         soft: 262140
         hard: 262140
     restart: "no"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

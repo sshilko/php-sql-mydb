@@ -7,9 +7,9 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
-FROM library/composer:2.4
+FROM --platform=linux/amd64 library/composer:2.4
 
-FROM library/php:7.4-cli
+FROM --platform=linux/amd64 library/php:7.4-cli
 
 LABEL author='Sergei Shilko <contact@sshilko.com>'
 LABEL package='sshilko/php-sql-mydb'
@@ -43,6 +43,7 @@ path-exclude /usr/share/linda/*                     \n\
     python3-pip                                                 \
     pre-commit                                                  \
     locales                                                     \
+    netcat                                                      \
     git                                                      && \
     apt-get clean                                            && \
     apt-get -y autoremove                                    && \
