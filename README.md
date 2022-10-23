@@ -84,10 +84,8 @@ Simple class to work with MySQL database.
 - Analytics & metrics collector
 
 - Psalm etc. free ci/cd & github badges
-- https://www.exakat.io/en/
-- https://coveralls.io
-- https://codeclimate.com
 - https://app.codecov.io/
+  - https://about.codecov.io/blog/measuring-php-code-coverage-with-phpunit-and-github-actions/ 
 - https://shepherd.dev/
 - https://github.com/EdgedesignCZ/phpqa
 - https://scrutinizer-ci.com
@@ -137,6 +135,7 @@ docker-compose exec app composer phpcs
 docker-compose exec app composer psalm
 docker-compose exec app composer psalm-alter
 docker-compose exec app composer psalm-taint
+docker-compose exec app composer psalm-shepherd
 ```
 
 #### Run [PHPStan](https://phpstan.org) - PHP Static Analysis Tool (all files)

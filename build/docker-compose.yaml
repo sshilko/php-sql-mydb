@@ -22,7 +22,7 @@ services:
     healthcheck:
       test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
       timeout: 5s
-      start_period: 5s
+      start_period: 10s
     ulimits:
       nproc: 65535
       nofile:

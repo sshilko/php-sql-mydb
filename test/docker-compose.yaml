@@ -44,7 +44,7 @@ services:
     healthcheck:
       test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
       timeout: 5s
-      start_period: 5s
+      start_period: 10s
     logging:
       options:
         max-size: "10m"
