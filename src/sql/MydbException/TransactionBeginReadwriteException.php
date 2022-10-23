@@ -13,20 +13,15 @@
 
 declare(strict_types = 1);
 
-namespace sql\MydbInterface;
+namespace sql\MydbException;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
- * @category interfaces
+ * @category exceptions
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface CommandInterface
+class TransactionBeginReadwriteException extends TransactionBeginException
 {
-    /**
-     * Execute any SQL command, without returning result
-     * @param string $query sql command
-     * @return bool true success or false on failure
-     */
-    public function command(string $query): bool;
+
 }

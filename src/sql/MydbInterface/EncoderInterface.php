@@ -23,5 +23,12 @@ namespace sql\MydbInterface;
  */
 interface EncoderInterface
 {
-    public function escape(string $unescaped): string;
+    /**
+     * Escape value for the SQL query
+     *
+     * @param float|int|string|MydbExpression|null $unescaped
+     * @throws ConnectException
+     * @throws MydbException
+     */
+    public function escape($unescaped, string $quote = "'"): string;
 }

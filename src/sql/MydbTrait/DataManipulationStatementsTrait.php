@@ -13,20 +13,24 @@
 
 declare(strict_types = 1);
 
-namespace sql\MydbInterface;
+namespace sql\MydbTrait;
+
+use sql\MydbException;
+use sql\MydbException\ConnectException;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
- * @category interfaces
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface CommandInterface
+trait DataManipulationStatementsTrait
 {
     /**
-     * Execute any SQL command, without returning result
-     * @param string $query sql command
-     * @return bool true success or false on failure
+     * @throws ConnectException
+     * @throws MydbException
      */
-    public function command(string $query): bool;
+    public function callStoredProcedure(string $query): void
+    {
+        $this->command($query);
+    }
 }

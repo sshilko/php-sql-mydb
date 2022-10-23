@@ -22,12 +22,66 @@ namespace sql;
  */
 class MydbCredentials
 {
+    /**
+     * Database credentials - hostname
+     * Can be either a host name or an IP address. Passing the null value or the string "localhost" to this parameter,
+     * the local host is assumed. When possible, pipes will be used instead of the TCP/IP protocol.
+     *
+     * @see https://www.php.net/manual/en/mysqli.real-connect.php
+     */
     protected string $host;
+
+    /**
+     * Database credentials - username
+     *
+     * @see https://www.php.net/manual/en/mysqli.real-connect.php
+     */
     protected string $username;
+
+    /**
+     * Database credentials - password
+     * If provided or null, the MySQL server will attempt to authenticate the user against those user records
+     * which have no password only. This allows one username to be used with different permissions
+     * (depending on if a password as provided or not).
+     *
+     * @see https://www.php.net/manual/en/mysqli.real-connect.php
+     */
     protected string $passwd;
+
+    /**
+     * Database credentials - database name
+     * If provided will specify the default database to be used when performing queries.
+     *
+     * @see https://www.php.net/manual/en/mysqli.real-connect.php
+     */
     protected string $dbname;
+
+    /**
+     * Database credentials - port
+     * Specifies the port number to attempt to connect to the MySQL server.
+     *
+     * @see https://www.php.net/manual/en/mysqli.real-connect.php
+     */
     protected ?int $port;
+
+    /**
+     * Database credentials - socket
+     * Specifies the socket or named pipe that should be used.
+     *
+     * @see https://www.php.net/manual/en/mysqli.real-connect.php
+     */
     protected ?string $socket;
+
+    /**
+     * Database credentials - connection flags
+     * With the parameter flags you can set different connection options
+     * MYSQLI_CLIENT_COMPRESS - Use compression protocol
+     * MYSQLI_CLIENT_SSL - Use SSL (encryption)
+     * MULTI_STATEMENT flag is not supported in PHP
+     *
+     * @see https://www.php.net/manual/en/mysqli.real-connect.php
+     */
+
     protected int $flags;
 
     public function __construct(

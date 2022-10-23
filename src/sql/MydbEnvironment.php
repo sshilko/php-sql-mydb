@@ -43,12 +43,15 @@ class MydbEnvironment
     protected array $knownSignals = [SIGTERM, SIGINT, SIGHUP];
 
     /**
+     * Any signals that were trapped during custom signal handler
+     *
      * @var array<int>
      */
     protected array $trappedSignals = [];
 
     /**
      * Backup of signal handlers
+     * Original signal handler, which replaced by custon trap
      *
      * @var array
      */
@@ -56,6 +59,7 @@ class MydbEnvironment
 
     /**
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+     * @see https://www.php.net/manual/en/function.gc-collect-cycles
      */
     public function gc_collect_cycles(): void
     {
@@ -67,6 +71,9 @@ class MydbEnvironment
     }
 
     /**
+     * Set custom PHP error handler
+     *
+     * @see https://www.php.net/manual/en/function.set-error-handler
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
     public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): ?callable
@@ -75,7 +82,28 @@ class MydbEnvironment
     }
 
     /**
+     * Set mysqlnd.net_read_timeout php ini value
+     *
+     * mysqlnd and the MySQL Client Library, libmysqlclient use different networking APIs.
+     * mysqlnd uses PHP streams, whereas libmysqlclient uses its own wrapper around the operating level network calls.
+     * PHP, by default, sets a read timeout of 60s for streams.
+     * This is set via php.ini, default_socket_timeout.
+     * This default applies to all streams that set no other timeout value.
+     * mysqlnd does not set any other value and therefore connections of long running queries can be disconnected
+     * after default_socket_timeout seconds resulting in an error message 2006 - MySQL Server has gone away.
+     * The MySQL Client Library sets a default timeout of 24 * 3600 seconds (1 day)
+     * and waits for other timeouts to occur, such as TCP/IP timeouts. mysqlnd now uses the same very long timeout.
+     * The value is configurable through a new php.ini setting: mysqlnd.net_read_timeout.
+     *
+     * mysqlnd.net_read_timeout gets used by any extension (ext/mysql, ext/mysqli, PDO_MySQL) that uses mysqlnd.
+     * mysqlnd tells PHP Streams to use mysqlnd.net_read_timeout.
+     * Please note that there may be subtle differences between MYSQL_OPT_READ_TIMEOUT from the MySQL Client Library
+     * and PHP Streams, for example MYSQL_OPT_READ_TIMEOUT is documented to work only for TCP/IP connections and,
+     * prior to MySQL 5.1.2, only for Windows. PHP streams may not have this limitation.
+     * Please check the streams documentation, if in doubt.
+     *
      * @throws EnvironmentException
+     * @see https://www.php.net/manual/en/mysqlnd.config.php
      */
     public function setMysqlndNetReadTimeout(string $timeoutSeconds): bool
     {
@@ -83,7 +111,10 @@ class MydbEnvironment
     }
 
     /**
+     * Sets which PHP errors are reported
+     *
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+     * @see https://www.php.net/manual/en/function.error-reporting
      */
     public function error_reporting(int $level): int
     {
@@ -91,7 +122,10 @@ class MydbEnvironment
     }
 
     /**
+     * Set whether a client disconnect should abort script execution (does not affect CLI)
+     *
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+     * @see https://www.php.net/manual/en/function.ignore-user-abort
      */
     public function ignore_user_abort(): int
     {
@@ -99,8 +133,11 @@ class MydbEnvironment
     }
 
     /**
+     * Sets the value of a configuration option
+     *
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      * @throws EnvironmentException
+     * @see https://www.php.net/manual/en/function.ini-set
      */
     public function ini_set(string $key, string $value): string
     {
@@ -117,6 +154,8 @@ class MydbEnvironment
      *
      * @see https://wiki.php.net/rfc/async_signals
      * @see https://blog.pascal-martin.fr/post/php71-en-other-new-things/
+     * @see https://www.php.net/manual/en/function.pcntl-signal
+     *
      * @return array|null array of trapped signals
      * @throws EnvironmentException
      */
@@ -151,6 +190,7 @@ class MydbEnvironment
      *
      * @see https://wiki.php.net/rfc/async_signals
      * @see https://blog.pascal-martin.fr/post/php71-en-other-new-things/
+     * @see https://www.php.net/manual/en/function.pcntl-signal
      * @throws EnvironmentException
      */
     public function startSignalsTrap(): void
@@ -171,6 +211,10 @@ class MydbEnvironment
         }
     }
 
+    /**
+     * Error handler that does nothing and does not chain
+     * @see https://www.php.net/manual/en/function.set-error-handler
+     */
     protected function getNullErrorHandler(): callable
     {
         return static function () {

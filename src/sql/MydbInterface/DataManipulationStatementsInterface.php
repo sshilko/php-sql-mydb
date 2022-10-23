@@ -58,13 +58,5 @@ interface DataManipulationStatementsInterface
 
     public function replace(string $query): ?string;
 
-    public function table(string $query): ?array;
-
-    public function values(string $query): ?array;
-
-    public function call(string $query): void;
-
-    public function do(string $query): void;
-
-    public function handler(string $query): void;
+    public function callStoredProcedure(string $query): void;
 }

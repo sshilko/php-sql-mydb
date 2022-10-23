@@ -23,7 +23,14 @@ namespace sql\MydbInterface;
  */
 interface RemoteResourceInterface
 {
+    /**
+     * Open remote server connection
+     */
     public function open(): bool;
 
+    /**
+     * Cleanup remote server connection
+     * will NOT close persistent connections
+     */
     public function close(): void;
 }

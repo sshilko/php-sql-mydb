@@ -16,6 +16,7 @@ declare(strict_types = 1);
 namespace sql;
 
 use mysqli;
+use mysqli_result;
 use sql\MydbMysqli\MydbMysqliResult;
 use function array_merge;
 use function array_values;
@@ -38,25 +39,110 @@ use const MYSQLI_STORE_RESULT_COPY_DATA;
 use const MYSQLI_TRANS_COR_NO_RELEASE;
 use const MYSQLI_TRANS_COR_RELEASE;
 use const MYSQLI_TRANS_START_READ_ONLY;
+use const MYSQLI_TRANS_START_READ_WRITE;
 
 /**
+ * Facade for php mysqli extension
+ *
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
+ * @see https://www.php.net/manual/en/class.mysqli
  */
 class MydbMysqli
 {
+    /**
+     * Command to execute when connecting to MySQL server. Will automatically be re-executed when reconnecting.
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_INIT_COMMAND = MYSQLI_INIT_COMMAND;
+
+    /**
+     * Connect timeout in seconds
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_OPT_CONNECT_TIMEOUT = MYSQLI_OPT_CONNECT_TIMEOUT;
+
+    /**
+     * The size of the internal command/network buffer. Only valid for mysqlnd.
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_OPT_NET_CMD_BUFFER_SIZE = MYSQLI_OPT_NET_CMD_BUFFER_SIZE;
+
+    /**
+     * Maximum read chunk size in bytes when reading the body of a MySQL command packet. Only valid for mysqlnd.
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_OPT_NET_READ_BUFFER_SIZE = MYSQLI_OPT_NET_READ_BUFFER_SIZE;
+
+    /**
+     * Command execution result timeout in seconds. Available as of PHP 7.2.0.
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_OPT_READ_TIMEOUT = MYSQLI_OPT_READ_TIMEOUT;
+
+    /**
+     * Copy results from the internal mysqlnd buffer into the PHP variables fetched.
+     * By default, mysqlnd will use a reference logic to avoid copying and duplicating results
+     * held in memory. For certain result sets, for example, result sets with many small rows,
+     * the copy approach can reduce the overall memory usage because PHP variables holding
+     * results may be released earlier (available with mysqlnd only)
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_STORE_RESULT_COPY_DATA = MYSQLI_STORE_RESULT_COPY_DATA;
+
+    /**
+     * Appends "RELEASE" to mysqli_commit() or mysqli_rollback().
+     * The RELEASE clause causes the server to disconnect the current client session
+     * after terminating the current transaction
+     *
+     * @see https://dev.mysql.com/doc/refman/8.0/en/commit.html
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_TRANS_COR_RELEASE = MYSQLI_TRANS_COR_RELEASE;
+
+    /**
+     * Start the transaction as "START TRANSACTION READ ONLY" with mysqli_begin_transaction().
+     *
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_TRANS_START_READ_ONLY = MYSQLI_TRANS_START_READ_ONLY;
+
+    /**
+     * Start the transaction as "START TRANSACTION READ WRITE" with mysqli_begin_transaction().
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
+    public const MYSQLI_TRANS_START_READ_WRITE = MYSQLI_TRANS_START_READ_WRITE;
+
+    /**
+     * Appends "NO RELEASE" to mysqli_commit() or mysqli_rollback().
+     * The NO RELEASE clause asks the server to not disconnect the current client session
+     * after terminating the current transaction
+     *
+     * @see https://dev.mysql.com/doc/refman/8.0/en/commit.html
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_TRANS_COR_NO_RELEASE = MYSQLI_TRANS_COR_NO_RELEASE;
+
+    /**
+     * Set all options on (report all), report all warnings/errors.
+     *
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_REPORT_ALL = MYSQLI_REPORT_ALL;
+
+    /**
+     * Report if no index or bad index was used in a query.
+     *
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_REPORT_INDEX = MYSQLI_REPORT_INDEX;
+
+    /**
+     * Throw a mysqli_sql_exception for errors instead of warnings.
+     *
+     * @see https://www.php.net/manual/en/mysqli.constants.php
+     */
     public const MYSQLI_REPORT_STRICT = MYSQLI_REPORT_STRICT;
 
     /**
@@ -65,14 +151,26 @@ class MydbMysqli
      */
     protected const SQL_MODE = 'TRADITIONAL';
 
+    /**
+     * Mysqli instance
+     * The mysqli extension allows you to access the functionality provided by MySQL 4.1 and above
+     *
+     * @see http://dev.mysql.com/doc/
+     * @see https://www.php.net/manual/en/mysqli.overview.php
+     * @see https://www.php.net/manual/en/intro.mysqli.php
+     * @see https://www.php.net/manual/en/class.mysqli
+     */
     protected ?mysqli $mysqli = null;
 
     /**
+     * Flag indicating whether physical connection was established with remote server
      * Is connected to remove server
      */
     protected bool $isConnected = false;
 
     /**
+     * Flag indicating whether SQL transaction was started
+     * WARNING: best-effort, only guaranteed when library is used correctly
      * Is transaction started
      */
     protected bool $isTransaction = false;
@@ -86,6 +184,10 @@ class MydbMysqli
         $this->mysqli = $resource;
     }
 
+    /**
+     * Allocate mysqli resource instance, no physical connection to remote is done
+     *
+     */
     public function init(): bool
     {
         if (null !== $this->mysqli) {
@@ -108,6 +210,9 @@ class MydbMysqli
     }
 
     /**
+     * Set various options that affect mysqli resource, before connection is established
+     *
+     * @see https://www.php.net/manual/en/mysqli.options.php
      * @throws MydbException\EnvironmentException
      */
     public function setTransportOptions(MydbOptions $options, MydbEnvironment $environment): bool
@@ -161,6 +266,9 @@ class MydbMysqli
         return $this->mysqli;
     }
 
+    /**
+     * @see https://www.php.net/manual/en/mysqli.real-query.php
+     */
     public function realQuery(string $query): bool
     {
         if ($this->mysqli && $this->isConnected()) {
@@ -170,21 +278,19 @@ class MydbMysqli
         return false;
     }
 
+    /**
+     * React to mysqli resource changes after query/command execution
+     */
     public function readServerResponse(MydbEnvironment $environment): ?MydbMysqliResult
     {
         if ($this->mysqli && $this->isConnected()) {
             $events = [];
-            $oldHandler = $environment->set_error_handler(static function (int $errno, string $error) use (&$events) {
-                $events[$errno] = $error;
-
-                return true;
-            });
-            $result = $this->mysqli->store_result(self::MYSQLI_STORE_RESULT_COPY_DATA);
-            $environment->set_error_handler($oldHandler);
+            $warnings = [];
+            
+            $result = $this->extractServerResponse($environment, $events);
 
             $fieldsCount = $this->getFieldCount();
 
-            $warnings = [];
             if ($this->getWarningCount() > 0) {
                 $warnings = array_merge($warnings, $this->getWarnings());
             }
@@ -192,7 +298,7 @@ class MydbMysqli
                 $warnings = array_merge($warnings, array_values($events));
             }
 
-            $response = new MydbMysqliResult(false === $result ? null : $result, $warnings, $fieldsCount ?? 0);
+            $response = new MydbMysqliResult($result, $warnings, $fieldsCount ?? 0);
 
             $error = $this->getError();
             if (null !== $error && '' !== $error) {
@@ -210,6 +316,9 @@ class MydbMysqli
         return null;
     }
 
+    /**
+     * @see https://www.php.net/manual/en/mysqli.real-escape-string.php
+     */
     public function realEscapeString(string $string): ?string
     {
         if (!$this->mysqli || !$this->isConnected()) {
@@ -220,11 +329,14 @@ class MydbMysqli
     }
 
     /**
+     * @see https://www.php.net/manual/en/mysqli.begin-transaction.php
      * @psalm-suppress MissingParamType
      */
-    public function beginTransaction(...$args): bool
+    public function beginTransactionReadwrite(): bool
     {
-        if ($this->mysqli && $this->isConnected() && $this->mysqli->begin_transaction(...$args)) {
+        if ($this->mysqli &&
+            $this->isConnected() &&
+            $this->mysqli->begin_transaction(self::MYSQLI_TRANS_START_READ_WRITE)) {
             $this->isTransaction = true;
 
             return true;
@@ -234,11 +346,57 @@ class MydbMysqli
     }
 
     /**
+     * @see https://www.php.net/manual/en/mysqli.begin-transaction.php
      * @psalm-suppress MissingParamType
      */
-    public function rollback(...$args): bool
+    public function beginTransactionReadonly(): bool
     {
-        if ($this->mysqli && $this->isConnected() && $this->mysqli->rollback(...$args)) {
+        if ($this->mysqli &&
+            $this->isConnected() &&
+            $this->mysqli->begin_transaction(self::MYSQLI_TRANS_START_READ_ONLY)) {
+            $this->isTransaction = true;
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * @see https://www.php.net/manual/en/mysqli.begin-transaction.php
+     * @psalm-suppress MissingParamType
+     */
+    public function beginTransaction(): bool
+    {
+        if ($this->mysqli && $this->isConnected() && $this->mysqli->begin_transaction()) {
+            $this->isTransaction = true;
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * @see https://www.php.net/manual/en/mysqli.rollback.php
+     */
+    public function rollback(): bool
+    {
+        if ($this->mysqli && $this->isConnected() && $this->mysqli->rollback(self::MYSQLI_TRANS_COR_NO_RELEASE)) {
+            $this->isTransaction = false;
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Commit transaction and release connection from server side
+     */
+    public function commitAndRelease(): bool
+    {
+        if ($this->mysqli && $this->isConnected() && $this->mysqli->commit(self::MYSQLI_TRANS_COR_RELEASE)) {
             $this->isTransaction = false;
 
             return true;
@@ -250,9 +408,9 @@ class MydbMysqli
     /**
      * @psalm-suppress MissingParamType
      */
-    public function commit(...$args): bool
+    public function commit(): bool
     {
-        if ($this->mysqli && $this->isConnected() && $this->mysqli->commit(...$args)) {
+        if ($this->mysqli && $this->isConnected() && $this->mysqli->commit(self::MYSQLI_TRANS_COR_NO_RELEASE)) {
             $this->isTransaction = false;
 
             return true;
@@ -394,6 +552,31 @@ class MydbMysqli
         }
 
         return false;
+    }
+
+    /**
+     * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference
+     */
+    protected function extractServerResponse(MydbEnvironment $environment, array &$events): ?mysqli_result
+    {
+        if (null === $this->mysqli) {
+            return null;
+        }
+
+        $oldHandler = $environment->set_error_handler(static function (int $errno, string $error) use (&$events) {
+            $events[$errno] = $error;
+
+            return true;
+        });
+
+        $result = $this->mysqli->store_result(self::MYSQLI_STORE_RESULT_COPY_DATA);
+        $environment->set_error_handler($oldHandler);
+
+        if (false === $result) {
+            return null;
+        }
+
+        return $result;
     }
 
     /**
