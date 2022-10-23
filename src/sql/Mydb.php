@@ -124,6 +124,7 @@ class Mydb implements
      */
     public function query(string $query): ?array
     {
+
         if (!$this->connect()) {
             throw new ConnectException();
         }
@@ -340,24 +341,48 @@ class Mydb implements
     }
 
     /**
+     * @param float|int|string|null|MydbExpression $unescaped
      * @throws ConnectException
      * @throws MydbException
      */
-    public function escape(string $unescaped): string
+    public function escape($unescaped, bool $quote = true): string
     {
-        if (is_numeric($unescaped) && ctype_digit($unescaped)) {
-            return $unescaped;
+        if (is_float($unescaped)) {
+            return (string) $unescaped;
         }
 
-        if (preg_match('/^(\w)*$/', $unescaped)) {
-            return $unescaped;
+        if (is_numeric($unescaped) && (int) $unescaped === $unescaped) {
+            return (string) $unescaped;
         }
+
+        if (is_string($unescaped)) {
+            if ('null' === $unescaped || 'NULL' === $unescaped) {
+                return 'NULL';
+            }
+
+            /**
+             * Not quoting '0x...' decimal values
+             */
+            if ('0x' === substr($unescaped, 0, 2) && preg_match('/[a-zA-Z0-9]+/', substr($unescaped, 2))) {
+                return $unescaped;
+            }
+        }
+
+        if ($unescaped instanceof MydbExpression) {
+            return (string) $unescaped;
+        }
+
+        if (is_scalar($unescaped) && preg_match('/^(\w)*$/', (string) $unescaped)) {
+            return $quote ? "'" . (string) $unescaped . "'" : (string) $unescaped;
+        }
+
 
         if (!$this->connect()) {
             throw new ConnectException();
         }
 
-        return (string) $this->mysqli->realEscapeString($unescaped);
+        $escaped = (string) $this->mysqli->realEscapeString($unescaped);
+        return $quote ? "'" . $escaped . "'" : $escaped;
     }
 
     /**
@@ -367,7 +392,7 @@ class Mydb implements
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void
     {
         /** @lang text */
-        $query = 'DELETE FROM `' . $this->escape($table) . '`';
+        $query = 'DELETE FROM `' . $this->escape($table, false) . '`';
 
         $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
 
@@ -388,7 +413,7 @@ class Mydb implements
         /**
          * @todo refactor to composite keys, unique keys etc. multiple-values
          */
-        $sql = 'SHOW KEYS FROM `' . $this->escape($table) . '`';
+        $sql = 'SHOW KEYS FROM `' . $this->escape($table, false) . '`';
 
         $result = $this->query($sql);
 
@@ -423,20 +448,7 @@ class Mydb implements
             /**
              * @psalm-suppress InvalidOperand
              */
-            $f = '`' . (string) $field . '`' . '=';
-
-            $escaped = $this->escapeValue($value);
-            if (null !== $escaped) {
-                $f .= $escaped;
-            } elseif (is_numeric($value) && $value === intval($value)) {
-                /**
-                 * @psalm-suppress InvalidOperand
-                 */
-                $f .= $value;
-            } else {
-                $f .= "'" . $this->escape((string) $value) . "'";
-            }
-
+            $f = '`' . (string) $field . '`' . ' = ' . $this->escape($value);
             $values[] = $f;
         }
 
@@ -468,26 +480,12 @@ class Mydb implements
             $sql .= ' SET `' . $column . '` = CASE';
 
             foreach ($map as $newValueWhere) {
-                $escaped = $this->escapeValue($newValueWhere[0]);
-                if (null !== $escaped) {
-                    $whereKey = $escaped;
-                } elseif (is_numeric($newValueWhere[0]) && intval($newValueWhere[0]) === $newValueWhere[0]) {
-                    $whereKey = $newValueWhere[0];
-                } else {
-                    $whereKey = "'" . $this->escape($newValueWhere[0]) . "'";
-                }
-
                 /**
                  * @psalm-suppress InvalidOperand
                  */
-                $sql .= ' WHEN (`' . $column . '` = ' . $whereKey . ') THEN ';
+                $sql .= ' WHEN (`' . $column . '` = ' . $this->escape($newValueWhere[0]) . ')';
+                $sql .= ' THEN ' . $this->escape($newValueWhere[1]);
 
-                $escaped = $this->escapeValue($newValueWhere[1]);
-                if (null !== $escaped) {
-                    $sql .= $escaped;
-                } else {
-                    $sql .= "'" . $this->escape((string) $newValueWhere[1]) . "'";
-                }
             }
 
             /**
@@ -516,12 +514,7 @@ class Mydb implements
             fn ($r) => '(' . implode(
                 ', ',
                 array_map(function ($input) use ($me) {
-                    $escaped = $this->escapeValue($input);
-                    if (null !== $escaped) {
-                        return $escaped;
-                    }
-
-                    return "'" . $me->escape((string) $input) . "'";
+                    return $me->escape((string) $input);
                 }, $r),
             ) . ') ',
             $data,
@@ -550,10 +543,7 @@ class Mydb implements
         foreach ($data as $name => $value) {
             $names[] = $name;
 
-            $escaped = $this->escapeValue($value);
-            $v = $escaped ?? "'" . $this->escape($value) . "'";
-
-            $values[] = $v;
+            $values[] = $this->escape($value);
         }
 
         $query = sprintf(
@@ -573,12 +563,8 @@ class Mydb implements
         $values = [];
 
         foreach ($data as $name => $value) {
-            $names[] = $name;
-
-            $escaped = $this->escapeValue($value);
-            $v = $escaped ?? "'" . $this->escape((string) $value) . "'";
-
-            $values[] = $v;
+            $names[]  = $name;
+            $values[] = $this->escape($value);
         }
 
         $query = sprintf(
@@ -700,7 +686,9 @@ class Mydb implements
      */
     protected function getIterableValues(string $table, string $column, string $type): array
     {
-        $query = "SHOW COLUMNS FROM `" . $this->escape($table) . "` LIKE '" . $this->escape($column) . "'";
+        $query  = "SHOW COLUMNS FROM `" . $this->escape($table, false) . "` ";
+        $query .= "LIKE " . $this->escape($column);
+
         $resultArray = $this->query($query);
         $result = isset($resultArray[0]['Type'])
             ? (string) $resultArray[0]['Type']
@@ -769,25 +757,6 @@ class Mydb implements
         }
 
         return $packet;
-    }
-
-    /**
-     * @param float|int|string|MydbExpression $input
-     */
-    protected function escapeValue($input): ?string
-    {
-        if ($input instanceof MydbExpression) {
-            return (string) $input;
-        }
-
-        if (is_string($input)) {
-            $isHex = '0x' === substr($input, 0, 2) && ctype_xdigit(substr($input, 2));
-            if ($isHex || 'NULL' === strtoupper($input)) {
-                return $input;
-            }
-        }
-
-        return null;
     }
 
     protected function onWarning(string $warningMessage, ?string $sql = null): void
@@ -924,13 +893,8 @@ class Mydb implements
                 if (1 === count($value)) {
                     $qvalue = implode('', $value);
                     $queryPart .= ($isNegative ? '!' : '') . '=';
+                    $queryPart .= $this->escape($qvalue);
 
-                    $escaped = $this->escapeValue($qvalue);
-                    if (null !== $escaped) {
-                        $queryPart .= $escaped;
-                    } else {
-                        $queryPart .= "'" . $this->escape($qvalue) . "'";
-                    }
                 } else {
                     $queryPart .= ($isNegative ? ' NOT' : '') . " IN (";
                     $inVals = [];
@@ -939,14 +903,7 @@ class Mydb implements
                         if (null === $val) {
                             $inNull = true;
                         } else {
-                            $escaped = $this->escapeValue($val);
-                            if (null !== $escaped) {
-                                $inVals[] = $escaped;
-                            } elseif (is_numeric($val) && intval($val) === $val) {
-                                $inVals[] = $val;
-                            } else {
-                                $inVals[] = "'" . $this->escape($val) . "'";
-                            }
+                            $inVals[] = $this->escape($val);
                         }
                     }
 
@@ -960,18 +917,7 @@ class Mydb implements
                 }
 
                 $queryPart .= $equality;
-
-                $escaped = $this->escapeValue($value);
-                if (null !== $escaped) {
-                    $queryPart .= $escaped;
-                } elseif (is_numeric($value) && $value === intval($value)) {
-                    $queryPart .= (string) $value;
-                } else {
-                    /**
-                     * @psalm-suppress InvalidOperand
-                     */
-                    $queryPart .= "'" . $this->escape($value) . "'";
-                }
+                $queryPart .= $this->escape($value);
             }
 
             if ($inNull) {
