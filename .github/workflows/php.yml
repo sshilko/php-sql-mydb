@@ -33,11 +33,31 @@ jobs:
         path: vendor
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
-          ${{ runner.os }}-php-
+          ${{ runner.os }}-php
+
+    - name: Show dir
+      run: pwd
+
+    - name: PHP Version
+      run: php --version
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --optimize-autoloader
 
-    # Docs: https://github.com/psalm/shepherd
+      # Docs: https://github.com/psalm/shepherd
     - name: Run psalm suite and send shepherd stats
       run: composer app-psalm-shepherd
+
+      # Docs: https://phpunit.readthedocs.io/en/9.5/
+    - name: Run PHPUnit with coverage report
+      run: composer app-phpunit-coverage
+
+      # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
+    - name: Generate PHPUnit coverage badge
+      uses: timkrase/phpunit-coverage-badge@v1.2.0
+      with:
+        coverage_badge_path: '/doc/phpunit-coverage-badge.svg'
+        push_badge: true
+        report: /tmp/phpunit-coverage-clover.xml
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+
