@@ -12,7 +12,6 @@ FROM --platform=linux/amd64 library/composer:2.4
 FROM --platform=linux/amd64 library/php:7.4-cli
 
 LABEL author='Sergei Shilko <contact@sshilko.com>'
-LABEL package='sshilko/php-sql-mydb'
 
 STOPSIGNAL SIGTERM
 ENV DEBIAN_FRONTEND noninteractive
