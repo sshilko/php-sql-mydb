@@ -14,42 +14,72 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/9.5/phpunit.xsd"
          backupGlobals="false"
-         colors="true"
-         bootstrap="phpunit.xml.bootstrap.php"
          backupStaticAttributes="false"
-         cacheResult="false"
-         executionOrder="depends,defects"
-         beStrictAboutCoversAnnotation="true"
-         beStrictAboutOutputDuringTests="false"
+         bootstrap="phpunit.xml.bootstrap.php"
+         cacheResult="true"
+         cacheResultFile="/tmp/phpunit-cache-result"
+         colors="true"
+         columns="60"
+         convertDeprecationsToExceptions="false"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
-         forceCoversAnnotation="false"
          processIsolation="false"
+         stopOnDefect="false"
          stopOnError="false"
          stopOnFailure="false"
+         stopOnWarning="false"
          stopOnIncomplete="false"
          stopOnSkipped="false"
-         stopOnRisky="true"
+         stopOnRisky="false"
          failOnRisky="true"
          failOnWarning="true"
          defaultTimeLimit="5"
+         testdox="true"
+         noInteraction="false"
+         forceCoversAnnotation="false"
+         executionOrder="depends,defects"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="false"
          timeoutForSmallTests="1"
          timeoutForMediumTests="6"
          timeoutForLargeTests="11"
          enforceTimeLimit="true"
          beStrictAboutChangesToGlobalState="true"
          verbose="true">
-    <testsuite name="basic">
-        <directory>phpunit</directory>
-    </testsuite>
+    <!-- https://phpunit.readthedocs.io/en/9.5/configuration.html#the-phpunit-element -->
+    <testsuites>
+        <testsuite name="phpunit">
+            <directory phpVersion="7.4.0" phpVersionOperator=">=">./phpunit</directory>
+        </testsuite>
+    </testsuites>
 
     <!-- https://phpunit.readthedocs.io/en/9.5/code-coverage-analysis.html -->
-    <coverage processUncoveredFiles="true">
+    <coverage cacheDirectory="/tmp/phpunit-coverage-cache-directory"
+              includeUncoveredFiles="true"
+              processUncoveredFiles="true"
+              pathCoverage="false"
+              ignoreDeprecatedCodeUnits="true"
+              disableCodeCoverageIgnore="true">
+        <report>
+            <clover outputFile="/tmp/phpunit-coverage-clover.xml"/>
+        </report>
         <include>
-            <directory suffix=".php">../src/sql</directory>
+            <directory suffix=".php">../src</directory>
         </include>
     </coverage>
+
+    <logging>
+        <testdoxText outputFile="/tmp/phpunit-log-test1.txt"/>
+    </logging>
+
+    <!--
+    <listeners>
+    </listeners>
+    <extensions>
+    </extensions>
+    -->
+
     <php>
         <includePath>phpunit/base/</includePath>
 
@@ -68,6 +98,5 @@
         <ini name="intl.error_level" value="0" />
         <ini name="memory_limit" value="-1" />
         <ini name="date.timezone" value="UTC" />
-
     </php>
 </phpunit>

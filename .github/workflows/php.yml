@@ -40,4 +40,4 @@ jobs:
 
     # Docs: https://github.com/psalm/shepherd
     - name: Run psalm suite and send shepherd stats
-      run: composer psalm-shepherd
+      run: composer app-psalm-shepherd
