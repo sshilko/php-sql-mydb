@@ -19,8 +19,11 @@ Simple class to work with MySQL database.
 	<a href="https://packagist.org/packages/sshilko/php-sql-mydb/stats"><img src="https://poser.pugx.org/sshilko/php-sql-mydb/downloads" alt="Total Downloads"></a>
 	<a href="https://choosealicense.com/licenses/mit/"><img src="https://poser.pugx.org/phpstan/phpstan/license" alt="License"></a>
 	<a href="https://phpstan.org/"><img src="https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat" alt="PHPStan Enabled"></a>
+<br/>
+	<a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/php.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/php.yml/badge.svg" alt="Psalm build"></a>
 	<a href="https://psalm.dev/docs/running_psalm/command_line_usage/#shepherd"><img src="https://shepherd.dev/github/sshilko/php-sql-mydb/coverage.svg" alt="Psalm Coverage"></a>
-	<a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/php.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/php.yml/badge.svg" alt="PHP 7.4 Build"></a>
+<br/>
+	<a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/e2e.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/e2e.yml/badge.svg" alt="PHPUnit build"></a>
 	<a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/e2e.yml"><img src="https://github.com/sshilko/php-sql-mydb/doc/phpunit-coverage-badge.svg" alt="PHPUnit Coverage"></a>
 </p>
 
