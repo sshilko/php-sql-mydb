@@ -10,6 +10,7 @@
 version: "3.7"
 services:
   app:
+    image: app
     container_name: app
     tty: true
     dns: 1.1.1.1
