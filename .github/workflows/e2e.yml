@@ -11,10 +11,14 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[ci]')"
+
     timeout-minutes: 6
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GH_TOKEN }}
 
       # OPTIONAL
       # https://depot.dev/blog/docker-layer-caching-in-github-actions
@@ -47,6 +51,9 @@ jobs:
       # Docs: https://phpunit.readthedocs.io/en/9.5/
     - name: Docker run PHPUnit
       run: docker-compose exec -T app composer app-phpunit-coverage
+
+    - name: Show github auth status
+      run: gh auth status
 
       # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
     - name: Generate PHPUnit coverage badge

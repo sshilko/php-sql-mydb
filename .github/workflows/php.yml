@@ -21,7 +21,7 @@ jobs:
       uses: shivammathur/setup-php@v2    
       with: 
         php-version: '7.4'
-        extensions: ast,mysql,xdebug
+        extensions: simplexml,dom,xml,intl,ast,mysql,xdebug
         coverage: xdebug
 
     - name: Validate composer.json and composer.lock
@@ -34,10 +34,7 @@ jobs:
         path: vendor
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
-          ${{ runner.os }}-php
-
-    - name: Show dir
-      run: pwd
+          ${{ runner.os }}-php-
 
     - name: PHP Version
       run: php --version
