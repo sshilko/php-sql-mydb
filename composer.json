@@ -30,52 +30,52 @@
         }
     },
     "scripts": {
-        "pre-commit": [
+        "app-pre-commit": [
             "pre-commit run --config build/.pre-commit-config.yaml"
         ],
-        "psalm":[
+        "app-psalm":[
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --shepherd --memory-limit=-1 --no-diff --show-info=true"
         ],
-        "psalm-shepherd":[
+        "app-psalm-shepherd":[
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --shepherd --memory-limit=-1 --no-diff"
         ],
-        "psalm-alter": [
+        "app-psalm-alter": [
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --alter --issues=MissingReturnType,InvalidReturnType,InvalidNullableReturnType,InvalidFalsableReturnType,PossiblyUndefinedVariable,UnnecessaryVarAnnotation,ParamNameMismatch"
         ],
-        "psalm-taint": [
+        "app-psalm-taint": [
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --taint-analysis"
         ],
-        "phpcbf":[
+        "app-phpcbf":[
             "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpcbf"
         ],
-        "phpcs":[
+        "app-phpcs":[
             "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpcs"
         ],
-        "phpstan":[
+        "app-phpstan":[
             "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpstan"
         ],
-        "phpmd": [
+        "app-phpmd": [
             "php ./vendor/phpmd/phpmd/src/bin/phpmd src/ ansi build/phpmd-rulesets.xml"
         ],
-        "phpunit": [
-            "php ./vendor/phpunit/phpunit/phpunit --testdox --configuration test/phpunit.xml"
+        "app-phpunit": [
+            "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml"
         ],
-        "phpunit-filter": [
-            "php ./vendor/phpunit/phpunit/phpunit --testdox --configuration test/phpunit.xml --filter $1"
+        "app-phpunit-filter": [
+            "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml --filter $1"
         ],
-        "phpunit-coverage": [
-            "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml --coverage-clover /tmp/phpcov.xml"
+        "app-phpunit-coverage": [
+            "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml"
         ],
-        "phpdoc": [
+        "app-phpdoc": [
             "/usr/bin/phpdoc --config /app/build/phpdoc.xml"
         ],
-        "phan": [
+        "app-phan": [
             "php ./vendor/bin/phan --color --color-scheme=vim --no-progress-bar -k ./build/phan.php"
         ],
-        "phpcpd": [
+        "app-phpcpd": [
             "php /usr/bin/phpcpd src"
         ],
-        "pdepend": [
+        "app-pdepend": [
             "./vendor/bin/pdepend --configuration=/app/build/pdepend.xml --jdepend-chart=doc/pdepend/jdepend.svg --overview-pyramid=doc/pdepend/pyramid.svg src"
         ]
     },
@@ -94,9 +94,10 @@
     },
     "require": {
         "php": ">=7.4",
-        "ext-pcntl": "*",
         "ext-mysqli": "*",
         "ext-mysqlnd": "*",
+        "ext-pcntl": "*",
+        "nikic/php-parser": "4.14.0",
         "psr/log": "^1"
     },
     "autoload": {

@@ -113,60 +113,60 @@ docker-compose stop
 
 #### Apply coding standards to modified files
 
-`docker-compose exec app composer pre-commit`
+`docker-compose exec app composer app-pre-commit`
 
 #### Run [PHPUnit](https://phpunit.de) test suite
 
 ```
-docker-compose exec app composer phpunit
+docker-compose exec app composer app-phpunit
 ```
 
 #### Run PHP Code Beautifier & PHP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (all files)
 
 ```
-docker-compose exec app composer phpcbf
-docker-compose exec app composer phpcs
+docker-compose exec app composer app-phpcbf
+docker-compose exec app composer app-phpcs
 ```
 
 #### Run [Psalm](https://psalm.dev) - a static analysis tool for PHP (all files)
 
 ```
-docker-compose exec app composer psalm
-docker-compose exec app composer psalm-alter
-docker-compose exec app composer psalm-taint
-docker-compose exec app composer psalm-shepherd
+docker-compose exec app composer app-psalm
+docker-compose exec app composer app-psalm-alter
+docker-compose exec app composer app-psalm-taint
+docker-compose exec app composer app-psalm-shepherd
 ```
 
 #### Run [PHPStan](https://phpstan.org) - PHP Static Analysis Tool (all files)
 
-`docker-compose exec app composer phpstan`
+`docker-compose exec app composer app-phpstan`
 
 #### Run [PHPMD](https://phpmd.org) - PHP Mess Detector
 
 ```
-docker-compose exec app composer phpmd
+docker-compose exec app composer app-phpmd
 ```
 
 #### Run [Phan](https://github.com/phan/phan) - PHP Phan static analyzer
 
 ```
-docker-compose exec app composer phan
+docker-compose exec app composer app-phan
 ```
 
 #### Run [phpDocumentor](https://www.phpdoc.org) - [phpDocumentor](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/)
 
 ```
-docker-compose exec app composer phpdoc
+docker-compose exec app composer app-phpdoc
 ```
 
 #### Run [PHPCPD](https://github.com/sebastianbergmann/phpcpd) - PHPCPD Copy/Paste Detector (CPD) for PHP code
 
 ```
-docker-compose exec app composer phpcpd
+docker-compose exec app composer app-phpcpd
 ```
 
 #### Run [Pdepend](https://pdepend.org) - PHP quality of design - extensibility, reusability and maintainability
 
 ```
-docker-compose exec app composer pdepend
+docker-compose exec app composer app-pdepend
 ```
