@@ -44,7 +44,7 @@ services:
       - --skip-name-resolve
     healthcheck:
       test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
-      timeout: 5s
+      timeout: 2s
       start_period: 10s
     logging:
       options:
@@ -71,6 +71,6 @@ services:
       nofile:
         soft: 262140
         hard: 262140
-    restart: "no"
+    restart: on-failure:5
     extra_hosts:
       - "host.docker.internal:host-gateway"

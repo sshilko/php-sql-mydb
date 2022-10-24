@@ -78,17 +78,12 @@ Simple class to work with MySQL database.
 
 ##### Roadmap 2022-2023
 
-- tests
+- tests w/o sql server
 - test coverage
 - usage example
 - tests against MySQL8
 - PHP8 compatiblity
 - Analytics & metrics collector
-
-- Psalm etc. free ci/cd & github badges
-- https://app.codecov.io/
-  - https://about.codecov.io/blog/measuring-php-code-coverage-with-phpunit-and-github-actions/ 
-- https://scrutinizer-ci.com
 
 - Packagist export
 
@@ -105,9 +100,8 @@ composer install --no-dev
 
 ```
 docker-compose build
-docker-compose up -d
+docker-compose up -d --wait
 docker-compose exec app composer install --dev
-docker-compose exec app composer dump-autoload
 ...
 docker-compose stop
 ```
