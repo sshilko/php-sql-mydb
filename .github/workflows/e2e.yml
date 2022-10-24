@@ -52,9 +52,6 @@ jobs:
     - name: Docker run PHPUnit
       run: docker-compose exec -T app composer app-phpunit-coverage
 
-    - name: Show github auth status
-      run: gh auth status
-
       # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
     - name: Generate PHPUnit coverage badge
       uses: timkrase/phpunit-coverage-badge@v1.2.0
@@ -63,6 +60,13 @@ jobs:
         push_badge: true
         report: test/clover.xml
         repo_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # https://github.com/actions/upload-artifact
+    - uses: actions/upload-artifact@v3
+      with:
+        name: phpunit-coverage-badge.svg
+        path: doc/phpunit-coverage-badge.svg
+        retention-days: 1
 
     - name: Shutdown
       run: docker-compose down
