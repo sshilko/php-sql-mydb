@@ -101,7 +101,7 @@ composer install --no-dev
 ```
 docker-compose build
 docker-compose up -d --no-build --wait
-docker-compose exec app composer install --dev
+docker-compose exec -T app composer install --dev
 ...
 docker-compose stop
 ```
