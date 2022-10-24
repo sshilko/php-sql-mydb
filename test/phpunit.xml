@@ -62,7 +62,7 @@
               ignoreDeprecatedCodeUnits="true"
               disableCodeCoverageIgnore="true">
         <report>
-            <clover outputFile="/tmp/phpunit-coverage-clover.xml"/>
+            <clover outputFile="./clover.xml"/>
         </report>
         <include>
             <directory suffix=".php">../src</directory>
