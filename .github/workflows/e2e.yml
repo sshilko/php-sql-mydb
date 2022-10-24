@@ -30,11 +30,11 @@ jobs:
       timeout-minutes: 1
 
     - name: Docker install dependencies
-      run: docker-compose exec app composer install --dev
+      run: docker-compose exec -T app composer install --dev
 
       # Docs: https://phpunit.readthedocs.io/en/9.5/
     - name: Docker run PHPUnit
-      run: docker-compose exec app composer app-phpunit-coverage
+      run: docker-compose exec -T app composer app-phpunit-coverage
 
       # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
     - name: Generate PHPUnit coverage badge

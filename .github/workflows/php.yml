@@ -1,4 +1,4 @@
-name: PHP 7.4 host build
+name: PHP7.4 host build
 
 on:
   push:
