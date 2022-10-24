@@ -57,14 +57,14 @@ jobs:
       uses: timkrase/phpunit-coverage-badge@v1.2.0
       with:
         coverage_badge_path: 'doc/phpunit-coverage-badge.svg'
-        push_badge: true
+        push_badge: false
         report: test/clover.xml
         repo_token: ${{ secrets.GITHUB_TOKEN }}
 
       # https://github.com/actions/upload-artifact
     - uses: actions/upload-artifact@v3
       with:
-        name: phpunit-coverage-badge.svg
+        name: phpunit-coverage-badge
         path: doc/phpunit-coverage-badge.svg
         retention-days: 1
 
