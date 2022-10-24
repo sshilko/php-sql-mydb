@@ -24,7 +24,7 @@ Simple class to work with MySQL database.
 	<a href="https://psalm.dev/docs/running_psalm/command_line_usage/#shepherd"><img src="https://shepherd.dev/github/sshilko/php-sql-mydb/coverage.svg" alt="Psalm Coverage"></a>
 <br/>
 	<a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/e2e.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/e2e.yml/badge.svg" alt="PHPUnit build"></a>
-	<a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/e2e.yml"><img src="https://github.com/sshilko/php-sql-mydb/doc/phpunit-coverage-badge.svg" alt="PHPUnit Coverage"></a>
+	<a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/e2e.yml"><img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/master/doc/phpunit-coverage-badge.svg" alt="PHPUnit Coverage"></a>
 </p>
 
 ### How this client helps you talk SQL to MySQL server
