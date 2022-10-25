@@ -86,6 +86,7 @@ jobs:
         path: phpunit-coverage-badge.svg
 
     - name: Commit phpunit-coverage-badge.svg badge
+      uses: actions/checkout@v3
       run: |
         git status
         git config user.name github-actions
