@@ -14,7 +14,6 @@ jobs:
     timeout-minutes: 6
 
     steps:
-      # https://github.com/actions/checkout
     - uses: actions/checkout@v3
 
       # OPTIONAL
@@ -78,7 +77,6 @@ jobs:
     - name: Checkout badges branch
       uses: actions/checkout@v3
       with:
-        token: ${{ github.token }}
         ref: badges
 
       #https://github.com/marketplace/actions/download-a-build-artifact
