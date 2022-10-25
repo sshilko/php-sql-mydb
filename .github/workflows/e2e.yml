@@ -85,13 +85,11 @@ jobs:
         name: phpunit-coverage-badge
         path: phpunit-coverage-badge.svg
 
-    - name: Commit phpunit-coverage-badge.svg badge
-      uses: actions/checkout@v3
-      run: |
-        git status
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git add phpunit-coverage-badge.svg
-        git commit -m "generated phpunit-coverage-badge.svg from revision ${GITHUB_SHA::6}"
-        git push
-
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: Sergei Shilko
+        author_email: contact@sshilko.com
+        message: 'generated phpunit-coverage-badge.svg'
+        add: 'phpunit-coverage-badge.svg'
+        push: true
