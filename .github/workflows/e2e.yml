@@ -60,12 +60,36 @@ jobs:
         report: test/clover.xml
 
       # https://github.com/actions/upload-artifact
-    - uses: actions/upload-artifact@v3
+    - name: Upload PHPUnit coverage badge as artifact
+      uses: actions/upload-artifact@v3
       with:
         name: phpunit-coverage-badge
         path: doc/phpunit-coverage-badge.svg
-        retention-days: 30
+        retention-days: 1
 
-    - name: Shutdown
+    - name: Shutdown docker
       run: docker-compose down
       timeout-minutes: 1
+
+    - name: Checkout badges branch
+      uses: actions/checkout@v3
+      with:
+        ref: badges
+
+      #https://github.com/marketplace/actions/download-a-build-artifact
+    - name: Download PHPUnit coverage badge as artifact
+      uses: actions/download-artifact@v3.0.1
+      with:
+        name: phpunit-coverage-badge
+        path: /phpunit-coverage-badge.svg
+      run: |
+         ls -l
+         git status
+
+#    - run: |
+#        git config user.name github-actions
+#        git config user.email github-actions@github.com
+#        git add .
+#        git commit -m "generated"
+#        git push
+
