@@ -85,16 +85,16 @@ jobs:
       uses: actions/download-artifact@v3.0.1
       with:
         name: phpunit-coverage-badge
-        path: /phpunit-coverage-badge.svg
+        path: phpunit-coverage-badge.svg
 
     - run: |
          ls -l
          git status
 
-#    - run: |
-#        git config user.name github-actions
-#        git config user.email github-actions@github.com
-#        git add .
-#        git commit -m "generated"
-#        git push
+    - run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add phpunit-coverage-badge.svg
+        git commit -m "generated phpunit-coverage-badge.svg from revision ${GITHUB_SHA::6}"
+        git push
 
