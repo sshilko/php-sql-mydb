@@ -14,9 +14,8 @@ jobs:
     timeout-minutes: 6
 
     steps:
+      # https://github.com/actions/checkout
     - uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
 
       # OPTIONAL
       # https://depot.dev/blog/docker-layer-caching-in-github-actions
@@ -71,13 +70,19 @@ jobs:
       timeout-minutes: 1
 
   badges:
+    permissions:
+      actions: write
+      contents: write
+
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
+      # https://github.com/actions/checkout
     - name: Checkout badges branch
       uses: actions/checkout@v3
       with:
+        token: ${{ github.token }}
         ref: badges
 
       #https://github.com/marketplace/actions/download-a-build-artifact
@@ -88,10 +93,7 @@ jobs:
         path: phpunit-coverage-badge.svg
 
     - run: |
-         ls -l
-         git status
-
-    - run: |
+        git status
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add phpunit-coverage-badge.svg
