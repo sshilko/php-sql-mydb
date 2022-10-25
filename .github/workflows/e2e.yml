@@ -82,7 +82,8 @@ jobs:
       with:
         name: phpunit-coverage-badge
         path: /phpunit-coverage-badge.svg
-      run: |
+
+    - run: |
          ls -l
          git status
 
