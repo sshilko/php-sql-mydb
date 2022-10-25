@@ -15,7 +15,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
       # OPTIONAL
       # https://depot.dev/blog/docker-layer-caching-in-github-actions
       # pre-build the build/Dockerfile with caching
@@ -86,7 +85,8 @@ jobs:
         name: phpunit-coverage-badge
         path: phpunit-coverage-badge.svg
 
-    - run: |
+    - name: Commit phpunit-coverage-badge.svg badge
+      run: |
         git status
         git config user.name github-actions
         git config user.email github-actions@github.com
