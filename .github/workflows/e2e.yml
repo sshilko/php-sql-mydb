@@ -71,6 +71,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    permissions: write-all
     steps:
       # https://github.com/actions/checkout
     - name: Checkout badges branch
@@ -86,10 +87,19 @@ jobs:
         path: phpunit-coverage-badge.svg
 
     - name: Commit changes
-      uses: EndBug/add-and-commit@v9
+      uses: EndBug/add-and-commit@v8
       with:
         author_name: Sergei Shilko
         author_email: contact@sshilko.com
         message: 'generated phpunit-coverage-badge.svg'
-        add: 'phpunit-coverage-badge.svg'
-        push: true
+        add: 'report.txt'
+
+    - name: Commit phpunit-coverage-badge.svg badge
+      run: |
+        git status
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add phpunit-coverage-badge.svg
+        git commit -m "generated phpunit-coverage-badge.svg from revision ${GITHUB_SHA::6}"
+        git push
+
