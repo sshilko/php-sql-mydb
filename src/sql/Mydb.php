@@ -259,7 +259,7 @@ class Mydb implements
                 : $unescaped;
         }
 
-        if (!$this->mysqli->isConnected()) {
+        if (!$this->connect()) {
             throw new ConnectException();
         }
 
