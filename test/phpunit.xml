@@ -55,6 +55,7 @@
     </testsuites>
 
     <!-- https://phpunit.readthedocs.io/en/9.5/code-coverage-analysis.html -->
+    <!-- https://phpunit.readthedocs.io/en/9.5/configuration.html#the-coverage-element -->
     <coverage cacheDirectory="/tmp/phpunit-coverage-cache-directory"
               includeUncoveredFiles="true"
               processUncoveredFiles="true"
@@ -62,7 +63,9 @@
               ignoreDeprecatedCodeUnits="true"
               disableCodeCoverageIgnore="true">
         <report>
-            <clover outputFile="./clover.xml"/>
+            <clover outputFile="./phpunit-coverage/phpunit-clover.xml"/>
+            <html outputDirectory="./phpunit-coverage/html" lowUpperBound="50" highLowerBound="90"/>
+            <text outputFile="./phpunit-coverage/phpunit-coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
         </report>
         <include>
             <directory suffix=".php">../src</directory>

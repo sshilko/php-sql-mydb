@@ -64,7 +64,7 @@
             "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml --filter $1"
         ],
         "app-phpunit-coverage": [
-            "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml"
+            "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml && php test/phpunit-coverage/badges.php"
         ],
         "app-phpdoc": [
             "/usr/bin/phpdoc --config /app/build/phpdoc.xml"
@@ -86,11 +86,11 @@
         "pdepend/pdepend": "^2.12",
         "phan/phan": "^5.4",
         "phpmd/phpmd": "^2.13",
-        "phpstan/phpstan": "*",
-        "phpunit/phpunit": "^9",
+        "phpstan/phpstan": "^1.8",
+        "phpunit/phpunit": "^9.5",
         "psalm/phar": "*",
         "slevomat/coding-standard": "^8.4",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "^3.7"
     },
     "require": {
         "php": ">=7.4",
