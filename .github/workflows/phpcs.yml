@@ -27,7 +27,7 @@ jobs:
 
       # https://github.com/pre-commit/action
       - name: Pre-commit dependencies
-      - uses: actions/setup-python@v3
+        uses: actions/setup-python@v3
       - run: pip install pre-commit
 
       - name: Validate composer.json and composer.lock
