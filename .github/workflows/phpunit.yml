@@ -108,28 +108,28 @@ jobs:
       uses: actions/download-artifact@v3.0.1
       with:
         name: phpunit-coverage-badge
-        path: /
+        path: ./phpunit-coverage-badge.svg
 
       #https://github.com/marketplace/actions/download-a-build-artifact
     - name: Download PHPUnit coverage badge as artifact
       uses: actions/download-artifact@v3.0.1
       with:
         name: phpunit-badge-lines
-        path: /
+        path: ./phpunit-badge-lines.svg
 
       #https://github.com/marketplace/actions/download-a-build-artifact
     - name: Download PHPUnit coverage badge as artifact
       uses: actions/download-artifact@v3.0.1
       with:
         name: phpunit-badge-classes
-        path: /
+        path: ./phpunit-badge-classes.svg
 
       #https://github.com/marketplace/actions/download-a-build-artifact
     - name: Download PHPUnit coverage badge as artifact
       uses: actions/download-artifact@v3.0.1
       with:
         name: phpunit-badge-methods
-        path: /
+        path: ./phpunit-badge-methods.svg
 
     - name: Commit phpunit-coverage-badge.svg badge and phpunit-badge-*.svg
       continue-on-error: true
