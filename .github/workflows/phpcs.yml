@@ -1,4 +1,4 @@
-name: PHPStan
+name: PHPCS
 
 on:
   push:
@@ -48,6 +48,6 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --optimize-autoloader
 
-        # Docs: https://phpstan.org
-      - name: Run PHPStan phpstan.org
-        run: composer app-phpstan
+        # Docs: https://github.com/squizlabs/PHP_CodeSniffer
+      - name: Run PHPCodeSniffer github.com/squizlabs/PHP_CodeSniffer
+        run: composer app-phpcs
