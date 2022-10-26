@@ -67,24 +67,24 @@ jobs:
     - name: Upload PHPUnit Lines coverage badge as artifact
       uses: actions/upload-artifact@v3
       with:
-        name: phpunit-badge-lines
-        path: test/phpunit-coverage/phpunit-badge-lines.svg
+        name: phpunit-coverage-badge-lines
+        path: test/phpunit-coverage/phpunit-coverage-badge-lines.svg
         retention-days: 1
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPUnit classes coverage badge as artifact
       uses: actions/upload-artifact@v3
       with:
-        name: phpunit-badge-classes
-        path: test/phpunit-coverage/phpunit-badge-classes.svg
+        name: phpunit-coverage-badge-classes
+        path: test/phpunit-coverage/phpunit-coverage-badge-classes.svg
         retention-days: 1
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPUnit methods coverage badge as artifact
       uses: actions/upload-artifact@v3
       with:
-        name: phpunit-badge-methods
-        path: test/phpunit-coverage/phpunit-badge-methods.svg
+        name: phpunit-coverage-badge-methods
+        path: test/phpunit-coverage/phpunit-coverage-badge-methods.svg
         retention-days: 1
 
     - name: Shutdown docker
@@ -108,28 +108,28 @@ jobs:
       uses: actions/download-artifact@v3.0.1
       with:
         name: phpunit-coverage-badge
-        path: ./phpunit-coverage-badge.svg
+        path: phpunit-coverage-badge.svg
 
       #https://github.com/marketplace/actions/download-a-build-artifact
     - name: Download PHPUnit coverage badge as artifact
       uses: actions/download-artifact@v3.0.1
       with:
-        name: phpunit-badge-lines
-        path: ./phpunit-badge-lines.svg
+        name: phpunit-coverage-badge-lines
+        path: phpunit-coverage-lines.svg
 
       #https://github.com/marketplace/actions/download-a-build-artifact
     - name: Download PHPUnit coverage badge as artifact
       uses: actions/download-artifact@v3.0.1
       with:
-        name: phpunit-badge-classes
-        path: ./phpunit-badge-classes.svg
+        name: phpunit-coverage-badge-classes
+        path: phpunit-coverage-classes.svg
 
       #https://github.com/marketplace/actions/download-a-build-artifact
     - name: Download PHPUnit coverage badge as artifact
       uses: actions/download-artifact@v3.0.1
       with:
-        name: phpunit-badge-methods
-        path: ./phpunit-badge-methods.svg
+        name: phpunit-coverage-badge-methods
+        path: phpunit-coverage-methods.svg
 
     - name: Commit phpunit-coverage-badge.svg badge and phpunit-badge-*.svg
       continue-on-error: true
