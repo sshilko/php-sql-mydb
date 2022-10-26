@@ -20,16 +20,14 @@ Simple class to work with MySQL database.
 	<a href="https://choosealicense.com/licenses/mit/"><img src="https://poser.pugx.org/sshilko/php-sql-mydb/license" alt="MIT License"></a>
     <a href="https://psalm.dev/docs/running_psalm/command_line_usage/#shepherd"><img src="https://shepherd.dev/github/sshilko/php-sql-mydb/coverage.svg" alt="Psalm Coverage"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml"><img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge.svg/phpunit-coverage-badge.svg" alt="PHPUnit Coverage"></a>
+    <br/>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml/badge.svg" alt="Psalm build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml/badge.svg" alt="Phan build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml/badge.svg" alt="PHPUnit build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml/badge.svg" alt="PHPMd build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml/badge.svg" alt="PHPStan build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml/badge.svg" alt="PHPCodeSniffer build"></a>
 </p>
-
-<div style="text-align: center">
-    <span><a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml/badge.svg" alt="Psalm build"></a></span>
-    <span><a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml/badge.svg" alt="Phan build"></a></span>
-    <span><a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml/badge.svg" alt="PHPUnit build"></a></span>
-    <span><a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml/badge.svg" alt="PHPMd build"></a></span>
-    <span><a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml/badge.svg" alt="PHPStan build"></a></span>
-    <span><a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml/badge.svg" alt="PHPCodeSniffer build"></a></span>
-</div>
 
 
 ### How this client helps you talk SQL to MySQL server
@@ -70,12 +68,12 @@ Simple class to work with MySQL database.
 
 #### Why this library exists
 
-* I know that MySQL database is fast, reliable and scalable, php runtime is the same
-* I value developers time and do not add complexity where possible
-* I measure my app's performance with real-world datasets and organic load
-* I optimize for my use-case, focus on bottlenecks, remember that there is no ~~NoSQL~~ silver bullet
-* I do not optimize early because resources like CPU & memory are cheap
-* I focus on building architecture, learn from others and improve over time
+* MySQL database is fast, reliable and scalable, php runtime is the same
+* Value developers time and do not add complexity where possible
+* Measure app's performance with real-world datasets and organic load
+* Optimize for my use-case, focus on bottlenecks, remember that there is no ~~NoSQL~~ silver bullet
+* Do not optimize early - resources like CPU, memory are cheap
+* Focus on building architecture, learn from others and improve over time
 
 ##### Is it compatible?
 
@@ -86,14 +84,13 @@ Simple class to work with MySQL database.
 
 ##### Roadmap 2022-2023
 
-- tests w/o sql server
-- test coverage
+- execute command/query via events, unit-tests against raw SQL generator and events objects
+- 90% tests coverage
 - usage example
-- tests against MySQL8
-- PHP8 compatiblity
-- Analytics & metrics collector
-
-- Packagist export
+- run phpunit tests against MySQL8
+- run phpunit tests against PHP8
+- Pluggable M.E.L.T (metrics, events, logs, traces)
+- Packagist export & release
 
 #### Installation
 
