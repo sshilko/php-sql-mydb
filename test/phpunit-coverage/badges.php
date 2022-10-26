@@ -7,7 +7,7 @@ $input = file(__DIR__ . DIRECTORY_SEPARATOR . 'phpunit-coverage.txt', FILE_SKIP_
 $label = 'PHPUnit';
 $color = 'blue';
 $source = 'https://img.shields.io/static/v1?';
-$file = __DIR__ . DIRECTORY_SEPARATOR . 'phpunit-badge-%s.svg';
+$file = __DIR__ . DIRECTORY_SEPARATOR . 'phpunit-coverage-badge-%s.svg';
 
 foreach ($input as $line) {
     $matches = [];
