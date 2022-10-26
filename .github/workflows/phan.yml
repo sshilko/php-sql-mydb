@@ -43,6 +43,6 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --optimize-autoloader
 
-        # Docs: https://github.com/psalm/shepherd
-      - name: Run psalm suite and send shepherd stats
+        # Docs: https://github.com/phan/phan
+      - name: Run Phan github.com/phan/phan
         run: composer app-phan

@@ -17,6 +17,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+
+    # https://github.com/pre-commit/action
+    - name: Pre-commit
+      uses: pre-commit/action@v3.0.0
+    - uses: actions/setup-python@v3
       
     - name: PHP setup
       uses: shivammathur/setup-php@v2    
@@ -44,5 +49,5 @@ jobs:
       run: composer install --prefer-dist --no-progress --optimize-autoloader
 
       # Docs: https://github.com/psalm/shepherd
-    - name: Run psalm suite and send shepherd stats
+    - name: Run psalm suite and send shepherd stats psalm.dev
       run: composer app-psalm-shepherd

@@ -49,6 +49,7 @@ use function substr;
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Mydb implements
     MydbInterface,
@@ -218,6 +219,8 @@ class Mydb implements
      * @param float|int|string|MydbExpression|null $unescaped
      * @throws ConnectException
      * @throws MydbException
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @todo reduce NPathComplexity
      */
     public function escape($unescaped, string $quote = "'"): string
     {
@@ -256,7 +259,7 @@ class Mydb implements
                 : $unescaped;
         }
 
-        if (!$this->connect()) {
+        if (!$this->mysqli->isConnected()) {
             throw new ConnectException();
         }
 
@@ -780,6 +783,8 @@ class Mydb implements
 
     /**
      * @throws MydbException
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @todo reduce NPathComplexity
      */
     protected function connect(int $retry = 0): bool
     {

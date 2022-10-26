@@ -59,6 +59,7 @@ class MydbEnvironment
 
     /**
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+     * @SuppressWarnings("camelCase")
      * @see https://www.php.net/manual/en/function.gc-collect-cycles
      */
     public function gc_collect_cycles(): void
@@ -74,6 +75,7 @@ class MydbEnvironment
      * Set custom PHP error handler
      *
      * @see https://www.php.net/manual/en/function.set-error-handler
+     * @SuppressWarnings("camelCase")
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
     public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): ?callable
@@ -100,7 +102,6 @@ class MydbEnvironment
      * Please note that there may be subtle differences between MYSQL_OPT_READ_TIMEOUT from the MySQL Client Library
      * and PHP Streams, for example MYSQL_OPT_READ_TIMEOUT is documented to work only for TCP/IP connections and,
      * prior to MySQL 5.1.2, only for Windows. PHP streams may not have this limitation.
-     * Please check the streams documentation, if in doubt.
      *
      * @throws EnvironmentException
      * @see https://www.php.net/manual/en/mysqlnd.config.php
@@ -114,6 +115,7 @@ class MydbEnvironment
      * Sets which PHP errors are reported
      *
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+     * @SuppressWarnings("camelCase")
      * @see https://www.php.net/manual/en/function.error-reporting
      */
     public function error_reporting(int $level): int
@@ -125,6 +127,7 @@ class MydbEnvironment
      * Set whether a client disconnect should abort script execution (does not affect CLI)
      *
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+     * @SuppressWarnings("camelCase")
      * @see https://www.php.net/manual/en/function.ignore-user-abort
      */
     public function ignore_user_abort(): int
@@ -136,6 +139,7 @@ class MydbEnvironment
      * Sets the value of a configuration option
      *
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+     * @SuppressWarnings("camelCase")
      * @throws EnvironmentException
      * @see https://www.php.net/manual/en/function.ini-set
      */
