@@ -26,9 +26,9 @@ jobs:
           coverage: xdebug
 
       # https://github.com/pre-commit/action
-      - name: Pre-commit
-        uses: pre-commit/action@v3.0.0
+      - name: Pre-commit dependencies
       - uses: actions/setup-python@v3
+      - run: pip install pre-commit
 
       - name: Validate composer.json and composer.lock
         run: composer validate
