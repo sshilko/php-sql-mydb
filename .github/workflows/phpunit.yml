@@ -10,7 +10,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[ci]')"
+    if: "!contains(github.event.head_commit.message, 'skip-github-actions')"
     timeout-minutes: 6
 
     steps:
@@ -53,7 +53,7 @@ jobs:
       with:
         coverage_badge_path: 'doc/phpunit-coverage-badge.svg'
         push_badge: false
-        report: test/clover.xml
+        report: test/phpunit-coverage/phpunit-clover.xml
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPUnit coverage badge as artifact
@@ -61,6 +61,30 @@ jobs:
       with:
         name: phpunit-coverage-badge
         path: doc/phpunit-coverage-badge.svg
+        retention-days: 1
+
+      # https://github.com/actions/upload-artifact
+    - name: Upload PHPUnit Lines coverage badge as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: phpunit-badge-lines
+        path: test/phpunit-coverage/phpunit-badge-lines.svg
+        retention-days: 1
+
+      # https://github.com/actions/upload-artifact
+    - name: Upload PHPUnit classes coverage badge as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: phpunit-badge-classes
+        path: test/phpunit-coverage/phpunit-badge-classes.svg
+        retention-days: 1
+
+      # https://github.com/actions/upload-artifact
+    - name: Upload PHPUnit methods coverage badge as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: phpunit-badge-methods
+        path: test/phpunit-coverage/phpunit-badge-methods.svg
         retention-days: 1
 
     - name: Shutdown docker
@@ -84,15 +108,38 @@ jobs:
       uses: actions/download-artifact@v3.0.1
       with:
         name: phpunit-coverage-badge
-        path: phpunit-coverage-badge.svg
+        path: /phpunit-coverage-badge.svg
 
-    - name: Commit phpunit-coverage-badge.svg badge
+      #https://github.com/marketplace/actions/download-a-build-artifact
+    - name: Download PHPUnit coverage badge as artifact
+      uses: actions/download-artifact@v3.0.1
+      with:
+        name: phpunit-badge-lines
+        path: /phpunit-coverage-badge-lines.svg
+
+      #https://github.com/marketplace/actions/download-a-build-artifact
+    - name: Download PHPUnit coverage badge as artifact
+      uses: actions/download-artifact@v3.0.1
+      with:
+        name: phpunit-badge-classes
+        path: /phpunit-coverage-badge-classes.svg
+
+      #https://github.com/marketplace/actions/download-a-build-artifact
+    - name: Download PHPUnit coverage badge as artifact
+      uses: actions/download-artifact@v3.0.1
+      with:
+        name: phpunit-badge-methods
+        path: /phpunit-coverage-badge-methods.svg
+
+    - name: Commit phpunit-coverage-badge.svg badge and phpunit-badge-*.svg
       continue-on-error: true
       run: |
         git status
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add phpunit-coverage-badge.svg
-        git commit -m "generated phpunit-coverage-badge.svg from revision ${GITHUB_SHA::7}"
+        git add phpunit-coverage-lines.svg
+        git add phpunit-coverage-classes.svg
+        git add phpunit-coverage-methods.svg
+        git commit -m "generated phpunit badges from revision ${GITHUB_SHA::7}"
         git push
-
