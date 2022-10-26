@@ -99,6 +99,6 @@ class MydbLogger implements LoggerInterface
             return $var;
         }
 
-        return print_r($var, true);
+        return var_export($var, true);
     }
 }
