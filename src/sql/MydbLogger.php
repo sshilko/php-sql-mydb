@@ -20,7 +20,7 @@ use Psr\Log\LogLevel;
 use function count;
 use function fwrite;
 use function is_scalar;
-use function print_r;
+use function var_export;
 use const PHP_EOL;
 use const STDERR;
 use const STDOUT;
