@@ -107,9 +107,27 @@ jobs:
     - name: Download all PHPUnit coverage artifacts
       uses: actions/download-artifact@v3.0.1
       with:
-        path: ./
+        name: phpunit-coverage-badge
 
-    - name: Commit phpunit-coverage-badge.svg badge and phpunit-badge-*.svg
+      #https://github.com/marketplace/actions/download-a-build-artifact
+    - name: Download all PHPUnit coverage artifacts
+      uses: actions/download-artifact@v3.0.1
+      with:
+        name: phpunit-coverage-badge-lines
+
+      #https://github.com/marketplace/actions/download-a-build-artifact
+    - name: Download all PHPUnit coverage artifacts
+      uses: actions/download-artifact@v3.0.1
+      with:
+        name: phpunit-coverage-badge-classes
+
+      #https://github.com/marketplace/actions/download-a-build-artifact
+    - name: Download all PHPUnit coverage artifacts
+      uses: actions/download-artifact@v3.0.1
+      with:
+        name: phpunit-coverage-badge-methods
+
+    - name: Commit badges
       continue-on-error: true
       run: |
         git status
