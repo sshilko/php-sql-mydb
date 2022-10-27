@@ -104,32 +104,10 @@ jobs:
         ref: badges
 
       #https://github.com/marketplace/actions/download-a-build-artifact
-    - name: Download PHPUnit coverage badge as artifact
+    - name: Download all PHPUnit coverage artifacts
       uses: actions/download-artifact@v3.0.1
       with:
-        name: phpunit-coverage-badge
-        path: phpunit-coverage-badge.svg
-
-      #https://github.com/marketplace/actions/download-a-build-artifact
-    - name: Download PHPUnit coverage badge as artifact
-      uses: actions/download-artifact@v3.0.1
-      with:
-        name: phpunit-coverage-badge-lines
-        path: phpunit-coverage-lines.svg
-
-      #https://github.com/marketplace/actions/download-a-build-artifact
-    - name: Download PHPUnit coverage badge as artifact
-      uses: actions/download-artifact@v3.0.1
-      with:
-        name: phpunit-coverage-badge-classes
-        path: phpunit-coverage-classes.svg
-
-      #https://github.com/marketplace/actions/download-a-build-artifact
-    - name: Download PHPUnit coverage badge as artifact
-      uses: actions/download-artifact@v3.0.1
-      with:
-        name: phpunit-coverage-badge-methods
-        path: phpunit-coverage-methods.svg
+        path: ./
 
     - name: Commit phpunit-coverage-badge.svg badge and phpunit-badge-*.svg
       continue-on-error: true
@@ -138,8 +116,8 @@ jobs:
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add phpunit-coverage-badge.svg
-        git add phpunit-coverage-lines.svg
-        git add phpunit-coverage-classes.svg
-        git add phpunit-coverage-methods.svg
+        git add phpunit-coverage-badge-lines.svg
+        git add phpunit-coverage-badge-classes.svg
+        git add phpunit-coverage-badge-methods.svg
         git commit -m "generated phpunit badges from revision ${GITHUB_SHA::7}"
         git push

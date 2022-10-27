@@ -15,6 +15,8 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use sql\MydbExpression;
+
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
@@ -57,7 +59,7 @@ final class MetaTest extends includes\BaseTestCase
     public function testSet(): void
     {
         $db = $this->getDefaultDb();
-        $actual = $db->getSetValues('myusers_devices', 'provider');
+        $actual = $db->getEnumValues('myusers_devices', 'provider');
         self::assertSame(['Sansunk', 'Hookle', 'Sany'], $actual);
     }
 
@@ -66,10 +68,15 @@ final class MetaTest extends includes\BaseTestCase
         $input = [
             'a' => 'a',
             '1' => '1',
+            '1.1' => '1.1',
+            1.10231 => '1.10231',
+            1 => '1',
+            122 => '122',
+            123456789 => '123456789',
             '\a' => '\\\a',
             "drop \" table" => "drop \\\" table",
             "drox \' table" => "drox \\\\\' table",
-            'droc " table' => 'droc " table',
+            'droc " table' => 'droc \" table',
             "droe ' table" => "droe \' table",
             " Jown's Woo's " => " Jown\'s Woo\'s ",
             "x0011" => "x0011",
@@ -78,12 +85,49 @@ final class MetaTest extends includes\BaseTestCase
             "\r" => "\\r",
             "a\nb" => "a\\nb",
             'NULL' => 'NULL',
+            'null' => 'NULL',
         ];
 
         $db = $this->getDefaultDb();
         foreach ($input as $in => $expect) {
-            $actual = $db->escape((string) $in);
+            $actual = $db->escape($in, '');
+            self::assertSame($expect, $actual);
         }
-        self::assertSame($expect, $actual);
+
+        $actual = $db->escape(null);
+        self::assertSame('', $actual);
+
+        $actual = $db->escape(new MydbExpression('hello world " unescaped null'));
+        self::assertSame('hello world " unescaped null', $actual);
+    }
+
+    public function testSingleQuotedEscape(): void
+    {
+        $input = [
+            'aaa' => '"aaa"',
+            'a b c' => '"a b c"',
+            'esca\'pe' => '"esca\\\'pe"',
+        ];
+
+        $db = $this->getDefaultDb();
+        foreach ($input as $in => $expect) {
+            $actual = $db->escape($in, '"');
+            self::assertSame($expect, $actual);
+        }
+    }
+
+    public function testDoubleQuotedEscape(): void
+    {
+        $input = [
+            'aaa' => "'aaa'",
+            'a b c' => "'a b c'",
+            'esca\'pe' => "'esca\\'pe'",
+        ];
+
+        $db = $this->getDefaultDb();
+        foreach ($input as $in => $expect) {
+            $actual = $db->escape($in, "'");
+            self::assertSame($expect, $actual);
+        }
     }
 }
