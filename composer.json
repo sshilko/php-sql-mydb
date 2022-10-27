@@ -34,27 +34,35 @@
             "pre-commit run --config build/.pre-commit-config.yaml"
         ],
         "app-psalm":[
+            "@putenv XDEBUG_MODE=off",
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true"
         ],
         "app-psalm-shepherd":[
+            "@putenv XDEBUG_MODE=off",
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --shepherd --memory-limit=-1 --no-diff"
         ],
         "app-psalm-alter": [
+            "@putenv XDEBUG_MODE=off",
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --alter --issues=MissingReturnType,InvalidReturnType,InvalidNullableReturnType,InvalidFalsableReturnType,PossiblyUndefinedVariable,UnnecessaryVarAnnotation,ParamNameMismatch"
         ],
         "app-psalm-taint": [
+            "@putenv XDEBUG_MODE=off",
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --taint-analysis"
         ],
         "app-phpcbf":[
+            "@putenv XDEBUG_MODE=off",
             "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpcbf"
         ],
         "app-phpcs":[
+            "@putenv XDEBUG_MODE=off",
             "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpcs"
         ],
         "app-phpstan":[
+            "@putenv XDEBUG_MODE=off",
             "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpstan"
         ],
         "app-phpmd": [
+            "@putenv XDEBUG_MODE=off",
             "php ./vendor/phpmd/phpmd/src/bin/phpmd src/ ansi build/phpmd-rulesets.xml"
         ],
         "app-phpunit": [
@@ -70,7 +78,9 @@
             "/usr/bin/phpdoc --config /app/build/phpdoc.xml"
         ],
         "app-phan": [
-            "php ./vendor/bin/phan --color --color-scheme=vim --no-progress-bar -k ./build/phan.php"
+            "@putenv XDEBUG_MODE=off",
+            "@putenv PHAN_DISABLE_XDEBUG_WARN=1",
+            "php ./vendor/bin/phan --color -k ./build/phan.php"
         ],
         "app-phpcpd": [
             "php /usr/bin/phpcpd src"
@@ -83,6 +93,7 @@
     "prefer-stable": true,
     "require-dev": {
         "ext-ast": "*",
+        "nikic/php-parser": "^4",
         "pdepend/pdepend": "^2.12",
         "phan/phan": "^5.4",
         "phpmd/phpmd": "^2.13",
@@ -97,7 +108,6 @@
         "ext-mysqli": "*",
         "ext-mysqlnd": "*",
         "ext-pcntl": "*",
-        "nikic/php-parser": "4.14.0",
         "psr/log": "^1"
     },
     "autoload": {
