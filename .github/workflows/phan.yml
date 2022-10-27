@@ -45,4 +45,7 @@ jobs:
 
         # Docs: https://github.com/phan/phan
       - name: Run Phan github.com/phan/phan
+        env:
+          PHAN_ALLOW_XDEBUG: 1
+          PHAN_DISABLE_XDEBUG_WARN: 1
         run: composer app-phan
