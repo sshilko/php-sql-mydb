@@ -17,10 +17,19 @@ namespace phpunit;
 
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
-use sql\MydbException\LoggerException;
 use sql\MydbLogger;
-use resource;
 use stdClass;
+use function bin2hex;
+use function fopen;
+use function fseek;
+use function ftruncate;
+use function random_bytes;
+use function random_int;
+use function rewind;
+use function stream_get_contents;
+use function var_export;
+use const PHP_EOL;
+use const SEEK_END;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -33,12 +42,12 @@ final class LoggerTest extends TestCase
     protected ?LoggerInterface $logger;
 
     /**
-     * @var null|resource
+     * @var resource|null
      */
     protected $stdout = null;
 
     /**
-     * @var null|resource
+     * @var resource|null
      */
     protected $stderr = null;
 
@@ -58,44 +67,22 @@ final class LoggerTest extends TestCase
         $this->logger = new MydbLogger($this->stdout, $this->stderr, $this->stdeol);
     }
 
-    protected function tearDown(): void
-    {
-        $this->logger = null;
-    }
-
-    protected function getBuffers(): array
-    {
-        rewind($this->stdout);
-        $out = stream_get_contents($this->stdout);
-        fseek($this->stdout, 0, SEEK_END);
-        ftruncate($this->stdout, 0);
-
-        rewind($this->stderr);
-        $err = stream_get_contents($this->stderr);
-        fseek($this->stderr, 0, SEEK_END);
-        ftruncate($this->stderr, 0);
-
-        return [
-            'stdout' => $out,
-            'stderr' => $err
-        ];
-    }
-
     /**
      * @return array<array<string, string>>
-     * @throws \Exception
+     * @throws Exception
      */
     public function dataProviderStrings(): array
     {
         $eol = $this->stdeol;
         $randomString = bin2hex(random_bytes(random_int(2, 20)));
+
         return [
             'nothing' => [
                 'message' => '',
                 'context' => [],
                 'stdout' => '',
                 'stderr' => '',
-                'isError' => true
+                'isError' => true,
             ],
             'nothing-error' => [
                 'message' => '',
@@ -108,20 +95,20 @@ final class LoggerTest extends TestCase
                 'context' => [],
                 'stdout' => '',
                 'stderr' => $randomString . $eol,
-                'isError' => true
+                'isError' => true,
             ],
             'something' => [
                 'message' => $randomString,
                 'context' => [],
                 'stdout' => $randomString . $eol,
-                'stderr' => ''
+                'stderr' => '',
             ],
             'chars' => [
                 'message' => '___-123\'\"&*^!@&#${}AXC__DA',
                 'context' => [],
                 'stdout' => '___-123\'\"&*^!@&#${}AXC__DA' . $eol,
-                'stderr' => ''
-            ]
+                'stderr' => '',
+            ],
         ];
     }
 
@@ -129,9 +116,16 @@ final class LoggerTest extends TestCase
      * @dataProvider dataProviderStrings
      * @throws LoggerException
      */
-    public function testLoggerWithStrings(string $str, array $ctx, string $stdout, string $stderr, bool $isError = false): void
-    {
-        $api = $isError ? ['warning', 'emergency', 'alert', 'critical'] : ['debug', 'info', 'notice'];
+    public function testLoggerWithStrings(
+        string $str,
+        array $ctx,
+        string $stdout,
+        string $stderr,
+        bool $isError = false
+    ): void {
+        $api = $isError
+            ? ['warning', 'emergency', 'alert', 'critical']
+            : ['debug', 'info', 'notice'];
 
         foreach ($api as $call) {
             $this->logger->$call($str, $ctx);
@@ -167,9 +161,32 @@ final class LoggerTest extends TestCase
         $buffers = $this->getBuffers();
         self::assertSame(
             var_export($context, true) . $this->stdeol,
-            $buffers['stdout'], 'STDOUT match for log with context'
+            $buffers['stdout'],
+            'STDOUT match for log with context'
         );
         self::assertSame('', $buffers['stderr'], 'STDERR match for log with context');
     }
 
+    protected function tearDown(): void
+    {
+        $this->logger = null;
+    }
+
+    protected function getBuffers(): array
+    {
+        rewind($this->stdout);
+        $out = stream_get_contents($this->stdout);
+        fseek($this->stdout, 0, SEEK_END);
+        ftruncate($this->stdout, 0);
+
+        rewind($this->stderr);
+        $err = stream_get_contents($this->stderr);
+        fseek($this->stderr, 0, SEEK_END);
+        ftruncate($this->stderr, 0);
+
+        return [
+            'stdout' => $out,
+            'stderr' => $err,
+        ];
+    }
 }

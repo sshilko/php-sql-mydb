@@ -16,12 +16,8 @@ declare(strict_types = 1);
 namespace phpunit;
 
 use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use sql\MydbException;
-use sql\MydbException\LoggerException;
-use sql\MydbLogger;
-use resource;
-use stdClass;
+use function time;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -40,6 +36,7 @@ final class MydbExceptionTest extends TestCase
         $exception = new MydbException($message);
         $this->expectException(MydbException::class);
         $this->expectExceptionMessage($message);
+
         throw $exception;
     }
 }

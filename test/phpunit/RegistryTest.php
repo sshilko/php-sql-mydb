@@ -18,6 +18,7 @@ namespace phpunit;
 use PHPUnit\Framework\TestCase;
 use sql\MydbException\RegistryException;
 use sql\MydbRegistry;
+use function serialize;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -52,7 +53,7 @@ final class RegistryTest extends TestCase
         $this->expectException(RegistryException::class);
         $registry->offsetSet('a', 'b');
     }
-    
+
     public function testRegistrySerialize1(): void
     {
         $registry = new MydbRegistry();
