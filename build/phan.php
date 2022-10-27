@@ -268,7 +268,7 @@ return [
     // `dead_code_detection` will also enable unused variable detection.
     //
     // This has a few known false positives, e.g. for loops or branches.
-    'unused_variable_detection' => true,
+    'unused_variable_detection' => false,
 
     // Set to true in order to force tracking references to elements
     // (functions/methods/consts/protected).
