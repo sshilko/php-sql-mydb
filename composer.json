@@ -72,6 +72,7 @@
             "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml --filter $1"
         ],
         "app-phpunit-coverage": [
+            "@putenv XDEBUG_MODE=coverage",
             "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml && php test/phpunit-coverage/badges.php"
         ],
         "app-phpdoc": [

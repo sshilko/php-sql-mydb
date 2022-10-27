@@ -45,6 +45,7 @@
         <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification" />
+        <exclude name="SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint" />
 
         <exclude name="SlevomatCodingStandard.Commenting" />
 
@@ -74,6 +75,8 @@
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions" />
 
         <exclude name="SlevomatCodingStandard.PHP.DisallowReference.DisallowedInheritingVariableByReference" />
+
+        <exclude name="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators.DisallowedPreDecrementOperator" />
 
         <!-- following 2 lines allow phpcbf and phpcs behaviour to match regarding "use" statements -->
         <exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedNameWithoutNamespace" />

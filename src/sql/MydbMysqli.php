@@ -330,7 +330,6 @@ class MydbMysqli
 
     /**
      * @see https://www.php.net/manual/en/mysqli.begin-transaction.php
-     * @psalm-suppress MissingParamType
      */
     public function beginTransactionReadwrite(): bool
     {
@@ -347,7 +346,6 @@ class MydbMysqli
 
     /**
      * @see https://www.php.net/manual/en/mysqli.begin-transaction.php
-     * @psalm-suppress MissingParamType
      */
     public function beginTransactionReadonly(): bool
     {
@@ -364,7 +362,6 @@ class MydbMysqli
 
     /**
      * @see https://www.php.net/manual/en/mysqli.begin-transaction.php
-     * @psalm-suppress MissingParamType
      */
     public function beginTransaction(): bool
     {
@@ -405,9 +402,6 @@ class MydbMysqli
         return false;
     }
 
-    /**
-     * @psalm-suppress MissingParamType
-     */
     public function commit(): bool
     {
         if ($this->mysqli && $this->isConnected() && $this->mysqli->commit(self::MYSQLI_TRANS_COR_NO_RELEASE)) {
