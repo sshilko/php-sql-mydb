@@ -15,7 +15,6 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
-use sql\MydbException\ConnectException;
 use sql\MydbException\TransactionBeginReadonlyException;
 use sql\MydbException\TransactionBeginReadwriteException;
 use sql\MydbException\TransactionCommitException;
@@ -134,5 +133,4 @@ final class TransactionsTest extends includes\BaseTestCase
 
         $db->commitTransaction();
     }
-
 }
