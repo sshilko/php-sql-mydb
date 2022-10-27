@@ -95,6 +95,9 @@ class BaseTestCase extends TestCase
         static::$registry = null;
     }
 
+    /**
+     * @return Mydb
+     */
     protected function getDefaultDb(
         ?MydbMysqli $mysqli = null,
         ?MydbOptions $options = null,

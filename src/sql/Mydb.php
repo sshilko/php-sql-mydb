@@ -32,11 +32,14 @@ use Throwable;
 use function array_map;
 use function count;
 use function explode;
+use function gettype;
 use function implode;
 use function in_array;
 use function is_array;
 use function is_float;
 use function is_int;
+use function is_null;
+use function is_object;
 use function is_string;
 use function preg_match;
 use function preg_replace;
@@ -200,19 +203,9 @@ class Mydb implements
      * @throws MydbException
      * @psalm-return list<string>
      */
-    public function getSetValues(string $table, string $column): array
-    {
-        return $this->getIterableValues($table, $column, 'set');
-    }
-
-    /**
-     * @return array<string>
-     * @throws MydbException
-     * @psalm-return list<string>
-     */
     public function getEnumValues(string $table, string $column): array
     {
-        return $this->getIterableValues($table, $column, 'enum');
+        return $this->getIterableValues($table, $column);
     }
 
     /**
@@ -245,12 +238,12 @@ class Mydb implements
             }
         }
 
-        if (null === $unescaped) {
-            return '';
-        }
-
         if ($unescaped instanceof MydbExpression) {
             return (string) $unescaped;
+        }
+
+        if (is_null($unescaped)) {
+            return '';
         }
 
         if (preg_match('/^(\w)*$/', $unescaped)) {
@@ -657,7 +650,7 @@ class Mydb implements
      * @throws ConnectException
      * @psalm-return list<string>
      */
-    protected function getIterableValues(string $table, string $column, string $type): array
+    protected function getIterableValues(string $table, string $column): array
     {
         $query = "SHOW COLUMNS FROM `" . $this->escape($table, '') . "` ";
         $query .= "LIKE " . $this->escape($column);
@@ -667,8 +660,18 @@ class Mydb implements
             ? (string) $resultArray[0]['Type']
             : null;
 
-        if (0 !== stripos((string) $result, $type . '(')) {
-            $this->onError(new MydbException("Column not of type '" . $type . "'"));
+        $match = false;
+        $types = ['enum', 'set'];
+        foreach ($types as $type) {
+            if (0 === stripos((string)$result, $type . '(')) {
+                $match = $type;
+
+                break;
+            }
+        }
+
+        if (false === $match) {
+            $this->onError(new MydbException("Column not of type '" . implode(',', $types) . "'"));
         }
 
         /**

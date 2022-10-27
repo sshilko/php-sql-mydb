@@ -34,7 +34,7 @@
             "pre-commit run --config build/.pre-commit-config.yaml"
         ],
         "app-psalm":[
-            "php ./vendor/bin/psalm.phar --config build/psalm.xml --shepherd --memory-limit=-1 --no-diff --show-info=true"
+            "php ./vendor/bin/psalm.phar --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true"
         ],
         "app-psalm-shepherd":[
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --shepherd --memory-limit=-1 --no-diff"

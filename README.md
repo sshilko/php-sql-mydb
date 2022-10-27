@@ -121,6 +121,16 @@ docker-compose stop
 
 `docker-compose exec app composer app-pre-commit`
 
+```
+docker-compose exec app composer app-phpcbf  &&
+docker-compose exec app composer app-phpcs   &&
+docker-compose exec app composer app-phpmd   &&
+docker-compose exec app composer app-phpstan &&
+docker-compose exec app composer app-psalm   && 
+docker-compose exec app composer app-phan    &&
+echo 'Looks good' 
+```
+
 #### Run [PHPUnit](https://phpunit.de) test suite
 
 ```
