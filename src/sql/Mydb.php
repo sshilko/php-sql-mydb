@@ -121,7 +121,13 @@ class Mydb implements
             throw new MydbException('Async is safe only with autocommit=true & non-persistent & rw configuration');
         }
 
-        $this->mysqli->mysqliQueryAsync($command);
+        if ($this->mysqli->isTransactionOpen()) {
+            throw new MydbException('Detected transaction pending, refusing to execute async query');
+        }
+
+        if (false === $this->mysqli->mysqliQueryAsync($command)) {
+            throw new MydbException('Async command failed');
+        }
     }
 
     /**
@@ -841,7 +847,7 @@ class Mydb implements
         }
 
 
-        $this->mysqli->mysqliReport($this->options->getInternalClientErrorLevel());
+        $this->mysqli->mysqliReport($this->options->getClientErrorLevel());
 
         if (false === $this->mysqli->autocommit($this->options->isAutocommit())) {
             throw new TransactionAutocommitException();

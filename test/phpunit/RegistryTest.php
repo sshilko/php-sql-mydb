@@ -15,7 +15,6 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
-use PHPUnit\Framework\TestCase;
 use sql\MydbException\RegistryException;
 use sql\MydbRegistry;
 use function serialize;
@@ -26,7 +25,7 @@ use function serialize;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class RegistryTest extends TestCase
+final class RegistryTest extends includes\BaseTestCase
 {
     public function testRegistryEmpty1(): void
     {
@@ -52,6 +51,21 @@ final class RegistryTest extends TestCase
         $registry = new MydbRegistry();
         $this->expectException(RegistryException::class);
         $registry->offsetSet('a', 'b');
+    }
+
+    public function testRegistryUnSet1(): void
+    {
+        $registry = new MydbRegistry();
+        $result = $registry->offsetUnset('abcdefg');
+        self::assertSame(null, $result);
+    }
+
+    public function testRegistryUnSet2(): void
+    {
+        $registry = new MydbRegistry();
+        $registry->offsetSet('a', $this->getDefaultDb());
+        $registry->offsetUnset('a');
+        self::expectNotToPerformAssertions();
     }
 
     public function testRegistrySerialize1(): void

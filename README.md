@@ -48,10 +48,9 @@ Simple library to work with MySQL database.
   - respect php-fpm client disconnect and script execution shutdown
   - increased mysqlnd MYSQLI_OPT_NET_READ_BUFFER_SIZE and MYSQLI_OPT_NET_CMD_BUFFER_SIZE
   - automatic mysqlnd.net_read_timeout value
-  - non-persistent connections
-  - utf8mb4 charset
-  - UTC timezone
-  - 2hours non-interactive connection timeout
+  - `utf8mb4` character set
+  - `UTC` timezone
+  - 2 hours non-interactive connection timeout
   - read-only transaction optimizations: isolation level READ COMMITTED, TRANSACTION READ ONLY
   - php error-reporting E_ALL & ~E_WARNING & ~E_NOTICE
   - Catch and report errors from mysqli function calls
