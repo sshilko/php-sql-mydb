@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use sql\MydbException\OptionException;
 use const E_ALL;
 use const E_NOTICE;
 use const E_WARNING;
@@ -26,6 +27,14 @@ use const E_WARNING;
  */
 class MydbOptions
 {
+    protected const NET_CMD_BUFFER_SIZE_MIN = 4096;
+
+    protected const NET_CMD_BUFFER_SIZE_MAX = 16384;
+
+    protected const NET_READ_BUFFER_MIN = 8192;
+
+    protected const NET_READ_BUFFER_MAX = 131072;
+
     /**
      * The execution timeout ONLY APPLIES TO "SELECT" statements, seconds
      * X > 0, enabled
@@ -55,8 +64,31 @@ class MydbOptions
     /**
      * Internal network buffer of mysqlnd.net_cmd_buffer_size bytes for every connection
      *
-     * More memory usage, in exchange for better performance
+     * Scope: connection.
      *
+     * Number of network command buffer extensions while sending commands from PHP to MySQL.
+     *
+     * mysqlnd allocates an internal command/network buffer of mysqlnd.net_cmd_buffer_size (php.ini) bytes
+     * for every connection.
+     * If a MySQL Client Server protocol command, for example, COM_QUERY ("normal&quot query),
+     * does not fit into the buffer, mysqlnd will grow the buffer to what is needed for sending the command.
+     * Whenever the buffer gets extended for one connection command_buffer_too_small will be incremented by one.
+     *
+     * If mysqlnd has to grow the buffer beyond its initial size of mysqlnd.net_cmd_buffer_size (php.ini) bytes
+     * for almost every connection, you should consider to increase the default size to avoid re-allocations.
+     *
+     * The default can set either through the php.ini setting mysqlnd.net_cmd_buffer_size
+     * or using mysqli_options(MYSQLI_OPT_NET_CMD_BUFFER_SIZE, int size).
+     *
+     * It is recommended to set the buffer size to no less than 4096 bytes because mysqlnd also uses
+     * it when reading certain communication packet from MySQL.
+     *
+     * As of PHP 5.3.2 mysqlnd does not allow setting buffers smaller than 4096 bytes.
+     *
+     * Default 4096
+     *
+     * More memory usage, in exchange for better performance
+     * @see mysqlnd.net_cmd_buffer_size
      * @see http://php.net/manual/en/mysqlnd.config.php
      */
     protected int $networkBufferSize = 6144;
@@ -70,13 +102,49 @@ class MydbOptions
      *
      * If a packet body is larger than mysqlnd.net_read_buffer_size bytes,
      * mysqlnd has to call read() multiple times
+     *
+     * This buffer controls how many bytes mysqlnd fetches from the PHP streams with one call.
+     * If a result set has less than 32kB in size, mysqlnd will call the PHP streams network
+     * functions only once, if it is larger more calls are needed
+     *
+     * Default 32768
+     *
+     * @see mysqlnd.net_read_buffer_size
+     * @see http://php.net/manual/en/mysqlnd.config.php
+     * @see http://blog.ulf-wendel.de/2007/php-mysqlnd-saves-40-memory-finally-new-tuning-options/
      */
     protected int $networkReadBuffer = 49152;
 
-    protected int $internalClientErrorLevel = MydbMysqli::MYSQLI_REPORT_ALL ^
-                                              MydbMysqli::MYSQLI_REPORT_STRICT ^
-                                              MydbMysqli::MYSQLI_REPORT_INDEX;
+    /**
+     * Sets mysqli error reporting mode
+     *
+     * >=8.1.0 The default value is now MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT.
+     * < 8.1.0 MYSQLI_REPORT_OFF.
+     *
+     * MYSQLI_REPORT_OFF Turns reporting off
+     * MYSQLI_REPORT_ERROR Report errors from mysqli function calls
+     * MYSQLI_REPORT_STRICT Throw mysqli_sql_exception for errors instead of warnings
+     * MYSQLI_REPORT_INDEX Report if no index or bad index was used in a query
+     * MYSQLI_REPORT_ALL Set all options (report all)
+     *
+     * @see https://www.php.net/manual/en/function.mysqli-report.php
+     */
+    protected int $clientErrorLevel = MydbMysqli::MYSQLI_REPORT_ALL ^
+                                      MydbMysqli::MYSQLI_REPORT_STRICT ^
+                                      MydbMysqli::MYSQLI_REPORT_INDEX;
 
+    /**
+     * Set session time zone
+     *
+     * SET time_zone = timezone;
+     *
+     * - As the value 'SYSTEM', indicating that the server time zone is the same as the system time zone.
+     * - As a string, an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00'
+     *   Prior to MySQL 8.0.19, this value had to be in the range '-12:59' to '+13:00'
+     * - As a named time zone, such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.
+     *
+     * @see https://dev.mysql.com/doc/refman/8.0/en/time-zone-support.html
+     */
     protected string $timeZone = 'UTC';
 
     /**
@@ -153,9 +221,9 @@ class MydbOptions
         return $this->readTimeout;
     }
 
-    public function setReadTimeout(int $readTimeout): void
+    public function setReadTimeout(int $seconds): void
     {
-        $this->readTimeout = $readTimeout;
+        $this->readTimeout = $seconds;
     }
 
     public function getNetworkBufferSize(): int
@@ -163,9 +231,16 @@ class MydbOptions
         return $this->networkBufferSize;
     }
 
-    public function setNetworkBufferSize(int $networkBufferSize): void
+    /**
+     * @param int $bytes bytes
+     * @throws OptionException
+     */
+    public function setNetworkBufferSize(int $bytes): void
     {
-        $this->networkBufferSize = $networkBufferSize;
+        if ($bytes < self::NET_CMD_BUFFER_SIZE_MIN || $bytes > self::NET_CMD_BUFFER_SIZE_MAX) {
+            throw new OptionException();
+        }
+        $this->networkBufferSize = $bytes;
     }
 
     public function getNetworkReadBuffer(): int
@@ -173,19 +248,31 @@ class MydbOptions
         return $this->networkReadBuffer;
     }
 
-    public function setNetworkReadBuffer(int $networkReadBuffer): void
+    /**
+     * @throws OptionException
+     */
+    public function setNetworkReadBuffer(int $bytes): void
     {
-        $this->networkReadBuffer = $networkReadBuffer;
+        if ($bytes < self::NET_READ_BUFFER_MIN || $bytes > self::NET_READ_BUFFER_MAX) {
+            throw new OptionException();
+        }
+        $this->networkReadBuffer = $bytes;
     }
 
-    public function getInternalClientErrorLevel(): int
+    public function getClientErrorLevel(): int
     {
-        return $this->internalClientErrorLevel;
+        return $this->clientErrorLevel;
     }
 
-    public function setInternalClientErrorLevel(int $internalClientErrorLevel): void
+    /**
+     * @throws OptionException
+     */
+    public function setClientErrorLevel(int $mysqliReport): void
     {
-        $this->internalClientErrorLevel = $internalClientErrorLevel;
+        if ($mysqliReport > 255 || $mysqliReport < 0) {
+            throw new OptionException();
+        }
+        $this->clientErrorLevel = $mysqliReport;
     }
 
     public function getTimeZone(): string

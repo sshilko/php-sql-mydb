@@ -361,20 +361,6 @@ class MydbMysqli
     }
 
     /**
-     * @see https://www.php.net/manual/en/mysqli.begin-transaction.php
-     */
-    public function beginTransaction(): bool
-    {
-        if ($this->mysqli && $this->isConnected() && $this->mysqli->begin_transaction()) {
-            $this->isTransaction = true;
-
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
      * @see https://www.php.net/manual/en/mysqli.rollback.php
      */
     public function rollback(): bool
@@ -433,14 +419,14 @@ class MydbMysqli
         return mysqli_report($level);
     }
 
-    public function mysqliQueryAsync(string $command): void
+    public function mysqliQueryAsync(string $command): bool
     {
         $mysqli = $this->getMysqli();
         if (!$mysqli || !$this->isConnected()) {
-            return;
+            return false;
         }
 
-        mysqli_query($mysqli, $command, MYSQLI_ASYNC);
+        return false !== mysqli_query($mysqli, $command, MYSQLI_ASYNC);
     }
 
     public function close(): bool

@@ -30,6 +30,44 @@ use sql\MydbOptions;
  */
 final class TransactionsTest extends includes\BaseTestCase
 {
+    /**
+     * @throws MydbException
+     * @throws ConnectException
+     */
+    public function testBeginTransactionReadonlyReal(): void
+    {
+        $mysqli = new MydbMysqli();
+        $options = new MydbOptions();
+        $options->setReadonly(true);
+
+        $db = $this->getDefaultDb($mysqli, $options);
+        $db->open();
+
+        $db->beginTransaction();
+        $data = $db->select('SELECT 1');
+        self::assertSame([['1' => '1']], $data);
+
+        $db->rollbackTransaction();
+        $db->close();
+    }
+
+    /**
+     * @throws MydbException
+     * @throws ConnectException
+     */
+    public function testBeginTransactionReadWriteReal(): void
+    {
+        $db = $this->getDefaultDb();
+        $db->open();
+
+        $db->beginTransaction();
+        $data = $db->select('SELECT 2 as n');
+        self::assertSame([['n' => '2']], $data);
+
+        $db->commitTransaction();
+        $db->close();
+    }
+
     public function testBeginTransactionReadonlySuccess(): void
     {
         $mysqli = $this->createMock(MydbMysqli::class);
