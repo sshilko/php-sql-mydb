@@ -118,16 +118,14 @@ docker-compose stop
 
 #### Apply coding standards to modified files
 
-`docker-compose exec app composer app-pre-commit`
+```
+git add -A
+docker-compose exec app composer app-pre-commit
+git commit -m "message-placeholder"
+```
 
 ```
-docker-compose exec app composer app-phpcbf  &&
-docker-compose exec app composer app-phpcs   &&
-docker-compose exec app composer app-phpmd   &&
-docker-compose exec app composer app-phpstan &&
-docker-compose exec app composer app-psalm   && 
-docker-compose exec app composer app-phan    &&
-echo 'Looks good' 
+docker-compose exec app composer app-code-quality 
 ```
 
 #### Run [PHPUnit](https://phpunit.de) test suite

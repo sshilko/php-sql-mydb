@@ -81,7 +81,9 @@ class MydbMysqliResult
                 return ((string) $this->errorNumber) . ' ' . $this->errorMessage;
             }
 
+            // @codeCoverageIgnoreStart
             return (string) $this->errorNumber;
+            // @codeCoverageIgnoreEnd
         }
 
         return null;

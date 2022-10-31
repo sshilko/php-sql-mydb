@@ -31,6 +31,10 @@ return [
     // Issue::SEVERITY_CRITICAL.
     'minimum_severity' => Issue::SEVERITY_LOW,
 
+    'suppress_issue_types' => [
+        'PhanParamNameIndicatingUnusedInClosure'
+    ],
+
     // Supported values: `'5.6'`, `'7.0'`, `'7.1'`, `'7.2'`, `'7.3'`,
     // `'7.4'`, `'8.0'`, `'8.1'`, `null`.
     // If this is set to `null`,

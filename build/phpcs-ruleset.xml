@@ -66,6 +66,8 @@
         <exclude name="SlevomatCodingStandard.ControlStructures.BlockControlStructureSpacing" />
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.RequireMultiLineTernaryOperator" />
+
         <exclude name="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses" />
         <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator" />
 

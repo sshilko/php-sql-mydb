@@ -22,7 +22,6 @@ use function array_merge;
 use function array_values;
 use function in_array;
 use function max;
-use function mysqli_init;
 use function mysqli_query;
 use function mysqli_report;
 use function sprintf;
@@ -197,16 +196,14 @@ class MydbMysqli
             return false;
         }
 
-        $init = mysqli_init();
-        if ($init) {
-            $this->mysqli = $init;
+        /**
+         * @see https://php.net/manual/en/mysqli.construct.php
+         * @see https://wiki.php.net/rfc/improve_mysqli
+         */
+        $init = new mysqli();
+        $this->mysqli = $init;
 
-            return true;
-        }
-
-        $this->mysqli = null;
-
-        return false;
+        return true;
     }
 
     /**
@@ -537,20 +534,20 @@ class MydbMysqli
     /**
      * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference
      */
-    protected function extractServerResponse(MydbEnvironment $environment, array &$events): ?mysqli_result
+    public function extractServerResponse(MydbEnvironment $environment, array &$events): ?mysqli_result
     {
         if (null === $this->mysqli) {
             return null;
         }
 
-        $oldHandler = $environment->set_error_handler(static function (int $errno, string $error) use (&$events) {
+        $environment->set_error_handler(static function (int $errno, string $error) use (&$events) {
             $events[$errno] = $error;
 
             return true;
         });
 
         $result = $this->mysqli->store_result(self::MYSQLI_STORE_RESULT_COPY_DATA);
-        $environment->set_error_handler($oldHandler);
+        $environment->restore_error_handler();
 
         if (false === $result) {
             return null;
@@ -559,31 +556,7 @@ class MydbMysqli
         return $result;
     }
 
-    /**
-     * Returns fields count caused by query execution
-     * Requires store_result to be called first
-     * @see mysqli::store_result()
-     */
-    protected function getFieldCount(): ?int
-    {
-        return $this->mysqli
-            ? $this->mysqli->field_count
-            : null;
-    }
-
-    /**
-     * Returns warnings caused by query execution
-     * Requires store_result to be called first
-     * @see mysqli::store_result()
-     */
-    protected function getWarningCount(): ?int
-    {
-        return $this->mysqli
-            ? $this->mysqli->warning_count
-            : null;
-    }
-
-    protected function getWarnings(): array
+    public function getWarnings(): array
     {
         if ($this->mysqli) {
             $warnings = $this->mysqli->get_warnings();
@@ -596,5 +569,27 @@ class MydbMysqli
         }
 
         return [];
+    }
+
+    /**
+     * Returns fields count caused by query execution
+     * Requires store_result to be called first
+     * @see mysqli::store_result()
+     */
+    protected function getFieldCount(): ?int
+    {
+        return $this->mysqli ? $this->mysqli->field_count : null;
+    }
+
+    /**
+     * Returns warnings caused by query execution
+     * Requires store_result to be called first
+     * @see mysqli::store_result()
+     */
+    protected function getWarningCount(): ?int
+    {
+        return $this->mysqli
+            ? $this->mysqli->warning_count
+            : null;
     }
 }
