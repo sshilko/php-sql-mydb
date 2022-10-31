@@ -41,6 +41,7 @@ use const SIGTERM;
  */
 class MydbEnvironment
 {
+
     protected array $knownSignals = [SIGTERM, SIGINT, SIGHUP];
 
     /**

@@ -249,8 +249,6 @@
     <rule ref="Squiz.Functions.LowercaseFunctionKeywords" />
     <rule ref="Squiz.Scope.MethodScope" />
     <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing" />
-    <rule ref="Squiz.WhiteSpace.ScopeClosingBrace" />
-    <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing" />
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
         <properties>
             <property name="ignoreBlankLines" value="true"/>
@@ -259,8 +257,26 @@
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile" />
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndFile" />
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines" />
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+    <rule ref="Squiz.WhiteSpace.MemberVarSpacing"/>
+    <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
     <rule ref="PSR12.Properties.ConstantVisibility" />
     <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar" />
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+            <property name="spacing" value="1"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
+        <message>Variable "%s" not allowed in double quoted string; use sprintf() instead</message>
+    </rule>
+    <rule ref="Squiz.Scope.StaticThisUsage"/>
     <rule ref="Internal.NoCodeFound">
         <severity>5</severity>
     </rule>

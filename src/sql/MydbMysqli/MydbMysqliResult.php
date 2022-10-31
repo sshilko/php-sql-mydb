@@ -29,9 +29,11 @@ class MydbMysqliResult
     protected const MYSQLI_ASSOC = MYSQLI_ASSOC;
 
     protected ?array $result = null;
+
     protected array $warnings;
 
     protected ?string $errorMessage = null;
+
     protected int $errorNumber = 0;
 
     protected int $fieldsCount;

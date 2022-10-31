@@ -43,7 +43,7 @@ final class ExceptionTest extends includes\BaseTestCase
                 )
             );
 
-        $this->expectExceptionMessage("1146 Table '" . self::getDbName(). "." . $tableName . "' doesn't exist");
+        $this->expectExceptionMessage("1146 Table '" . self::getDbName() . "." . $tableName . "' doesn't exist");
         $db->select($sql);
     }
 
