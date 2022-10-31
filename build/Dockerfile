@@ -37,7 +37,6 @@ path-exclude /usr/share/linda/*                     \n\
     apt-get update                                           && \
     docker-php-ext-install -j$(nproc) mysqli                 && \
     docker-php-ext-install -j$(nproc) pcntl                  && \
-    docker-php-ext-enable posix                              && \
     apt-get install -y --no-install-recommends                  \
     unzip                                                       \
     python3-pip                                                 \

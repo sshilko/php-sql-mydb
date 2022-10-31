@@ -16,6 +16,8 @@ declare(strict_types = 1);
 namespace phpunit;
 
 use sql\MydbEnvironment;
+use sql\MydbException;
+use sql\MydbException\DisconnectException;
 use sql\MydbMysqli;
 use sql\MydbOptions;
 
@@ -31,6 +33,51 @@ final class ResourceTest extends includes\BaseTestCase
     {
         $db = $this->getDefaultDb();
         self::assertTrue($db->open());
+    }
+
+    public function testOpenCloseError(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $db = $this->getDefaultDb($mysqli);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
+        $mysqli->expects(self::once())->method('init')->willReturn(false);
+        $mysqli->expects(self::once())->method('close')->willReturn(false);
+
+        self::expectException(DisconnectException::class);
+        $db->open();
+    }
+
+    public function testOpenLowVersion(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $db = $this->getDefaultDb($mysqli);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
+        $mysqli->expects(self::once())->method('init')->willReturn(true);
+        $mysqli->expects(self::once())->method('setTransportOptions')->willReturn(true);
+        $mysqli->expects(self::once())->method('realConnect')->willReturn(true);
+        $mysqli->expects(self::once())->method('getServerVersion')->willReturn(50707);
+
+        self::expectException(MydbException::class);
+        $db->open();
+    }
+
+    public function testOpenAutocommitFailed(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $db = $this->getDefaultDb($mysqli);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
+        $mysqli->expects(self::once())->method('init')->willReturn(true);
+        $mysqli->expects(self::once())->method('setTransportOptions')->willReturn(true);
+        $mysqli->expects(self::once())->method('realConnect')->willReturn(true);
+        $mysqli->expects(self::once())->method('getServerVersion')->willReturn(50708);
+        $mysqli->expects(self::once())->method('mysqliReport');
+        $mysqli->expects(self::once())->method('autocommit')->willReturn(false);
+
+        self::expectException(MydbException\TransactionAutocommitException::class);
+        $db->open();
     }
 
     public function testSimpleClose(): void
