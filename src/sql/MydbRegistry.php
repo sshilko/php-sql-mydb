@@ -37,6 +37,7 @@ use function serialize;
  */
 class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Serializable
 {
+
     /**
      * @var array<string, MydbInterface>
      */

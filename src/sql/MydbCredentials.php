@@ -22,6 +22,7 @@ namespace sql;
  */
 class MydbCredentials
 {
+
     /**
      * Database credentials - hostname
      * Can be either a host name or an IP address. Passing the null value or the string "localhost" to this parameter,
@@ -81,7 +82,6 @@ class MydbCredentials
      *
      * @see https://www.php.net/manual/en/mysqli.real-connect.php
      */
-
     protected int $flags;
 
     public function __construct(

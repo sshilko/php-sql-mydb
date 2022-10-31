@@ -43,6 +43,7 @@ use const SEEK_END;
  */
 final class LoggerTest extends TestCase
 {
+
     protected ?LoggerInterface $logger;
 
     /**

@@ -22,6 +22,7 @@ namespace sql;
  */
 class MydbExpression
 {
+
     protected string $input;
 
     public function __construct(string $input)
