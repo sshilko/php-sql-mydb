@@ -101,6 +101,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
+        "ext-posix": "*",
         "ext-ast": "*",
         "nikic/php-parser": "^4",
         "pdepend/pdepend": "^2.12",
