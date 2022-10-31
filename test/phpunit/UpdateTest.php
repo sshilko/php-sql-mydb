@@ -40,7 +40,7 @@ final class UpdateTest extends includes\BaseTestCase
 
         self::assertSame($defaults, $actual);
 
-        $db->updateWhere(['name' => 'hello1'], ['id' => 1, 'name' => 'user1'], 'myusers');
+        $db->updateWhere(['name' => 'hello1'], ['id' => 1, 'name' => 'user1'], 'myusers', ['name' => 'what']);
         $db->updateWhere(['name' => 'hello2'], ['id' => 2, 'name' => 'user2'], 'myusers');
         $db->updateWhere(['name' => 'hello4', 'id' => 4], ['id' => 3, 'name' => 'user3'], 'myusers');
 

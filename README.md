@@ -89,11 +89,10 @@ Simple library to work with MySQL database.
 
 ##### Roadmap 2022-2023
 
-- execute command/query via events, unit-tests against raw SQL generator and events objects
-- 90% tests coverage
-- usage example
 - run phpunit tests against MySQL8
 - run phpunit tests against PHP8
+- usage example
+- execute command/query via events, unit-tests against raw SQL generator and events objects
 - Pluggable M.E.L.T (metrics, events, logs, traces)
 - Packagist export & release
 
