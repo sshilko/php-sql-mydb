@@ -697,11 +697,11 @@ class Mydb implements
     protected function sendClientRequest(string $query): bool
     {
         $this->environment->startSignalsTrap();
-        $originalHandler = $this->environment->set_error_handler();
+        $this->environment->set_error_handler();
 
         $result = $this->mysqli->realQuery($query);
 
-        $this->environment->set_error_handler($originalHandler);
+        $this->environment->restore_error_handler();
         if ($this->environment->endSignalsTrap()) {
             throw new TerminationSignalException();
         }
@@ -841,11 +841,10 @@ class Mydb implements
         if ($this->mysqli->getServerVersion() < '50708') {
             /**
              * Minimum version
-             * max_statement_time added MySQL 5.7.4; renamed max_execution_time MySQL 5.7.8
+             * max_statement_time added MySQL 5.7.4 later renamed to max_execution_time in MySQL 5.7.8
              */
             throw new MydbException('Minimum required MySQL server version is 50708');
         }
-
 
         $this->mysqli->mysqliReport($this->options->getClientErrorLevel());
 

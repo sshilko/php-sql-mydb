@@ -25,6 +25,7 @@ use function ini_set;
 use function pcntl_signal;
 use function pcntl_signal_dispatch;
 use function pcntl_signal_get_handler;
+use function restore_error_handler;
 use function set_error_handler;
 use const E_ALL;
 use const E_STRICT;
@@ -65,10 +66,24 @@ class MydbEnvironment
     public function gc_collect_cycles(): void
     {
         if (!gc_enabled()) {
+            // @codeCoverageIgnoreStart
             return;
+            // @codeCoverageIgnoreEnd
         }
 
         gc_collect_cycles();
+    }
+
+    /**
+     * Restore previous PHP error handler
+     *
+     * @see https://www.php.net/manual/en/function.restore-error-handler.php
+     * @SuppressWarnings("camelCase")
+     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+     */
+    public function restore_error_handler(): void
+    {
+        restore_error_handler();
     }
 
     /**
@@ -147,7 +162,9 @@ class MydbEnvironment
     {
         $result = ini_set($key, $value);
         if (false === $result) {
+            // @codeCoverageIgnoreStart
             throw new EnvironmentException();
+            // @codeCoverageIgnoreEnd
         }
 
         return $result;
@@ -169,7 +186,9 @@ class MydbEnvironment
          * Process signals
          */
         if (!pcntl_signal_dispatch()) {
+            // @codeCoverageIgnoreStart
             throw new EnvironmentException();
+            // @codeCoverageIgnoreEnd
         }
 
         $trappedSignals = $this->trappedSignals;
@@ -178,7 +197,9 @@ class MydbEnvironment
              * Reset signals to previous/default handler
              */
             if (!pcntl_signal($signalNumber, $this->trappedHandlers[$signalNumber] ?? SIG_DFL)) {
+                // @codeCoverageIgnoreStart
                 throw new EnvironmentException();
+                // @codeCoverageIgnoreEnd
             }
             unset($this->trappedHandlers[$signalNumber]);
         }
@@ -210,7 +231,9 @@ class MydbEnvironment
             $this->trappedHandlers[$signalNumber] = $originalNandler;
 
             if (!pcntl_signal($signalNumber, $signalHandler)) {
+                // @codeCoverageIgnoreStart
                 throw new EnvironmentException();
+                // @codeCoverageIgnoreEnd
             }
         }
     }
@@ -221,7 +244,7 @@ class MydbEnvironment
      */
     protected function getNullErrorHandler(): callable
     {
-        return static function () {
+        return static function (): bool {
             return true;
         };
     }

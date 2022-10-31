@@ -60,8 +60,7 @@
               includeUncoveredFiles="true"
               processUncoveredFiles="true"
               pathCoverage="false"
-              ignoreDeprecatedCodeUnits="true"
-              disableCodeCoverageIgnore="true">
+              disableCodeCoverageIgnore="false">
         <report>
             <clover outputFile="./phpunit-coverage/phpunit-clover.xml"/>
             <html outputDirectory="./phpunit-coverage/html" lowUpperBound="50" highLowerBound="90"/>

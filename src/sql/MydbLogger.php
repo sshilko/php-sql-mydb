@@ -26,8 +26,11 @@ use function fflush;
 use function fwrite;
 use function is_resource;
 use function is_scalar;
+use function restore_error_handler;
+use function set_error_handler;
 use function stream_get_meta_data;
 use function strlen;
+use function strtr;
 use function substr;
 use function var_export;
 use const PHP_EOL;
@@ -50,17 +53,17 @@ class MydbLogger implements LoggerInterface
      * Opened resource, STDOUT
      * @see https://www.php.net/manual/en/features.commandline.io-streams.php
      *
-     * @var resource|null
+     * @var resource
      */
-    protected $stdout = null;
+    protected $stdout;
 
     /**
      * Opened resource, STDERR
      * @see https://www.php.net/manual/en/features.commandline.io-streams.php
      *
-     * @var resource|null
+     * @var resource
      */
-    protected $stderr = null;
+    protected $stderr;
 
     /**
      * End of line delimiter
@@ -68,10 +71,20 @@ class MydbLogger implements LoggerInterface
     protected string $stdeol = PHP_EOL;
 
     /**
+     * @param resource $stdout
+     * @param resource $stderr
      * @psalm-suppress MissingParamType
+     * @throws LoggerException
      */
-    public function __construct($stdout = STDOUT, $stderr = STDERR, $stdeol = PHP_EOL)
+    public function __construct($stdout = STDOUT, $stderr = STDERR, string $stdeol = PHP_EOL)
     {
+        /**
+         * @psalm-suppress DocblockTypeContradiction
+         */
+        if (!is_resource($stdout) || !is_resource($stderr)) {
+            throw new LoggerException();
+        }
+
         $this->stdout = $stdout;
         $this->stderr = $stderr;
         $this->stdeol = $stdeol;
@@ -79,11 +92,17 @@ class MydbLogger implements LoggerInterface
 
     public function __destruct()
     {
+        /**
+         * @psalm-suppress RedundantConditionGivenDocblockType
+         */
         if (is_resource($this->stdout)) {
             fflush($this->stdout);
             fclose($this->stdout);
         }
 
+        /**
+         * @psalm-suppress RedundantConditionGivenDocblockType
+         */
         if (is_resource($this->stderr)) {
             fflush($this->stderr);
             fclose($this->stderr);
@@ -197,30 +216,35 @@ class MydbLogger implements LoggerInterface
      */
     protected function checkStreamResource($stream): void
     {
+        /**
+         * is_resource checks whether resource was closed with i.e. fclose()
+         * @psalm-suppress DocblockTypeContradiction
+         * @psalm-suppress RedundantConditionGivenDocblockType
+         */
+        if (false === is_resource($stream)) {
+            throw new LoggerException('Stream resource is not valid or already closed');
+        }
+
         $info = stream_get_meta_data($stream);
 
-        if ($info['eof'] || feof($stream)) {
+        if ($info['timed_out'] || $info['eof'] || feof($stream)) {
             throw new LoggerException();
         }
 
-        if ($info['timed_out']) {
-            throw new LoggerException();
+        if ('' !== $info['mode'] && strtr($info['mode'], 'waxc+', '.....') === $info['mode']) {
+            throw new LoggerException('Stream resource is not opened in write mode');
         }
     }
 
     /**
-     * @param resource|null $stream &fs.file.pointer;
+     * @param resource $stream &fs.file.pointer;
      * @link https://php.net/manual/en/function.fwrite.php
      * @throws LoggerException
      * @psalm-suppress MissingParamType
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */
-    protected function writeOutput($stream = null, string $data = ''): void
+    protected function writeOutput($stream, string $data = ''): void
     {
-        if (null === $stream) {
-            throw new LoggerException();
-        }
-
         $this->checkStreamResource($stream);
 
         $tries = self::IO_WRITE_ATTEMPTS;
@@ -230,29 +254,78 @@ class MydbLogger implements LoggerInterface
         for ($written = 0; $written < $len; true) {
             $chunk = substr($data, $written);
             if (false === $chunk) {
+                // @codeCoverageIgnoreStart
                 throw new LoggerException();
+                // @codeCoverageIgnoreEnd
             }
 
-            $writeResult = fwrite($stream, $chunk);
+            $writeResult = $this->fwrite($stream, $chunk);
+
+            if (null === $writeResult || feof($stream)) {
+                // @codeCoverageIgnoreStart
+                throw new LoggerException();
+                // @codeCoverageIgnoreEnd
+            }
 
             if (false === fflush($stream)) {
+                // @codeCoverageIgnoreStart
                 throw new LoggerException();
+                // @codeCoverageIgnoreEnd
             }
 
-            $written += (int) ($writeResult);
+            $written += $writeResult;
 
-            if (false === $writeResult || (feof($stream) && $written < $len)) {
+            if ($written < $len) {
+                // @codeCoverageIgnoreStart
                 throw new LoggerException();
+                // @codeCoverageIgnoreEnd
             }
 
             if (0 === $writeResult) {
+                // @codeCoverageIgnoreStart
                 --$tries;
+                // @codeCoverageIgnoreEnd
             }
 
             if ($tries <= 0) {
+                // @codeCoverageIgnoreStart
                 throw new LoggerException();
+                // @codeCoverageIgnoreEnd
             }
         }
+    }
+
+    /**
+     * @param resource $stream
+     */
+    protected function fwrite($stream, string $data): ?int
+    {
+        $error = null;
+
+        /**
+         * @psalm-suppress InvalidArgument
+         */
+        set_error_handler(
+            static function ($_, string $errstr) use (&$error): bool {
+                // @codeCoverageIgnoreStart
+                $error = $errstr;
+
+                return true;
+                // @codeCoverageIgnoreEnd
+            }
+        );
+
+        $sent = fwrite($stream, $data);
+
+        restore_error_handler();
+
+        if (null !== $error || false === $sent) {
+            // @codeCoverageIgnoreStart
+            return null;
+            // @codeCoverageIgnoreEnd
+        }
+
+        return $sent;
     }
 
     /**

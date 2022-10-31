@@ -36,6 +36,8 @@ services:
     volumes:
       - ./php.ini:/usr/local/etc/php/php.ini:ro,cached
       - ./../:/app:rw
+    environment:
+      XDEBUG_MODE: off
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: on-failure:5

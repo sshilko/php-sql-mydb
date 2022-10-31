@@ -17,9 +17,13 @@ namespace phpunit;
 
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
+use sql\MydbException\LoggerException;
 use sql\MydbLogger;
 use stdClass;
 use function bin2hex;
+use function fclose;
+use function feof;
+use function fgets;
 use function fopen;
 use function fseek;
 use function ftruncate;
@@ -84,6 +88,13 @@ final class LoggerTest extends TestCase
                 'stderr' => '',
                 'isError' => true,
             ],
+            'nothing-array' => [
+                'message' => [],
+                'context' => [],
+                'stdout' => '',
+                'stderr' => '',
+                'isError' => true,
+            ],
             'nothing-error' => [
                 'message' => '',
                 'context' => [],
@@ -113,11 +124,139 @@ final class LoggerTest extends TestCase
     }
 
     /**
+     * @throws LoggerException
+     */
+    public function testLoggerError(): void
+    {
+        $string = 'hello-world';
+        $context = ['a' => 'b'];
+        $this->logger->warning($string, $context);
+        $buffers = $this->getBuffers();
+
+        self::assertSame('', $buffers['stdout'], 'STDOUT match');
+
+        self::assertSame(
+            $string . $this->stdeol . var_export($context, true) . $this->stdeol,
+            $buffers['stderr'],
+            'STDERR match'
+        );
+    }
+
+    /**
+     * @throws LoggerException
+     */
+    public function testLoggerConstructorOut(): void
+    {
+        $stderr = fopen("php://memory", "rw");
+        $stdout = null;
+
+        $this->expectException(LoggerException::class);
+        new MydbLogger($stdout, $stderr, $this->stdeol);
+    }
+
+    /**
+     * @throws LoggerException
+     */
+    public function testLoggerConstructorErr(): void
+    {
+        $stderr = null;
+        $stdout = fopen("php://memory", "rw");
+
+
+        $this->expectException(LoggerException::class);
+        new MydbLogger($stdout, $stderr, $this->stdeol);
+    }
+
+    /**
+     * @throws LoggerException
+     */
+    public function testLoggerStreamErrEnd(): void
+    {
+        $stdout = fopen("php://memory", "r");
+        $stderr = fopen("/etc/hosts", "r");
+
+        while (!feof($stderr)) {
+            fgets($stderr);
+        }
+
+        $logger = new MydbLogger($stdout, $stderr, $this->stdeol);
+
+        $this->expectException(LoggerException::class);
+        $logger->warning('hello');
+    }
+
+    public function testLoggerStreamOutClosed(): void
+    {
+        $stdout = fopen("php://memory", "r");
+        $stderr = fopen("php://memory", "r");
+
+        $logger = new MydbLogger($stdout, $stderr, $this->stdeol);
+
+        fclose($stdout);
+
+        $this->expectException(LoggerException::class);
+        $logger->info('hello');
+    }
+
+    public function testLoggerStreamErrClosed(): void
+    {
+        $stdout = fopen("php://memory", "r");
+        $stderr = fopen("php://memory", "r");
+
+        $logger = new MydbLogger($stdout, $stderr, $this->stdeol);
+
+        fclose($stderr);
+
+        $this->expectException(LoggerException::class);
+        $logger->warning('hello');
+    }
+
+    public function testLoggerStreamOutBadMode(): void
+    {
+        $stdout = fopen("php://memory", "r");
+        $stderr = fopen("php://memory", "rw");
+
+        $logger = new MydbLogger($stdout, $stderr, $this->stdeol);
+
+        $this->expectException(LoggerException::class);
+        $logger->info('hello');
+    }
+
+    public function testLoggerStreamErrBadMode(): void
+    {
+        $stdout = fopen("php://memory", "rw");
+        $stderr = fopen("php://memory", "r");
+
+        $logger = new MydbLogger($stdout, $stderr, $this->stdeol);
+
+        $this->expectException(LoggerException::class);
+        $logger->warning('hello');
+    }
+
+    /**
+     * @throws LoggerException
+     */
+    public function testLoggerStreamOutEnd(): void
+    {
+        $stderr = fopen("php://memory", "r");
+        $stdout = fopen("/etc/hosts", "r");
+
+        while (!feof($stdout)) {
+            fgets($stdout);
+        }
+
+        $logger = new MydbLogger($stdout, $stderr, $this->stdeol);
+
+        $this->expectException(LoggerException::class);
+        $logger->info('hello');
+    }
+
+    /**
      * @dataProvider dataProviderStrings
      * @throws LoggerException
      */
     public function testLoggerWithStrings(
-        string $str,
+        $strOrArray,
         array $ctx,
         string $stdout,
         string $stderr,
@@ -128,7 +267,7 @@ final class LoggerTest extends TestCase
             : ['debug', 'info', 'notice'];
 
         foreach ($api as $call) {
-            $this->logger->$call($str, $ctx);
+            $this->logger->$call($strOrArray, $ctx);
             $buffers = $this->getBuffers();
 
             self::assertSame($stdout, $buffers['stdout'], 'STDOUT match for ' . $call);

@@ -33,6 +33,14 @@
         "app-pre-commit": [
             "pre-commit run --config build/.pre-commit-config.yaml"
         ],
+        "app-code-quality": [
+            "@app-phpcbf",
+            "@app-phpcs",
+            "@app-phpmd",
+            "@app-phpstan",
+            "@app-psalm",
+            "@app-phan"
+        ],
         "app-psalm":[
             "@putenv XDEBUG_MODE=off",
             "php ./vendor/bin/psalm.phar --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true"
