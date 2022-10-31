@@ -16,6 +16,7 @@ declare(strict_types = 1);
 namespace sql;
 
 use Psr\Log\LoggerInterface;
+use sql\MydbException\AsyncException;
 use sql\MydbException\ConnectException;
 use sql\MydbException\DeleteException;
 use sql\MydbException\DisconnectException;
@@ -118,15 +119,15 @@ class Mydb implements
         if (false === $this->options->isAutocommit() ||
             $this->options->isPersistent() ||
             $this->options->isReadonly()) {
-            throw new MydbException('Async is safe only with autocommit=true & non-persistent & rw configuration');
+            throw new AsyncException('Async is safe only with autocommit=true & non-persistent & rw configuration');
         }
 
         if ($this->mysqli->isTransactionOpen()) {
-            throw new MydbException('Detected transaction pending, refusing to execute async query');
+            throw new AsyncException('Detected transaction pending, refusing to execute async query');
         }
 
         if (false === $this->mysqli->mysqliQueryAsync($command)) {
-            throw new MydbException('Async command failed');
+            throw new AsyncException('Async command failed');
         }
     }
 
@@ -484,19 +485,20 @@ class Mydb implements
      * @throws MydbException
      * @throws ConnectException
      */
-    public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void
+    public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): ?int
     {
         /** @lang text */
-        $query = 'DELETE FROM `' . $this->escape($table, '') . '`';
+        $query = 'DELETE FROM ' . $this->escape($table, '`');
 
         $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
 
         if ('' === $queryWhere) {
-            return;
+            return null;
         }
 
         $query .= ' WHERE ' . $queryWhere;
-        $this->delete($query);
+
+        return $this->delete($query);
     }
 
     /**
@@ -608,8 +610,7 @@ class Mydb implements
         $values = [];
 
         foreach ($data as $name => $value) {
-            $names[] = $name;
-
+            $names[] = $this->escape($name, "`");
             $values[] = $this->escape($value);
         }
 
@@ -634,7 +635,7 @@ class Mydb implements
         $values = [];
 
         foreach ($data as $name => $value) {
-            $names[] = $name;
+            $names[] = $this->escape($name, "`");
             $values[] = $this->escape($value);
         }
 

@@ -32,7 +32,7 @@ interface DataManipulationStatementsInterface
 {
     public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool;
 
-    public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): void;
+    public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): ?int;
 
     public function updateWhereMany(array $columnSetWhere, array $where, string $table): void;
 

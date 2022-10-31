@@ -16,6 +16,7 @@ declare(strict_types = 1);
 namespace phpunit;
 
 use sql\MydbExpression;
+use sql\MydbMysqli;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -25,6 +26,78 @@ use sql\MydbExpression;
  */
 final class InsertTest extends includes\BaseTestCase
 {
+    public function testReplace(): void
+    {
+        $db = $this->getDefaultDb();
+        $db->open();
+        $db->beginTransaction();
+
+        $actual = $db->select("SELECT id, name FROM myusers");
+        $defaults = [
+            ['id' => '1', 'name' => 'user1'],
+            ['id' => '2', 'name' => 'user2'],
+            ['id' => '3', 'name' => 'user3'],
+        ];
+
+        self::assertSame($defaults, $actual);
+
+        $db->replace("REPLACE INTO myusers (id, name) VALUES (1, 'user11')");
+
+        $actual = $db->select("SELECT id, name FROM myusers");
+        $reality = [
+            ['id' => '1', 'name' => 'user11'],
+            ['id' => '2', 'name' => 'user2'],
+            ['id' => '3', 'name' => 'user3'],
+        ];
+        self::assertSame($reality, $actual);
+
+        $db->rollbackTransaction();
+        $db->close();
+    }
+
+    public function testReplaceOne(): void
+    {
+        $db = $this->getDefaultDb();
+        $db->open();
+        $db->beginTransaction();
+
+        $actual = $db->select("SELECT id, name FROM myusers");
+        $defaults = [
+            ['id' => '1', 'name' => 'user1'],
+            ['id' => '2', 'name' => 'user2'],
+            ['id' => '3', 'name' => 'user3'],
+        ];
+
+        self::assertSame($defaults, $actual);
+
+        $db->replaceOne(['name' => 'user111', 'id' => 1], 'myusers');
+
+        $actual = $db->select("SELECT id, name FROM myusers");
+        $reality = [
+            ['id' => '1', 'name' => 'user111'],
+            ['id' => '2', 'name' => 'user2'],
+            ['id' => '3', 'name' => 'user3'],
+        ];
+        self::assertSame($reality, $actual);
+
+        $db->rollbackTransaction();
+        $db->close();
+    }
+
+    public function testInsertError(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $db = $this->getDefaultDb($mysqli);
+
+        $sql = "INSERT INTO myusers (id, name) VALUES (9, 'user9')";
+
+        $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
+        $mysqli->expects(self::once())->method('realQuery')->with($sql)->willReturn(false);
+        $mysqli->expects(self::never())->method('readServerResponse');
+        $result = $db->replace($sql);
+        self::assertNull($result);
+    }
+
     public function testInsert(): void
     {
         $db = $this->getDefaultDb();

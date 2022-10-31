@@ -15,6 +15,8 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use sql\MydbException\AsyncException;
+use sql\MydbException\ConnectException;
 use sql\MydbMysqli;
 use sql\MydbOptions;
 use function time;
@@ -72,6 +74,80 @@ final class AsyncTest extends includes\BaseTestCase
         $db->open();
         $db->async($sql);
         $db->close();
+    }
+
+    public function testAsyncNotConnected(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $db = $this->getDefaultDb($mysqli);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
+        $mysqli->expects(self::once())->method('init')->willReturn(false);
+        $mysqli->expects(self::once())->method('close')->willReturn(true);
+
+        self::expectException(ConnectException::class);
+        $db->async('select 1');
+    }
+
+    public function testAsyncReadonly(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $options = new MydbOptions();
+        $options->setReadonly(true);
+        $db = $this->getDefaultDb($mysqli, $options);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(true);
+
+        self::expectException(AsyncException::class);
+        $db->async('select 1');
+    }
+
+    public function testAsyncNotAutocommit(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $options = new MydbOptions();
+        $options->setAutocommit(false);
+        $db = $this->getDefaultDb($mysqli, $options);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(true);
+
+        self::expectException(AsyncException::class);
+        $db->async('select 1');
+    }
+
+    public function testAsyncTransactionOpen(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $options = new MydbOptions();
+        $options->setAutocommit(true);
+        $options->setReadonly(false);
+        $options->setPersistent(false);
+        $db = $this->getDefaultDb($mysqli, $options);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(true);
+        $mysqli->expects(self::once())->method('isTransactionOpen')->willReturn(true);
+
+        self::expectException(AsyncException::class);
+        $db->async('select 1');
+    }
+
+    public function testAsyncFailedCommand(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $options = new MydbOptions();
+        $options->setAutocommit(true);
+        $options->setReadonly(false);
+        $options->setPersistent(false);
+        $db = $this->getDefaultDb($mysqli, $options);
+
+        $sql = 'select 1' . time();
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(true);
+        $mysqli->expects(self::once())->method('isTransactionOpen')->willReturn(false);
+        $mysqli->expects(self::once())->method('mysqliQueryAsync')->with($sql)->willReturn(false);
+
+        self::expectException(AsyncException::class);
+        $db->async($sql);
     }
 
     /**
