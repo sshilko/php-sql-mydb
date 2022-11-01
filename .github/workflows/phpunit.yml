@@ -1,4 +1,4 @@
-name: PHPUnit
+name: 7.4 PHPUnit
 
 on:
   push:
@@ -16,12 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Docker build
-      run: docker-compose build
-      timeout-minutes: 3
-
     - name: Docker boot
-      run: docker-compose up --no-build --no-color -d
+      run: docker-compose up app mysql --no-color -d
       timeout-minutes: 2
 
     - name: Docker eficode/wait-for

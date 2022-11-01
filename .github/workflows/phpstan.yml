@@ -1,4 +1,4 @@
-name: PHPStan
+name: 7.4 PHPStan
 
 on:
   push:

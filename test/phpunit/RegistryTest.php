@@ -93,7 +93,7 @@ final class RegistryTest extends includes\BaseTestCase
     {
         $registry = new MydbRegistry();
         $this->expectException(RegistryException::class);
-        $registry->__unserialize('datahere');
+        $registry->__unserialize(['a']);
     }
 
     public function testRegistryClone(): void

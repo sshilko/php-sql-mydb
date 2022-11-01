@@ -1,0 +1,35 @@
+name: 8.1 PHPUnit
+
+on:
+  push:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'skip-github-actions')"
+    timeout-minutes: 6
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Docker boot
+      run: docker-compose up app81 mysql --no-color -d
+      timeout-minutes: 2
+
+    - name: Docker eficode/wait-for
+      run: wget -qO- https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for | sh -s -- 127.0.0.1:3306 -- echo success
+      timeout-minutes: 2
+
+    - name: Docker install dependencies
+      run: docker-compose exec -T app81 composer install --dev
+
+    - name: Sleep
+      run: sleep 5
+
+      # Docs: https://phpunit.readthedocs.io/en/9.5/
+    - name: Docker run PHPUnit
+      run: docker-compose exec -T app81 composer app-phpunit

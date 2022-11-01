@@ -26,39 +26,49 @@ MyDb - Component
     <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge-lines.svg" alt="PHPUnit lines coverage">
     <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge-methods.svg" alt="PHPUnit methods coverage">
     <br/>
-    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml/badge.svg" alt="Psalm build"></a>
-    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml/badge.svg" alt="Phan build"></a>
-    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml/badge.svg" alt="PHPUnit build"></a>
-    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml/badge.svg" alt="PHPMd build"></a>
-    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml/badge.svg" alt="PHPStan build"></a>
-    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml/badge.svg" alt="PHPCodeSniffer build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml/badge.svg" alt="7.4 Psalm build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml/badge.svg" alt="7.4 Phan build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml/badge.svg" alt="7.4 PHPUnit build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml/badge.svg" alt="7.4 PHPMd build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml/badge.svg" alt="7.4 PHPStan build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml/badge.svg" alt="7.4 PHPCodeSniffer build"></a>
+    <br/>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit80.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit80.yml/badge.svg" alt="8.0 PHPUnit build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml/badge.svg" alt="8.1 PHPUnit build"></a>
 </p>
 
 Simple library to work with MySQL database.
 
 ### How this client helps you talk SQL to MySQL server
 
-- Quality production defaults
-  - TRADITIONAL [sql mode](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional)
-  - autocommit 0, require commit to accept a transaction
-  - automatically commit when gracefully shutting down
-  - 90s client-side read-timeout for any query
-  - 89s server-side SELECT query timeout
-  - 5s client-side connect-timeout
-  - respect php-fpm client disconnect and script execution shutdown
-  - increased mysqlnd MYSQLI_OPT_NET_READ_BUFFER_SIZE and MYSQLI_OPT_NET_CMD_BUFFER_SIZE
-  - automatic mysqlnd.net_read_timeout value
+- Make MySQL behave like a “traditional” SQL database system
+  - `TRADITIONAL` mode, a simple description of this mode is [“give an error instead of a warning”](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional)
+- Friendly transactions
+  - `autocommit = 0`
+  - explicit `commit` [on gracefull shutdown](https://dev.mysql.com/doc/refman/5.7/en/innodb-autocommit-commit-rollback.html)
+- Explicit timeouts  
+  - 05 seconds `client-side` connect-timeout
+  - 89 seconds `server-side` SELECT query timeout
+  - 90 seconds `client-side` read-timeout for any query
+  - 7200 seconds non-interactive connection `idle timeout`
+  - `mysqlnd.net_read_timeout`
+  - respect client disconnect in php-fpm `function.ignore-user-abort.php`
+- Performance boost
+  - increased `MYSQLI_OPT_NET_READ_BUFFER_SIZE`
+  - increased `MYSQLI_OPT_NET_CMD_BUFFER_SIZE`
+  - read-only InnoDB [optimizations](https://dev.mysql.com/doc/refman/5.6/en/innodb-performance-ro-txn.html)
+  - async command execution
+  - move mysql resultset to PHP userspace memory `MYSQLI_STORE_RESULT_COPY_DATA`
+- UTF-8
   - `utf8mb4` character set
   - `UTC` timezone
-  - 2 hours non-interactive connection timeout
-  - read-only transaction optimizations: isolation level READ COMMITTED, TRANSACTION READ ONLY
-  - php error-reporting E_ALL & ~E_WARNING & ~E_NOTICE
-  - Catch and report errors from mysqli function calls
-    - MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_STRICT ^ MYSQLI_REPORT_INDEX
-  - Catch SIGTERM, SIGINT, SIGHUP termination signals
-- Configurable connection retry
-- Better memory usage - copy results from the mysqlnd buffer into the PHP variables MYSQLI_STORE_RESULT_COPY_DATA
-- unit-tested, static analysed codebase source
+- Quality error handling
+  - PHP default error-reporting `E_ALL & ~E_WARNING & ~E_NOTICE`
+  - MySQL default error-reporting `MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_STRICT ^ MYSQLI_REPORT_INDEX`
+  - `SIGTERM, SIGINT, SIGHUP` signals trap
+  - connection retry
+- PHPUnit & Static code analysis
+  - unit-tested, static analysed codebase
 
 #### What is the best use-case for this library
 
@@ -82,15 +92,13 @@ Simple library to work with MySQL database.
 
 ##### Is it compatible?
 
-- [+] PHP 7.4
-- [+] MySQL <-> PHP via TCP
-- [+] MySQL >=5.7.8
+- [+] PHP 7.4, 8.0, 8.1
+- [+] MySQL
 - [?] MySQL 8.0
 
 ##### Roadmap 2022-2023
 
 - run phpunit tests against MySQL8
-- run phpunit tests against PHP8
 - usage example
 - execute command/query via events, unit-tests against raw SQL generator and events objects
 - Pluggable M.E.L.T (metrics, events, logs, traces)
@@ -99,7 +107,7 @@ Simple library to work with MySQL database.
 #### Installation
 
 ```
-composer install --no-dev
+composer require sshilko/php-sql-mydb
 ```
 
 #### Development setup
@@ -109,38 +117,49 @@ composer install --no-dev
 
 ```
 docker-compose build
-docker-compose up -d --no-build --wait
+docker-compose up -d
 docker-compose exec -T app composer install --dev
 ...
 docker-compose stop
 ```
 
-#### Apply coding standards to modified files
+PHP runs in containers, commands can be executed against any of
+- PHP7.4 - *app*
+- PHP8.0 - *app80*
+- PHP8.1 - *app81*
+
+example
+```
+docker-compose exec %php-container% composer %composer-script%
+```
+
+#### How to check code quality before commit
 
 ```
+# only modified files
 git add -A
 docker-compose exec app composer app-pre-commit
 git commit -m "message-placeholder"
 ```
-
 ```
+# all codebase
 docker-compose exec app composer app-code-quality 
 ```
 
-#### Run [PHPUnit](https://phpunit.de) test suite
+##### Run [PHPUnit](https://phpunit.de) test suite
 
 ```
 docker-compose exec app composer app-phpunit
 ```
 
-#### Run PHP Code Beautifier & PHP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (all files)
+##### Run PHP Code Beautifier & PHP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (all files)
 
 ```
 docker-compose exec app composer app-phpcbf
 docker-compose exec app composer app-phpcs
 ```
 
-#### Run [Psalm](https://psalm.dev) - a static analysis tool for PHP (all files)
+##### Run [Psalm](https://psalm.dev) - a static analysis tool for PHP (all files)
 
 ```
 docker-compose exec app composer app-psalm
@@ -149,36 +168,40 @@ docker-compose exec app composer app-psalm-taint
 docker-compose exec app composer app-psalm-shepherd
 ```
 
-#### Run [PHPStan](https://phpstan.org) - PHP Static Analysis Tool (all files)
+##### Run [PHPStan](https://phpstan.org) - PHP Static Analysis Tool (all files)
 
 `docker-compose exec app composer app-phpstan`
 
-#### Run [PHPMD](https://phpmd.org) - PHP Mess Detector
+##### Run [PHPMD](https://phpmd.org) - PHP Mess Detector
 
 ```
 docker-compose exec app composer app-phpmd
 ```
 
-#### Run [Phan](https://github.com/phan/phan) - PHP Phan static analyzer
+##### Run [Phan](https://github.com/phan/phan) - PHP Phan static analyzer
 
 ```
 docker-compose exec app composer app-phan
 ```
 
-#### Run [phpDocumentor](https://www.phpdoc.org) - [phpDocumentor](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/)
+##### Run [phpDocumentor](https://www.phpdoc.org) - [phpDocumentor](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/)
 
 ```
 docker-compose exec app composer app-phpdoc
 ```
 
-#### Run [PHPCPD](https://github.com/sebastianbergmann/phpcpd) - PHPCPD Copy/Paste Detector (CPD) for PHP code
+##### Run [PHPCPD](https://github.com/sebastianbergmann/phpcpd) - PHPCPD Copy/Paste Detector (CPD) for PHP code
 
 ```
 docker-compose exec app composer app-phpcpd
 ```
 
-#### Run [Pdepend](https://pdepend.org) - PHP quality of design - extensibility, reusability and maintainability
+##### Run [Pdepend](https://pdepend.org) - PHP quality of design - extensibility, reusability and maintainability
 
 ```
 docker-compose exec app composer app-pdepend
 ```
+
+#### [Maintainers](doc/legal/MAINTAINERS)
+
+* Sergei Shilko <contact@sshilko.com>

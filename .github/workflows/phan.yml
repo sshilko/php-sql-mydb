@@ -1,4 +1,4 @@
-name: Phan
+name: 7.4 Phan
 
 on:
   push:

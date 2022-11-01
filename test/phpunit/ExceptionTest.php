@@ -63,7 +63,7 @@ final class ExceptionTest extends includes\BaseTestCase
      */
     public function testFailedToConnectAfterRetry(): void
     {
-        $retry = 2;
+        $retry = 1;
         $db = $this->getNoConnectDb();
         $this->logger->expects(self::exactly($retry + 1))->method('warning')->with('2002 Connection timed out');
         $result = $db->open($retry);

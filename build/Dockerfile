@@ -7,13 +7,13 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
+ARG XPHP_BASE
 FROM --platform=linux/amd64 library/composer:2.4
 
-FROM --platform=linux/amd64 library/php:7.4-cli
+FROM --platform=linux/amd64 ${XPHP_BASE}
 
 LABEL author='Sergei Shilko <contact@sshilko.com>'
 
-STOPSIGNAL SIGTERM
 ENV DEBIAN_FRONTEND noninteractive
 
 # /usr/share/man/man1 needs to be created before installing openjdk-11-jre lest it will fail
@@ -79,4 +79,8 @@ RUN chmod +x /usr/bin/phpcpd
 RUN mkdir /root/tmp && pear config-set temp_dir /root/tmp && install-php-extensions xdebug
 ENV XDEBUG_MODE "coverage"
 
-CMD ["sleep", "infinity"]
+RUN docker-php-ext-enable opcache
+
+STOPSIGNAL SIGINT
+ENTRYPOINT [ "/bin/bash" ]
+CMD ["-c", "trap exit INT; while sleep 1; do sleep 1; done;"]
