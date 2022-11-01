@@ -1,4 +1,4 @@
-name: PHPCS
+name: 7.4 PHPCS
 
 on:
   push:

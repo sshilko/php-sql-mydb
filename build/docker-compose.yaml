@@ -7,37 +7,61 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
+x-app: &app
+  container_name: app
+  tty: true
+  dns: 1.1.1.1
+  stop_grace_period: 5s
+  platform: linux/amd64
+  logging:
+    options:
+      max-size: "1m"
+      max-file: "2"
+  healthcheck:
+    test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
+    timeout: 2s
+    start_period: 10s
+  ulimits:
+    nproc: 65535
+    nofile:
+      soft: 262140
+      hard: 262140
+  tmpfs:
+    - /tmp
+  volumes:
+    - ./php.ini:/usr/local/etc/php/php.ini:ro,cached
+    - ./../:/app:rw,cached
+  environment:
+    XDEBUG_MODE: "off"
+    COMPOSER_NO_AUDIT: "1"
+    COMPOSER_PROCESS_TIMEOUT: 300
+    COMPOSER_NO_INTERACTION: "1"
+    COMPOSER_DISABLE_XDEBUG_WARN: "1"
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+  restart: on-failure:2
+
 version: "3.7"
 services:
   app:
-    image: app
+    <<: *app
     container_name: app
-    tty: true
-    dns: 1.1.1.1
-    stop_grace_period: 5s
-    platform: linux/amd64
-    logging:
-      options:
-        max-size: "1m"
-        max-file: "2"
-    healthcheck:
-      test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
-      timeout: 2s
-      start_period: 10s
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 262140
-        hard: 262140
     build:
       context: .
-    tmpfs:
-      - /tmp
-    volumes:
-      - ./php.ini:/usr/local/etc/php/php.ini:ro,cached
-      - ./../:/app:rw
-    environment:
-      XDEBUG_MODE: "off"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    restart: on-failure:5
+      args:
+        XPHP_BASE: library/php:7.4-cli
+  app80:
+    <<: *app
+    container_name: app80
+    build:
+      context: .
+      args:
+        XPHP_BASE: library/php:8.0-cli
+  app81:
+    <<: *app
+    container_name: app81
+    build:
+      context: .
+      args:
+        XPHP_BASE: library/php:8.1-cli
+

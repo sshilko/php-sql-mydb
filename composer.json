@@ -26,7 +26,7 @@
             "dealerdirect/phpcodesniffer-composer-installer": true
         },
         "platform": {
-            "php": "7.4"
+            "php": "^7.4 || ^8.0 || ^8.1"
         }
     },
     "scripts": {
@@ -74,9 +74,11 @@
             "php ./vendor/phpmd/phpmd/src/bin/phpmd src/ ansi build/phpmd-rulesets.xml"
         ],
         "app-phpunit": [
+            "@putenv XDEBUG_MODE=off",
             "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml"
         ],
         "app-phpunit-filter": [
+            "@putenv XDEBUG_MODE=off",
             "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml --filter $1"
         ],
         "app-phpunit-coverage": [
@@ -114,13 +116,18 @@
         "squizlabs/php_codesniffer": "^3.7"
     },
     "require": {
-        "php": ">=7.4",
+        "php": "^7.4 || ^8.0 || ^8.1",
         "ext-mysqli": "*",
         "ext-mysqlnd": "*",
         "ext-pcntl": "*",
         "psr/log": "^1"
     },
     "autoload": {
+        "psr-4": {
+            "sql\\": "src/sql"
+        }
+    },
+    "autoload-dev": {
         "psr-4": {
             "sql\\": "src/sql"
         }

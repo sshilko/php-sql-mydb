@@ -579,13 +579,17 @@ class Mydb implements
          * @psalm-suppress MissingClosureParamType
          */
         $values = array_map(
-            static fn ($r) => '(' . implode(
-                ', ',
-                array_map(static function ($input) use ($me) {
-                        /** @phan-suppress-next-line PhanThrowTypeAbsentForCall */
-                        return $me->escape((string) $input);
-                }, $r),
-            ) . ') ',
+            static function ($r) use ($me) {
+                $escapedArgs = implode(
+                    ', ',
+                    array_map(static function ($input) use ($me) {
+                            /** @phan-suppress-next-line PhanThrowTypeAbsentForCall */
+                            return $me->escape((string) $input);
+                    }, $r),
+                );
+
+                return '(' . $escapedArgs . ') ';
+            },
             $data,
         );
 

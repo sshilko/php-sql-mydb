@@ -1,4 +1,4 @@
-name: PHPMd
+name: 7.4 PHPMd
 
 on:
   push:

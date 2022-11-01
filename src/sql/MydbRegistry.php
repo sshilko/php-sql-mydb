@@ -198,7 +198,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
     /**
      * @throws RegistryException
      */
-    public function __unserialize(string $data): void
+    public function __unserialize(array $data): void
     {
         throw new RegistryException(serialize($data));
     }
