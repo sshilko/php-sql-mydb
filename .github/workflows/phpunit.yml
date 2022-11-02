@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Docker boot
-      run: docker-compose up app mysql --no-color -d
+      run: docker-compose up app mysql -d
       timeout-minutes: 2
 
     - name: Docker eficode/wait-for
