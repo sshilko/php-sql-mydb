@@ -92,13 +92,13 @@ Simple library to work with MySQL database.
 
 ##### Is it compatible?
 
-- [+] PHP 7.4, 8.0, 8.1
-- [+] MySQL
-- [?] MySQL 8.0
+- [YES] PHP 7.4, 8.0, 8.1
+- [YES] MySQL 5.7, 8.0
 
 ##### Roadmap 2022-2023
 
-- run phpunit tests against MySQL8
+- refactor sql builder into separate concern/object
+- add repository helper (not active record or ORM)
 - usage example
 - execute command/query via events, unit-tests against raw SQL generator and events objects
 - Pluggable M.E.L.T (metrics, events, logs, traces)
@@ -150,6 +150,7 @@ docker-compose exec app composer app-code-quality
 
 ```
 docker-compose exec app composer app-phpunit
+docker-compose exec app composer app-phpunit -- --filter SelectTest
 ```
 
 ##### Run PHP Code Beautifier & PHP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (all files)
