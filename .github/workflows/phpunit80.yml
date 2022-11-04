@@ -27,7 +27,8 @@ jobs:
         key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('**/Dockerfile.php.common', '**/Dockerfile.php80') }}
     - run: docker load -i /tmp/docker-save/snapshot.tar || true
       if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
-    - run: ls -l && docker build ./build/Dockerfile.php80 -t php-image --cache-from=php-image-cache
+    - run: ls -l && docker build -f build/Dockerfile.php80 -t php-image --cache-from=php-image-cache ./build
+      if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
       env:
         DOCKER_BUILDKIT: '1'
         COMPOSE_DOCKER_CLI_BUILD: '1'
