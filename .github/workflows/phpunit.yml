@@ -59,7 +59,7 @@ jobs:
         path: /tmp/docker-save
         key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('**/Dockerfile.php.common', '**/Dockerfile.php74') }}
     - name: Load cached Docker image
-      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app
+      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php
 
     - name: Docker boot
       env:
