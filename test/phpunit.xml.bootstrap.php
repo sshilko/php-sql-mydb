@@ -17,3 +17,8 @@ include_once 'vendor/autoload.php';
 foreach (glob(__DIR__ . '/phpunit/includes/*.php') as $filename) {
     include_once $filename;
 }
+
+/**
+ * @phpcs:disable
+ */
+define("PHPUNIT_MYSQL_MYDB1_HOST", $_ENV['PHPUNIT_MYSQL_MYDB1_HOST'] ?? '');

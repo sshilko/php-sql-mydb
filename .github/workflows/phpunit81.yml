@@ -11,18 +11,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'skip-github-actions')"
-    timeout-minutes: 6
+    timeout-minutes: 10
 
     steps:
     - uses: actions/checkout@v3
 
     - name: Docker boot
-      run: docker-compose up -d app81 mysql
-      timeout-minutes: 2
+      env:
+        SERVICES_NAME: "app81 mysql mysql80"
+      run: docker-compose up -d $SERVICES_NAME
+      timeout-minutes: 3
 
-    - name: Docker eficode/wait-for
-      run: wget -qO- https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for | sh -s -- 127.0.0.1:3306 -- echo success
-      timeout-minutes: 2
+    - name: Docker eficode/wait-for MySQL 5.7
+      env:
+        WAIT_FOR_TCP_PORT: 3306
+      run: wget -qO- https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for | sh -s -- 127.0.0.1:$WAIT_FOR_TCP_PORT -- echo success
+      timeout-minutes: 1
+
+    - name: Docker eficode/wait-for MySQL 8.0
+      env:
+        WAIT_FOR_TCP_PORT: 4306
+      run: wget -qO- https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for | sh -s -- 127.0.0.1:$WAIT_FOR_TCP_PORT -- echo success
+      timeout-minutes: 1
 
     - name: Docker install dependencies
       run: docker-compose exec -T app81 composer install --dev

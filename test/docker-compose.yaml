@@ -7,70 +7,93 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
+x-mysql: &mysql
+  platform: linux/amd64
+  tty: true
+  dns: 1.1.1.1
+  image: library/mysql:5.7-debian
+  stop_grace_period: 10s
+  command:
+    - --innodb-flush-log-at-trx-commit=2
+    - --innodb-flush-neighbors=0
+    - --innodb-lock-wait-timeout=10
+    - --skip-innodb-adaptive-hash-index
+    - --innodb-compression-level=0
+    - --innodb-fast-shutdown=2
+    - --innodb-file-per-table=ON
+    - --innodb-buffer-pool-size=268435456
+    - --innodb-log-buffer-size=16777216
+    - --innodb-max-dirty-pages-pct=60
+    - --innodb-thread-concurrency=0
+    - --skip-innodb-buffer-pool-dump-at-shutdown
+    - --skip-innodb-doublewrite
+    - --innodb-stats-auto-recalc=OFF
+    - --innodb-rollback-segments=64
+    - --innodb-spin-wait-delay=1
+    - --group-concat-max-len=9223372036854775807
+    - --default-authentication-plugin=mysql_native_password
+    - --skip-character-set-client-handshake
+    - --character-set-server=utf8mb4
+    - --collation-server=utf8mb4_general_ci
+    - --character-set-filesystem=binary
+    - --disable-log-bin
+    - --binlog-format=ROW
+    - --lock-wait-timeout=20
+    - --sync-binlog=0
+    - --max_allowed_packet=10485760
+    - --max-connections=1000
+    - --sql-mode=TRADITIONAL
+    - --skip-performance-schema
+    - --skip-name-resolve
+    - --tls-version=TLSv1.2
+  healthcheck:
+    test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
+    timeout: 2s
+    start_period: 10s
+  logging:
+    options:
+      max-size: "10m"
+      max-file: "2"
+  environment:
+    MYSQL_DATABASE: mydb
+    MYSQL_USER: test
+    MYSQL_PASSWORD: pass
+    MYSQL_ROOT_PASSWORD: root
+  expose:
+    - "3306"
+  sysctls:
+    net.core.somaxconn: 1024
+  volumes:
+    - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
+    - /tmp/dbdata:/var/lib/mysql/
+  ulimits:
+    nproc: 65535
+    nofile:
+      soft: 262140
+      hard: 262140
+  restart: on-failure:5
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+
 version: '3.7'
 services:
   #@see https://hub.docker.com/_/mysql
   mysql:
-    container_name: mysql
-    platform: linux/amd64
-    tty: true
-    dns: 1.1.1.1
+    <<: *mysql
     image: library/mysql:5.7.40-debian
-    stop_grace_period: 20s
-    command:
-      - --group-concat-max-len=9223372036854775807
-      - --innodb-flush-log-at-trx-commit=2
-      - --innodb-flush-neighbors=0
-      - --innodb-lock-wait-timeout=20
-      - --default-authentication-plugin=mysql_native_password
-      - --skip-character-set-client-handshake
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_general_ci
-      - --character-set-filesystem=binary
-      - --disable-log-bin
-      - --binlog-format=ROW
-      - --lock-wait-timeout=20
-      - --innodb-log-buffer-size=16777216
-      - --innodb-max-dirty-pages-pct=60
-      - --innodb-thread-concurrency=0
-      - --sync-binlog=0
-      - --skip-innodb-buffer-pool-dump-at-shutdown
-      - --max_allowed_packet=10485760
-      - --max-connections=1000
-      - --innodb-file-per-table
-      - --sql-mode=TRADITIONAL
-      - --skip-performance-schema
-      - --innodb-buffer-pool-size=268435456
-      - --skip-name-resolve
-    healthcheck:
-      test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
-      timeout: 2s
-      start_period: 10s
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "2"
-    labels:
-      - mydb1
-    environment:
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: test
-      MYSQL_PASSWORD: pass
-      MYSQL_ROOT_PASSWORD: root
+    container_name: mysql
     ports:
       - "3306:3306/tcp"
-    expose:
-      - "3306"
-    sysctls:
-      net.core.somaxconn: 1024
     volumes:
-      - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro
-      - /tmp/dbdata:/var/lib/mysql/
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 262140
-        hard: 262140
-    restart: on-failure:5
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
+      - /tmp/dbdata57:/var/lib/mysql/
+
+  mysql80:
+    <<: *mysql
+    image: library/mysql:8.0.30-debian
+    container_name: mysql80
+    ports:
+      - "4306:3306/tcp"
+    volumes:
+      - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
+      - /tmp/dbdata80:/var/lib/mysql/
