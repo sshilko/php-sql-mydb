@@ -48,20 +48,17 @@ services:
     container_name: app
     build:
       context: .
-      args:
-        XPHP_BASE: library/php:7.4-cli
+      dockerfile: Dockerfile74
   app80:
     <<: *app
     container_name: app80
     build:
       context: .
-      args:
-        XPHP_BASE: library/php:8.0-cli
+      dockerfile: Dockerfile80
   app81:
     <<: *app
     container_name: app81
     build:
       context: .
-      args:
-        XPHP_BASE: library/php:8.1-cli
+      dockerfile: Dockerfile81
 

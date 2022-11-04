@@ -19,17 +19,13 @@ x-mysql: &mysql
     - --innodb-lock-wait-timeout=10
     - --skip-innodb-adaptive-hash-index
     - --innodb-compression-level=0
-    - --innodb-fast-shutdown=2
+    - --innodb-fast-shutdown=1
     - --innodb-file-per-table=ON
     - --innodb-buffer-pool-size=268435456
     - --innodb-log-buffer-size=16777216
     - --innodb-max-dirty-pages-pct=60
-    - --innodb-thread-concurrency=0
     - --skip-innodb-buffer-pool-dump-at-shutdown
-    - --skip-innodb-doublewrite
     - --innodb-stats-auto-recalc=OFF
-    - --innodb-rollback-segments=64
-    - --innodb-spin-wait-delay=1
     - --group-concat-max-len=9223372036854775807
     - --default-authentication-plugin=mysql_native_password
     - --skip-character-set-client-handshake
@@ -49,7 +45,7 @@ x-mysql: &mysql
   healthcheck:
     test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
     timeout: 2s
-    start_period: 10s
+    start_period: 4s
   logging:
     options:
       max-size: "10m"
@@ -82,18 +78,22 @@ services:
     <<: *mysql
     image: library/mysql:5.7.40-debian
     container_name: mysql
+    expose:
+      - "3306"
     ports:
       - "3306:3306/tcp"
     volumes:
       - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
-      - /tmp/dbdata57:/var/lib/mysql/
+      - /tmp/dbdata57:/var/lib/mysql/:rw,cached
 
   mysql80:
     <<: *mysql
     image: library/mysql:8.0.30-debian
     container_name: mysql80
+    expose:
+      - "4306"
     ports:
       - "4306:3306/tcp"
     volumes:
       - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
-      - /tmp/dbdata80:/var/lib/mysql/
+      - /tmp/dbdata80:/var/lib/mysql/:rw,cached
