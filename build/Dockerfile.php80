@@ -11,4 +11,4 @@
 # @license https://opensource.org/licenses/mit-license.php MIT
 FROM --platform=linux/amd64 library/composer:2.4
 FROM --platform=linux/amd64 library/php:8.0-cli
-INCLUDE+ Dockerfile.php
+INCLUDE+ Dockerfile.php.common
