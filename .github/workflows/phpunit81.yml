@@ -43,6 +43,10 @@ jobs:
       run: docker-compose up -d $SERVICES_NAME
       timeout-minutes: 4
 
+    - name: Sleep
+      run: sleep 10
+    - run: docker-compose ps
+
     - name: Docker eficode/wait-for MySQL 5.7
       run: wget -qO- https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for | sh -s -- 127.0.0.1:3306 -- echo success
       timeout-minutes: 1
@@ -60,9 +64,6 @@ jobs:
 
     - name: Docker install dependencies
       run: docker-compose exec -T app81 composer install
-
-    - name: Sleep
-      run: sleep 10
 
       # Docs: https://phpunit.readthedocs.io/en/9.5/
     - name: Docker run PHPUnit
