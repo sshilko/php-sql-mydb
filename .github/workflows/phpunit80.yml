@@ -16,11 +16,30 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      platforms: linux/amd64
+
+    - name: Cache Docker php-image
+      id: docker-php-image-cache
+      uses: actions/cache@v3
+      with:
+        path: /tmp/docker-save
+        key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('build/Dockerfile.php', 'build/Dockerfile80') }}
+    - run: docker load -i /tmp/docker-save/snapshot.tar || true
+      if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
+    - run: docker build build/Dockerfile -t php-image --cache-from=php-image-cache
+      env:
+        DOCKER_BUILDKIT: '1'
+        COMPOSE_DOCKER_CLI_BUILD: '1'
+    - run: docker tag php-image php-image-cache && mkdir -p /tmp/docker-save && docker save php-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
+      if: always() && steps.docker-php-image-cache.outputs.cache-hit != 'true'
+
     - name: Docker boot
       env:
         SERVICES_NAME: "app80 mysql mysql80"
       run: docker-compose up -d $SERVICES_NAME
-      timeout-minutes: 3
+      timeout-minutes: 4
 
     - name: Docker eficode/wait-for MySQL 5.7
       run: wget -qO- https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for | sh -s -- 127.0.0.1:3306 -- echo success
@@ -38,7 +57,7 @@ jobs:
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}-composer-dev
 
     - name: Docker install dependencies
-      run: docker-compose exec -T app80 composer install --dev
+      run: docker-compose exec -T app80 composer install
 
     - name: Sleep
       run: sleep 10

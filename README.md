@@ -118,7 +118,7 @@ composer require sshilko/php-sql-mydb
 ```
 docker-compose build
 docker-compose up -d
-docker-compose exec -T app composer install --dev
+docker-compose exec -T app composer install
 ...
 docker-compose stop
 ```

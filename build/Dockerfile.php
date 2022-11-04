@@ -7,11 +7,6 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
-ARG XPHP_BASE
-FROM --platform=linux/amd64 library/composer:2.4
-
-FROM --platform=linux/amd64 ${XPHP_BASE}
-
 LABEL author='Sergei Shilko <contact@sshilko.com>'
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -21,7 +16,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN mkdir -p /usr/share/man/man1
 
 # https://wiki.ubuntu.com/ReducingDiskFootprint
-RUN echo '\n\
+RUN set -eux; \
+echo '\n\
 path-exclude /usr/share/doc/*                       \n\
 path-include /usr/share/doc/*/copyright             \n\
 path-exclude /usr/share/man/*                       \n\
