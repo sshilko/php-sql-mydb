@@ -24,14 +24,20 @@ jobs:
         with:
           path: /tmp/docker-save
           key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('**/Dockerfile.php.common', '**/Dockerfile.php74') }}
-      - run: docker load -i /tmp/docker-save/snapshot.tar || true
+
+      - name: Load cached Docker image
+        run: docker load -i /tmp/docker-save/snapshot.tar || true
         if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
-      - run: ls -l && docker build -f build/Dockerfile.php74 -t app/php-image --cache-from=app/php-image-cache ./build
+
+      - name: Build Docker image
+        run: ls -l && docker build -f build/Dockerfile.php74 -t app/php-image --cache-from=app/php-image-cache ./build
         if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
         env:
           DOCKER_BUILDKIT: '1'
           COMPOSE_DOCKER_CLI_BUILD: '1'
-      - run: docker tag app/php-image app/php-image-cache && mkdir -p /tmp/docker-save && docker save app/php-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
+
+      - name: Tag Docker image
+        run: docker tag app/php-image app/php-image-cache && mkdir -p /tmp/docker-save && docker save app/php-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
         if: always() && steps.docker-php-image-cache.outputs.cache-hit != 'true'
 
   build:
