@@ -30,11 +30,18 @@ jobs:
       run: wget -qO- https://raw.githubusercontent.com/eficode/wait-for/v2.2.3/wait-for | sh -s -- 127.0.0.1:4306 -- echo success
       timeout-minutes: 1
 
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}-composer-dev
+
     - name: Docker install dependencies
       run: docker-compose exec -T app composer install --dev
 
     - name: Sleep
-      run: sleep 6
+      run: sleep 10
 
       # Docs: https://phpunit.readthedocs.io/en/9.5/
     - name: Docker run PHPUnit
