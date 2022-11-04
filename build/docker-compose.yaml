@@ -45,19 +45,22 @@ version: "3.7"
 services:
   app:
     <<: *app
-    container_name: app
+    image: app
+    container_name: app/php
     build:
       context: .
       dockerfile: Dockerfile.php74
   app80:
     <<: *app
-    container_name: app80
+    image: app80
+    container_name: app/php80
     build:
       context: .
       dockerfile: Dockerfile.php80
   app81:
     <<: *app
-    container_name: app81
+    image: app81
+    container_name: app/php81
     build:
       context: .
       dockerfile: Dockerfile.php81
