@@ -24,10 +24,10 @@ jobs:
       uses: actions/cache@v3
       with:
         path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('build/Dockerfile.php', 'build/Dockerfile74') }}
+        key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('**/Dockerfile.php.common', '**/Dockerfile.php74') }}
     - run: docker load -i /tmp/docker-save/snapshot.tar || true
       if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
-    - run: docker build build/Dockerfile -t php-image --cache-from=php-image-cache
+    - run: docker build build/Dockerfile.php74 -t php-image --cache-from=php-image-cache
       env:
         DOCKER_BUILDKIT: '1'
         COMPOSE_DOCKER_CLI_BUILD: '1'
