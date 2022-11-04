@@ -48,17 +48,17 @@ services:
     container_name: app
     build:
       context: .
-      dockerfile: Dockerfile74
+      dockerfile: Dockerfile.php74
   app80:
     <<: *app
     container_name: app80
     build:
       context: .
-      dockerfile: Dockerfile80
+      dockerfile: Dockerfile.php80
   app81:
     <<: *app
     container_name: app81
     build:
       context: .
-      dockerfile: Dockerfile81
+      dockerfile: Dockerfile.php81
 
