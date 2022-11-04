@@ -44,19 +44,17 @@ x-mysql: &mysql
     - --tls-version=TLSv1.2
   healthcheck:
     test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
-    timeout: 2s
-    start_period: 4s
+    timeout: 1s
+    start_period: 5s
   logging:
     options:
-      max-size: "10m"
+      max-size: "4m"
       max-file: "2"
   environment:
     MYSQL_DATABASE: mydb
     MYSQL_USER: test
     MYSQL_PASSWORD: pass
     MYSQL_ROOT_PASSWORD: root
-  expose:
-    - "3306"
   sysctls:
     net.core.somaxconn: 1024
   volumes:
