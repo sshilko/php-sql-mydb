@@ -27,16 +27,18 @@ jobs:
         key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('**/Dockerfile.php.common', '**/Dockerfile.php74') }}
     - run: docker load -i /tmp/docker-save/snapshot.tar || true
       if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
-    - run: ls -l && docker build -f build/Dockerfile.php74 -t php-image --cache-from=php-image-cache ./build
+    - run: ls -l && docker build -f build/Dockerfile.php74 -t app/php-image --cache-from=app/php-image-cache ./build
       if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
       env:
         DOCKER_BUILDKIT: '1'
         COMPOSE_DOCKER_CLI_BUILD: '1'
-    - run: docker tag php-image php-image-cache && mkdir -p /tmp/docker-save && docker save php-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
+    - run: docker tag app/php-image app/php-image-cache && mkdir -p /tmp/docker-save && docker save app/php-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
       if: always() && steps.docker-php-image-cache.outputs.cache-hit != 'true'
 
     - name: Docker boot
       env:
+        DOCKER_BUILDKIT: '1'
+        COMPOSE_DOCKER_CLI_BUILD: '1'
         SERVICES_NAME: "app mysql mysql80"
       run: docker-compose up -d $SERVICES_NAME
       timeout-minutes: 4
