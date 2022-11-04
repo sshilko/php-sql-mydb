@@ -49,7 +49,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Cache Docker php-image
+    - name: Load cached app docker image
       id: docker-php-image-cache
       uses: actions/cache@v3
       with:
@@ -57,7 +57,7 @@ jobs:
         key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('**/Dockerfile.php.common', '**/Dockerfile.php81') }}
 
     - name: Load cached Docker image
-      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php-image
+      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app81
 
     - name: Docker boot
       env:
