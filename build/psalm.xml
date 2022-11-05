@@ -30,10 +30,10 @@
     <projectFiles>
         <directory name="../src" />
         <ignoreFiles>
-            <directory name="../test" />
+            <directory name="../vendor" />
         </ignoreFiles>
     </projectFiles>
     <extraFiles>
-        <directory name="../vendor" />
+        <directory name="../test" />
     </extraFiles>
 </psalm>
