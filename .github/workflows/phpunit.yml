@@ -111,7 +111,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: phpunit-coverage-txt
-        path: test/phpunit-coverage/phpunit-coverage.txt
+        path: test/tmp/phpunit-coverage.txt
         retention-days: 1      
 
       # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
@@ -120,7 +120,7 @@ jobs:
       with:
         coverage_badge_path: 'doc/phpunit-coverage-badge.svg'
         push_badge: false
-        report: test/phpunit-coverage/phpunit-clover.xml
+        report: test/tmp/phpunit-clover.xml
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPUnit coverage badge as artifact
@@ -135,7 +135,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: phpunit-coverage-badge-lines
-        path: test/phpunit-coverage/phpunit-coverage-badge-lines.svg
+        path: test/tmp/phpunit-coverage-badge-lines.svg
         retention-days: 1
 
       # https://github.com/actions/upload-artifact
@@ -143,7 +143,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: phpunit-coverage-badge-classes
-        path: test/phpunit-coverage/phpunit-coverage-badge-classes.svg
+        path: test/tmp/phpunit-coverage-badge-classes.svg
         retention-days: 1
 
       # https://github.com/actions/upload-artifact
@@ -151,7 +151,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: phpunit-coverage-badge-methods
-        path: test/phpunit-coverage/phpunit-coverage-badge-methods.svg
+        path: test/tmp/phpunit-coverage-badge-methods.svg
         retention-days: 1
 
     - name: Shutdown docker
