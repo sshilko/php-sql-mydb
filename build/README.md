@@ -20,3 +20,15 @@ file that was distributed with this source code.
 - [phpDocumentor](https://www.phpdoc.org)
 - [phan/phan](https://github.com/phan/phan)
 - [PHPCPD](https://github.com/sebastianbergmann/phpcpd)
+
+#### Artifacts and other metadata expects few github branches to exist
+
+- badges
+- pages
+
+Use following commands to pre-create branches
+```
+git switch --orphan <branch>
+git commit --allow-empty -m "Initial commit on empty branch"
+git push -u origin <branch>
+```
