@@ -43,21 +43,21 @@ x-app: &app
 
 version: "3.7"
 services:
-  app:
+  app.php:
     <<: *app
     image: app/php
     container_name: app.php
     build:
       context: .
       dockerfile: Dockerfile.php74
-  app80:
+  app.php80:
     <<: *app
     image: app/php80
     container_name: app.php80
     build:
       context: .
       dockerfile: Dockerfile.php80
-  app81:
+  app.php81:
     <<: *app
     image: app/php81
     container_name: app.php81
