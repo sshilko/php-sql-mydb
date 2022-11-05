@@ -67,10 +67,14 @@ jobs:
         COMPOSE_DOCKER_CLI_BUILD: '1'
         SERVICES_NAME: "app80 mysql mysql80"
       run: docker-compose up --no-build -d $SERVICES_NAME
-      timeout-minutes: 4
+      timeout-minutes: 1
+
+    - name: Wait for all services to become healthy
+      run: for SERVICE_NAME in $(docker ps --format "{{.Names}}"); do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SERVICE_NAME})" ];do sleep 1; done; done
+      timeout-minutes: 1
 
     - name: Sleep
-      run: sleep 12
+      run: sleep 4
     - run: docker-compose ps
 
     - name: Cache Composer packages
