@@ -49,6 +49,7 @@
 
         <exclude name="SlevomatCodingStandard.Commenting" />
 
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming" />
         <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming" />
