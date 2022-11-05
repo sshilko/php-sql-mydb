@@ -70,7 +70,7 @@ jobs:
       timeout-minutes: 1
 
     - name: Wait for all services to become healthy
-      run: for CONTAINER_ID in $(docker-compose ps --services -q); do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${CONTAINER_ID})" ];do docker-compose ps && sleep 1; done; done
+      run: for CONTAINER_ID in $(docker-compose ps --services); do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${CONTAINER_ID})" ];do docker-compose ps && sleep 1; done; done
       timeout-minutes: 1
 
     - name: Sleep
