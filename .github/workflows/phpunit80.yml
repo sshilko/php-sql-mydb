@@ -19,7 +19,7 @@ permissions:
 jobs:
   build-containers:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'skip-github-actions')"
+    if: "!contains(github.event.head_commit.message, 'skip-ci')"
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
@@ -52,7 +52,7 @@ jobs:
   build:
     needs: build-containers
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'skip-github-actions')"
+    if: "!contains(github.event.head_commit.message, 'skip-ci')"
     timeout-minutes: 10
 
     steps:

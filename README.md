@@ -12,35 +12,49 @@ file that was distributed with this source code.
 -->
 MyDb - Component
 =================
-<p align="center" cellpadding="0" cellspacing="0">
+<p align="left">
 	<img src="https://img.shields.io/badge/status-active-success" alt="Project status - active">
 	<a href="https://packagist.org/packages/sshilko/php-sql-mydb"><img src="https://poser.pugx.org/sshilko/php-sql-mydb/v/stable" alt="Latest Stable Version"></a>
 	<a href="https://packagist.org/packages/sshilko/php-sql-mydb/stats"><img src="https://poser.pugx.org/sshilko/php-sql-mydb/downloads" alt="Total Downloads"></a>
 	<a href="https://packagist.org/packages/sshilko/php-sql-mydb"><img src="https://poser.pugx.org/sshilko/php-sql-mydb/require/php" alt="PHP Required Version"></a>
 	<a href="https://choosealicense.com/licenses/mit/"><img src="https://poser.pugx.org/sshilko/php-sql-mydb/license" alt="MIT License"></a>
-    <a href="https://psalm.dev/docs/running_psalm/command_line_usage/#shepherd"><img src="https://shepherd.dev/github/sshilko/php-sql-mydb/coverage.svg" alt="Psalm Coverage"></a>
+    <a href="https://psalm.dev/docs/running_psalm/command_line_usage/#shepherd">
+    <img src="https://shepherd.dev/github/sshilko/php-sql-mydb/coverage.svg" alt="Psalm Coverage"></a>
     <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsshilko%2Fphp-sql-mydb&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
-    <br/>
-    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge.svg" alt="PHPUnit coverage">
-    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge-classes.svg" alt="PHPUnit classes coverage">
-    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge-lines.svg" alt="PHPUnit lines coverage">
-    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge-methods.svg" alt="PHPUnit methods coverage">
+    <img src="https://img.shields.io/github/languages/code-size/sshilko/php-sql-mydb" alt="Code size">
+    <br />
+    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge.svg" alt="PHPUnit coverage" />
+    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge-classes.svg" alt="PHPUnit classes coverage" />
+    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge-lines.svg" alt="PHPUnit lines coverage" />
+    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/badges/phpunit-coverage-badge-methods.svg" alt="PHPUnit methods coverage" />
     <br/>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml/badge.svg" alt="7.4 Psalm build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml/badge.svg" alt="7.4 Phan build"></a>
-    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml/badge.svg" alt="7.4 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml/badge.svg" alt="7.4 PHPMd build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml/badge.svg" alt="7.4 PHPStan build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml/badge.svg" alt="7.4 PHPCodeSniffer build"></a>
     <br/>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml/badge.svg" alt="7.4 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit80.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit80.yml/badge.svg" alt="8.0 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml/badge.svg" alt="8.1 PHPUnit build"></a>
     <br/>
-    <img src="https://img.shields.io/github/languages/code-size/sshilko/php-sql-mydb" alt="Code size">
+    </p>
+    
 
 </p>
 
-Simple library to work with MySQL database.
+Simple library to work with MySQL database
+
+#### Installation
+
+```
+composer require sshilko/php-sql-mydb:@dev
+```
+
+##### Compatibility
+
+- PHP 7.4, 8.0, 8.1
+- MySQL 5.7, 8.0
 
 ### How this client helps you talk SQL to MySQL server
 
@@ -62,6 +76,7 @@ Simple library to work with MySQL database.
   - read-only InnoDB [optimizations](https://dev.mysql.com/doc/refman/5.6/en/innodb-performance-ro-txn.html)
   - async command execution
   - move mysql resultset to PHP userspace memory `MYSQLI_STORE_RESULT_COPY_DATA`
+  - use of `fetch_all` from [PHP Mysql native driver](https://www.php.net/manual/en/intro.mysqlnd.php)
 - UTF-8
   - `utf8mb4` character set
   - `UTC` timezone
@@ -93,11 +108,6 @@ Simple library to work with MySQL database.
 * Do not optimize early - resources like CPU, memory are cheap
 * Focus on building architecture, learn from others and improve over time
 
-##### Is it compatible?
-
-- [YES] PHP 7.4, 8.0, 8.1
-- [YES] MySQL 5.7, 8.0
-
 ##### Roadmap 2022-2023
 
 - refactor sql builder into separate concern/object
@@ -106,12 +116,6 @@ Simple library to work with MySQL database.
 - execute command/query via events, unit-tests against raw SQL generator and events objects
 - Pluggable M.E.L.T (metrics, events, logs, traces)
 - Packagist export & release
-
-#### Installation
-
-```
-composer require sshilko/php-sql-mydb
-```
 
 #### Development setup
 

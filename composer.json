@@ -1,6 +1,5 @@
 {
     "name": "sshilko/php-sql-mydb",
-    "version": "1.0.0-dev",
     "type": "library",
     "description": "Simple yet powerful PHP wrapper for MySQL",
     "license": "MIT",
