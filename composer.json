@@ -110,7 +110,7 @@
             "php /usr/bin/phpcpd src"
         ],
         "app-pdepend": [
-            "./vendor/bin/pdepend --configuration=/app/build/pdepend.xml --jdepend-chart=doc/pdepend/jdepend.svg --overview-pyramid=doc/pdepend/pyramid.svg src"
+            "php ./vendor/bin/pdepend --debug --configuration=$PWD/build/pdepend.xml --dependency-xml=$PWD/build/tmp/pdepend-dependency-xml.xml --jdepend-chart=$PWD/build/tmp/pdepend-jdepend-chart.svg --jdepend-xml=$PWD/build/tmp/pdepend-jdepend-xml.xml --summary-xml=$PWD/build/tmp/pdepend-summary-xml.xml --overview-pyramid=$PWD/build/tmp/pdepend-overview-pyramid.svg src"
         ]
     },
     "minimum-stability": "dev",

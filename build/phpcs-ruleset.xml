@@ -23,7 +23,7 @@
     <arg name="error-severity" value="1" />
     <arg name="warning-severity" value="1" />
 
-    <arg name="cache" value="/tmp/phpcs-tempfile" />
+    <arg name="cache" value="tmp/phpcs-tempfile" />
     <arg name="encoding" value="utf8" />
     <!-- "HTML", "Markdown" or "Text" -->
     <!-- <arg name="generator" value="HTML" /> -->
@@ -67,6 +67,7 @@
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator" />
         <exclude name="SlevomatCodingStandard.ControlStructures.RequireMultiLineTernaryOperator" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.EarlyExit.EarlyExitNotUsed"/>
 
         <exclude name="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses" />
         <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator" />

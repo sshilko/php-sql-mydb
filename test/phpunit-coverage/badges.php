@@ -32,9 +32,8 @@ foreach ($input as $line) {
     $imglen = strlen($image);
     if (imglen > 0) {
         file_put_contents($output, $image);
-        echo 'Saved badge bytes ' . $imglen; 
+        echo 'Saved badge bytes ' . $imglen;
     } else {
         echo 'Failed to fetch badge';
-        exit(1);
     }
 }

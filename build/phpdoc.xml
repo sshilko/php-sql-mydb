@@ -15,8 +15,8 @@
     <!-- https://docs.phpdoc.org/guide/references/configuration.html -->
     <title>phpDocumentor</title>
     <paths>
-        <output>/app/doc/phpdoc</output>
-        <cache>/tmp/phpdoc-cache</cache>
+        <output>tmp/phpdoc-output</output>
+        <cache>tmp/phpdoc-cache</cache>
     </paths>
     <version number="latest">
         <folder>latest</folder>
