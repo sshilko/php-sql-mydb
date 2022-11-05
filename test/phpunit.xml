@@ -17,7 +17,7 @@
          backupStaticAttributes="false"
          bootstrap="phpunit.xml.bootstrap.php"
          cacheResult="true"
-         cacheResultFile="/tmp/phpunit-cache-result"
+         cacheResultFile="tmp/phpunit-cache-result"
          colors="true"
          columns="60"
          convertDeprecationsToExceptions="false"
@@ -72,7 +72,7 @@
     </coverage>
 
     <logging>
-        <testdoxText outputFile="/tmp/phpunit-log.txt"/>
+        <testdoxText outputFile="tmp/phpunit-testdoxText.txt"/>
     </logging>
 
     <!--
