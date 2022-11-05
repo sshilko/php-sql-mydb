@@ -33,26 +33,30 @@
         "app-code-quality": [
             "@app-phpcbf",
             "@app-phpcs",
+            "@app-phpcpd",
+            "@app-pdepend",
             "@app-phpmd",
             "@app-phpstan",
+            "@app-psalm-alter",
+            "@app-psalm-taint",
             "@app-psalm",
             "@app-phan"
         ],
         "app-psalm":[
             "@putenv XDEBUG_MODE=off",
-            "php ./vendor/bin/psalm.phar --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true --long-progress --stats --disable-extension=xdebug"
+            "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true --long-progress --stats --disable-extension=xdebug"
         ],
         "app-psalm-shepherd":[
             "@putenv XDEBUG_MODE=off",
-            "php ./vendor/bin/psalm.phar --config build/psalm.xml --shepherd --long-progress --memory-limit=-1 --no-diff --disable-extension=xdebug"
+            "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --shepherd --long-progress --memory-limit=-1 --no-diff --disable-extension=xdebug"
         ],
         "app-psalm-alter": [
             "@putenv XDEBUG_MODE=off",
-            "php ./vendor/bin/psalm.phar --config build/psalm.xml --alter --long-progress --disable-extension=xdebug --issues=MissingReturnType,InvalidReturnType,InvalidNullableReturnType,InvalidFalsableReturnType,PossiblyUndefinedVariable,UnnecessaryVarAnnotation,ParamNameMismatch"
+            "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --alter --issues=MissingParamType,MissingReturnType,InvalidReturnType,InvalidNullableReturnType,InvalidFalsableReturnType,PossiblyUndefinedVariable,UnnecessaryVarAnnotation,ParamNameMismatch"
         ],
         "app-psalm-taint": [
             "@putenv XDEBUG_MODE=off",
-            "php ./vendor/bin/psalm.phar --config build/psalm.xml --taint-analysis --long-progress --disable-extension=xdebug"
+            "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --taint-analysis --long-progress --disable-extension=xdebug"
         ],
         "app-phpcbf":[
             "@putenv XDEBUG_MODE=off",
@@ -104,13 +108,14 @@
         "app-phan": [
             "@putenv XDEBUG_MODE=off",
             "@putenv PHAN_DISABLE_XDEBUG_WARN=1",
+            "@putenv PHAN_ALLOW_XDEBUG=1",
             "php ./vendor/bin/phan --color -k ./build/phan.php"
         ],
         "app-phpcpd": [
             "php /usr/bin/phpcpd src"
         ],
         "app-pdepend": [
-            "php ./vendor/bin/pdepend --debug --configuration=$PWD/build/pdepend.xml --dependency-xml=$PWD/build/tmp/pdepend-dependency-xml.xml --jdepend-chart=$PWD/build/tmp/pdepend-jdepend-chart.svg --jdepend-xml=$PWD/build/tmp/pdepend-jdepend-xml.xml --summary-xml=$PWD/build/tmp/pdepend-summary-xml.xml --overview-pyramid=$PWD/build/tmp/pdepend-overview-pyramid.svg src"
+            "php ./vendor/bin/pdepend --configuration=$PWD/build/pdepend.xml --dependency-xml=$PWD/build/tmp/pdepend-dependency-xml.xml --jdepend-chart=$PWD/build/tmp/pdepend-jdepend-chart.svg --jdepend-xml=$PWD/build/tmp/pdepend-jdepend-xml.xml --summary-xml=$PWD/build/tmp/pdepend-summary-xml.xml --overview-pyramid=$PWD/build/tmp/pdepend-overview-pyramid.svg src"
         ]
     },
     "minimum-stability": "dev",
