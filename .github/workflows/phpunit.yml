@@ -88,8 +88,22 @@ jobs:
       run: docker-compose exec -T app.php composer install
 
       # Docs: https://phpunit.readthedocs.io/en/9.5/
-    - name: Docker run PHPUnit with coverage
-      run: docker-compose exec -T app.php composer app-phpunit-coverage
+    - name: Docker run PHPUnit with MySQL5.7
+      run: docker-compose exec -T app.php composer app-phpunit-mysql57
+
+    - name: Docker run PHPUnit with MySQL8.0 & Coverage
+      run: docker-compose exec -T app.php composer app-phpunit-mysql80-coverage
+
+    - name: "PHPUnit coverage results - raw"
+      run: docker-compose exec -T app.php cat test/phpunit-coverage/phpunit-coverage.txt
+
+      # https://github.com/actions/upload-artifact
+    - name: Upload PHPUnit phpunit-coverage.txt artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: phpunit-coverage-txt
+        path: test/phpunit-coverage/phpunit-coverage.txt
+        retention-days: 1      
 
       # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
     - name: Generate PHPUnit coverage badge

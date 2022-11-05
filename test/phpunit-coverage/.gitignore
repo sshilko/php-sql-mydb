@@ -1,3 +1,4 @@
+html
 phpunit-clover.xml
 phpunit-coverage.txt
 *.svg
