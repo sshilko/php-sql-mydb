@@ -56,15 +56,15 @@
 
     <!-- https://phpunit.readthedocs.io/en/9.5/code-coverage-analysis.html -->
     <!-- https://phpunit.readthedocs.io/en/9.5/configuration.html#the-coverage-element -->
-    <coverage cacheDirectory="/tmp/phpunit-coverage-cache-directory"
+    <coverage cacheDirectory="./tmp/phpunit-coverage-cache-directory"
               includeUncoveredFiles="true"
               processUncoveredFiles="true"
               pathCoverage="false"
               disableCodeCoverageIgnore="false">
         <report>
-            <clover outputFile="./phpunit-coverage/phpunit-clover.xml"/>
-            <html outputDirectory="./phpunit-coverage/html" lowUpperBound="50" highLowerBound="90"/>
-            <text outputFile="./phpunit-coverage/phpunit-coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
+            <clover outputFile="./tmp/phpunit-clover.xml"/>
+            <html outputDirectory="./tmp/html" lowUpperBound="50" highLowerBound="90"/>
+            <text outputFile="./tmp/phpunit-coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
         </report>
         <include>
             <directory suffix=".php">../src</directory>

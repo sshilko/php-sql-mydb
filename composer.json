@@ -96,7 +96,7 @@
         ],
         "app-phpunit-badges-coverage": [
             "@putenv XDEBUG_MODE=off",
-            "php test/phpunit-coverage/badges.php"
+            "php test/phpunit.xml.badges.php"
         ],
         "app-phpdoc": [
             "/usr/bin/phpdoc --config /app/build/phpdoc.xml"
