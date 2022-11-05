@@ -208,6 +208,6 @@ docker-compose exec app.php composer app-phpcpd
 docker-compose exec app.php composer app-pdepend
 ```
 
-#### [Maintainers](doc/legal/MAINTAINERS)
+#### [Maintainers](MAINTAINERS)
 
 * Sergei Shilko <contact@sshilko.com>
