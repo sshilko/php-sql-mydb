@@ -118,15 +118,15 @@ composer require sshilko/php-sql-mydb
 ```
 docker-compose build
 docker-compose up -d
-docker-compose exec -T app composer install
+docker-compose exec -T app.php composer install
 ...
 docker-compose stop
 ```
 
 PHP runs in containers, commands can be executed against any of
-- PHP7.4 - *app*
-- PHP8.0 - *app80*
-- PHP8.1 - *app81*
+- PHP7.4 - *app.php*
+- PHP8.0 - *app.php80*
+- PHP8.1 - *app.php81*
 
 example
 ```
@@ -138,69 +138,71 @@ docker-compose exec %php-container% composer %composer-script%
 ```
 # only modified files
 git add -A
-docker-compose exec app composer app-pre-commit
+docker-compose exec app.php composer app-pre-commit
 git commit -m "message-placeholder"
 ```
 ```
 # all codebase
-docker-compose exec app composer app-code-quality 
+docker-compose exec app.php composer app-code-quality 
 ```
 
 ##### Run [PHPUnit](https://phpunit.de) test suite
 
 ```
-docker-compose exec app composer app-phpunit
-docker-compose exec app composer app-phpunit -- --filter SelectTest
+docker-compose exec app.php composer app-phpunit
+docker-compose exec app.php composer app-phpunit -- --filter SelectTest
 ```
 
 ##### Run PHP Code Beautifier & PHP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (all files)
 
 ```
-docker-compose exec app composer app-phpcbf
-docker-compose exec app composer app-phpcs
+docker-compose exec app.php composer app-phpcbf
+docker-compose exec app.php composer app-phpcs
 ```
 
 ##### Run [Psalm](https://psalm.dev) - a static analysis tool for PHP (all files)
 
 ```
-docker-compose exec app composer app-psalm
-docker-compose exec app composer app-psalm-alter
-docker-compose exec app composer app-psalm-taint
-docker-compose exec app composer app-psalm-shepherd
+docker-compose exec app.php composer app-psalm
+docker-compose exec app.php composer app-psalm-alter
+docker-compose exec app.php composer app-psalm-taint
+docker-compose exec app.php composer app-psalm-shepherd
 ```
 
 ##### Run [PHPStan](https://phpstan.org) - PHP Static Analysis Tool (all files)
 
-`docker-compose exec app composer app-phpstan`
+```
+docker-compose exec app.php composer app-phpstan`
+```
 
 ##### Run [PHPMD](https://phpmd.org) - PHP Mess Detector
 
 ```
-docker-compose exec app composer app-phpmd
+docker-compose exec app.php composer app-phpmd
 ```
 
 ##### Run [Phan](https://github.com/phan/phan) - PHP Phan static analyzer
 
 ```
-docker-compose exec app composer app-phan
+docker-compose exec app.php composer app-phan
 ```
 
 ##### Run [phpDocumentor](https://www.phpdoc.org) - [phpDocumentor](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/)
 
 ```
-docker-compose exec app composer app-phpdoc
+docker-compose exec app.php composer app-phpdoc
 ```
 
 ##### Run [PHPCPD](https://github.com/sebastianbergmann/phpcpd) - PHPCPD Copy/Paste Detector (CPD) for PHP code
 
 ```
-docker-compose exec app composer app-phpcpd
+docker-compose exec app.php composer app-phpcpd
 ```
 
 ##### Run [Pdepend](https://pdepend.org) - PHP quality of design - extensibility, reusability and maintainability
 
 ```
-docker-compose exec app composer app-pdepend
+docker-compose exec app.php composer app-pdepend
 ```
 
 #### [Maintainers](doc/legal/MAINTAINERS)

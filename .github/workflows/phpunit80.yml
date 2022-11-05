@@ -65,7 +65,7 @@ jobs:
       env:
         DOCKER_BUILDKIT: '1'
         COMPOSE_DOCKER_CLI_BUILD: '1'
-        SERVICES_NAME: "app80 mysql mysql80"
+        SERVICES_NAME: "app.php80 mysql mysql80"
       run: docker-compose up --no-build -d $SERVICES_NAME
       timeout-minutes: 1
 
@@ -85,8 +85,8 @@ jobs:
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}-composer-dev
 
     - name: Docker install dependencies
-      run: docker-compose exec -T app80 composer install
+      run: docker-compose exec -T app.php80 composer install
 
       # Docs: https://phpunit.readthedocs.io/en/9.5/
     - name: Docker run PHPUnit
-      run: docker-compose exec -T app80 composer app-phpunit
+      run: docker-compose exec -T app.php80 composer app-phpunit
