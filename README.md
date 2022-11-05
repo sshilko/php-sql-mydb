@@ -35,6 +35,9 @@ MyDb - Component
     <br/>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit80.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit80.yml/badge.svg" alt="8.0 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml/badge.svg" alt="8.1 PHPUnit build"></a>
+    <br/>
+    <img src="https://img.shields.io/github/languages/code-size/sshilko/php-sql-mydb" alt="Code size">
+
 </p>
 
 Simple library to work with MySQL database.
