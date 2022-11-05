@@ -74,7 +74,7 @@ jobs:
       timeout-minutes: 1
 
     - name: Sleep
-      run: sleep 10
+      run: sleep 4
     - run: docker-compose ps
 
     - name: Cache Composer packages
@@ -88,7 +88,7 @@ jobs:
       run: docker-compose exec -T app.php composer install
 
       # Docs: https://phpunit.readthedocs.io/en/9.5/
-    - name: Docker run PHPUnit
+    - name: Docker run PHPUnit with coverage
       run: docker-compose exec -T app.php composer app-phpunit-coverage
 
       # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
