@@ -74,7 +74,7 @@ jobs:
       timeout-minutes: 1
 
     - name: Sleep
-      run: sleep 10
+      run: sleep 4
     - run: docker-compose ps
 
     - name: Cache Composer packages

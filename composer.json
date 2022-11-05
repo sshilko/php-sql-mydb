@@ -85,8 +85,21 @@
             "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml $1"
         ],
         "app-phpunit-coverage": [
+            "@app-phpunit-mysql57-coverage",
+            "@app-phpunit-mysql80-coverage",
+            "@app-phpunit-badges-coverage"
+        ],
+        "app-phpunit-mysql57-coverage": [
             "@putenv XDEBUG_MODE=coverage",
-            "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml",
+            "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mysql",
+            "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml"
+        ],
+        "app-phpunit-mysql80-coverage": [
+            "@putenv XDEBUG_MODE=coverage",
+            "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mysql80",
+            "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml"
+        ],
+        "app-phpunit-badges-coverage": [
             "@putenv XDEBUG_MODE=off",
             "php test/phpunit-coverage/badges.php"
         ],
