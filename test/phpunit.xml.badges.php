@@ -18,7 +18,7 @@ $source = 'https://img.shields.io/static/v1?';
 $output = $baseDir . 'phpunit-coverage-badge-%s.svg';
 
 foreach ($input as $line) {
-    if (empty(trim($line))) {
+    if ('' === trim($line)) {
         continue;
     }
 

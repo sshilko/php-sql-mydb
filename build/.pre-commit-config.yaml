@@ -43,10 +43,11 @@ repos:
         entry: |
             php ./vendor/bin/psalm.phar --config build/psalm.xml
                                         --memory-limit=-1
-                                        --no-cache
                                         --no-diff
-                                        --no-progress
+                                        --long-progress
                                         --show-info=true
+                                        --stats
+                                        --disable-extension=xdebug
         language: system
         types: [php]
         verbose: false
