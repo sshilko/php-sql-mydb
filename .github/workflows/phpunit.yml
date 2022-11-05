@@ -73,7 +73,7 @@ jobs:
       run: for SVC in "app.php" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 3; done; done
       timeout-minutes: 1
 
-- name: Sleep
+    - name: Sleep
       run: sleep 4
     - run: docker-compose ps
 
