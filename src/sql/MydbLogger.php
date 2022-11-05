@@ -253,7 +253,7 @@ class MydbLogger implements LoggerInterface
         /** @phan-suppress-next-line PhanNoopConstant */
         for ($written = 0; $written < $len; true) {
             $chunk = substr($data, $written);
-            if (false === $chunk) {
+            if ('' === $chunk) {
                 // @codeCoverageIgnoreStart
                 throw new LoggerException();
                 // @codeCoverageIgnoreEnd

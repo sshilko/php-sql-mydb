@@ -45,7 +45,7 @@ return [
     // that functions removed in php 7.0 exist.
     // (See `backward_compatibility_checks` for additional options)
     // TODO: Set this.
-    'target_php_version' => null,
+    'target_php_version' => '8.1',
     'minimum_target_php_version' => '7.4',
 
     // A list of directories that should be parsed for class and

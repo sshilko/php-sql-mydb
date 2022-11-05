@@ -687,7 +687,7 @@ class Mydb implements
          * @psalm-suppress PossiblyFalseOperand
          */
         $input = substr((string) $result, (int) strpos((string) $result, '(') + 1, -1);
-        if (false === $input) {
+        if ('' === $input) {
             throw new InternalException();
         }
         $values = explode(',', preg_replace("/'/", '', $input));

@@ -396,13 +396,24 @@ class MydbMysqli
         return false;
     }
 
-    /**
-     * @psalm-suppress MissingParamType
-     */
-    public function realConnect(...$args): bool
-    {
-        /* @phan-suppress-next-line PhanPartialTypeMismatchArgumentInternal */
-        if ($this->mysqli && !$this->isConnected() && $this->mysqli->real_connect(...$args)) {
+    public function realConnect(
+        string $host,
+        string $username,
+        string $password,
+        string $dbname,
+        ?int $port,
+        ?string $socket,
+        int $flags
+    ): bool {
+        if ($this->mysqli && !$this->isConnected() && $this->mysqli->real_connect(
+            $host,
+            $username,
+            $password,
+            $dbname,
+            (int) $port,
+            (string) $socket,
+            $flags
+        )) {
             $this->isConnected = true;
 
             return true;
