@@ -94,8 +94,8 @@ jobs:
     - name: Docker run PHPUnit with MySQL8.0 & Coverage
       run: docker-compose exec -T app.php composer app-phpunit-mysql80-coverage
 
-    - name: "PHPUnit coverage results - raw"
-      run: docker-compose exec -T app.php cat test/phpunit-coverage/phpunit-coverage.txt
+    - name: Docker run PHPUnit badge generation
+      run: docker-compose exec -T app.php composer app-phpunit-badges-coverage
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPUnit phpunit-coverage.txt artifact
