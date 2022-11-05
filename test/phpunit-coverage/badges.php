@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 $input = file(__DIR__ . DIRECTORY_SEPARATOR . 'phpunit-coverage.txt', FILE_SKIP_EMPTY_LINES) or exit(1);
 
+echo "\n" . $input . "\n";
+
 $label = 'PHPUnit';
 $color = 'blue';
 $source = 'https://img.shields.io/static/v1?';
@@ -26,5 +28,13 @@ foreach ($input as $line) {
     $remote = $source . $query;
 
     $output = strtolower(sprintf($file, $category));
-    file_put_contents($output, fopen($remote, 'rb'));
+    $image = file_get_contents($remote);
+    $imglen = strlen($image);
+    if (imglen > 0) {
+        file_put_contents($output, $image);
+        echo 'Saved badge bytes ' . $imglen; 
+    } else {
+        echo 'Failed to fetch badge';
+        exit(1);
+    }
 }
