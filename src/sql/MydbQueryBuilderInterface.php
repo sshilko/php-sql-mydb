@@ -44,10 +44,10 @@ interface MydbQueryBuilderInterface
      * @param array<string, (float|int|string|\sql\MydbExpression|null)> $update
      */
     public function buildUpdateWhere(
-            array $update,
-            array $whereFields,
-            string $table,
-            array $whereNotFields = []
+        array $update,
+        array $whereFields,
+        string $table,
+        array $whereNotFields = []
     ): ?string;
 
     public function buildDeleteWhere(string $table, array $fields = [], array $negativeFields = []): ?string;
@@ -64,5 +64,4 @@ interface MydbQueryBuilderInterface
      * @throws \sql\MydbException\QueryBuilderException
      */
     public function escape($unescaped, string $quote = "'"): string;
-
 }

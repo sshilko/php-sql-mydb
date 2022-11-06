@@ -15,8 +15,8 @@ declare(strict_types = 1);
 
 namespace sql;
 
-use \mysqli;
-use \mysqli_result;
+use mysqli;
+use mysqli_result;
 use sql\MydbMysqli\MydbMysqliEscapeStringInterface;
 use sql\MydbMysqli\MydbMysqliResult;
 
@@ -52,13 +52,13 @@ interface MydbMysqliInterface extends MydbMysqliEscapeStringInterface
     public function commit(): bool;
 
     public function realConnect(
-            string $host,
-            string $username,
-            string $password,
-            string $dbname,
-            ?int $port,
-            ?string $socket,
-            int $flags
+        string $host,
+        string $username,
+        string $password,
+        string $dbname,
+        ?int $port,
+        ?string $socket,
+        int $flags
     ): bool;
 
     public function mysqliReport(int $level): bool;
@@ -88,6 +88,7 @@ interface MydbMysqliInterface extends MydbMysqliEscapeStringInterface
 
     /**
     * @param array<int, string> $events
+     * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference
     */
     public function extractServerResponse(MydbEnvironmentInterface $environment, array &$events): ?mysqli_result;
 

@@ -23,10 +23,16 @@ namespace sql;
 interface MydbCredentialsInterface
 {
     public function getHost(): string;
+
     public function getUsername(): string;
+
     public function getPasswd(): string;
+
     public function getDbname(): string;
+
     public function getPort(): ?int;
+
     public function getSocket(): ?string;
+
     public function getFlags(): int;
 }
