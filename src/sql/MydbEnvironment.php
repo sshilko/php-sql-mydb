@@ -39,7 +39,7 @@ use const SIGTERM;
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbEnvironment
+class MydbEnvironment implements MydbEnvironmentInterface
 {
 
     /**

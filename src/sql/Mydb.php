@@ -58,27 +58,27 @@ class Mydb implements
     MydbInterface\RemoteResourceInterface
 {
 
-    protected MydbMysqli $mysqli;
+    protected MydbMysqliInterface $mysqli;
 
-    protected MydbCredentials $credentials;
+    protected MydbCredentialsInterface $credentials;
 
-    protected MydbOptions $options;
+    protected MydbOptionsInterface $options;
 
     protected LoggerInterface $logger;
 
-    protected MydbEnvironment $environment;
+    protected MydbEnvironmentInterface $environment;
 
-    protected MydbQueryBuilder $queryBuilder;
+    protected MydbQueryBuilderInterface $queryBuilder;
 
     protected bool $terminating = false;
 
     public function __construct(
-        MydbCredentials $credentials,
+        MydbCredentialsInterface $credentials,
         LoggerInterface $logger,
-        ?MydbOptions $options = null,
-        ?MydbMysqli $mysqli = null,
-        ?MydbEnvironment $environment = null,
-        ?MydbQueryBuilder $queryBuilder = null
+        ?MydbOptionsInterface $options = null,
+        ?MydbMysqliInterface $mysqli = null,
+        ?MydbEnvironmentInterface $environment = null,
+        ?MydbQueryBuilderInterface $queryBuilder = null
     ) {
         $this->credentials = $credentials;
         $this->logger = $logger;
