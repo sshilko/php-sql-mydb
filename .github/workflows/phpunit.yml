@@ -104,12 +104,13 @@ jobs:
       run: docker-compose exec -T app.php composer app-phpunit-mysql80-coverage
 
     - name: Docker run PHPUnit badge generation
+      id: app-phpunit-badges-coverage
+      continue-on-error: true
       run: |
         #3 attempts to generate badges
         docker-compose exec -T app.php composer app-phpunit-badges-coverage || \
         docker-compose exec -T app.php composer app-phpunit-badges-coverage || \
         docker-compose exec -T app.php composer app-phpunit-badges-coverage
-
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPUnit phpunit-coverage.txt artifact
@@ -123,7 +124,7 @@ jobs:
     - name: Generate PHPUnit coverage badge
       uses: timkrase/phpunit-coverage-badge@v1.2.0
       with:
-        coverage_badge_path: 'doc/phpunit-coverage-badge.svg'
+        coverage_badge_path: 'test/tmp/phpunit-coverage-badge.svg'
         push_badge: false
         report: test/tmp/phpunit-clover.xml
 
@@ -132,11 +133,12 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: phpunit-coverage-badge
-        path: doc/phpunit-coverage-badge.svg
+        path: test/tmp/phpunit-coverage-badge.svg
         retention-days: 1
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPUnit Lines coverage badge as artifact
+      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
       uses: actions/upload-artifact@v3
       with:
         name: phpunit-coverage-badge-lines
@@ -145,6 +147,7 @@ jobs:
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPUnit classes coverage badge as artifact
+      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
       uses: actions/upload-artifact@v3
       with:
         name: phpunit-coverage-badge-classes
@@ -153,6 +156,7 @@ jobs:
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPUnit methods coverage badge as artifact
+      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
       uses: actions/upload-artifact@v3
       with:
         name: phpunit-coverage-badge-methods
@@ -164,6 +168,7 @@ jobs:
       timeout-minutes: 1
 
   badges:
+    if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 2
