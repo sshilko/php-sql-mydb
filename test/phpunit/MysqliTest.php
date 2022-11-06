@@ -37,7 +37,7 @@ final class MysqliTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws EnvironmentException
+     * @throws \phpunit\EnvironmentException
      */
     public function testOptionsNoInit(): void
     {

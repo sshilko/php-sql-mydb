@@ -33,7 +33,7 @@ final class MydbEnvironmentTest extends TestCase
 {
     /**
      * @return array<array<string, string>>
-     * @throws Exception
+     * @throws \phpunit\Exception
      */
     public function dataProviderSignals(): array
     {
@@ -59,7 +59,7 @@ final class MydbEnvironmentTest extends TestCase
 
     /**
      * @dataProvider dataProviderSignals
-     * @throws EnvironmentException
+     * @throws \phpunit\EnvironmentException
      */
     public function testSignalSighupTrap(array $signals, array $expect): void
     {

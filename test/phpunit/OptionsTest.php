@@ -56,7 +56,7 @@ final class OptionsTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function testNetworkBuffer(): void
     {
@@ -66,7 +66,7 @@ final class OptionsTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function testNetworkBufferMin(): void
     {
@@ -76,7 +76,7 @@ final class OptionsTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function testNetworkBufferMax(): void
     {
@@ -86,7 +86,7 @@ final class OptionsTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function testSetReadBuffer(): void
     {
@@ -96,7 +96,7 @@ final class OptionsTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function testSetReadBufferMin(): void
     {
@@ -106,7 +106,7 @@ final class OptionsTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function testSetReadBufferMax(): void
     {
@@ -116,7 +116,7 @@ final class OptionsTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function testMysqliReport(): void
     {
@@ -126,7 +126,7 @@ final class OptionsTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function testMysqliReportMin(): void
     {
@@ -136,7 +136,7 @@ final class OptionsTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function testMysqliReportMax(): void
     {

@@ -74,7 +74,7 @@ class MydbLogger implements LoggerInterface
      * @param resource $stdout
      * @param resource $stderr
      * @psalm-suppress MissingParamType
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function __construct($stdout = STDOUT, $stderr = STDERR, string $stdeol = PHP_EOL)
     {
@@ -111,7 +111,7 @@ class MydbLogger implements LoggerInterface
     }
 
     /**
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      * @param array|string $message
      */
     public function error($message, array $context = []): void
@@ -130,7 +130,7 @@ class MydbLogger implements LoggerInterface
     /**
      * @param mixed $level
      * @param array|string $message
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      * @phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
      */
     public function log($level, $message, array $context = []): void
@@ -148,7 +148,7 @@ class MydbLogger implements LoggerInterface
 
     /**
      * @param array|string $message
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function warning($message, array $context = []): void
     {
@@ -157,7 +157,7 @@ class MydbLogger implements LoggerInterface
 
     /**
      * @param array|string $message
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function emergency($message, array $context = []): void
     {
@@ -166,7 +166,7 @@ class MydbLogger implements LoggerInterface
 
     /**
      * @param array|string $message
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function alert($message, array $context = []): void
     {
@@ -175,7 +175,7 @@ class MydbLogger implements LoggerInterface
 
     /**
      * @param array|string $message
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function critical($message, array $context = []): void
     {
@@ -184,7 +184,7 @@ class MydbLogger implements LoggerInterface
 
     /**
      * @param array|string $message
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function notice($message, array $context = []): void
     {
@@ -193,7 +193,7 @@ class MydbLogger implements LoggerInterface
 
     /**
      * @param array|string $message
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function info($message, array $context = []): void
     {
@@ -202,7 +202,7 @@ class MydbLogger implements LoggerInterface
 
     /**
      * @param array|string $message
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function debug($message, array $context = []): void
     {
@@ -212,7 +212,7 @@ class MydbLogger implements LoggerInterface
     /**
      * @param resource $stream &fs.file.pointer;
      * @link https://php.net/manual/en/function.fwrite.php
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     protected function checkStreamResource($stream): void
     {
@@ -239,7 +239,7 @@ class MydbLogger implements LoggerInterface
     /**
      * @param resource $stream &fs.file.pointer;
      * @link https://php.net/manual/en/function.fwrite.php
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      * @psalm-suppress MissingParamType
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */

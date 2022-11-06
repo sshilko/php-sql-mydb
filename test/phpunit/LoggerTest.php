@@ -74,7 +74,7 @@ final class LoggerTest extends TestCase
 
     /**
      * @return array<array<string, string>>
-     * @throws Exception
+     * @throws \phpunit\Exception
      */
     public function dataProviderStrings(): array
     {
@@ -125,7 +125,7 @@ final class LoggerTest extends TestCase
     }
 
     /**
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function testLoggerError(): void
     {
@@ -144,7 +144,7 @@ final class LoggerTest extends TestCase
     }
 
     /**
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function testLoggerConstructorOut(): void
     {
@@ -156,7 +156,7 @@ final class LoggerTest extends TestCase
     }
 
     /**
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function testLoggerConstructorErr(): void
     {
@@ -169,7 +169,7 @@ final class LoggerTest extends TestCase
     }
 
     /**
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function testLoggerStreamErrEnd(): void
     {
@@ -235,7 +235,7 @@ final class LoggerTest extends TestCase
     }
 
     /**
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function testLoggerStreamOutEnd(): void
     {
@@ -254,7 +254,7 @@ final class LoggerTest extends TestCase
 
     /**
      * @dataProvider dataProviderStrings
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function testLoggerWithStrings(
         $strOrArray,
@@ -292,7 +292,7 @@ final class LoggerTest extends TestCase
     }
 
     /**
-     * @throws LoggerException
+     * @throws \sql\MydbException\LoggerException
      */
     public function testLoggerWithContext(): void
     {

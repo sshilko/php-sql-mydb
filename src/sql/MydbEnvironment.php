@@ -126,7 +126,7 @@ class MydbEnvironment
      * and PHP Streams, for example MYSQL_OPT_READ_TIMEOUT is documented to work only for TCP/IP connections and,
      * prior to MySQL 5.1.2, only for Windows. PHP streams may not have this limitation.
      *
-     * @throws EnvironmentException
+     * @throws \sql\MydbException\EnvironmentException
      * @see https://www.php.net/manual/en/mysqlnd.config.php
      */
     public function setMysqlndNetReadTimeout(string $timeoutSeconds): bool
@@ -163,7 +163,7 @@ class MydbEnvironment
      *
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      * @SuppressWarnings("camelCase")
-     * @throws EnvironmentException
+     * @throws \sql\MydbException\EnvironmentException
      * @see https://www.php.net/manual/en/function.ini-set
      */
     public function ini_set(string $key, string $value): string
@@ -186,7 +186,7 @@ class MydbEnvironment
      * @see https://www.php.net/manual/en/function.pcntl-signal
      *
      * @return array|null array of trapped signals
-     * @throws EnvironmentException
+     * @throws \sql\MydbException\EnvironmentException
      */
     public function endSignalsTrap(): ?array
     {
@@ -225,7 +225,7 @@ class MydbEnvironment
      * @see https://wiki.php.net/rfc/async_signals
      * @see https://blog.pascal-martin.fr/post/php71-en-other-new-things/
      * @see https://www.php.net/manual/en/function.pcntl-signal
-     * @throws EnvironmentException
+     * @throws \sql\MydbException\EnvironmentException
      */
     public function startSignalsTrap(): void
     {
