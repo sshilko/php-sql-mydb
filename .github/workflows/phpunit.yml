@@ -168,7 +168,6 @@ jobs:
       timeout-minutes: 1
 
   badges:
-    if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -188,31 +187,44 @@ jobs:
 
       #https://github.com/marketplace/actions/download-a-build-artifact
     - name: Download all PHPUnit coverage artifacts
+      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
       uses: actions/download-artifact@v3.0.1
       with:
         name: phpunit-coverage-badge-lines
 
       #https://github.com/marketplace/actions/download-a-build-artifact
     - name: Download all PHPUnit coverage artifacts
+      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
       uses: actions/download-artifact@v3.0.1
       with:
         name: phpunit-coverage-badge-classes
 
       #https://github.com/marketplace/actions/download-a-build-artifact
     - name: Download all PHPUnit coverage artifacts
+      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
       uses: actions/download-artifact@v3.0.1
       with:
         name: phpunit-coverage-badge-methods
 
-    - name: Commit badges
+    - name: Commit coverage badge
       continue-on-error: true
+      run: |
+          git status
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add phpunit-coverage-badge.svg
+          git commit -m "generated phpunit coverage badge from revision ${GITHUB_SHA::7}"
+          git push
+
+    - name: Commit coverage details badges
+      continue-on-error: true
+      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
       run: |
         git status
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git add phpunit-coverage-badge.svg
         git add phpunit-coverage-badge-lines.svg
         git add phpunit-coverage-badge-classes.svg
         git add phpunit-coverage-badge-methods.svg
-        git commit -m "generated phpunit badges from revision ${GITHUB_SHA::7}"
+        git commit -m "generated phpunit coverage details badges from revision ${GITHUB_SHA::7}"
         git push
