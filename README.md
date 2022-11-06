@@ -51,12 +51,12 @@ Simple library to work with MySQL database
 composer require sshilko/php-sql-mydb:@dev
 ```
 
-##### Compatibility
+#### Compatibility
 
 - PHP 7.4, 8.0, 8.1
 - MySQL 5.7, 8.0
 
-### How this client helps you talk SQL to MySQL server
+#### How this client helps you talk SQL to MySQL server
 
 - Make MySQL behave like a “traditional” SQL database system
   - `TRADITIONAL` mode, a simple description of this mode is [“give an error instead of a warning”](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional)
@@ -108,7 +108,7 @@ composer require sshilko/php-sql-mydb:@dev
 * Do not optimize early - resources like CPU, memory are cheap
 * Focus on building architecture, learn from others and improve over time
 
-##### Roadmap 2022-2023
+#### Future roadmap
 
 - refactor sql builder into separate concern/object
 - add repository helper (not active record or ORM)
@@ -117,101 +117,10 @@ composer require sshilko/php-sql-mydb:@dev
 - Pluggable M.E.L.T (metrics, events, logs, traces)
 - Packagist export & release
 
-#### Development setup
+#### Contributing
 
-- Install [PHP](https://www.php.net/) & [Composer](https://getcomposer.org/) & [Docker Compose](https://docs.docker.com/compose/install/)
-- Install [PHPStorm IDE](https://www.jetbrains.com/phpstorm/) with [PHP Inspections](https://github.com/kalessil/phpinspectionsea) or [VSCode IDE](https://code.visualstudio.com/)
+* Please read [contributing](CONTRIBUTING) document
 
-```
-docker-compose build
-docker-compose up -d
-docker-compose exec -T app.php composer install
-...
-docker-compose stop
-```
+#### Authors
 
-PHP runs in containers, commands can be executed against any of
-- PHP7.4 - *app.php*
-- PHP8.0 - *app.php80*
-- PHP8.1 - *app.php81*
-
-example
-```
-docker-compose exec %php-container% composer %composer-script%
-```
-
-#### How to check code quality before commit
-
-```
-# only modified files
-git add -A
-docker-compose exec app.php composer app-pre-commit
-git commit -m "message-placeholder"
-```
-```
-# all codebase
-docker-compose exec app.php composer app-code-quality 
-```
-
-##### Run [PHPUnit](https://phpunit.de) test suite
-
-```
-docker-compose exec app.php composer app-phpunit
-docker-compose exec app.php composer app-phpunit -- --filter SelectTest
-```
-
-##### Run PHP Code Beautifier & PHP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (all files)
-
-```
-docker-compose exec app.php composer app-phpcbf
-docker-compose exec app.php composer app-phpcs
-```
-
-##### Run [Psalm](https://psalm.dev) - a static analysis tool for PHP (all files)
-
-```
-docker-compose exec app.php composer app-psalm
-docker-compose exec app.php composer app-psalm-alter
-docker-compose exec app.php composer app-psalm-taint
-docker-compose exec app.php composer app-psalm-shepherd
-```
-
-##### Run [PHPStan](https://phpstan.org) - PHP Static Analysis Tool (all files)
-
-```
-docker-compose exec app.php composer app-phpstan`
-```
-
-##### Run [PHPMD](https://phpmd.org) - PHP Mess Detector
-
-```
-docker-compose exec app.php composer app-phpmd
-```
-
-##### Run [Phan](https://github.com/phan/phan) - PHP Phan static analyzer
-
-```
-docker-compose exec app.php composer app-phan
-```
-
-##### Run [phpDocumentor](https://www.phpdoc.org) - [phpDocumentor](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/)
-
-```
-docker-compose exec app.php composer app-phpdoc
-```
-
-##### Run [PHPCPD](https://github.com/sebastianbergmann/phpcpd) - PHPCPD Copy/Paste Detector (CPD) for PHP code
-
-```
-docker-compose exec app.php composer app-phpcpd
-```
-
-##### Run [Pdepend](https://pdepend.org) - PHP quality of design - extensibility, reusability and maintainability
-
-```
-docker-compose exec app.php composer app-pdepend
-```
-
-#### [Maintainers](MAINTAINERS)
-
-* Sergei Shilko <contact@sshilko.com>
+Sergei Shilko <contact@sshilko.com>
