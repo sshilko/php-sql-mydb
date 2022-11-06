@@ -104,7 +104,12 @@ jobs:
       run: docker-compose exec -T app.php composer app-phpunit-mysql80-coverage
 
     - name: Docker run PHPUnit badge generation
-      run: docker-compose exec -T app.php composer app-phpunit-badges-coverage
+      run: |
+        #3 attempts to generate badges
+        docker-compose exec -T app.php composer app-phpunit-badges-coverage || \
+        docker-compose exec -T app.php composer app-phpunit-badges-coverage || \
+        docker-compose exec -T app.php composer app-phpunit-badges-coverage
+
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPUnit phpunit-coverage.txt artifact
