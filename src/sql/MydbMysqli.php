@@ -48,7 +48,7 @@ use const MYSQLI_TRANS_START_READ_WRITE;
  * @see https://github.com/sshilko/php-sql-mydb
  * @see https://www.php.net/manual/en/class.mysqli
  */
-class MydbMysqli
+class MydbMysqli implements MydbMysqliInterface
 {
     /**
      * Command to execute when connecting to MySQL server. Will automatically be re-executed when reconnecting.
@@ -212,7 +212,7 @@ class MydbMysqli
      * @see https://www.php.net/manual/en/mysqli.options.php
      * @throws \sql\MydbException\EnvironmentException
      */
-    public function setTransportOptions(MydbOptions $options, MydbEnvironment $environment): bool
+    public function setTransportOptions(MydbOptionsInterface $options, MydbEnvironmentInterface $environment): bool
     {
         if (null === $this->mysqli) {
             return false;
@@ -278,7 +278,7 @@ class MydbMysqli
     /**
      * React to mysqli resource changes after query/command execution
      */
-    public function readServerResponse(MydbEnvironment $environment): ?MydbMysqliResult
+    public function readServerResponse(MydbEnvironmentInterface $environment): ?MydbMysqliResult
     {
         if ($this->mysqli && $this->isConnected()) {
             $events = [];
@@ -539,10 +539,9 @@ class MydbMysqli
 
     /**
      * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference
-     * @param \sql\MydbEnvironment $environment
      * @param array<int, string> $events
      */
-    public function extractServerResponse(MydbEnvironment $environment, array &$events): ?mysqli_result
+    public function extractServerResponse(MydbEnvironmentInterface $environment, array &$events): ?mysqli_result
     {
         if (null === $this->mysqli) {
             return null;

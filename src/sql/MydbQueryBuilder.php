@@ -18,6 +18,7 @@ namespace sql;
 use sql\MydbException\QueryBuilderEscapeException;
 use sql\MydbException\QueryBuilderException;
 use sql\MydbExpression;
+use sql\MydbMysqli\MydbMysqliEscapeStringInterface;
 use function array_map;
 use function count;
 use function implode;
@@ -36,14 +37,14 @@ use function strpos;
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbQueryBuilder
+class MydbQueryBuilder implements MydbQueryBuilderInterface
 {
     public const SQL_INSERT  = 'INSERT';
     public const SQL_REPLACE = 'REPLACE';
 
-    protected MydbMysqli $mysqli;
+    protected MydbMysqliEscapeStringInterface $mysqli;
 
-    public function __construct(MydbMysqli $mysqli)
+    public function __construct(MydbMysqliEscapeStringInterface $mysqli)
     {
         $this->mysqli = $mysqli;
     }

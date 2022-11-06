@@ -89,14 +89,22 @@ composer require sshilko/php-sql-mydb:@dev
 
 #### What is the best use-case for this library
 
-- MySQL server
 - High performance, low-latency data-intensive applications
-- API first applications with existing user-input marshalling
 - No prepared statements requirement
 - No 3rd party dependencies
-- Minimum abstractions, no ORM no ActiveRecord patterns
 - No run-time/compile-time steps
-- Minimum code, maximum-performance
+- Easy to start with and/or [integrate](https://refactoring.guru/design-patterns/php) into existing codebase
+
+#### Out of scope
+
+This library is **not** intending to become a framework, to *keep focus* and minimize codebase, it does not provide
+
+- Input [validation](https://symfony.com/doc/current/validation.html), [API](https://refactoring.guru/design-patterns/facade) facade
+- [Object-relational mapping](https://en.wikipedia.org/wiki/Object–relational_mapping), ORM
+- [Active record](https://en.wikipedia.org/wiki/Active_record_pattern) pattern
+- [Repository](https://symfony.com/doc/current/doctrine.html#querying-for-objects-the-repository) pattern
+
+please re-use existing solutions that best fit your requirements.
 
 #### Why this library exists
 
@@ -109,12 +117,12 @@ composer require sshilko/php-sql-mydb:@dev
 
 #### Future roadmap
 
-- refactor sql builder into separate concern/object
+- use page branch for build artifacts, expose as static-website
 - add repository helper (not active record or ORM)
 - usage example
-- execute command/query via events, unit-tests against raw SQL generator and events objects
-- Pluggable M.E.L.T (metrics, events, logs, traces)
-- Packagist export & release
+- pluggable M.E.L.T (metrics, events, logs, traces) via events
+- unit-test command/query raw SQL, unit-tests against raw SQL generator and events objects
+- packagist export & release stable version
 
 #### Contributing
 

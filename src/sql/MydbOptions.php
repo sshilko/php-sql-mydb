@@ -25,7 +25,7 @@ use const E_WARNING;
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbOptions
+class MydbOptions implements MydbOptionsInterface
 {
     protected const NET_CMD_BUFFER_SIZE_MIN = 4096;
 
