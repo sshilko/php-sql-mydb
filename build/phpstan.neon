@@ -9,7 +9,13 @@
 # @license https://opensource.org/licenses/mit-license.php MIT
 parameters:
     level: 0
+    tmpDir: tmp
+    paths:
+      - ../src
     bootstrapFiles:
         - ../test/phpunit.xml.bootstrap.php
     excludePaths:
         - ../test/*
+    parallel:
+        maximumNumberOfProcesses: 4
+        processTimeout: 300.0

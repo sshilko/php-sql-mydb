@@ -16,7 +16,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
          xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
-
+    <!-- @see https://github.com/phpmd/phpmd/tree/master/src/main/resources/rulesets -->
     <rule ref="rulesets/codesize.xml/CyclomaticComplexity">
         <properties>
             <property name="reportLevel">
@@ -33,20 +33,25 @@
         <exclude name="ExcessiveClassComplexity" />
     </rule>
 
-  <rule ref="rulesets/cleancode.xml">
-      <exclude name="BooleanArgumentFlag" />
-      <exclude name="ElseExpression" />
-  </rule>
-  <rule ref="rulesets/design.xml">
-      <exclude name="NumberOfChildren" />
-  </rule>
-
-    <rule ref="rulesets/controversial.xml">
+    <rule ref="rulesets/cleancode.xml">
+        <exclude name="BooleanArgumentFlag" />
+        <exclude name="ElseExpression" />
+    <!--<exclude name="ErrorControlOperator" /> -->
     </rule>
 
+    <rule ref="rulesets/design.xml">
+        <exclude name="NumberOfChildren" />
+    </rule>
 
-  <rule ref="rulesets/naming.xml">
-      <exclude name="ShortVariable" />
-      <exclude name="LongVariable" />
-  </rule>
+    <rule ref="rulesets/controversial.xml">
+    <!--
+        <exclude name="CamelCasePropertyName" />
+        <exclude name="CamelCaseVariableName" />
+    -->
+    </rule>
+
+    <rule ref="rulesets/naming.xml">
+        <exclude name="ShortVariable" />
+        <exclude name="LongVariable" />
+    </rule>
 </ruleset>
