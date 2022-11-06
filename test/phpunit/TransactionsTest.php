@@ -31,8 +31,8 @@ use sql\MydbOptions;
 final class TransactionsTest extends includes\BaseTestCase
 {
     /**
-     * @throws MydbException
-     * @throws ConnectException
+     * @throws \phpunit\MydbException
+     * @throws \phpunit\ConnectException
      */
     public function testBeginTransactionReadonlyReal(): void
     {
@@ -52,8 +52,8 @@ final class TransactionsTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws MydbException
-     * @throws ConnectException
+     * @throws \phpunit\MydbException
+     * @throws \phpunit\ConnectException
      */
     public function testBeginTransactionReadWriteReal(): void
     {

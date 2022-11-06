@@ -17,6 +17,7 @@ namespace sql\MydbException;
 
 use sql\MydbException;
 use Throwable;
+use function sprintf;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -28,9 +29,8 @@ class QueryBuilderEscapeException extends MydbException
 {
     protected const MESSAGE_TEMPLATE = 'Failed to escape value: %s';
 
-    public function __construct(string $message = "", int $code = 0, Throwable $previous = null)
+    public function __construct(string $message = "", int $code = 0, ?Throwable $previous = null)
     {
         parent::__construct(sprintf(self::MESSAGE_TEMPLATE, $message), $code, $previous);
     }
-
 }

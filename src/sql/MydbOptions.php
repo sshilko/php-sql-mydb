@@ -233,7 +233,7 @@ class MydbOptions
 
     /**
      * @param int $bytes bytes
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function setNetworkBufferSize(int $bytes): void
     {
@@ -249,7 +249,7 @@ class MydbOptions
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function setNetworkReadBuffer(int $bytes): void
     {
@@ -265,7 +265,7 @@ class MydbOptions
     }
 
     /**
-     * @throws OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function setClientErrorLevel(int $mysqliReport): void
     {

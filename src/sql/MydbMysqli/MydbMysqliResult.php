@@ -31,7 +31,7 @@ class MydbMysqliResult
     protected ?array $result = null;
 
     /**
-     * @var array<array-key, string>
+     * @psalm-var array<array-key, string>
      */
     protected array $warnings;
 
@@ -42,7 +42,7 @@ class MydbMysqliResult
     protected int $fieldsCount;
 
     /**
-     * @param array<array-key, string> $warnings
+     * @psalm-param array<array-key, string> $warnings
      */
     public function __construct(?mysqli_result $result, array $warnings, int $fieldsCount)
     {
@@ -61,7 +61,7 @@ class MydbMysqliResult
     }
 
     /**
-     * @return array<array-key, string>
+     * @psalm-return array<array-key, string>
      */
     public function getWarnings(): array
     {

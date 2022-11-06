@@ -89,8 +89,13 @@
         <!-- following 2 lines allow phpcbf and phpcs behaviour to match regarding "use" statements -->
         <exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedNameWithoutNamespace" />
         <exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces.NonFullyQualified" />
+        <exclude name="SlevomatCodingStandard.Namespaces.UseFromSameNamespace" />
     </rule>
-
+    <rule ref="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces">
+        <properties>
+            <property name="allowUseFromRootNamespace" value="true"/>
+        </properties>
+    </rule>
     <!-- https://tideways.com/profiler/blog/compiler-optimized-php-functions -->
     <!-- https://github.com/slevomat/coding-standard/blob/master/doc/namespaces.md -->
     <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
@@ -104,7 +109,10 @@
             <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
             <property name="allowFullyQualifiedNameForCollidingConstants" value="true"/>
             <property name="allowFullyQualifiedNameForCollidingFunctions" value="true"/>
-            <property name="searchAnnotations" value="true"/>
+
+            <!-- do NOT search annotations -->
+            <!-- conflicts with SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation -->
+            <property name="searchAnnotations" value="false"/>
         </properties>
     </rule>
 
@@ -125,12 +133,6 @@
     <rule ref="Generic.Files.LineEndings">
         <properties>
             <property name="eolChar" value="\n"/>
-        </properties>
-    </rule>
-    <rule ref="Generic.Files.LineLength">
-        <properties>
-            <property name="lineLimit" value="120"/>
-            <property name="absoluteLineLimit" value="0"/>
         </properties>
     </rule>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>

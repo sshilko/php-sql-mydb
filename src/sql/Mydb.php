@@ -93,7 +93,7 @@ class Mydb implements
      *
      * @see http://php.net/manual/en/mysqli.close.php
      * @see http://php.net/manual/en/mysqli.ping.php (MysqlND not supports reconnect)
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function __destruct()
     {
@@ -104,8 +104,8 @@ class Mydb implements
     /**
      * With MYSQLI_ASYNC (available with mysqlnd), it is possible to perform query asynchronously.
      * mysqli_poll() is then used to get results from such queries.
-     * @throws MydbException
-     * @throws ConnectException
+     * @throws \sql\MydbException
+     * @throws \sql\MydbException\ConnectException
      */
     public function async(string $command): void
     {
@@ -131,7 +131,7 @@ class Mydb implements
     /**
      * Open connection to remote server
      * @param int $retry retry failed connection attempts
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function open(int $retry = 0): bool
     {
@@ -144,10 +144,9 @@ class Mydb implements
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      *
-     * @return array<array-key, array<array-key, (float|int|string|null)>>|null
      * @psalm-return array<array-key, array<array-key, (float|int|string|null)>>|null
-     * @throws ConnectException
-     * @throws MydbException
+     * @throws \sql\MydbException\ConnectException
+     * @throws \sql\MydbException
      */
     public function query(string $query): ?array
     {
@@ -183,7 +182,7 @@ class Mydb implements
 
     /**
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function command(string $query): bool
     {
@@ -204,7 +203,7 @@ class Mydb implements
 
     /**
      * @return array<string>
-     * @throws MydbException
+     * @throws \sql\MydbException
      * @psalm-return list<string>
      */
     public function getEnumValues(string $table, string $column): array
@@ -243,9 +242,9 @@ class Mydb implements
     }
 
     /**
-     * @param float|int|string|MydbExpression|null $unescaped
-     * @throws ConnectException
-     * @throws MydbException
+     * @param float|int|string|\sql\MydbExpression|null $unescaped
+     * @throws \sql\MydbException\ConnectException
+     * @throws \sql\MydbException
      * @SuppressWarnings(PHPMD.NPathComplexity)
      * @todo reduce NPathComplexity
      */
@@ -259,8 +258,8 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
-     * @throws ConnectException
+     * @throws \sql\MydbException
+     * @throws \sql\MydbException\ConnectException
      * @todo refactor to composite keys, composite primary-keys, unique keys etc. multiple-values
      */
     public function getPrimaryKey(string $table): ?string
@@ -287,7 +286,7 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function beginTransaction(): void
     {
@@ -309,7 +308,7 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function rollbackTransaction(): void
     {
@@ -325,8 +324,8 @@ class Mydb implements
     }
 
     /**
-     * @throws ConnectException
-     * @throws MydbException
+     * @throws \sql\MydbException\ConnectException
+     * @throws \sql\MydbException
      */
     public function commitTransaction(): void
     {
@@ -342,7 +341,7 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function close(): void
     {
@@ -392,8 +391,8 @@ class Mydb implements
     }
 
     /**
-     * @throws ConnectException
-     * @throws MydbException
+     * @throws \sql\MydbException\ConnectException
+     * @throws \sql\MydbException
      */
     public function replace(string $query): ?string
     {
@@ -401,8 +400,8 @@ class Mydb implements
     }
 
     /**
-     * @throws ConnectException
-     * @throws MydbException
+     * @throws \sql\MydbException\ConnectException
+     * @throws \sql\MydbException
      */
     public function insert(string $query): ?string
     {
@@ -415,8 +414,8 @@ class Mydb implements
 
     /**
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
-     * @throws MydbException
-     * @throws ConnectException
+     * @throws \sql\MydbException
+     * @throws \sql\MydbException\ConnectException
      */
     public function select(string $query): ?array
     {
@@ -424,7 +423,7 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function delete(string $query): ?int
     {
@@ -441,7 +440,7 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function update(string $query): ?int
     {
@@ -458,7 +457,7 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): ?int
     {
@@ -471,8 +470,8 @@ class Mydb implements
     }
 
     /**
-     * @param array<string, (float|int|string|MydbExpression|null)> $update
-     * @throws MydbException
+     * @param array<string, (float|int|string|\sql\MydbExpression|null)> $update
+     * @throws \sql\MydbException
      */
     public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool
     {
@@ -491,7 +490,7 @@ class Mydb implements
      * @param array $columnSetWhere ['col1' => [ ['current1', 'new1'], ['current2', 'new2']]
      * @param array $where ['col2' => 'value2', 'col3' => ['v3', 'v4']]
      * @param string $table 'mytable'
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function updateWhereMany(array $columnSetWhere, array $where, string $table): void
     {
@@ -500,8 +499,8 @@ class Mydb implements
     }
 
     /**
-     * @throws ConnectException
-     * @throws MydbException
+     * @throws \sql\MydbException\ConnectException
+     * @throws \sql\MydbException
      */
     public function insertMany(
         array $data,
@@ -515,8 +514,8 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
-     * @param array<string, (float|int|MydbExpression|string|null)> $data
+     * @throws \sql\MydbException
+     * @param array<string, (float|int|\sql\MydbExpression|string|null)> $data
      */
     public function replaceOne(array $data, string $table): ?string
     {
@@ -526,8 +525,8 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
-     * @param array<string, (float|int|MydbExpression|string|null)> $data
+     * @throws \sql\MydbException
+     * @param array<string, (float|int|\sql\MydbExpression|string|null)> $data
      */
     public function insertOne(array $data, string $table): ?string
     {
@@ -537,8 +536,8 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException\EnvironmentException
-     * @throws TerminationSignalException
+     * @throws \sql\MydbException\EnvironmentException
+     * @throws \sql\MydbException\TerminationSignalException
      */
     protected function sendClientRequest(string $query): bool
     {
@@ -556,7 +555,7 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     protected function readServerResponse(string $query): ?MydbMysqliResult
     {
@@ -592,7 +591,7 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     protected function onError(MydbException $exception, ?string $sql = null): void
     {
@@ -602,7 +601,7 @@ class Mydb implements
     }
 
     /**
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     protected function afterConnectionSuccess(): void
     {
@@ -635,10 +634,10 @@ class Mydb implements
     }
 
     /**
-     * @throws DisconnectException
-     * @throws TransactionAutocommitException
-     * @throws MydbException\EnvironmentException
-     * @throws MydbException
+     * @throws \sql\MydbException\DisconnectException
+     * @throws \sql\MydbException\TransactionAutocommitException
+     * @throws \sql\MydbException\EnvironmentException
+     * @throws \sql\MydbException
      * @SuppressWarnings(PHPMD.NPathComplexity)
      * @todo reduce NPathComplexity
      */

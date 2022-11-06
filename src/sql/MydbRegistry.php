@@ -39,12 +39,12 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
 {
 
     /**
-     * @var array<string, MydbInterface>
+     * @var array<string, \sql\MydbInterface>
      */
     protected array $instance = [];
 
     /**
-     * @throws RegistryException
+     * @throws \sql\MydbException\RegistryException
      */
     public function serialize(): ?string
     {
@@ -52,7 +52,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
     }
 
     /**
-     * @throws RegistryException
+     * @throws \sql\MydbException\RegistryException
      * @phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
      */
     public function unserialize($data): void
@@ -134,7 +134,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      *
      * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
      * @param string $offset
-     * @throws RegistryException
+     * @throws \sql\MydbException\RegistryException
      */
     public function offsetGet($offset): MydbInterface
     {
@@ -150,8 +150,8 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      *
      * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
      * @param string $offset
-     * @param MydbInterface $value
-     * @throws RegistryException
+     * @param \sql\MydbInterface $value
+     * @throws \sql\MydbException\RegistryException
      */
     public function offsetSet($offset, $value): void
     {
@@ -180,7 +180,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
     }
 
     /**
-     * @throws RegistryException
+     * @throws \sql\MydbException\RegistryException
      */
     public function __clone()
     {
@@ -188,7 +188,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
     }
 
     /**
-     * @throws RegistryException
+     * @throws \sql\MydbException\RegistryException
      */
     public function __serialize(): array
     {
@@ -196,7 +196,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
     }
 
     /**
-     * @throws RegistryException
+     * @throws \sql\MydbException\RegistryException
      */
     public function __unserialize(array $data): void
     {

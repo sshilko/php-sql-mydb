@@ -210,7 +210,7 @@ class MydbMysqli
      * Set various options that affect mysqli resource, before connection is established
      *
      * @see https://www.php.net/manual/en/mysqli.options.php
-     * @throws MydbException\EnvironmentException
+     * @throws \sql\MydbException\EnvironmentException
      */
     public function setTransportOptions(MydbOptions $options, MydbEnvironment $environment): bool
     {
@@ -539,7 +539,7 @@ class MydbMysqli
 
     /**
      * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference
-     * @param MydbEnvironment $environment
+     * @param \sql\MydbEnvironment $environment
      * @param array<int, string> $events
      */
     public function extractServerResponse(MydbEnvironment $environment, array &$events): ?mysqli_result

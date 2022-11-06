@@ -30,8 +30,8 @@ use function time;
 final class AsyncTest extends includes\BaseTestCase
 {
     /**
-     * @throws MydbException
-     * @throws ConnectException
+     * @throws \phpunit\MydbException
+     * @throws \sql\MydbException\ConnectException
      */
     public function testAsync(): void
     {
@@ -51,8 +51,8 @@ final class AsyncTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws MydbException
-     * @throws ConnectException
+     * @throws \phpunit\MydbException
+     * @throws \sql\MydbException\ConnectException
      */
     public function testAsyncMock(): void
     {
@@ -151,8 +151,8 @@ final class AsyncTest extends includes\BaseTestCase
     }
 
     /**
-     * @throws MydbException
-     * @throws ConnectException
+     * @throws \phpunit\MydbException
+     * @throws \sql\MydbException\ConnectException
      */
     public function testAsyncReal(): void
     {

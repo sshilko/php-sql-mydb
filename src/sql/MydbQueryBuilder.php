@@ -17,6 +17,19 @@ namespace sql;
 
 use sql\MydbException\QueryBuilderEscapeException;
 use sql\MydbException\QueryBuilderException;
+use sql\MydbExpression;
+use function array_map;
+use function count;
+use function implode;
+use function in_array;
+use function is_array;
+use function is_float;
+use function is_int;
+use function is_null;
+use function is_string;
+use function preg_match;
+use function sprintf;
+use function strpos;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -25,10 +38,10 @@ use sql\MydbException\QueryBuilderException;
  */
 class MydbQueryBuilder
 {
-    protected MydbMysqli $mysqli;
-
     public const SQL_INSERT  = 'INSERT';
     public const SQL_REPLACE = 'REPLACE';
+
+    protected MydbMysqli $mysqli;
 
     public function __construct(MydbMysqli $mysqli)
     {
@@ -36,7 +49,7 @@ class MydbQueryBuilder
     }
 
     /**
-     * @throws QueryBuilderException
+     * @throws \sql\MydbException\QueryBuilderException
      */
     public function showColumnsLike(string $table, string $column): string
     {
@@ -44,7 +57,7 @@ class MydbQueryBuilder
     }
 
     /**
-     * @throws QueryBuilderException
+     * @throws \sql\MydbException\QueryBuilderException
      */
     public function showKeys(string $table): string
     {
@@ -52,7 +65,8 @@ class MydbQueryBuilder
     }
 
     /**
-     * @param array<string, (float|int|null|\sql\MydbExpression|string)> $data
+     * @param array<string, (float|int|\sql\MydbExpression|string|null)> $data
+     * @throws \sql\MydbException\QueryBuilderException
      * @psalm-return string
      */
     public function insertOne(array $data, string $table, string $type): string
@@ -71,13 +85,15 @@ class MydbQueryBuilder
      * @param array  $columnSetWhere ['col1' => [ ['current1', 'new1'], ['current2', 'new2']]
      * @param array  $where          ['col2' => 'value2', 'col3' => ['v3', 'v4']]
      * @param string $table          'mytable'
-     * @throws QueryBuilderException
+     * @throws \sql\MydbException\QueryBuilderException
      */
     public function buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string
     {
         $sql = 'UPDATE `' . $table . '`';
         /**
-         * @var array<array-key, array<array-key, array<array-key, (float|int|string|MydbExpression|null)>>> $columnSetWhere
+         * @phpcs:disable SlevomatCodingStandard.Files.LineLength.LineTooLong
+         * @phpcs:disable Generic.Files.LineLength.TooLong
+         * @var array<array-key, array<array-key, array<array-key, (float|int|string|\sql\MydbExpression|null)>>> $columnSetWhere
          */
         foreach ($columnSetWhere as $column => $map) {
             /**
@@ -111,15 +127,20 @@ class MydbQueryBuilder
         if (count($where) > 0) {
             $sql .= ' WHERE ' . $this->buildWhere($where);
         }
+
         return $sql;
     }
 
     /**
-     * @throws QueryBuilderException
-     * @param array<string, (float|int|string|MydbExpression|null)> $update
+     * @throws \sql\MydbException\QueryBuilderException
+     * @param array<string, (float|int|string|\sql\MydbExpression|null)> $update
      */
-    public function buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): ?string
-    {
+    public function buildUpdateWhere(
+        array $update,
+        array $whereFields,
+        string $table,
+        array $whereNotFields = []
+    ): ?string {
         $values = [];
         $queryWhere = $this->buildWhere($whereFields, $whereNotFields);
 
@@ -141,7 +162,7 @@ class MydbQueryBuilder
     }
 
     /**
-     * @throws QueryBuilderException
+     * @throws \sql\MydbException\QueryBuilderException
      */
     public function buildDeleteWhere(string $table, array $fields = [], array $negativeFields = []): ?string
     {
@@ -156,8 +177,9 @@ class MydbQueryBuilder
     }
 
     /**
-     * @throws QueryBuilderException
+     * @throws \sql\MydbException\QueryBuilderException
      * @todo will this need real db connection to escape()? add test for all possible cases
+     * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */
     public function buildWhere(array $fields = [], array $negativeFields = [], array $likeFields = []): string
     {
@@ -223,7 +245,7 @@ class MydbQueryBuilder
     }
 
     /**
-     * @throws QueryBuilderException
+     * @throws \sql\MydbException\QueryBuilderException
      */
     public function buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string
     {
@@ -231,14 +253,15 @@ class MydbQueryBuilder
          * @phpcs:disable SlevomatCodingStandard.Functions.DisallowArrowFunction
          * @psalm-suppress MissingClosureParamType
          */
-        $mapper = function($item): string {
+        $mapper = function ($item): string {
             $escapedArgs = implode(
-                    ', ',
-                    array_map(function ($input) {
+                ', ',
+                array_map(function ($input) {
                         /** @phan-suppress-next-line PhanThrowTypeAbsentForCall */
                         return $this->escape($input);
-                    }, $item),
+                }, $item),
             );
+
             return '(' . $escapedArgs . ')';
         };
 
@@ -250,14 +273,16 @@ class MydbQueryBuilder
         if ('' !== $onDuplicate) {
             $query .= ' ON DUPLICATE KEY UPDATE ' . $onDuplicate;
         }
+
         return $query;
     }
 
     /**
-     * @param float|int|string|MydbExpression|null $unescaped
+     * @param float|int|string|\sql\MydbExpression|null $unescaped
      * @SuppressWarnings(PHPMD.NPathComplexity)
-     * @throws QueryBuilderException
+     * @throws \sql\MydbException\QueryBuilderException
      * @todo reduce NPathComplexity
+     * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */
     public function escape($unescaped, string $quote = "'"): string
     {
@@ -298,7 +323,7 @@ class MydbQueryBuilder
         if (null === $result) {
             throw new QueryBuilderException((new QueryBuilderEscapeException($unescaped))->getMessage());
         }
+
         return '' !== $quote ? $quote . $result . $quote : $result;
     }
-
 }

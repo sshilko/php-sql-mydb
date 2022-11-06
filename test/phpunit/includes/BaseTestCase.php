@@ -70,7 +70,7 @@ class BaseTestCase extends TestCase
     private const ROOT_P = PHPUNIT_MYSQL_ROOT_PASS;
 
     /**
-     * @var MockObject|LoggerInterface
+     * @var \phpunit\includes\MockObject|\Psr\Log\LoggerInterface
      */
     protected LoggerInterface $logger;
 
@@ -96,7 +96,7 @@ class BaseTestCase extends TestCase
     }
 
     /**
-     * @return Mydb
+     * @return \sql\Mydb
      */
     protected function getDefaultDb(
         ?MydbMysqli $mysqli = null,

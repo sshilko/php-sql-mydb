@@ -28,7 +28,7 @@ use function time;
 final class MydbExceptionTest extends TestCase
 {
     /**
-     * @throws MydbException
+     * @throws \sql\MydbException
      */
     public function testMyException(): void
     {
