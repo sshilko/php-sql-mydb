@@ -282,6 +282,7 @@ class MydbMysqli
     {
         if ($this->mysqli && $this->isConnected()) {
             $events = [];
+
             $warnings = [];
             
             $result = $this->extractServerResponse($environment, $events);
@@ -295,6 +296,7 @@ class MydbMysqli
                 $warnings = array_merge($warnings, array_values($events));
             }
 
+            /** @var array<array-key, string> $warnings */
             $response = new MydbMysqliResult($result, $warnings, $fieldsCount ?? 0);
 
             $error = $this->getError();
@@ -470,13 +472,6 @@ class MydbMysqli
             : null;
     }
 
-    public function getServerVersion(): ?int
-    {
-        return $this->mysqli
-            ? $this->mysqli->server_version
-            : null;
-    }
-
     public function isServerGone(): bool
     {
         return in_array($this->getErrNo(), [2002, 2006], true);
@@ -544,6 +539,8 @@ class MydbMysqli
 
     /**
      * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference
+     * @param MydbEnvironment $environment
+     * @param array<int, string> $events
      */
     public function extractServerResponse(MydbEnvironment $environment, array &$events): ?mysqli_result
     {
@@ -551,7 +548,11 @@ class MydbMysqli
             return null;
         }
 
+        /**
+         * @psalm-suppress UnusedClosureParam
+         */
         $environment->set_error_handler(static function (int $errno, string $error) use (&$events) {
+            /** @var array<int, string> $events */
             $events[$errno] = $error;
 
             return true;

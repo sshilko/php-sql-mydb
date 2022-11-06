@@ -39,7 +39,6 @@ MyDb - Component
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml/badge.svg" alt="8.1 PHPUnit build"></a>
     <br/>
     </p>
-    
 
 </p>
 
@@ -54,7 +53,7 @@ composer require sshilko/php-sql-mydb:@dev
 #### Compatibility
 
 - PHP 7.4, 8.0, 8.1
-- MySQL 5.7, 8.0
+- MySQL >=5.7.8, 8.0
 
 #### How this client helps you talk SQL to MySQL server
 

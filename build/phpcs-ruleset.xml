@@ -78,7 +78,7 @@
         <exclude name="SlevomatCodingStandard.Numbers.RequireNumericLiteralSeparator" />
 
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants" />
-        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" />
+        <!-- <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" /> -->
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions" />
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions" />
 

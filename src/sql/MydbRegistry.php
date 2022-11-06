@@ -121,7 +121,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      * Whether an offset exists
      *
      * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
-     * @param mixed $offset
+     * @param string $offset
      * @return bool true on success or false on failure.
      */
     public function offsetExists($offset): bool
@@ -133,7 +133,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      * Offset to retrieve
      *
      * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
-     * @param mixed $offset
+     * @param string $offset
      * @throws RegistryException
      */
     public function offsetGet($offset): MydbInterface
@@ -149,7 +149,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      * Offset to set
      *
      * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
-     * @param mixed $offset
+     * @param string $offset
      * @param MydbInterface $value
      * @throws RegistryException
      */
@@ -168,7 +168,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      * Offset to unset
      *
      * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
-     * @param mixed $offset
+     * @param string $offset
      */
     public function offsetUnset($offset): void
     {
