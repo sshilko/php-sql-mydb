@@ -1,2 +1,10 @@
-vendor/
+# .gitignore file
+# @see https://github.com/github/gitignore
+
+# @see https://getcomposer.org
+vendor
+
+# JetBrains IDEs
+# @see https://www.jetbrains.com/help/idea/configure-project-settings.html
+# @see https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 .idea

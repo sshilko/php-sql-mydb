@@ -42,6 +42,9 @@ use const SIGTERM;
 class MydbEnvironment
 {
 
+    /**
+     * @var array<int>
+     */
     protected array $knownSignals = [SIGTERM, SIGINT, SIGHUP];
 
     /**
@@ -90,12 +93,16 @@ class MydbEnvironment
     /**
      * Set custom PHP error handler
      *
+     * @param callable|null $callback
      * @see https://www.php.net/manual/en/function.set-error-handler
      * @SuppressWarnings("camelCase")
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
     public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): ?callable
     {
+        /**
+         * @psalm-suppress MixedArgumentTypeCoercion
+         */
         return set_error_handler($callback ?? $this->getNullErrorHandler(), $error_levels);
     }
 
@@ -196,6 +203,7 @@ class MydbEnvironment
         foreach ($this->knownSignals as $signalNumber) {
             /**
              * Reset signals to previous/default handler
+             * @psalm-suppress MixedArgument
              */
             if (!pcntl_signal($signalNumber, $this->trappedHandlers[$signalNumber] ?? SIG_DFL)) {
                 // @codeCoverageIgnoreStart

@@ -34,13 +34,6 @@ use function array_map;
 use function count;
 use function explode;
 use function implode;
-use function in_array;
-use function is_array;
-use function is_float;
-use function is_int;
-use function is_null;
-use function is_string;
-use function preg_match;
 use function preg_replace;
 use function sprintf;
 use function stripos;
@@ -75,6 +68,8 @@ class Mydb implements
 
     protected MydbEnvironment $environment;
 
+    protected MydbQueryBuilder $queryBuilder;
+
     protected bool $terminating = false;
 
     public function __construct(
@@ -82,13 +77,15 @@ class Mydb implements
         LoggerInterface $logger,
         ?MydbOptions $options = null,
         ?MydbMysqli $mysqli = null,
-        ?MydbEnvironment $environment = null
+        ?MydbEnvironment $environment = null,
+        ?MydbQueryBuilder $queryBuilder = null
     ) {
         $this->credentials = $credentials;
         $this->logger = $logger;
         $this->options = $options ?? new MydbOptions();
         $this->mysqli = $mysqli ?? new MydbMysqli();
         $this->environment = $environment ?? new MydbEnvironment();
+        $this->queryBuilder = $queryBuilder ?? new MydbQueryBuilder($this->mysqli);
     }
 
     /**
@@ -147,8 +144,8 @@ class Mydb implements
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      *
-     * @return array<array<(float|int|string|null)>>|null
-     * @psalm-return list<array<(float|int|string|null)>>|null
+     * @return array<array-key, array<array-key, (float|int|string|null)>>|null
+     * @psalm-return array<array-key, array<array-key, (float|int|string|null)>>|null
      * @throws ConnectException
      * @throws MydbException
      */
@@ -175,6 +172,9 @@ class Mydb implements
                 );
             }
 
+            /**
+             * @var array<array-key, array<array-key, (float|int|string|null)>> $payload
+             */
             return $payload;
         }
 
@@ -184,7 +184,6 @@ class Mydb implements
     /**
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
      * @throws MydbException
-     * @throws ConnectException
      */
     public function command(string $query): bool
     {
@@ -210,7 +209,37 @@ class Mydb implements
      */
     public function getEnumValues(string $table, string $column): array
     {
-        return $this->getIterableValues($table, $column);
+        $query = $this->queryBuilder->showColumnsLike($table, $column);
+
+        $resultArray = $this->query($query);
+        $result = isset($resultArray[0]['Type'])
+                ? (string) $resultArray[0]['Type']
+                : null;
+
+        $match = false;
+        $types = ['enum', 'set'];
+        foreach ($types as $type) {
+            if (0 === stripos((string)$result, $type . '(')) {
+                $match = $type;
+
+                break;
+            }
+        }
+
+        if (false === $match) {
+            $this->onError(new MydbException("Column not of type '" . implode(',', $types) . "'"));
+        }
+
+        /**
+         * @psalm-suppress PossiblyFalseOperand
+         */
+        $input = substr((string) $result, (int) strpos((string) $result, '(') + 1, -1);
+        if ('' === $input) {
+            throw new MydbException();
+        }
+        $values = explode(',', preg_replace("/'/", '', $input));
+
+        return array_map('strval', $values);
     }
 
     /**
@@ -222,64 +251,21 @@ class Mydb implements
      */
     public function escape($unescaped, string $quote = "'"): string
     {
-        if (is_float($unescaped)) {
-            return (string) $unescaped;
-        }
-
-        if (is_int($unescaped)) {
-            return (string) $unescaped;
-        }
-
-        if (is_string($unescaped)) {
-            if ('null' === $unescaped || 'NULL' === $unescaped) {
-                return 'NULL';
-            }
-
-            /**
-             * Not quoting '0x...' decimal values
-             */
-            if (0 === strpos($unescaped, '0x') && preg_match('/[a-zA-Z0-9]+/', $unescaped)) {
-                return $unescaped;
-            }
-        }
-
-        if ($unescaped instanceof MydbExpression) {
-            return (string) $unescaped;
-        }
-
-        if (is_null($unescaped)) {
-            return '';
-        }
-
-        if (preg_match('/^(\w)*$/', $unescaped)) {
-            return '' !== $quote
-                ? $quote . $unescaped . $quote
-                : $unescaped;
-        }
-
         if (!$this->connect()) {
             throw new ConnectException();
         }
 
-        $escaped = (string) $this->mysqli->realEscapeString($unescaped);
-
-        return '' !== $quote
-            ? $quote . $escaped . $quote
-            : $escaped;
+        return $this->queryBuilder->escape($unescaped, $quote);
     }
 
     /**
      * @throws MydbException
      * @throws ConnectException
+     * @todo refactor to composite keys, composite primary-keys, unique keys etc. multiple-values
      */
     public function getPrimaryKey(string $table): ?string
     {
-        /**
-         * @todo refactor to composite keys, unique keys etc. multiple-values
-         */
-        $sql = 'SHOW KEYS FROM `' . $this->escape($table, '') . '`';
-
-        $result = $this->query($sql);
+        $result = $this->query($this->queryBuilder->showKeys($table));
 
         if (null === $result) {
             return null;
@@ -301,7 +287,6 @@ class Mydb implements
     }
 
     /**
-     * @throws ConnectException
      * @throws MydbException
      */
     public function beginTransaction(): void
@@ -324,7 +309,6 @@ class Mydb implements
     }
 
     /**
-     * @throws ConnectException
      * @throws MydbException
      */
     public function rollbackTransaction(): void
@@ -413,11 +397,7 @@ class Mydb implements
      */
     public function replace(string $query): ?string
     {
-        if ($this->command($query)) {
-            return (string) $this->mysqli->getInsertId();
-        }
-
-        return null;
+        return $this->insert($query);
     }
 
     /**
@@ -444,8 +424,6 @@ class Mydb implements
     }
 
     /**
-     * @throws ConnectException
-     * @throws DeleteException
      * @throws MydbException
      */
     public function delete(string $query): ?int
@@ -463,9 +441,7 @@ class Mydb implements
     }
 
     /**
-     * @throws ConnectException
      * @throws MydbException
-     * @throws UpdateException
      */
     public function update(string $query): ?int
     {
@@ -483,44 +459,26 @@ class Mydb implements
 
     /**
      * @throws MydbException
-     * @throws ConnectException
      */
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): ?int
     {
-        /** @lang text */
-        $query = 'DELETE FROM ' . $this->escape($table, '`');
-
-        $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
-
-        if ('' === $queryWhere) {
+        $query = $this->queryBuilder->buildDeleteWhere($table, $whereFields, $whereNotFields);
+        if (null === $query) {
             return null;
         }
-
-        $query .= ' WHERE ' . $queryWhere;
 
         return $this->delete($query);
     }
 
     /**
+     * @param array<string, (float|int|string|MydbExpression|null)> $update
      * @throws MydbException
      */
     public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool
     {
-        $values = [];
-        $queryWhere = $this->buildWhereQuery($whereFields, $whereNotFields);
+        $query = $this->queryBuilder->buildUpdateWhere($update, $whereFields, $table, $whereNotFields);
 
-        foreach ($update as $field => $value) {
-            /**
-             * @psalm-suppress InvalidOperand
-             */
-            $f = '`' . (string) $field . '`' . ' = ' . $this->escape($value);
-            $values[] = $f;
-        }
-
-        $queryUpdate = implode(', ', $values);
-
-        if ('' !== $queryUpdate && '' !== $queryWhere) {
-            $query = 'UPDATE `' . $table . '` SET ' . $queryUpdate . ' WHERE ' . $queryWhere;
+        if ('' !== $query && null !== $query) {
             $affectedRows = $this->update($query);
 
             return $affectedRows >= 0;
@@ -537,28 +495,7 @@ class Mydb implements
      */
     public function updateWhereMany(array $columnSetWhere, array $where, string $table): void
     {
-        $sql = 'UPDATE `' . $table . '`';
-        foreach ($columnSetWhere as $column => $map) {
-            /**
-             * @psalm-suppress InvalidOperand
-             */
-            $sql .= ' SET `' . $column . '` = CASE';
-
-            foreach ($map as $newValueWhere) {
-                /**
-                 * @psalm-suppress InvalidOperand
-                 */
-                $sql .= ' WHEN (`' . $column . '` = ' . $this->escape($newValueWhere[0]) . ')';
-                $sql .= ' THEN ' . $this->escape($newValueWhere[1]);
-            }
-
-            /**
-             * @psalm-suppress InvalidOperand
-             */
-            $sql .= ' ELSE `' . $column . '`';
-        }
-
-        $sql .= ' END WHERE ' . $this->buildWhereQuery($where);
+        $sql = $this->queryBuilder->buildUpdateWhereMany($columnSetWhere, $where, $table);
         $this->update($sql);
     }
 
@@ -568,131 +505,35 @@ class Mydb implements
      */
     public function insertMany(
         array $data,
-        array $columns,
+        array $cols,
         string $table,
         bool $ignore = false,
-        ?string $onDuplicate = null
+        string $onDuplicate = ''
     ): void {
-        $me = $this;
-        /**
-         * @phpcs:disable SlevomatCodingStandard.Functions.DisallowArrowFunction
-         * @psalm-suppress MissingClosureParamType
-         */
-        $values = array_map(
-            static function ($r) use ($me) {
-                $escapedArgs = implode(
-                    ', ',
-                    array_map(static function ($input) use ($me) {
-                            /** @phan-suppress-next-line PhanThrowTypeAbsentForCall */
-                            return $me->escape((string) $input);
-                    }, $r),
-                );
-
-                return '(' . $escapedArgs . ') ';
-            },
-            $data,
-        );
-
-        $query = "INSERT " . ($ignore ? 'IGNORE ' : '') . "INTO `" . $table . "` (`" . implode(
-            '`, `',
-            $columns,
-        ) . "`) VALUES " . implode(', ', $values);
-
-        if (null !== $onDuplicate) {
-            $query .= ' ON DUPLICATE KEY UPDATE ' . $onDuplicate;
-        }
-        $this->insert($query);
+        $sql = $this->queryBuilder->buildInsertMany($data, $cols, $table, $ignore, $onDuplicate);
+        $this->insert($sql);
     }
 
     /**
      * @throws MydbException
-     * @throws ConnectException
+     * @param array<string, (float|int|MydbExpression|string|null)> $data
      */
     public function replaceOne(array $data, string $table): ?string
     {
-        $names = [];
-        $values = [];
-
-        foreach ($data as $name => $value) {
-            $names[] = $this->escape($name, "`");
-            $values[] = $this->escape($value);
-        }
-
-        $query = sprintf(
-        /** @lang text */
-            'REPLACE INTO `%s` (%s) VALUES (%s)',
-            $table,
-            implode(',', $names),
-            implode(',', $values)
-        );
+        $query = $this->queryBuilder->insertOne($data, $table, MydbQueryBuilder::SQL_REPLACE);
 
         return $this->replace($query);
     }
 
     /**
-     * @throws ConnectException
      * @throws MydbException
+     * @param array<string, (float|int|MydbExpression|string|null)> $data
      */
     public function insertOne(array $data, string $table): ?string
     {
-        $names = [];
-        $values = [];
-
-        foreach ($data as $name => $value) {
-            $names[] = $this->escape($name, "`");
-            $values[] = $this->escape($value);
-        }
-
-        $query = sprintf(
-        /** @lang text */
-            'INSERT INTO `%s` (%s) VALUES (%s)',
-            $table,
-            implode(',', $names),
-            implode(',', $values)
-        );
+        $query = $this->queryBuilder->insertOne($data, $table, MydbQueryBuilder::SQL_INSERT);
 
         return $this->insert($query);
-    }
-
-    /**
-     * @throws MydbException
-     * @throws ConnectException
-     * @psalm-return list<string>
-     */
-    protected function getIterableValues(string $table, string $column): array
-    {
-        $query = "SHOW COLUMNS FROM `" . $this->escape($table, '') . "` ";
-        $query .= "LIKE " . $this->escape($column);
-
-        $resultArray = $this->query($query);
-        $result = isset($resultArray[0]['Type'])
-            ? (string) $resultArray[0]['Type']
-            : null;
-
-        $match = false;
-        $types = ['enum', 'set'];
-        foreach ($types as $type) {
-            if (0 === stripos((string)$result, $type . '(')) {
-                $match = $type;
-
-                break;
-            }
-        }
-
-        if (false === $match) {
-            $this->onError(new MydbException("Column not of type '" . implode(',', $types) . "'"));
-        }
-
-        /**
-         * @psalm-suppress PossiblyFalseOperand
-         */
-        $input = substr((string) $result, (int) strpos((string) $result, '(') + 1, -1);
-        if ('' === $input) {
-            throw new InternalException();
-        }
-        $values = explode(',', preg_replace("/'/", '', $input));
-
-        return array_map('strval', $values);
     }
 
     /**
@@ -794,6 +635,9 @@ class Mydb implements
     }
 
     /**
+     * @throws DisconnectException
+     * @throws TransactionAutocommitException
+     * @throws MydbException\EnvironmentException
      * @throws MydbException
      * @SuppressWarnings(PHPMD.NPathComplexity)
      * @todo reduce NPathComplexity
@@ -835,20 +679,12 @@ class Mydb implements
             $this->onWarning($errorNumber . ' ' . $errorText);
 
             if ($retry > 0) {
-                $retry -= 1;
+                --$retry;
 
                 return $this->connect($retry);
             }
 
             return false;
-        }
-
-        if ($this->mysqli->getServerVersion() < '50708') {
-            /**
-             * Minimum version
-             * max_statement_time added MySQL 5.7.4 later renamed to max_execution_time in MySQL 5.7.8
-             */
-            throw new MydbException('Minimum required MySQL server version is 50708');
         }
 
         $this->mysqli->mysqliReport($this->options->getClientErrorLevel());
@@ -860,71 +696,5 @@ class Mydb implements
         $this->afterConnectionSuccess();
 
         return true;
-    }
-
-    /**
-     * @throws ConnectException
-     * @throws MydbException
-     */
-    protected function buildWhereQuery(array $fields = [], array $negativeFields = [], array $likeFields = []): string
-    {
-        $where = [];
-
-        foreach ($fields as $field => $value) {
-            /**
-             * @psalm-suppress InvalidOperand
-             */
-            $queryPart = '`' . $field . '`';
-            $isNegative = in_array($field, $negativeFields, true);
-            $inNull = false;
-
-            if (null === $value) {
-                $queryPart .= ' IS ' . ($isNegative ? 'NOT ' : '') . 'NULL';
-            } elseif (is_array($value)) {
-                if (1 === count($value)) {
-                    $qvalue = implode('', $value);
-                    $queryPart .= ($isNegative ? '!' : '') . '=';
-                    $queryPart .= $this->escape($qvalue);
-                } else {
-                    $queryPart .= ($isNegative ? ' NOT' : '') . " IN (";
-                    $inVals = [];
-
-                    foreach ($value as $val) {
-                        if (null === $val) {
-                            $inNull = true;
-                        } else {
-                            $inVals[] = $this->escape($val);
-                        }
-                    }
-
-                    $queryPart .= implode(',', $inVals) . ')';
-                }
-            } else {
-                $equality = ($isNegative ? '!' : '') . "=";
-
-                if (in_array($field, $likeFields, true)) {
-                    $equality = ($isNegative ? ' NOT ' : ' ') . " LIKE ";
-                }
-
-                $queryPart .= $equality;
-                $queryPart .= $this->escape($value);
-            }
-
-            if ($inNull) {
-                $queryPart = sprintf(' ( %s OR %s IS NULL ) ', $queryPart, $field);
-            }
-
-            $where[] = $queryPart;
-        }
-
-        $condition = [];
-
-        if (count($where)) {
-            $condition[] = implode(' AND ', $where);
-        }
-
-        $condition = implode(' AND ', $condition);
-
-        return $condition;
     }
 }
