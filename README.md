@@ -42,7 +42,7 @@ MyDb - Component
 
 </p>
 
-Simple library to work with MySQL database
+Simple PHP client for MySQL database
 
 #### Installation
 
@@ -50,7 +50,7 @@ Simple library to work with MySQL database
 composer require sshilko/php-sql-mydb:@dev
 ```
 
-#### Compatibility
+#### [Compatibility](http://sshilko.com/php-sql-mydb/php/)
 
 - PHP 7.4, 8.0, 8.1
 - MySQL >=5.7.8, 8.0
@@ -117,10 +117,10 @@ please re-use existing solutions that best fit your requirements.
 
 #### Future roadmap
 
-- use page branch for build artifacts, expose as static-website
-- add repository helper (not active record or ORM)
-- usage example
-- pluggable M.E.L.T (metrics, events, logs, traces) via events
+- build PHPUnit, phpDocumentor, PHPCPD, Pdepend 
+- add library helper for Repository pattern usage
+- usage examples
+- pluggable M.E.L.T (metrics, events, logs, traces) via events, observer pattern or symfony events, or psr-events
 - unit-test command/query raw SQL, unit-tests against raw SQL generator and events objects
 - packagist export & release stable version
 
