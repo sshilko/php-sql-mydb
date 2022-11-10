@@ -58,3 +58,40 @@ jobs:
         # Docs: https://github.com/squizlabs/PHP_CodeSniffer
       - name: Run PHPCodeSniffer github.com/squizlabs/PHP_CodeSniffer
         run: composer app-phpcs
+
+          # https://github.com/actions/upload-artifact
+      - name: Upload PHPCS artifacts
+        uses: actions/upload-artifact@v3
+        with:
+            name: phpcs-output
+            path: |
+                build/tmp/phpcs.txt
+            retention-days: 1
+  pages:
+      needs: build
+      runs-on: ubuntu-latest
+      timeout-minutes: 2
+      permissions: write-all
+      steps:
+          # https://github.com/actions/checkout
+          - name: Checkout pages branch
+            uses: actions/checkout@v3
+            with:
+                ref: pages
+
+          # https://github.com/marketplace/actions/download-a-build-artifact
+          - name: Download all Phan artifacts
+            uses: actions/download-artifact@v3.0.1
+            with:
+                name: phpcs-output
+                path: php/phpcs
+
+          - name: Commit php/phpcs
+            continue-on-error: true
+            run: |
+                git status
+                git config user.name github-actions
+                git config user.email github-actions@github.com
+                git add php/phpcs/phpcs.txt
+                git commit -m "generated phpcs docs from revision ${GITHUB_SHA::7}"
+                git push

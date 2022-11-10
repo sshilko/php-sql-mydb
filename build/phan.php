@@ -20,6 +20,7 @@ use Phan\Issue;
  * default configuration. Command-line arguments will be applied
  * after this file is read.
  * @phpcs:disable
+ * @see https://github.com/phan/phan/blob/master/internal/CLI-HELP.md
  */
 return [
     // The number of processes to fork off during the analysis

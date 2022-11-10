@@ -53,3 +53,42 @@ jobs:
         # Docs: https://github.com/phan/phan
       - name: Run Phan github.com/phan/phan
         run: composer app-phan
+
+        # https://github.com/actions/upload-artifact
+      - name: Upload Phan artifacts
+        uses: actions/upload-artifact@v3
+        with:
+            name: phan-output
+            path: |
+                build/tmp/phan.html
+                build/tmp/phan.txt
+            retention-days: 1
+  pages:
+      needs: build
+      runs-on: ubuntu-latest
+      timeout-minutes: 2
+      permissions: write-all
+      steps:
+          # https://github.com/actions/checkout
+          - name: Checkout pages branch
+            uses: actions/checkout@v3
+            with:
+                ref: pages
+
+              #https://github.com/marketplace/actions/download-a-build-artifact
+          - name: Download all Phan artifacts
+            uses: actions/download-artifact@v3.0.1
+            with:
+                name: phan-output
+                path: php/phan
+
+          - name: Commit php/phan
+            continue-on-error: true
+            run: |
+                git status
+                git config user.name github-actions
+                git config user.email github-actions@github.com
+                git add php/phan/phan.txt
+                git add php/phan/phan.html
+                git commit -m "generated phan docs from revision ${GITHUB_SHA::7}"
+                git push

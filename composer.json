@@ -72,7 +72,8 @@
         ],
         "app-phpmd": [
             "@putenv XDEBUG_MODE=off",
-            "php ./vendor/phpmd/phpmd/src/bin/phpmd src/ ansi build/phpmd-rulesets.xml"
+            "php ./vendor/phpmd/phpmd/src/bin/phpmd --reportfile build/tmp/phpmd.txt src/ ansi build/phpmd-rulesets.xml",
+            "cat build/tmp/phpmd.txt"
         ],
         "app-phpunit": [
             "@app-phpunit-mysql57",
@@ -109,7 +110,7 @@
             "@putenv XDEBUG_MODE=off",
             "@putenv PHAN_DISABLE_XDEBUG_WARN=1",
             "@putenv PHAN_ALLOW_XDEBUG=1",
-            "php ./vendor/bin/phan --color -k ./build/phan.php"
+            "php ./vendor/bin/phan --color -k ./build/phan.php --output-mode html -o build/tmp/phan.html --long-progress-bar > build/tmp/phan.txt 2>&1"
         ],
         "app-phpcpd": [
             "php /usr/bin/phpcpd src"

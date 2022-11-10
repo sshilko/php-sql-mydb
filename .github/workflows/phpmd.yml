@@ -53,3 +53,40 @@ jobs:
         # Docs: https://phpmd.org
       - name: Run PHPmd phpmd.org
         run: composer app-phpmd
+
+          # https://github.com/actions/upload-artifact
+      - name: Upload PHPMD artifacts
+        uses: actions/upload-artifact@v3
+        with:
+            name: phpmd-output
+            path: |
+                build/tmp/phpmd.txt
+            retention-days: 1
+  pages:
+      needs: build
+      runs-on: ubuntu-latest
+      timeout-minutes: 2
+      permissions: write-all
+      steps:
+          # https://github.com/actions/checkout
+          - name: Checkout pages branch
+            uses: actions/checkout@v3
+            with:
+                ref: pages
+
+                #https://github.com/marketplace/actions/download-a-build-artifact
+          - name: Download all PHPMD artifacts
+            uses: actions/download-artifact@v3.0.1
+            with:
+                name: phpmd-output
+                path: php/phpmd
+
+          - name: Commit php/phpmd
+            continue-on-error: true
+            run: |
+                git status
+                git config user.name github-actions
+                git config user.email github-actions@github.com
+                git add php/phpmd/phpmd.txt
+                git commit -m "generated phpmd docs from revision ${GITHUB_SHA::7}"
+                git push

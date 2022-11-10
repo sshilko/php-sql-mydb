@@ -58,3 +58,40 @@ jobs:
         # Docs: https://phpstan.org
       - name: Run PHPStan phpstan.org
         run: composer app-phpstan
+
+          # https://github.com/actions/upload-artifact
+      - name: Upload PHPStan artifacts
+        uses: actions/upload-artifact@v3
+        with:
+            name: phpstan-output
+            path: |
+                build/tmp/phpstan.txt
+            retention-days: 1
+  pages:
+      needs: build
+      runs-on: ubuntu-latest
+      timeout-minutes: 2
+      permissions: write-all
+      steps:
+          # https://github.com/actions/checkout
+          - name: Checkout pages branch
+            uses: actions/checkout@v3
+            with:
+                ref: pages
+
+                #https://github.com/marketplace/actions/download-a-build-artifact
+          - name: Download all PHPStan artifacts
+            uses: actions/download-artifact@v3.0.1
+            with:
+                name: phpstan-output
+                path: php/phpstan
+
+          - name: Commit php/phpstan
+            continue-on-error: true
+            run: |
+                git status
+                git config user.name github-actions
+                git config user.email github-actions@github.com
+                git add php/phpstan/phpstan.txt
+                git commit -m "generated phpstan docs from revision ${GITHUB_SHA::7}"
+                git push
