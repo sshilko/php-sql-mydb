@@ -18,6 +18,8 @@ CODE_OF_CONDUCT export-ignore
 DCO export-ignore
 AUTHORS export-ignore
 CONTRIBUTING export-ignore
+AUTHORS export-ignore
+CITATION export-ignore
 
 * text=false
 *.php text eol=lf
