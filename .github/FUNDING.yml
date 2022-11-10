@@ -1,4 +1,12 @@
-# These are supported funding model platforms
+# (c) Sergei Shilko <contact@sshilko.com>
+#
+# MIT License
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+# @license https://opensource.org/licenses/mit-license.php MIT
+
+# @see https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
 
 github: sshilko
 custom: paypal.me/sergeishilko
