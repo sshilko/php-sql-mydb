@@ -81,12 +81,18 @@ jobs:
                 name: phpmd-output
                 path: php/phpmd
 
-          - name: Commit php/phpmd
+          - uses: nick-fields/retry@v2
+            name: Commit php/phpmd
             continue-on-error: true
-            run: |
-                git status
-                git config user.name github-actions
-                git config user.email github-actions@github.com
-                git add php/phpmd/phpmd.txt
-                git commit -m "generated phpmd docs from revision ${GITHUB_SHA::7}"
-                git push
+            with:
+                timeout_seconds: 20
+                max_attempts: 3
+                retry_on: error
+                command: |
+                    git status
+                    git config user.name github-actions
+                    git config user.email github-actions@github.com
+                    git pull
+                    git add php/phpmd/phpmd.txt
+                    git commit -m "generated phpmd docs from revision ${GITHUB_SHA::7}"
+                    git push
