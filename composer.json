@@ -44,11 +44,7 @@
         ],
         "app-psalm":[
             "@putenv XDEBUG_MODE=off",
-            "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true --long-progress --stats --disable-extension=xdebug"
-        ],
-        "app-psalm-shepherd":[
-            "@putenv XDEBUG_MODE=off",
-            "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --shepherd --long-progress --memory-limit=-1 --no-diff --disable-extension=xdebug"
+            "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true --long-progress --stats --disable-extension=xdebug --report=$PWD/build/tmp/psalm.txt $1"
         ],
         "app-psalm-alter": [
             "@putenv XDEBUG_MODE=off",

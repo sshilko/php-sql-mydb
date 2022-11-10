@@ -23,7 +23,6 @@ file that was distributed with this source code.
 
 #### Artifacts and other metadata expects few github branches to exist
 
-- badges
 - pages
 
 Use following commands to pre-create branches
