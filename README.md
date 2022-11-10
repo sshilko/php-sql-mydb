@@ -23,10 +23,10 @@ MyDb - Component
     <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsshilko%2Fphp-sql-mydb&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
     <img src="https://img.shields.io/github/languages/code-size/sshilko/php-sql-mydb" alt="Code size">
     <br />
-    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/pages/php/phpunit-coverage-badge.svg" alt="PHPUnit coverage" />
+    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/pages/php/phpunit/phpunit-coverage-badge.svg" alt="PHPUnit coverage" />
     <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/pages/php/phpunit/phpunit-coverage-badge-classes.svg" alt="PHPUnit classes coverage" />
-    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/pages/php/phpunit-coverage-badge-lines.svg" alt="PHPUnit lines coverage" />
-    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/pages/php/phpunit-coverage-badge-methods.svg" alt="PHPUnit methods coverage" />
+    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/pages/php/phpunit/phpunit-coverage-badge-lines.svg" alt="PHPUnit lines coverage" />
+    <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/pages/php/phpunit/phpunit-coverage-badge-methods.svg" alt="PHPUnit methods coverage" />
     <br/>
     <a href="http://sshilko.com/php-sql-mydb/php/psalm/><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/psalm.yml/badge.svg" alt="7.4 Psalm build"></a>
     <a href="http://sshilko.com/php-sql-mydb/php/phan/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phan.yml/badge.svg" alt="7.4 Phan build"></a>
