@@ -54,7 +54,7 @@ jobs:
       - name: Run PHPmd phpmd.org
         run: composer app-phpmd
 
-          # https://github.com/actions/upload-artifact
+        # https://github.com/actions/upload-artifact
       - name: Upload PHPMD artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -76,7 +76,7 @@ jobs:
 
                 #https://github.com/marketplace/actions/download-a-build-artifact
           - name: Download all PHPMD artifacts
-            uses: actions/download-artifact@v3.0.1
+            uses: actions/download-artifact@v3
             with:
                 name: phpmd-output
                 path: php/phpmd

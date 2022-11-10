@@ -112,14 +112,6 @@ jobs:
         docker-compose exec -T app.php composer app-phpunit-badges-coverage || \
         docker-compose exec -T app.php composer app-phpunit-badges-coverage
 
-      # https://github.com/actions/upload-artifact
-    - name: Upload PHPUnit phpunit-coverage.txt artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: phpunit-coverage-txt
-        path: test/tmp/phpunit-coverage.txt
-        retention-days: 1      
-
       # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
     - name: Generate PHPUnit coverage badge
       uses: timkrase/phpunit-coverage-badge@v1.2.0
@@ -129,43 +121,17 @@ jobs:
         report: test/tmp/phpunit-clover.xml
 
       # https://github.com/actions/upload-artifact
-    - name: Upload PHPUnit coverage badge as artifact
+    - name: Upload PHPUnit artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: phpunit-coverage-badge
-        path: test/tmp/phpunit-coverage-badge.svg
-        retention-days: 1
-
-      # https://github.com/actions/upload-artifact
-    - name: Upload PHPUnit Lines coverage badge as artifact
-      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
-      uses: actions/upload-artifact@v3
-      with:
-        name: phpunit-coverage-badge-lines
-        path: test/tmp/phpunit-coverage-badge-lines.svg
-        retention-days: 1
-
-      # https://github.com/actions/upload-artifact
-    - name: Upload PHPUnit classes coverage badge as artifact
-      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
-      uses: actions/upload-artifact@v3
-      with:
-        name: phpunit-coverage-badge-classes
-        path: test/tmp/phpunit-coverage-badge-classes.svg
-        retention-days: 1
-
-      # https://github.com/actions/upload-artifact
-    - name: Upload PHPUnit methods coverage badge as artifact
-      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
-      uses: actions/upload-artifact@v3
-      with:
-        name: phpunit-coverage-badge-methods
-        path: test/tmp/phpunit-coverage-badge-methods.svg
-        retention-days: 1
-
-    - name: Shutdown docker
-      run: docker-compose down
-      timeout-minutes: 1
+          name: phpunit-output
+          path: |
+              test/tmp/phpunit-coverage.txt
+              test/tmp/phpunit-coverage-badge.svg
+              test/tmp/phpunit-coverage-badge-lines.svg
+              test/tmp/phpunit-coverage-badge-classes.svg
+              test/tmp/phpunit-coverage-badge-methods.svg
+          retention-days: 1
 
   badges:
     needs: build
@@ -177,54 +143,28 @@ jobs:
     - name: Checkout badges branch
       uses: actions/checkout@v3
       with:
-        ref: badges
+        ref: pages
 
-      #https://github.com/marketplace/actions/download-a-build-artifact
-    - name: Download all PHPUnit coverage artifacts
-      uses: actions/download-artifact@v3.0.1
+    # https://github.com/marketplace/actions/download-a-build-artifact
+    - name: Download all PHPUnit artifacts
+      uses: actions/download-artifact@v3
       with:
-        name: phpunit-coverage-badge
+          name: phpunit-output
+          path: php/phpunit
 
-      #https://github.com/marketplace/actions/download-a-build-artifact
-    - name: Download all PHPUnit coverage artifacts
-      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
-      uses: actions/download-artifact@v3.0.1
-      with:
-        name: phpunit-coverage-badge-lines
-
-      #https://github.com/marketplace/actions/download-a-build-artifact
-    - name: Download all PHPUnit coverage artifacts
-      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
-      uses: actions/download-artifact@v3.0.1
-      with:
-        name: phpunit-coverage-badge-classes
-
-      #https://github.com/marketplace/actions/download-a-build-artifact
-    - name: Download all PHPUnit coverage artifacts
-      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
-      uses: actions/download-artifact@v3.0.1
-      with:
-        name: phpunit-coverage-badge-methods
-
-    - name: Commit coverage badge
+    - uses: nick-fields/retry@v2
+      name: Commit coverage details
       continue-on-error: true
-      run: |
-          git status
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add phpunit-coverage-badge.svg
-          git commit -m "generated phpunit coverage badge from revision ${GITHUB_SHA::7}"
-          git push
+      with:
+          timeout_seconds: 20
+          max_attempts: 3
+          retry_on: error
+          command: |
+              git status
+              git config user.name github-actions
+              git config user.email github-actions@github.com
+              git pull
+              git add php/phpunit/*
+              git commit -m "generated phpunit artifacts from revision ${GITHUB_SHA::7}"
+              git push
 
-    - name: Commit coverage details badges
-      continue-on-error: true
-      if: steps.app-phpunit-badges-coverage.outputs.exit_code == 0
-      run: |
-        git status
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git add phpunit-coverage-badge-lines.svg
-        git add phpunit-coverage-badge-classes.svg
-        git add phpunit-coverage-badge-methods.svg
-        git commit -m "generated phpunit coverage details badges from revision ${GITHUB_SHA::7}"
-        git push

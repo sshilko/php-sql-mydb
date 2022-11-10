@@ -44,7 +44,6 @@ docker-compose exec app.php composer app-phpcs
 docker-compose exec app.php composer app-psalm
 docker-compose exec app.php composer app-psalm-alter
 docker-compose exec app.php composer app-psalm-taint
-docker-compose exec app.php composer app-psalm-shepherd
 
 ##### Run [PHPStan](https://phpstan.org) - PHP Static Analysis Tool (all files)
 

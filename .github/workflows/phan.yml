@@ -77,7 +77,7 @@ jobs:
 
               #https://github.com/marketplace/actions/download-a-build-artifact
           - name: Download all Phan artifacts
-            uses: actions/download-artifact@v3.0.1
+            uses: actions/download-artifact@v3
             with:
                 name: phan-output
                 path: php/phan

@@ -52,4 +52,50 @@ jobs:
 
       # Docs: https://github.com/psalm/shepherd
     - name: Run psalm suite and send shepherd stats psalm.dev
-      run: composer app-psalm-shepherd
+      run: composer app-psalm -- --shepherd > $PWD/build/tmp/psalm.stdout.txt
+    - name: Echo psalm output
+      run: cat $PWD/build/tmp/psalm.stdout.txt
+
+    # https://github.com/actions/upload-artifact
+    - name: Upload Psalm artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        retention-days: 1
+        name: psalm-output
+        path: |
+          build/tmp/psalm.stdout.txt
+          build/tmp/psalm.txt
+  pages:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions: write-all
+    steps:
+      # https://github.com/actions/checkout
+      - name: Checkout pages branch
+        uses: actions/checkout@v3
+        with:
+          ref: pages
+
+      # https://github.com/marketplace/actions/download-a-build-artifact
+      - name: Download all Psalm artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: psalm-output
+          path: php/psalm
+
+      - uses: nick-fields/retry@v2
+        name: Commit php/phpstan
+        continue-on-error: true
+        with:
+          timeout_seconds: 20
+          max_attempts: 3
+          retry_on: error
+          command: |
+            git status
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git pull
+            git add php/psalm/*
+            git commit -m "generated psalm docs from revision ${GITHUB_SHA::7}"
+            git push
