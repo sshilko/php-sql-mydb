@@ -26,18 +26,24 @@ repos:
       - id: php-code-phpcbf
         name: php-code-phpcbf
         entry: php ./vendor/bin/phpcbf --standard=build/phpcs-ruleset.xml
+        log_file: build/tmp/phpcbf.txt
         language: system
         types: [php]
+        verbose: true
       - id: php-code-phpcs
         name: php-code-phpcs
         entry: php ./vendor/bin/phpcs --standard=build/phpcs-ruleset.xml
+        log_file: build/tmp/phpcs.txt
         language: system
         types: [php]
+        verbose: true
       - id: php-code-phpstan
         name: php-code-phpstan
         entry: php ./vendor/bin/phpstan analyse --memory-limit=-1 --no-progress -c build/phpstan.neon
+        log_file: build/tmp/phpstan.txt
         language: system
         types: [php]
+        verbose: true
       - id: php-code-psalm-single-changed-file-check
         name: php-code-psalm-single-changed-file-check
         entry: |
