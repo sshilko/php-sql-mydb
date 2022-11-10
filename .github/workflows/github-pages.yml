@@ -1,0 +1,46 @@
+# This file is part of the sshilko/php-sql-mydb package.
+#
+# (c) Sergei Shilko <contact@sshilko.com>
+#
+# MIT License
+#
+# For the full copyright and license information, please view the LICENSE
+# file that was distributed with this source code.
+# @license https://opensource.org/licenses/mit-license.php MIT
+name: Github Pages
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  pages-directory-listing-release:
+
+    runs-on: ubuntu-latest
+    name: Directory Listings Index
+    timeout-minutes: 3
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: pages
+
+      - name: Generate Directory Listings
+        uses: jayanta525/github-pages-directory-listing@v2.0.0
+
+      - uses: nick-fields/retry@v2
+        name: Commit directory-listing
+        continue-on-error: true
+        with:
+            timeout_seconds: 20
+            max_attempts: 3
+            retry_on: error
+            command: |
+                git status
+                git config user.name github-actions
+                git config user.email github-actions@github.com
+                git pull
+                git add "**/index.html"
+                git commit -m "generated directory-listing docs from revision ${GITHUB_SHA::7}"
+                git push
