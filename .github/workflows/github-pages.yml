@@ -28,6 +28,8 @@ jobs:
 
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v2.0.0
+          with:
+            FOLDER: $PWD
 
       - uses: nick-fields/retry@v2
         name: Commit directory-listing
