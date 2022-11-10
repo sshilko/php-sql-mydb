@@ -86,12 +86,18 @@ jobs:
                 name: phpstan-output
                 path: php/phpstan
 
-          - name: Commit php/phpstan
+          - uses: nick-fields/retry@v2
+            name: Commit php/phpstan
             continue-on-error: true
-            run: |
-                git status
-                git config user.name github-actions
-                git config user.email github-actions@github.com
-                git add php/phpstan/phpstan.txt
-                git commit -m "generated phpstan docs from revision ${GITHUB_SHA::7}"
-                git push
+            with:
+                timeout_seconds: 20
+                max_attempts: 3
+                retry_on: error
+                command: |
+                    git status
+                    git config user.name github-actions
+                    git config user.email github-actions@github.com
+                    git pull
+                    git add php/phpstan/phpstan.txt
+                    git commit -m "generated phpstan docs from revision ${GITHUB_SHA::7}"
+                    git push

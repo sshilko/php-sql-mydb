@@ -80,18 +80,24 @@ jobs:
                 ref: pages
 
           # https://github.com/marketplace/actions/download-a-build-artifact
-          - name: Download all Phan artifacts
+          - name: Download all PHPCS artifacts
             uses: actions/download-artifact@v3.0.1
             with:
                 name: phpcs-output
                 path: php/phpcs
 
-          - name: Commit php/phpcs
+          - uses: nick-fields/retry@v2
+            name: Commit php/phpcs
             continue-on-error: true
-            run: |
-                git status
-                git config user.name github-actions
-                git config user.email github-actions@github.com
-                git add php/phpcs/phpcs.txt
-                git commit -m "generated phpcs docs from revision ${GITHUB_SHA::7}"
-                git push
+            with:
+                timeout_seconds: 20
+                max_attempts: 3
+                retry_on: error
+                command: |
+                    git status
+                    git config user.name github-actions
+                    git config user.email github-actions@github.com
+                    git pull
+                    git add php/phpcs/phpcs.txt
+                    git commit -m "generated phpcs docs from revision ${GITHUB_SHA::7}"
+                    git push
