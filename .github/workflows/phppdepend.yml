@@ -7,7 +7,7 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
-name: 7.4 PHPUnit
+name: 7.4 PDepend
 
 on:
   workflow_run:
@@ -40,17 +40,14 @@ jobs:
       env:
         DOCKER_BUILDKIT: '1'
         COMPOSE_DOCKER_CLI_BUILD: '1'
-        SERVICES_NAME: "app.php mysql mysql80"
+        SERVICES_NAME: "app.php"
       run: docker-compose up --no-build -d $SERVICES_NAME
-      timeout-minutes: 1
 
-    - name: Wait for all services to become healthy
-      run: for SVC in "app.php" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 3; done; done
-      timeout-minutes: 1
+    - run: docker-compose ps
 
     - name: Sleep
-      run: sleep 4
-    - run: docker-compose ps
+      run: sleep 6
+      timeout-minutes: 1
 
     - name: Cache Composer packages
       id: composer-cache
@@ -64,48 +61,19 @@ jobs:
 
       # Docs: https://phpunit.readthedocs.io/en/9.5/
     - name: Docker run PHPUnit with MySQL5.7
-      run: docker-compose exec -T app.php composer app-phpunit-mysql57
-
-    - name: Docker run PHPUnit with MySQL8.0 & Coverage
-      run: docker-compose exec -T app.php composer app-phpunit-mysql80-coverage
-
-    - name: Docker run PHPUnit badge generation
-      id: app-phpunit-badges-coverage
-      continue-on-error: true
-      run: |
-        #3 attempts to generate badges
-        docker-compose exec -T app.php composer app-phpunit-badges-coverage || \
-        docker-compose exec -T app.php composer app-phpunit-badges-coverage || \
-        docker-compose exec -T app.php composer app-phpunit-badges-coverage
-
-      # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
-    - name: Generate PHPUnit coverage badge
-      uses: timkrase/phpunit-coverage-badge@v1.2.0
-      with:
-        coverage_badge_path: 'test/tmp/phpunit-coverage-badge.svg'
-        push_badge: false
-        report: test/tmp/phpunit-clover.xml
+      run: docker-compose exec -T app.php composer app-pdepend
 
       # https://github.com/actions/upload-artifact
-    - name: Upload PHPUnit artifacts
+    - name: Upload Pdepend artifacts
       uses: actions/upload-artifact@v3
       with:
-          name: phpunit-output
+          name: pdepend-output
           path: |
-              test/tmp/html
-              test/tmp/xml
-              test/tmp/phpunit-testdox-html.html
-              test/tmp/phpunit-testdox-text.txt
-              test/tmp/phpunit-clover.xml
-              test/tmp/phpunit-junit.xml
-              test/tmp/phpunit-cobertura.xml
-              test/tmp/phpunit-crap4j.xml
-              test/tmp/phpunit-xml.xml
-              test/tmp/phpunit-coverage.txt
-              test/tmp/phpunit-coverage-badge.svg
-              test/tmp/phpunit-coverage-badge-lines.svg
-              test/tmp/phpunit-coverage-badge-classes.svg
-              test/tmp/phpunit-coverage-badge-methods.svg
+              build/tmp/pdepend-dependency-xml.xml
+              build/tmp/pdepend-jdepend-chart.svg
+              build/tmp/pdepend-jdepend-xml.xml
+              build/tmp/pdepend-summary-xml.xml
+              build/tmp/pdepend-overview-pyramid.svg
           retention-days: 1
 
   badges:
@@ -124,11 +92,11 @@ jobs:
     - name: Download all PHPUnit artifacts
       uses: actions/download-artifact@v3
       with:
-          name: phpunit-output
-          path: php/phpunit
+          name: pdepend-output
+          path: php/pdepend
 
     - uses: nick-fields/retry@v2
-      name: Commit coverage details
+      name: Commit pdepend details
       continue-on-error: true
       with:
           timeout_seconds: 20
@@ -139,7 +107,7 @@ jobs:
               git config user.name github-actions
               git config user.email github-actions@github.com
               git pull
-              git add php/phpunit/*
-              git commit -m "generated phpunit artifacts from revision ${GITHUB_SHA::7}"
+              git add php/pdepend/*
+              git commit -m "generated pdepend artifacts from revision ${GITHUB_SHA::7}"
               git push
 
