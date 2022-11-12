@@ -16,6 +16,11 @@ Search.appendIndex(
             "summary": "A\u0020destructor\u0020may\u0020be\u0020called\u0020as\u0020soon\u0020as\u0020there\u0020are\u0020no\u0020references\u0020to\u0020an\u0020object.",
             "url": "classes/sql-Mydb.html#method___destruct"
         },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003Aasync\u0028\u0029",
+            "name": "async",
+            "summary": "With\u0020MYSQLI_ASYNC\u0020\u0028available\u0020with\u0020mysqlnd\u0029,\u0020it\u0020is\u0020possible\u0020to\u0020perform\u0020query\u0020asynchronously.",
+            "url": "classes/sql-Mydb.html#method_async"
+        },                {
             "fqsen": "\\sql\\Mydb\u003A\u003Aopen\u0028\u0029",
             "name": "open",
             "summary": "Open\u0020connection\u0020to\u0020remote\u0020server",
@@ -26,75 +31,10 @@ Search.appendIndex(
             "summary": "Execute\u0020raw\u0020SQL\u0020query\u0020and\u0020return\u0020results",
             "url": "classes/sql-Mydb.html#method_query"
         },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Aasync\u0028\u0029",
-            "name": "async",
-            "summary": "With\u0020MYSQLI_ASYNC\u0020\u0028available\u0020with\u0020mysqlnd\u0029,\u0020it\u0020is\u0020possible\u0020to\u0020perform\u0020query\u0020asynchronously.",
-            "url": "classes/sql-Mydb.html#method_async"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Aselect\u0028\u0029",
-            "name": "select",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_select"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Atable\u0028\u0029",
-            "name": "table",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_table"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Avalues\u0028\u0029",
-            "name": "values",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_values"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Adelete\u0028\u0029",
-            "name": "delete",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_delete"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Acall\u0028\u0029",
-            "name": "call",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_call"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Ado\u0028\u0029",
-            "name": "do",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_do"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Ahandler\u0028\u0029",
-            "name": "handler",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_handler"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Adds\u0028\u0029",
-            "name": "dds",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_dds"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Aupdate\u0028\u0029",
-            "name": "update",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_update"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Ainsert\u0028\u0029",
-            "name": "insert",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_insert"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Areplace\u0028\u0029",
-            "name": "replace",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_replace"
-        },                {
             "fqsen": "\\sql\\Mydb\u003A\u003Acommand\u0028\u0029",
             "name": "command",
-            "summary": "",
+            "summary": "Execute\u0020any\u0020SQL\u0020command,\u0020without\u0020returning\u0020result",
             "url": "classes/sql-Mydb.html#method_command"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003AgetSetValues\u0028\u0029",
-            "name": "getSetValues",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_getSetValues"
         },                {
             "fqsen": "\\sql\\Mydb\u003A\u003AgetEnumValues\u0028\u0029",
             "name": "getEnumValues",
@@ -103,18 +43,63 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\Mydb\u003A\u003Aescape\u0028\u0029",
             "name": "escape",
-            "summary": "",
+            "summary": "Escape\u0020value\u0020for\u0020the\u0020SQL\u0020query",
             "url": "classes/sql-Mydb.html#method_escape"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003AdeleteWhere\u0028\u0029",
-            "name": "deleteWhere",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_deleteWhere"
         },                {
             "fqsen": "\\sql\\Mydb\u003A\u003AgetPrimaryKey\u0028\u0029",
             "name": "getPrimaryKey",
             "summary": "Get\u0020table\u0020primary\u0020key",
             "url": "classes/sql-Mydb.html#method_getPrimaryKey"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003AbeginTransaction\u0028\u0029",
+            "name": "beginTransaction",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#method_beginTransaction"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003ArollbackTransaction\u0028\u0029",
+            "name": "rollbackTransaction",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#method_rollbackTransaction"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003AcommitTransaction\u0028\u0029",
+            "name": "commitTransaction",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#method_commitTransaction"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003Aclose\u0028\u0029",
+            "name": "close",
+            "summary": "Cleanup\u0020remote\u0020server\u0020connection\nwill\u0020NOT\u0020close\u0020persistent\u0020connections",
+            "url": "classes/sql-Mydb.html#method_close"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003Areplace\u0028\u0029",
+            "name": "replace",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#method_replace"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003Ainsert\u0028\u0029",
+            "name": "insert",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#method_insert"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003Aselect\u0028\u0029",
+            "name": "select",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#method_select"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#method_delete"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#method_update"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003AdeleteWhere\u0028\u0029",
+            "name": "deleteWhere",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#method_deleteWhere"
         },                {
             "fqsen": "\\sql\\Mydb\u003A\u003AupdateWhere\u0028\u0029",
             "name": "updateWhere",
@@ -141,31 +126,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-Mydb.html#method_insertOne"
         },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003AbeginTransaction\u0028\u0029",
-            "name": "beginTransaction",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_beginTransaction"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003ArollbackTransaction\u0028\u0029",
-            "name": "rollbackTransaction",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_rollbackTransaction"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003AcommitTransaction\u0028\u0029",
-            "name": "commitTransaction",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_commitTransaction"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003Aclose\u0028\u0029",
-            "name": "close",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_close"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003AgetIterableValues\u0028\u0029",
-            "name": "getIterableValues",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_getIterableValues"
-        },                {
             "fqsen": "\\sql\\Mydb\u003A\u003AsendClientRequest\u0028\u0029",
             "name": "sendClientRequest",
             "summary": "",
@@ -175,11 +135,6 @@ Search.appendIndex(
             "name": "readServerResponse",
             "summary": "",
             "url": "classes/sql-Mydb.html#method_readServerResponse"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003AescapeValue\u0028\u0029",
-            "name": "escapeValue",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_escapeValue"
         },                {
             "fqsen": "\\sql\\Mydb\u003A\u003AonWarning\u0028\u0029",
             "name": "onWarning",
@@ -200,11 +155,6 @@ Search.appendIndex(
             "name": "connect",
             "summary": "",
             "url": "classes/sql-Mydb.html#method_connect"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003AbuildWhereQuery\u0028\u0029",
-            "name": "buildWhereQuery",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_buildWhereQuery"
         },                {
             "fqsen": "\\sql\\Mydb\u003A\u003A\u0024mysqli",
             "name": "mysqli",
@@ -230,6 +180,11 @@ Search.appendIndex(
             "name": "environment",
             "summary": "",
             "url": "classes/sql-Mydb.html#property_environment"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003A\u0024queryBuilder",
+            "name": "queryBuilder",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#property_queryBuilder"
         },                {
             "fqsen": "\\sql\\Mydb\u003A\u003A\u0024terminating",
             "name": "terminating",
@@ -283,38 +238,78 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbCredentials\u003A\u003A\u0024host",
             "name": "host",
-            "summary": "",
+            "summary": "Database\u0020credentials\u0020\u002D\u0020hostname\nCan\u0020be\u0020either\u0020a\u0020host\u0020name\u0020or\u0020an\u0020IP\u0020address.\u0020Passing\u0020the\u0020null\u0020value\u0020or\u0020the\u0020string\u0020\u0022localhost\u0022\u0020to\u0020this\u0020parameter,\nthe\u0020local\u0020host\u0020is\u0020assumed.\u0020When\u0020possible,\u0020pipes\u0020will\u0020be\u0020used\u0020instead\u0020of\u0020the\u0020TCP\/IP\u0020protocol.",
             "url": "classes/sql-MydbCredentials.html#property_host"
         },                {
             "fqsen": "\\sql\\MydbCredentials\u003A\u003A\u0024username",
             "name": "username",
-            "summary": "",
+            "summary": "Database\u0020credentials\u0020\u002D\u0020username",
             "url": "classes/sql-MydbCredentials.html#property_username"
         },                {
             "fqsen": "\\sql\\MydbCredentials\u003A\u003A\u0024passwd",
             "name": "passwd",
-            "summary": "",
+            "summary": "Database\u0020credentials\u0020\u002D\u0020password\nIf\u0020provided\u0020or\u0020null,\u0020the\u0020MySQL\u0020server\u0020will\u0020attempt\u0020to\u0020authenticate\u0020the\u0020user\u0020against\u0020those\u0020user\u0020records\nwhich\u0020have\u0020no\u0020password\u0020only.\u0020This\u0020allows\u0020one\u0020username\u0020to\u0020be\u0020used\u0020with\u0020different\u0020permissions\n\u0028depending\u0020on\u0020if\u0020a\u0020password\u0020as\u0020provided\u0020or\u0020not\u0029.",
             "url": "classes/sql-MydbCredentials.html#property_passwd"
         },                {
             "fqsen": "\\sql\\MydbCredentials\u003A\u003A\u0024dbname",
             "name": "dbname",
-            "summary": "",
+            "summary": "Database\u0020credentials\u0020\u002D\u0020database\u0020name\nIf\u0020provided\u0020will\u0020specify\u0020the\u0020default\u0020database\u0020to\u0020be\u0020used\u0020when\u0020performing\u0020queries.",
             "url": "classes/sql-MydbCredentials.html#property_dbname"
         },                {
             "fqsen": "\\sql\\MydbCredentials\u003A\u003A\u0024port",
             "name": "port",
-            "summary": "",
+            "summary": "Database\u0020credentials\u0020\u002D\u0020port\nSpecifies\u0020the\u0020port\u0020number\u0020to\u0020attempt\u0020to\u0020connect\u0020to\u0020the\u0020MySQL\u0020server.",
             "url": "classes/sql-MydbCredentials.html#property_port"
         },                {
             "fqsen": "\\sql\\MydbCredentials\u003A\u003A\u0024socket",
             "name": "socket",
-            "summary": "",
+            "summary": "Database\u0020credentials\u0020\u002D\u0020socket\nSpecifies\u0020the\u0020socket\u0020or\u0020named\u0020pipe\u0020that\u0020should\u0020be\u0020used.",
             "url": "classes/sql-MydbCredentials.html#property_socket"
         },                {
             "fqsen": "\\sql\\MydbCredentials\u003A\u003A\u0024flags",
             "name": "flags",
-            "summary": "",
+            "summary": "Database\u0020credentials\u0020\u002D\u0020connection\u0020flags\nWith\u0020the\u0020parameter\u0020flags\u0020you\u0020can\u0020set\u0020different\u0020connection\u0020options\nMYSQLI_CLIENT_COMPRESS\u0020\u002D\u0020Use\u0020compression\u0020protocol\nMYSQLI_CLIENT_SSL\u0020\u002D\u0020Use\u0020SSL\u0020\u0028encryption\u0029\nMULTI_STATEMENT\u0020flag\u0020is\u0020not\u0020supported\u0020in\u0020PHP",
             "url": "classes/sql-MydbCredentials.html#property_flags"
+        },                {
+            "fqsen": "\\sql\\MydbCredentialsInterface",
+            "name": "MydbCredentialsInterface",
+            "summary": "",
+            "url": "classes/sql-MydbCredentialsInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbCredentialsInterface\u003A\u003AgetHost\u0028\u0029",
+            "name": "getHost",
+            "summary": "",
+            "url": "classes/sql-MydbCredentialsInterface.html#method_getHost"
+        },                {
+            "fqsen": "\\sql\\MydbCredentialsInterface\u003A\u003AgetUsername\u0028\u0029",
+            "name": "getUsername",
+            "summary": "",
+            "url": "classes/sql-MydbCredentialsInterface.html#method_getUsername"
+        },                {
+            "fqsen": "\\sql\\MydbCredentialsInterface\u003A\u003AgetPasswd\u0028\u0029",
+            "name": "getPasswd",
+            "summary": "",
+            "url": "classes/sql-MydbCredentialsInterface.html#method_getPasswd"
+        },                {
+            "fqsen": "\\sql\\MydbCredentialsInterface\u003A\u003AgetDbname\u0028\u0029",
+            "name": "getDbname",
+            "summary": "",
+            "url": "classes/sql-MydbCredentialsInterface.html#method_getDbname"
+        },                {
+            "fqsen": "\\sql\\MydbCredentialsInterface\u003A\u003AgetPort\u0028\u0029",
+            "name": "getPort",
+            "summary": "",
+            "url": "classes/sql-MydbCredentialsInterface.html#method_getPort"
+        },                {
+            "fqsen": "\\sql\\MydbCredentialsInterface\u003A\u003AgetSocket\u0028\u0029",
+            "name": "getSocket",
+            "summary": "",
+            "url": "classes/sql-MydbCredentialsInterface.html#method_getSocket"
+        },                {
+            "fqsen": "\\sql\\MydbCredentialsInterface\u003A\u003AgetFlags\u0028\u0029",
+            "name": "getFlags",
+            "summary": "",
+            "url": "classes/sql-MydbCredentialsInterface.html#method_getFlags"
         },                {
             "fqsen": "\\sql\\MydbEnvironment",
             "name": "MydbEnvironment",
@@ -326,29 +321,34 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbEnvironment.html#method_gc_collect_cycles"
         },                {
+            "fqsen": "\\sql\\MydbEnvironment\u003A\u003Arestore_error_handler\u0028\u0029",
+            "name": "restore_error_handler",
+            "summary": "Restore\u0020previous\u0020PHP\u0020error\u0020handler",
+            "url": "classes/sql-MydbEnvironment.html#method_restore_error_handler"
+        },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003Aset_error_handler\u0028\u0029",
             "name": "set_error_handler",
-            "summary": "",
+            "summary": "Set\u0020custom\u0020PHP\u0020error\u0020handler",
             "url": "classes/sql-MydbEnvironment.html#method_set_error_handler"
         },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003AsetMysqlndNetReadTimeout\u0028\u0029",
             "name": "setMysqlndNetReadTimeout",
-            "summary": "",
+            "summary": "Set\u0020mysqlnd.net_read_timeout\u0020php\u0020ini\u0020value",
             "url": "classes/sql-MydbEnvironment.html#method_setMysqlndNetReadTimeout"
         },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003Aerror_reporting\u0028\u0029",
             "name": "error_reporting",
-            "summary": "",
+            "summary": "Sets\u0020which\u0020PHP\u0020errors\u0020are\u0020reported",
             "url": "classes/sql-MydbEnvironment.html#method_error_reporting"
         },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003Aignore_user_abort\u0028\u0029",
             "name": "ignore_user_abort",
-            "summary": "",
+            "summary": "Set\u0020whether\u0020a\u0020client\u0020disconnect\u0020should\u0020abort\u0020script\u0020execution\u0020\u0028does\u0020not\u0020affect\u0020CLI\u0029",
             "url": "classes/sql-MydbEnvironment.html#method_ignore_user_abort"
         },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003Aini_set\u0028\u0029",
             "name": "ini_set",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020value\u0020of\u0020a\u0020configuration\u0020option",
             "url": "classes/sql-MydbEnvironment.html#method_ini_set"
         },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003AendSignalsTrap\u0028\u0029",
@@ -363,7 +363,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003AgetNullErrorHandler\u0028\u0029",
             "name": "getNullErrorHandler",
-            "summary": "",
+            "summary": "Error\u0020handler\u0020that\u0020does\u0020nothing\u0020and\u0020does\u0020not\u0020chain",
             "url": "classes/sql-MydbEnvironment.html#method_getNullErrorHandler"
         },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003A\u0024knownSignals",
@@ -373,18 +373,78 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003A\u0024trappedSignals",
             "name": "trappedSignals",
-            "summary": "",
+            "summary": "Any\u0020signals\u0020that\u0020were\u0020trapped\u0020during\u0020custom\u0020signal\u0020handler",
             "url": "classes/sql-MydbEnvironment.html#property_trappedSignals"
         },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003A\u0024trappedHandlers",
             "name": "trappedHandlers",
-            "summary": "Backup\u0020of\u0020signal\u0020handlers",
+            "summary": "Backup\u0020of\u0020signal\u0020handlers\nOriginal\u0020signal\u0020handler,\u0020which\u0020replaced\u0020by\u0020custon\u0020trap",
             "url": "classes/sql-MydbEnvironment.html#property_trappedHandlers"
+        },                {
+            "fqsen": "\\sql\\MydbEnvironmentInterface",
+            "name": "MydbEnvironmentInterface",
+            "summary": "",
+            "url": "classes/sql-MydbEnvironmentInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbEnvironmentInterface\u003A\u003Agc_collect_cycles\u0028\u0029",
+            "name": "gc_collect_cycles",
+            "summary": "",
+            "url": "classes/sql-MydbEnvironmentInterface.html#method_gc_collect_cycles"
+        },                {
+            "fqsen": "\\sql\\MydbEnvironmentInterface\u003A\u003Arestore_error_handler\u0028\u0029",
+            "name": "restore_error_handler",
+            "summary": "",
+            "url": "classes/sql-MydbEnvironmentInterface.html#method_restore_error_handler"
+        },                {
+            "fqsen": "\\sql\\MydbEnvironmentInterface\u003A\u003Aset_error_handler\u0028\u0029",
+            "name": "set_error_handler",
+            "summary": "",
+            "url": "classes/sql-MydbEnvironmentInterface.html#method_set_error_handler"
+        },                {
+            "fqsen": "\\sql\\MydbEnvironmentInterface\u003A\u003AsetMysqlndNetReadTimeout\u0028\u0029",
+            "name": "setMysqlndNetReadTimeout",
+            "summary": "",
+            "url": "classes/sql-MydbEnvironmentInterface.html#method_setMysqlndNetReadTimeout"
+        },                {
+            "fqsen": "\\sql\\MydbEnvironmentInterface\u003A\u003Aerror_reporting\u0028\u0029",
+            "name": "error_reporting",
+            "summary": "",
+            "url": "classes/sql-MydbEnvironmentInterface.html#method_error_reporting"
+        },                {
+            "fqsen": "\\sql\\MydbEnvironmentInterface\u003A\u003Aignore_user_abort\u0028\u0029",
+            "name": "ignore_user_abort",
+            "summary": "",
+            "url": "classes/sql-MydbEnvironmentInterface.html#method_ignore_user_abort"
+        },                {
+            "fqsen": "\\sql\\MydbEnvironmentInterface\u003A\u003Aini_set\u0028\u0029",
+            "name": "ini_set",
+            "summary": "",
+            "url": "classes/sql-MydbEnvironmentInterface.html#method_ini_set"
+        },                {
+            "fqsen": "\\sql\\MydbEnvironmentInterface\u003A\u003AendSignalsTrap\u0028\u0029",
+            "name": "endSignalsTrap",
+            "summary": "",
+            "url": "classes/sql-MydbEnvironmentInterface.html#method_endSignalsTrap"
+        },                {
+            "fqsen": "\\sql\\MydbEnvironmentInterface\u003A\u003AstartSignalsTrap\u0028\u0029",
+            "name": "startSignalsTrap",
+            "summary": "",
+            "url": "classes/sql-MydbEnvironmentInterface.html#method_startSignalsTrap"
+        },                {
+            "fqsen": "\\sql\\MydbException\\AsyncException",
+            "name": "AsyncException",
+            "summary": "",
+            "url": "classes/sql-MydbException-AsyncException.html"
         },                {
             "fqsen": "\\sql\\MydbException\\ConnectException",
             "name": "ConnectException",
             "summary": "",
             "url": "classes/sql-MydbException-ConnectException.html"
+        },                {
+            "fqsen": "\\sql\\MydbException\\DeleteException",
+            "name": "DeleteException",
+            "summary": "",
+            "url": "classes/sql-MydbException-DeleteException.html"
         },                {
             "fqsen": "\\sql\\MydbException\\DisconnectException",
             "name": "DisconnectException",
@@ -400,6 +460,36 @@ Search.appendIndex(
             "name": "InternalException",
             "summary": "",
             "url": "classes/sql-MydbException-InternalException.html"
+        },                {
+            "fqsen": "\\sql\\MydbException\\LoggerException",
+            "name": "LoggerException",
+            "summary": "",
+            "url": "classes/sql-MydbException-LoggerException.html"
+        },                {
+            "fqsen": "\\sql\\MydbException\\OptionException",
+            "name": "OptionException",
+            "summary": "",
+            "url": "classes/sql-MydbException-OptionException.html"
+        },                {
+            "fqsen": "\\sql\\MydbException\\QueryBuilderEscapeException",
+            "name": "QueryBuilderEscapeException",
+            "summary": "",
+            "url": "classes/sql-MydbException-QueryBuilderEscapeException.html"
+        },                {
+            "fqsen": "\\sql\\MydbException\\QueryBuilderEscapeException\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/sql-MydbException-QueryBuilderEscapeException.html#method___construct"
+        },                {
+            "fqsen": "\\sql\\MydbException\\QueryBuilderEscapeException\u003A\u003AMESSAGE_TEMPLATE",
+            "name": "MESSAGE_TEMPLATE",
+            "summary": "",
+            "url": "classes/sql-MydbException-QueryBuilderEscapeException.html#constant_MESSAGE_TEMPLATE"
+        },                {
+            "fqsen": "\\sql\\MydbException\\QueryBuilderException",
+            "name": "QueryBuilderException",
+            "summary": "",
+            "url": "classes/sql-MydbException-QueryBuilderException.html"
         },                {
             "fqsen": "\\sql\\MydbException\\RegistryException",
             "name": "RegistryException",
@@ -421,6 +511,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbException-TransactionBeginException.html"
         },                {
+            "fqsen": "\\sql\\MydbException\\TransactionBeginReadonlyException",
+            "name": "TransactionBeginReadonlyException",
+            "summary": "",
+            "url": "classes/sql-MydbException-TransactionBeginReadonlyException.html"
+        },                {
+            "fqsen": "\\sql\\MydbException\\TransactionBeginReadwriteException",
+            "name": "TransactionBeginReadwriteException",
+            "summary": "",
+            "url": "classes/sql-MydbException-TransactionBeginReadwriteException.html"
+        },                {
             "fqsen": "\\sql\\MydbException\\TransactionCommitException",
             "name": "TransactionCommitException",
             "summary": "",
@@ -430,6 +530,11 @@ Search.appendIndex(
             "name": "TransactionRollbackException",
             "summary": "",
             "url": "classes/sql-MydbException-TransactionRollbackException.html"
+        },                {
+            "fqsen": "\\sql\\MydbException\\UpdateException",
+            "name": "UpdateException",
+            "summary": "",
+            "url": "classes/sql-MydbException-UpdateException.html"
         },                {
             "fqsen": "\\sql\\MydbException",
             "name": "MydbException",
@@ -471,11 +576,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbInterface-AdministrationStatementsInterface.html#method_getEnumValues"
         },                {
-            "fqsen": "\\sql\\MydbInterface\\AdministrationStatementsInterface\u003A\u003AgetSetValues\u0028\u0029",
-            "name": "getSetValues",
-            "summary": "",
-            "url": "classes/sql-MydbInterface-AdministrationStatementsInterface.html#method_getSetValues"
-        },                {
             "fqsen": "\\sql\\MydbInterface\\AsyncInterface",
             "name": "AsyncInterface",
             "summary": "",
@@ -493,18 +593,8 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbInterface\\CommandInterface\u003A\u003Acommand\u0028\u0029",
             "name": "command",
-            "summary": "",
+            "summary": "Execute\u0020any\u0020SQL\u0020command,\u0020without\u0020returning\u0020result",
             "url": "classes/sql-MydbInterface-CommandInterface.html#method_command"
-        },                {
-            "fqsen": "\\sql\\MydbInterface\\DataDefinitionStatementsSInterface",
-            "name": "DataDefinitionStatementsSInterface",
-            "summary": "An\u0020atomic\u0020DDL\u0020statement\u0020combines\u0020the\u0020data\u0020dictionary\u0020updates,\u0020storage\u0020engine\u0020operations,\nand\u0020binary\u0020log\u0020writes\u0020associated\u0020with\u0020a\u0020DDL\u0020operation\u0020into\u0020a\u0020single,\u0020atomic\u0020operation.",
-            "url": "classes/sql-MydbInterface-DataDefinitionStatementsSInterface.html"
-        },                {
-            "fqsen": "\\sql\\MydbInterface\\DataDefinitionStatementsSInterface\u003A\u003Adds\u0028\u0029",
-            "name": "dds",
-            "summary": "",
-            "url": "classes/sql-MydbInterface-DataDefinitionStatementsSInterface.html#method_dds"
         },                {
             "fqsen": "\\sql\\MydbInterface\\DataManipulationStatementsInterface",
             "name": "DataManipulationStatementsInterface",
@@ -566,31 +656,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbInterface-DataManipulationStatementsInterface.html#method_replace"
         },                {
-            "fqsen": "\\sql\\MydbInterface\\DataManipulationStatementsInterface\u003A\u003Atable\u0028\u0029",
-            "name": "table",
-            "summary": "",
-            "url": "classes/sql-MydbInterface-DataManipulationStatementsInterface.html#method_table"
-        },                {
-            "fqsen": "\\sql\\MydbInterface\\DataManipulationStatementsInterface\u003A\u003Avalues\u0028\u0029",
-            "name": "values",
-            "summary": "",
-            "url": "classes/sql-MydbInterface-DataManipulationStatementsInterface.html#method_values"
-        },                {
-            "fqsen": "\\sql\\MydbInterface\\DataManipulationStatementsInterface\u003A\u003Acall\u0028\u0029",
-            "name": "call",
-            "summary": "",
-            "url": "classes/sql-MydbInterface-DataManipulationStatementsInterface.html#method_call"
-        },                {
-            "fqsen": "\\sql\\MydbInterface\\DataManipulationStatementsInterface\u003A\u003Ado\u0028\u0029",
-            "name": "do",
-            "summary": "",
-            "url": "classes/sql-MydbInterface-DataManipulationStatementsInterface.html#method_do"
-        },                {
-            "fqsen": "\\sql\\MydbInterface\\DataManipulationStatementsInterface\u003A\u003Ahandler\u0028\u0029",
-            "name": "handler",
-            "summary": "",
-            "url": "classes/sql-MydbInterface-DataManipulationStatementsInterface.html#method_handler"
-        },                {
             "fqsen": "\\sql\\MydbInterface\\EncoderInterface",
             "name": "EncoderInterface",
             "summary": "",
@@ -598,7 +663,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbInterface\\EncoderInterface\u003A\u003Aescape\u0028\u0029",
             "name": "escape",
-            "summary": "",
+            "summary": "Escape\u0020value\u0020for\u0020the\u0020SQL\u0020query",
             "url": "classes/sql-MydbInterface-EncoderInterface.html#method_escape"
         },                {
             "fqsen": "\\sql\\MydbInterface\\QueryInterface",
@@ -618,12 +683,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbInterface\\RemoteResourceInterface\u003A\u003Aopen\u0028\u0029",
             "name": "open",
-            "summary": "",
+            "summary": "Open\u0020remote\u0020server\u0020connection",
             "url": "classes/sql-MydbInterface-RemoteResourceInterface.html#method_open"
         },                {
             "fqsen": "\\sql\\MydbInterface\\RemoteResourceInterface\u003A\u003Aclose\u0028\u0029",
             "name": "close",
-            "summary": "",
+            "summary": "Cleanup\u0020remote\u0020server\u0020connection\nwill\u0020NOT\u0020close\u0020persistent\u0020connections",
             "url": "classes/sql-MydbInterface-RemoteResourceInterface.html#method_close"
         },                {
             "fqsen": "\\sql\\MydbInterface\\TransactionInterface",
@@ -653,8 +718,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbLogger",
             "name": "MydbLogger",
-            "summary": "",
+            "summary": "Implementation\u0020of\u0020PSR\u002D3\u0020Logger\u0020that\u0020will\u0020output\u0020to\u0020STDERR\u0020\u0026\u0020STDOUT",
             "url": "classes/sql-MydbLogger.html"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/sql-MydbLogger.html#method___construct"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003A__destruct\u0028\u0029",
+            "name": "__destruct",
+            "summary": "",
+            "url": "classes/sql-MydbLogger.html#method___destruct"
         },                {
             "fqsen": "\\sql\\MydbLogger\u003A\u003Aerror\u0028\u0029",
             "name": "error",
@@ -701,10 +776,55 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbLogger.html#method_debug"
         },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003AcheckStreamResource\u0028\u0029",
+            "name": "checkStreamResource",
+            "summary": "",
+            "url": "classes/sql-MydbLogger.html#method_checkStreamResource"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003AwriteOutput\u0028\u0029",
+            "name": "writeOutput",
+            "summary": "",
+            "url": "classes/sql-MydbLogger.html#method_writeOutput"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003Afwrite\u0028\u0029",
+            "name": "fwrite",
+            "summary": "",
+            "url": "classes/sql-MydbLogger.html#method_fwrite"
+        },                {
             "fqsen": "\\sql\\MydbLogger\u003A\u003Aformatter\u0028\u0029",
             "name": "formatter",
             "summary": "",
             "url": "classes/sql-MydbLogger.html#method_formatter"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003AIO_WRITE_ATTEMPTS",
+            "name": "IO_WRITE_ATTEMPTS",
+            "summary": "",
+            "url": "classes/sql-MydbLogger.html#constant_IO_WRITE_ATTEMPTS"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003A\u0024stdout",
+            "name": "stdout",
+            "summary": "Opened\u0020resource,\u0020STDOUT",
+            "url": "classes/sql-MydbLogger.html#property_stdout"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003A\u0024stderr",
+            "name": "stderr",
+            "summary": "Opened\u0020resource,\u0020STDERR",
+            "url": "classes/sql-MydbLogger.html#property_stderr"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003A\u0024stdeol",
+            "name": "stdeol",
+            "summary": "End\u0020of\u0020line\u0020delimiter",
+            "url": "classes/sql-MydbLogger.html#property_stdeol"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliEscapeStringInterface",
+            "name": "MydbMysqliEscapeStringInterface",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli-MydbMysqliEscapeStringInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliEscapeStringInterface\u003A\u003ArealEscapeString\u0028\u0029",
+            "name": "realEscapeString",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli-MydbMysqliEscapeStringInterface.html#method_realEscapeString"
         },                {
             "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResult",
             "name": "MydbMysqliResult",
@@ -778,7 +898,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbMysqli",
             "name": "MydbMysqli",
-            "summary": "",
+            "summary": "Facade\u0020for\u0020php\u0020mysqli\u0020extension",
             "url": "classes/sql-MydbMysqli.html"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003A__construct\u0028\u0029",
@@ -788,12 +908,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "",
+            "summary": "Allocate\u0020mysqli\u0020resource\u0020instance,\u0020no\u0020physical\u0020connection\u0020to\u0020remote\u0020is\u0020done",
             "url": "classes/sql-MydbMysqli.html#method_init"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AsetTransportOptions\u0028\u0029",
             "name": "setTransportOptions",
-            "summary": "",
+            "summary": "Set\u0020various\u0020options\u0020that\u0020affect\u0020mysqli\u0020resource,\u0020before\u0020connection\u0020is\u0020established",
             "url": "classes/sql-MydbMysqli.html#method_setTransportOptions"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AisTransactionOpen\u0028\u0029",
@@ -803,7 +923,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003A\u0024isConnected",
             "name": "isConnected",
-            "summary": "Is\u0020connected\u0020to\u0020remove\u0020server",
+            "summary": "Flag\u0020indicating\u0020whether\u0020physical\u0020connection\u0020was\u0020established\u0020with\u0020remote\u0020server\nIs\u0020connected\u0020to\u0020remove\u0020server",
             "url": "classes/sql-MydbMysqli.html#property_isConnected"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AgetMysqli\u0028\u0029",
@@ -818,7 +938,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AreadServerResponse\u0028\u0029",
             "name": "readServerResponse",
-            "summary": "",
+            "summary": "React\u0020to\u0020mysqli\u0020resource\u0020changes\u0020after\u0020query\/command\u0020execution",
             "url": "classes/sql-MydbMysqli.html#method_readServerResponse"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003ArealEscapeString\u0028\u0029",
@@ -826,15 +946,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbMysqli.html#method_realEscapeString"
         },                {
-            "fqsen": "\\sql\\MydbMysqli\u003A\u003AbeginTransaction\u0028\u0029",
-            "name": "beginTransaction",
+            "fqsen": "\\sql\\MydbMysqli\u003A\u003AbeginTransactionReadwrite\u0028\u0029",
+            "name": "beginTransactionReadwrite",
             "summary": "",
-            "url": "classes/sql-MydbMysqli.html#method_beginTransaction"
+            "url": "classes/sql-MydbMysqli.html#method_beginTransactionReadwrite"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\u003A\u003AbeginTransactionReadonly\u0028\u0029",
+            "name": "beginTransactionReadonly",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli.html#method_beginTransactionReadonly"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003Arollback\u0028\u0029",
             "name": "rollback",
             "summary": "",
             "url": "classes/sql-MydbMysqli.html#method_rollback"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\u003A\u003AcommitAndRelease\u0028\u0029",
+            "name": "commitAndRelease",
+            "summary": "Commit\u0020transaction\u0020and\u0020release\u0020connection\u0020from\u0020server\u0020side",
+            "url": "classes/sql-MydbMysqli.html#method_commitAndRelease"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003Acommit\u0028\u0029",
             "name": "commit",
@@ -871,11 +1001,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbMysqli.html#method_getConnectError"
         },                {
-            "fqsen": "\\sql\\MydbMysqli\u003A\u003AgetServerVersion\u0028\u0029",
-            "name": "getServerVersion",
-            "summary": "",
-            "url": "classes/sql-MydbMysqli.html#method_getServerVersion"
-        },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AisServerGone\u0028\u0029",
             "name": "isServerGone",
             "summary": "",
@@ -906,6 +1031,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbMysqli.html#method_autocommit"
         },                {
+            "fqsen": "\\sql\\MydbMysqli\u003A\u003AextractServerResponse\u0028\u0029",
+            "name": "extractServerResponse",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli.html#method_extractServerResponse"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\u003A\u003AgetWarnings\u0028\u0029",
+            "name": "getWarnings",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli.html#method_getWarnings"
+        },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AgetFieldCount\u0028\u0029",
             "name": "getFieldCount",
             "summary": "Returns\u0020fields\u0020count\u0020caused\u0020by\u0020query\u0020execution\nRequires\u0020store_result\u0020to\u0020be\u0020called\u0020first",
@@ -916,69 +1051,69 @@ Search.appendIndex(
             "summary": "Returns\u0020warnings\u0020caused\u0020by\u0020query\u0020execution\nRequires\u0020store_result\u0020to\u0020be\u0020called\u0020first",
             "url": "classes/sql-MydbMysqli.html#method_getWarningCount"
         },                {
-            "fqsen": "\\sql\\MydbMysqli\u003A\u003AgetWarnings\u0028\u0029",
-            "name": "getWarnings",
-            "summary": "",
-            "url": "classes/sql-MydbMysqli.html#method_getWarnings"
-        },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_INIT_COMMAND",
             "name": "MYSQLI_INIT_COMMAND",
-            "summary": "",
+            "summary": "Command\u0020to\u0020execute\u0020when\u0020connecting\u0020to\u0020MySQL\u0020server.\u0020Will\u0020automatically\u0020be\u0020re\u002Dexecuted\u0020when\u0020reconnecting.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_INIT_COMMAND"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_OPT_CONNECT_TIMEOUT",
             "name": "MYSQLI_OPT_CONNECT_TIMEOUT",
-            "summary": "",
+            "summary": "Connect\u0020timeout\u0020in\u0020seconds",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_OPT_CONNECT_TIMEOUT"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_OPT_NET_CMD_BUFFER_SIZE",
             "name": "MYSQLI_OPT_NET_CMD_BUFFER_SIZE",
-            "summary": "",
+            "summary": "The\u0020size\u0020of\u0020the\u0020internal\u0020command\/network\u0020buffer.\u0020Only\u0020valid\u0020for\u0020mysqlnd.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_OPT_NET_CMD_BUFFER_SIZE"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_OPT_NET_READ_BUFFER_SIZE",
             "name": "MYSQLI_OPT_NET_READ_BUFFER_SIZE",
-            "summary": "",
+            "summary": "Maximum\u0020read\u0020chunk\u0020size\u0020in\u0020bytes\u0020when\u0020reading\u0020the\u0020body\u0020of\u0020a\u0020MySQL\u0020command\u0020packet.\u0020Only\u0020valid\u0020for\u0020mysqlnd.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_OPT_NET_READ_BUFFER_SIZE"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_OPT_READ_TIMEOUT",
             "name": "MYSQLI_OPT_READ_TIMEOUT",
-            "summary": "",
+            "summary": "Command\u0020execution\u0020result\u0020timeout\u0020in\u0020seconds.\u0020Available\u0020as\u0020of\u0020PHP\u00207.2.0.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_OPT_READ_TIMEOUT"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_STORE_RESULT_COPY_DATA",
             "name": "MYSQLI_STORE_RESULT_COPY_DATA",
-            "summary": "",
+            "summary": "Copy\u0020results\u0020from\u0020the\u0020internal\u0020mysqlnd\u0020buffer\u0020into\u0020the\u0020PHP\u0020variables\u0020fetched.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_STORE_RESULT_COPY_DATA"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_TRANS_COR_RELEASE",
             "name": "MYSQLI_TRANS_COR_RELEASE",
-            "summary": "",
+            "summary": "Appends\u0020\u0022RELEASE\u0022\u0020to\u0020mysqli_commit\u0028\u0029\u0020or\u0020mysqli_rollback\u0028\u0029.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_TRANS_COR_RELEASE"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_TRANS_START_READ_ONLY",
             "name": "MYSQLI_TRANS_START_READ_ONLY",
-            "summary": "",
+            "summary": "Start\u0020the\u0020transaction\u0020as\u0020\u0022START\u0020TRANSACTION\u0020READ\u0020ONLY\u0022\u0020with\u0020mysqli_begin_transaction\u0028\u0029.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_TRANS_START_READ_ONLY"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_TRANS_START_READ_WRITE",
+            "name": "MYSQLI_TRANS_START_READ_WRITE",
+            "summary": "Start\u0020the\u0020transaction\u0020as\u0020\u0022START\u0020TRANSACTION\u0020READ\u0020WRITE\u0022\u0020with\u0020mysqli_begin_transaction\u0028\u0029.",
+            "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_TRANS_START_READ_WRITE"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_TRANS_COR_NO_RELEASE",
             "name": "MYSQLI_TRANS_COR_NO_RELEASE",
-            "summary": "",
+            "summary": "Appends\u0020\u0022NO\u0020RELEASE\u0022\u0020to\u0020mysqli_commit\u0028\u0029\u0020or\u0020mysqli_rollback\u0028\u0029.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_TRANS_COR_NO_RELEASE"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_REPORT_ALL",
             "name": "MYSQLI_REPORT_ALL",
-            "summary": "",
+            "summary": "Set\u0020all\u0020options\u0020on\u0020\u0028report\u0020all\u0029,\u0020report\u0020all\u0020warnings\/errors.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_REPORT_ALL"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_REPORT_INDEX",
             "name": "MYSQLI_REPORT_INDEX",
-            "summary": "",
+            "summary": "Report\u0020if\u0020no\u0020index\u0020or\u0020bad\u0020index\u0020was\u0020used\u0020in\u0020a\u0020query.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_REPORT_INDEX"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AMYSQLI_REPORT_STRICT",
             "name": "MYSQLI_REPORT_STRICT",
-            "summary": "",
+            "summary": "Throw\u0020a\u0020mysqli_sql_exception\u0020for\u0020errors\u0020instead\u0020of\u0020warnings.",
             "url": "classes/sql-MydbMysqli.html#constant_MYSQLI_REPORT_STRICT"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003ASQL_MODE",
@@ -988,13 +1123,148 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003A\u0024mysqli",
             "name": "mysqli",
-            "summary": "",
+            "summary": "Mysqli\u0020instance\nThe\u0020mysqli\u0020extension\u0020allows\u0020you\u0020to\u0020access\u0020the\u0020functionality\u0020provided\u0020by\u0020MySQL\u00204.1\u0020and\u0020above",
             "url": "classes/sql-MydbMysqli.html#property_mysqli"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003A\u0024isTransaction",
             "name": "isTransaction",
-            "summary": "Is\u0020transaction\u0020started",
+            "summary": "Flag\u0020indicating\u0020whether\u0020SQL\u0020transaction\u0020was\u0020started\nWARNING\u003A\u0020best\u002Deffort,\u0020only\u0020guaranteed\u0020when\u0020library\u0020is\u0020used\u0020correctly\nIs\u0020transaction\u0020started",
             "url": "classes/sql-MydbMysqli.html#property_isTransaction"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface",
+            "name": "MydbMysqliInterface",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_init"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AsetTransportOptions\u0028\u0029",
+            "name": "setTransportOptions",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_setTransportOptions"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AisTransactionOpen\u0028\u0029",
+            "name": "isTransactionOpen",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_isTransactionOpen"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AisConnected\u0028\u0029",
+            "name": "isConnected",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_isConnected"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AgetMysqli\u0028\u0029",
+            "name": "getMysqli",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_getMysqli"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003ArealQuery\u0028\u0029",
+            "name": "realQuery",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_realQuery"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AreadServerResponse\u0028\u0029",
+            "name": "readServerResponse",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_readServerResponse"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AbeginTransactionReadwrite\u0028\u0029",
+            "name": "beginTransactionReadwrite",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_beginTransactionReadwrite"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AbeginTransactionReadonly\u0028\u0029",
+            "name": "beginTransactionReadonly",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_beginTransactionReadonly"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003Arollback\u0028\u0029",
+            "name": "rollback",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_rollback"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AcommitAndRelease\u0028\u0029",
+            "name": "commitAndRelease",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_commitAndRelease"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003Acommit\u0028\u0029",
+            "name": "commit",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_commit"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003ArealConnect\u0028\u0029",
+            "name": "realConnect",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_realConnect"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AmysqliReport\u0028\u0029",
+            "name": "mysqliReport",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_mysqliReport"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AmysqliQueryAsync\u0028\u0029",
+            "name": "mysqliQueryAsync",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_mysqliQueryAsync"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003Aclose\u0028\u0029",
+            "name": "close",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_close"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AgetConnectErrno\u0028\u0029",
+            "name": "getConnectErrno",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_getConnectErrno"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AgetConnectError\u0028\u0029",
+            "name": "getConnectError",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_getConnectError"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AisServerGone\u0028\u0029",
+            "name": "isServerGone",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_isServerGone"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AgetError\u0028\u0029",
+            "name": "getError",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_getError"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AgetErrNo\u0028\u0029",
+            "name": "getErrNo",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_getErrNo"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AgetAffectedRows\u0028\u0029",
+            "name": "getAffectedRows",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_getAffectedRows"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AgetInsertId\u0028\u0029",
+            "name": "getInsertId",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_getInsertId"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003Aautocommit\u0028\u0029",
+            "name": "autocommit",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_autocommit"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AextractServerResponse\u0028\u0029",
+            "name": "extractServerResponse",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_extractServerResponse"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AgetWarnings\u0028\u0029",
+            "name": "getWarnings",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_getWarnings"
         },                {
             "fqsen": "\\sql\\MydbOptions",
             "name": "MydbOptions",
@@ -1071,15 +1341,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbOptions.html#method_setNetworkReadBuffer"
         },                {
-            "fqsen": "\\sql\\MydbOptions\u003A\u003AgetInternalClientErrorLevel\u0028\u0029",
-            "name": "getInternalClientErrorLevel",
+            "fqsen": "\\sql\\MydbOptions\u003A\u003AgetClientErrorLevel\u0028\u0029",
+            "name": "getClientErrorLevel",
             "summary": "",
-            "url": "classes/sql-MydbOptions.html#method_getInternalClientErrorLevel"
+            "url": "classes/sql-MydbOptions.html#method_getClientErrorLevel"
         },                {
-            "fqsen": "\\sql\\MydbOptions\u003A\u003AsetInternalClientErrorLevel\u0028\u0029",
-            "name": "setInternalClientErrorLevel",
+            "fqsen": "\\sql\\MydbOptions\u003A\u003AsetClientErrorLevel\u0028\u0029",
+            "name": "setClientErrorLevel",
             "summary": "",
-            "url": "classes/sql-MydbOptions.html#method_setInternalClientErrorLevel"
+            "url": "classes/sql-MydbOptions.html#method_setClientErrorLevel"
         },                {
             "fqsen": "\\sql\\MydbOptions\u003A\u003AgetTimeZone\u0028\u0029",
             "name": "getTimeZone",
@@ -1131,6 +1401,26 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbOptions.html#method_setReadonly"
         },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ANET_CMD_BUFFER_SIZE_MIN",
+            "name": "NET_CMD_BUFFER_SIZE_MIN",
+            "summary": "",
+            "url": "classes/sql-MydbOptions.html#constant_NET_CMD_BUFFER_SIZE_MIN"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ANET_CMD_BUFFER_SIZE_MAX",
+            "name": "NET_CMD_BUFFER_SIZE_MAX",
+            "summary": "",
+            "url": "classes/sql-MydbOptions.html#constant_NET_CMD_BUFFER_SIZE_MAX"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ANET_READ_BUFFER_MIN",
+            "name": "NET_READ_BUFFER_MIN",
+            "summary": "",
+            "url": "classes/sql-MydbOptions.html#constant_NET_READ_BUFFER_MIN"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ANET_READ_BUFFER_MAX",
+            "name": "NET_READ_BUFFER_MAX",
+            "summary": "",
+            "url": "classes/sql-MydbOptions.html#constant_NET_READ_BUFFER_MAX"
+        },                {
             "fqsen": "\\sql\\MydbOptions\u003A\u003A\u0024serverSideSelectTimeout",
             "name": "serverSideSelectTimeout",
             "summary": "The\u0020execution\u0020timeout\u0020ONLY\u0020APPLIES\u0020TO\u0020\u0022SELECT\u0022\u0020statements,\u0020seconds\nX\u0020\u003E\u00200,\u0020enabled\nX\u0020\u003D\u00200,\u0020not\u0020enabled.",
@@ -1161,14 +1451,14 @@ Search.appendIndex(
             "summary": "More\u0020memory\u0020for\u0020better\u0020performance",
             "url": "classes/sql-MydbOptions.html#property_networkReadBuffer"
         },                {
-            "fqsen": "\\sql\\MydbOptions\u003A\u003A\u0024internalClientErrorLevel",
-            "name": "internalClientErrorLevel",
-            "summary": "",
-            "url": "classes/sql-MydbOptions.html#property_internalClientErrorLevel"
+            "fqsen": "\\sql\\MydbOptions\u003A\u003A\u0024clientErrorLevel",
+            "name": "clientErrorLevel",
+            "summary": "Sets\u0020mysqli\u0020error\u0020reporting\u0020mode",
+            "url": "classes/sql-MydbOptions.html#property_clientErrorLevel"
         },                {
             "fqsen": "\\sql\\MydbOptions\u003A\u003A\u0024timeZone",
             "name": "timeZone",
-            "summary": "",
+            "summary": "Set\u0020session\u0020time\u0020zone",
             "url": "classes/sql-MydbOptions.html#property_timeZone"
         },                {
             "fqsen": "\\sql\\MydbOptions\u003A\u003A\u0024nonInteractiveTimeout",
@@ -1196,9 +1486,264 @@ Search.appendIndex(
             "summary": "Readonly\u0020connection",
             "url": "classes/sql-MydbOptions.html#property_readonly"
         },                {
+            "fqsen": "\\sql\\MydbOptionsInterface",
+            "name": "MydbOptionsInterface",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetNonInteractiveTimeout\u0028\u0029",
+            "name": "getNonInteractiveTimeout",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getNonInteractiveTimeout"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetNonInteractiveTimeout\u0028\u0029",
+            "name": "setNonInteractiveTimeout",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setNonInteractiveTimeout"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetServerSideSelectTimeout\u0028\u0029",
+            "name": "getServerSideSelectTimeout",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getServerSideSelectTimeout"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetServerSideSelectTimeout\u0028\u0029",
+            "name": "setServerSideSelectTimeout",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setServerSideSelectTimeout"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetConnectTimeout\u0028\u0029",
+            "name": "getConnectTimeout",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getConnectTimeout"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetConnectTimeout\u0028\u0029",
+            "name": "setConnectTimeout",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setConnectTimeout"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetErrorReporting\u0028\u0029",
+            "name": "getErrorReporting",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getErrorReporting"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetErrorReporting\u0028\u0029",
+            "name": "setErrorReporting",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setErrorReporting"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetReadTimeout\u0028\u0029",
+            "name": "getReadTimeout",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getReadTimeout"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetReadTimeout\u0028\u0029",
+            "name": "setReadTimeout",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setReadTimeout"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetNetworkBufferSize\u0028\u0029",
+            "name": "getNetworkBufferSize",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getNetworkBufferSize"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetNetworkBufferSize\u0028\u0029",
+            "name": "setNetworkBufferSize",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setNetworkBufferSize"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetNetworkReadBuffer\u0028\u0029",
+            "name": "getNetworkReadBuffer",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getNetworkReadBuffer"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetNetworkReadBuffer\u0028\u0029",
+            "name": "setNetworkReadBuffer",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setNetworkReadBuffer"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetClientErrorLevel\u0028\u0029",
+            "name": "getClientErrorLevel",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getClientErrorLevel"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetClientErrorLevel\u0028\u0029",
+            "name": "setClientErrorLevel",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setClientErrorLevel"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetTimeZone\u0028\u0029",
+            "name": "getTimeZone",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getTimeZone"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetTimeZone\u0028\u0029",
+            "name": "setTimeZone",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setTimeZone"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AisAutocommit\u0028\u0029",
+            "name": "isAutocommit",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_isAutocommit"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetAutocommit\u0028\u0029",
+            "name": "setAutocommit",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setAutocommit"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetCharset\u0028\u0029",
+            "name": "getCharset",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getCharset"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetCharset\u0028\u0029",
+            "name": "setCharset",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setCharset"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AisPersistent\u0028\u0029",
+            "name": "isPersistent",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_isPersistent"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetPersistent\u0028\u0029",
+            "name": "setPersistent",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setPersistent"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AisReadonly\u0028\u0029",
+            "name": "isReadonly",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_isReadonly"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetReadonly\u0028\u0029",
+            "name": "setReadonly",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setReadonly"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder",
+            "name": "MydbQueryBuilder",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#method___construct"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003AshowColumnsLike\u0028\u0029",
+            "name": "showColumnsLike",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#method_showColumnsLike"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003AshowKeys\u0028\u0029",
+            "name": "showKeys",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#method_showKeys"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003AinsertOne\u0028\u0029",
+            "name": "insertOne",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#method_insertOne"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003AbuildUpdateWhereMany\u0028\u0029",
+            "name": "buildUpdateWhereMany",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#method_buildUpdateWhereMany"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003AbuildUpdateWhere\u0028\u0029",
+            "name": "buildUpdateWhere",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#method_buildUpdateWhere"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003AbuildDeleteWhere\u0028\u0029",
+            "name": "buildDeleteWhere",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#method_buildDeleteWhere"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003AbuildWhere\u0028\u0029",
+            "name": "buildWhere",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#method_buildWhere"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003AbuildInsertMany\u0028\u0029",
+            "name": "buildInsertMany",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#method_buildInsertMany"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003Aescape\u0028\u0029",
+            "name": "escape",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#method_escape"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003ASQL_INSERT",
+            "name": "SQL_INSERT",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#constant_SQL_INSERT"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003ASQL_REPLACE",
+            "name": "SQL_REPLACE",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#constant_SQL_REPLACE"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003A\u0024mysqli",
+            "name": "mysqli",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilder.html#property_mysqli"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface",
+            "name": "MydbQueryBuilderInterface",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003AshowColumnsLike\u0028\u0029",
+            "name": "showColumnsLike",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#method_showColumnsLike"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003AshowKeys\u0028\u0029",
+            "name": "showKeys",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#method_showKeys"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003AinsertOne\u0028\u0029",
+            "name": "insertOne",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#method_insertOne"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003AbuildUpdateWhereMany\u0028\u0029",
+            "name": "buildUpdateWhereMany",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#method_buildUpdateWhereMany"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003AbuildUpdateWhere\u0028\u0029",
+            "name": "buildUpdateWhere",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#method_buildUpdateWhere"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003AbuildDeleteWhere\u0028\u0029",
+            "name": "buildDeleteWhere",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#method_buildDeleteWhere"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003AbuildWhere\u0028\u0029",
+            "name": "buildWhere",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#method_buildWhere"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003AbuildInsertMany\u0028\u0029",
+            "name": "buildInsertMany",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#method_buildInsertMany"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003Aescape\u0028\u0029",
+            "name": "escape",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#method_escape"
+        },                {
             "fqsen": "\\sql\\MydbRegistry",
             "name": "MydbRegistry",
-            "summary": "",
+            "summary": "Singleton\u0020or\u0020registry\u0020helper\u0020to\u0020manage\u0020multiple\u0020Mydb\u0020instances",
             "url": "classes/sql-MydbRegistry.html"
         },                {
             "fqsen": "\\sql\\MydbRegistry\u003A\u003Aserialize\u0028\u0029",

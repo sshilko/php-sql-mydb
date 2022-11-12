@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
             <title>phpDocumentor</title>
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
@@ -61,15 +61,15 @@
     <ul class="phpdocumentor-list">
                     <li>
                 <a href="namespaces/sql-mydbexception.html" class="">MydbException</a>
-
+                
             </li>
                     <li>
                 <a href="namespaces/sql-mydbinterface.html" class="">MydbInterface</a>
-
+                
             </li>
                     <li>
                 <a href="namespaces/sql-mydbmysqli.html" class="">MydbMysqli</a>
-
+                
             </li>
             </ul>
 
@@ -81,7 +81,7 @@
 </h4>
 
                         </section>
-
+            
     <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
@@ -104,24 +104,28 @@
         <h2 class="phpdocumentor-content__title">
     MydbMysqli
 
-
+    
             <div class="phpdocumentor-element__package">
             in package
             <ul class="phpdocumentor-breadcrumbs">
                                     <li class="phpdocumentor-breadcrumb"><a href="packages/Application.html">Application</a></li>
                             </ul>
         </div>
-
-
+    
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <a href="classes/sql-MydbMysqliInterface.html"><abbr title="\sql\MydbMysqliInterface">MydbMysqliInterface</abbr></a>                    </span>
+    
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
+            <p class="phpdocumentor-summary">Facade for php mysqli extension</p>
 
 
 
@@ -134,7 +138,7 @@
                     <span class="phpdocumentor-tag__name">author</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-
+                                                                                
                                                  <section class="phpdocumentor-description"><p>Sergei Shilko <a href="mailto:contact@sshilko.com">contact@sshilko.com</a></p>
 </section>
 
@@ -143,7 +147,7 @@
                     <span class="phpdocumentor-tag__name">license</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-
+                                                                                
                                                  <section class="phpdocumentor-description"><p>https://opensource.org/licenses/mit-license.php MIT</p>
 </section>
 
@@ -153,14 +157,34 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><a href="https://github.com/sshilko/php-sql-mydb"><abbr title="https://github.com/sshilko/php-sql-mydb">https://github.com/sshilko/php-sql-mydb</abbr></a></span>
-
-
+                                        
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/class.mysqli"><abbr title="https://www.php.net/manual/en/class.mysqli">https://www.php.net/manual/en/class.mysqli</abbr></a></span>
+                                        
+                                             
                                     </dd>
                         </dl>
 
 
 
 
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes, Traits and Enums
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/sql-MydbMysqliInterface.html"><abbr title="\sql\MydbMysqliInterface">MydbMysqliInterface</abbr></a></dt>
+        <dd></dd>
+    
+    
+    
+    </dl>
 
 
 <h3 id="toc">
@@ -174,84 +198,91 @@
     <span>
         &nbsp;= \MYSQLI_INIT_COMMAND                            </span>
 </dt>
-<dd></dd>
+<dd>Command to execute when connecting to MySQL server. Will automatically be re-executed when reconnecting.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_OPT_CONNECT_TIMEOUT">MYSQLI_OPT_CONNECT_TIMEOUT</a>
     <span>
         &nbsp;= \MYSQLI_OPT_CONNECT_TIMEOUT                            </span>
 </dt>
-<dd></dd>
+<dd>Connect timeout in seconds</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_OPT_NET_CMD_BUFFER_SIZE">MYSQLI_OPT_NET_CMD_BUFFER_SIZE</a>
     <span>
         &nbsp;= \MYSQLI_OPT_NET_CMD_BUFFER_SIZE                            </span>
 </dt>
-<dd></dd>
+<dd>The size of the internal command/network buffer. Only valid for mysqlnd.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_OPT_NET_READ_BUFFER_SIZE">MYSQLI_OPT_NET_READ_BUFFER_SIZE</a>
     <span>
         &nbsp;= \MYSQLI_OPT_NET_READ_BUFFER_SIZE                            </span>
 </dt>
-<dd></dd>
+<dd>Maximum read chunk size in bytes when reading the body of a MySQL command packet. Only valid for mysqlnd.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_OPT_READ_TIMEOUT">MYSQLI_OPT_READ_TIMEOUT</a>
     <span>
         &nbsp;= \MYSQLI_OPT_READ_TIMEOUT                            </span>
 </dt>
-<dd></dd>
+<dd>Command execution result timeout in seconds. Available as of PHP 7.2.0.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_REPORT_ALL">MYSQLI_REPORT_ALL</a>
     <span>
         &nbsp;= \MYSQLI_REPORT_ALL                            </span>
 </dt>
-<dd></dd>
+<dd>Set all options on (report all), report all warnings/errors.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_REPORT_INDEX">MYSQLI_REPORT_INDEX</a>
     <span>
         &nbsp;= \MYSQLI_REPORT_INDEX                            </span>
 </dt>
-<dd></dd>
+<dd>Report if no index or bad index was used in a query.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_REPORT_STRICT">MYSQLI_REPORT_STRICT</a>
     <span>
         &nbsp;= \MYSQLI_REPORT_STRICT                            </span>
 </dt>
-<dd></dd>
+<dd>Throw a mysqli_sql_exception for errors instead of warnings.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_STORE_RESULT_COPY_DATA">MYSQLI_STORE_RESULT_COPY_DATA</a>
     <span>
         &nbsp;= \MYSQLI_STORE_RESULT_COPY_DATA                            </span>
 </dt>
-<dd></dd>
+<dd>Copy results from the internal mysqlnd buffer into the PHP variables fetched.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_TRANS_COR_NO_RELEASE">MYSQLI_TRANS_COR_NO_RELEASE</a>
     <span>
         &nbsp;= \MYSQLI_TRANS_COR_NO_RELEASE                            </span>
 </dt>
-<dd></dd>
+<dd>Appends &quot;NO RELEASE&quot; to mysqli_commit() or mysqli_rollback().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_TRANS_COR_RELEASE">MYSQLI_TRANS_COR_RELEASE</a>
     <span>
         &nbsp;= \MYSQLI_TRANS_COR_RELEASE                            </span>
 </dt>
-<dd></dd>
+<dd>Appends &quot;RELEASE&quot; to mysqli_commit() or mysqli_rollback().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_TRANS_START_READ_ONLY">MYSQLI_TRANS_START_READ_ONLY</a>
     <span>
         &nbsp;= \MYSQLI_TRANS_START_READ_ONLY                            </span>
 </dt>
-<dd></dd>
+<dd>Start the transaction as &quot;START TRANSACTION READ ONLY&quot; with mysqli_begin_transaction().</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_TRANS_START_READ_WRITE">MYSQLI_TRANS_START_READ_WRITE</a>
+    <span>
+        &nbsp;= \MYSQLI_TRANS_START_READ_WRITE                            </span>
+</dt>
+<dd>Start the transaction as &quot;START TRANSACTION READ WRITE&quot; with mysqli_begin_transaction().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
     <a href="classes/sql-MydbMysqli.html#constant_SQL_MODE">SQL_MODE</a>
@@ -265,21 +296,25 @@
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd>Is connected to remove server</dd>
+<dd>Flag indicating whether physical connection was established with remote server
+Is connected to remove server</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/sql-MydbMysqli.html#property_isTransaction">$isTransaction</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd>Is transaction started</dd>
+<dd>Flag indicating whether SQL transaction was started
+WARNING: best-effort, only guaranteed when library is used correctly
+Is transaction started</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/sql-MydbMysqli.html#property_mysqli">$mysqli</a>
     <span>
                         &nbsp;: <abbr title="\mysqli">mysqli</abbr>|null            </span>
 </dt>
-<dd></dd>
+<dd>Mysqli instance
+The mysqli extension allows you to access the functionality provided by MySQL 4.1 and above</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbMysqli.html#method___construct">__construct()</a>
@@ -296,7 +331,14 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/sql-MydbMysqli.html#method_beginTransaction">beginTransaction()</a>
+    <a href="classes/sql-MydbMysqli.html#method_beginTransactionReadonly">beginTransactionReadonly()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/sql-MydbMysqli.html#method_beginTransactionReadwrite">beginTransactionReadwrite()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
@@ -313,6 +355,20 @@
     <a href="classes/sql-MydbMysqli.html#method_commit">commit()</a>
     <span>
                                 &nbsp;: bool    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/sql-MydbMysqli.html#method_commitAndRelease">commitAndRelease()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Commit transaction and release connection from server side</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/sql-MydbMysqli.html#method_extractServerResponse">extractServerResponse()</a>
+    <span>
+                                &nbsp;: <abbr title="\mysqli_result">mysqli_result</abbr>|null    </span>
 </dt>
 <dd></dd>
 
@@ -366,9 +422,9 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/sql-MydbMysqli.html#method_getServerVersion">getServerVersion()</a>
+    <a href="classes/sql-MydbMysqli.html#method_getWarnings">getWarnings()</a>
     <span>
-                                &nbsp;: int|null    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd></dd>
 
@@ -377,7 +433,7 @@
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Allocate mysqli resource instance, no physical connection to remote is done</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbMysqli.html#method_isConnected">isConnected()</a>
@@ -403,7 +459,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbMysqli.html#method_mysqliQueryAsync">mysqliQueryAsync()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: bool    </span>
 </dt>
 <dd></dd>
 
@@ -419,7 +475,7 @@
     <span>
                                 &nbsp;: <a href="classes/sql-MydbMysqli-MydbMysqliResult.html"><abbr title="\sql\MydbMysqli\MydbMysqliResult">MydbMysqliResult</abbr></a>|null    </span>
 </dt>
-<dd></dd>
+<dd>React to mysqli resource changes after query/command execution</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbMysqli.html#method_realConnect">realConnect()</a>
@@ -454,7 +510,7 @@
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd></dd>
+<dd>Set various options that affect mysqli resource, before connection is established</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/sql-MydbMysqli.html#method_getFieldCount">getFieldCount()</a>
@@ -472,18 +528,11 @@ Requires store_result to be called first</dd>
 <dd>Returns warnings caused by query execution
 Requires store_result to be called first</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/sql-MydbMysqli.html#method_getWarnings">getWarnings()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd></dd>
-
         </dl>
 
 
 
-
+        
     <section class="phpdocumentor-constants">
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
@@ -498,10 +547,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Command to execute when connecting to MySQL server. Will automatically be re-executed when reconnecting.</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -511,11 +561,24 @@ Requires store_result to be called first</dd>
 </code>
 
 
+    
         <section class="phpdocumentor-description"></section>
 
-        <section class="phpdocumentor-description"></section>
-
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -527,10 +590,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Connect timeout in seconds</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -540,11 +604,24 @@ Requires store_result to be called first</dd>
 </code>
 
 
+    
         <section class="phpdocumentor-description"></section>
 
-        <section class="phpdocumentor-description"></section>
-
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -556,10 +633,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">The size of the internal command/network buffer. Only valid for mysqlnd.</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -569,11 +647,24 @@ Requires store_result to be called first</dd>
 </code>
 
 
+    
         <section class="phpdocumentor-description"></section>
 
-        <section class="phpdocumentor-description"></section>
-
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -585,10 +676,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Maximum read chunk size in bytes when reading the body of a MySQL command packet. Only valid for mysqlnd.</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -598,11 +690,24 @@ Requires store_result to be called first</dd>
 </code>
 
 
+    
         <section class="phpdocumentor-description"></section>
 
-        <section class="phpdocumentor-description"></section>
-
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -614,10 +719,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Command execution result timeout in seconds. Available as of PHP 7.2.0.</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -627,11 +733,24 @@ Requires store_result to be called first</dd>
 </code>
 
 
+    
         <section class="phpdocumentor-description"></section>
 
-        <section class="phpdocumentor-description"></section>
-
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -643,10 +762,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Set all options on (report all), report all warnings/errors.</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -656,11 +776,24 @@ Requires store_result to be called first</dd>
 </code>
 
 
+    
         <section class="phpdocumentor-description"></section>
 
-        <section class="phpdocumentor-description"></section>
-
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -672,10 +805,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">138</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Report if no index or bad index was used in a query.</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -685,11 +819,24 @@ Requires store_result to be called first</dd>
 </code>
 
 
+    
         <section class="phpdocumentor-description"></section>
 
-        <section class="phpdocumentor-description"></section>
-
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -701,10 +848,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Throw a mysqli_sql_exception for errors instead of warnings.</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -714,11 +862,24 @@ Requires store_result to be called first</dd>
 </code>
 
 
+    
         <section class="phpdocumentor-description"></section>
 
-        <section class="phpdocumentor-description"></section>
-
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -730,10 +891,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Copy results from the internal mysqlnd buffer into the PHP variables fetched.</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -743,11 +905,29 @@ Requires store_result to be called first</dd>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>By default, mysqlnd will use a reference logic to avoid copying and duplicating results
+held in memory. For certain result sets, for example, result sets with many small rows,
+the copy approach can reduce the overall memory usage because PHP variables holding
+results may be released earlier (available with mysqlnd only)</p>
+</section>
 
         <section class="phpdocumentor-description"></section>
 
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -759,10 +939,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Appends &quot;NO RELEASE&quot; to mysqli_commit() or mysqli_rollback().</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -772,11 +953,35 @@ Requires store_result to be called first</dd>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>The NO RELEASE clause asks the server to not disconnect the current client session
+after terminating the current transaction</p>
+</section>
 
         <section class="phpdocumentor-description"></section>
 
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://dev.mysql.com/doc/refman/8.0/en/commit.html"><abbr title="https://dev.mysql.com/doc/refman/8.0/en/commit.html">https://dev.mysql.com/doc/refman/8.0/en/commit.html</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -788,10 +993,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">101</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Appends &quot;RELEASE&quot; to mysqli_commit() or mysqli_rollback().</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -801,11 +1007,35 @@ Requires store_result to be called first</dd>
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>The RELEASE clause causes the server to disconnect the current client session
+after terminating the current transaction</p>
+</section>
 
         <section class="phpdocumentor-description"></section>
 
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://dev.mysql.com/doc/refman/8.0/en/commit.html"><abbr title="https://dev.mysql.com/doc/refman/8.0/en/commit.html">https://dev.mysql.com/doc/refman/8.0/en/commit.html</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
@@ -817,10 +1047,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Start the transaction as &quot;START TRANSACTION READ ONLY&quot; with mysqli_begin_transaction().</p>
 
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -830,11 +1061,67 @@ Requires store_result to be called first</dd>
 </code>
 
 
+    
         <section class="phpdocumentor-description"></section>
 
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_MYSQLI_TRANS_START_READ_WRITE">
+        MYSQLI_TRANS_START_READ_WRITE
+        <a href="classes/sql-MydbMysqli.html#constant_MYSQLI_TRANS_START_READ_WRITE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">114</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Start the transaction as &quot;START TRANSACTION READ WRITE&quot; with mysqli_begin_transaction().</p>
+
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">MYSQLI_TRANS_START_READ_WRITE</span>
+    = <span class="phpdocumentor-signature__default-value">\MYSQLI_TRANS_START_READ_WRITE</span>
+</code>
+
+
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.constants.php"><abbr title="https://www.php.net/manual/en/mysqli.constants.php">https://www.php.net/manual/en/mysqli.constants.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article class="phpdocumentor-element -constant -protected ">
@@ -846,7 +1133,7 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 
     </aside>
 
@@ -860,10 +1147,10 @@ Requires store_result to be called first</dd>
 </code>
 
 
-
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
@@ -874,15 +1161,15 @@ Requires store_result to be called first</dd>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><a href="https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional"><abbr title="https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional">https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional</abbr></a></span>
-
-
+                                        
+                                             
                                     </dd>
                         </dl>
 
 </article>
             </section>
 
-
+        
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
@@ -904,11 +1191,12 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">168</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Is connected to remove server</p>
+        <p class="phpdocumentor-summary">Flag indicating whether physical connection was established with remote server
+Is connected to remove server</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -916,10 +1204,10 @@ Requires store_result to be called first</dd>
     <span class="phpdocumentor-signature__name">$isConnected</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
-
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
 
 </article>
                     <article
@@ -938,11 +1226,13 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">175</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Is transaction started</p>
+        <p class="phpdocumentor-summary">Flag indicating whether SQL transaction was started
+WARNING: best-effort, only guaranteed when library is used correctly
+Is transaction started</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -950,10 +1240,10 @@ Requires store_result to be called first</dd>
     <span class="phpdocumentor-signature__name">$isTransaction</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
-
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
 
 </article>
                     <article
@@ -972,10 +1262,12 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">162</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Mysqli instance
+The mysqli extension allows you to access the functionality provided by MySQL 4.1 and above</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -983,11 +1275,48 @@ Requires store_result to be called first</dd>
     <span class="phpdocumentor-signature__name">$mysqli</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
+    
         <section class="phpdocumentor-description"></section>
 
-        <section class="phpdocumentor-description"></section>
-
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="http://dev.mysql.com/doc/"><abbr title="http://dev.mysql.com/doc/">http://dev.mysql.com/doc/</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.overview.php"><abbr title="https://www.php.net/manual/en/mysqli.overview.php">https://www.php.net/manual/en/mysqli.overview.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/intro.mysqli.php"><abbr title="https://www.php.net/manual/en/intro.mysqli.php">https://www.php.net/manual/en/intro.mysqli.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/class.mysqli"><abbr title="https://www.php.net/manual/en/class.mysqli">https://www.php.net/manual/en/class.mysqli</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
             </section>
@@ -1010,11 +1339,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">177</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\mysqli">mysqli</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resource</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
@@ -1033,13 +1362,13 @@ Requires store_result to be called first</dd>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1054,11 +1383,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">378</span>
+    <span class="phpdocumentor-element-found-in__line">523</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">autocommit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$enable</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
@@ -1077,13 +1406,13 @@ Requires store_result to be called first</dd>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1091,57 +1420,91 @@ Requires store_result to be called first</dd>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_beginTransaction">
-        beginTransaction()
-        <a href="classes/sql-MydbMysqli.html#method_beginTransaction" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_beginTransactionReadonly">
+        beginTransactionReadonly()
+        <a href="classes/sql-MydbMysqli.html#method_beginTransactionReadonly" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">349</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">beginTransaction</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">beginTransactionReadonly</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$args</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-
+    
+    
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">psalm-suppress</span>
+                    <span class="phpdocumentor-tag__name">see</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-
-                                                 <section class="phpdocumentor-description"><p>MissingParamType</p>
-</section>
-
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.begin-transaction.php"><abbr title="https://www.php.net/manual/en/mysqli.begin-transaction.php">https://www.php.net/manual/en/mysqli.begin-transaction.php</abbr></a></span>
+                                        
+                                             
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_beginTransactionReadwrite">
+        beginTransactionReadwrite()
+        <a href="classes/sql-MydbMysqli.html#method_beginTransactionReadwrite" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">333</span>
 
+    </aside>
 
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">beginTransactionReadwrite</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.begin-transaction.php"><abbr title="https://www.php.net/manual/en/mysqli.begin-transaction.php">https://www.php.net/manual/en/mysqli.begin-transaction.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1156,25 +1519,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">290</span>
+    <span class="phpdocumentor-element-found-in__line">442</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">close</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1189,50 +1552,123 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">250</span>
+    <span class="phpdocumentor-element-found-in__line">390</span>
 
     </aside>
 
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">commit</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_commitAndRelease">
+        commitAndRelease()
+        <a href="classes/sql-MydbMysqli.html#method_commitAndRelease" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">379</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Commit transaction and release connection from server side</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">commit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">commitAndRelease</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    
+    
+    
 
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_extractServerResponse">
+        extractServerResponse()
+        <a href="classes/sql-MydbMysqli.html#method_extractServerResponse" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">544</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">extractServerResponse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbEnvironmentInterface.html"><abbr title="\sql\MydbEnvironmentInterface">MydbEnvironmentInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$environment</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$events</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\mysqli_result">mysqli_result</abbr>|null</span></code>
+
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$args</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                <span class="phpdocumentor-signature__argument__name">$environment</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbEnvironmentInterface.html"><abbr title="\sql\MydbEnvironmentInterface">MydbEnvironmentInterface</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
             </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$events</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
             </dl>
 
-
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">psalm-suppress</span>
+                    <span class="phpdocumentor-tag__name">phpcs:disable</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-
-                                                 <section class="phpdocumentor-description"><p>MissingParamType</p>
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference</p>
 </section>
 
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\mysqli_result">mysqli_result</abbr>|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1247,25 +1683,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">349</span>
+    <span class="phpdocumentor-element-found-in__line">494</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getAffectedRows</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1280,25 +1716,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">309</span>
+    <span class="phpdocumentor-element-found-in__line">461</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getConnectErrno</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1313,25 +1749,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">316</span>
+    <span class="phpdocumentor-element-found-in__line">468</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getConnectError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1346,25 +1782,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">342</span>
+    <span class="phpdocumentor-element-found-in__line">487</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getErrNo</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1379,25 +1815,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">335</span>
+    <span class="phpdocumentor-element-found-in__line">480</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1412,24 +1848,24 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">371</span>
+    <span class="phpdocumentor-element-found-in__line">516</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getInsertId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|string|null</span></code>
 
-
-
-
+    
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|string|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1444,25 +1880,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">261</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getMysqli</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\mysqli">mysqli</abbr>|null</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><abbr title="\mysqli">mysqli</abbr>|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1470,32 +1906,32 @@ Requires store_result to be called first</dd>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getServerVersion">
-        getServerVersion()
-        <a href="classes/sql-MydbMysqli.html#method_getServerVersion" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getWarnings">
+        getWarnings()
+        <a href="classes/sql-MydbMysqli.html#method_getWarnings" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">323</span>
+    <span class="phpdocumentor-element-found-in__line">570</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getServerVersion</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
+                    <span class="phpdocumentor-signature__name">getWarnings</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int|null</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1510,25 +1946,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Allocate mysqli resource instance, no physical connection to remote is done</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">init</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-
-
+    
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1543,25 +1979,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">151</span>
+    <span class="phpdocumentor-element-found-in__line">256</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isConnected</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1576,25 +2012,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">330</span>
+    <span class="phpdocumentor-element-found-in__line">475</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isServerGone</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1609,25 +2045,25 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">143</span>
+    <span class="phpdocumentor-element-found-in__line">248</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isTransactionOpen</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1642,14 +2078,14 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">280</span>
+    <span class="phpdocumentor-element-found-in__line">432</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">mysqliQueryAsync</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$command</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">mysqliQueryAsync</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$command</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1665,13 +2101,13 @@ Requires store_result to be called first</dd>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1686,11 +2122,11 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">275</span>
+    <span class="phpdocumentor-element-found-in__line">427</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">mysqliReport</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$level</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
@@ -1709,13 +2145,13 @@ Requires store_result to be called first</dd>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1730,22 +2166,22 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">170</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">React to mysqli resource changes after query/command execution</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">readServerResponse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbEnvironment.html"><abbr title="\sql\MydbEnvironment">MydbEnvironment</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$environment</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/sql-MydbMysqli-MydbMysqliResult.html"><abbr title="\sql\MydbMysqli\MydbMysqliResult">MydbMysqliResult</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">readServerResponse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbEnvironmentInterface.html"><abbr title="\sql\MydbEnvironmentInterface">MydbEnvironmentInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$environment</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/sql-MydbMysqli-MydbMysqliResult.html"><abbr title="\sql\MydbMysqli\MydbMysqliResult">MydbMysqliResult</abbr></a>|null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$environment</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbEnvironment.html"><abbr title="\sql\MydbEnvironment">MydbEnvironment</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbEnvironmentInterface.html"><abbr title="\sql\MydbEnvironmentInterface">MydbEnvironmentInterface</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -1753,13 +2189,13 @@ Requires store_result to be called first</dd>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/sql-MydbMysqli-MydbMysqliResult.html"><abbr title="\sql\MydbMysqli\MydbMysqliResult">MydbMysqliResult</abbr></a>|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1774,21 +2210,70 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">264</span>
+    <span class="phpdocumentor-element-found-in__line">401</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">realConnect</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">realConnect</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$host</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$username</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$password</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dbname</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$port</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$socket</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$flags</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+        <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$args</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                <span class="phpdocumentor-signature__argument__name">$host</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$username</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$password</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$dbname</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$port</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$socket</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$flags</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -1796,28 +2281,13 @@ Requires store_result to be called first</dd>
             </dd>
             </dl>
 
-
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">psalm-suppress</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-
-                                                 <section class="phpdocumentor-description"><p>MissingParamType</p>
-</section>
-
-                                    </dd>
-                        </dl>
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1832,17 +2302,16 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">210</span>
+    <span class="phpdocumentor-element-found-in__line">321</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">realEscapeString</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$string</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1855,13 +2324,27 @@ Requires store_result to be called first</dd>
             </dd>
             </dl>
 
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.real-escape-string.php"><abbr title="https://www.php.net/manual/en/mysqli.real-escape-string.php">https://www.php.net/manual/en/mysqli.real-escape-string.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1876,17 +2359,16 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">269</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">realQuery</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1899,13 +2381,27 @@ Requires store_result to be called first</dd>
             </dd>
             </dl>
 
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.real-query.php"><abbr title="https://www.php.net/manual/en/mysqli.real-query.php">https://www.php.net/manual/en/mysqli.real-query.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1920,50 +2416,38 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">365</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">rollback</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">rollback</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$args</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-
+    
+    
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">psalm-suppress</span>
+                    <span class="phpdocumentor-tag__name">see</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-
-                                                 <section class="phpdocumentor-description"><p>MissingParamType</p>
-</section>
-
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.rollback.php"><abbr title="https://www.php.net/manual/en/mysqli.rollback.php">https://www.php.net/manual/en/mysqli.rollback.php</abbr></a></span>
+                                        
+                                             
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1978,22 +2462,22 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">215</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Set various options that affect mysqli resource, before connection is established</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setTransportOptions</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbOptions.html"><abbr title="\sql\MydbOptions">MydbOptions</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbEnvironment.html"><abbr title="\sql\MydbEnvironment">MydbEnvironment</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$environment</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">setTransportOptions</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbOptionsInterface.html"><abbr title="\sql\MydbOptionsInterface">MydbOptionsInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbEnvironmentInterface.html"><abbr title="\sql\MydbEnvironmentInterface">MydbEnvironmentInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$environment</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$options</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbOptions.html"><abbr title="\sql\MydbOptions">MydbOptions</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbOptionsInterface.html"><abbr title="\sql\MydbOptionsInterface">MydbOptionsInterface</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -2001,7 +2485,7 @@ Requires store_result to be called first</dd>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$environment</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbEnvironment.html"><abbr title="\sql\MydbEnvironment">MydbEnvironment</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/sql-MydbEnvironmentInterface.html"><abbr title="\sql\MydbEnvironmentInterface">MydbEnvironmentInterface</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -2009,13 +2493,35 @@ Requires store_result to be called first</dd>
             </dd>
             </dl>
 
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/mysqli.options.php"><abbr title="https://www.php.net/manual/en/mysqli.options.php">https://www.php.net/manual/en/mysqli.options.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/sql-MydbException-EnvironmentException.html"><abbr title="\sql\MydbException\EnvironmentException">EnvironmentException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -2030,7 +2536,7 @@ Requires store_result to be called first</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">400</span>
+    <span class="phpdocumentor-element-found-in__line">590</span>
 
     </aside>
 
@@ -2041,9 +2547,9 @@ Requires store_result to be called first</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">getFieldCount</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
 
-
-
-
+    
+    
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2054,16 +2560,16 @@ Requires store_result to be called first</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><abbr title="\mysqli::store_result()">mysqli::store_result()</abbr></span>
-
-
+                                        
+                                             
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|null</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -2078,7 +2584,7 @@ Requires store_result to be called first</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">412</span>
+    <span class="phpdocumentor-element-found-in__line">600</span>
 
     </aside>
 
@@ -2089,9 +2595,9 @@ Requires store_result to be called first</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">getWarningCount</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
 
-
-
-
+    
+    
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2102,53 +2608,20 @@ Requires store_result to be called first</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><abbr title="\mysqli::store_result()">mysqli::store_result()</abbr></span>
-
-
+                                        
+                                             
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|null</span>
             &mdash;
-
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getWarnings">
-        getWarnings()
-        <a href="classes/sql-MydbMysqli.html#method_getWarnings" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbMysqli.php"><a href="files/src-sql-mydbmysqli.html"><abbr title="src/sql/MydbMysqli.php">MydbMysqli.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">419</span>
-
-    </aside>
-
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">getWarnings</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-
-
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-
-
+        
+    
 </article>
             </section>
 
-
+        
     <script type="text/javascript">
         function loadExternalCodeSnippets(line) {
             Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach((pre) => {

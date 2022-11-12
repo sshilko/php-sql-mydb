@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
             <title>phpDocumentor</title>
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
@@ -61,15 +61,15 @@
     <ul class="phpdocumentor-list">
                     <li>
                 <a href="namespaces/sql-mydbexception.html" class="">MydbException</a>
-
+                
             </li>
                     <li>
                 <a href="namespaces/sql-mydbinterface.html" class="">MydbInterface</a>
-
+                
             </li>
                     <li>
                 <a href="namespaces/sql-mydbmysqli.html" class="">MydbMysqli</a>
-
+                
             </li>
             </ul>
 
@@ -81,7 +81,7 @@
 </h4>
 
                         </section>
-
+            
     <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
@@ -104,25 +104,28 @@
         <h2 class="phpdocumentor-content__title">
     MydbOptions
 
-
+    
             <div class="phpdocumentor-element__package">
             in package
             <ul class="phpdocumentor-breadcrumbs">
                                     <li class="phpdocumentor-breadcrumb"><a href="packages/Application.html">Application</a></li>
                             </ul>
         </div>
-
-
+    
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <a href="classes/sql-MydbOptionsInterface.html"><abbr title="\sql\MydbOptionsInterface">MydbOptionsInterface</abbr></a>                    </span>
+    
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
-
+        
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -134,7 +137,7 @@
                     <span class="phpdocumentor-tag__name">author</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-
+                                                                                
                                                  <section class="phpdocumentor-description"><p>Sergei Shilko <a href="mailto:contact@sshilko.com">contact@sshilko.com</a></p>
 </section>
 
@@ -143,7 +146,7 @@
                     <span class="phpdocumentor-tag__name">license</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-
+                                                                                
                                                  <section class="phpdocumentor-description"><p>https://opensource.org/licenses/mit-license.php MIT</p>
 </section>
 
@@ -153,14 +156,26 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><a href="https://github.com/sshilko/php-sql-mydb"><abbr title="https://github.com/sshilko/php-sql-mydb">https://github.com/sshilko/php-sql-mydb</abbr></a></span>
-
-
+                                        
+                                             
                                     </dd>
                         </dl>
 
 
 
 
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes, Traits and Enums
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/sql-MydbOptionsInterface.html"><abbr title="\sql\MydbOptionsInterface">MydbOptionsInterface</abbr></a></dt>
+        <dd></dd>
+    
+    
+    
+    </dl>
 
 
 <h3 id="toc">
@@ -169,6 +184,34 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
+    <a href="classes/sql-MydbOptions.html#constant_NET_CMD_BUFFER_SIZE_MAX">NET_CMD_BUFFER_SIZE_MAX</a>
+    <span>
+        &nbsp;= 16384                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
+    <a href="classes/sql-MydbOptions.html#constant_NET_CMD_BUFFER_SIZE_MIN">NET_CMD_BUFFER_SIZE_MIN</a>
+    <span>
+        &nbsp;= 4096                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
+    <a href="classes/sql-MydbOptions.html#constant_NET_READ_BUFFER_MAX">NET_READ_BUFFER_MAX</a>
+    <span>
+        &nbsp;= 131072                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -protected">
+    <a href="classes/sql-MydbOptions.html#constant_NET_READ_BUFFER_MIN">NET_READ_BUFFER_MIN</a>
+    <span>
+        &nbsp;= 8192                            </span>
+</dt>
+<dd></dd>
+
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/sql-MydbOptions.html#property_autocommit">$autocommit</a>
     <span>
@@ -187,6 +230,13 @@ true for async connection</dd>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/sql-MydbOptions.html#property_clientErrorLevel">$clientErrorLevel</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+<dd>Sets mysqli error reporting mode</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/sql-MydbOptions.html#property_connectTimeout">$connectTimeout</a>
     <span>
                         &nbsp;: int            </span>
@@ -195,13 +245,6 @@ true for async connection</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/sql-MydbOptions.html#property_errorReporting">$errorReporting</a>
-    <span>
-                        &nbsp;: int            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/sql-MydbOptions.html#property_internalClientErrorLevel">$internalClientErrorLevel</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
@@ -265,12 +308,19 @@ X = 0, not enabled.</dd>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
+<dd>Set session time zone</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbOptions.html#method_getCharset">getCharset()</a>
     <span>
                                 &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/sql-MydbOptions.html#method_getClientErrorLevel">getClientErrorLevel()</a>
+    <span>
+                                &nbsp;: int    </span>
 </dt>
 <dd></dd>
 
@@ -283,13 +333,6 @@ X = 0, not enabled.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbOptions.html#method_getErrorReporting">getErrorReporting()</a>
-    <span>
-                                &nbsp;: int    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/sql-MydbOptions.html#method_getInternalClientErrorLevel">getInternalClientErrorLevel()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
@@ -373,6 +416,13 @@ X = 0, not enabled.</dd>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/sql-MydbOptions.html#method_setClientErrorLevel">setClientErrorLevel()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbOptions.html#method_setConnectTimeout">setConnectTimeout()</a>
     <span>
                                 &nbsp;: void    </span>
@@ -381,13 +431,6 @@ X = 0, not enabled.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbOptions.html#method_setErrorReporting">setErrorReporting()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/sql-MydbOptions.html#method_setInternalClientErrorLevel">setInternalClientErrorLevel()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
@@ -453,9 +496,131 @@ X = 0, not enabled.</dd>
 
 
 
+        
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/sql-MydbOptions.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -protected ">
+    <h4 class="phpdocumentor-element__name" id="constant_NET_CMD_BUFFER_SIZE_MAX">
+        NET_CMD_BUFFER_SIZE_MAX
+        <a href="classes/sql-MydbOptions.html#constant_NET_CMD_BUFFER_SIZE_MAX" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">NET_CMD_BUFFER_SIZE_MAX</span>
+    = <span class="phpdocumentor-signature__default-value">16384</span>
+</code>
 
 
+        <section class="phpdocumentor-description"></section>
 
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -protected ">
+    <h4 class="phpdocumentor-element__name" id="constant_NET_CMD_BUFFER_SIZE_MIN">
+        NET_CMD_BUFFER_SIZE_MIN
+        <a href="classes/sql-MydbOptions.html#constant_NET_CMD_BUFFER_SIZE_MIN" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">NET_CMD_BUFFER_SIZE_MIN</span>
+    = <span class="phpdocumentor-signature__default-value">4096</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -protected ">
+    <h4 class="phpdocumentor-element__name" id="constant_NET_READ_BUFFER_MAX">
+        NET_READ_BUFFER_MAX
+        <a href="classes/sql-MydbOptions.html#constant_NET_READ_BUFFER_MAX" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">36</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">NET_READ_BUFFER_MAX</span>
+    = <span class="phpdocumentor-signature__default-value">131072</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -protected ">
+    <h4 class="phpdocumentor-element__name" id="constant_NET_READ_BUFFER_MIN">
+        NET_READ_BUFFER_MIN
+        <a href="classes/sql-MydbOptions.html#constant_NET_READ_BUFFER_MIN" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">34</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">NET_READ_BUFFER_MIN</span>
+    = <span class="phpdocumentor-signature__default-value">8192</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
+
+        
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
@@ -477,7 +642,7 @@ X = 0, not enabled.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">162</span>
 
     </aside>
 
@@ -492,10 +657,10 @@ true for async connection</p>
     <span class="phpdocumentor-signature__name">$autocommit</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
-
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
 
 </article>
                     <article
@@ -514,11 +679,11 @@ true for async connection</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">164</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">string</span>
@@ -529,7 +694,65 @@ true for async connection</p>
 
         <section class="phpdocumentor-description"></section>
 
+    
 
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_clientErrorLevel">
+        $clientErrorLevel
+        <a href="classes/sql-MydbOptions.html#property_clientErrorLevel" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">132</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sets mysqli error reporting mode</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$clientErrorLevel</span>
+     = <span class="phpdocumentor-signature__default-value">\sql\MydbMysqli::MYSQLI_REPORT_ALL ^ \sql\MydbMysqli::MYSQLI_REPORT_STRICT ^ \sql\MydbMysqli::MYSQLI_REPORT_INDEX</span></code>
+
+        <section class="phpdocumentor-description"><blockquote>
+<p>=8.1.0 The default value is now MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT.
+&lt; 8.1.0 MYSQLI_REPORT_OFF.</p>
+</blockquote>
+<p>MYSQLI_REPORT_OFF Turns reporting off
+MYSQLI_REPORT_ERROR Report errors from mysqli function calls
+MYSQLI_REPORT_STRICT Throw mysqli_sql_exception for errors instead of warnings
+MYSQLI_REPORT_INDEX Report if no index or bad index was used in a query
+MYSQLI_REPORT_ALL Set all options (report all)</p>
+</section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/function.mysqli-report.php"><abbr title="https://www.php.net/manual/en/function.mysqli-report.php">https://www.php.net/manual/en/function.mysqli-report.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -548,7 +771,7 @@ true for async connection</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -560,10 +783,10 @@ true for async connection</p>
     <span class="phpdocumentor-signature__name">$connectTimeout</span>
      = <span class="phpdocumentor-signature__default-value">5</span></code>
 
-
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
 
 </article>
                     <article
@@ -582,11 +805,11 @@ true for async connection</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">int</span>
@@ -597,41 +820,7 @@ true for async connection</p>
 
         <section class="phpdocumentor-description"></section>
 
-
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_internalClientErrorLevel">
-        $internalClientErrorLevel
-        <a href="classes/sql-MydbOptions.html#property_internalClientErrorLevel" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">76</span>
-
-    </aside>
-
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">$internalClientErrorLevel</span>
-     = <span class="phpdocumentor-signature__default-value">\sql\MydbMysqli::MYSQLI_REPORT_ALL ^ \sql\MydbMysqli::MYSQLI_REPORT_STRICT ^ \sql\MydbMysqli::MYSQLI_REPORT_INDEX</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-
+    
 
 </article>
                     <article
@@ -650,7 +839,7 @@ true for async connection</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -662,12 +851,27 @@ true for async connection</p>
     <span class="phpdocumentor-signature__name">$networkBufferSize</span>
      = <span class="phpdocumentor-signature__default-value">6144</span></code>
 
-        <section class="phpdocumentor-description"><p>More memory usage, in exchange for better performance</p>
+        <section class="phpdocumentor-description"><p>Scope: connection.</p>
+<p>Number of network command buffer extensions while sending commands from PHP to MySQL.</p>
+<p>mysqlnd allocates an internal command/network buffer of mysqlnd.net_cmd_buffer_size (php.ini) bytes
+for every connection.
+If a MySQL Client Server protocol command, for example, COM_QUERY (&quot;normal&amp;quot query),
+does not fit into the buffer, mysqlnd will grow the buffer to what is needed for sending the command.
+Whenever the buffer gets extended for one connection command_buffer_too_small will be incremented by one.</p>
+<p>If mysqlnd has to grow the buffer beyond its initial size of mysqlnd.net_cmd_buffer_size (php.ini) bytes
+for almost every connection, you should consider to increase the default size to avoid re-allocations.</p>
+<p>The default can set either through the php.ini setting mysqlnd.net_cmd_buffer_size
+or using mysqli_options(MYSQLI_OPT_NET_CMD_BUFFER_SIZE, int size).</p>
+<p>It is recommended to set the buffer size to no less than 4096 bytes because mysqlnd also uses
+it when reading certain communication packet from MySQL.</p>
+<p>As of PHP 5.3.2 mysqlnd does not allow setting buffers smaller than 4096 bytes.</p>
+<p>Default 4096</p>
+<p>More memory usage, in exchange for better performance</p>
 </section>
 
         <section class="phpdocumentor-description"></section>
 
-
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
@@ -677,9 +881,18 @@ true for async connection</p>
                     <span class="phpdocumentor-tag__name">see</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>mysqlnd.net_cmd_buffer_size</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><a href="http://php.net/manual/en/mysqlnd.config.php"><abbr title="http://php.net/manual/en/mysqlnd.config.php">http://php.net/manual/en/mysqlnd.config.php</abbr></a></span>
-
-
+                                        
+                                             
                                     </dd>
                         </dl>
 
@@ -700,7 +913,7 @@ true for async connection</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
@@ -717,11 +930,46 @@ The MySQL client server protocol encapsulates all its commands in packets.
 The packets consist of a small header and a body with the actual payload</p>
 <p>If a packet body is larger than mysqlnd.net_read_buffer_size bytes,
 mysqlnd has to call read() multiple times</p>
+<p>This buffer controls how many bytes mysqlnd fetches from the PHP streams with one call.
+If a result set has less than 32kB in size, mysqlnd will call the PHP streams network
+functions only once, if it is larger more calls are needed</p>
+<p>Default 32768</p>
 </section>
 
         <section class="phpdocumentor-description"></section>
 
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>mysqlnd.net_read_buffer_size</p>
+</section>
 
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="http://php.net/manual/en/mysqlnd.config.php"><abbr title="http://php.net/manual/en/mysqlnd.config.php">http://php.net/manual/en/mysqlnd.config.php</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="http://blog.ulf-wendel.de/2007/php-mysqlnd-saves-40-memory-finally-new-tuning-options/"><abbr title="http://blog.ulf-wendel.de/2007/php-mysqlnd-saves-40-memory-finally-new-tuning-options/">http://blog.ulf-wendel.de/2007/php-mysqlnd-saves-40-memory-finally-new-tuning-options/</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -740,7 +988,7 @@ mysqlnd has to call read() multiple times</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">154</span>
 
     </aside>
 
@@ -753,10 +1001,10 @@ on a non-interactive TCP/IP or UNIX File connection before closing it</p>
     <span class="phpdocumentor-signature__name">$nonInteractiveTimeout</span>
      = <span class="phpdocumentor-signature__default-value">7200</span></code>
 
-
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
 
 </article>
                     <article
@@ -775,7 +1023,7 @@ on a non-interactive TCP/IP or UNIX File connection before closing it</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">104</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 
     </aside>
 
@@ -788,10 +1036,10 @@ which uses that connection if script execution ends before the transaction block
     <span class="phpdocumentor-signature__name">$persistent</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
-
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
@@ -802,8 +1050,8 @@ which uses that connection if script execution ends before the transaction block
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><a href="http://php.net/manual/en/features.persistent-connections.php"><abbr title="http://php.net/manual/en/features.persistent-connections.php">http://php.net/manual/en/features.persistent-connections.php</abbr></a></span>
-
-
+                                        
+                                             
                                     </dd>
                         </dl>
 
@@ -824,7 +1072,7 @@ which uses that connection if script execution ends before the transaction block
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">177</span>
 
     </aside>
 
@@ -836,10 +1084,10 @@ which uses that connection if script execution ends before the transaction block
     <span class="phpdocumentor-signature__name">$readonly</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
-
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
 
 </article>
                     <article
@@ -858,7 +1106,7 @@ which uses that connection if script execution ends before the transaction block
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
@@ -870,10 +1118,10 @@ which uses that connection if script execution ends before the transaction block
     <span class="phpdocumentor-signature__name">$readTimeout</span>
      = <span class="phpdocumentor-signature__default-value">90</span></code>
 
-
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
@@ -884,15 +1132,15 @@ which uses that connection if script execution ends before the transaction block
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><a href="https://dev.mysql.com/doc/c-api/8.0/en/mysql-options.html"><abbr title="https://dev.mysql.com/doc/c-api/8.0/en/mysql-options.html">https://dev.mysql.com/doc/c-api/8.0/en/mysql-options.html</abbr></a></span>
-
-
+                                        
+                                             
                                     </dd>
                             <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">see</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><a href="https://github.com/php/php-src/blob/12ab4cbd00e0dae52a5db98dda6da885acb408f6/"><abbr title="https://github.com/php/php-src/blob/12ab4cbd00e0dae52a5db98dda6da885acb408f6/">https://github.com/php/php-src/blob/12ab4cbd00e0dae52a5db98dda6da885acb408f6/</abbr></a></span>
-
+                                        
                                                  <section class="phpdocumentor-description"><p>ext/mysqli/mysqli.c#L654</p>
 </section>
 
@@ -902,7 +1150,7 @@ which uses that connection if script execution ends before the transaction block
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><a href="https://github.com/php/php-src/blob/a03c1ed7aa2325d91595dcf9371297ab45543517/"><abbr title="https://github.com/php/php-src/blob/a03c1ed7aa2325d91595dcf9371297ab45543517/">https://github.com/php/php-src/blob/a03c1ed7aa2325d91595dcf9371297ab45543517/</abbr></a></span>
-
+                                        
                                                  <section class="phpdocumentor-description"><p>ext/mysqli/tests/mysqli_constants.phpt#L24</p>
 </section>
 
@@ -926,7 +1174,7 @@ which uses that connection if script execution ends before the transaction block
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -940,10 +1188,10 @@ X = 0, not enabled.</p>
     <span class="phpdocumentor-signature__name">$serverSideSelectTimeout</span>
      = <span class="phpdocumentor-signature__default-value">89</span></code>
 
-
+    
         <section class="phpdocumentor-description"></section>
 
-
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
@@ -954,8 +1202,8 @@ X = 0, not enabled.</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                     <span class="phpdocumentor-tag-link"><a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_max_execution_time"><abbr title="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_max_execution_time">https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_max_execution_time</abbr></a></span>
-
-
+                                        
+                                             
                                     </dd>
                         </dl>
 
@@ -976,10 +1224,11 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
+        <p class="phpdocumentor-summary">Set session time zone</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -987,11 +1236,32 @@ X = 0, not enabled.</p>
     <span class="phpdocumentor-signature__name">$timeZone</span>
      = <span class="phpdocumentor-signature__default-value">&#039;UTC&#039;</span></code>
 
-        <section class="phpdocumentor-description"></section>
+        <section class="phpdocumentor-description"><p>SET time_zone = timezone;</p>
+<ul>
+<li>As the value 'SYSTEM', indicating that the server time zone is the same as the system time zone.</li>
+<li>As a string, an offset from UTC of the form [H]H:MM, prefixed with a + or -, such as '+10:00', '-6:00'
+Prior to MySQL 8.0.19, this value had to be in the range '-12:59' to '+13:00'</li>
+<li>As a named time zone, such as 'Europe/Helsinki', 'US/Eastern', 'MET', or 'UTC'.</li>
+</ul>
+</section>
 
         <section class="phpdocumentor-description"></section>
 
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://dev.mysql.com/doc/refman/8.0/en/time-zone-support.html"><abbr title="https://dev.mysql.com/doc/refman/8.0/en/time-zone-support.html">https://dev.mysql.com/doc/refman/8.0/en/time-zone-support.html</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
 
 </article>
             </section>
@@ -1014,25 +1284,58 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">211</span>
+    <span class="phpdocumentor-element-found-in__line">298</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getCharset</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getClientErrorLevel">
+        getClientErrorLevel()
+        <a href="classes/sql-MydbOptions.html#method_getClientErrorLevel" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">262</span>
 
+    </aside>
 
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getClientErrorLevel</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1047,25 +1350,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getConnectTimeout</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1080,58 +1383,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">141</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getErrorReporting</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getInternalClientErrorLevel">
-        getInternalClientErrorLevel()
-        <a href="classes/sql-MydbOptions.html#method_getInternalClientErrorLevel" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">181</span>
-
-    </aside>
-
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getInternalClientErrorLevel</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1146,25 +1416,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getNetworkBufferSize</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1179,25 +1449,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">171</span>
+    <span class="phpdocumentor-element-found-in__line">246</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getNetworkReadBuffer</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1212,25 +1482,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getNonInteractiveTimeout</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1245,25 +1515,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">151</span>
+    <span class="phpdocumentor-element-found-in__line">219</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getReadTimeout</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1278,25 +1548,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">121</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getServerSideSelectTimeout</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1311,25 +1581,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">191</span>
+    <span class="phpdocumentor-element-found-in__line">278</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getTimeZone</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1344,25 +1614,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">201</span>
+    <span class="phpdocumentor-element-found-in__line">288</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isAutocommit</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1377,25 +1647,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isPersistent</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1410,25 +1680,25 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">318</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isReadonly</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-
-
+    
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1443,11 +1713,11 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">206</span>
+    <span class="phpdocumentor-element-found-in__line">293</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setAutocommit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$autocommit</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1466,13 +1736,13 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1487,11 +1757,11 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">216</span>
+    <span class="phpdocumentor-element-found-in__line">303</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setCharset</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$charset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1510,13 +1780,70 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setClientErrorLevel">
+        setClientErrorLevel()
+        <a href="classes/sql-MydbOptions.html#method_setClientErrorLevel" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">270</span>
 
+    </aside>
 
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setClientErrorLevel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mysqliReport</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$mysqliReport</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/sql-MydbException-OptionException.html"><abbr title="\sql\MydbException\OptionException">OptionException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1531,11 +1858,11 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">204</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setConnectTimeout</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$seconds</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1554,13 +1881,13 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1575,11 +1902,11 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">146</span>
+    <span class="phpdocumentor-element-found-in__line">214</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setErrorReporting</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errorReporting</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1598,57 +1925,13 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setInternalClientErrorLevel">
-        setInternalClientErrorLevel()
-        <a href="classes/sql-MydbOptions.html#method_setInternalClientErrorLevel" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">186</span>
-
-    </aside>
-
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setInternalClientErrorLevel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$internalClientErrorLevel</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$internalClientErrorLevel</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1663,36 +1946,50 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">166</span>
+    <span class="phpdocumentor-element-found-in__line">238</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setNetworkBufferSize</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$networkBufferSize</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">setNetworkBufferSize</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bytes</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$networkBufferSize</span>
+                <span class="phpdocumentor-signature__argument__name">$bytes</span>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>bytes</p>
+</section>
 
             </dd>
             </dl>
 
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/sql-MydbException-OptionException.html"><abbr title="\sql\MydbException\OptionException">OptionException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1707,21 +2004,20 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">254</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setNetworkReadBuffer</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$networkReadBuffer</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">setNetworkReadBuffer</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$bytes</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$networkReadBuffer</span>
+                <span class="phpdocumentor-signature__argument__name">$bytes</span>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -1730,13 +2026,27 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/sql-MydbException-OptionException.html"><abbr title="\sql\MydbException\OptionException">OptionException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1751,11 +2061,11 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">184</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setNonInteractiveTimeout</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$nonInteractiveTimeout</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1774,13 +2084,13 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1795,11 +2105,11 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">226</span>
+    <span class="phpdocumentor-element-found-in__line">313</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setPersistent</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$persistent</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1818,13 +2128,13 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1839,11 +2149,11 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">323</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setReadonly</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$readonly</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1862,13 +2172,13 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1883,21 +2193,21 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">224</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setReadTimeout</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$readTimeout</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">setReadTimeout</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$seconds</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$readTimeout</span>
+                <span class="phpdocumentor-signature__argument__name">$seconds</span>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -1906,13 +2216,13 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1927,11 +2237,11 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">126</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setServerSideSelectTimeout</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$seconds</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1950,13 +2260,13 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -1971,11 +2281,11 @@ X = 0, not enabled.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">283</span>
 
     </aside>
 
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setTimeZone</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$timeZone</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -1994,17 +2304,17 @@ X = 0, not enabled.</p>
             </dd>
             </dl>
 
-
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-
-
+        
+    
 </article>
             </section>
 
-
+        
     <script type="text/javascript">
         function loadExternalCodeSnippets(line) {
             Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach((pre) => {
