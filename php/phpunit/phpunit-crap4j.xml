@@ -1,0 +1,1709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crap_result>
+  <project/>
+  <timestamp>2022-11-12 11:21:40</timestamp>
+  <stats>
+    <name>Method Crap Stats</name>
+    <methodCount>154</methodCount>
+    <crapMethodCount>0</crapMethodCount>
+    <crapLoad>0</crapLoad>
+    <totalCrap>387.18</totalCrap>
+    <crapMethodPercent>0</crapMethodPercent>
+  </stats>
+  <methods>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(sql\MydbCredentialsInterface $credentials, Psr\Log\LoggerInterface $logger, ?sql\MydbOptionsInterface $options, ?sql\MydbMysqliInterface $mysqli, ?sql\MydbEnvironmentInterface $environment, ?sql\MydbQueryBuilderInterface $queryBuilder)</methodSignature>
+      <fullMethod>__construct(sql\MydbCredentialsInterface $credentials, Psr\Log\LoggerInterface $logger, ?sql\MydbOptionsInterface $options, ?sql\MydbMysqliInterface $mysqli, ?sql\MydbEnvironmentInterface $environment, ?sql\MydbQueryBuilderInterface $queryBuilder)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>__destruct</methodName>
+      <methodSignature>__destruct()</methodSignature>
+      <fullMethod>__destruct()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>async</methodName>
+      <methodSignature>async(string $command): void</methodSignature>
+      <fullMethod>async(string $command): void</fullMethod>
+      <crap>7</crap>
+      <complexity>7</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>open</methodName>
+      <methodSignature>open(int $retry): bool</methodSignature>
+      <fullMethod>open(int $retry): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>query</methodName>
+      <methodSignature>query(string $query): ?array</methodSignature>
+      <fullMethod>query(string $query): ?array</fullMethod>
+      <crap>7.05</crap>
+      <complexity>6</complexity>
+      <coverage>69.23</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>command</methodName>
+      <methodSignature>command(string $query): bool</methodSignature>
+      <fullMethod>command(string $query): bool</fullMethod>
+      <crap>3.03</crap>
+      <complexity>3</complexity>
+      <coverage>85.71</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>getEnumValues</methodName>
+      <methodSignature>getEnumValues(string $table, string $column): array</methodSignature>
+      <fullMethod>getEnumValues(string $table, string $column): array</fullMethod>
+      <crap>6.05</crap>
+      <complexity>6</complexity>
+      <coverage>88.89</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>escape</methodName>
+      <methodSignature>escape($unescaped, string $quote): string</methodSignature>
+      <fullMethod>escape($unescaped, string $quote): string</fullMethod>
+      <crap>2.15</crap>
+      <complexity>2</complexity>
+      <coverage>66.67</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>getPrimaryKey</methodName>
+      <methodSignature>getPrimaryKey(string $table): ?string</methodSignature>
+      <fullMethod>getPrimaryKey(string $table): ?string</fullMethod>
+      <crap>6.73</crap>
+      <complexity>6</complexity>
+      <coverage>72.73</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>beginTransaction</methodName>
+      <methodSignature>beginTransaction(): void</methodSignature>
+      <fullMethod>beginTransaction(): void</fullMethod>
+      <crap>5.03</crap>
+      <complexity>5</complexity>
+      <coverage>88.89</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>rollbackTransaction</methodName>
+      <methodSignature>rollbackTransaction(): void</methodSignature>
+      <fullMethod>rollbackTransaction(): void</fullMethod>
+      <crap>3.07</crap>
+      <complexity>3</complexity>
+      <coverage>80</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>commitTransaction</methodName>
+      <methodSignature>commitTransaction(): void</methodSignature>
+      <fullMethod>commitTransaction(): void</fullMethod>
+      <crap>3.07</crap>
+      <complexity>3</complexity>
+      <coverage>80</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>close</methodName>
+      <methodSignature>close(): void</methodSignature>
+      <fullMethod>close(): void</fullMethod>
+      <crap>14.4</crap>
+      <complexity>10</complexity>
+      <coverage>64.71</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>replace</methodName>
+      <methodSignature>replace(string $query): ?string</methodSignature>
+      <fullMethod>replace(string $query): ?string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>insert</methodName>
+      <methodSignature>insert(string $query): ?string</methodSignature>
+      <fullMethod>insert(string $query): ?string</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>select</methodName>
+      <methodSignature>select(string $query): ?array</methodSignature>
+      <fullMethod>select(string $query): ?array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>delete</methodName>
+      <methodSignature>delete(string $query): ?int</methodSignature>
+      <fullMethod>delete(string $query): ?int</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>update</methodName>
+      <methodSignature>update(string $query): ?int</methodSignature>
+      <fullMethod>update(string $query): ?int</fullMethod>
+      <crap>3.33</crap>
+      <complexity>3</complexity>
+      <coverage>66.67</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>deleteWhere</methodName>
+      <methodSignature>deleteWhere(array $whereFields, string $table, array $whereNotFields): ?int</methodSignature>
+      <fullMethod>deleteWhere(array $whereFields, string $table, array $whereNotFields): ?int</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>updateWhere</methodName>
+      <methodSignature>updateWhere(array $update, array $whereFields, string $table, array $whereNotFields): bool</methodSignature>
+      <fullMethod>updateWhere(array $update, array $whereFields, string $table, array $whereNotFields): bool</fullMethod>
+      <crap>3.07</crap>
+      <complexity>3</complexity>
+      <coverage>80</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>updateWhereMany</methodName>
+      <methodSignature>updateWhereMany(array $columnSetWhere, array $where, string $table): void</methodSignature>
+      <fullMethod>updateWhereMany(array $columnSetWhere, array $where, string $table): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>insertMany</methodName>
+      <methodSignature>insertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): void</methodSignature>
+      <fullMethod>insertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>replaceOne</methodName>
+      <methodSignature>replaceOne(array $data, string $table): ?string</methodSignature>
+      <fullMethod>replaceOne(array $data, string $table): ?string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>insertOne</methodName>
+      <methodSignature>insertOne(array $data, string $table): ?string</methodSignature>
+      <fullMethod>insertOne(array $data, string $table): ?string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>sendClientRequest</methodName>
+      <methodSignature>sendClientRequest(string $query): bool</methodSignature>
+      <fullMethod>sendClientRequest(string $query): bool</fullMethod>
+      <crap>2.01</crap>
+      <complexity>2</complexity>
+      <coverage>85.71</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>readServerResponse</methodName>
+      <methodSignature>readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResult</methodSignature>
+      <fullMethod>readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResult</fullMethod>
+      <crap>6.13</crap>
+      <complexity>6</complexity>
+      <coverage>84.62</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>onWarning</methodName>
+      <methodSignature>onWarning(string $warningMessage, ?string $sql): void</methodSignature>
+      <fullMethod>onWarning(string $warningMessage, ?string $sql): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>onError</methodName>
+      <methodSignature>onError(sql\MydbException $exception, ?string $sql): void</methodSignature>
+      <fullMethod>onError(sql\MydbException $exception, ?string $sql): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>afterConnectionSuccess</methodName>
+      <methodSignature>afterConnectionSuccess(): void</methodSignature>
+      <fullMethod>afterConnectionSuccess(): void</fullMethod>
+      <crap>5.2</crap>
+      <complexity>5</complexity>
+      <coverage>80</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>connect</methodName>
+      <methodSignature>connect(int $retry): bool</methodSignature>
+      <fullMethod>connect(int $retry): bool</fullMethod>
+      <crap>12</crap>
+      <complexity>12</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbCredentials</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(string $host, string $username, string $passwd, string $dbname, ?int $port, ?string $socket, int $flags)</methodSignature>
+      <fullMethod>__construct(string $host, string $username, string $passwd, string $dbname, ?int $port, ?string $socket, int $flags)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbCredentials</className>
+      <methodName>getHost</methodName>
+      <methodSignature>getHost(): string</methodSignature>
+      <fullMethod>getHost(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbCredentials</className>
+      <methodName>getUsername</methodName>
+      <methodSignature>getUsername(): string</methodSignature>
+      <fullMethod>getUsername(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbCredentials</className>
+      <methodName>getPasswd</methodName>
+      <methodSignature>getPasswd(): string</methodSignature>
+      <fullMethod>getPasswd(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbCredentials</className>
+      <methodName>getDbname</methodName>
+      <methodSignature>getDbname(): string</methodSignature>
+      <fullMethod>getDbname(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbCredentials</className>
+      <methodName>getPort</methodName>
+      <methodSignature>getPort(): ?int</methodSignature>
+      <fullMethod>getPort(): ?int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbCredentials</className>
+      <methodName>getSocket</methodName>
+      <methodSignature>getSocket(): ?string</methodSignature>
+      <fullMethod>getSocket(): ?string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbCredentials</className>
+      <methodName>getFlags</methodName>
+      <methodSignature>getFlags(): int</methodSignature>
+      <fullMethod>getFlags(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEnvironment</className>
+      <methodName>gc_collect_cycles</methodName>
+      <methodSignature>gc_collect_cycles(): void</methodSignature>
+      <fullMethod>gc_collect_cycles(): void</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEnvironment</className>
+      <methodName>restore_error_handler</methodName>
+      <methodSignature>restore_error_handler(): void</methodSignature>
+      <fullMethod>restore_error_handler(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEnvironment</className>
+      <methodName>set_error_handler</methodName>
+      <methodSignature>set_error_handler(?callable $callback, int $error_levels): ?callable</methodSignature>
+      <fullMethod>set_error_handler(?callable $callback, int $error_levels): ?callable</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEnvironment</className>
+      <methodName>setMysqlndNetReadTimeout</methodName>
+      <methodSignature>setMysqlndNetReadTimeout(string $timeoutSeconds): bool</methodSignature>
+      <fullMethod>setMysqlndNetReadTimeout(string $timeoutSeconds): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEnvironment</className>
+      <methodName>error_reporting</methodName>
+      <methodSignature>error_reporting(int $level): int</methodSignature>
+      <fullMethod>error_reporting(int $level): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEnvironment</className>
+      <methodName>ignore_user_abort</methodName>
+      <methodSignature>ignore_user_abort(): int</methodSignature>
+      <fullMethod>ignore_user_abort(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEnvironment</className>
+      <methodName>ini_set</methodName>
+      <methodSignature>ini_set(string $key, string $value): string</methodSignature>
+      <fullMethod>ini_set(string $key, string $value): string</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEnvironment</className>
+      <methodName>endSignalsTrap</methodName>
+      <methodSignature>endSignalsTrap(): ?array</methodSignature>
+      <fullMethod>endSignalsTrap(): ?array</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEnvironment</className>
+      <methodName>startSignalsTrap</methodName>
+      <methodSignature>startSignalsTrap(): void</methodSignature>
+      <fullMethod>startSignalsTrap(): void</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEnvironment</className>
+      <methodName>getNullErrorHandler</methodName>
+      <methodSignature>getNullErrorHandler(): callable</methodSignature>
+      <fullMethod>getNullErrorHandler(): callable</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbException</package>
+      <className>sql\MydbException\QueryBuilderEscapeException</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(string $message, int $code, ?Throwable $previous)</methodSignature>
+      <fullMethod>__construct(string $message, int $code, ?Throwable $previous)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbExpression</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(string $input)</methodSignature>
+      <fullMethod>__construct(string $input)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbExpression</className>
+      <methodName>__toString</methodName>
+      <methodSignature>__toString(): string</methodSignature>
+      <fullMethod>__toString(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct($stdout, $stderr, string $stdeol)</methodSignature>
+      <fullMethod>__construct($stdout, $stderr, string $stdeol)</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>__destruct</methodName>
+      <methodSignature>__destruct()</methodSignature>
+      <fullMethod>__destruct()</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>error</methodName>
+      <methodSignature>error($message, array $context): void</methodSignature>
+      <fullMethod>error($message, array $context): void</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>log</methodName>
+      <methodSignature>log($level, $message, array $context): void</methodSignature>
+      <fullMethod>log($level, $message, array $context): void</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>warning</methodName>
+      <methodSignature>warning($message, array $context): void</methodSignature>
+      <fullMethod>warning($message, array $context): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>emergency</methodName>
+      <methodSignature>emergency($message, array $context): void</methodSignature>
+      <fullMethod>emergency($message, array $context): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>alert</methodName>
+      <methodSignature>alert($message, array $context): void</methodSignature>
+      <fullMethod>alert($message, array $context): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>critical</methodName>
+      <methodSignature>critical($message, array $context): void</methodSignature>
+      <fullMethod>critical($message, array $context): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>notice</methodName>
+      <methodSignature>notice($message, array $context): void</methodSignature>
+      <fullMethod>notice($message, array $context): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>info</methodName>
+      <methodSignature>info($message, array $context): void</methodSignature>
+      <fullMethod>info($message, array $context): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>debug</methodName>
+      <methodSignature>debug($message, array $context): void</methodSignature>
+      <fullMethod>debug($message, array $context): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>checkStreamResource</methodName>
+      <methodSignature>checkStreamResource($stream): void</methodSignature>
+      <fullMethod>checkStreamResource($stream): void</fullMethod>
+      <crap>7</crap>
+      <complexity>7</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>writeOutput</methodName>
+      <methodSignature>writeOutput($stream, string $data): void</methodSignature>
+      <fullMethod>writeOutput($stream, string $data): void</fullMethod>
+      <crap>9</crap>
+      <complexity>9</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>fwrite</methodName>
+      <methodSignature>fwrite($stream, string $data): ?int</methodSignature>
+      <fullMethod>fwrite($stream, string $data): ?int</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>formatter</methodName>
+      <methodSignature>formatter($var): string</methodSignature>
+      <fullMethod>formatter($var): string</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(?mysqli $resource)</methodSignature>
+      <fullMethod>__construct(?mysqli $resource)</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>init</methodName>
+      <methodSignature>init(): bool</methodSignature>
+      <fullMethod>init(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>setTransportOptions</methodName>
+      <methodSignature>setTransportOptions(sql\MydbOptionsInterface $options, sql\MydbEnvironmentInterface $environment): bool</methodSignature>
+      <fullMethod>setTransportOptions(sql\MydbOptionsInterface $options, sql\MydbEnvironmentInterface $environment): bool</fullMethod>
+      <crap>8</crap>
+      <complexity>8</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>isTransactionOpen</methodName>
+      <methodSignature>isTransactionOpen(): bool</methodSignature>
+      <fullMethod>isTransactionOpen(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>isConnected</methodName>
+      <methodSignature>isConnected(): bool</methodSignature>
+      <fullMethod>isConnected(): bool</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getMysqli</methodName>
+      <methodSignature>getMysqli(): ?mysqli</methodSignature>
+      <fullMethod>getMysqli(): ?mysqli</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>realQuery</methodName>
+      <methodSignature>realQuery(string $query): bool</methodSignature>
+      <fullMethod>realQuery(string $query): bool</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>readServerResponse</methodName>
+      <methodSignature>readServerResponse(sql\MydbEnvironmentInterface $environment): ?sql\MydbMysqli\MydbMysqliResult</methodSignature>
+      <fullMethod>readServerResponse(sql\MydbEnvironmentInterface $environment): ?sql\MydbMysqli\MydbMysqliResult</fullMethod>
+      <crap>8</crap>
+      <complexity>8</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>realEscapeString</methodName>
+      <methodSignature>realEscapeString(string $string): ?string</methodSignature>
+      <fullMethod>realEscapeString(string $string): ?string</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>beginTransactionReadwrite</methodName>
+      <methodSignature>beginTransactionReadwrite(): bool</methodSignature>
+      <fullMethod>beginTransactionReadwrite(): bool</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>beginTransactionReadonly</methodName>
+      <methodSignature>beginTransactionReadonly(): bool</methodSignature>
+      <fullMethod>beginTransactionReadonly(): bool</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>rollback</methodName>
+      <methodSignature>rollback(): bool</methodSignature>
+      <fullMethod>rollback(): bool</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>commitAndRelease</methodName>
+      <methodSignature>commitAndRelease(): bool</methodSignature>
+      <fullMethod>commitAndRelease(): bool</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>commit</methodName>
+      <methodSignature>commit(): bool</methodSignature>
+      <fullMethod>commit(): bool</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>realConnect</methodName>
+      <methodSignature>realConnect(string $host, string $username, string $password, string $dbname, ?int $port, ?string $socket, int $flags): bool</methodSignature>
+      <fullMethod>realConnect(string $host, string $username, string $password, string $dbname, ?int $port, ?string $socket, int $flags): bool</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>mysqliReport</methodName>
+      <methodSignature>mysqliReport(int $level): bool</methodSignature>
+      <fullMethod>mysqliReport(int $level): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>mysqliQueryAsync</methodName>
+      <methodSignature>mysqliQueryAsync(string $command): bool</methodSignature>
+      <fullMethod>mysqliQueryAsync(string $command): bool</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>close</methodName>
+      <methodSignature>close(): bool</methodSignature>
+      <fullMethod>close(): bool</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getConnectErrno</methodName>
+      <methodSignature>getConnectErrno(): ?int</methodSignature>
+      <fullMethod>getConnectErrno(): ?int</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getConnectError</methodName>
+      <methodSignature>getConnectError(): ?string</methodSignature>
+      <fullMethod>getConnectError(): ?string</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>isServerGone</methodName>
+      <methodSignature>isServerGone(): bool</methodSignature>
+      <fullMethod>isServerGone(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getError</methodName>
+      <methodSignature>getError(): ?string</methodSignature>
+      <fullMethod>getError(): ?string</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getErrNo</methodName>
+      <methodSignature>getErrNo(): ?int</methodSignature>
+      <fullMethod>getErrNo(): ?int</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getAffectedRows</methodName>
+      <methodSignature>getAffectedRows(): ?int</methodSignature>
+      <fullMethod>getAffectedRows(): ?int</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getInsertId</methodName>
+      <methodSignature>getInsertId()</methodSignature>
+      <fullMethod>getInsertId()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>autocommit</methodName>
+      <methodSignature>autocommit(bool $enable): bool</methodSignature>
+      <fullMethod>autocommit(bool $enable): bool</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>extractServerResponse</methodName>
+      <methodSignature>extractServerResponse(sql\MydbEnvironmentInterface $environment, array $events): ?mysqli_result</methodSignature>
+      <fullMethod>extractServerResponse(sql\MydbEnvironmentInterface $environment, array $events): ?mysqli_result</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getWarnings</methodName>
+      <methodSignature>getWarnings(): array</methodSignature>
+      <fullMethod>getWarnings(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getFieldCount</methodName>
+      <methodSignature>getFieldCount(): ?int</methodSignature>
+      <fullMethod>getFieldCount(): ?int</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getWarningCount</methodName>
+      <methodSignature>getWarningCount(): ?int</methodSignature>
+      <fullMethod>getWarningCount(): ?int</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbMysqli</package>
+      <className>sql\MydbMysqli\MydbMysqliResult</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(?mysqli_result $result, array $warnings, int $fieldsCount)</methodSignature>
+      <fullMethod>__construct(?mysqli_result $result, array $warnings, int $fieldsCount)</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbMysqli</package>
+      <className>sql\MydbMysqli\MydbMysqliResult</className>
+      <methodName>getFieldCount</methodName>
+      <methodSignature>getFieldCount(): int</methodSignature>
+      <fullMethod>getFieldCount(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbMysqli</package>
+      <className>sql\MydbMysqli\MydbMysqliResult</className>
+      <methodName>getWarnings</methodName>
+      <methodSignature>getWarnings(): array</methodSignature>
+      <fullMethod>getWarnings(): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbMysqli</package>
+      <className>sql\MydbMysqli\MydbMysqliResult</className>
+      <methodName>setErrorMessage</methodName>
+      <methodSignature>setErrorMessage(string $errorMessage): void</methodSignature>
+      <fullMethod>setErrorMessage(string $errorMessage): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbMysqli</package>
+      <className>sql\MydbMysqli\MydbMysqliResult</className>
+      <methodName>setErrorNumber</methodName>
+      <methodSignature>setErrorNumber(int $errorNumber): void</methodSignature>
+      <fullMethod>setErrorNumber(int $errorNumber): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbMysqli</package>
+      <className>sql\MydbMysqli\MydbMysqliResult</className>
+      <methodName>getError</methodName>
+      <methodSignature>getError(): ?string</methodSignature>
+      <fullMethod>getError(): ?string</fullMethod>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbMysqli</package>
+      <className>sql\MydbMysqli\MydbMysqliResult</className>
+      <methodName>getResult</methodName>
+      <methodSignature>getResult(): ?array</methodSignature>
+      <fullMethod>getResult(): ?array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getNonInteractiveTimeout</methodName>
+      <methodSignature>getNonInteractiveTimeout(): int</methodSignature>
+      <fullMethod>getNonInteractiveTimeout(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setNonInteractiveTimeout</methodName>
+      <methodSignature>setNonInteractiveTimeout(int $nonInteractiveTimeout): void</methodSignature>
+      <fullMethod>setNonInteractiveTimeout(int $nonInteractiveTimeout): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getServerSideSelectTimeout</methodName>
+      <methodSignature>getServerSideSelectTimeout(): int</methodSignature>
+      <fullMethod>getServerSideSelectTimeout(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setServerSideSelectTimeout</methodName>
+      <methodSignature>setServerSideSelectTimeout(int $seconds): void</methodSignature>
+      <fullMethod>setServerSideSelectTimeout(int $seconds): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getConnectTimeout</methodName>
+      <methodSignature>getConnectTimeout(): int</methodSignature>
+      <fullMethod>getConnectTimeout(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setConnectTimeout</methodName>
+      <methodSignature>setConnectTimeout(int $seconds): void</methodSignature>
+      <fullMethod>setConnectTimeout(int $seconds): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getErrorReporting</methodName>
+      <methodSignature>getErrorReporting(): int</methodSignature>
+      <fullMethod>getErrorReporting(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setErrorReporting</methodName>
+      <methodSignature>setErrorReporting(int $errorReporting): void</methodSignature>
+      <fullMethod>setErrorReporting(int $errorReporting): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getReadTimeout</methodName>
+      <methodSignature>getReadTimeout(): int</methodSignature>
+      <fullMethod>getReadTimeout(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setReadTimeout</methodName>
+      <methodSignature>setReadTimeout(int $seconds): void</methodSignature>
+      <fullMethod>setReadTimeout(int $seconds): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getNetworkBufferSize</methodName>
+      <methodSignature>getNetworkBufferSize(): int</methodSignature>
+      <fullMethod>getNetworkBufferSize(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setNetworkBufferSize</methodName>
+      <methodSignature>setNetworkBufferSize(int $bytes): void</methodSignature>
+      <fullMethod>setNetworkBufferSize(int $bytes): void</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getNetworkReadBuffer</methodName>
+      <methodSignature>getNetworkReadBuffer(): int</methodSignature>
+      <fullMethod>getNetworkReadBuffer(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setNetworkReadBuffer</methodName>
+      <methodSignature>setNetworkReadBuffer(int $bytes): void</methodSignature>
+      <fullMethod>setNetworkReadBuffer(int $bytes): void</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getClientErrorLevel</methodName>
+      <methodSignature>getClientErrorLevel(): int</methodSignature>
+      <fullMethod>getClientErrorLevel(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setClientErrorLevel</methodName>
+      <methodSignature>setClientErrorLevel(int $mysqliReport): void</methodSignature>
+      <fullMethod>setClientErrorLevel(int $mysqliReport): void</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getTimeZone</methodName>
+      <methodSignature>getTimeZone(): string</methodSignature>
+      <fullMethod>getTimeZone(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setTimeZone</methodName>
+      <methodSignature>setTimeZone(string $timeZone): void</methodSignature>
+      <fullMethod>setTimeZone(string $timeZone): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>isAutocommit</methodName>
+      <methodSignature>isAutocommit(): bool</methodSignature>
+      <fullMethod>isAutocommit(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setAutocommit</methodName>
+      <methodSignature>setAutocommit(bool $autocommit): void</methodSignature>
+      <fullMethod>setAutocommit(bool $autocommit): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getCharset</methodName>
+      <methodSignature>getCharset(): string</methodSignature>
+      <fullMethod>getCharset(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setCharset</methodName>
+      <methodSignature>setCharset(string $charset): void</methodSignature>
+      <fullMethod>setCharset(string $charset): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>isPersistent</methodName>
+      <methodSignature>isPersistent(): bool</methodSignature>
+      <fullMethod>isPersistent(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setPersistent</methodName>
+      <methodSignature>setPersistent(bool $persistent): void</methodSignature>
+      <fullMethod>setPersistent(bool $persistent): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>isReadonly</methodName>
+      <methodSignature>isReadonly(): bool</methodSignature>
+      <fullMethod>isReadonly(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setReadonly</methodName>
+      <methodSignature>setReadonly(bool $readonly): void</methodSignature>
+      <fullMethod>setReadonly(bool $readonly): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(sql\MydbMysqli\MydbMysqliEscapeStringInterface $mysqli)</methodSignature>
+      <fullMethod>__construct(sql\MydbMysqli\MydbMysqliEscapeStringInterface $mysqli)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
+      <methodName>showColumnsLike</methodName>
+      <methodSignature>showColumnsLike(string $table, string $column): string</methodSignature>
+      <fullMethod>showColumnsLike(string $table, string $column): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
+      <methodName>showKeys</methodName>
+      <methodSignature>showKeys(string $table): string</methodSignature>
+      <fullMethod>showKeys(string $table): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
+      <methodName>insertOne</methodName>
+      <methodSignature>insertOne(array $data, string $table, string $type): string</methodSignature>
+      <fullMethod>insertOne(array $data, string $table, string $type): string</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
+      <methodName>buildUpdateWhereMany</methodName>
+      <methodSignature>buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string</methodSignature>
+      <fullMethod>buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string</fullMethod>
+      <crap>5.01</crap>
+      <complexity>5</complexity>
+      <coverage>93.33</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
+      <methodName>buildUpdateWhere</methodName>
+      <methodSignature>buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string</methodSignature>
+      <fullMethod>buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string</fullMethod>
+      <crap>4.02</crap>
+      <complexity>4</complexity>
+      <coverage>88.89</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
+      <methodName>buildDeleteWhere</methodName>
+      <methodSignature>buildDeleteWhere(string $table, array $fields, array $negativeFields): ?string</methodSignature>
+      <fullMethod>buildDeleteWhere(string $table, array $fields, array $negativeFields): ?string</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
+      <methodName>buildWhere</methodName>
+      <methodSignature>buildWhere(array $fields, array $negativeFields, array $likeFields): string</methodSignature>
+      <fullMethod>buildWhere(array $fields, array $negativeFields, array $likeFields): string</fullMethod>
+      <crap>17.93</crap>
+      <complexity>15</complexity>
+      <coverage>76.47</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
+      <methodName>buildInsertMany</methodName>
+      <methodSignature>buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string</methodSignature>
+      <fullMethod>buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string</fullMethod>
+      <crap>3.01</crap>
+      <complexity>3</complexity>
+      <coverage>90.91</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
+      <methodName>escape</methodName>
+      <methodSignature>escape($unescaped, string $quote): string</methodSignature>
+      <fullMethod>escape($unescaped, string $quote): string</fullMethod>
+      <crap>15.89</crap>
+      <complexity>15</complexity>
+      <coverage>84.21</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>serialize</methodName>
+      <methodSignature>serialize(): ?string</methodSignature>
+      <fullMethod>serialize(): ?string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>unserialize</methodName>
+      <methodSignature>unserialize($data): void</methodSignature>
+      <fullMethod>unserialize($data): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>current</methodName>
+      <methodSignature>current(): ?sql\MydbInterface</methodSignature>
+      <fullMethod>current(): ?sql\MydbInterface</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>key</methodName>
+      <methodSignature>key(): ?string</methodSignature>
+      <fullMethod>key(): ?string</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>next</methodName>
+      <methodSignature>next(): void</methodSignature>
+      <fullMethod>next(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>rewind</methodName>
+      <methodSignature>rewind(): void</methodSignature>
+      <fullMethod>rewind(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>valid</methodName>
+      <methodSignature>valid(): bool</methodSignature>
+      <fullMethod>valid(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>count</methodName>
+      <methodSignature>count(): int</methodSignature>
+      <fullMethod>count(): int</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>offsetExists</methodName>
+      <methodSignature>offsetExists($offset): bool</methodSignature>
+      <fullMethod>offsetExists($offset): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>offsetGet</methodName>
+      <methodSignature>offsetGet($offset): sql\MydbInterface</methodSignature>
+      <fullMethod>offsetGet($offset): sql\MydbInterface</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>offsetSet</methodName>
+      <methodSignature>offsetSet($offset, $value): void</methodSignature>
+      <fullMethod>offsetSet($offset, $value): void</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>offsetUnset</methodName>
+      <methodSignature>offsetUnset($offset): void</methodSignature>
+      <fullMethod>offsetUnset($offset): void</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>__clone</methodName>
+      <methodSignature>__clone()</methodSignature>
+      <fullMethod>__clone()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>__serialize</methodName>
+      <methodSignature>__serialize(): array</methodSignature>
+      <fullMethod>__serialize(): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRegistry</className>
+      <methodName>__unserialize</methodName>
+      <methodSignature>__unserialize(array $data): void</methodSignature>
+      <fullMethod>__unserialize(array $data): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+  </methods>
+</crap_result>

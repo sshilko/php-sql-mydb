@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Test Documentation</title>
+        <style>
+            body {
+                text-rendering: optimizeLegibility;
+                font-variant-ligatures: common-ligatures;
+                font-kerning: normal;
+                margin-left: 2em;
+                background-color: #ffffff;
+                color: #000000;
+            }
+
+            body > ul > li {
+                font-family: Source Serif Pro, PT Sans, Trebuchet MS, Helvetica, Arial;
+                font-size: 2em;
+            }
+
+            h2 {
+                font-family: Tahoma, Helvetica, Arial;
+                font-size: 3em;
+            }
+
+            ul {
+                list-style: none;
+                margin-bottom: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="phpunit\AsyncTest">Async (phpunit\Async)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Async</li>
+            <li style="color: #555753;">✓ Async mock</li>
+            <li style="color: #555753;">✓ Async not connected</li>
+            <li style="color: #555753;">✓ Async readonly</li>
+            <li style="color: #555753;">✓ Async not autocommit</li>
+            <li style="color: #555753;">✓ Async transaction open</li>
+            <li style="color: #555753;">✓ Async failed command</li>
+            <li style="color: #555753;">✓ Async real</li>
+        </ul>
+        <h2 id="phpunit\DeleteTest">Delete (phpunit\Delete)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Delete</li>
+            <li style="color: #555753;">✓ Delete error</li>
+            <li style="color: #555753;">✓ Delete internal error</li>
+            <li style="color: #555753;">✓ Delete where</li>
+        </ul>
+        <h2 id="phpunit\ExceptionTest">Exception (phpunit\Exception)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Table does not exist</li>
+            <li style="color: #555753;">✓ Failed to connect</li>
+            <li style="color: #555753;">✓ Failed to connect after retry</li>
+            <li style="color: #555753;">✓ Failed to connect lazy</li>
+            <li style="color: #555753;">✓ My sql warning</li>
+            <li style="color: #555753;">✓ My sql error</li>
+        </ul>
+        <h2 id="phpunit\InsertTest">Insert (phpunit\Insert)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Replace</li>
+            <li style="color: #555753;">✓ Replace one</li>
+            <li style="color: #555753;">✓ Insert error</li>
+            <li style="color: #555753;">✓ Insert</li>
+            <li style="color: #555753;">✓ Insert many</li>
+            <li style="color: #555753;">✓ Insert one</li>
+        </ul>
+        <h2 id="phpunit\LoggerTest">Logger (phpunit\Logger)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Logger error</li>
+            <li style="color: #555753;">✓ Logger constructor out</li>
+            <li style="color: #555753;">✓ Logger constructor err</li>
+            <li style="color: #555753;">✓ Logger stream err end</li>
+            <li style="color: #555753;">✓ Logger stream out closed</li>
+            <li style="color: #555753;">✓ Logger stream err closed</li>
+            <li style="color: #555753;">✓ Logger stream out bad mode</li>
+            <li style="color: #555753;">✓ Logger stream err bad mode</li>
+            <li style="color: #555753;">✓ Logger stream out end</li>
+            <li style="color: #555753;">✓ Logger with strings with data set "nothing"</li>
+            <li style="color: #555753;">✓ Logger with strings with data set "nothing-array"</li>
+            <li style="color: #555753;">✓ Logger with strings with data set "nothing-error"</li>
+            <li style="color: #555753;">✓ Logger with strings with data set "something"</li>
+            <li style="color: #555753;">✓ Logger with strings with data set "chars"</li>
+            <li style="color: #555753;">✓ Logger with context</li>
+        </ul>
+        <h2 id="phpunit\MetaTest">Meta (phpunit\Meta)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Open</li>
+            <li style="color: #555753;">✓ Close</li>
+            <li style="color: #555753;">✓ Primary key</li>
+            <li style="color: #555753;">✓ Enum</li>
+            <li style="color: #555753;">✓ Set</li>
+            <li style="color: #555753;">✓ Escape</li>
+            <li style="color: #555753;">✓ Single quoted escape</li>
+            <li style="color: #555753;">✓ Double quoted escape</li>
+        </ul>
+        <h2 id="phpunit\MydbEnvironmentTest">Mydb Environment (phpunit\MydbEnvironment)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Signal sighup trap with data set "SIGHUP"</li>
+            <li style="color: #555753;">✓ Signal sighup trap with data set "SIGTERM"</li>
+            <li style="color: #555753;">✓ Signal sighup trap with data set "SIGINT"</li>
+            <li style="color: #555753;">✓ Signal sighup trap with data set "SIGINT,SIGTERM,SIGHUP"</li>
+        </ul>
+        <h2 id="phpunit\MydbExceptionTest">Mydb Exception (phpunit\MydbException)</h2>
+        <ul>
+            <li style="color: #555753;">✓ My exception</li>
+        </ul>
+        <h2 id="phpunit\MysqliTest">Mysqli (phpunit\Mysqli)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Reuse resource</li>
+            <li style="color: #555753;">✓ Options no init</li>
+            <li style="color: #555753;">✓ Query no init</li>
+            <li style="color: #555753;">✓ Read response no init</li>
+            <li style="color: #555753;">✓ Extract response no init</li>
+            <li style="color: #555753;">✓ Escape no init</li>
+            <li style="color: #555753;">✓ Transactions no init</li>
+            <li style="color: #555753;">✓ Async no init</li>
+            <li style="color: #555753;">✓ Close no init</li>
+            <li style="color: #555753;">✓ Affected rows no init</li>
+            <li style="color: #555753;">✓ Warnings no init</li>
+        </ul>
+        <h2 id="phpunit\OptionsTest">Options (phpunit\Options)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Non interactive timeouts</li>
+            <li style="color: #555753;">✓ Mysqli report</li>
+            <li style="color: #555753;">✓ Persistent</li>
+            <li style="color: #555753;">✓ Charset</li>
+            <li style="color: #555753;">✓ Autocommit</li>
+            <li style="color: #555753;">✓ Set time zone</li>
+            <li style="color: #555753;">✓ Mysqli report max</li>
+            <li style="color: #555753;">✓ Mysqli report min</li>
+            <li style="color: #555753;">✓ Set read buffer max</li>
+            <li style="color: #555753;">✓ Server side select timeouts</li>
+            <li style="color: #555753;">✓ Set read buffer min</li>
+            <li style="color: #555753;">✓ Set read buffer</li>
+            <li style="color: #555753;">✓ Network buffer max</li>
+            <li style="color: #555753;">✓ Network buffer min</li>
+            <li style="color: #555753;">✓ Network buffer</li>
+            <li style="color: #555753;">✓ Read timeout</li>
+            <li style="color: #555753;">✓ Error reporting</li>
+            <li style="color: #555753;">✓ Readonly</li>
+        </ul>
+        <h2 id="phpunit\RegistryTest">Registry (phpunit\Registry)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Registry empty 1</li>
+            <li style="color: #555753;">✓ Registry empty 2</li>
+            <li style="color: #555753;">✓ Registry empty 3</li>
+            <li style="color: #555753;">✓ Registry set</li>
+            <li style="color: #555753;">✓ Registry un set 1</li>
+            <li style="color: #555753;">✓ Registry un set 2</li>
+            <li style="color: #555753;">✓ Registry serialize 1</li>
+            <li style="color: #555753;">✓ Registry serialize 2</li>
+            <li style="color: #555753;">✓ Registry unserialize 1</li>
+            <li style="color: #555753;">✓ Registry unserialize 2</li>
+            <li style="color: #555753;">✓ Registry clone</li>
+        </ul>
+        <h2 id="phpunit\ResourceTest">Resource (phpunit\Resource)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Open</li>
+            <li style="color: #555753;">✓ Open close error</li>
+            <li style="color: #555753;">✓ Open autocommit failed</li>
+            <li style="color: #555753;">✓ Simple close</li>
+            <li style="color: #555753;">✓ Close not connected</li>
+            <li style="color: #555753;">✓ Will commit not persistent transaction when no autocommit and no transaction on close</li>
+            <li style="color: #555753;">✓ Will commit is persistent transaction when no autocommit and no transaction on close</li>
+            <li style="color: #555753;">✓ No gc when not connected</li>
+            <li style="color: #555753;">✓ Gc when connected</li>
+            <li style="color: #555753;">✓ Do no commit transaction when autocommit enabled on close</li>
+            <li style="color: #555753;">✓ Do no commit transaction when transaction explicitly started on close</li>
+        </ul>
+        <h2 id="phpunit\SelectTest">Select (phpunit\Select)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Simple select with data set "simple select all"</li>
+            <li style="color: #555753;">✓ Simple select with data set "complex select all"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select JOIN"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select UNION"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select ORDER BY"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select WHERE"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select COUNT"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select GROUP BY"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select HAVING"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select LIMIT"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select LIMIT OFFSET"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select ALL"</li>
+            <li style="color: #555753;">✓ Simple select with data set "simple select SQL_SMALL_RESULT"</li>
+        </ul>
+        <h2 id="phpunit\TransactionsTest">Transactions (phpunit\Transactions)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Begin transaction readonly real</li>
+            <li style="color: #555753;">✓ Begin transaction read write real</li>
+            <li style="color: #555753;">✓ Begin transaction readonly success</li>
+            <li style="color: #555753;">✓ Begin transaction readonly failure</li>
+            <li style="color: #555753;">✓ Begin transaction readwrite success</li>
+            <li style="color: #555753;">✓ Begin transaction readwrite failure</li>
+            <li style="color: #555753;">✓ Rollback transaction success</li>
+            <li style="color: #555753;">✓ Rollback transaction failure</li>
+            <li style="color: #555753;">✓ Commit transaction success</li>
+            <li style="color: #555753;">✓ Commit transaction failure</li>
+        </ul>
+        <h2 id="phpunit\UpdateTest">Update (phpunit\Update)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Update where</li>
+            <li style="color: #555753;">✓ Update</li>
+            <li style="color: #555753;">✓ Update many</li>
+        </ul>
+    </body>
+</html>

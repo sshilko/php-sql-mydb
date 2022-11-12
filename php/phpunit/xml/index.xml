@@ -1,0 +1,578 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <build time="Sat Nov 12 11:21:40 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+    <runtime name="PHP" version="7.4.33" url="https://secure.php.net/"/>
+    <driver name="xdebug" version="3.1.5"/>
+  </build>
+  <project source="/app/src/sql">
+    <tests>
+      <test name="phpunit\AsyncTest::testAsyncMock" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\AsyncTest::testAsyncNotConnected" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\AsyncTest::testAsyncReadonly" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\AsyncTest::testAsyncNotAutocommit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\AsyncTest::testAsyncTransactionOpen" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\AsyncTest::testAsyncFailedCommand" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\AsyncTest::testAsyncReal" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\DeleteTest::testDelete" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\DeleteTest::testDeleteError" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\DeleteTest::testDeleteInternalError" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\DeleteTest::testDeleteWhere" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ExceptionTest::testTableDoesNotExist" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ExceptionTest::testFailedToConnect" size="medium" result="0" status="PASSED"/>
+      <test name="phpunit\ExceptionTest::testFailedToConnectAfterRetry" size="medium" result="0" status="PASSED"/>
+      <test name="phpunit\ExceptionTest::testFailedToConnectLazy" size="medium" result="0" status="PASSED"/>
+      <test name="phpunit\ExceptionTest::testMySqlWarning" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ExceptionTest::testMySqlError" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\InsertTest::testReplace" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\InsertTest::testReplaceOne" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\InsertTest::testInsertError" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\InsertTest::testInsert" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\InsertTest::testInsertMany" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\InsertTest::testInsertOne" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerError" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerConstructorOut" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerConstructorErr" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerStreamErrEnd" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerStreamOutClosed" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerStreamErrClosed" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerStreamOutBadMode" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerStreamErrBadMode" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerStreamOutEnd" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;nothing&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;nothing-array&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;nothing-error&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;something&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;chars&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\LoggerTest::testLoggerWithContext" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MetaTest::testOpen" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MetaTest::testClose" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MetaTest::testPrimaryKey" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MetaTest::testEnum" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MetaTest::testSet" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MetaTest::testEscape" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MetaTest::testSingleQuotedEscape" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MetaTest::testDoubleQuotedEscape" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testReuseResource" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testOptionsNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testQueryNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testReadResponseNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testExtractResponseNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testEscapeNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testTransactionsNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testAsyncNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testCloseNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testAffectedRowsNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testWarningsNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testNonInteractiveTimeouts" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testMysqliReport" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testPersistent" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testCharset" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testAutocommit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testSetTimeZone" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testMysqliReportMax" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testMysqliReportMin" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testSetReadBufferMax" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testServerSideSelectTimeouts" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testSetReadBufferMin" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testSetReadBuffer" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testNetworkBufferMax" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testNetworkBufferMin" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testNetworkBuffer" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testReadTimeout" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testErrorReporting" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testReadonly" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistryEmpty1" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistryEmpty2" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistryEmpty3" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistrySet" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistryUnSet1" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistrySerialize1" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistrySerialize2" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistryUnserialize1" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistryUnserialize2" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistryClone" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testOpen" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testOpenCloseError" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testOpenAutocommitFailed" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testSimpleClose" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testCloseNotConnected" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testNoGcWhenNotConnected" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testGcWhenConnected" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testDoNoCommitTransactionWhenTransactionExplicitlyStartedOnClose" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\TransactionsTest::testBeginTransactionReadonlyReal" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\TransactionsTest::testBeginTransactionReadWriteReal" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\TransactionsTest::testBeginTransactionReadwriteFailure" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\TransactionsTest::testRollbackTransactionSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\TransactionsTest::testRollbackTransactionFailure" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\TransactionsTest::testCommitTransactionSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\TransactionsTest::testCommitTransactionFailure" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\UpdateTest::testUpdateWhere" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\UpdateTest::testUpdate" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\UpdateTest::testUpdateMany" size="unknown" result="0" status="PASSED"/>
+    </tests>
+    <directory name="/">
+      <totals>
+        <lines total="4369" comments="1723" code="2646" executable="631" executed="587" percent="93.03"/>
+        <methods count="154" tested="134" percent="87.01"/>
+        <functions count="0" tested="0" percent="0"/>
+        <classes count="11" tested="8" percent="72.73"/>
+        <traits count="0" tested="0" percent="0"/>
+      </totals>
+      <directory name="MydbException">
+        <totals>
+          <lines total="573" comments="323" code="250" executable="1" executed="0" percent="0.00"/>
+          <methods count="1" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="AsyncException.php" href="MydbException/AsyncException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="ConnectException.php" href="MydbException/ConnectException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="DeleteException.php" href="MydbException/DeleteException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="DisconnectException.php" href="MydbException/DisconnectException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="EnvironmentException.php" href="MydbException/EnvironmentException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="InternalException.php" href="MydbException/InternalException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="LoggerException.php" href="MydbException/LoggerException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="OptionException.php" href="MydbException/OptionException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="QueryBuilderEscapeException.php" href="MydbException/QueryBuilderEscapeException.php.xml">
+          <totals>
+            <lines total="37" comments="17" code="20" executable="1" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="QueryBuilderException.php" href="MydbException/QueryBuilderException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="RegistryException.php" href="MydbException/RegistryException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="TerminationSignalException.php" href="MydbException/TerminationSignalException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="TransactionAutocommitException.php" href="MydbException/TransactionAutocommitException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="TransactionBeginException.php" href="MydbException/TransactionBeginException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="TransactionBeginReadonlyException.php" href="MydbException/TransactionBeginReadonlyException.php.xml">
+          <totals>
+            <lines total="28" comments="17" code="11" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="TransactionBeginReadwriteException.php" href="MydbException/TransactionBeginReadwriteException.php.xml">
+          <totals>
+            <lines total="28" comments="17" code="11" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="TransactionCommitException.php" href="MydbException/TransactionCommitException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="TransactionRollbackException.php" href="MydbException/TransactionRollbackException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="UpdateException.php" href="MydbException/UpdateException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="MydbInterface">
+        <totals>
+          <lines total="302" comments="180" code="122" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="AdministrationStatementsInterface.php" href="MydbInterface/AdministrationStatementsInterface.php.xml">
+          <totals>
+            <lines total="37" comments="24" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="AsyncInterface.php" href="MydbInterface/AsyncInterface.php.xml">
+          <totals>
+            <lines total="28" comments="17" code="11" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="CommandInterface.php" href="MydbInterface/CommandInterface.php.xml">
+          <totals>
+            <lines total="33" comments="22" code="11" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="DataManipulationStatementsInterface.php" href="MydbInterface/DataManipulationStatementsInterface.php.xml">
+          <totals>
+            <lines total="70" comments="33" code="37" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="EncoderInterface.php" href="MydbInterface/EncoderInterface.php.xml">
+          <totals>
+            <lines total="34" comments="23" code="11" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="QueryInterface.php" href="MydbInterface/QueryInterface.php.xml">
+          <totals>
+            <lines total="31" comments="20" code="11" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="RemoteResourceInterface.php" href="MydbInterface/RemoteResourceInterface.php.xml">
+          <totals>
+            <lines total="37" comments="24" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="TransactionInterface.php" href="MydbInterface/TransactionInterface.php.xml">
+          <totals>
+            <lines total="32" comments="17" code="15" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="MydbMysqli">
+        <totals>
+          <lines total="132" comments="44" code="88" executable="16" executed="16" percent="100.00"/>
+          <methods count="7" tested="7" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="MydbMysqliEscapeStringInterface.php" href="MydbMysqli/MydbMysqliEscapeStringInterface.php.xml">
+          <totals>
+            <lines total="27" comments="16" code="11" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="MydbMysqliResult.php" href="MydbMysqli/MydbMysqliResult.php.xml">
+          <totals>
+            <lines total="105" comments="28" code="77" executable="16" executed="16" percent="100.00"/>
+            <methods count="7" tested="7" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <file name="Mydb.php" href="Mydb.php.xml">
+        <totals>
+          <lines total="700" comments="170" code="530" executable="210" executed="181" percent="86.19"/>
+          <methods count="30" tested="16" percent="53.33"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbCredentials.php" href="MydbCredentials.php.xml">
+        <totals>
+          <lines total="140" comments="63" code="77" executable="14" executed="14" percent="100.00"/>
+          <methods count="8" tested="8" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbCredentialsInterface.php" href="MydbCredentialsInterface.php.xml">
+        <totals>
+          <lines total="39" comments="16" code="23" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbEnvironment.php" href="MydbEnvironment.php.xml">
+        <totals>
+          <lines total="261" comments="137" code="124" executable="28" executed="28" percent="100.00"/>
+          <methods count="10" tested="10" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbEnvironmentInterface.php" href="MydbEnvironmentInterface.php.xml">
+        <totals>
+          <lines total="71" comments="40" code="31" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbException.php" href="MydbException.php.xml">
+        <totals>
+          <lines total="29" comments="16" code="13" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbExpression.php" href="MydbExpression.php.xml">
+        <totals>
+          <lines total="38" comments="16" code="22" executable="2" executed="2" percent="100.00"/>
+          <methods count="2" tested="2" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbInterface.php" href="MydbInterface.php.xml">
+        <totals>
+          <lines total="27" comments="16" code="11" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbLogger.php" href="MydbLogger.php.xml">
+        <totals>
+          <lines total="343" comments="130" code="213" executable="59" executed="59" percent="100.00"/>
+          <methods count="15" tested="15" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbMysqli.php" href="MydbMysqli.php.xml">
+        <totals>
+          <lines total="607" comments="192" code="415" executable="141" executed="141" percent="100.00"/>
+          <methods count="30" tested="30" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbMysqliInterface.php" href="MydbMysqliInterface.php.xml">
+        <totals>
+          <lines total="97" comments="23" code="74" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbOptions.php" href="MydbOptions.php.xml">
+        <totals>
+          <lines total="328" comments="139" code="189" executable="32" executed="32" percent="100.00"/>
+          <methods count="26" tested="26" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbOptionsInterface.php" href="MydbOptionsInterface.php.xml">
+        <totals>
+          <lines total="77" comments="16" code="61" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbQueryBuilder.php" href="MydbQueryBuilder.php.xml">
+        <totals>
+          <lines total="331" comments="84" code="247" executable="100" executed="86" percent="86.00"/>
+          <methods count="10" tested="5" percent="50.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbQueryBuilderInterface.php" href="MydbQueryBuilderInterface.php.xml">
+        <totals>
+          <lines total="68" comments="36" code="32" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbRegistry.php" href="MydbRegistry.php.xml">
+        <totals>
+          <lines total="206" comments="82" code="124" executable="28" executed="28" percent="100.00"/>
+          <methods count="15" tested="15" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+    </directory>
+  </project>
+</phpunit>
