@@ -54,5 +54,7 @@ jobs:
                 git config user.email github-actions@github.com
                 git pull
                 git add "**/index.html"
+                git reset php/phpdoc/index.html
+                git reset php/phpunit/html/**/index.html
                 git commit -m "generated directory-listing docs from revision ${GITHUB_SHA::7}"
                 git push
