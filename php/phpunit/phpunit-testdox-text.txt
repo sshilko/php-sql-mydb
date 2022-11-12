@@ -1,0 +1,159 @@
+Async (phpunit\Async)
+ [x] Async
+ [x] Async mock
+ [x] Async not connected
+ [x] Async readonly
+ [x] Async not autocommit
+ [x] Async transaction open
+ [x] Async failed command
+ [x] Async real
+
+Delete (phpunit\Delete)
+ [x] Delete
+ [x] Delete error
+ [x] Delete internal error
+ [x] Delete where
+
+Exception (phpunit\Exception)
+ [x] Table does not exist
+ [x] Failed to connect
+ [x] Failed to connect after retry
+ [x] Failed to connect lazy
+ [x] My sql warning
+ [x] My sql error
+
+Insert (phpunit\Insert)
+ [x] Replace
+ [x] Replace one
+ [x] Insert error
+ [x] Insert
+ [x] Insert many
+ [x] Insert one
+
+Logger (phpunit\Logger)
+ [x] Logger error
+ [x] Logger constructor out
+ [x] Logger constructor err
+ [x] Logger stream err end
+ [x] Logger stream out closed
+ [x] Logger stream err closed
+ [x] Logger stream out bad mode
+ [x] Logger stream err bad mode
+ [x] Logger stream out end
+ [x] Logger with strings with data set "nothing"
+ [x] Logger with strings with data set "nothing-array"
+ [x] Logger with strings with data set "nothing-error"
+ [x] Logger with strings with data set "something"
+ [x] Logger with strings with data set "chars"
+ [x] Logger with context
+
+Meta (phpunit\Meta)
+ [x] Open
+ [x] Close
+ [x] Primary key
+ [x] Enum
+ [x] Set
+ [x] Escape
+ [x] Single quoted escape
+ [x] Double quoted escape
+
+Mydb Environment (phpunit\MydbEnvironment)
+ [x] Signal sighup trap with data set "SIGHUP"
+ [x] Signal sighup trap with data set "SIGTERM"
+ [x] Signal sighup trap with data set "SIGINT"
+ [x] Signal sighup trap with data set "SIGINT,SIGTERM,SIGHUP"
+
+Mydb Exception (phpunit\MydbException)
+ [x] My exception
+
+Mysqli (phpunit\Mysqli)
+ [x] Reuse resource
+ [x] Options no init
+ [x] Query no init
+ [x] Read response no init
+ [x] Extract response no init
+ [x] Escape no init
+ [x] Transactions no init
+ [x] Async no init
+ [x] Close no init
+ [x] Affected rows no init
+ [x] Warnings no init
+
+Options (phpunit\Options)
+ [x] Non interactive timeouts
+ [x] Mysqli report
+ [x] Persistent
+ [x] Charset
+ [x] Autocommit
+ [x] Set time zone
+ [x] Mysqli report max
+ [x] Mysqli report min
+ [x] Set read buffer max
+ [x] Server side select timeouts
+ [x] Set read buffer min
+ [x] Set read buffer
+ [x] Network buffer max
+ [x] Network buffer min
+ [x] Network buffer
+ [x] Read timeout
+ [x] Error reporting
+ [x] Readonly
+
+Registry (phpunit\Registry)
+ [x] Registry empty 1
+ [x] Registry empty 2
+ [x] Registry empty 3
+ [x] Registry set
+ [x] Registry un set 1
+ [x] Registry un set 2
+ [x] Registry serialize 1
+ [x] Registry serialize 2
+ [x] Registry unserialize 1
+ [x] Registry unserialize 2
+ [x] Registry clone
+
+Resource (phpunit\Resource)
+ [x] Open
+ [x] Open close error
+ [x] Open autocommit failed
+ [x] Simple close
+ [x] Close not connected
+ [x] Will commit not persistent transaction when no autocommit and no transaction on close
+ [x] Will commit is persistent transaction when no autocommit and no transaction on close
+ [x] No gc when not connected
+ [x] Gc when connected
+ [x] Do no commit transaction when autocommit enabled on close
+ [x] Do no commit transaction when transaction explicitly started on close
+
+Select (phpunit\Select)
+ [x] Simple select with data set "simple select all"
+ [x] Simple select with data set "complex select all"
+ [x] Simple select with data set "simple select JOIN"
+ [x] Simple select with data set "simple select UNION"
+ [x] Simple select with data set "simple select ORDER BY"
+ [x] Simple select with data set "simple select WHERE"
+ [x] Simple select with data set "simple select COUNT"
+ [x] Simple select with data set "simple select GROUP BY"
+ [x] Simple select with data set "simple select HAVING"
+ [x] Simple select with data set "simple select LIMIT"
+ [x] Simple select with data set "simple select LIMIT OFFSET"
+ [x] Simple select with data set "simple select ALL"
+ [x] Simple select with data set "simple select SQL_SMALL_RESULT"
+
+Transactions (phpunit\Transactions)
+ [x] Begin transaction readonly real
+ [x] Begin transaction read write real
+ [x] Begin transaction readonly success
+ [x] Begin transaction readonly failure
+ [x] Begin transaction readwrite success
+ [x] Begin transaction readwrite failure
+ [x] Rollback transaction success
+ [x] Rollback transaction failure
+ [x] Commit transaction success
+ [x] Commit transaction failure
+
+Update (phpunit\Update)
+ [x] Update where
+ [x] Update
+ [x] Update many
+
