@@ -27,9 +27,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
-
     - name: Load cached app docker image
       id: docker-php-image-cache
       uses: actions/cache@v3
@@ -43,11 +40,12 @@ jobs:
       env:
         SERVICES_NAME: "app.php"
       run: docker-compose up --no-build -d $SERVICES_NAME
-      timeout-minutes: 1
+
+    - run: docker-compose ps
 
     - name: Sleep
       run: sleep 6
-    - run: docker-compose ps
+      timeout-minutes: 1
 
     - name: Cache Composer packages
       id: composer-cache
