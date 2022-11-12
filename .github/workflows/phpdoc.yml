@@ -12,11 +12,8 @@ name: 7.4 PHPDocumentor
 on:
   workflow_run:
     workflows: [ "7.4 Docker" ]
-    branches:
-      - main
     types:
       - completed
-    workflow_dispatch:
 
 permissions:
   contents: read
