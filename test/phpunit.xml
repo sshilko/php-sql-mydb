@@ -62,7 +62,7 @@
               pathCoverage="false"
               disableCodeCoverageIgnore="false">
         <report>
-            <clover outputFile="./tmp/phpunit-clover.xml"/>
+            <clover outputFile="./tmp/phpunit-clover.xml" />
             <html outputDirectory="./tmp/html" lowUpperBound="50" highLowerBound="90"/>
             <text outputFile="./tmp/phpunit-coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
         </report>
@@ -72,7 +72,7 @@
     </coverage>
 
     <logging>
-        <testdoxText outputFile="tmp/phpunit-testdoxText.txt"/>
+        <testdoxText outputFile="tmp/phpunit-testdox-text.txt"/>
     </logging>
 
     <!--

@@ -117,7 +117,7 @@ please re-use existing solutions that best fit your requirements.
 
 #### Future roadmap
 
-- build PHPUnit, phpDocumentor, PHPCPD, Pdepend 
+- build PHPUnit, Pdepend
 - add library helper for Repository pattern usage
 - usage examples
 - pluggable M.E.L.T (metrics, events, logs, traces) via events, observer pattern or symfony events, or psr-events
