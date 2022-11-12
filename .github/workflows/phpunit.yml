@@ -11,10 +11,9 @@ name: 7.4 PHPUnit
 
 on:
   workflow_run:
-    workflows: ["7.4 Docker"]
+    workflows: [7.4 Docker]
     branches: [main]
-    types:
-      - completed
+    types: [completed]
 
 permissions:
   contents: read
