@@ -28,7 +28,6 @@ jobs:
   pages-directory-listing-release:
 
     runs-on: ubuntu-latest
-    name: Directory Listings Index
     timeout-minutes: 3
 
     steps:
