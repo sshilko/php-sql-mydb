@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668253824">
-  <project timestamp="1668253824">
+<coverage generated="1668254448">
+  <project timestamp="1668254448">
     <file name="/app/src/sql/Mydb.php">
       <class name="sql\Mydb" namespace="global">
         <metrics complexity="100" methods="30" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="210" coveredstatements="181" elements="240" coveredelements="197"/>

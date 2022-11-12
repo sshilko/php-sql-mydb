@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.93026941362916" branch-rate="0" lines-covered="587" lines-valid="631" branches-covered="0" branches-valid="0" complexity="375" version="0.4" timestamp="1668253824">
+<coverage line-rate="0.93026941362916" branch-rate="0" lines-covered="587" lines-valid="631" branches-covered="0" branches-valid="0" complexity="375" version="0.4" timestamp="1668254448">
   <sources>
     <source>/app/src/sql</source>
   </sources>
