@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PDepend>
+  <Packages>
+    <Package name="sql">
+      <Stats>
+        <TotalClasses>16</TotalClasses>
+        <ConcreteClasses>10</ConcreteClasses>
+        <AbstractClasses>6</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>5</Ce>
+        <A>0.375</A>
+        <I>0.83333333333333</I>
+        <D>0.20833333333333</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/app/src/sql/Mydb.php">Mydb</Class>
+        <Class sourceFile="/app/src/sql/MydbCredentials.php">MydbCredentials</Class>
+        <Class sourceFile="/app/src/sql/MydbEnvironment.php">MydbEnvironment</Class>
+        <Class sourceFile="/app/src/sql/MydbException.php">MydbException</Class>
+        <Class sourceFile="/app/src/sql/MydbExpression.php">MydbExpression</Class>
+        <Class sourceFile="/app/src/sql/MydbLogger.php">MydbLogger</Class>
+        <Class sourceFile="/app/src/sql/MydbMysqli.php">MydbMysqli</Class>
+        <Class sourceFile="/app/src/sql/MydbOptions.php">MydbOptions</Class>
+        <Class sourceFile="/app/src/sql/MydbQueryBuilder.php">MydbQueryBuilder</Class>
+        <Class sourceFile="/app/src/sql/MydbRegistry.php">MydbRegistry</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="/app/src/sql/MydbCredentialsInterface.php">MydbCredentialsInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbEnvironmentInterface.php">MydbEnvironmentInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbInterface.php">MydbInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbMysqliInterface.php">MydbMysqliInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbOptionsInterface.php">MydbOptionsInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbQueryBuilderInterface.php">MydbQueryBuilderInterface</Class>
+      </AbstractClasses>
+      <DependsUpon>
+        <Package></Package>
+        <Package>Psr\Log</Package>
+        <Package>sql\MydbMysqli</Package>
+        <Package>sql\MydbException</Package>
+        <Package>sql\MydbInterface</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>sql\MydbException</Package>
+      </UsedBy>
+    </Package>
+    <Package name="sql\MydbException">
+      <Stats>
+        <TotalClasses>19</TotalClasses>
+        <ConcreteClasses>19</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>2</Ce>
+        <A>0</A>
+        <I>0.66666666666667</I>
+        <D>0.33333333333333</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/app/src/sql/MydbException/AsyncException.php">AsyncException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/ConnectException.php">ConnectException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/DeleteException.php">DeleteException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/DisconnectException.php">DisconnectException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/EnvironmentException.php">EnvironmentException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/InternalException.php">InternalException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/LoggerException.php">LoggerException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/OptionException.php">OptionException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/QueryBuilderEscapeException.php">QueryBuilderEscapeException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/QueryBuilderException.php">QueryBuilderException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/RegistryException.php">RegistryException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/TerminationSignalException.php">TerminationSignalException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/TransactionAutocommitException.php">TransactionAutocommitException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/TransactionBeginException.php">TransactionBeginException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/TransactionBeginReadonlyException.php">TransactionBeginReadonlyException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/TransactionBeginReadwriteException.php">TransactionBeginReadwriteException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/TransactionCommitException.php">TransactionCommitException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/TransactionRollbackException.php">TransactionRollbackException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/UpdateException.php">UpdateException</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package></Package>
+        <Package>sql</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>sql</Package>
+      </UsedBy>
+    </Package>
+    <Package name="sql\MydbInterface">
+      <Stats>
+        <TotalClasses>8</TotalClasses>
+        <ConcreteClasses>0</ConcreteClasses>
+        <AbstractClasses>8</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>0</Ce>
+        <A>1</A>
+        <I>0</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses/>
+      <AbstractClasses>
+        <Class sourceFile="/app/src/sql/MydbInterface/AdministrationStatementsInterface.php">AdministrationStatementsInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbInterface/AsyncInterface.php">AsyncInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbInterface/CommandInterface.php">CommandInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbInterface/DataManipulationStatementsInterface.php">DataManipulationStatementsInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbInterface/EncoderInterface.php">EncoderInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbInterface/QueryInterface.php">QueryInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbInterface/RemoteResourceInterface.php">RemoteResourceInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbInterface/TransactionInterface.php">TransactionInterface</Class>
+      </AbstractClasses>
+      <DependsUpon/>
+      <UsedBy>
+        <Package>sql</Package>
+      </UsedBy>
+    </Package>
+    <Package name="sql\MydbMysqli">
+      <Stats>
+        <TotalClasses>2</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>1</AbstractClasses>
+        <Ca>1</Ca>
+        <Ce>1</Ce>
+        <A>0.5</A>
+        <I>0.5</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/app/src/sql/MydbMysqli/MydbMysqliResult.php">MydbMysqliResult</Class>
+      </ConcreteClasses>
+      <AbstractClasses>
+        <Class sourceFile="/app/src/sql/MydbMysqli/MydbMysqliEscapeStringInterface.php">MydbMysqliEscapeStringInterface</Class>
+      </AbstractClasses>
+      <DependsUpon>
+        <Package></Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>sql</Package>
+      </UsedBy>
+    </Package>
+  </Packages>
+  <Cycles>
+    <Package Name="sql">
+      <Package>sql</Package>
+      <Package>sql\MydbException</Package>
+      <Package>sql</Package>
+    </Package>
+    <Package Name="sql\MydbException">
+      <Package>sql\MydbException</Package>
+      <Package>sql</Package>
+      <Package>sql\MydbException</Package>
+    </Package>
+  </Cycles>
+</PDepend>

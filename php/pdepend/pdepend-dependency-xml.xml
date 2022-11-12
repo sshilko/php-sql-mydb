@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies generated="2022-11-12T11:42:24" pdepend="@package_version@">
+  <package name="sql">
+    <class name="Mydb">
+      <efferent>
+        <type namespace="sql" name="MydbInterface"/>
+        <type namespace="sql\MydbInterface" name="EncoderInterface"/>
+        <type namespace="sql\MydbInterface" name="CommandInterface"/>
+        <type namespace="sql\MydbInterface" name="QueryInterface"/>
+        <type namespace="sql\MydbInterface" name="DataManipulationStatementsInterface"/>
+        <type namespace="sql\MydbInterface" name="TransactionInterface"/>
+        <type namespace="sql\MydbInterface" name="AsyncInterface"/>
+        <type namespace="sql\MydbInterface" name="AdministrationStatementsInterface"/>
+        <type namespace="sql\MydbInterface" name="RemoteResourceInterface"/>
+        <type namespace="sql" name="MydbCredentialsInterface"/>
+        <type namespace="Psr\Log" name="LoggerInterface"/>
+        <type namespace="sql" name="MydbOptionsInterface"/>
+        <type namespace="sql" name="MydbMysqliInterface"/>
+        <type namespace="sql" name="MydbEnvironmentInterface"/>
+        <type namespace="sql" name="MydbQueryBuilderInterface"/>
+        <type namespace="sql" name="MydbOptions"/>
+        <type namespace="sql" name="MydbMysqli"/>
+        <type namespace="sql" name="MydbEnvironment"/>
+        <type namespace="sql" name="MydbQueryBuilder"/>
+        <type namespace="sql\MydbException" name="ConnectException"/>
+        <type namespace="sql\MydbException" name="AsyncException"/>
+        <type namespace="sql\MydbException" name="InternalException"/>
+        <type namespace="sql" name="MydbException"/>
+        <type namespace="sql\MydbException" name="TransactionBeginReadonlyException"/>
+        <type namespace="sql\MydbException" name="TransactionBeginReadwriteException"/>
+        <type namespace="sql\MydbException" name="TransactionRollbackException"/>
+        <type namespace="sql\MydbException" name="TransactionCommitException"/>
+        <type namespace="sql\MydbException" name="DisconnectException"/>
+        <type namespace="" name="Throwable"/>
+        <type namespace="sql\MydbException" name="DeleteException"/>
+        <type namespace="sql\MydbException" name="UpdateException"/>
+        <type namespace="sql\MydbException" name="TerminationSignalException"/>
+        <type namespace="sql\MydbMysqli" name="MydbMysqliResult"/>
+        <type namespace="sql\MydbException" name="TransactionAutocommitException"/>
+      </efferent>
+      <afferent/>
+      <file name="/app/src/sql/Mydb.php"/>
+    </class>
+    <class name="MydbCredentials">
+      <efferent>
+        <type namespace="sql" name="MydbCredentialsInterface"/>
+      </efferent>
+      <afferent/>
+      <file name="/app/src/sql/MydbCredentials.php"/>
+    </class>
+    <interface name="MydbCredentialsInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbCredentials"/>
+      </afferent>
+      <file name="/app/src/sql/MydbCredentialsInterface.php"/>
+    </interface>
+    <class name="MydbEnvironment">
+      <efferent>
+        <type namespace="sql" name="MydbEnvironmentInterface"/>
+        <type namespace="sql\MydbException" name="EnvironmentException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbEnvironment.php"/>
+    </class>
+    <interface name="MydbEnvironmentInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbEnvironment"/>
+        <type namespace="sql" name="MydbMysqli"/>
+        <type namespace="sql" name="MydbMysqliInterface"/>
+      </afferent>
+      <file name="/app/src/sql/MydbEnvironmentInterface.php"/>
+    </interface>
+    <class name="MydbException">
+      <efferent>
+        <type namespace="" name="Exception"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql\MydbException" name="AsyncException"/>
+        <type namespace="sql\MydbException" name="ConnectException"/>
+        <type namespace="sql\MydbException" name="DeleteException"/>
+        <type namespace="sql\MydbException" name="DisconnectException"/>
+        <type namespace="sql\MydbException" name="EnvironmentException"/>
+        <type namespace="sql\MydbException" name="InternalException"/>
+        <type namespace="sql\MydbException" name="LoggerException"/>
+        <type namespace="sql\MydbException" name="OptionException"/>
+        <type namespace="sql\MydbException" name="QueryBuilderEscapeException"/>
+        <type namespace="sql\MydbException" name="QueryBuilderException"/>
+        <type namespace="sql\MydbException" name="RegistryException"/>
+        <type namespace="sql\MydbException" name="TerminationSignalException"/>
+        <type namespace="sql\MydbException" name="TransactionAutocommitException"/>
+        <type namespace="sql\MydbException" name="TransactionBeginException"/>
+        <type namespace="sql\MydbException" name="TransactionCommitException"/>
+        <type namespace="sql\MydbException" name="TransactionRollbackException"/>
+        <type namespace="sql\MydbException" name="UpdateException"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException.php"/>
+    </class>
+    <class name="MydbExpression">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="MydbQueryBuilder"/>
+      </afferent>
+      <file name="/app/src/sql/MydbExpression.php"/>
+    </class>
+    <interface name="MydbInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbRegistry"/>
+      </afferent>
+      <file name="/app/src/sql/MydbInterface.php"/>
+    </interface>
+    <class name="MydbLogger">
+      <efferent>
+        <type namespace="Psr\Log" name="LoggerInterface"/>
+        <type namespace="sql\MydbException" name="LoggerException"/>
+        <type namespace="Psr\Log" name="LogLevel"/>
+      </efferent>
+      <afferent/>
+      <file name="/app/src/sql/MydbLogger.php"/>
+    </class>
+    <class name="MydbMysqli">
+      <efferent>
+        <type namespace="sql" name="MydbMysqliInterface"/>
+        <type namespace="" name="mysqli"/>
+        <type namespace="sql" name="MydbOptionsInterface"/>
+        <type namespace="sql" name="MydbEnvironmentInterface"/>
+        <type namespace="sql\MydbMysqli" name="MydbMysqliResult"/>
+        <type namespace="" name="mysqli_result"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbMysqli.php"/>
+    </class>
+    <interface name="MydbMysqliInterface">
+      <efferent>
+        <type namespace="sql\MydbMysqli" name="MydbMysqliEscapeStringInterface"/>
+        <type namespace="sql" name="MydbOptionsInterface"/>
+        <type namespace="sql" name="MydbEnvironmentInterface"/>
+        <type namespace="" name="mysqli"/>
+        <type namespace="sql\MydbMysqli" name="MydbMysqliResult"/>
+        <type namespace="" name="mysqli_result"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbMysqli"/>
+      </afferent>
+      <file name="/app/src/sql/MydbMysqliInterface.php"/>
+    </interface>
+    <class name="MydbOptions">
+      <efferent>
+        <type namespace="sql" name="MydbOptionsInterface"/>
+        <type namespace="sql\MydbException" name="OptionException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbOptions.php"/>
+    </class>
+    <interface name="MydbOptionsInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbMysqli"/>
+        <type namespace="sql" name="MydbMysqliInterface"/>
+        <type namespace="sql" name="MydbOptions"/>
+      </afferent>
+      <file name="/app/src/sql/MydbOptionsInterface.php"/>
+    </interface>
+    <class name="MydbQueryBuilder">
+      <efferent>
+        <type namespace="sql" name="MydbQueryBuilderInterface"/>
+        <type namespace="sql\MydbMysqli" name="MydbMysqliEscapeStringInterface"/>
+        <type namespace="sql\MydbException" name="QueryBuilderException"/>
+        <type namespace="sql" name="MydbExpression"/>
+        <type namespace="sql\MydbException" name="QueryBuilderEscapeException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbQueryBuilder.php"/>
+    </class>
+    <interface name="MydbQueryBuilderInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbQueryBuilder"/>
+      </afferent>
+      <file name="/app/src/sql/MydbQueryBuilderInterface.php"/>
+    </interface>
+    <class name="MydbRegistry">
+      <efferent>
+        <type namespace="" name="ArrayAccess"/>
+        <type namespace="" name="Countable"/>
+        <type namespace="" name="Traversable"/>
+        <type namespace="" name="Iterator"/>
+        <type namespace="" name="Serializable"/>
+        <type namespace="sql\MydbException" name="RegistryException"/>
+        <type namespace="sql" name="MydbInterface"/>
+      </efferent>
+      <afferent/>
+      <file name="/app/src/sql/MydbRegistry.php"/>
+    </class>
+  </package>
+  <package name="sql\MydbException">
+    <class name="AsyncException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/AsyncException.php"/>
+    </class>
+    <class name="ConnectException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/ConnectException.php"/>
+    </class>
+    <class name="DeleteException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/DeleteException.php"/>
+    </class>
+    <class name="DisconnectException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/DisconnectException.php"/>
+    </class>
+    <class name="EnvironmentException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="MydbEnvironment"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/EnvironmentException.php"/>
+    </class>
+    <class name="InternalException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/InternalException.php"/>
+    </class>
+    <class name="LoggerException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="MydbLogger"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/LoggerException.php"/>
+    </class>
+    <class name="OptionException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="MydbOptions"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/OptionException.php"/>
+    </class>
+    <class name="QueryBuilderEscapeException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+        <type namespace="" name="Throwable"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="MydbQueryBuilder"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/QueryBuilderEscapeException.php"/>
+    </class>
+    <class name="QueryBuilderException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="MydbQueryBuilder"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/QueryBuilderException.php"/>
+    </class>
+    <class name="RegistryException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="MydbRegistry"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/RegistryException.php"/>
+    </class>
+    <class name="TerminationSignalException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/TerminationSignalException.php"/>
+    </class>
+    <class name="TransactionAutocommitException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/TransactionAutocommitException.php"/>
+    </class>
+    <class name="TransactionBeginException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql\MydbException" name="TransactionBeginReadonlyException"/>
+        <type namespace="sql\MydbException" name="TransactionBeginReadwriteException"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/TransactionBeginException.php"/>
+    </class>
+    <class name="TransactionBeginReadonlyException">
+      <efferent>
+        <type namespace="sql\MydbException" name="TransactionBeginException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/TransactionBeginReadonlyException.php"/>
+    </class>
+    <class name="TransactionBeginReadwriteException">
+      <efferent>
+        <type namespace="sql\MydbException" name="TransactionBeginException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/TransactionBeginReadwriteException.php"/>
+    </class>
+    <class name="TransactionCommitException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/TransactionCommitException.php"/>
+    </class>
+    <class name="TransactionRollbackException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/TransactionRollbackException.php"/>
+    </class>
+    <class name="UpdateException">
+      <efferent>
+        <type namespace="sql" name="MydbException"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbException/UpdateException.php"/>
+    </class>
+  </package>
+  <package name="sql\MydbInterface">
+    <interface name="AdministrationStatementsInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbInterface/AdministrationStatementsInterface.php"/>
+    </interface>
+    <interface name="AsyncInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbInterface/AsyncInterface.php"/>
+    </interface>
+    <interface name="CommandInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbInterface/CommandInterface.php"/>
+    </interface>
+    <interface name="DataManipulationStatementsInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbInterface/DataManipulationStatementsInterface.php"/>
+    </interface>
+    <interface name="EncoderInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbInterface/EncoderInterface.php"/>
+    </interface>
+    <interface name="QueryInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbInterface/QueryInterface.php"/>
+    </interface>
+    <interface name="RemoteResourceInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbInterface/RemoteResourceInterface.php"/>
+    </interface>
+    <interface name="TransactionInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+      </afferent>
+      <file name="/app/src/sql/MydbInterface/TransactionInterface.php"/>
+    </interface>
+  </package>
+  <package name="sql\MydbMysqli">
+    <interface name="MydbMysqliEscapeStringInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="MydbMysqliInterface"/>
+        <type namespace="sql" name="MydbQueryBuilder"/>
+      </afferent>
+      <file name="/app/src/sql/MydbMysqli/MydbMysqliEscapeStringInterface.php"/>
+    </interface>
+    <class name="MydbMysqliResult">
+      <efferent>
+        <type namespace="" name="mysqli_result"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbMysqli"/>
+        <type namespace="sql" name="MydbMysqliInterface"/>
+      </afferent>
+      <file name="/app/src/sql/MydbMysqli/MydbMysqliResult.php"/>
+    </class>
+  </package>
+</dependencies>
