@@ -96,7 +96,14 @@ jobs:
           name: phpunit-output
           path: |
               test/tmp/html
+              test/tmp/xml
+              test/tmp/phpunit-testdox-html.html
               test/tmp/phpunit-testdox-text.txt
+              test/tmp/phpunit-clover.xml
+              test/tmp/phpunit-junit.xml
+              test/tmp/phpunit-cobertura.xml
+              test/tmp/phpunit-crap4j.xml
+              test/tmp/phpunit-xml.xml
               test/tmp/phpunit-coverage.txt
               test/tmp/phpunit-coverage-badge.svg
               test/tmp/phpunit-coverage-badge-lines.svg
