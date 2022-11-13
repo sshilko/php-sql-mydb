@@ -28,7 +28,7 @@ use sql\MydbException\TransactionBeginReadwriteException;
 use sql\MydbException\TransactionCommitException;
 use sql\MydbException\TransactionRollbackException;
 use sql\MydbException\UpdateException;
-use sql\MydbMysqli\MydbMysqliResult;
+use sql\MydbMysqli\MydbMysqliResultInterface;
 use Throwable;
 use function array_map;
 use function count;
@@ -233,9 +233,13 @@ class Mydb implements
          * @psalm-suppress PossiblyFalseOperand
          */
         $input = substr((string) $result, (int) strpos((string) $result, '(') + 1, -1);
-        if ('' === $input) {
+
+        // @codeCoverageIgnoreStart
+        if ('' === $input || false === $input) {
             throw new MydbException();
         }
+        // @codeCoverageIgnoreEnd
+
         $values = explode(',', preg_replace("/'/", '', $input));
 
         return array_map('strval', $values);
@@ -557,7 +561,7 @@ class Mydb implements
     /**
      * @throws \sql\MydbException
      */
-    protected function readServerResponse(string $query): ?MydbMysqliResult
+    protected function readServerResponse(string $query): ?MydbMysqliResultInterface
     {
         $packet = $this->mysqli->readServerResponse($this->environment);
         if (null === $packet) {

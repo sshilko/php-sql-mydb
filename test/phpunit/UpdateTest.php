@@ -15,7 +15,9 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use sql\MydbException\UpdateException;
 use sql\MydbExpression;
+use sql\MydbMysqli;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -122,5 +124,25 @@ final class UpdateTest extends includes\BaseTestCase
         self::assertSame($defaults, $actual);
 
         $db->rollbackTransaction();
+    }
+
+    public function testUpdateInternalError(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $db = $this->getDefaultDb($mysqli);
+
+        $sql = "UPDATE myusers SET id = 10000 WHERE id IN (991, 992)";
+
+        $r = new MydbMysqli\MydbMysqliResult(null, [], 0);
+
+        $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
+        $mysqli->expects(self::once())->method('realQuery')->with($sql)->willReturn(true);
+        $mysqli->expects(self::once())->method('readServerResponse')->willReturn($r);
+        $mysqli->expects(self::once())->method('getAffectedRows')->willReturn(null);
+        self::expectException(UpdateException::class);
+
+        $result = $db->update($sql);
+
+        self::assertNull($result);
     }
 }
