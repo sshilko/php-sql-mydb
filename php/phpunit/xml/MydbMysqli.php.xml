@@ -1652,6 +1652,7 @@
         <covered by="phpunit\MysqliTest::testReadResponseNoInit"/>
       </line>
       <line nr="323">
+        <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
@@ -1661,6 +1662,7 @@
         <covered by="phpunit\MysqliTest::testEscapeNoInit"/>
       </line>
       <line nr="327">
+        <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>

@@ -65,6 +65,7 @@ Mydb Environment (phpunit\MydbEnvironment)
 
 Mydb Exception (phpunit\MydbException)
  [x] My exception
+ [x] Query builder exception
 
 Mysqli (phpunit\Mysqli)
  [x] Reuse resource
@@ -98,6 +99,30 @@ Options (phpunit\Options)
  [x] Read timeout
  [x] Error reporting
  [x] Readonly
+
+Query Builder (phpunit\QueryBuilder)
+ [x] Show columns like
+ [x] Show keys
+ [x] Insert one with data set "simple int"
+ [x] Insert one with data set "simple float"
+ [x] Insert one with data set "expression"
+ [x] Insert one with data set "raw null"
+ [x] Insert one with data set "string caps null"
+ [x] Insert one with data set "string lowercase null"
+ [x] Insert one with data set "string 0x"
+ [x] Insert one with data set "string 0x even"
+ [x] Insert one with data set "string 0x mismatch"
+ [x] Replace one with data set "simple int"
+ [x] Replace one with data set "simple float"
+ [x] Replace one with data set "expression"
+ [x] Replace one with data set "raw null"
+ [x] Replace one with data set "string caps null"
+ [x] Replace one with data set "string lowercase null"
+ [x] Replace one with data set "string 0x"
+ [x] Replace one with data set "string 0x even"
+ [x] Replace one with data set "string 0x mismatch"
+ [x] Build update where many with data set "simple"
+ [x] Build update where many with data set "prefixed simple"
 
 Registry (phpunit\Registry)
  [x] Registry empty 1

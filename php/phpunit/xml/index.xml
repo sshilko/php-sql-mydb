@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Sat Nov 12 12:03:22 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+  <build time="Sun Nov 13 8:56:46 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
     <runtime name="PHP" version="7.4.33" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.1.5"/>
   </build>
@@ -56,6 +56,7 @@
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MydbExceptionTest::testQueryBuilderException" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testReuseResource" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testOptionsNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testQueryNoInit" size="unknown" result="0" status="PASSED"/>
@@ -85,6 +86,28 @@
       <test name="phpunit\OptionsTest::testReadTimeout" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\OptionsTest::testErrorReporting" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\OptionsTest::testReadonly" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testShowColumnsLike" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testShowKeys" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple int&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple float&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;expression&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;raw null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string caps null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string lowercase null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x even&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple int&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple float&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;raw null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string caps null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string lowercase null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x even&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\RegistryTest::testRegistryEmpty1" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\RegistryTest::testRegistryEmpty2" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\RegistryTest::testRegistryEmpty3" size="unknown" result="0" status="PASSED"/>
@@ -135,18 +158,18 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4369" comments="1723" code="2646" executable="631" executed="587" percent="93.03"/>
-        <methods count="154" tested="134" percent="87.01"/>
+        <lines total="4368" comments="1723" code="2645" executable="629" executed="588" percent="93.48"/>
+        <methods count="154" tested="135" percent="87.66"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="11" tested="8" percent="72.73"/>
+        <classes count="11" tested="9" percent="81.82"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="MydbException">
         <totals>
-          <lines total="573" comments="323" code="250" executable="1" executed="0" percent="0.00"/>
-          <methods count="1" tested="0" percent="0.00"/>
+          <lines total="573" comments="323" code="250" executable="1" executed="1" percent="100.00"/>
+          <methods count="1" tested="1" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="0" percent="0.00"/>
+          <classes count="1" tested="1" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
         <file name="AsyncException.php" href="MydbException/AsyncException.php.xml">
@@ -223,10 +246,10 @@
         </file>
         <file name="QueryBuilderEscapeException.php" href="MydbException/QueryBuilderEscapeException.php.xml">
           <totals>
-            <lines total="37" comments="17" code="20" executable="1" executed="0" percent="0.00"/>
-            <methods count="1" tested="0" percent="0.00"/>
+            <lines total="37" comments="17" code="20" executable="1" executed="1" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
-            <classes count="1" tested="0" percent="0.00"/>
+            <classes count="1" tested="1" percent="100.00"/>
             <traits count="0" tested="0" percent="0"/>
           </totals>
         </file>
@@ -548,7 +571,7 @@
       </file>
       <file name="MydbQueryBuilder.php" href="MydbQueryBuilder.php.xml">
         <totals>
-          <lines total="331" comments="84" code="247" executable="100" executed="86" percent="86.00"/>
+          <lines total="327" comments="84" code="243" executable="98" executed="86" percent="87.76"/>
           <methods count="10" tested="5" percent="50.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
@@ -557,7 +580,7 @@
       </file>
       <file name="MydbQueryBuilderInterface.php" href="MydbQueryBuilderInterface.php.xml">
         <totals>
-          <lines total="68" comments="36" code="32" executable="0" executed="0" percent="0"/>
+          <lines total="71" comments="36" code="35" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>

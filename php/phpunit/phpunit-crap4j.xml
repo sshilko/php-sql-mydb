@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-12 12:03:22</timestamp>
+  <timestamp>2022-11-13 08:56:46</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>154</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>387.18</totalCrap>
+    <totalCrap>385.34</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -545,9 +545,9 @@
       <methodName>__construct</methodName>
       <methodSignature>__construct(string $message, int $code, ?Throwable $previous)</methodSignature>
       <fullMethod>__construct(string $message, int $code, ?Throwable $previous)</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1535,9 +1535,9 @@
       <methodName>escape</methodName>
       <methodSignature>escape($unescaped, string $quote): string</methodSignature>
       <fullMethod>escape($unescaped, string $quote): string</fullMethod>
-      <crap>15.89</crap>
+      <crap>15.05</crap>
       <complexity>15</complexity>
-      <coverage>84.21</coverage>
+      <coverage>94.12</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

@@ -7314,7 +7314,7 @@
         <token name="T_VARIABLE">$table</token>
         <token name="T_COMMA">,</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">MydbQueryBuilder</token>
+        <token name="T_STRING">MydbQueryBuilderInterface</token>
         <token name="T_DOUBLE_COLON">::</token>
         <token name="T_STRING">SQL_REPLACE</token>
         <token name="T_CLOSE_BRACKET">)</token>
@@ -7395,7 +7395,7 @@
         <token name="T_VARIABLE">$table</token>
         <token name="T_COMMA">,</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">MydbQueryBuilder</token>
+        <token name="T_STRING">MydbQueryBuilderInterface</token>
         <token name="T_DOUBLE_COLON">::</token>
         <token name="T_STRING">SQL_INSERT</token>
         <token name="T_CLOSE_BRACKET">)</token>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.93026941362916" branch-rate="0" lines-covered="587" lines-valid="631" branches-covered="0" branches-valid="0" complexity="375" version="0.4" timestamp="1668254602">
+<coverage line-rate="0.93481717011129" branch-rate="0" lines-covered="588" lines-valid="629" branches-covered="0" branches-valid="0" complexity="375" version="0.4" timestamp="1668329806">
   <sources>
     <source>/app/src/sql</source>
   </sources>
@@ -809,18 +809,18 @@
         </class>
       </classes>
     </package>
-    <package name="MydbException/QueryBuilderEscapeException.php" line-rate="0" branch-rate="0" complexity="1">
+    <package name="MydbException/QueryBuilderEscapeException.php" line-rate="1" branch-rate="0" complexity="1">
       <classes>
-        <class name="sql\MydbException\QueryBuilderEscapeException" filename="MydbException/QueryBuilderEscapeException.php" line-rate="0" branch-rate="0" complexity="1">
+        <class name="sql\MydbException\QueryBuilderEscapeException" filename="MydbException/QueryBuilderEscapeException.php" line-rate="1" branch-rate="0" complexity="1">
           <methods>
-            <method name="__construct" signature="string $message, int $code, ?Throwable $previous" line-rate="0" branch-rate="0" complexity="1">
+            <method name="__construct" signature="string $message, int $code, ?Throwable $previous" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="34" hits="0"/>
+                <line number="34" hits="1"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="34" hits="0"/>
+            <line number="34" hits="1"/>
           </lines>
         </class>
       </classes>
@@ -916,13 +916,13 @@
             </method>
             <method name="__toString" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="35" hits="4"/>
+                <line number="35" hits="8"/>
               </lines>
             </method>
           </methods>
           <lines>
             <line number="30" hits="4"/>
-            <line number="35" hits="4"/>
+            <line number="35" hits="8"/>
           </lines>
         </class>
       </classes>
@@ -1228,9 +1228,9 @@
             </method>
             <method name="realEscapeString" signature="string $string" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="323" hits="4"/>
+                <line number="323" hits="5"/>
                 <line number="324" hits="1"/>
-                <line number="327" hits="3"/>
+                <line number="327" hits="4"/>
               </lines>
             </method>
             <method name="beginTransactionReadwrite" signature="" line-rate="1" branch-rate="0" complexity="4">
@@ -1457,9 +1457,9 @@
             <line number="309" hits="2"/>
             <line number="312" hits="33"/>
             <line number="315" hits="1"/>
-            <line number="323" hits="4"/>
+            <line number="323" hits="5"/>
             <line number="324" hits="1"/>
-            <line number="327" hits="3"/>
+            <line number="327" hits="4"/>
             <line number="335" hits="12"/>
             <line number="336" hits="11"/>
             <line number="337" hits="11"/>
@@ -1811,51 +1811,51 @@
     <package name="MydbOptionsInterface.php" line-rate="0" branch-rate="0" complexity="0">
       <classes/>
     </package>
-    <package name="MydbQueryBuilder.php" line-rate="0.86" branch-rate="0" complexity="49">
+    <package name="MydbQueryBuilder.php" line-rate="0.87755102040816" branch-rate="0" complexity="49">
       <classes>
-        <class name="sql\MydbQueryBuilder" filename="MydbQueryBuilder.php" line-rate="0.86" branch-rate="0" complexity="49">
+        <class name="sql\MydbQueryBuilder" filename="MydbQueryBuilder.php" line-rate="0.87755102040816" branch-rate="0" complexity="49">
           <methods>
             <method name="__construct" signature="sql\MydbMysqli\MydbMysqliEscapeStringInterface $mysqli" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="49" hits="68"/>
+                <line number="49" hits="90"/>
               </lines>
             </method>
             <method name="showColumnsLike" signature="string $table, string $column" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="57" hits="2"/>
+                <line number="57" hits="3"/>
               </lines>
             </method>
             <method name="showKeys" signature="string $table" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="65" hits="1"/>
+                <line number="65" hits="2"/>
               </lines>
             </method>
             <method name="insertOne" signature="array $data, string $table, string $type" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="75" hits="2"/>
-                <line number="77" hits="2"/>
-                <line number="78" hits="2"/>
-                <line number="79" hits="2"/>
-                <line number="82" hits="2"/>
+                <line number="75" hits="20"/>
+                <line number="77" hits="20"/>
+                <line number="78" hits="20"/>
+                <line number="79" hits="20"/>
+                <line number="82" hits="20"/>
               </lines>
             </method>
             <method name="buildUpdateWhereMany" signature="array $columnSetWhere, array $where, string $table" line-rate="0.93333333333333" branch-rate="0" complexity="5">
               <lines>
-                <line number="93" hits="1"/>
-                <line number="99" hits="1"/>
-                <line number="103" hits="1"/>
-                <line number="105" hits="1"/>
-                <line number="106" hits="1"/>
+                <line number="93" hits="3"/>
+                <line number="99" hits="3"/>
+                <line number="103" hits="3"/>
+                <line number="105" hits="3"/>
+                <line number="106" hits="3"/>
                 <line number="107" hits="0"/>
-                <line number="110" hits="1"/>
-                <line number="111" hits="1"/>
-                <line number="116" hits="1"/>
-                <line number="117" hits="1"/>
-                <line number="123" hits="1"/>
-                <line number="126" hits="1"/>
-                <line number="128" hits="1"/>
-                <line number="129" hits="1"/>
-                <line number="132" hits="1"/>
+                <line number="110" hits="3"/>
+                <line number="111" hits="3"/>
+                <line number="116" hits="3"/>
+                <line number="117" hits="3"/>
+                <line number="123" hits="3"/>
+                <line number="126" hits="3"/>
+                <line number="128" hits="3"/>
+                <line number="129" hits="3"/>
+                <line number="132" hits="3"/>
               </lines>
             </method>
             <method name="buildUpdateWhere" signature="array $update, array $whereFields, string $table, array $whereNotFields" line-rate="0.88888888888889" branch-rate="0" complexity="4">
@@ -1881,14 +1881,14 @@
             </method>
             <method name="buildWhere" signature="array $fields, array $negativeFields, array $likeFields" line-rate="0.76470588235294" branch-rate="0" complexity="15">
               <lines>
-                <line number="187" hits="3"/>
-                <line number="189" hits="3"/>
-                <line number="193" hits="3"/>
-                <line number="194" hits="3"/>
-                <line number="195" hits="3"/>
-                <line number="197" hits="3"/>
+                <line number="187" hits="5"/>
+                <line number="189" hits="5"/>
+                <line number="193" hits="5"/>
+                <line number="194" hits="5"/>
+                <line number="195" hits="5"/>
+                <line number="197" hits="5"/>
                 <line number="198" hits="0"/>
-                <line number="199" hits="3"/>
+                <line number="199" hits="5"/>
                 <line number="200" hits="3"/>
                 <line number="201" hits="0"/>
                 <line number="202" hits="0"/>
@@ -1902,19 +1902,19 @@
                 <line number="213" hits="3"/>
                 <line number="214" hits="3"/>
                 <line number="218" hits="3"/>
-                <line number="221" hits="1"/>
-                <line number="223" hits="1"/>
+                <line number="221" hits="3"/>
+                <line number="223" hits="3"/>
                 <line number="224" hits="0"/>
-                <line number="227" hits="1"/>
-                <line number="228" hits="1"/>
-                <line number="229" hits="1"/>
-                <line number="232" hits="3"/>
+                <line number="227" hits="3"/>
+                <line number="228" hits="3"/>
+                <line number="229" hits="3"/>
+                <line number="232" hits="5"/>
                 <line number="233" hits="0"/>
-                <line number="236" hits="3"/>
-                <line number="239" hits="3"/>
-                <line number="241" hits="3"/>
-                <line number="242" hits="3"/>
-                <line number="245" hits="3"/>
+                <line number="236" hits="5"/>
+                <line number="239" hits="5"/>
+                <line number="241" hits="5"/>
+                <line number="242" hits="5"/>
+                <line number="245" hits="5"/>
               </lines>
             </method>
             <method name="buildInsertMany" signature="array $data, array $cols, string $table, bool $ignore, string $onDuplicate" line-rate="0.90909090909091" branch-rate="0" complexity="3">
@@ -1932,54 +1932,52 @@
                 <line number="278" hits="1"/>
               </lines>
             </method>
-            <method name="escape" signature="$unescaped, string $quote" line-rate="0.84210526315789" branch-rate="0" complexity="15">
+            <method name="escape" signature="$unescaped, string $quote" line-rate="0.94117647058824" branch-rate="0" complexity="15">
               <lines>
-                <line number="290" hits="12"/>
-                <line number="291" hits="0"/>
-                <line number="294" hits="12"/>
-                <line number="295" hits="7"/>
-                <line number="298" hits="12"/>
-                <line number="299" hits="12"/>
-                <line number="300" hits="1"/>
-                <line number="306" hits="12"/>
-                <line number="307" hits="0"/>
-                <line number="311" hits="12"/>
-                <line number="312" hits="4"/>
-                <line number="315" hits="12"/>
-                <line number="316" hits="1"/>
-                <line number="319" hits="12"/>
-                <line number="320" hits="12"/>
-                <line number="323" hits="3"/>
-                <line number="324" hits="3"/>
-                <line number="325" hits="0"/>
-                <line number="328" hits="3"/>
+                <line number="290" hits="34"/>
+                <line number="291" hits="4"/>
+                <line number="294" hits="34"/>
+                <line number="295" hits="25"/>
+                <line number="301" hits="34"/>
+                <line number="302" hits="4"/>
+                <line number="303" hits="2"/>
+                <line number="307" hits="34"/>
+                <line number="308" hits="8"/>
+                <line number="311" hits="34"/>
+                <line number="312" hits="3"/>
+                <line number="315" hits="34"/>
+                <line number="316" hits="34"/>
+                <line number="319" hits="8"/>
+                <line number="320" hits="8"/>
+                <line number="321" hits="0"/>
+                <line number="324" hits="8"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="49" hits="68"/>
-            <line number="57" hits="2"/>
-            <line number="65" hits="1"/>
-            <line number="75" hits="2"/>
-            <line number="77" hits="2"/>
-            <line number="78" hits="2"/>
-            <line number="79" hits="2"/>
-            <line number="82" hits="2"/>
-            <line number="93" hits="1"/>
-            <line number="99" hits="1"/>
-            <line number="103" hits="1"/>
-            <line number="105" hits="1"/>
-            <line number="106" hits="1"/>
+            <line number="49" hits="90"/>
+            <line number="57" hits="3"/>
+            <line number="65" hits="2"/>
+            <line number="75" hits="20"/>
+            <line number="77" hits="20"/>
+            <line number="78" hits="20"/>
+            <line number="79" hits="20"/>
+            <line number="82" hits="20"/>
+            <line number="93" hits="3"/>
+            <line number="99" hits="3"/>
+            <line number="103" hits="3"/>
+            <line number="105" hits="3"/>
+            <line number="106" hits="3"/>
             <line number="107" hits="0"/>
-            <line number="110" hits="1"/>
-            <line number="111" hits="1"/>
-            <line number="116" hits="1"/>
-            <line number="117" hits="1"/>
-            <line number="123" hits="1"/>
-            <line number="126" hits="1"/>
-            <line number="128" hits="1"/>
-            <line number="129" hits="1"/>
-            <line number="132" hits="1"/>
+            <line number="110" hits="3"/>
+            <line number="111" hits="3"/>
+            <line number="116" hits="3"/>
+            <line number="117" hits="3"/>
+            <line number="123" hits="3"/>
+            <line number="126" hits="3"/>
+            <line number="128" hits="3"/>
+            <line number="129" hits="3"/>
+            <line number="132" hits="3"/>
             <line number="145" hits="1"/>
             <line number="146" hits="1"/>
             <line number="148" hits="1"/>
@@ -1993,14 +1991,14 @@
             <line number="172" hits="1"/>
             <line number="173" hits="1"/>
             <line number="177" hits="1"/>
-            <line number="187" hits="3"/>
-            <line number="189" hits="3"/>
-            <line number="193" hits="3"/>
-            <line number="194" hits="3"/>
-            <line number="195" hits="3"/>
-            <line number="197" hits="3"/>
+            <line number="187" hits="5"/>
+            <line number="189" hits="5"/>
+            <line number="193" hits="5"/>
+            <line number="194" hits="5"/>
+            <line number="195" hits="5"/>
+            <line number="197" hits="5"/>
             <line number="198" hits="0"/>
-            <line number="199" hits="3"/>
+            <line number="199" hits="5"/>
             <line number="200" hits="3"/>
             <line number="201" hits="0"/>
             <line number="202" hits="0"/>
@@ -2014,19 +2012,19 @@
             <line number="213" hits="3"/>
             <line number="214" hits="3"/>
             <line number="218" hits="3"/>
-            <line number="221" hits="1"/>
-            <line number="223" hits="1"/>
+            <line number="221" hits="3"/>
+            <line number="223" hits="3"/>
             <line number="224" hits="0"/>
-            <line number="227" hits="1"/>
-            <line number="228" hits="1"/>
-            <line number="229" hits="1"/>
-            <line number="232" hits="3"/>
+            <line number="227" hits="3"/>
+            <line number="228" hits="3"/>
+            <line number="229" hits="3"/>
+            <line number="232" hits="5"/>
             <line number="233" hits="0"/>
-            <line number="236" hits="3"/>
-            <line number="239" hits="3"/>
-            <line number="241" hits="3"/>
-            <line number="242" hits="3"/>
-            <line number="245" hits="3"/>
+            <line number="236" hits="5"/>
+            <line number="239" hits="5"/>
+            <line number="241" hits="5"/>
+            <line number="242" hits="5"/>
+            <line number="245" hits="5"/>
             <line number="257" hits="1"/>
             <line number="258" hits="1"/>
             <line number="260" hits="1"/>
@@ -2038,25 +2036,23 @@
             <line number="274" hits="1"/>
             <line number="275" hits="0"/>
             <line number="278" hits="1"/>
-            <line number="290" hits="12"/>
-            <line number="291" hits="0"/>
-            <line number="294" hits="12"/>
-            <line number="295" hits="7"/>
-            <line number="298" hits="12"/>
-            <line number="299" hits="12"/>
-            <line number="300" hits="1"/>
-            <line number="306" hits="12"/>
-            <line number="307" hits="0"/>
-            <line number="311" hits="12"/>
-            <line number="312" hits="4"/>
-            <line number="315" hits="12"/>
-            <line number="316" hits="1"/>
-            <line number="319" hits="12"/>
-            <line number="320" hits="12"/>
-            <line number="323" hits="3"/>
-            <line number="324" hits="3"/>
-            <line number="325" hits="0"/>
-            <line number="328" hits="3"/>
+            <line number="290" hits="34"/>
+            <line number="291" hits="4"/>
+            <line number="294" hits="34"/>
+            <line number="295" hits="25"/>
+            <line number="301" hits="34"/>
+            <line number="302" hits="4"/>
+            <line number="303" hits="2"/>
+            <line number="307" hits="34"/>
+            <line number="308" hits="8"/>
+            <line number="311" hits="34"/>
+            <line number="312" hits="3"/>
+            <line number="315" hits="34"/>
+            <line number="316" hits="34"/>
+            <line number="319" hits="8"/>
+            <line number="320" hits="8"/>
+            <line number="321" hits="0"/>
+            <line number="324" hits="8"/>
           </lines>
         </class>
       </classes>
