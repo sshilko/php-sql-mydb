@@ -383,7 +383,6 @@ final class QueryBuilderTest extends TestCase
         $this->builder->buildUpdateWhere([], [], 'table');
     }
 
-
     /**
      * @return array<array<string, string>>
      */
