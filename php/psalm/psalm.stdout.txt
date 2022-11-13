@@ -4,7 +4,7 @@
 [42;1m                              [0m
 ------------------------------
 
-Checks took 3.63 seconds and used 379.563MB of memory
+Checks took 3.79 seconds and used 379.617MB of memory
 Psalm was able to infer types for 99.3953% of the codebase
 -----------------
 99.771% ../src/sql/Mydb.php (1 mixed)
