@@ -1676,16 +1676,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbQueryBuilder.html#method_escape"
         },                {
-            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003ASQL_INSERT",
-            "name": "SQL_INSERT",
-            "summary": "",
-            "url": "classes/sql-MydbQueryBuilder.html#constant_SQL_INSERT"
-        },                {
-            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003ASQL_REPLACE",
-            "name": "SQL_REPLACE",
-            "summary": "",
-            "url": "classes/sql-MydbQueryBuilder.html#constant_SQL_REPLACE"
-        },                {
             "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003A\u0024mysqli",
             "name": "mysqli",
             "summary": "",
@@ -1740,6 +1730,16 @@ Search.appendIndex(
             "name": "escape",
             "summary": "",
             "url": "classes/sql-MydbQueryBuilderInterface.html#method_escape"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003ASQL_INSERT",
+            "name": "SQL_INSERT",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#constant_SQL_INSERT"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003ASQL_REPLACE",
+            "name": "SQL_REPLACE",
+            "summary": "",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#constant_SQL_REPLACE"
         },                {
             "fqsen": "\\sql\\MydbRegistry",
             "name": "MydbRegistry",
