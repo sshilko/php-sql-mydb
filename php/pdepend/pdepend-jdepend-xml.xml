@@ -33,11 +33,11 @@
         <Class sourceFile="/app/src/sql/MydbQueryBuilderInterface.php">MydbQueryBuilderInterface</Class>
       </AbstractClasses>
       <DependsUpon>
-        <Package>sql\MydbException</Package>
-        <Package>sql\MydbInterface</Package>
         <Package>sql\MydbMysqli</Package>
-        <Package>Psr\Log</Package>
+        <Package>sql\MydbInterface</Package>
+        <Package>sql\MydbException</Package>
         <Package></Package>
+        <Package>Psr\Log</Package>
       </DependsUpon>
       <UsedBy>
         <Package>sql\MydbException</Package>
@@ -113,20 +113,21 @@
     </Package>
     <Package name="sql\MydbMysqli">
       <Stats>
-        <TotalClasses>2</TotalClasses>
+        <TotalClasses>3</TotalClasses>
         <ConcreteClasses>1</ConcreteClasses>
-        <AbstractClasses>1</AbstractClasses>
+        <AbstractClasses>2</AbstractClasses>
         <Ca>1</Ca>
         <Ce>1</Ce>
-        <A>0.5</A>
+        <A>0.66666666666667</A>
         <I>0.5</I>
-        <D>0</D>
+        <D>0.16666666666667</D>
       </Stats>
       <ConcreteClasses>
         <Class sourceFile="/app/src/sql/MydbMysqli/MydbMysqliResult.php">MydbMysqliResult</Class>
       </ConcreteClasses>
       <AbstractClasses>
         <Class sourceFile="/app/src/sql/MydbMysqli/MydbMysqliEscapeStringInterface.php">MydbMysqliEscapeStringInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbMysqli/MydbMysqliResultInterface.php">MydbMysqliResultInterface</Class>
       </AbstractClasses>
       <DependsUpon>
         <Package></Package>
