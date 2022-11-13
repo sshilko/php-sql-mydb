@@ -559,7 +559,7 @@ ENDUTF8;
         }
 
         $actual = $db->escape(null);
-        self::assertSame('', $actual);
+        self::assertSame("''", $actual);
 
         $actual = $db->escape(new MydbExpression('hello world " unescaped null'));
         self::assertSame('hello world " unescaped null', $actual);

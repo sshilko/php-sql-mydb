@@ -17,7 +17,6 @@ namespace sql;
 
 use sql\MydbException\QueryBuilderEscapeException;
 use sql\MydbException\QueryBuilderException;
-use sql\MydbExpression;
 use sql\MydbMysqli\MydbMysqliEscapeStringInterface;
 use function array_map;
 use function count;
@@ -30,7 +29,10 @@ use function is_null;
 use function is_string;
 use function preg_match;
 use function sprintf;
+use function strlen;
 use function strpos;
+use function strtoupper;
+use function substr;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -39,8 +41,6 @@ use function strpos;
  */
 class MydbQueryBuilder implements MydbQueryBuilderInterface
 {
-    public const SQL_INSERT  = 'INSERT';
-    public const SQL_REPLACE = 'REPLACE';
 
     protected MydbMysqliEscapeStringInterface $mysqli;
 
@@ -54,7 +54,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      */
     public function showColumnsLike(string $table, string $column): string
     {
-        return "SHOW COLUMNS FROM `" . $this->escape($table, '') . "` LIKE " . $this->escape($column);
+        return "SHOW COLUMNS FROM " . $this->escape($table, '') . " LIKE " . $this->escape($column);
     }
 
     /**
@@ -62,7 +62,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      */
     public function showKeys(string $table): string
     {
-        return 'SHOW KEYS FROM `' . $this->escape($table, '') . '`';
+        return 'SHOW KEYS FROM ' . $this->escape($table, '');
     }
 
     /**
@@ -75,11 +75,11 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
         $names = $values = [];
 
         foreach ($data as $name => $value) {
-            $names[]  = $this->escape($name, "`");
+            $names[]  = $this->escape($name, "");
             $values[] = $this->escape($value);
         }
 
-        return sprintf('%s INTO `%s` (%s) VALUES (%s)', $type, $table, implode(',', $names), implode(',', $values));
+        return sprintf('%s INTO %s (%s) VALUES (%s)', $type, $table, implode(',', $names), implode(',', $values));
     }
 
     /**
@@ -90,7 +90,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      */
     public function buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string
     {
-        $sql = 'UPDATE `' . $table . '`';
+        $sql = 'UPDATE ' . $table;
         /**
          * @phpcs:disable SlevomatCodingStandard.Files.LineLength.LineTooLong
          * @phpcs:disable Generic.Files.LineLength.TooLong
@@ -100,7 +100,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
             /**
              * @psalm-suppress InvalidOperand
              */
-            $sql .= ' SET `' . $column . '` = CASE';
+            $sql .= ' SET ' . $column . ' = CASE';
 
             foreach ($map as $newValueWhere) {
                 if (!isset($newValueWhere[0], $newValueWhere[1])) {
@@ -113,14 +113,14 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
                 /**
                  * @psalm-suppress InvalidOperand
                  */
-                $sql .= ' WHEN (`' . $column . '` = ' . $escapedWhereValue . ')';
+                $sql .= ' WHEN (' . $column . ' = ' . $escapedWhereValue . ')';
                 $sql .= ' THEN ' . $escapedThenValue;
             }
 
             /**
              * @psalm-suppress InvalidOperand
              */
-            $sql .= ' ELSE `' . $column . '`';
+            $sql .= ' ELSE ' . $column;
         }
 
         $sql .= ' END';
@@ -149,14 +149,14 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
             /**
              * @psalm-suppress RedundantCastGivenDocblockType
              */
-            $f = '`' . (string) $field . '`' . ' = ' . $this->escape($value);
+            $f = (string) $field . ' = ' . $this->escape($value);
             $values[] = $f;
         }
 
         $queryUpdate = implode(', ', $values);
 
         if ('' !== $queryUpdate && '' !== $queryWhere) {
-            return 'UPDATE `' . $table . '` SET ' . $queryUpdate . ' WHERE ' . $queryWhere;
+            return 'UPDATE ' . $table . ' SET ' . $queryUpdate . ' WHERE ' . $queryWhere;
         }
 
         return null;
@@ -174,7 +174,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
         }
 
         /** @lang text */
-        return 'DELETE FROM ' . $this->escape($table, '`') . ' WHERE ' . $queryWhere;
+        return 'DELETE FROM ' . $this->escape($table, '') . ' WHERE ' . $queryWhere;
     }
 
     /**
@@ -190,7 +190,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
             /**
              * @psalm-suppress InvalidOperand
              */
-            $queryPart = '`' . $field . '`';
+            $queryPart = (string) $field;
             $isNegative = in_array($field, $negativeFields, true);
             $inNull = false;
 
@@ -268,8 +268,8 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
 
         $values = array_map($mapper, $data);
 
-        $query = "INSERT " . ($ignore ? 'IGNORE ' : '') . "INTO `" . $table . "` ";
-        $query .= "(`" . implode('`, `', $cols) . "`) VALUES " . implode(', ', $values);
+        $query = "INSERT " . ($ignore ? 'IGNORE ' : '') . "INTO " . $table . " ";
+        $query .= "(" . implode(', ', $cols) . ") VALUES " . implode(', ', $values);
 
         if ('' !== $onDuplicate) {
             $query .= ' ON DUPLICATE KEY UPDATE ' . $onDuplicate;
@@ -295,16 +295,12 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
             return (string) $unescaped;
         }
 
-        if (is_string($unescaped)) {
-            if ('null' === $unescaped || 'NULL' === $unescaped) {
-                return $unescaped;
-            }
-
-            /**
-             * Not quoting '0x...' decimal values
-             */
-            if (0 === strpos($unescaped, '0x') && preg_match('/[a-zA-Z0-9]+/', $unescaped)) {
-                return $unescaped;
+        /**
+         * Not quoting '0x...' decimal values
+         */
+        if (is_string($unescaped) && 0 === strpos($unescaped, '0x') && preg_match('/^[a-zA-Z0-9]+$/', $unescaped)) {
+            if (0 === strlen($unescaped) % 2) {
+                return '0x' . strtoupper(substr($unescaped, 2));
             }
         }
 
@@ -313,7 +309,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
         }
 
         if (is_null($unescaped)) {
-            return '';
+            return '' !== $quote ? $quote . '' . $quote : '';
         }
 
         if (preg_match('/^(\w)*$/', $unescaped) || preg_match('/^(\w\s)*$/', $unescaped)) {

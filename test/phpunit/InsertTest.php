@@ -17,6 +17,7 @@ namespace phpunit;
 
 use sql\MydbExpression;
 use sql\MydbMysqli;
+use function array_merge;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -203,14 +204,37 @@ final class InsertTest extends includes\BaseTestCase
         $db->insertOne(['id' => 8, 'name' => 'user8'], 'myusers');
 
         $actual = $db->select("SELECT id, name FROM myusers");
-        $reality = [
+        $expected = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
             ['id' => '3', 'name' => 'user3'],
             ['id' => '7', 'name' => '666'],
             ['id' => '8', 'name' => 'user8'],
         ];
-        self::assertSame($reality, $actual);
+        self::assertSame($expected, $actual);
+
+        $actual = $db->select("SELECT id, cost FROM mydecimals");
+        $expected = [
+            ['id' => '1', 'cost' => '1.10'],
+            ['id' => '2', 'cost' => '1.20'],
+            ['id' => '3', 'cost' => '0.30'],
+        ];
+        self::assertSame($expected, $actual);
+        $db->insertOne(['id' => 95, 'cost' => 3.21], 'mydecimals');
+        $db->insertOne(['id' => 96, 'cost' => 3.2], 'mydecimals');
+        $db->insertOne(['id' => 97, 'cost' => '3'], 'mydecimals');
+        $db->insertOne(['id' => 98, 'cost' => '3.01'], 'mydecimals');
+        $db->insertOne(['id' => 99, 'cost' => '0'], 'mydecimals');
+
+        $expected = array_merge($expected, [
+            ['id' => '95', 'cost' => '3.21'],
+            ['id' => '96', 'cost' => '3.20'],
+            ['id' => '97', 'cost' => '3.00'],
+            ['id' => '98', 'cost' => '3.01'],
+            ['id' => '99', 'cost' => '0.00'],
+        ]);
+        $actual = $db->select("SELECT id, cost FROM mydecimals");
+        self::assertSame($expected, $actual);
 
         $db->rollbackTransaction();
         $db->close();
