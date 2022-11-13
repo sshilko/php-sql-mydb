@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-13 08:56:46</timestamp>
+  <timestamp>2022-11-13 12:48:28</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>154</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>385.34</totalCrap>
+    <totalCrap>399.84</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -61,9 +61,9 @@
       <methodName>query</methodName>
       <methodSignature>query(string $query): ?array</methodSignature>
       <fullMethod>query(string $query): ?array</fullMethod>
-      <crap>7.05</crap>
+      <crap>6</crap>
       <complexity>6</complexity>
-      <coverage>69.23</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -72,9 +72,9 @@
       <methodName>command</methodName>
       <methodSignature>command(string $query): bool</methodSignature>
       <fullMethod>command(string $query): bool</fullMethod>
-      <crap>3.03</crap>
+      <crap>3</crap>
       <complexity>3</complexity>
-      <coverage>85.71</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -83,9 +83,9 @@
       <methodName>getEnumValues</methodName>
       <methodSignature>getEnumValues(string $table, string $column): array</methodSignature>
       <fullMethod>getEnumValues(string $table, string $column): array</fullMethod>
-      <crap>6.05</crap>
-      <complexity>6</complexity>
-      <coverage>88.89</coverage>
+      <crap>7</crap>
+      <complexity>7</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -94,9 +94,9 @@
       <methodName>escape</methodName>
       <methodSignature>escape($unescaped, string $quote): string</methodSignature>
       <fullMethod>escape($unescaped, string $quote): string</fullMethod>
-      <crap>2.15</crap>
+      <crap>2</crap>
       <complexity>2</complexity>
-      <coverage>66.67</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -105,9 +105,9 @@
       <methodName>getPrimaryKey</methodName>
       <methodSignature>getPrimaryKey(string $table): ?string</methodSignature>
       <fullMethod>getPrimaryKey(string $table): ?string</fullMethod>
-      <crap>6.73</crap>
+      <crap>6.03</crap>
       <complexity>6</complexity>
-      <coverage>72.73</coverage>
+      <coverage>90.91</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -116,9 +116,9 @@
       <methodName>beginTransaction</methodName>
       <methodSignature>beginTransaction(): void</methodSignature>
       <fullMethod>beginTransaction(): void</fullMethod>
-      <crap>5.03</crap>
+      <crap>5</crap>
       <complexity>5</complexity>
-      <coverage>88.89</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -127,9 +127,9 @@
       <methodName>rollbackTransaction</methodName>
       <methodSignature>rollbackTransaction(): void</methodSignature>
       <fullMethod>rollbackTransaction(): void</fullMethod>
-      <crap>3.07</crap>
+      <crap>3</crap>
       <complexity>3</complexity>
-      <coverage>80</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -138,9 +138,9 @@
       <methodName>commitTransaction</methodName>
       <methodSignature>commitTransaction(): void</methodSignature>
       <fullMethod>commitTransaction(): void</fullMethod>
-      <crap>3.07</crap>
+      <crap>3</crap>
       <complexity>3</complexity>
-      <coverage>80</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -204,9 +204,9 @@
       <methodName>update</methodName>
       <methodSignature>update(string $query): ?int</methodSignature>
       <fullMethod>update(string $query): ?int</fullMethod>
-      <crap>3.33</crap>
+      <crap>3.04</crap>
       <complexity>3</complexity>
-      <coverage>66.67</coverage>
+      <coverage>83.33</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -215,9 +215,9 @@
       <methodName>deleteWhere</methodName>
       <methodSignature>deleteWhere(array $whereFields, string $table, array $whereNotFields): ?int</methodSignature>
       <fullMethod>deleteWhere(array $whereFields, string $table, array $whereNotFields): ?int</fullMethod>
-      <crap>2</crap>
+      <crap>2.06</crap>
       <complexity>2</complexity>
-      <coverage>100</coverage>
+      <coverage>75</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -246,8 +246,8 @@
       <package>sql</package>
       <className>sql\Mydb</className>
       <methodName>insertMany</methodName>
-      <methodSignature>insertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): void</methodSignature>
-      <fullMethod>insertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): void</fullMethod>
+      <methodSignature>insertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicateSql): void</methodSignature>
+      <fullMethod>insertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicateSql): void</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -290,11 +290,11 @@
       <package>sql</package>
       <className>sql\Mydb</className>
       <methodName>readServerResponse</methodName>
-      <methodSignature>readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResult</methodSignature>
-      <fullMethod>readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResult</fullMethod>
-      <crap>6.13</crap>
+      <methodSignature>readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResultInterface</methodSignature>
+      <fullMethod>readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResultInterface</fullMethod>
+      <crap>6.02</crap>
       <complexity>6</complexity>
-      <coverage>84.62</coverage>
+      <coverage>92.31</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1447,8 +1447,8 @@
       <methodName>showColumnsLike</methodName>
       <methodSignature>showColumnsLike(string $table, string $column): string</methodSignature>
       <fullMethod>showColumnsLike(string $table, string $column): string</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
+      <crap>3</crap>
+      <complexity>3</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1458,8 +1458,8 @@
       <methodName>showKeys</methodName>
       <methodSignature>showKeys(string $table): string</methodSignature>
       <fullMethod>showKeys(string $table): string</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
+      <crap>2</crap>
+      <complexity>2</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1469,8 +1469,8 @@
       <methodName>insertOne</methodName>
       <methodSignature>insertOne(array $data, string $table, string $type): string</methodSignature>
       <fullMethod>insertOne(array $data, string $table, string $type): string</fullMethod>
-      <crap>2</crap>
-      <complexity>2</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1480,9 +1480,9 @@
       <methodName>buildUpdateWhereMany</methodName>
       <methodSignature>buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string</methodSignature>
       <fullMethod>buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string</fullMethod>
-      <crap>5.01</crap>
-      <complexity>5</complexity>
-      <coverage>93.33</coverage>
+      <crap>10</crap>
+      <complexity>10</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1491,9 +1491,9 @@
       <methodName>buildUpdateWhere</methodName>
       <methodSignature>buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string</methodSignature>
       <fullMethod>buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string</fullMethod>
-      <crap>4.02</crap>
-      <complexity>4</complexity>
-      <coverage>88.89</coverage>
+      <crap>5.01</crap>
+      <complexity>5</complexity>
+      <coverage>91.67</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1502,8 +1502,8 @@
       <methodName>buildDeleteWhere</methodName>
       <methodSignature>buildDeleteWhere(string $table, array $fields, array $negativeFields): ?string</methodSignature>
       <fullMethod>buildDeleteWhere(string $table, array $fields, array $negativeFields): ?string</fullMethod>
-      <crap>2</crap>
-      <complexity>2</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1513,9 +1513,9 @@
       <methodName>buildWhere</methodName>
       <methodSignature>buildWhere(array $fields, array $negativeFields, array $likeFields): string</methodSignature>
       <fullMethod>buildWhere(array $fields, array $negativeFields, array $likeFields): string</fullMethod>
-      <crap>17.93</crap>
-      <complexity>15</complexity>
-      <coverage>76.47</coverage>
+      <crap>17</crap>
+      <complexity>17</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1524,9 +1524,9 @@
       <methodName>buildInsertMany</methodName>
       <methodSignature>buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string</methodSignature>
       <fullMethod>buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string</fullMethod>
-      <crap>3.01</crap>
-      <complexity>3</complexity>
-      <coverage>90.91</coverage>
+      <crap>7</crap>
+      <complexity>7</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1535,9 +1535,9 @@
       <methodName>escape</methodName>
       <methodSignature>escape($unescaped, string $quote): string</methodSignature>
       <fullMethod>escape($unescaped, string $quote): string</fullMethod>
-      <crap>15.05</crap>
+      <crap>15</crap>
       <complexity>15</complexity>
-      <coverage>94.12</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

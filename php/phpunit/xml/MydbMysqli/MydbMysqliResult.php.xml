@@ -36,6 +36,8 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -54,6 +56,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="50">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -69,6 +72,8 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -102,6 +107,8 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -138,6 +145,8 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -156,6 +165,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="55">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -174,6 +184,8 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -192,6 +204,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="60">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -207,6 +220,8 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -243,6 +258,8 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -261,6 +278,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="73">
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -287,6 +305,8 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -305,6 +325,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="84">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -350,9 +371,12 @@
         <covered by="phpunit\InsertTest::testInsert"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="88">
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -371,9 +395,12 @@
         <covered by="phpunit\InsertTest::testInsert"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="102">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -389,6 +416,8 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -505,6 +534,10 @@
         <token name="T_CLASS">class</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">MydbMysqliResult</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MydbMysqliResultInterface</token>
       </line>
       <line no="28">
         <token name="T_OPEN_CURLY">{</token>

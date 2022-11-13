@@ -15,6 +15,7 @@
     <coverage>
       <line nr="34">
         <covered by="phpunit\MydbExceptionTest::testQueryBuilderException"/>
+        <covered by="phpunit\QueryBuilderTest::testEscape"/>
       </line>
     </coverage>
     <source>

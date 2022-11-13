@@ -19,6 +19,11 @@ Exception (phpunit\Exception)
  [x] Failed to connect
  [x] Failed to connect after retry
  [x] Failed to connect lazy
+ [x] Failed to command lazy
+ [x] Failed to begin transaction
+ [x] Failed to rollback transaction
+ [x] Failed to commit transaction
+ [x] Failed to escape lazy
  [x] My sql warning
  [x] My sql error
 
@@ -53,9 +58,12 @@ Meta (phpunit\Meta)
  [x] Primary key
  [x] Enum
  [x] Set
+ [x] Not real enum or set
  [x] Escape
  [x] Single quoted escape
  [x] Double quoted escape
+ [x] Primary key not defined
+ [x] Primary key query failed
 
 Mydb Environment (phpunit\MydbEnvironment)
  [x] Signal sighup trap with data set "SIGHUP"
@@ -102,16 +110,42 @@ Options (phpunit\Options)
 
 Query Builder (phpunit\QueryBuilder)
  [x] Show columns like
+ [x] Build update where many exception 1
+ [x] Build delete where exceptions
+ [x] Build update where many exception 7
+ [x] Build update where many exception 6
+ [x] Build update where many exception 5
+ [x] Build update where many exception 4
+ [x] Build update where many exception 3
+ [x] Build update where many exception 2
+ [x] Build insert many exception
  [x] Show keys
- [x] Insert one with data set "simple int"
- [x] Insert one with data set "simple float"
- [x] Insert one with data set "expression"
- [x] Insert one with data set "raw null"
- [x] Insert one with data set "string caps null"
- [x] Insert one with data set "string lowercase null"
- [x] Insert one with data set "string 0x"
- [x] Insert one with data set "string 0x even"
- [x] Insert one with data set "string 0x mismatch"
+ [x] Build where exception
+ [x] Build where with data set "simple"
+ [x] Build where with data set #2
+ [x] Build where with data set #10
+ [x] Build where with data set #9
+ [x] Build where with data set #8
+ [x] Build where with data set #7
+ [x] Build where with data set #6
+ [x] Build where with data set #5
+ [x] Build where with data set #4
+ [x] Build where with data set #3
+ [x] Build where with data set #1
+ [x] Build where with data set "simple array count >1"
+ [x] Build where with data set #0
+ [x] Build where with data set "like null"
+ [x] Build where with data set "negative null"
+ [x] Build where with data set "simple null"
+ [x] Build where with data set "negative array count 1"
+ [x] Build where with data set "simple array count 1"
+ [x] Build where with data set "negative null array count >1"
+ [x] Build where with data set "simple null array count >1"
+ [x] Build where with data set "negative array count >1"
+ [x] Build where with data set #11
+ [x] Build update where many with data set "simple"
+ [x] Build update where many with data set "prefixed simple"
+ [x] Escape
  [x] Replace one with data set "simple int"
  [x] Replace one with data set "simple float"
  [x] Replace one with data set "expression"
@@ -121,8 +155,17 @@ Query Builder (phpunit\QueryBuilder)
  [x] Replace one with data set "string 0x"
  [x] Replace one with data set "string 0x even"
  [x] Replace one with data set "string 0x mismatch"
- [x] Build update where many with data set "simple"
- [x] Build update where many with data set "prefixed simple"
+ [x] Insert replace one exception
+ [x] Insert one with data set "simple int"
+ [x] Insert one with data set "simple float"
+ [x] Insert one with data set "expression"
+ [x] Insert one with data set "raw null"
+ [x] Insert one with data set "string caps null"
+ [x] Insert one with data set "string lowercase null"
+ [x] Insert one with data set "string 0x"
+ [x] Insert one with data set "string 0x even"
+ [x] Insert one with data set "string 0x mismatch"
+ [x] Build update where exceptions
 
 Registry (phpunit\Registry)
  [x] Registry empty 1
@@ -149,6 +192,10 @@ Resource (phpunit\Resource)
  [x] Gc when connected
  [x] Do no commit transaction when autocommit enabled on close
  [x] Do no commit transaction when transaction explicitly started on close
+ [x] Query bad client request
+ [x] Query bad server response
+ [x] Query bad server response packet field count is zero
+ [x] Query bad server response packet field count is not zero but bad result
 
 Select (phpunit\Select)
  [x] Simple select with data set "simple select all"
@@ -181,4 +228,5 @@ Update (phpunit\Update)
  [x] Update where
  [x] Update
  [x] Update many
+ [x] Update internal error
 

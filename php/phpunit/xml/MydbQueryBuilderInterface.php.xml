@@ -365,11 +365,6 @@
         <token name="T_ARRAY">array</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$fields</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_OPEN_SQUARE">[</token>
-        <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_COMMA">,</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_ARRAY">array</token>

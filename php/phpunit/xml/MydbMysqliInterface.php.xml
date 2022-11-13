@@ -94,7 +94,7 @@
         <token name="T_NS_SEPARATOR">\</token>
         <token name="T_STRING">MydbMysqli</token>
         <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">MydbMysqliResult</token>
+        <token name="T_STRING">MydbMysqliResultInterface</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="22"/>
@@ -242,7 +242,7 @@
         <token name="T_COLON">:</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_QUESTION_MARK">?</token>
-        <token name="T_STRING">MydbMysqliResult</token>
+        <token name="T_STRING">MydbMysqliResultInterface</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="43"/>

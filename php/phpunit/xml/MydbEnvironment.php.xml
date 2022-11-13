@@ -73,6 +73,13 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -91,6 +98,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="106">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -111,6 +119,13 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -129,6 +144,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="134">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
@@ -138,6 +154,9 @@
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
         <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -150,9 +169,11 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
@@ -181,6 +202,9 @@
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
         <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -193,9 +217,11 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
@@ -225,6 +251,9 @@
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
         <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -237,9 +266,11 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
@@ -268,6 +299,9 @@
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
         <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -280,9 +314,11 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
@@ -311,6 +347,9 @@
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
         <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -323,9 +362,11 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
@@ -354,6 +395,9 @@
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
         <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -366,9 +410,11 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
@@ -408,10 +454,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -430,6 +483,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="202">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -450,10 +504,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -472,6 +533,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="203">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -492,10 +554,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -514,6 +583,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="208">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -534,10 +604,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -556,6 +633,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="213">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -576,10 +654,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -598,6 +683,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="215">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -618,10 +704,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -640,6 +733,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="217">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -660,10 +754,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -682,6 +783,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="218">
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
@@ -708,10 +810,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -730,6 +839,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="232">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -750,10 +860,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -772,6 +889,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="234">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -792,10 +910,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -814,6 +939,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="235">
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
@@ -840,10 +966,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -862,6 +995,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="239">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -882,10 +1016,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -904,6 +1045,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="240">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -924,10 +1066,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -946,6 +1095,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="242">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -966,10 +1116,17 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -988,6 +1145,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="256">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -1008,6 +1166,13 @@
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -1026,6 +1191,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="257">
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>

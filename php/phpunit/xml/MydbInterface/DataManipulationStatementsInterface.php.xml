@@ -269,7 +269,7 @@
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$onDuplicate</token>
+        <token name="T_VARIABLE">$onDuplicateSql</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
