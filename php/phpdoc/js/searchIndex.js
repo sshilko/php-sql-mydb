@@ -896,6 +896,46 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbMysqli-MydbMysqliResult.html#property_fieldsCount"
         },                {
+            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResultInterface",
+            "name": "MydbMysqliResultInterface",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli-MydbMysqliResultInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResultInterface\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli-MydbMysqliResultInterface.html#method___construct"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResultInterface\u003A\u003AgetFieldCount\u0028\u0029",
+            "name": "getFieldCount",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli-MydbMysqliResultInterface.html#method_getFieldCount"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResultInterface\u003A\u003AgetWarnings\u0028\u0029",
+            "name": "getWarnings",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli-MydbMysqliResultInterface.html#method_getWarnings"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResultInterface\u003A\u003AsetErrorMessage\u0028\u0029",
+            "name": "setErrorMessage",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli-MydbMysqliResultInterface.html#method_setErrorMessage"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResultInterface\u003A\u003AsetErrorNumber\u0028\u0029",
+            "name": "setErrorNumber",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli-MydbMysqliResultInterface.html#method_setErrorNumber"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResultInterface\u003A\u003AgetError\u0028\u0029",
+            "name": "getError",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli-MydbMysqliResultInterface.html#method_getError"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResultInterface\u003A\u003AgetResult\u0028\u0029",
+            "name": "getResult",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli-MydbMysqliResultInterface.html#method_getResult"
+        },                {
             "fqsen": "\\sql\\MydbMysqli",
             "name": "MydbMysqli",
             "summary": "Facade\u0020for\u0020php\u0020mysqli\u0020extension",
