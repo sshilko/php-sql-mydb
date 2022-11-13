@@ -108,7 +108,8 @@
             "@putenv XDEBUG_MODE=off",
             "@putenv PHAN_DISABLE_XDEBUG_WARN=1",
             "@putenv PHAN_ALLOW_XDEBUG=1",
-            "php ./vendor/bin/phan --color -k ./build/phan.php --output-mode html -o build/tmp/phan.html --long-progress-bar > build/tmp/phan.txt 2>&1"
+            "php ./vendor/bin/phan --color -k ./build/phan.php --output-mode html -o build/tmp/phan.html --long-progress-bar > build/tmp/phan.txt 2>&1",
+            "cat build/tmp/phan.txt"
         ],
         "app-phpcpd": [
             "@putenv XDEBUG_MODE=off",

@@ -519,7 +519,7 @@ class Mydb implements
      */
     public function replaceOne(array $data, string $table): ?string
     {
-        $query = $this->queryBuilder->insertOne($data, $table, MydbQueryBuilder::SQL_REPLACE);
+        $query = $this->queryBuilder->insertOne($data, $table, MydbQueryBuilderInterface::SQL_REPLACE);
 
         return $this->replace($query);
     }
@@ -530,7 +530,7 @@ class Mydb implements
      */
     public function insertOne(array $data, string $table): ?string
     {
-        $query = $this->queryBuilder->insertOne($data, $table, MydbQueryBuilder::SQL_INSERT);
+        $query = $this->queryBuilder->insertOne($data, $table, MydbQueryBuilderInterface::SQL_INSERT);
 
         return $this->insert($query);
     }

@@ -62,6 +62,12 @@ VALUES (0x6578, 1, 1, '2011-01-01 00:00:00', '2011-01-02 00:00:00',
         '1',
         'Sany');
 
+truncate table `mydecimals`;
+INSERT INTO `mydecimals`
+VALUES (1, 1.1),
+       (2, 1.20),
+       (3, '0.3');
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

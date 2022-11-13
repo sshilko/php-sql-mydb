@@ -114,7 +114,7 @@ CREATE TABLE `myusers_devices`
 
 DROP TABLE IF EXISTS `myusers_languages`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `myusers_languages`
 (
     `id`                tinyint(4) unsigned NOT NULL AUTO_INCREMENT,
@@ -124,4 +124,14 @@ CREATE TABLE `myusers_languages`
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 0
   DEFAULT CHARSET = utf8;
+
+CREATE TABLE `mydecimals` (
+   `id` int(11) NOT NULL AUTO_INCREMENT,
+   `cost` decimal(4,2) NOT NULL,
+   PRIMARY KEY (`id`)
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 0
+  DEFAULT CHARSET = ascii;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
+

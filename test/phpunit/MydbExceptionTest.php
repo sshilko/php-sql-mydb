@@ -17,6 +17,7 @@ namespace phpunit;
 
 use PHPUnit\Framework\TestCase;
 use sql\MydbException;
+use sql\MydbException\QueryBuilderEscapeException;
 use function time;
 
 /**
@@ -36,6 +37,19 @@ final class MydbExceptionTest extends TestCase
         $exception = new MydbException($message);
         $this->expectException(MydbException::class);
         $this->expectExceptionMessage($message);
+
+        throw $exception;
+    }
+
+    /**
+     * @throws \sql\MydbException
+     */
+    public function testQueryBuilderException(): void
+    {
+        $message = 'hello builder ' . time();
+        $exception = new QueryBuilderEscapeException($message);
+        $this->expectException(QueryBuilderEscapeException::class);
+        $this->expectExceptionMessage("Failed to escape value: " . $message);
 
         throw $exception;
     }
