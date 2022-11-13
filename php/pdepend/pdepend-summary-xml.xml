@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2022-11-13T13:11:53" pdepend="@package_version@" ahh="0.36363636363636" andc="0.61290322580645" calls="282" ccn="335" ccn2="397" cloc="1583" clsa="0" clsc="30" eloc="1874" fanout="51" leafs="27" lloc="1264" loc="4466" maxDIT="4" ncloc="2883" noc="30" nof="0" noi="16" nom="261" nop="4" roots="1">
+<metrics generated="2022-11-13T13:17:44" pdepend="@package_version@" ahh="0.36363636363636" andc="0.61290322580645" calls="282" ccn="335" ccn2="397" cloc="1583" clsa="0" clsc="30" eloc="1874" fanout="51" leafs="27" lloc="1264" loc="4466" maxDIT="4" ncloc="2883" noc="30" nof="0" noi="16" nom="261" nop="4" roots="1">
   <files>
     <file name="/app/src/sql/Mydb.php" loc="704" cloc="172" eloc="418" lloc="267" ncloc="532"/>
     <file name="/app/src/sql/MydbCredentials.php" loc="140" cloc="63" eloc="58" lloc="31" ncloc="77"/>
