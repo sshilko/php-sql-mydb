@@ -353,20 +353,36 @@ final class QueryBuilderTest extends TestCase
         $this->builder->buildDeleteWhere('table1', []);
     }
 
-    public function testBuildUpdateWhereExceptions(): void
+    public function testBuildUpdateWhereExceptions1(): void
     {
         self::expectException(QueryBuilderException::class);
         $this->builder->buildUpdateWhere(['a'], [], 'table');
+    }
 
+    public function testBuildUpdateWhereExceptions2(): void
+    {
         self::expectException(QueryBuilderException::class);
         $this->builder->buildUpdateWhere([1 => 'a'], [], 'table');
+    }
 
+    public function testBuildUpdateWhereExceptions3(): void
+    {
         self::expectException(QueryBuilderException::class);
         $this->builder->buildUpdateWhere(['a' => 'b'], [], 'table');
+    }
 
+    public function testBuildUpdateWhereExceptions4(): void
+    {
         self::expectException(QueryBuilderException::class);
         $this->builder->buildUpdateWhere(['a' => 'b'], [], '');
     }
+
+    public function testBuildUpdateWhereExceptions5(): void
+    {
+        self::expectException(QueryBuilderException::class);
+        $this->builder->buildUpdateWhere([], [], 'table');
+    }
+
 
     /**
      * @return array<array<string, string>>

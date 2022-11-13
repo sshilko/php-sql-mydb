@@ -166,7 +166,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
         string $table,
         array $whereNotFields = []
     ): ?string {
-        if ('' === $table || 0 === count($update)) {
+        if ('' === $table || [] === $update || is_int(key($update))) {
             throw new QueryBuilderException();
         }
 
