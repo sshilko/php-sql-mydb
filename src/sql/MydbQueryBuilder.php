@@ -27,12 +27,14 @@ use function is_float;
 use function is_int;
 use function is_null;
 use function is_string;
+use function key;
 use function preg_match;
 use function sprintf;
 use function strlen;
 use function strpos;
 use function strtoupper;
 use function substr;
+use function trim;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -54,6 +56,10 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      */
     public function showColumnsLike(string $table, string $column): string
     {
+        if ('' === $table || '' === $column) {
+            throw new QueryBuilderException();
+        }
+
         return "SHOW COLUMNS FROM " . $this->escape($table, '') . " LIKE " . $this->escape($column);
     }
 
@@ -62,6 +68,10 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      */
     public function showKeys(string $table): string
     {
+        if ('' === $table) {
+            throw new QueryBuilderException();
+        }
+
         return 'SHOW KEYS FROM ' . $this->escape($table, '');
     }
 
@@ -72,6 +82,10 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      */
     public function insertOne(array $data, string $table, string $type): string
     {
+        if ('' === $table || 0 === count($data)) {
+            throw new QueryBuilderException();
+        }
+
         $names = $values = [];
 
         foreach ($data as $name => $value) {
@@ -87,23 +101,33 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      * @param array  $where          ['col2' => 'value2', 'col3' => ['v3', 'v4']]
      * @param string $table          'mytable'
      * @throws \sql\MydbException\QueryBuilderException
+     * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */
     public function buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string
     {
+        if ('' === $table) {
+            throw new QueryBuilderException();
+        }
+
         $sql = 'UPDATE ' . $table;
         /**
-         * @phpcs:disable SlevomatCodingStandard.Files.LineLength.LineTooLong
          * @phpcs:disable Generic.Files.LineLength.TooLong
          * @var array<array-key, array<array-key, array<array-key, (float|int|string|\sql\MydbExpression|null)>>> $columnSetWhere
          */
-        foreach ($columnSetWhere as $column => $map) {
+        foreach ($columnSetWhere as $column => $updateValuesMap) {
+            /**
+             * @psalm-suppress DocblockTypeContradiction
+             */
+            if (!is_string($column) || !is_array($updateValuesMap) || 0 === count($updateValuesMap)) {
+                throw new QueryBuilderException();
+            }
             /**
              * @psalm-suppress InvalidOperand
              */
             $sql .= ' SET ' . $column . ' = CASE';
 
-            foreach ($map as $newValueWhere) {
-                if (!isset($newValueWhere[0], $newValueWhere[1])) {
+            foreach ($updateValuesMap as $newValueWhere) {
+                if (!isset($newValueWhere[0], $newValueWhere[1]) || 2 !== count($newValueWhere)) {
                     throw new QueryBuilderException();
                 }
 
@@ -126,7 +150,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
         $sql .= ' END';
 
         if (count($where) > 0) {
-            $sql .= ' WHERE ' . $this->buildWhere($where);
+            $sql .= ' ' . $this->buildWhere($where);
         }
 
         return $sql;
@@ -142,10 +166,15 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
         string $table,
         array $whereNotFields = []
     ): ?string {
+        if ('' === $table || 0 === count($update)) {
+            throw new QueryBuilderException();
+        }
+
         $values = [];
         $queryWhere = $this->buildWhere($whereFields, $whereNotFields);
 
         foreach ($update as $field => $value) {
+
             /**
              * @psalm-suppress RedundantCastGivenDocblockType
              */
@@ -155,11 +184,12 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
 
         $queryUpdate = implode(', ', $values);
 
-        if ('' !== $queryUpdate && '' !== $queryWhere) {
-            return 'UPDATE ' . $table . ' SET ' . $queryUpdate . ' WHERE ' . $queryWhere;
+        $result = 'UPDATE ' . $table . ' SET ' . $queryUpdate;
+        if ('' !== $queryWhere) {
+            $result .= ' ' . $queryWhere;
         }
 
-        return null;
+        return $result;
     }
 
     /**
@@ -167,14 +197,14 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      */
     public function buildDeleteWhere(string $table, array $fields = [], array $negativeFields = []): ?string
     {
-        $queryWhere = $this->buildWhere($fields, $negativeFields);
-
-        if ('' === $queryWhere) {
-            return null;
+        if ('' === $table || 0 === count($fields) || !is_string(key($fields))) {
+            throw new QueryBuilderException();
         }
 
+        $queryWhere = $this->buildWhere($fields, $negativeFields);
+
         /** @lang text */
-        return 'DELETE FROM ' . $this->escape($table, '') . ' WHERE ' . $queryWhere;
+        return 'DELETE FROM ' . $this->escape($table, '') . ' ' . $queryWhere;
     }
 
     /**
@@ -182,8 +212,12 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      * @todo will this need real db connection to escape()? add test for all possible cases
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */
-    public function buildWhere(array $fields = [], array $negativeFields = [], array $likeFields = []): string
+    public function buildWhere(array $fields, array $negativeFields = [], array $likeFields = []): string
     {
+        if ([] === $fields) {
+            throw new QueryBuilderException();
+        }
+
         $where = [];
 
         foreach ($fields as $field => $value) {
@@ -193,6 +227,10 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
             $queryPart = (string) $field;
             $isNegative = in_array($field, $negativeFields, true);
             $inNull = false;
+
+            /**
+             * @TODO Expression support?
+             */
 
             if (null === $value) {
                 $queryPart .= ' IS ' . ($isNegative ? 'NOT ' : '') . 'NULL';
@@ -221,7 +259,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
                 $equality = ($isNegative ? '!' : '') . "=";
 
                 if (in_array($field, $likeFields, true)) {
-                    $equality = ($isNegative ? ' NOT ' : ' ') . " LIKE ";
+                    $equality = ($isNegative ? ' NOT ' : ' ') . "LIKE ";
                 }
 
                 $queryPart .= $equality;
@@ -230,26 +268,34 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
             }
 
             if ($inNull) {
-                $queryPart = sprintf(' ( %s OR %s IS NULL ) ', $queryPart, $field);
+                $queryPart = sprintf(
+                    ' (%s %s %s IS %s) ',
+                    $queryPart,
+                    $isNegative ? 'AND' : 'OR',
+                    $field,
+                    $isNegative ? 'NOT NULL' : 'NULL',
+                );
             }
 
             $where[] = $queryPart;
         }
 
         $condition = [];
+        $condition[] = implode(' AND ', $where);
 
-        if (count($where)) {
-            $condition[] = implode(' AND ', $where);
-        }
-
-        return implode(' AND ', $condition);
+        return 'WHERE ' . trim(implode(' AND ', $condition));
     }
 
     /**
      * @throws \sql\MydbException\QueryBuilderException
+     * @see https://dev.mysql.com/doc/refman/8.0/en/insert-on-duplicate.html
      */
     public function buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string
     {
+        if ('' === $table || [] === $data || [] === $cols) {
+            throw new QueryBuilderException();
+        }
+
         /**
          * @phpcs:disable SlevomatCodingStandard.Functions.DisallowArrowFunction
          * @psalm-suppress MissingClosureParamType
@@ -271,7 +317,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
         $query = "INSERT " . ($ignore ? 'IGNORE ' : '') . "INTO " . $table . " ";
         $query .= "(" . implode(', ', $cols) . ") VALUES " . implode(', ', $values);
 
-        if ('' !== $onDuplicate) {
+        if ('' !== $onDuplicate && false === $ignore) {
             $query .= ' ON DUPLICATE KEY UPDATE ' . $onDuplicate;
         }
 

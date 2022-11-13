@@ -52,7 +52,7 @@ jobs:
 
         # Docs: https://github.com/phan/phan
       - name: Run Phan github.com/phan/phan
-        run: composer app-phan
+        run: composer app-phan > build/tmp/phan.txt 2>&1
 
         # https://github.com/actions/upload-artifact
       - name: Upload Phan artifacts

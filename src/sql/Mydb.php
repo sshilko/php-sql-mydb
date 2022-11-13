@@ -507,9 +507,9 @@ class Mydb implements
         array $cols,
         string $table,
         bool $ignore = false,
-        string $onDuplicate = ''
+        string $onDuplicateSql = ''
     ): void {
-        $sql = $this->queryBuilder->buildInsertMany($data, $cols, $table, $ignore, $onDuplicate);
+        $sql = $this->queryBuilder->buildInsertMany($data, $cols, $table, $ignore, $onDuplicateSql);
         $this->insert($sql);
     }
 

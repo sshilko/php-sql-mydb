@@ -58,7 +58,7 @@ interface MydbQueryBuilderInterface
     /**
      * @throws \sql\MydbException\QueryBuilderException
      */
-    public function buildWhere(array $fields = [], array $negativeFields = [], array $likeFields = []): string;
+    public function buildWhere(array $fields, array $negativeFields = [], array $likeFields = []): string;
 
     public function buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string;
 
