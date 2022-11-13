@@ -63,7 +63,7 @@ VALUES (0x6578, 1, 1, '2011-01-01 00:00:00', '2011-01-02 00:00:00',
         'Sany');
 
 truncate table `mydecimals`;
-INSERT INTO `mydecimals`
+INSERT INTO `mydecimals` (id, cost)
 VALUES (1, 1.1),
        (2, 1.20),
        (3, '0.3');

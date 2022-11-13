@@ -125,10 +125,13 @@ CREATE TABLE `myusers_languages`
   AUTO_INCREMENT = 0
   DEFAULT CHARSET = utf8;
 
+DROP TABLE IF EXISTS `mydecimals`;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mydecimals` (
    `id` int(11) NOT NULL AUTO_INCREMENT,
    `cost` decimal(4,2) NOT NULL,
-   `comment` varchar(6) default NULL,
+   `comment` varchar(6) DEFAULT NULL,
    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 0
