@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-13 12:48:28</timestamp>
+  <timestamp>2022-11-13 12:57:38</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>154</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>399.84</totalCrap>
+    <totalCrap>400.83</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -1491,9 +1491,9 @@
       <methodName>buildUpdateWhere</methodName>
       <methodSignature>buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string</methodSignature>
       <fullMethod>buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string</fullMethod>
-      <crap>5.01</crap>
-      <complexity>5</complexity>
-      <coverage>91.67</coverage>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

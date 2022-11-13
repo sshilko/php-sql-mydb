@@ -2,20 +2,20 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbQueryBuilder.php" path="/">
     <totals>
-      <lines total="373" comments="91" code="282" executable="116" executed="115" percent="99.14"/>
-      <methods count="10" tested="9" percent="90.00"/>
+      <lines total="373" comments="91" code="282" executable="116" executed="116" percent="100.00"/>
+      <methods count="10" tested="10" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
-      <classes count="1" tested="0" percent="0.00"/>
+      <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbQueryBuilder" start="44" executable="116" executed="115" crap="68">
+    <class name="sql\MydbQueryBuilder" start="44" executable="116" executed="116" crap="69">
       <namespace name="sql"/>
       <method name="__construct" signature="__construct(sql\MydbMysqli\MydbMysqliEscapeStringInterface $mysqli)" start="49" end="52" crap="1" executable="1" executed="1" coverage="100"/>
       <method name="showColumnsLike" signature="showColumnsLike(string $table, string $column): string" start="57" end="64" crap="3" executable="3" executed="3" coverage="100"/>
       <method name="showKeys" signature="showKeys(string $table): string" start="69" end="76" crap="2" executable="3" executed="3" coverage="100"/>
       <method name="insertOne" signature="insertOne(array $data, string $table, string $type): string" start="83" end="97" crap="4" executable="7" executed="7" coverage="100"/>
       <method name="buildUpdateWhereMany" signature="buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string" start="106" end="157" crap="10" executable="19" executed="19" coverage="100"/>
-      <method name="buildUpdateWhere" signature="buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string" start="163" end="193" crap="5.01" executable="12" executed="11" coverage="91.666666666667"/>
+      <method name="buildUpdateWhere" signature="buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string" start="163" end="193" crap="6" executable="12" executed="12" coverage="100"/>
       <method name="buildDeleteWhere" signature="buildDeleteWhere(string $table, array $fields, array $negativeFields): ?string" start="198" end="208" crap="4" executable="4" executed="4" coverage="100"/>
       <method name="buildWhere" signature="buildWhere(array $fields, array $negativeFields, array $likeFields): string" start="215" end="287" crap="17" executable="37" executed="37" coverage="100"/>
       <method name="buildInsertMany" signature="buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string" start="293" end="325" crap="7" executable="13" executed="13" coverage="100"/>
@@ -63,16 +63,20 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException1"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions4"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions3"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions2"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions1"/>
         <covered by="phpunit\QueryBuilderTest::testbuildDeleteWhereExceptions"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException7"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException6"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException5"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException4"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException2"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildInsertManyException"/>
         <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException1"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildInsertManyException"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhereException"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
@@ -118,7 +122,7 @@
         <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x even&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions5"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -338,13 +342,13 @@
         <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
       </line>
       <line nr="108">
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException1"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException7"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException6"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException5"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException4"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException2"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException1"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
@@ -353,33 +357,33 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException1"/>
       </line>
       <line nr="112">
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException7"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException6"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException5"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException4"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException2"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="117">
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException7"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException6"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException5"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException4"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException2"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="121">
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException7"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException6"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException5"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException4"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException2"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
@@ -468,15 +472,25 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="169">
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions4"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions3"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions2"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions1"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions5"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
+      <line nr="170">
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions4"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions2"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions1"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions5"/>
+      </line>
       <line nr="173">
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions3"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
       <line nr="174">
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions3"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
       <line nr="176">
@@ -518,6 +532,7 @@
       </line>
       <line nr="217">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhereException"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
@@ -543,13 +558,12 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="218">
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhereException"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions"/>
       </line>
       <line nr="221">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -2830,13 +2844,21 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_BOOLEAN_OR">||</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_LNUMBER">0</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_IS_IDENTICAL">===</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">count</token>
+        <token name="T_VARIABLE">$update</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_OR">||</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">is_int</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">key</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_VARIABLE">$update</token>
+        <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_WHITESPACE"> </token>

@@ -110,16 +110,20 @@ Options (phpunit\Options)
 
 Query Builder (phpunit\QueryBuilder)
  [x] Show columns like
- [x] Build update where many exception 1
+ [x] Build update where many exception 3
+ [x] Build update where exceptions 4
+ [x] Build update where exceptions 3
+ [x] Build update where exceptions 2
+ [x] Build update where exceptions 1
  [x] Build delete where exceptions
  [x] Build update where many exception 7
  [x] Build update where many exception 6
  [x] Build update where many exception 5
  [x] Build update where many exception 4
- [x] Build update where many exception 3
  [x] Build update where many exception 2
- [x] Build insert many exception
  [x] Show keys
+ [x] Build update where many exception 1
+ [x] Build insert many exception
  [x] Build where exception
  [x] Build where with data set "simple"
  [x] Build where with data set #2
@@ -165,7 +169,7 @@ Query Builder (phpunit\QueryBuilder)
  [x] Insert one with data set "string 0x"
  [x] Insert one with data set "string 0x even"
  [x] Insert one with data set "string 0x mismatch"
- [x] Build update where exceptions
+ [x] Build update where exceptions 5
 
 Registry (phpunit\Registry)
  [x] Registry empty 1

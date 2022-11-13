@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.97519379844961" branch-rate="0" lines-covered="629" lines-valid="645" branches-covered="0" branches-valid="0" complexity="395" version="0.4" timestamp="1668343708">
+<coverage line-rate="0.97674418604651" branch-rate="0" lines-covered="630" lines-valid="645" branches-covered="0" branches-valid="0" complexity="396" version="0.4" timestamp="1668344258">
   <sources>
     <source>/app/src/sql</source>
   </sources>
@@ -1810,13 +1810,13 @@
     <package name="MydbOptionsInterface.php" line-rate="0" branch-rate="0" complexity="0">
       <classes/>
     </package>
-    <package name="MydbQueryBuilder.php" line-rate="0.99137931034483" branch-rate="0" complexity="68">
+    <package name="MydbQueryBuilder.php" line-rate="1" branch-rate="0" complexity="69">
       <classes>
-        <class name="sql\MydbQueryBuilder" filename="MydbQueryBuilder.php" line-rate="0.99137931034483" branch-rate="0" complexity="68">
+        <class name="sql\MydbQueryBuilder" filename="MydbQueryBuilder.php" line-rate="1" branch-rate="0" complexity="69">
           <methods>
             <method name="__construct" signature="sql\MydbMysqli\MydbMysqliEscapeStringInterface $mysqli" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="51" hits="138"/>
+                <line number="51" hits="142"/>
               </lines>
             </method>
             <method name="showColumnsLike" signature="string $table, string $column" line-rate="1" branch-rate="0" complexity="3">
@@ -1867,10 +1867,10 @@
                 <line number="156" hits="3"/>
               </lines>
             </method>
-            <method name="buildUpdateWhere" signature="array $update, array $whereFields, string $table, array $whereNotFields" line-rate="0.91666666666667" branch-rate="0" complexity="5">
+            <method name="buildUpdateWhere" signature="array $update, array $whereFields, string $table, array $whereNotFields" line-rate="1" branch-rate="0" complexity="6">
               <lines>
-                <line number="169" hits="2"/>
-                <line number="170" hits="0"/>
+                <line number="169" hits="6"/>
+                <line number="170" hits="4"/>
                 <line number="173" hits="2"/>
                 <line number="174" hits="2"/>
                 <line number="176" hits="1"/>
@@ -1972,7 +1972,7 @@
             </method>
           </methods>
           <lines>
-            <line number="51" hits="138"/>
+            <line number="51" hits="142"/>
             <line number="59" hits="4"/>
             <line number="60" hits="1"/>
             <line number="63" hits="4"/>
@@ -2005,8 +2005,8 @@
             <line number="152" hits="3"/>
             <line number="153" hits="3"/>
             <line number="156" hits="3"/>
-            <line number="169" hits="2"/>
-            <line number="170" hits="0"/>
+            <line number="169" hits="6"/>
+            <line number="170" hits="4"/>
             <line number="173" hits="2"/>
             <line number="174" hits="2"/>
             <line number="176" hits="1"/>
