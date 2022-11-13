@@ -1,4 +1,4 @@
 
-Found 0 violations and 0 errors in 408ms
+Found 0 violations and 0 errors in 384ms
 
 [32mNo mess detected[0m
