@@ -19,10 +19,11 @@ use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use sql\Mydb;
 use sql\MydbCredentials;
-use sql\MydbEnvironment;
+use sql\MydbEnvironmentInterface;
 use sql\MydbInterface;
-use sql\MydbMysqli;
+use sql\MydbMysqliInterface;
 use sql\MydbOptions;
+use sql\MydbOptionsInterface;
 use sql\MydbRegistry;
 use function count;
 
@@ -99,9 +100,9 @@ class BaseTestCase extends TestCase
      * @return \sql\Mydb
      */
     protected function getDefaultDb(
-        ?MydbMysqli $mysqli = null,
-        ?MydbOptions $options = null,
-        ?MydbEnvironment $environment = null
+        ?MydbMysqliInterface $mysqli = null,
+        ?MydbOptionsInterface $options = null,
+        ?MydbEnvironmentInterface $environment = null
     ): MydbInterface {
         if (!isset(static::$registry['db0'])) {
             $credentials = new MydbCredentials(self::HOST, self::USER, self::PASS, self::NAME, (int) self::PORT);
@@ -111,7 +112,7 @@ class BaseTestCase extends TestCase
         return static::$registry['db0'];
     }
 
-    protected function getNoConnectDb(): MydbInterface
+    protected function getNoConnectDb(): Mydb
     {
         if (!isset(static::$registry['db1'])) {
             $options = new MydbOptions();

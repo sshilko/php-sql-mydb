@@ -24,7 +24,7 @@ use const MYSQLI_ASSOC;
  * @see https://github.com/sshilko/php-sql-mydb
  * @access protected
  */
-class MydbMysqliResult
+class MydbMysqliResult implements MydbMysqliResultInterface
 {
     protected const MYSQLI_ASSOC = MYSQLI_ASSOC;
 

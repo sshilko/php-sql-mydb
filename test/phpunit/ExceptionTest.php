@@ -81,6 +81,58 @@ final class ExceptionTest extends includes\BaseTestCase
         $db->select("SELECT 1");
     }
 
+    /**
+     * @medium
+     */
+    public function testFailedToCommandLazy(): void
+    {
+        $db = $this->getNoConnectDb();
+        $this->expectException(ConnectException::class);
+        $this->logger->expects(self::once())->method('warning')->with('2002 Connection timed out');
+        $db->command("SELECT 1");
+    }
+
+    /**
+     * @medium
+     */
+    public function testFailedToBeginTransaction(): void
+    {
+        $db = $this->getNoConnectDb();
+        $this->expectException(ConnectException::class);
+        $db->beginTransaction();
+    }
+
+    /**
+     * @medium
+     */
+    public function testFailedToRollbackTransaction(): void
+    {
+        $db = $this->getNoConnectDb();
+        $this->expectException(ConnectException::class);
+        $db->rollbackTransaction();
+    }
+
+    /**
+     * @medium
+     */
+    public function testFailedToCommitTransaction(): void
+    {
+        $db = $this->getNoConnectDb();
+        $this->expectException(ConnectException::class);
+        $db->commitTransaction();
+    }
+
+    /**
+     * @medium
+     */
+    public function testFailedToEscapeLazy(): void
+    {
+        $db = $this->getNoConnectDb();
+        $this->expectException(ConnectException::class);
+        $this->logger->expects(self::once())->method('warning')->with('2002 Connection timed out');
+        $db->escape("hello");
+    }
+
     public function testMySqlWarning(): void
     {
         $db = $this->getDefaultDb();

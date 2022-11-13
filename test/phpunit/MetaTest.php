@@ -15,7 +15,9 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use sql\MydbException;
 use sql\MydbExpression;
+use sql\MydbMysqliInterface;
 use function explode;
 use function str_replace;
 
@@ -63,6 +65,14 @@ final class MetaTest extends includes\BaseTestCase
         $db = $this->getDefaultDb();
         $actual = $db->getEnumValues('myusers_devices', 'provider');
         self::assertSame(['Sansunk', 'Hookle', 'Sany'], $actual);
+    }
+
+    public function testNotRealEnumOrSet(): void
+    {
+        $db = $this->getDefaultDb();
+        $this->expectException(MydbException::class);
+        $this->expectExceptionMessage("Column not of type 'enum,set'");
+        $db->getEnumValues('myusers_devices', 'id');
     }
 
     public function testEscape(): void
@@ -593,5 +603,35 @@ ENDUTF8;
             $actual = $db->escape($in, "'");
             self::assertSame($expect, $actual);
         }
+    }
+
+    public function testPrimaryKeyNotDefined(): void
+    {
+        $db = $this->getDefaultDb();
+        $db->open();
+        $db->beginTransaction();
+
+        $db->command(
+            "CREATE TABLE `myusers_nopk` (
+                        `name` varchar(200) NOT NULL
+                    ) ENGINE=InnoDB"
+        );
+
+        $pk = $db->getPrimaryKey('myusers_nopk');
+        self::assertNull($pk);
+    }
+
+    public function testPrimaryKeyQueryFailed(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+
+        $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
+
+        $mysqli->expects(self::once())->method('realQuery')->willReturn(false);
+
+        $db = $this->getDefaultDb($mysqli);
+        self::assertTrue($db->open());
+
+        self::assertNull($db->getPrimaryKey('randomtablename'));
     }
 }

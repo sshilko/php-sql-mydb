@@ -19,7 +19,9 @@ use sql\MydbEnvironment;
 use sql\MydbException;
 use sql\MydbException\DisconnectException;
 use sql\MydbMysqli;
+use sql\MydbMysqliInterface;
 use sql\MydbOptions;
+use function random_int;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -80,7 +82,7 @@ final class ResourceTest extends includes\BaseTestCase
 
     public function testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
         $envs = $this->createMock(MydbEnvironment::class);
         $db = $this->getDefaultDb($mysqli, $options, $envs);
@@ -100,7 +102,7 @@ final class ResourceTest extends includes\BaseTestCase
 
     public function testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
         $envs = $this->createMock(MydbEnvironment::class);
         $db = $this->getDefaultDb($mysqli, $options, $envs);
@@ -117,7 +119,7 @@ final class ResourceTest extends includes\BaseTestCase
 
     public function testNoGcWhenNotConnected(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
         $envs = $this->createMock(MydbEnvironment::class);
         $db = $this->getDefaultDb($mysqli, null, $envs);
         $mysqli->method('isConnected')->willReturn(false);
@@ -127,7 +129,7 @@ final class ResourceTest extends includes\BaseTestCase
 
     public function testGcWhenConnected(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
         $envs = $this->createMock(MydbEnvironment::class);
         $db = $this->getDefaultDb($mysqli, null, $envs);
 
@@ -143,7 +145,7 @@ final class ResourceTest extends includes\BaseTestCase
 
     public function testDoNoCommitTransactionWhenAutocommitEnabledOnClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
         $envs = $this->createMock(MydbEnvironment::class);
         $db = $this->getDefaultDb($mysqli, $options, $envs);
@@ -159,7 +161,7 @@ final class ResourceTest extends includes\BaseTestCase
 
     public function testDoNoCommitTransactionWhenTransactionExplicitlyStartedOnClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
         $envs = $this->createMock(MydbEnvironment::class);
         $db = $this->getDefaultDb($mysqli, $options, $envs);
@@ -170,5 +172,71 @@ final class ResourceTest extends includes\BaseTestCase
         $mysqli->expects(self::never())->method('commit');
         $mysqli->method('close')->willReturn(true);
         $db->close();
+    }
+
+    public function testQueryBadClientRequest(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
+
+        $mysqli->expects(self::once())->method('realQuery')->willReturn(false);
+
+        $db = $this->getDefaultDb($mysqli);
+        self::assertTrue($db->open());
+
+        self::assertNull($db->query('SELECT 1'));
+    }
+
+    public function testQueryBadServerResponse(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
+
+        $mysqli->expects(self::once())->method('realQuery')->willReturn(true);
+        $mysqli->expects(self::once())->method('readServerResponse')->willReturn(null);
+
+        $db = $this->getDefaultDb($mysqli);
+        self::assertTrue($db->open());
+
+        self::assertNull($db->query('SELECT 1'));
+    }
+
+    public function testQueryBadServerResponsePacketFieldCountIsZero(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $packet = $this->createMock(MydbMysqli\MydbMysqliResultInterface::class);
+
+        $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
+
+        $mysqli->expects(self::once())->method('realQuery')->willReturn(true);
+        $mysqli->expects(self::once())->method('readServerResponse')->willReturn($packet);
+
+        $packet->expects(self::once())->method('getFieldCount')->willReturn(0);
+        $packet->expects(self::never())->method('getResult');
+
+        $db = $this->getDefaultDb($mysqli);
+        self::assertTrue($db->open());
+
+        self::assertNull($db->query('SELECT 1'));
+    }
+
+    public function testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $packet = $this->createMock(MydbMysqli\MydbMysqliResultInterface::class);
+
+        $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
+
+        $mysqli->expects(self::once())->method('realQuery')->willReturn(true);
+        $mysqli->expects(self::once())->method('readServerResponse')->willReturn($packet);
+
+        $packet->expects(self::once())->method('getFieldCount')->willReturn(random_int(1, 99));
+        $packet->expects(self::once())->method('getResult')->willReturn(null);
+
+        $db = $this->getDefaultDb($mysqli);
+        self::assertTrue($db->open());
+
+        self::expectException(MydbException\InternalException::class);
+        self::assertNull($db->query('SELECT 1'));
     }
 }

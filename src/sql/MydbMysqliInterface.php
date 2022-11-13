@@ -18,7 +18,7 @@ namespace sql;
 use mysqli;
 use mysqli_result;
 use sql\MydbMysqli\MydbMysqliEscapeStringInterface;
-use sql\MydbMysqli\MydbMysqliResult;
+use sql\MydbMysqli\MydbMysqliResultInterface;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -39,7 +39,7 @@ interface MydbMysqliInterface extends MydbMysqliEscapeStringInterface
 
     public function realQuery(string $query): bool;
 
-    public function readServerResponse(MydbEnvironmentInterface $environment): ?MydbMysqliResult;
+    public function readServerResponse(MydbEnvironmentInterface $environment): ?MydbMysqliResultInterface;
 
     public function beginTransactionReadwrite(): bool;
 
