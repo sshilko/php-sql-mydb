@@ -33,9 +33,9 @@
         <Class sourceFile="/app/src/sql/MydbQueryBuilderInterface.php">MydbQueryBuilderInterface</Class>
       </AbstractClasses>
       <DependsUpon>
-        <Package>sql\MydbMysqli</Package>
         <Package>sql\MydbInterface</Package>
         <Package>sql\MydbException</Package>
+        <Package>sql\MydbMysqli</Package>
         <Package>Psr\Log</Package>
         <Package></Package>
       </DependsUpon>
