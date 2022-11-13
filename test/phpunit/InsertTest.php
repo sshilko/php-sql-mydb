@@ -168,6 +168,36 @@ final class InsertTest extends includes\BaseTestCase
             ['id' => '8', 'name' => '888'],
         ];
         self::assertSame($defaults, $actual);
+
+        $db->insertMany(
+            [
+                ['1', 'user1'],
+            ],
+            [
+                'id',
+                'name',
+            ],
+            'myusers',
+            false,
+            'id=id+100'
+        );
+
+        $actual = $db->select("SELECT id, name FROM myusers");
+        $defaults = [
+                /**
+                 * duplicate row id=1 is updated to id=101
+                 */
+            ['id' => '2', 'name' => 'user2'],
+            ['id' => '3', 'name' => 'user3'],
+            ['id' => '5', 'name' => 'name5'],
+            ['id' => '6', 'name' => 'name6'],
+            ['id' => '7', 'name' => 'name7'],
+            ['id' => '8', 'name' => '888'],
+            ['id' => '101', 'name' => 'user1'],
+        ];
+        self::assertSame($defaults, $actual);
+
+
         $db->rollbackTransaction();
         $db->close();
 

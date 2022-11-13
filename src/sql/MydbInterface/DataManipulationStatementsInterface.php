@@ -44,7 +44,7 @@ interface DataManipulationStatementsInterface
         array $cols,
         string $table,
         bool $ignore = false,
-        string $onDuplicate = ''
+        string $onDuplicateSql = ''
     ): void;
 
     /**

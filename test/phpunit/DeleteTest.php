@@ -118,9 +118,6 @@ final class DeleteTest extends includes\BaseTestCase
         $affected = $db->deleteWhere(['id' => [11, 33]], 'myusers', ['id' => [22]]);
         self::assertSame(0, $affected);
 
-        $affected = $db->deleteWhere([], 'myusers');
-        self::assertNull($affected);
-
         $db->rollbackTransaction();
         $db->close();
     }

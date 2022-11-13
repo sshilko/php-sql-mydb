@@ -128,6 +128,7 @@ CREATE TABLE `myusers_languages`
 CREATE TABLE `mydecimals` (
    `id` int(11) NOT NULL AUTO_INCREMENT,
    `cost` decimal(4,2) NOT NULL,
+   `comment` varchar(6) default NULL,
    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 0
