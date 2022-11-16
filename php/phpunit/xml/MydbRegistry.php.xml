@@ -104,6 +104,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -188,6 +190,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -274,6 +278,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -358,6 +364,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -442,6 +450,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -528,6 +538,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -611,6 +623,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -694,6 +708,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -777,6 +793,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -842,6 +860,7 @@
         <covered by="phpunit\MysqliTest::testAffectedRowsNoInit"/>
         <covered by="phpunit\MysqliTest::testWarningsNoInit"/>
         <covered by="phpunit\OptionsTest::testNonInteractiveTimeouts"/>
+        <covered by="phpunit\OptionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\OptionsTest::testServerSideSelectTimeouts"/>
         <covered by="phpunit\OptionsTest::testErrorReporting"/>
         <covered by="phpunit\OptionsTest::testReadTimeout"/>
@@ -899,6 +918,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -984,6 +1005,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -1068,6 +1091,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -1151,6 +1176,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -1238,6 +1265,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -1321,6 +1350,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -1404,6 +1435,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -1491,6 +1524,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
@@ -1577,6 +1612,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>

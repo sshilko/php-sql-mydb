@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-16 22:42:08</timestamp>
+  <timestamp>2022-11-16 23:31:54</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>163</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>426.74</totalCrap>
+    <totalCrap>421.74</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -281,9 +281,9 @@
       <methodName>setTransactionIsolationLevel</methodName>
       <methodSignature>setTransactionIsolationLevel($isolationLevel): void</methodSignature>
       <fullMethod>setTransactionIsolationLevel($isolationLevel): void</fullMethod>
-      <crap>6</crap>
+      <crap>2</crap>
       <complexity>2</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1524,9 +1524,9 @@
       <methodName>setTransactionIsolationLevel</methodName>
       <methodSignature>setTransactionIsolationLevel(string $isolationLevel): void</methodSignature>
       <fullMethod>setTransactionIsolationLevel(string $isolationLevel): void</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

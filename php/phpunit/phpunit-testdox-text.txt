@@ -90,6 +90,7 @@ Mysqli (phpunit\Mysqli)
 
 Options (phpunit\Options)
  [x] Non interactive timeouts
+ [x] Transaction isolation level
  [x] Server side select timeouts
  [x] Error reporting
  [x] Read timeout
@@ -219,6 +220,8 @@ Select (phpunit\Select)
 Transactions (phpunit\Transactions)
  [x] Begin transaction readonly real
  [x] Begin transaction read write real
+ [x] Transaction isolation level exception
+ [x] Transaction isolation level
  [x] Begin transaction readonly success
  [x] Begin transaction readonly failure
  [x] Begin transaction readwrite success
