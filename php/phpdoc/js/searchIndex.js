@@ -126,6 +126,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-Mydb.html#method_insertOne"
         },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003AsetTransactionIsolationLevel\u0028\u0029",
+            "name": "setTransactionIsolationLevel",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#method_setTransactionIsolationLevel"
+        },                {
             "fqsen": "\\sql\\Mydb\u003A\u003AsendClientRequest\u0028\u0029",
             "name": "sendClientRequest",
             "summary": "",
@@ -145,11 +150,6 @@ Search.appendIndex(
             "name": "onError",
             "summary": "",
             "url": "classes/sql-Mydb.html#method_onError"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003AafterConnectionSuccess\u0028\u0029",
-            "name": "afterConnectionSuccess",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#method_afterConnectionSuccess"
         },                {
             "fqsen": "\\sql\\Mydb\u003A\u003Aconnect\u0028\u0029",
             "name": "connect",
@@ -581,6 +581,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbException-TransactionCommitException.html"
         },                {
+            "fqsen": "\\sql\\MydbException\\TransactionIsolationException",
+            "name": "TransactionIsolationException",
+            "summary": "",
+            "url": "classes/sql-MydbException-TransactionIsolationException.html"
+        },                {
             "fqsen": "\\sql\\MydbException\\TransactionRollbackException",
             "name": "TransactionRollbackException",
             "summary": "",
@@ -765,6 +770,11 @@ Search.appendIndex(
             "name": "rollbackTransaction",
             "summary": "",
             "url": "classes/sql-MydbInterface-TransactionInterface.html#method_rollbackTransaction"
+        },                {
+            "fqsen": "\\sql\\MydbInterface\\TransactionInterface\u003A\u003AsetTransactionIsolationLevel\u0028\u0029",
+            "name": "setTransactionIsolationLevel",
+            "summary": "",
+            "url": "classes/sql-MydbInterface-TransactionInterface.html#method_setTransactionIsolationLevel"
         },                {
             "fqsen": "\\sql\\MydbInterface",
             "name": "MydbInterface",
@@ -1011,6 +1021,11 @@ Search.appendIndex(
             "summary": "Set\u0020various\u0020options\u0020that\u0020affect\u0020mysqli\u0020resource,\u0020before\u0020connection\u0020is\u0020established",
             "url": "classes/sql-MydbMysqli.html#method_setTransportOptions"
         },                {
+            "fqsen": "\\sql\\MydbMysqli\u003A\u003AsetTransactionIsolationLevel\u0028\u0029",
+            "name": "setTransactionIsolationLevel",
+            "summary": "",
+            "url": "classes/sql-MydbMysqli.html#method_setTransactionIsolationLevel"
+        },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AisTransactionOpen\u0028\u0029",
             "name": "isTransactionOpen",
             "summary": "",
@@ -1245,6 +1260,11 @@ Search.appendIndex(
             "name": "isTransactionOpen",
             "summary": "",
             "url": "classes/sql-MydbMysqliInterface.html#method_isTransactionOpen"
+        },                {
+            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AsetTransactionIsolationLevel\u0028\u0029",
+            "name": "setTransactionIsolationLevel",
+            "summary": "",
+            "url": "classes/sql-MydbMysqliInterface.html#method_setTransactionIsolationLevel"
         },                {
             "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AisConnected\u0028\u0029",
             "name": "isConnected",
@@ -1496,6 +1516,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbOptions.html#method_setReadonly"
         },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003AgetTransactionIsolationLevel\u0028\u0029",
+            "name": "getTransactionIsolationLevel",
+            "summary": "",
+            "url": "classes/sql-MydbOptions.html#method_getTransactionIsolationLevel"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003AsetTransactionIsolationLevel\u0028\u0029",
+            "name": "setTransactionIsolationLevel",
+            "summary": "",
+            "url": "classes/sql-MydbOptions.html#method_setTransactionIsolationLevel"
+        },                {
             "fqsen": "\\sql\\MydbOptions\u003A\u003ANET_CMD_BUFFER_SIZE_MIN",
             "name": "NET_CMD_BUFFER_SIZE_MIN",
             "summary": "",
@@ -1550,6 +1580,11 @@ Search.appendIndex(
             "name": "clientErrorLevel",
             "summary": "Sets\u0020mysqli\u0020error\u0020reporting\u0020mode",
             "url": "classes/sql-MydbOptions.html#property_clientErrorLevel"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003A\u0024transactionIsolationLevel",
+            "name": "transactionIsolationLevel",
+            "summary": "Transaction\u0020isolation\u0020is\u0020one\u0020of\u0020the\u0020foundations\u0020of\u0020database\u0020processing.",
+            "url": "classes/sql-MydbOptions.html#property_transactionIsolationLevel"
         },                {
             "fqsen": "\\sql\\MydbOptions\u003A\u003A\u0024timeZone",
             "name": "timeZone",
@@ -1691,6 +1726,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbOptionsInterface.html#method_getCharset"
         },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AgetTransactionIsolationLevel\u0028\u0029",
+            "name": "getTransactionIsolationLevel",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_getTransactionIsolationLevel"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetTransactionIsolationLevel\u0028\u0029",
+            "name": "setTransactionIsolationLevel",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#method_setTransactionIsolationLevel"
+        },                {
             "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003AsetCharset\u0028\u0029",
             "name": "setCharset",
             "summary": "",
@@ -1715,6 +1760,31 @@ Search.appendIndex(
             "name": "setReadonly",
             "summary": "",
             "url": "classes/sql-MydbOptionsInterface.html#method_setReadonly"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003ATRANSACTION_ISOLATION_LEVEL_DEFAULT",
+            "name": "TRANSACTION_ISOLATION_LEVEL_DEFAULT",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_DEFAULT"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003ATRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ",
+            "name": "TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003ATRANSACTION_ISOLATION_LEVEL_READ_COMMITTED",
+            "name": "TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003ATRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED",
+            "name": "TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED"
+        },                {
+            "fqsen": "\\sql\\MydbOptionsInterface\u003A\u003ATRANSACTION_ISOLATION_LEVEL_SERIALIZABLE",
+            "name": "TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE",
+            "summary": "",
+            "url": "classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE"
         },                {
             "fqsen": "\\sql\\MydbQueryBuilder",
             "name": "MydbQueryBuilder",

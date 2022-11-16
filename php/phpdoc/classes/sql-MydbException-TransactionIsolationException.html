@@ -102,22 +102,29 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/sql.html">sql</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/sql-mydbinterface.html">MydbInterface</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/sql-mydbexception.html">MydbException</a></li>
     </ul>
 
-    <article class="phpdocumentor-element -interface">
+    <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    TransactionInterface
-                <div class="phpdocumentor-element__package">
-            in
+    TransactionIsolationException
+
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/sql-MydbException-TransactionBeginException.html"><abbr title="\sql\MydbException\TransactionBeginException">TransactionBeginException</abbr></a>
+    </span>
+    
+            <div class="phpdocumentor-element__package">
+            in package
             <ul class="phpdocumentor-breadcrumbs">
-                                    <li><a href="packages/Application.html">Application</a></li>
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Application.html">Application</a></li>
                             </ul>
         </div>
+    
+    
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbInterface/TransactionInterface.php"><a href="files/src-sql-mydbinterface-transactioninterface.html"><abbr title="src/sql/MydbInterface/TransactionInterface.php">TransactionInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbException/TransactionIsolationException.php"><a href="files/src-sql-mydbexception-transactionisolationexception.html"><abbr title="src/sql/MydbException/TransactionIsolationException.php">TransactionIsolationException.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">24</span>
 
@@ -154,7 +161,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>interfaces</p>
+                                                 <section class="phpdocumentor-description"><p>exceptions</p>
 </section>
 
                                     </dd>
@@ -173,196 +180,14 @@
 
 
 
-<h3 id="toc">
-    Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
-</h3>
-
-<dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/sql-MydbInterface-TransactionInterface.html#method_beginTransaction">beginTransaction()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/sql-MydbInterface-TransactionInterface.html#method_commitTransaction">commitTransaction()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/sql-MydbInterface-TransactionInterface.html#method_rollbackTransaction">rollbackTransaction()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/sql-MydbInterface-TransactionInterface.html#method_setTransactionIsolationLevel">setTransactionIsolationLevel()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd></dd>
-
-        </dl>
 
 
 
         
 
-            <section class="phpdocumentor-methods">
-        <h3 class="phpdocumentor-elements__header" id="methods">
-            Methods
-            <a href="classes/sql-MydbInterface-TransactionInterface.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
-        </h3>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_beginTransaction">
-        beginTransaction()
-        <a href="classes/sql-MydbInterface-TransactionInterface.html#method_beginTransaction" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbInterface/TransactionInterface.php"><a href="files/src-sql-mydbinterface-transactioninterface.html"><abbr title="src/sql/MydbInterface/TransactionInterface.php">TransactionInterface.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">26</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">beginTransaction</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
         
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_commitTransaction">
-        commitTransaction()
-        <a href="classes/sql-MydbInterface-TransactionInterface.html#method_commitTransaction" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbInterface/TransactionInterface.php"><a href="files/src-sql-mydbinterface-transactioninterface.html"><abbr title="src/sql/MydbInterface/TransactionInterface.php">TransactionInterface.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">28</span>
 
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">commitTransaction</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
         
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_rollbackTransaction">
-        rollbackTransaction()
-        <a href="classes/sql-MydbInterface-TransactionInterface.html#method_rollbackTransaction" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbInterface/TransactionInterface.php"><a href="files/src-sql-mydbinterface-transactioninterface.html"><abbr title="src/sql/MydbInterface/TransactionInterface.php">TransactionInterface.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">30</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">rollbackTransaction</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setTransactionIsolationLevel">
-        setTransactionIsolationLevel()
-        <a href="classes/sql-MydbInterface-TransactionInterface.html#method_setTransactionIsolationLevel" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbInterface/TransactionInterface.php"><a href="files/src-sql-mydbinterface-transactioninterface.html"><abbr title="src/sql/MydbInterface/TransactionInterface.php">TransactionInterface.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">32</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setTransactionIsolationLevel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$isolationLevel</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$isolationLevel</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
-            &mdash;
-        
-    
-</article>
-            </section>
-
         
     <script type="text/javascript">
         function loadExternalCodeSnippets(line) {
@@ -439,7 +264,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/sql-MydbInterface-TransactionInterface.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/sql-MydbException-TransactionIsolationException.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

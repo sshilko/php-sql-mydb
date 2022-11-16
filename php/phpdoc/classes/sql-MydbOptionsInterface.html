@@ -169,6 +169,41 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_DEFAULT">TRANSACTION_ISOLATION_LEVEL_DEFAULT</a>
+    <span>
+        &nbsp;= &#039;REPEATABLE READ&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED">TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED</a>
+    <span>
+        &nbsp;= &#039;READ COMMITTED&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED">TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED</a>
+    <span>
+        &nbsp;= &#039;READ UNCOMMITTED&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ">TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ</a>
+    <span>
+        &nbsp;= &#039;REPEATABLE READ&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE">TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE</a>
+    <span>
+        &nbsp;= &#039;SERIALIZABLE&#039;                            </span>
+</dt>
+<dd></dd>
+
                         <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbOptionsInterface.html#method_getCharset">getCharset()</a>
     <span>
@@ -236,6 +271,13 @@
     <a href="classes/sql-MydbOptionsInterface.html#method_getTimeZone">getTimeZone()</a>
     <span>
                                 &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/sql-MydbOptionsInterface.html#method_getTransactionIsolationLevel">getTransactionIsolationLevel()</a>
+    <span>
+                                &nbsp;: string|null    </span>
 </dt>
 <dd></dd>
 
@@ -351,11 +393,182 @@
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/sql-MydbOptionsInterface.html#method_setTransactionIsolationLevel">setTransactionIsolationLevel()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
         </dl>
 
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/sql-MydbOptionsInterface.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_TRANSACTION_ISOLATION_LEVEL_DEFAULT">
+        TRANSACTION_ISOLATION_LEVEL_DEFAULT
+        <a href="classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_DEFAULT" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">28</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">TRANSACTION_ISOLATION_LEVEL_DEFAULT</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;REPEATABLE READ&#039;</span>
+</code>
+
+
+    
+        <section class="phpdocumentor-description"></section>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html"><abbr title="https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html">https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html</abbr></a></span>
+                                        
+                                             
+                                    </dd>
+                        </dl>
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED">
+        TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED
+        <a href="classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;READ COMMITTED&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED">
+        TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED
+        <a href="classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">31</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;READ UNCOMMITTED&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ">
+        TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ
+        <a href="classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">29</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;REPEATABLE READ&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE">
+        TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE
+        <a href="classes/sql-MydbOptionsInterface.html#constant_TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;SERIALIZABLE&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
@@ -375,7 +588,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 
     </aside>
 
@@ -408,7 +621,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
@@ -441,7 +654,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -474,7 +687,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -507,7 +720,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -540,7 +753,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -573,7 +786,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -606,7 +819,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -639,7 +852,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -672,7 +885,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -698,6 +911,39 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getTransactionIsolationLevel">
+        getTransactionIsolationLevel()
+        <a href="classes/sql-MydbOptionsInterface.html#method_getTransactionIsolationLevel" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">76</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getTransactionIsolationLevel</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_isAutocommit">
         isAutocommit()
         <a href="classes/sql-MydbOptionsInterface.html#method_isAutocommit" class="headerlink"><i class="fas fa-link"></i></a>
@@ -705,7 +951,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 
     </aside>
 
@@ -738,7 +984,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -771,7 +1017,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
@@ -804,7 +1050,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
@@ -848,7 +1094,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
@@ -892,7 +1138,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -936,7 +1182,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -980,7 +1226,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
@@ -1024,7 +1270,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -1068,7 +1314,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
@@ -1112,7 +1358,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
@@ -1156,7 +1402,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 
     </aside>
 
@@ -1200,7 +1446,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -1244,7 +1490,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -1288,7 +1534,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -1332,7 +1578,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -1347,6 +1593,50 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$timeZone</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setTransactionIsolationLevel">
+        setTransactionIsolationLevel()
+        <a href="classes/sql-MydbOptionsInterface.html#method_setTransactionIsolationLevel" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptionsInterface.php"><a href="files/src-sql-mydboptionsinterface.html"><abbr title="src/sql/MydbOptionsInterface.php">MydbOptionsInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">78</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setTransactionIsolationLevel</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$isolationLevel</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$isolationLevel</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
