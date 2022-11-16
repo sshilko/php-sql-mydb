@@ -36,14 +36,14 @@
       </AbstractClasses>
       <DependsUpon>
         <Package></Package>
-        <Package>sql\MydbMysqli</Package>
-        <Package>sql\MydbException</Package>
         <Package>Psr\Log</Package>
+        <Package>sql\MydbException</Package>
         <Package>sql\MydbInterface</Package>
+        <Package>sql\MydbMysqli</Package>
       </DependsUpon>
       <UsedBy>
-        <Package>sql\MydbException</Package>
         <Package>sql\MydbEvent</Package>
+        <Package>sql\MydbException</Package>
       </UsedBy>
     </Package>
     <Package name="sql\MydbEvent">
