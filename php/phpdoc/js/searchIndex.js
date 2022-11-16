@@ -431,6 +431,61 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbEnvironmentInterface.html#method_startSignalsTrap"
         },                {
+            "fqsen": "\\sql\\MydbEvent\\ExampleEvent",
+            "name": "ExampleEvent",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-ExampleEvent.html"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\ExampleEvent\u003A\u003AgetListeners\u0028\u0029",
+            "name": "getListeners",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-ExampleEvent.html#method_getListeners"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\ExampleListener",
+            "name": "ExampleListener",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-ExampleListener.html"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\ExampleListener\u003A\u003AonMySomeEvent\u0028\u0029",
+            "name": "onMySomeEvent",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-ExampleListener.html#method_onMySomeEvent"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\ExampleListener\u003A\u003AonMyEvent\u0028\u0029",
+            "name": "onMyEvent",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-ExampleListener.html#method_onMyEvent"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\ExampleListener\u003A\u003AdoSomeWork\u0028\u0029",
+            "name": "doSomeWork",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-ExampleListener.html#method_doSomeWork"
+        },                {
+            "fqsen": "\\sql\\MydbEvent",
+            "name": "MydbEvent",
+            "summary": "",
+            "url": "classes/sql-MydbEvent.html"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\u003A\u003AgetListeners\u0028\u0029",
+            "name": "getListeners",
+            "summary": "",
+            "url": "classes/sql-MydbEvent.html#method_getListeners"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\u003A\u003Anotify\u0028\u0029",
+            "name": "notify",
+            "summary": "",
+            "url": "classes/sql-MydbEvent.html#method_notify"
+        },                {
+            "fqsen": "\\sql\\MydbEventInterface",
+            "name": "MydbEventInterface",
+            "summary": "",
+            "url": "classes/sql-MydbEventInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbEventInterface\u003A\u003Anotify\u0028\u0029",
+            "name": "notify",
+            "summary": "",
+            "url": "classes/sql-MydbEventInterface.html#method_notify"
+        },                {
             "fqsen": "\\sql\\MydbException\\AsyncException",
             "name": "AsyncException",
             "summary": "",
@@ -1875,6 +1930,11 @@ Search.appendIndex(
             "name": "sql",
             "summary": "",
             "url": "namespaces/sql.html"
+        },                {
+            "fqsen": "\\sql\\MydbEvent",
+            "name": "MydbEvent",
+            "summary": "",
+            "url": "namespaces/sql-mydbevent.html"
         },                {
             "fqsen": "\\sql\\MydbException",
             "name": "MydbException",
