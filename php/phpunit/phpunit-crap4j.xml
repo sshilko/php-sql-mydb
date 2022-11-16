@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-13 13:20:20</timestamp>
+  <timestamp>2022-11-16 08:08:51</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>154</methodCount>
+    <methodCount>160</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>400.83</totalCrap>
+    <totalCrap>414.83</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -537,6 +537,72 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEvent</className>
+      <methodName>getListeners</methodName>
+      <methodSignature>getListeners(): array</methodSignature>
+      <fullMethod>getListeners(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbEvent</className>
+      <methodName>notify</methodName>
+      <methodSignature>notify(array $payload): void</methodSignature>
+      <fullMethod>notify(array $payload): void</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbEvent</package>
+      <className>sql\MydbEvent\ExampleEvent</className>
+      <methodName>getListeners</methodName>
+      <methodSignature>getListeners(): array</methodSignature>
+      <fullMethod>getListeners(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbEvent</package>
+      <className>sql\MydbEvent\ExampleListener</className>
+      <methodName>onMySomeEvent</methodName>
+      <methodSignature>onMySomeEvent(): callable</methodSignature>
+      <fullMethod>onMySomeEvent(): callable</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbEvent</package>
+      <className>sql\MydbEvent\ExampleListener</className>
+      <methodName>onMyEvent</methodName>
+      <methodSignature>onMyEvent(): callable</methodSignature>
+      <fullMethod>onMyEvent(): callable</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbEvent</package>
+      <className>sql\MydbEvent\ExampleListener</className>
+      <methodName>doSomeWork</methodName>
+      <methodSignature>doSomeWork(array $data): string</methodSignature>
+      <fullMethod>doSomeWork(array $data): string</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
