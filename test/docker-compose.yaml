@@ -16,7 +16,7 @@ x-mysql: &mysql
     - use-vc
   image: library/mysql:5.7-debian
   pull_policy: if_not_present
-  stop_grace_period: 10s
+  stop_grace_period: 20s
   cpus: 0.95
   cpu_percent: 95
   mem_limit: "150M"
@@ -92,7 +92,7 @@ services:
       - "3306:3306/tcp"
     volumes:
       - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
-      - /tmp/dbdata57:/var/lib/mysql/:rw,cached
+      - ./../test/tmp/mysql-dbdata57:/var/lib/mysql/:rw
 
   mysql80:
     <<: *mysql
@@ -104,4 +104,4 @@ services:
       - "4306:3306/tcp"
     volumes:
       - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
-      - /tmp/dbdata80:/var/lib/mysql/:rw,cached
+      - ./../test/tmp/mysql-dbdata80:/var/lib/mysql/:rw

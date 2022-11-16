@@ -26,6 +26,7 @@ use sql\MydbException\TransactionAutocommitException;
 use sql\MydbException\TransactionBeginReadonlyException;
 use sql\MydbException\TransactionBeginReadwriteException;
 use sql\MydbException\TransactionCommitException;
+use sql\MydbException\TransactionIsolationException;
 use sql\MydbException\TransactionRollbackException;
 use sql\MydbException\UpdateException;
 use sql\MydbMysqli\MydbMysqliResultInterface;
@@ -540,6 +541,24 @@ class Mydb implements
     }
 
     /**
+     * @see https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
+     * @throws \sql\MydbException
+     */
+    public function setTransactionIsolationLevel($isolationLevel): void
+    {
+        /**
+         * SESSION is explicitly required,
+         * otherwise 'The statement applies only to the next single transaction performed within the session'
+         *
+         * @see https://dev.mysql.com/doc/refman/8.0/en/set-transaction.html
+         */
+        $ok = $this->mysqli->setTransactionIsolationLevel($isolationLevel);
+        if (false === $ok) {
+            $this->onError(new TransactionIsolationException());
+        }
+    }
+
+    /**
      * @throws \sql\MydbException\EnvironmentException
      * @throws \sql\MydbException\TerminationSignalException
      */
@@ -605,39 +624,6 @@ class Mydb implements
     }
 
     /**
-     * @throws \sql\MydbException
-     */
-    protected function afterConnectionSuccess(): void
-    {
-        $c = $this->mysqli->getMysqli();
-        if (!$c) {
-            return;
-        }
-
-        /**
-         * @todo error handling for query executions
-         */
-        $c->query(sprintf("SET session time_zone = '%s'", $this->options->getTimeZone()));
-        $c->query(sprintf('SET session wait_timeout = %s', $this->options->getNonInteractiveTimeout()));
-        $c->set_charset($this->options->getCharset());
-
-        if (!$this->options->isReadonly()) {
-            return;
-        }
-
-        if (false === $c->autocommit(true)) {
-            throw new TransactionAutocommitException();
-        }
-
-        $c->query('SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED');
-        $readonly = $c->begin_transaction(MydbMysqli::MYSQLI_TRANS_START_READ_ONLY);
-        if ($readonly) {
-            return;
-        }
-        $c->query('START TRANSACTION READ ONLY');
-    }
-
-    /**
      * @throws \sql\MydbException\DisconnectException
      * @throws \sql\MydbException\TransactionAutocommitException
      * @throws \sql\MydbException\EnvironmentException
@@ -696,7 +682,39 @@ class Mydb implements
             throw new TransactionAutocommitException();
         }
 
-        $this->afterConnectionSuccess();
+        /**
+         * Here's a summary of what variables are set by each statement: SET NAMES vs SET CHARSET
+         *
+         * Variable                 SET NAMES   SET CHARSET
+         * character_set_client     argument    argument
+         * character_set_results    argument    argument
+         * character_set_connection argument    default for default db
+         * collation_connection     argument*   default for default db
+         *
+         * SET CHARSET doesn't set the connection charset to the charset you specify in the argument,
+         * instead it sets it to the charset for your current default database
+         */
+        $defaults = $this->mysqli->realQuery(
+            sprintf(
+                "SET time_zone = '%s', wait_timeout = %d, names '%s'",
+                $this->options->getTimeZone(),
+                $this->options->getNonInteractiveTimeout(),
+                $this->options->getCharset()
+            )
+        );
+
+        if (false === $defaults) {
+            throw new InternalException();
+        }
+
+        $isoLevel = $this->options->getTransactionIsolationLevel();
+        if (null !== $isoLevel && false === $this->mysqli->setTransactionIsolationLevel($isoLevel)) {
+            throw new TransactionIsolationException();
+        }
+
+        if ($this->options->isReadonly() && false === $this->mysqli->beginTransactionReadonly()) {
+            throw new TransactionAutocommitException();
+        }
 
         return true;
     }

@@ -13,21 +13,15 @@
 
 declare(strict_types = 1);
 
-namespace sql\MydbInterface;
+namespace sql\MydbException;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
- * @category interfaces
+ * @category exceptions
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface TransactionInterface
+class TransactionIsolationException extends TransactionBeginException
 {
-    public function beginTransaction(): void;
 
-    public function commitTransaction(): void;
-
-    public function rollbackTransaction(): void;
-
-    public function setTransactionIsolationLevel(string $isolationLevel): void;
 }

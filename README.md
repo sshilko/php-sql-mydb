@@ -75,6 +75,7 @@ composer require sshilko/php-sql-mydb:@dev
   - increased `MYSQLI_OPT_NET_READ_BUFFER_SIZE`
   - increased `MYSQLI_OPT_NET_CMD_BUFFER_SIZE`
   - read-only InnoDB [optimizations](https://dev.mysql.com/doc/refman/5.6/en/innodb-performance-ro-txn.html)
+  - READ COMMITED session transaction isolation level for readonly connections
   - async command execution
   - move mysql resultset to PHP userspace memory `MYSQLI_STORE_RESULT_COPY_DATA`
   - use of `fetch_all` from [PHP Mysql native driver](https://www.php.net/manual/en/intro.mysqlnd.php)
