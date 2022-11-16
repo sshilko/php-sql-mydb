@@ -22,6 +22,15 @@ namespace sql;
  */
 interface MydbOptionsInterface
 {
+    /**
+     * @see https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
+     */
+    public const TRANSACTION_ISOLATION_LEVEL_DEFAULT          = 'REPEATABLE READ';
+    public const TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ  = 'REPEATABLE READ';
+    public const TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED   = 'READ COMMITTED';
+    public const TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED = 'READ UNCOMMITTED';
+    public const TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE     = 'SERIALIZABLE';
+
     public function getNonInteractiveTimeout(): int;
 
     public function setNonInteractiveTimeout(int $nonInteractiveTimeout): void;
@@ -63,6 +72,10 @@ interface MydbOptionsInterface
     public function setAutocommit(bool $autocommit): void;
 
     public function getCharset(): string;
+
+    public function getTransactionIsolationLevel(): ?string;
+
+    public function setTransactionIsolationLevel(string $isolationLevel): void;
 
     public function setCharset(string $charset): void;
 

@@ -27,11 +27,14 @@ use sql\MydbMysqli\MydbMysqliResultInterface;
  */
 interface MydbMysqliInterface extends MydbMysqliEscapeStringInterface
 {
+
     public function init(): bool;
 
     public function setTransportOptions(MydbOptionsInterface $options, MydbEnvironmentInterface $environment): bool;
 
     public function isTransactionOpen(): bool;
+
+    public function setTransactionIsolationLevel(string $level): bool;
 
     public function isConnected(): bool;
 

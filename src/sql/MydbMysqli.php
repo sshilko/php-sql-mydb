@@ -245,6 +245,11 @@ class MydbMysqli implements MydbMysqliInterface
             $this->mysqli->options(self::MYSQLI_OPT_NET_READ_BUFFER_SIZE, $options->getNetworkReadBuffer());
     }
 
+    public function setTransactionIsolationLevel(string $level): bool
+    {
+        return $this->realQuery(sprintf('SET SESSION TRANSACTION ISOLATION LEVEL %s', $level));
+    }
+
     public function isTransactionOpen(): bool
     {
         /**

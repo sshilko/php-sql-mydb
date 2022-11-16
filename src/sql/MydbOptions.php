@@ -134,6 +134,16 @@ class MydbOptions implements MydbOptionsInterface
                                       MydbMysqli::MYSQLI_REPORT_INDEX;
 
     /**
+     * Transaction isolation is one of the foundations of database processing.
+     * Isolation is the I in the acronym ACID; the isolation level is the setting that fine-tunes
+     * the balance between performance and reliability, consistency, and reproducibility of results
+     * when multiple transactions are making changes and performing queries at the same time.
+     *
+     * @see https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
+     */
+    protected ?string $transactionIsolationLevel = null;
+
+    /**
      * Set session time zone
      *
      * SET time_zone = timezone;
@@ -323,5 +333,23 @@ class MydbOptions implements MydbOptionsInterface
     public function setReadonly(bool $readonly): void
     {
         $this->readonly = $readonly;
+    }
+
+    public function getTransactionIsolationLevel(): ?string
+    {
+        $userLevel = $this->transactionIsolationLevel;
+        if (null === $userLevel && $this->isReadonly()) {
+            /**
+             * Optimal defaults for readonly connection
+             */
+            return self::TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED;
+        }
+
+        return $userLevel;
+    }
+
+    public function setTransactionIsolationLevel(string $isolationLevel): void
+    {
+        $this->transactionIsolationLevel = $isolationLevel;
     }
 }
