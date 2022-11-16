@@ -24,12 +24,11 @@ x-app: &app
   healthcheck:
     test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
     timeout: 2s
-    start_period: 10s
+    start_period: 2s
     interval: 5s
     retries: 2
-  cpus: 0.9
-  cpu_percent: 90
-  mem_limit: "900M"
+  cpus: 1.5
+  mem_limit: "1100M"
   pids_limit: 100
   ulimits:
     nproc: 65535

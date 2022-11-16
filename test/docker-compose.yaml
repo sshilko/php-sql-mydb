@@ -15,10 +15,10 @@ x-mysql: &mysql
   dns_opt:
     - use-vc
   image: library/mysql:5.7-debian
-  pull_policy: missing
+  pull_policy: if_not_present
   stop_grace_period: 10s
-  cpus: 0.9
-  cpu_percent: 90
+  cpus: 0.95
+  cpu_percent: 95
   mem_limit: "150M"
   pids_limit: 100
   command:
@@ -53,9 +53,9 @@ x-mysql: &mysql
   healthcheck:
     test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
     timeout: 1s
-    interval: 5s
+    interval: 2s
     retries: 2
-    start_period: 5s
+    start_period: 4s
   logging:
     options:
       max-size: "4m"
