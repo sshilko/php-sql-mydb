@@ -35,15 +35,15 @@
         <Class sourceFile="/app/src/sql/MydbQueryBuilderInterface.php">MydbQueryBuilderInterface</Class>
       </AbstractClasses>
       <DependsUpon>
-        <Package>sql\MydbMysqli</Package>
-        <Package>sql\MydbInterface</Package>
-        <Package>sql\MydbException</Package>
         <Package></Package>
         <Package>Psr\Log</Package>
+        <Package>sql\MydbMysqli</Package>
+        <Package>sql\MydbException</Package>
+        <Package>sql\MydbInterface</Package>
       </DependsUpon>
       <UsedBy>
-        <Package>sql\MydbException</Package>
         <Package>sql\MydbEvent</Package>
+        <Package>sql\MydbException</Package>
       </UsedBy>
     </Package>
     <Package name="sql\MydbEvent">
@@ -101,8 +101,8 @@
       </ConcreteClasses>
       <AbstractClasses/>
       <DependsUpon>
-        <Package>sql</Package>
         <Package></Package>
+        <Package>sql</Package>
       </DependsUpon>
       <UsedBy>
         <Package>sql</Package>
