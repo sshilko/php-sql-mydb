@@ -36,14 +36,14 @@
       </AbstractClasses>
       <DependsUpon>
         <Package></Package>
-        <Package>Psr\Log</Package>
         <Package>sql\MydbMysqli</Package>
         <Package>sql\MydbException</Package>
+        <Package>Psr\Log</Package>
         <Package>sql\MydbInterface</Package>
       </DependsUpon>
       <UsedBy>
-        <Package>sql\MydbEvent</Package>
         <Package>sql\MydbException</Package>
+        <Package>sql\MydbEvent</Package>
       </UsedBy>
     </Package>
     <Package name="sql\MydbEvent">
@@ -69,8 +69,8 @@
     </Package>
     <Package name="sql\MydbException">
       <Stats>
-        <TotalClasses>19</TotalClasses>
-        <ConcreteClasses>19</ConcreteClasses>
+        <TotalClasses>20</TotalClasses>
+        <ConcreteClasses>20</ConcreteClasses>
         <AbstractClasses>0</AbstractClasses>
         <Ca>1</Ca>
         <Ce>2</Ce>
@@ -96,6 +96,7 @@
         <Class sourceFile="/app/src/sql/MydbException/TransactionBeginReadonlyException.php">TransactionBeginReadonlyException</Class>
         <Class sourceFile="/app/src/sql/MydbException/TransactionBeginReadwriteException.php">TransactionBeginReadwriteException</Class>
         <Class sourceFile="/app/src/sql/MydbException/TransactionCommitException.php">TransactionCommitException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/TransactionIsolationException.php">TransactionIsolationException</Class>
         <Class sourceFile="/app/src/sql/MydbException/TransactionRollbackException.php">TransactionRollbackException</Class>
         <Class sourceFile="/app/src/sql/MydbException/UpdateException.php">UpdateException</Class>
       </ConcreteClasses>
