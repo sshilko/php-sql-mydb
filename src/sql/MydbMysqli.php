@@ -247,6 +247,12 @@ class MydbMysqli implements MydbMysqliInterface
 
     public function setTransactionIsolationLevel(string $level): bool
     {
+        /**
+         * SESSION is explicitly required,
+         * otherwise 'The statement applies only to the next single transaction performed within the session'
+         *
+         * @see https://dev.mysql.com/doc/refman/8.0/en/set-transaction.html
+         */
         return $this->realQuery(sprintf('SET SESSION TRANSACTION ISOLATION LEVEL %s', $level));
     }
 
