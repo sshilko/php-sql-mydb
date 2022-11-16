@@ -34,6 +34,26 @@ final class OptionsTest extends includes\BaseTestCase
         self::assertSame(10, $options->getNonInteractiveTimeout());
     }
 
+    public function testTransactionIsolationLevel(): void
+    {
+        $options = new MydbOptions();
+
+        $levels = [
+            'REPEATABLE READ',
+            'REPEATABLE READ',
+            'READ COMMITTED',
+            'READ UNCOMMITTED',
+            'SERIALIZABLE',
+        ];
+
+        self::assertNull($options->getTransactionIsolationLevel());
+
+        foreach ($levels as $l) {
+            $options->setTransactionIsolationLevel($l);
+            self::assertSame($options->getTransactionIsolationLevel(), $l);
+        }
+    }
+
     public function testServerSideSelectTimeouts(): void
     {
         $options = new MydbOptions();
