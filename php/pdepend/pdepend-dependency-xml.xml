@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies generated="2022-11-13T13:18:42" pdepend="@package_version@">
+<dependencies generated="2022-11-16T08:07:39" pdepend="@package_version@">
   <package name="sql">
     <class name="Mydb">
       <efferent>
@@ -75,6 +75,22 @@
         <type namespace="sql" name="MydbMysqliInterface"/>
       </afferent>
       <file name="/app/src/sql/MydbEnvironmentInterface.php"/>
+    </interface>
+    <class name="MydbEvent">
+      <efferent>
+        <type namespace="sql" name="MydbEventInterface"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql\MydbEvent" name="ExampleEvent"/>
+      </afferent>
+      <file name="/app/src/sql/MydbEvent.php"/>
+    </class>
+    <interface name="MydbEventInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="MydbEvent"/>
+      </afferent>
+      <file name="/app/src/sql/MydbEventInterface.php"/>
     </interface>
     <class name="MydbException">
       <efferent>
@@ -208,6 +224,23 @@
       </efferent>
       <afferent/>
       <file name="/app/src/sql/MydbRegistry.php"/>
+    </class>
+  </package>
+  <package name="sql\MydbEvent">
+    <class name="ExampleEvent">
+      <efferent>
+        <type namespace="sql" name="MydbEvent"/>
+        <type namespace="sql\MydbEvent" name="ExampleListener"/>
+      </efferent>
+      <afferent/>
+      <file name="/app/src/sql/MydbEvent/ExampleEvent.php"/>
+    </class>
+    <class name="ExampleListener">
+      <efferent/>
+      <afferent>
+        <type namespace="sql\MydbEvent" name="ExampleEvent"/>
+      </afferent>
+      <file name="/app/src/sql/MydbEvent/ExampleListener.php"/>
     </class>
   </package>
   <package name="sql\MydbException">

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2022-11-13T13:18:42" pdepend="@package_version@" ahh="0.36363636363636" andc="0.61290322580645" calls="282" ccn="335" ccn2="397" cloc="1583" clsa="0" clsc="30" eloc="1874" fanout="51" leafs="27" lloc="1264" loc="4466" maxDIT="4" ncloc="2883" noc="30" nof="0" noi="16" nom="261" nop="4" roots="1">
+<metrics generated="2022-11-16T08:07:39" pdepend="@package_version@" ahh="0.38461538461538" andc="0.58823529411765" calls="289" ccn="342" ccn2="404" cloc="1630" clsa="1" clsc="32" eloc="1931" fanout="52" leafs="29" lloc="1294" loc="4592" maxDIT="4" ncloc="2962" noc="33" nof="0" noi="17" nom="268" nop="5" roots="2">
   <files>
     <file name="/app/src/sql/Mydb.php" loc="704" cloc="172" eloc="418" lloc="267" ncloc="532"/>
     <file name="/app/src/sql/MydbCredentials.php" loc="140" cloc="63" eloc="58" lloc="31" ncloc="77"/>
     <file name="/app/src/sql/MydbEnvironment.php" loc="261" cloc="137" eloc="99" lloc="77" ncloc="124"/>
+    <file name="/app/src/sql/MydbEvent.php" loc="32" cloc="14" eloc="13" lloc="7" ncloc="18"/>
     <file name="/app/src/sql/MydbException.php" loc="29" cloc="16" eloc="7" lloc="3" ncloc="13"/>
     <file name="/app/src/sql/MydbExpression.php" loc="38" cloc="16" eloc="15" lloc="7" ncloc="22"/>
     <file name="/app/src/sql/MydbLogger.php" loc="343" cloc="111" eloc="141" lloc="87" ncloc="232"/>
@@ -11,6 +12,8 @@
     <file name="/app/src/sql/MydbOptions.php" loc="328" cloc="123" eloc="131" lloc="73" ncloc="205"/>
     <file name="/app/src/sql/MydbQueryBuilder.php" loc="373" cloc="91" eloc="220" lloc="165" ncloc="282"/>
     <file name="/app/src/sql/MydbRegistry.php" loc="206" cloc="82" eloc="97" lloc="64" ncloc="124"/>
+    <file name="/app/src/sql/MydbEvent/ExampleEvent.php" loc="30" cloc="11" eloc="14" lloc="5" ncloc="19"/>
+    <file name="/app/src/sql/MydbEvent/ExampleListener.php" loc="42" cloc="11" eloc="23" lloc="14" ncloc="31"/>
     <file name="/app/src/sql/MydbException/AsyncException.php" loc="30" cloc="17" eloc="7" lloc="3" ncloc="13"/>
     <file name="/app/src/sql/MydbException/ConnectException.php" loc="30" cloc="17" eloc="7" lloc="3" ncloc="13"/>
     <file name="/app/src/sql/MydbException/DeleteException.php" loc="30" cloc="17" eloc="7" lloc="3" ncloc="13"/>
@@ -32,7 +35,7 @@
     <file name="/app/src/sql/MydbException/UpdateException.php" loc="30" cloc="17" eloc="7" lloc="3" ncloc="13"/>
     <file name="/app/src/sql/MydbMysqli/MydbMysqliResult.php" loc="105" cloc="11" eloc="51" lloc="30" ncloc="94"/>
   </files>
-  <package name="sql" noc="10" noi="6" nom="223" nof="0" cr="0.2775" rcr="0.66">
+  <package name="sql" noc="11" noi="7" nom="226" nof="0" cr="0.405" rcr="0.66">
     <class name="Mydb" fqname="sql\Mydb" start="49" end="703" loc="655" cloc="155" eloc="331" lloc="195" ncloc="500" dit="0" noam="0" nocc="0" noom="0" nom="30" cr="0.15" rcr="1.2975" ca="0" cbo="26" ce="26" impl="9" cis="24" csz="37" npm="24" vars="7" varsi="7" varsnp="0" wmc="101" wmci="101" wmcnp="74">
       <file name="/app/src/sql/Mydb.php"/>
       <method name="__construct" start="75" end="89" ccn="1" ccn2="1" loc="15" cloc="0" eloc="8" lloc="6" ncloc="15" npath="1" hnt="22" hnd="39" hv="116.27884881497" hd="3.8823529411765" hl="0.25757575757576" he="451.43553069341" ht="25.079751705189" hb="0.019615945086614" hi="29.950612573553" mi="65.702861352066"/>
@@ -89,6 +92,11 @@
       <method name="endSignalsTrap" start="191" end="220" ccn="5" ccn2="5" loc="30" cloc="11" eloc="16" lloc="9" ncloc="19" npath="12" hnt="28" hnd="55" hv="161.87807197869" hd="14" hl="0.071428571428571" he="2266.2930077017" ht="125.90516709454" hb="0.057511688432997" hi="11.562719427049" mi="57.592091794751"/>
       <method name="startSignalsTrap" start="230" end="248" ccn="3" ccn2="3" loc="19" cloc="2" eloc="13" lloc="9" ncloc="17" npath="3" hnt="21" hnd="44" hv="114.64806399138" hd="10.5" hl="0.095238095238095" he="1203.8046719095" ht="66.878037328307" hb="0.037720962134407" hi="10.918863237275" mi="60.877258111103"/>
       <method name="getNullErrorHandler" start="254" end="259" ccn="1" ccn2="1" loc="6" cloc="0" eloc="5" lloc="3" ncloc="6" npath="1" hnt="6" hnd="9" hv="19.019550008654" hd="20" hl="0.05" he="380.39100017308" ht="21.132833342949" hb="0.017499765701582" hi="0.95097750043269" mi="75.661213654408"/>
+    </class>
+    <class name="MydbEvent" fqname="sql\MydbEvent" start="18" end="31" loc="14" cloc="3" eloc="5" lloc="2" ncloc="11" dit="0" noam="0" nocc="1" noom="0" nom="2" cr="0.2775" rcr="0.2775" ca="0" cbo="0" ce="0" impl="1" cis="1" csz="2" npm="1" vars="0" varsi="0" varsnp="0" wmc="3" wmci="3" wmcnp="2">
+      <file name="/app/src/sql/MydbEvent.php"/>
+      <method name="getListeners" start="23" end="23" ccn="1" ccn2="1" loc="1" cloc="0" eloc="0" lloc="0" ncloc="1" npath="1" hnt="3" hnd="3" hv="4.7548875021635" hd="4.5" hl="0.22222222222222" he="21.396993759736" ht="1.1887218755409" hb="0.0025690974927435" hi="1.0566416671474" mi="100"/>
+      <method name="notify" start="25" end="30" ccn="2" ccn2="2" loc="6" cloc="0" eloc="5" lloc="2" ncloc="6" npath="2" hnt="9" hnd="12" hv="32.26466250649" hd="6" hl="0.16666666666667" he="193.58797503894" ht="10.754887502163" hb="0.011154865290671" hi="5.3774437510817" mi="73.919560435026"/>
     </class>
     <class name="MydbException" fqname="sql\MydbException" start="25" end="28" loc="4" cloc="0" eloc="0" lloc="0" ncloc="4" dit="2" noam="0" nocc="17" noom="0" nom="0" cr="2.53425" rcr="0.2775" ca="1" cbo="0" ce="0" impl="0" cis="0" csz="0" npm="0" vars="0" varsi="0" varsnp="0" wmc="0" wmci="0" wmcnp="0">
       <file name="/app/src/sql/MydbException.php"/>
@@ -210,7 +218,19 @@
       <method name="__unserialize" start="201" end="204" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="8" hnd="9" hv="25.359400011539" hd="5" hl="0.2" he="126.79700005769" ht="7.0442777809829" hb="0.0084130098545288" hi="5.0718800023077" mi="79.625791624151"/>
     </class>
   </package>
-  <package name="sql\MydbException" noc="19" noi="0" nom="1" nof="0" cr="0.15" rcr="0.711">
+  <package name="sql\MydbEvent" noc="2" noi="0" nom="4" nof="0" cr="0.15" rcr="0.18116666666667">
+    <class name="ExampleEvent" fqname="sql\MydbEvent\ExampleEvent" start="20" end="29" loc="10" cloc="0" eloc="6" lloc="1" ncloc="10" dit="1" noam="0" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.385875" ca="0" cbo="1" ce="1" impl="1" cis="0" csz="1" npm="0" vars="0" varsi="0" varsnp="0" wmc="1" wmci="3" wmcnp="0">
+      <file name="/app/src/sql/MydbEvent/ExampleEvent.php"/>
+      <method name="getListeners" start="22" end="28" ccn="1" ccn2="1" loc="7" cloc="0" eloc="6" lloc="1" ncloc="7" npath="1" hnt="9" hnd="15" hv="35.162015360477" hd="22.75" hl="0.043956043956044" he="799.93584945084" ht="44.440880525047" hb="0.028724260200251" hi="1.5455830927682" mi="72.065304892389"/>
+    </class>
+    <class name="ExampleListener" fqname="sql\MydbEvent\ExampleListener" start="20" end="41" loc="22" cloc="0" eloc="13" lloc="7" ncloc="22" dit="0" noam="0" nocc="0" noom="0" nom="3" cr="0.15" rcr="0.15" ca="1" cbo="0" ce="0" impl="0" cis="2" csz="3" npm="2" vars="0" varsi="0" varsnp="0" wmc="3" wmci="3" wmcnp="2">
+      <file name="/app/src/sql/MydbEvent/ExampleListener.php"/>
+      <method name="onMySomeEvent" start="23" end="28" ccn="1" ccn2="1" loc="6" cloc="0" eloc="5" lloc="3" ncloc="6" npath="1" hnt="7" hnd="9" hv="22.189475010096" hd="8.75" hl="0.11428571428571" he="194.15790633834" ht="10.78655035213" hb="0.011176748163238" hi="2.5359400011538" mi="75.192451353179"/>
+      <method name="onMyEvent" start="30" end="35" ccn="1" ccn2="1" loc="6" cloc="0" eloc="5" lloc="3" ncloc="6" npath="1" hnt="7" hnd="9" hv="22.189475010096" hd="8.75" hl="0.11428571428571" he="194.15790633834" ht="10.78655035213" hb="0.011176748163238" hi="2.5359400011538" mi="75.192451353179"/>
+      <method name="doSomeWork" start="37" end="40" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="9" hnd="9" hv="28.529325012981" hd="6" hl="0.16666666666667" he="171.17595007788" ht="9.5097750043269" hb="0.010276389970974" hi="4.7548875021635" mi="79.267620989406"/>
+    </class>
+  </package>
+  <package name="sql\MydbException" noc="19" noi="0" nom="1" nof="0" cr="0.15" rcr="0.67983333333333">
     <class name="AsyncException" fqname="sql\MydbException\AsyncException" start="26" end="29" loc="4" cloc="0" eloc="0" lloc="0" ncloc="4" dit="3" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.163875" ca="1" cbo="0" ce="0" impl="0" cis="0" csz="0" npm="0" vars="0" varsi="0" varsnp="0" wmc="0" wmci="0" wmcnp="0">
       <file name="/app/src/sql/MydbException/AsyncException.php"/>
     </class>
@@ -270,7 +290,7 @@
       <file name="/app/src/sql/MydbException/UpdateException.php"/>
     </class>
   </package>
-  <package name="sql\MydbMysqli" noc="1" noi="2" nom="15" nof="0" cr="0.1647421875" rcr="0.15">
+  <package name="sql\MydbMysqli" noc="1" noi="2" nom="15" nof="0" cr="0.171515625" rcr="0.15">
     <class name="MydbMysqliResult" fqname="sql\MydbMysqli\MydbMysqliResult" start="27" end="104" loc="78" cloc="5" eloc="35" lloc="17" ncloc="73" dit="0" noam="0" nocc="0" noom="0" nom="7" cr="0.15" rcr="0.2775" ca="1" cbo="1" ce="1" impl="1" cis="7" csz="12" npm="7" vars="5" varsi="5" varsnp="0" wmc="13" wmci="13" wmcnp="13">
       <file name="/app/src/sql/MydbMysqli/MydbMysqliResult.php"/>
       <method name="__construct" start="47" end="56" ccn="2" ccn2="2" loc="10" cloc="0" eloc="8" lloc="5" ncloc="10" npath="2" hnt="17" hnd="24" hv="77.94436251226" hd="6.6666666666667" hl="0.15" he="519.62908341506" ht="28.868282411948" hb="0.021544729487367" hi="11.691654376839" mi="66.784720242898"/>
