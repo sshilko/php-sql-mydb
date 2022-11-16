@@ -10,9 +10,17 @@
 x-mysql: &mysql
   platform: linux/amd64
   tty: true
+  stdin_open: true
   dns: 1.1.1.1
+  dns_opt:
+    - use-vc
   image: library/mysql:5.7-debian
+  pull_policy: missing
   stop_grace_period: 10s
+  cpus: 0.9
+  cpu_percent: 90
+  mem_limit: "150M"
+  pids_limit: 100
   command:
     - --innodb-flush-log-at-trx-commit=2
     - --innodb-flush-neighbors=0
@@ -45,6 +53,8 @@ x-mysql: &mysql
   healthcheck:
     test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
     timeout: 1s
+    interval: 5s
+    retries: 2
     start_period: 5s
   logging:
     options:

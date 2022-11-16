@@ -39,7 +39,7 @@ repos:
         verbose: true
       - id: php-code-phpstan
         name: php-code-phpstan
-        entry: php ./vendor/bin/phpstan analyse --memory-limit=-1 --no-progress -c build/phpstan.neon
+        entry: php ./vendor/bin/phpstan analyse --memory-limit=256M --no-progress -c build/phpstan.neon
         log_file: build/tmp/phpstan.txt
         language: system
         types: [php]
@@ -48,7 +48,7 @@ repos:
         name: php-code-psalm-single-changed-file-check
         entry: |
             php ./vendor/bin/psalm.phar --config build/psalm.xml
-                                        --memory-limit=-1
+                                        --memory-limit=256M
                                         --no-diff
                                         --long-progress
                                         --show-info=true

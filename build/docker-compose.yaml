@@ -8,9 +8,13 @@
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
 x-app: &app
+  pull_policy: never
   container_name: app
   tty: true
+  stdin_open: true
   dns: 1.1.1.1
+  dns_opt:
+    - use-vc
   stop_grace_period: 5s
   platform: linux/amd64
   logging:
@@ -21,6 +25,12 @@ x-app: &app
     test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
     timeout: 2s
     start_period: 10s
+    interval: 5s
+    retries: 2
+  cpus: 0.9
+  cpu_percent: 90
+  mem_limit: "900M"
+  pids_limit: 100
   ulimits:
     nproc: 65535
     nofile:
