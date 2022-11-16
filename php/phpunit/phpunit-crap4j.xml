@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-16 20:31:43</timestamp>
+  <timestamp>2022-11-16 22:42:08</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>160</methodCount>
+    <methodCount>163</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>414.83</totalCrap>
+    <totalCrap>426.74</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -278,6 +278,17 @@
     <method>
       <package>sql</package>
       <className>sql\Mydb</className>
+      <methodName>setTransactionIsolationLevel</methodName>
+      <methodSignature>setTransactionIsolationLevel($isolationLevel): void</methodSignature>
+      <fullMethod>setTransactionIsolationLevel($isolationLevel): void</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
       <methodName>sendClientRequest</methodName>
       <methodSignature>sendClientRequest(string $query): bool</methodSignature>
       <fullMethod>sendClientRequest(string $query): bool</fullMethod>
@@ -322,23 +333,12 @@
     <method>
       <package>sql</package>
       <className>sql\Mydb</className>
-      <methodName>afterConnectionSuccess</methodName>
-      <methodSignature>afterConnectionSuccess(): void</methodSignature>
-      <fullMethod>afterConnectionSuccess(): void</fullMethod>
-      <crap>5.2</crap>
-      <complexity>5</complexity>
-      <coverage>80</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql</package>
-      <className>sql\Mydb</className>
       <methodName>connect</methodName>
       <methodSignature>connect(int $retry): bool</methodSignature>
       <fullMethod>connect(int $retry): bool</fullMethod>
-      <crap>12</crap>
-      <complexity>12</complexity>
-      <coverage>100</coverage>
+      <crap>17.11</crap>
+      <complexity>17</complexity>
+      <coverage>92.86</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -833,6 +833,17 @@
       <fullMethod>setTransportOptions(sql\MydbOptionsInterface $options, sql\MydbEnvironmentInterface $environment): bool</fullMethod>
       <crap>8</crap>
       <complexity>8</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>setTransactionIsolationLevel</methodName>
+      <methodSignature>setTransactionIsolationLevel(string $level): bool</methodSignature>
+      <fullMethod>setTransactionIsolationLevel(string $level): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1494,6 +1505,28 @@
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>getTransactionIsolationLevel</methodName>
+      <methodSignature>getTransactionIsolationLevel(): ?string</methodSignature>
+      <fullMethod>getTransactionIsolationLevel(): ?string</fullMethod>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbOptions</className>
+      <methodName>setTransactionIsolationLevel</methodName>
+      <methodSignature>setTransactionIsolationLevel(string $isolationLevel): void</methodSignature>
+      <fullMethod>setTransactionIsolationLevel(string $isolationLevel): void</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

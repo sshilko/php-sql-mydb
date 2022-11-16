@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Wed Nov 16 20:31:43 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
-    <runtime name="PHP" version="7.4.33" url="https://secure.php.net/"/>
-    <driver name="xdebug" version="3.1.5"/>
+  <build time="Wed Nov 16 22:42:08 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+    <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
+    <driver name="xdebug" version="3.2.0RC2"/>
   </build>
   <project source="/app/src/sql">
     <tests>
@@ -77,74 +77,25 @@
       <test name="phpunit\MysqliTest::testAffectedRowsNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testWarningsNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\OptionsTest::testNonInteractiveTimeouts" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testMysqliReport" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testPersistent" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testCharset" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testAutocommit" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testSetTimeZone" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testMysqliReportMax" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testMysqliReportMin" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testSetReadBufferMax" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\OptionsTest::testServerSideSelectTimeouts" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testSetReadBufferMin" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testSetReadBuffer" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testNetworkBufferMax" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testNetworkBufferMin" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testNetworkBuffer" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\OptionsTest::testReadTimeout" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\OptionsTest::testErrorReporting" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testReadTimeout" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testNetworkBuffer" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testNetworkBufferMin" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testNetworkBufferMax" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testSetReadBuffer" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testSetReadBufferMin" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testSetReadBufferMax" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testMysqliReport" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testMysqliReportMin" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testMysqliReportMax" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testSetTimeZone" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testAutocommit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testCharset" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\OptionsTest::testPersistent" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\OptionsTest::testReadonly" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testShowColumnsLike" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions4" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions3" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions2" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions1" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testbuildDeleteWhereExceptions" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException7" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException6" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException5" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException4" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException2" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testShowKeys" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException1" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildInsertManyException" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhereException" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #2" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #10" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #9" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #8" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #7" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #6" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #5" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #4" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #3" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #1" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #0" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;like null&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative null&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count 1&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count 1&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative null array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #11" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testEscape" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple int&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple float&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;raw null&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string caps null&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string lowercase null&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x even&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\QueryBuilderTest::testInsertReplaceOneException" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple int&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple float&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;expression&quot;" size="unknown" result="0" status="PASSED"/>
@@ -154,6 +105,55 @@
       <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x even&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testInsertReplaceOneException" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple int&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple float&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;raw null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string caps null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string lowercase null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x even&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testEscape" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative null array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count 1&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count 1&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;like null&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #0" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #1" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #2" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #3" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #4" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #5" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #6" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #7" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #8" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #9" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #10" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #11" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhereException" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildInsertManyException" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException1" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException2" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException3" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException4" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException5" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException6" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException7" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testbuildDeleteWhereExceptions" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions1" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions2" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions3" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions4" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions5" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\RegistryTest::testRegistryEmpty1" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\RegistryTest::testRegistryEmpty2" size="unknown" result="0" status="PASSED"/>
@@ -210,10 +210,10 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4592" comments="1802" code="2790" executable="654" executed="630" percent="96.33"/>
-        <methods count="159" tested="146" percent="91.82"/>
+        <lines total="4689" comments="1849" code="2840" executable="659" executed="631" percent="95.75"/>
+        <methods count="162" tested="147" percent="90.74"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="14" tested="10" percent="71.43"/>
+        <classes count="14" tested="9" percent="64.29"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="MydbEvent">
@@ -245,7 +245,7 @@
       </directory>
       <directory name="MydbException">
         <totals>
-          <lines total="573" comments="323" code="250" executable="1" executed="1" percent="100.00"/>
+          <lines total="601" comments="340" code="261" executable="1" executed="1" percent="100.00"/>
           <methods count="1" tested="1" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -404,6 +404,15 @@
             <traits count="0" tested="0" percent="0"/>
           </totals>
         </file>
+        <file name="TransactionIsolationException.php" href="MydbException/TransactionIsolationException.php.xml">
+          <totals>
+            <lines total="28" comments="17" code="11" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
         <file name="TransactionRollbackException.php" href="MydbException/TransactionRollbackException.php.xml">
           <totals>
             <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
@@ -425,7 +434,7 @@
       </directory>
       <directory name="MydbInterface">
         <totals>
-          <lines total="302" comments="180" code="122" executable="0" executed="0" percent="0"/>
+          <lines total="304" comments="180" code="124" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
@@ -496,7 +505,7 @@
         </file>
         <file name="TransactionInterface.php" href="MydbInterface/TransactionInterface.php.xml">
           <totals>
-            <lines total="32" comments="17" code="15" executable="0" executed="0" percent="0"/>
+            <lines total="34" comments="17" code="17" executable="0" executed="0" percent="0"/>
             <methods count="0" tested="0" percent="0"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="0" tested="0" percent="0"/>
@@ -542,8 +551,8 @@
       </directory>
       <file name="Mydb.php" href="Mydb.php.xml">
         <totals>
-          <lines total="704" comments="172" code="532" executable="208" executed="193" percent="92.79"/>
-          <methods count="30" tested="22" percent="73.33"/>
+          <lines total="722" comments="188" code="534" executable="207" executed="189" percent="91.30"/>
+          <methods count="30" tested="21" percent="70.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
@@ -641,8 +650,8 @@
       </file>
       <file name="MydbMysqli.php" href="MydbMysqli.php.xml">
         <totals>
-          <lines total="607" comments="192" code="415" executable="141" executed="141" percent="100.00"/>
-          <methods count="30" tested="30" percent="100.00"/>
+          <lines total="612" comments="192" code="420" executable="142" executed="142" percent="100.00"/>
+          <methods count="31" tested="31" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
@@ -650,7 +659,7 @@
       </file>
       <file name="MydbMysqliInterface.php" href="MydbMysqliInterface.php.xml">
         <totals>
-          <lines total="97" comments="23" code="74" executable="0" executed="0" percent="0"/>
+          <lines total="100" comments="23" code="77" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
@@ -659,16 +668,16 @@
       </file>
       <file name="MydbOptions.php" href="MydbOptions.php.xml">
         <totals>
-          <lines total="328" comments="139" code="189" executable="32" executed="32" percent="100.00"/>
-          <methods count="26" tested="26" percent="100.00"/>
+          <lines total="356" comments="150" code="206" executable="37" executed="36" percent="97.30"/>
+          <methods count="28" tested="27" percent="96.43"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="1" percent="100.00"/>
+          <classes count="1" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
       </file>
       <file name="MydbOptionsInterface.php" href="MydbOptionsInterface.php.xml">
         <totals>
-          <lines total="77" comments="16" code="61" executable="0" executed="0" percent="0"/>
+          <lines total="90" comments="19" code="71" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>

@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbOptionsInterface.php" path="/">
     <totals>
-      <lines total="77" comments="16" code="61" executable="0" executed="0" percent="0"/>
+      <lines total="90" comments="19" code="71" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
@@ -90,6 +90,82 @@
       </line>
       <line no="25">
         <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="26">
+        <token name="T_DOC_COMMENT">     * @see https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html</token>
+      </line>
+      <line no="27">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TRANSACTION_ISOLATION_LEVEL_DEFAULT</token>
+        <token name="T_WHITESPACE">          </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'REPEATABLE READ'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ</token>
+        <token name="T_WHITESPACE">  </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'REPEATABLE READ'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED</token>
+        <token name="T_WHITESPACE">   </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'READ COMMITTED'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="31">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'READ UNCOMMITTED'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE</token>
+        <token name="T_WHITESPACE">     </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'SERIALIZABLE'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="33"/>
+      <line no="34">
+        <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_FUNCTION">function</token>
@@ -102,8 +178,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="26"/>
-      <line no="27">
+      <line no="35"/>
+      <line no="36">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -120,8 +196,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="28"/>
-      <line no="29">
+      <line no="37"/>
+      <line no="38">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -135,8 +211,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="30"/>
-      <line no="31">
+      <line no="39"/>
+      <line no="40">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -153,8 +229,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="32"/>
-      <line no="33">
+      <line no="41"/>
+      <line no="42">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -168,8 +244,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="34"/>
-      <line no="35">
+      <line no="43"/>
+      <line no="44">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -186,8 +262,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="36"/>
-      <line no="37">
+      <line no="45"/>
+      <line no="46">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -201,8 +277,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="38"/>
-      <line no="39">
+      <line no="47"/>
+      <line no="48">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -219,8 +295,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="40"/>
-      <line no="41">
+      <line no="49"/>
+      <line no="50">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -234,8 +310,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="42"/>
-      <line no="43">
+      <line no="51"/>
+      <line no="52">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -252,8 +328,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="44"/>
-      <line no="45">
+      <line no="53"/>
+      <line no="54">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -267,8 +343,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="46"/>
-      <line no="47">
+      <line no="55"/>
+      <line no="56">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -285,8 +361,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="48"/>
-      <line no="49">
+      <line no="57"/>
+      <line no="58">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -300,8 +376,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="50"/>
-      <line no="51">
+      <line no="59"/>
+      <line no="60">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -318,8 +394,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="52"/>
-      <line no="53">
+      <line no="61"/>
+      <line no="62">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -333,8 +409,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="54"/>
-      <line no="55">
+      <line no="63"/>
+      <line no="64">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -351,8 +427,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="56"/>
-      <line no="57">
+      <line no="65"/>
+      <line no="66">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -366,8 +442,8 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="58"/>
-      <line no="59">
+      <line no="67"/>
+      <line no="68">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -384,8 +460,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="60"/>
-      <line no="61">
+      <line no="69"/>
+      <line no="70">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -399,8 +475,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="62"/>
-      <line no="63">
+      <line no="71"/>
+      <line no="72">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -417,8 +493,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="64"/>
-      <line no="65">
+      <line no="73"/>
+      <line no="74">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -432,8 +508,42 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="66"/>
-      <line no="67">
+      <line no="75"/>
+      <line no="76">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getTransactionIsolationLevel</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">string</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="77"/>
+      <line no="78">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setTransactionIsolationLevel</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$isolationLevel</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="79"/>
+      <line no="80">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -450,8 +560,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="68"/>
-      <line no="69">
+      <line no="81"/>
+      <line no="82">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -465,8 +575,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="70"/>
-      <line no="71">
+      <line no="83"/>
+      <line no="84">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -483,8 +593,8 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="72"/>
-      <line no="73">
+      <line no="85"/>
+      <line no="86">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -498,8 +608,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="74"/>
-      <line no="75">
+      <line no="87"/>
+      <line no="88">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -516,10 +626,10 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="76">
+      <line no="89">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="77"/>
+      <line no="90"/>
     </source>
   </file>
 </phpunit>

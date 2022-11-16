@@ -491,9 +491,7 @@
       <line no="16">
         <token name="T_NAMESPACE">namespace</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">sql</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">MydbMysqli</token>
+        <token name="T_NAME_QUALIFIED">sql\MydbMysqli</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="17"/>

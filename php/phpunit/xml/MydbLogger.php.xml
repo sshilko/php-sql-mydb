@@ -665,31 +665,19 @@
       <line no="18">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">Psr</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">Log</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">LoggerInterface</token>
+        <token name="T_NAME_QUALIFIED">Psr\Log\LoggerInterface</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="19">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">Psr</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">Log</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">LogLevel</token>
+        <token name="T_NAME_QUALIFIED">Psr\Log\LogLevel</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="20">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">sql</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">MydbException</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">LoggerException</token>
+        <token name="T_NAME_QUALIFIED">sql\MydbException\LoggerException</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="21">
@@ -2641,7 +2629,7 @@
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_AMPERSAND">&amp;</token>
+        <token name="T_AMPERSAND_FOLLOWED_BY_VAR_OR_VARARG">&amp;</token>
         <token name="T_VARIABLE">$error</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COLON">:</token>

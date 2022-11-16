@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbMysqliInterface.php" path="/">
     <totals>
-      <lines total="97" comments="23" code="74" executable="0" executed="0" percent="0"/>
+      <lines total="100" comments="23" code="77" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
@@ -80,21 +80,13 @@
       <line no="20">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">sql</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">MydbMysqli</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">MydbMysqliEscapeStringInterface</token>
+        <token name="T_NAME_QUALIFIED">sql\MydbMysqli\MydbMysqliEscapeStringInterface</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="21">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">sql</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">MydbMysqli</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">MydbMysqliResultInterface</token>
+        <token name="T_NAME_QUALIFIED">sql\MydbMysqli\MydbMysqliResultInterface</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="22"/>
@@ -125,7 +117,8 @@
       <line no="29">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="30">
+      <line no="30"/>
+      <line no="31">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -139,8 +132,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="31"/>
-      <line no="32">
+      <line no="32"/>
+      <line no="33">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -162,8 +155,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="33"/>
-      <line no="34">
+      <line no="34"/>
+      <line no="35">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -177,8 +170,26 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="35"/>
-      <line no="36">
+      <line no="36"/>
+      <line no="37">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setTransactionIsolationLevel</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$level</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">bool</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="38"/>
+      <line no="39">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -192,8 +203,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="37"/>
-      <line no="38">
+      <line no="40"/>
+      <line no="41">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -208,8 +219,8 @@
         <token name="T_STRING">mysqli</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="39"/>
-      <line no="40">
+      <line no="42"/>
+      <line no="43">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -226,8 +237,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="41"/>
-      <line no="42">
+      <line no="44"/>
+      <line no="45">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -245,8 +256,8 @@
         <token name="T_STRING">MydbMysqliResultInterface</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="43"/>
-      <line no="44">
+      <line no="46"/>
+      <line no="47">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -260,8 +271,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="45"/>
-      <line no="46">
+      <line no="48"/>
+      <line no="49">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -275,8 +286,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="47"/>
-      <line no="48">
+      <line no="50"/>
+      <line no="51">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -290,8 +301,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="49"/>
-      <line no="50">
+      <line no="52"/>
+      <line no="53">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -305,8 +316,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="51"/>
-      <line no="52">
+      <line no="54"/>
+      <line no="55">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -320,8 +331,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="53"/>
-      <line no="54">
+      <line no="56"/>
+      <line no="57">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -330,35 +341,35 @@
         <token name="T_STRING">realConnect</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="55">
+      <line no="58">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$host</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="56">
+      <line no="59">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$username</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="57">
+      <line no="60">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$password</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="58">
+      <line no="61">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$dbname</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="59">
+      <line no="62">
         <token name="T_WHITESPACE">        </token>
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">int</token>
@@ -366,7 +377,7 @@
         <token name="T_VARIABLE">$port</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="60">
+      <line no="63">
         <token name="T_WHITESPACE">        </token>
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">string</token>
@@ -374,13 +385,13 @@
         <token name="T_VARIABLE">$socket</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="61">
+      <line no="64">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">int</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$flags</token>
       </line>
-      <line no="62">
+      <line no="65">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COLON">:</token>
@@ -388,8 +399,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="63"/>
-      <line no="64">
+      <line no="66"/>
+      <line no="67">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -406,8 +417,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="65"/>
-      <line no="66">
+      <line no="68"/>
+      <line no="69">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -424,8 +435,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="67"/>
-      <line no="68">
+      <line no="70"/>
+      <line no="71">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -439,8 +450,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="69"/>
-      <line no="70">
+      <line no="72"/>
+      <line no="73">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -455,8 +466,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="71"/>
-      <line no="72">
+      <line no="74"/>
+      <line no="75">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -471,8 +482,8 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="73"/>
-      <line no="74">
+      <line no="76"/>
+      <line no="77">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -486,8 +497,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="75"/>
-      <line no="76">
+      <line no="78"/>
+      <line no="79">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -502,8 +513,8 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="77"/>
-      <line no="78">
+      <line no="80"/>
+      <line no="81">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -518,8 +529,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="79"/>
-      <line no="80">
+      <line no="82"/>
+      <line no="83">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -534,18 +545,18 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="81"/>
-      <line no="82">
+      <line no="84"/>
+      <line no="85">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="83">
+      <line no="86">
         <token name="T_DOC_COMMENT">     * @return int|string|null</token>
       </line>
-      <line no="84">
+      <line no="87">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="85">
+      <line no="88">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -556,8 +567,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="86"/>
-      <line no="87">
+      <line no="89"/>
+      <line no="90">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -574,21 +585,21 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="88"/>
-      <line no="89">
+      <line no="91"/>
+      <line no="92">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="90">
+      <line no="93">
         <token name="T_DOC_COMMENT">    * @param array&lt;int, string&gt; $events</token>
       </line>
-      <line no="91">
+      <line no="94">
         <token name="T_DOC_COMMENT">     * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference</token>
       </line>
-      <line no="92">
+      <line no="95">
         <token name="T_DOC_COMMENT">    */</token>
       </line>
-      <line no="93">
+      <line no="96">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -603,7 +614,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_ARRAY">array</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_AMPERSAND">&amp;</token>
+        <token name="T_AMPERSAND_FOLLOWED_BY_VAR_OR_VARARG">&amp;</token>
         <token name="T_VARIABLE">$events</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COLON">:</token>
@@ -612,8 +623,8 @@
         <token name="T_STRING">mysqli_result</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="94"/>
-      <line no="95">
+      <line no="97"/>
+      <line no="98">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -627,10 +638,10 @@
         <token name="T_ARRAY">array</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="96">
+      <line no="99">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="97"/>
+      <line no="100"/>
     </source>
   </file>
 </phpunit>

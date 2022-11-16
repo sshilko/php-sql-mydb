@@ -90,76 +90,27 @@ Mysqli (phpunit\Mysqli)
 
 Options (phpunit\Options)
  [x] Non interactive timeouts
- [x] Mysqli report
- [x] Persistent
- [x] Charset
- [x] Autocommit
- [x] Set time zone
- [x] Mysqli report max
- [x] Mysqli report min
- [x] Set read buffer max
  [x] Server side select timeouts
- [x] Set read buffer min
- [x] Set read buffer
- [x] Network buffer max
- [x] Network buffer min
- [x] Network buffer
- [x] Read timeout
  [x] Error reporting
+ [x] Read timeout
+ [x] Network buffer
+ [x] Network buffer min
+ [x] Network buffer max
+ [x] Set read buffer
+ [x] Set read buffer min
+ [x] Set read buffer max
+ [x] Mysqli report
+ [x] Mysqli report min
+ [x] Mysqli report max
+ [x] Set time zone
+ [x] Autocommit
+ [x] Charset
+ [x] Persistent
  [x] Readonly
 
 Query Builder (phpunit\QueryBuilder)
  [x] Show columns like
- [x] Build update where many exception 3
- [x] Build update where exceptions 4
- [x] Build update where exceptions 3
- [x] Build update where exceptions 2
- [x] Build update where exceptions 1
- [x] Build delete where exceptions
- [x] Build update where many exception 7
- [x] Build update where many exception 6
- [x] Build update where many exception 5
- [x] Build update where many exception 4
- [x] Build update where many exception 2
  [x] Show keys
- [x] Build update where many exception 1
- [x] Build insert many exception
- [x] Build where exception
- [x] Build where with data set "simple"
- [x] Build where with data set #2
- [x] Build where with data set #10
- [x] Build where with data set #9
- [x] Build where with data set #8
- [x] Build where with data set #7
- [x] Build where with data set #6
- [x] Build where with data set #5
- [x] Build where with data set #4
- [x] Build where with data set #3
- [x] Build where with data set #1
- [x] Build where with data set "simple array count >1"
- [x] Build where with data set #0
- [x] Build where with data set "like null"
- [x] Build where with data set "negative null"
- [x] Build where with data set "simple null"
- [x] Build where with data set "negative array count 1"
- [x] Build where with data set "simple array count 1"
- [x] Build where with data set "negative null array count >1"
- [x] Build where with data set "simple null array count >1"
- [x] Build where with data set "negative array count >1"
- [x] Build where with data set #11
- [x] Build update where many with data set "simple"
- [x] Build update where many with data set "prefixed simple"
- [x] Escape
- [x] Replace one with data set "simple int"
- [x] Replace one with data set "simple float"
- [x] Replace one with data set "expression"
- [x] Replace one with data set "raw null"
- [x] Replace one with data set "string caps null"
- [x] Replace one with data set "string lowercase null"
- [x] Replace one with data set "string 0x"
- [x] Replace one with data set "string 0x even"
- [x] Replace one with data set "string 0x mismatch"
- [x] Insert replace one exception
  [x] Insert one with data set "simple int"
  [x] Insert one with data set "simple float"
  [x] Insert one with data set "expression"
@@ -169,6 +120,55 @@ Query Builder (phpunit\QueryBuilder)
  [x] Insert one with data set "string 0x"
  [x] Insert one with data set "string 0x even"
  [x] Insert one with data set "string 0x mismatch"
+ [x] Insert replace one exception
+ [x] Replace one with data set "simple int"
+ [x] Replace one with data set "simple float"
+ [x] Replace one with data set "expression"
+ [x] Replace one with data set "raw null"
+ [x] Replace one with data set "string caps null"
+ [x] Replace one with data set "string lowercase null"
+ [x] Replace one with data set "string 0x"
+ [x] Replace one with data set "string 0x even"
+ [x] Replace one with data set "string 0x mismatch"
+ [x] Escape
+ [x] Build update where many with data set "simple"
+ [x] Build update where many with data set "prefixed simple"
+ [x] Build where with data set "simple"
+ [x] Build where with data set "simple array count >1"
+ [x] Build where with data set "negative array count >1"
+ [x] Build where with data set "simple null array count >1"
+ [x] Build where with data set "negative null array count >1"
+ [x] Build where with data set "simple array count 1"
+ [x] Build where with data set "negative array count 1"
+ [x] Build where with data set "simple null"
+ [x] Build where with data set "negative null"
+ [x] Build where with data set "like null"
+ [x] Build where with data set #0
+ [x] Build where with data set #1
+ [x] Build where with data set #2
+ [x] Build where with data set #3
+ [x] Build where with data set #4
+ [x] Build where with data set #5
+ [x] Build where with data set #6
+ [x] Build where with data set #7
+ [x] Build where with data set #8
+ [x] Build where with data set #9
+ [x] Build where with data set #10
+ [x] Build where with data set #11
+ [x] Build where exception
+ [x] Build insert many exception
+ [x] Build update where many exception 1
+ [x] Build update where many exception 2
+ [x] Build update where many exception 3
+ [x] Build update where many exception 4
+ [x] Build update where many exception 5
+ [x] Build update where many exception 6
+ [x] Build update where many exception 7
+ [x] Build delete where exceptions
+ [x] Build update where exceptions 1
+ [x] Build update where exceptions 2
+ [x] Build update where exceptions 3
+ [x] Build update where exceptions 4
  [x] Build update where exceptions 5
 
 Registry (phpunit\Registry)

@@ -1258,11 +1258,7 @@
       <line no="18">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">sql</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">MydbException</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">EnvironmentException</token>
+        <token name="T_NAME_QUALIFIED">sql\MydbException\EnvironmentException</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="19">

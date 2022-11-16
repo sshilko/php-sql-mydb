@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="TransactionInterface.php" path="/MydbInterface">
     <totals>
-      <lines total="32" comments="17" code="15" executable="0" executed="0" percent="0"/>
+      <lines total="34" comments="17" code="17" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
@@ -61,9 +61,7 @@
       <line no="16">
         <token name="T_NAMESPACE">namespace</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">sql</token>
-        <token name="T_NS_SEPARATOR">\</token>
-        <token name="T_STRING">MydbInterface</token>
+        <token name="T_NAME_QUALIFIED">sql\MydbInterface</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="17"/>
@@ -137,10 +135,28 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="31">
+      <line no="31"/>
+      <line no="32">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">setTransactionIsolationLevel</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$isolationLevel</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="33">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="32"/>
+      <line no="34"/>
     </source>
   </file>
 </phpunit>
