@@ -81,9 +81,14 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">notify</token>
         <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_QUESTION_MARK">?</token>
         <token name="T_ARRAY">array</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$payload</token>
+        <token name="T_VARIABLE">$metadata</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COLON">:</token>
         <token name="T_WHITESPACE"> </token>

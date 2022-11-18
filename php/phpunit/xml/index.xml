@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Fri Nov 18 17:11:28 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+  <build time="Fri Nov 18 21:45:54 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
     <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.0RC2"/>
   </build>
@@ -213,33 +213,24 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4689" comments="1849" code="2840" executable="659" executed="635" percent="96.36"/>
-        <methods count="162" tested="149" percent="91.98"/>
+        <lines total="4811" comments="1902" code="2909" executable="665" executed="636" percent="95.64"/>
+        <methods count="163" tested="149" percent="91.41"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="14" tested="10" percent="71.43"/>
+        <classes count="15" tested="10" percent="66.67"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="MydbEvent">
         <totals>
-          <lines total="72" comments="22" code="50" executable="7" executed="0" percent="0.00"/>
-          <methods count="4" tested="0" percent="0.00"/>
+          <lines total="32" comments="11" code="21" executable="3" executed="0" percent="0.00"/>
+          <methods count="1" tested="0" percent="0.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="2" tested="0" percent="0.00"/>
+          <classes count="1" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
-        <file name="ExampleEvent.php" href="MydbEvent/ExampleEvent.php.xml">
+        <file name="InternalEvent.php" href="MydbEvent/InternalEvent.php.xml">
           <totals>
-            <lines total="30" comments="11" code="19" executable="2" executed="0" percent="0.00"/>
+            <lines total="32" comments="11" code="21" executable="3" executed="0" percent="0.00"/>
             <methods count="1" tested="0" percent="0.00"/>
-            <functions count="0" tested="0" percent="0"/>
-            <classes count="1" tested="0" percent="0.00"/>
-            <traits count="0" tested="0" percent="0"/>
-          </totals>
-        </file>
-        <file name="ExampleListener.php" href="MydbEvent/ExampleListener.php.xml">
-          <totals>
-            <lines total="42" comments="11" code="31" executable="5" executed="0" percent="0.00"/>
-            <methods count="3" tested="0" percent="0.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="0" percent="0.00"/>
             <traits count="0" tested="0" percent="0"/>
@@ -248,7 +239,7 @@
       </directory>
       <directory name="MydbException">
         <totals>
-          <lines total="601" comments="340" code="261" executable="1" executed="1" percent="100.00"/>
+          <lines total="631" comments="357" code="274" executable="1" executed="1" percent="100.00"/>
           <methods count="1" tested="1" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -291,6 +282,15 @@
           </totals>
         </file>
         <file name="EnvironmentException.php" href="MydbException/EnvironmentException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="EventException.php" href="MydbException/EventException.php.xml">
           <totals>
             <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
             <methods count="0" tested="0" percent="0"/>
@@ -516,6 +516,24 @@
           </totals>
         </file>
       </directory>
+      <directory name="MydbListener">
+        <totals>
+          <lines total="31" comments="11" code="20" executable="2" executed="0" percent="0.00"/>
+          <methods count="1" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="InternalListener.php" href="MydbListener/InternalListener.php.xml">
+          <totals>
+            <lines total="31" comments="11" code="20" executable="2" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
       <directory name="MydbMysqli">
         <totals>
           <lines total="180" comments="67" code="113" executable="16" executed="16" percent="100.00"/>
@@ -554,7 +572,7 @@
       </directory>
       <file name="Mydb.php" href="Mydb.php.xml">
         <totals>
-          <lines total="716" comments="182" code="534" executable="207" executed="192" percent="92.75"/>
+          <lines total="721" comments="182" code="539" executable="208" executed="193" percent="92.79"/>
           <methods count="30" tested="22" percent="73.33"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
@@ -599,14 +617,23 @@
       </file>
       <file name="MydbEvent.php" href="MydbEvent.php.xml">
         <totals>
-          <lines total="32" comments="14" code="18" executable="2" executed="0" percent="0.00"/>
-          <methods count="1" tested="0" percent="0.00"/>
+          <lines total="57" comments="17" code="40" executable="8" executed="0" percent="0.00"/>
+          <methods count="3" tested="0" percent="0.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
       </file>
       <file name="MydbEventInterface.php" href="MydbEventInterface.php.xml">
+        <totals>
+          <lines total="22" comments="11" code="11" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbEventMetadataInterface.php" href="MydbEventMetadataInterface.php.xml">
         <totals>
           <lines total="22" comments="11" code="11" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
@@ -636,6 +663,24 @@
       <file name="MydbInterface.php" href="MydbInterface.php.xml">
         <totals>
           <lines total="27" comments="16" code="11" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbListener.php" href="MydbListener.php.xml">
+        <totals>
+          <lines total="27" comments="11" code="16" executable="1" executed="0" percent="0.00"/>
+          <methods count="1" tested="0" percent="0.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbListenerInterface.php" href="MydbListenerInterface.php.xml">
+        <totals>
+          <lines total="22" comments="11" code="11" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
