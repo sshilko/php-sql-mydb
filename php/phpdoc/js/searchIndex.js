@@ -186,6 +186,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-Mydb.html#property_queryBuilder"
         },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003A\u0024eventListener",
+            "name": "eventListener",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#property_eventListener"
+        },                {
             "fqsen": "\\sql\\Mydb\u003A\u003A\u0024terminating",
             "name": "terminating",
             "summary": "",
@@ -431,50 +436,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbEnvironmentInterface.html#method_startSignalsTrap"
         },                {
-            "fqsen": "\\sql\\MydbEvent\\ExampleEvent",
-            "name": "ExampleEvent",
+            "fqsen": "\\sql\\MydbEvent\\Internal",
+            "name": "Internal",
             "summary": "",
-            "url": "classes/sql-MydbEvent-ExampleEvent.html"
+            "url": "classes/sql-MydbEvent-Internal.html"
         },                {
-            "fqsen": "\\sql\\MydbEvent\\ExampleEvent\u003A\u003AgetListeners\u0028\u0029",
+            "fqsen": "\\sql\\MydbEvent\\Internal\u003A\u003AgetListeners\u0028\u0029",
             "name": "getListeners",
             "summary": "",
-            "url": "classes/sql-MydbEvent-ExampleEvent.html#method_getListeners"
-        },                {
-            "fqsen": "\\sql\\MydbEvent\\ExampleListener",
-            "name": "ExampleListener",
-            "summary": "",
-            "url": "classes/sql-MydbEvent-ExampleListener.html"
-        },                {
-            "fqsen": "\\sql\\MydbEvent\\ExampleListener\u003A\u003AonMySomeEvent\u0028\u0029",
-            "name": "onMySomeEvent",
-            "summary": "",
-            "url": "classes/sql-MydbEvent-ExampleListener.html#method_onMySomeEvent"
-        },                {
-            "fqsen": "\\sql\\MydbEvent\\ExampleListener\u003A\u003AonMyEvent\u0028\u0029",
-            "name": "onMyEvent",
-            "summary": "",
-            "url": "classes/sql-MydbEvent-ExampleListener.html#method_onMyEvent"
-        },                {
-            "fqsen": "\\sql\\MydbEvent\\ExampleListener\u003A\u003AdoSomeWork\u0028\u0029",
-            "name": "doSomeWork",
-            "summary": "",
-            "url": "classes/sql-MydbEvent-ExampleListener.html#method_doSomeWork"
+            "url": "classes/sql-MydbEvent-Internal.html#method_getListeners"
         },                {
             "fqsen": "\\sql\\MydbEvent",
             "name": "MydbEvent",
             "summary": "",
             "url": "classes/sql-MydbEvent.html"
         },                {
-            "fqsen": "\\sql\\MydbEvent\u003A\u003AgetListeners\u0028\u0029",
-            "name": "getListeners",
+            "fqsen": "\\sql\\MydbEvent\u003A\u003AgetEventMetadata\u0028\u0029",
+            "name": "getEventMetadata",
             "summary": "",
-            "url": "classes/sql-MydbEvent.html#method_getListeners"
+            "url": "classes/sql-MydbEvent.html#method_getEventMetadata"
         },                {
             "fqsen": "\\sql\\MydbEvent\u003A\u003Anotify\u0028\u0029",
             "name": "notify",
             "summary": "",
             "url": "classes/sql-MydbEvent.html#method_notify"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\u003A\u003AgetListeners\u0028\u0029",
+            "name": "getListeners",
+            "summary": "",
+            "url": "classes/sql-MydbEvent.html#method_getListeners"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\u003A\u003A\u0024eventMetadata",
+            "name": "eventMetadata",
+            "summary": "",
+            "url": "classes/sql-MydbEvent.html#property_eventMetadata"
         },                {
             "fqsen": "\\sql\\MydbEventInterface",
             "name": "MydbEventInterface",
@@ -485,6 +480,16 @@ Search.appendIndex(
             "name": "notify",
             "summary": "",
             "url": "classes/sql-MydbEventInterface.html#method_notify"
+        },                {
+            "fqsen": "\\sql\\MydbEventMetadataInterface",
+            "name": "MydbEventMetadataInterface",
+            "summary": "",
+            "url": "classes/sql-MydbEventMetadataInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbEventMetadataInterface\u003A\u003AgetEventMetadata\u0028\u0029",
+            "name": "getEventMetadata",
+            "summary": "",
+            "url": "classes/sql-MydbEventMetadataInterface.html#method_getEventMetadata"
         },                {
             "fqsen": "\\sql\\MydbException\\AsyncException",
             "name": "AsyncException",
@@ -510,6 +515,11 @@ Search.appendIndex(
             "name": "EnvironmentException",
             "summary": "",
             "url": "classes/sql-MydbException-EnvironmentException.html"
+        },                {
+            "fqsen": "\\sql\\MydbException\\EventException",
+            "name": "EventException",
+            "summary": "",
+            "url": "classes/sql-MydbException-EventException.html"
         },                {
             "fqsen": "\\sql\\MydbException\\InternalException",
             "name": "InternalException",
@@ -780,6 +790,41 @@ Search.appendIndex(
             "name": "MydbInterface",
             "summary": "",
             "url": "classes/sql-MydbInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbListener\\InternalListener",
+            "name": "InternalListener",
+            "summary": "",
+            "url": "classes/sql-MydbListener-InternalListener.html"
+        },                {
+            "fqsen": "\\sql\\MydbListener\\InternalListener\u003A\u003AonEvent\u0028\u0029",
+            "name": "onEvent",
+            "summary": "",
+            "url": "classes/sql-MydbListener-InternalListener.html#method_onEvent"
+        },                {
+            "fqsen": "\\sql\\MydbListener",
+            "name": "MydbListener",
+            "summary": "",
+            "url": "classes/sql-MydbListener.html"
+        },                {
+            "fqsen": "\\sql\\MydbListener\u003A\u003AonEvent\u0028\u0029",
+            "name": "onEvent",
+            "summary": "",
+            "url": "classes/sql-MydbListener.html#method_onEvent"
+        },                {
+            "fqsen": "\\sql\\MydbListener\u003A\u003Aobserve\u0028\u0029",
+            "name": "observe",
+            "summary": "",
+            "url": "classes/sql-MydbListener.html#method_observe"
+        },                {
+            "fqsen": "\\sql\\MydbListenerInterface",
+            "name": "MydbListenerInterface",
+            "summary": "",
+            "url": "classes/sql-MydbListenerInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbListenerInterface\u003A\u003Aobserve\u0028\u0029",
+            "name": "observe",
+            "summary": "",
+            "url": "classes/sql-MydbListenerInterface.html#method_observe"
         },                {
             "fqsen": "\\sql\\MydbLogger",
             "name": "MydbLogger",
@@ -2015,6 +2060,11 @@ Search.appendIndex(
             "name": "MydbInterface",
             "summary": "",
             "url": "namespaces/sql-mydbinterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbListener",
+            "name": "MydbListener",
+            "summary": "",
+            "url": "namespaces/sql-mydblistener.html"
         },                {
             "fqsen": "\\sql\\MydbMysqli",
             "name": "MydbMysqli",

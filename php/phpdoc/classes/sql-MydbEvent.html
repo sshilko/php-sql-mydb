@@ -72,6 +72,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/sql-mydblistener.html" class="">MydbListener</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/sql-mydbmysqli.html" class="">MydbMysqli</a>
                 
             </li>
@@ -118,14 +122,14 @@
     
             <span class="phpdocumentor-element__implements">
             implements
-                            <a href="classes/sql-MydbEventInterface.html"><abbr title="\sql\MydbEventInterface">MydbEventInterface</abbr></a>                    </span>
+                            <a href="classes/sql-MydbEventInterface.html"><abbr title="\sql\MydbEventInterface">MydbEventInterface</abbr></a>,                             <a href="classes/sql-MydbEventMetadataInterface.html"><abbr title="\sql\MydbEventMetadataInterface">MydbEventMetadataInterface</abbr></a>                    </span>
     
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbEvent.php"><a href="files/src-sql-mydbevent.html"><abbr title="src/sql/MydbEvent.php">MydbEvent.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -145,6 +149,8 @@
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/sql-MydbEventInterface.html"><abbr title="\sql\MydbEventInterface">MydbEventInterface</abbr></a></dt>
         <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/sql-MydbEventMetadataInterface.html"><abbr title="\sql\MydbEventMetadataInterface">MydbEventMetadataInterface</abbr></a></dt>
+        <dd></dd>
     
     
     
@@ -157,7 +163,21 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
+                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/sql-MydbEvent.html#property_eventMetadata">$eventMetadata</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
+</dt>
+<dd></dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/sql-MydbEvent.html#method_getEventMetadata">getEventMetadata()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;|null    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbEvent.html#method_notify">notify()</a>
     <span>
                                 &nbsp;: void    </span>
@@ -167,7 +187,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/sql-MydbEvent.html#method_getListeners">getListeners()</a>
     <span>
-                                &nbsp;: array&lt;string|int, callable&gt;    </span>
+                                &nbsp;: <abbr title="\SplFixedArray">SplFixedArray</abbr>&lt;string|int, <a href="classes/sql-MydbListenerInterface.html"><abbr title="\sql\MydbListenerInterface">MydbListenerInterface</abbr></a>&gt;    </span>
 </dt>
 <dd></dd>
 
@@ -178,12 +198,85 @@
         
 
         
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/sql-MydbEvent.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_eventMetadata">
+        $eventMetadata
+        <a href="classes/sql-MydbEvent.html#property_eventMetadata" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbEvent.php"><a href="files/src-sql-mydbevent.html"><abbr title="src/sql/MydbEvent.php">MydbEvent.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
+    <span class="phpdocumentor-signature__name">$eventMetadata</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/sql-MydbEvent.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getEventMetadata">
+        getEventMetadata()
+        <a href="classes/sql-MydbEvent.html#method_getEventMetadata" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbEvent.php"><a href="files/src-sql-mydbevent.html"><abbr title="src/sql/MydbEvent.php">MydbEvent.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">26</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getEventMetadata</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
+            &mdash;
+        
+    
+</article>
                     <article
         class="phpdocumentor-element
             -method
@@ -197,23 +290,22 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbEvent.php"><a href="files/src-sql-mydbevent.html"><abbr title="src/sql/MydbEvent.php">MydbEvent.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">notify</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$payload</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">notify</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$metadata</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$payload</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
+                <span class="phpdocumentor-signature__argument__name">$metadata</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -221,6 +313,20 @@
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/sql-MydbException-EventException.html"><abbr title="\sql\MydbException\EventException">EventException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
@@ -232,7 +338,7 @@
         class="phpdocumentor-element
             -method
             -protected
-                        -abstract                                "
+                                                        "
 >
     <h4 class="phpdocumentor-element__name" id="method_getListeners">
         getListeners()
@@ -241,21 +347,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbEvent.php"><a href="files/src-sql-mydbevent.html"><abbr title="src/sql/MydbEvent.php">MydbEvent.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">getListeners</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, callable&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getListeners</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\SplFixedArray">SplFixedArray</abbr>&lt;string|int, <a href="classes/sql-MydbListenerInterface.html"><abbr title="\sql\MydbListenerInterface">MydbListenerInterface</abbr></a>&gt;</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, callable&gt;</span>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\SplFixedArray">SplFixedArray</abbr>&lt;string|int, <a href="classes/sql-MydbListenerInterface.html"><abbr title="\sql\MydbListenerInterface">MydbListenerInterface</abbr></a>&gt;</span>
             &mdash;
         
     
