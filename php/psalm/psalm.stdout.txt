@@ -11,7 +11,7 @@ INFO: MissingParamType - ../src/sql/[1;31mMydb.php:547:50[0m - Parameter $isol
 1 other issues found.
 ------------------------------
 
-Checks took 4.80 seconds and used 380.236MB of memory
+Checks took 4.17 seconds and used 380.236MB of memory
 Psalm was able to infer types for 99.3333% of the codebase
 -----------------
 99.543% ../src/sql/Mydb.php (2 mixed)
