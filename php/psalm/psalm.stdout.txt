@@ -1,13 +1,20 @@
+
+INFO: MissingParamType - ../src/sql/[1;31mMydb.php:547:50[0m - Parameter $isolationLevel has no provided type (see https://psalm.dev/154)
+    public function setTransactionIsolationLevel([30;47m$isolationLevel[0m): void
+
+
 ------------------------------
 [42;1m                              [0m
 [42;30;1m       No errors found!       [0m
 [42;1m                              [0m
 ------------------------------
+1 other issues found.
+------------------------------
 
-Checks took 3.68 seconds and used 379.955MB of memory
-Psalm was able to infer types for 99.4016% of the codebase
+Checks took 4.80 seconds and used 380.236MB of memory
+Psalm was able to infer types for 99.3333% of the codebase
 -----------------
-99.771% ../src/sql/Mydb.php (1 mixed)
+99.543% ../src/sql/Mydb.php (2 mixed)
 100.000% ../src/sql/MydbCredentials.php (0 mixed)
 98.077% ../src/sql/MydbEnvironment.php (1 mixed)
 100.000% ../src/sql/MydbEvent.php (0 mixed)
