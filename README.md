@@ -120,11 +120,11 @@ please re-use existing solutions that best fit your requirements.
 
 #### Future roadmap
 
-- add library helper for Repository pattern usage
-- usage examples
-- pluggable M.E.L.T (metrics, events, logs, traces) via events, observer pattern or symfony events, or psr-events
-- unit-test command/query raw SQL, unit-tests against raw SQL generator and events objects
-- packagist export & release stable version
+- Basic events coverage for internal execution flow
+- Library helper for Repository pattern usage
+- Usage examples
+- PHPUnit coverage for command/query raw SQL via events system
+- Packagist export & release stable version
 
 #### Contributing
 
