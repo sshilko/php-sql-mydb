@@ -29,6 +29,7 @@ use sql\MydbException\TransactionCommitException;
 use sql\MydbException\TransactionIsolationException;
 use sql\MydbException\TransactionRollbackException;
 use sql\MydbException\UpdateException;
+use sql\MydbListener\InternalListener;
 use sql\MydbMysqli\MydbMysqliResultInterface;
 use Throwable;
 use function array_map;
@@ -71,6 +72,8 @@ class Mydb implements
 
     protected MydbQueryBuilderInterface $queryBuilder;
 
+    protected MydbListenerInterface $eventListener;
+
     protected bool $terminating = false;
 
     public function __construct(
@@ -79,7 +82,8 @@ class Mydb implements
         ?MydbOptionsInterface $options = null,
         ?MydbMysqliInterface $mysqli = null,
         ?MydbEnvironmentInterface $environment = null,
-        ?MydbQueryBuilderInterface $queryBuilder = null
+        ?MydbQueryBuilderInterface $queryBuilder = null,
+        ?MydbListenerInterface $eventListener = null
     ) {
         $this->credentials = $credentials;
         $this->logger = $logger;
@@ -87,6 +91,7 @@ class Mydb implements
         $this->mysqli = $mysqli ?? new MydbMysqli();
         $this->environment = $environment ?? new MydbEnvironment();
         $this->queryBuilder = $queryBuilder ?? new MydbQueryBuilder($this->mysqli);
+        $this->eventListener = $eventListener ?? new InternalListener();
     }
 
     /**
@@ -544,7 +549,7 @@ class Mydb implements
      * @see https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
      * @throws \sql\MydbException
      */
-    public function setTransactionIsolationLevel($isolationLevel): void
+    public function setTransactionIsolationLevel(string $isolationLevel): void
     {
         $ok = $this->mysqli->setTransactionIsolationLevel($isolationLevel);
         if (false === $ok) {

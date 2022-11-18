@@ -13,9 +13,17 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbException;
 
-interface MydbEventInterface
+use sql\MydbException;
+
+/**
+ * @author Sergei Shilko <contact@sshilko.com>
+ * @license https://opensource.org/licenses/mit-license.php MIT
+ * @category exceptions
+ * @see https://github.com/sshilko/php-sql-mydb
+ */
+class EventException extends MydbException
 {
-    public function notify(?array $metadata = null): void;
+
 }

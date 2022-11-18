@@ -15,7 +15,7 @@ declare(strict_types = 1);
 
 namespace sql;
 
-interface MydbEventInterface
+interface MydbListenerInterface
 {
-    public function notify(?array $metadata = null): void;
+    public function observe(MydbEventMetadataInterface $event): bool;
 }

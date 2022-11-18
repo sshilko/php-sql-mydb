@@ -13,9 +13,19 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbEvent;
 
-interface MydbEventInterface
+use SplFixedArray;
+use sql\MydbEvent;
+use sql\MydbListener\InternalListener;
+
+class Internal extends MydbEvent
 {
-    public function notify(?array $metadata = null): void;
+    protected function getListeners(): SplFixedArray
+    {
+        $array = new SplFixedArray(1);
+        $array[0] = new InternalListener();
+
+        return $array;
+    }
 }

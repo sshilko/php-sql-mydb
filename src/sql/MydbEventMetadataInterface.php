@@ -13,17 +13,9 @@
 
 declare(strict_types = 1);
 
-namespace sql\MydbEvent;
+namespace sql;
 
-use sql\MydbEvent;
-
-class ExampleEvent extends MydbEvent
+interface MydbEventMetadataInterface
 {
-    protected function getListeners(): array
-    {
-        return [
-            (new ExampleListener())->onMyEvent(),
-            (new ExampleListener())->onMySomeEvent(),
-        ];
-    }
+    public function getEventMetadata(): ?array;
 }
