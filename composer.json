@@ -19,7 +19,7 @@
         },
         "prepend-autoloader": false,
         "optimize-autoloader": true,
-        "classmap-authoritative": true,
+        "classmap-authoritative": false,
         "process-timeout": 360,
         "sort-packages": true,
         "allow-plugins": {

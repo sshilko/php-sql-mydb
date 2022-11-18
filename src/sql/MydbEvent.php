@@ -15,17 +15,42 @@ declare(strict_types = 1);
 
 namespace sql;
 
-abstract class MydbEvent implements MydbEventInterface
-{
-    /**
-     * @return array<callable>
-     */
-    abstract protected function getListeners(): array;
+use SplFixedArray;
+use sql\MydbException\EventException;
 
-    public function notify(array $payload): void
+abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterface
+{
+
+    private ?array $eventMetadata = null;
+
+    public function getEventMetadata(): ?array
     {
-        foreach ($this->getListeners() as $callable) {
-            $callable($payload);
+        return $this->eventMetadata;
+    }
+
+    /**
+     * @throws \sql\MydbException\EventException
+     */
+    public function notify(?array $metadata = null): void
+    {
+        $this->eventMetadata = $metadata;
+
+        foreach ($this->getListeners() as $listenerInstance) {
+            if ($listenerInstance instanceof MydbListenerInterface) {
+                if (false === $listenerInstance->observe($this)) {
+                    break;
+                }
+            } else {
+                throw new EventException();
+            }
         }
+    }
+
+    /**
+     * @return \SplFixedArray<\sql\MydbListenerInterface>
+     */
+    protected function getListeners(): SplFixedArray
+    {
+        return new SplFixedArray(0);
     }
 }

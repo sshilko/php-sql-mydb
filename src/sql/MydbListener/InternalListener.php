@@ -13,9 +13,18 @@
 
 declare(strict_types = 1);
 
-namespace sql;
+namespace sql\MydbListener;
 
-interface MydbEventInterface
+use sql\MydbEventMetadataInterface;
+use sql\MydbListener;
+use function serialize;
+
+class InternalListener extends MydbListener
 {
-    public function notify(?array $metadata = null): void;
+    protected function onEvent(MydbEventMetadataInterface $event): ?bool
+    {
+        serialize($event);
+
+        return true;
+    }
 }

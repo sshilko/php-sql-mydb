@@ -15,7 +15,12 @@ declare(strict_types = 1);
 
 namespace sql;
 
-interface MydbEventInterface
+abstract class MydbListener implements MydbListenerInterface
 {
-    public function notify(?array $metadata = null): void;
+    abstract protected function onEvent(MydbEventMetadataInterface $event): ?bool;
+
+    public function observe(MydbEventMetadataInterface $event): bool
+    {
+        return false !== $this->onEvent($event);
+    }
 }
