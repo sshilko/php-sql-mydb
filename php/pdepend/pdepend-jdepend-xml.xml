@@ -3,14 +3,14 @@
   <Packages>
     <Package name="sql">
       <Stats>
-        <TotalClasses>18</TotalClasses>
+        <TotalClasses>21</TotalClasses>
         <ConcreteClasses>10</ConcreteClasses>
-        <AbstractClasses>8</AbstractClasses>
-        <Ca>2</Ca>
-        <Ce>5</Ce>
-        <A>0.44444444444444</A>
-        <I>0.71428571428571</I>
-        <D>0.15873015873016</D>
+        <AbstractClasses>11</AbstractClasses>
+        <Ca>3</Ca>
+        <Ce>6</Ce>
+        <A>0.52380952380952</A>
+        <I>0.66666666666667</I>
+        <D>0.19047619047619</D>
       </Stats>
       <ConcreteClasses>
         <Class sourceFile="/app/src/sql/Mydb.php">Mydb</Class>
@@ -29,7 +29,10 @@
         <Class sourceFile="/app/src/sql/MydbEnvironmentInterface.php">MydbEnvironmentInterface</Class>
         <Class sourceFile="/app/src/sql/MydbEvent.php">MydbEvent</Class>
         <Class sourceFile="/app/src/sql/MydbEventInterface.php">MydbEventInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbEventMetadataInterface.php">MydbEventMetadataInterface</Class>
         <Class sourceFile="/app/src/sql/MydbInterface.php">MydbInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbListener.php">MydbListener</Class>
+        <Class sourceFile="/app/src/sql/MydbListenerInterface.php">MydbListenerInterface</Class>
         <Class sourceFile="/app/src/sql/MydbMysqliInterface.php">MydbMysqliInterface</Class>
         <Class sourceFile="/app/src/sql/MydbOptionsInterface.php">MydbOptionsInterface</Class>
         <Class sourceFile="/app/src/sql/MydbQueryBuilderInterface.php">MydbQueryBuilderInterface</Class>
@@ -39,38 +42,41 @@
         <Package>Psr\Log</Package>
         <Package>sql\MydbException</Package>
         <Package>sql\MydbInterface</Package>
+        <Package>sql\MydbListener</Package>
         <Package>sql\MydbMysqli</Package>
       </DependsUpon>
       <UsedBy>
         <Package>sql\MydbEvent</Package>
         <Package>sql\MydbException</Package>
+        <Package>sql\MydbListener</Package>
       </UsedBy>
     </Package>
     <Package name="sql\MydbEvent">
       <Stats>
-        <TotalClasses>2</TotalClasses>
-        <ConcreteClasses>2</ConcreteClasses>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
         <AbstractClasses>0</AbstractClasses>
         <Ca>0</Ca>
-        <Ce>1</Ce>
+        <Ce>3</Ce>
         <A>0</A>
         <I>1</I>
         <D>0</D>
       </Stats>
       <ConcreteClasses>
-        <Class sourceFile="/app/src/sql/MydbEvent/ExampleEvent.php">ExampleEvent</Class>
-        <Class sourceFile="/app/src/sql/MydbEvent/ExampleListener.php">ExampleListener</Class>
+        <Class sourceFile="/app/src/sql/MydbEvent/InternalEvent.php">Internal</Class>
       </ConcreteClasses>
       <AbstractClasses/>
       <DependsUpon>
+        <Package></Package>
         <Package>sql</Package>
+        <Package>sql\MydbListener</Package>
       </DependsUpon>
       <UsedBy/>
     </Package>
     <Package name="sql\MydbException">
       <Stats>
-        <TotalClasses>20</TotalClasses>
-        <ConcreteClasses>20</ConcreteClasses>
+        <TotalClasses>21</TotalClasses>
+        <ConcreteClasses>21</ConcreteClasses>
         <AbstractClasses>0</AbstractClasses>
         <Ca>1</Ca>
         <Ce>2</Ce>
@@ -84,6 +90,7 @@
         <Class sourceFile="/app/src/sql/MydbException/DeleteException.php">DeleteException</Class>
         <Class sourceFile="/app/src/sql/MydbException/DisconnectException.php">DisconnectException</Class>
         <Class sourceFile="/app/src/sql/MydbException/EnvironmentException.php">EnvironmentException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/EventException.php">EventException</Class>
         <Class sourceFile="/app/src/sql/MydbException/InternalException.php">InternalException</Class>
         <Class sourceFile="/app/src/sql/MydbException/LoggerException.php">LoggerException</Class>
         <Class sourceFile="/app/src/sql/MydbException/OptionException.php">OptionException</Class>
@@ -136,6 +143,29 @@
         <Package>sql</Package>
       </UsedBy>
     </Package>
+    <Package name="sql\MydbListener">
+      <Stats>
+        <TotalClasses>1</TotalClasses>
+        <ConcreteClasses>1</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>2</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>0.33333333333333</I>
+        <D>0.66666666666667</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="/app/src/sql/MydbListener/InternalListener.php">InternalListener</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>sql</Package>
+      </DependsUpon>
+      <UsedBy>
+        <Package>sql</Package>
+        <Package>sql\MydbEvent</Package>
+      </UsedBy>
+    </Package>
     <Package name="sql\MydbMysqli">
       <Stats>
         <TotalClasses>3</TotalClasses>
@@ -178,6 +208,12 @@
       <Package>sql\MydbException</Package>
       <Package>sql</Package>
       <Package>sql\MydbException</Package>
+    </Package>
+    <Package Name="sql\MydbListener">
+      <Package>sql\MydbListener</Package>
+      <Package>sql</Package>
+      <Package>sql\MydbException</Package>
+      <Package>sql</Package>
     </Package>
   </Cycles>
 </PDepend>
