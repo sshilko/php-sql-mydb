@@ -623,13 +623,23 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbExpression\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "As\u0020of\u0020PHP8.0\u0020this\u0020is\u0020Stringable\u0020interface",
             "url": "classes/sql-MydbExpression.html#method___toString"
         },                {
             "fqsen": "\\sql\\MydbExpression\u003A\u003A\u0024input",
             "name": "input",
             "summary": "",
             "url": "classes/sql-MydbExpression.html#property_input"
+        },                {
+            "fqsen": "\\sql\\MydbExpressionInterface",
+            "name": "MydbExpressionInterface",
+            "summary": "",
+            "url": "classes/sql-MydbExpressionInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbExpressionInterface\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "As\u0020of\u0020PHP8.0\u0020this\u0020is\u0020Stringable\u0020interface",
+            "url": "classes/sql-MydbExpressionInterface.html#method___toString"
         },                {
             "fqsen": "\\sql\\MydbInterface\\AdministrationStatementsInterface",
             "name": "AdministrationStatementsInterface",
