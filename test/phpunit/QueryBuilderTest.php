@@ -288,13 +288,13 @@ final class QueryBuilderTest extends TestCase
                 'likeFields' => [],
             ],
             'simple array count 1' => [
-                'sql' => "WHERE id='abcd'",
+                'sql' => "WHERE id IN ('abcd')",
                 'fields' => ['id' => ['abcd']],
                 'negativeFields' => [],
                 'likeFields' => [],
             ],
             'negative array count 1' => [
-                'sql' => "WHERE id!='abcd'",
+                'sql' => "WHERE id NOT IN ('abcd')",
                 'fields' => ['id' => ['abcd']],
                 'negativeFields' => ['id'],
                 'likeFields' => [],

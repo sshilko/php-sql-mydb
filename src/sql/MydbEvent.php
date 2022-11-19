@@ -15,12 +15,14 @@ declare(strict_types = 1);
 
 namespace sql;
 
-use SplFixedArray;
 use sql\MydbException\EventException;
 
 abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterface
 {
 
+    /**
+     * @return array<string, string>|null
+     */
     private ?array $eventMetadata = null;
 
     public function getEventMetadata(): ?array
@@ -47,10 +49,10 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
     }
 
     /**
-     * @return \SplFixedArray<\sql\MydbListenerInterface>
+     * @return array<\sql\MydbListenerInterface>
      */
-    protected function getListeners(): SplFixedArray
+    protected function getListeners(): array
     {
-        return new SplFixedArray(0);
+        return [];
     }
 }

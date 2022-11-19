@@ -30,7 +30,7 @@ interface MydbQueryBuilderInterface
     public function showKeys(string $table): string;
 
     /**
-     * @param array<string, (float|int|\sql\MydbExpression|string|null)> $data
+     * @param array<string, (float|int|\sql\MydbExpressionInterface|string|null)> $data
      * @psalm-return string
      */
     public function insertOne(array $data, string $table, string $type): string;
@@ -44,7 +44,7 @@ interface MydbQueryBuilderInterface
 
     /**
      * @throws \sql\MydbException\QueryBuilderException
-     * @param array<string, (float|int|string|\sql\MydbExpression|null)> $update
+     * @param array<string, (float|int|string|\sql\MydbExpressionInterface|null)> $update
      */
     public function buildUpdateWhere(
         array $update,
@@ -60,10 +60,13 @@ interface MydbQueryBuilderInterface
      */
     public function buildWhere(array $fields, array $negativeFields = [], array $likeFields = []): string;
 
+    /**
+     * @param array<string> $cols
+     */
     public function buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string;
 
     /**
-     * @param float|int|string|\sql\MydbExpression|null $unescaped
+     * @param float|int|string|\sql\MydbExpressionInterface|null $unescaped
      * @throws \sql\MydbException\QueryBuilderException
      */
     public function escape($unescaped, string $quote = "'"): string;

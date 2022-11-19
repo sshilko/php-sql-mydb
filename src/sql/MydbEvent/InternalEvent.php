@@ -15,17 +15,15 @@ declare(strict_types = 1);
 
 namespace sql\MydbEvent;
 
-use SplFixedArray;
 use sql\MydbEvent;
 use sql\MydbListener\InternalListener;
 
 class Internal extends MydbEvent
 {
-    protected function getListeners(): SplFixedArray
+    protected function getListeners(): array
     {
-        $array = new SplFixedArray(1);
-        $array[0] = new InternalListener();
-
-        return $array;
+        return [
+            new InternalListener(),
+        ];
     }
 }

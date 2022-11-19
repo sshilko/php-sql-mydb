@@ -31,7 +31,7 @@ namespace sql\MydbInterface;
 interface DataManipulationStatementsInterface
 {
     /**
-     * @param array<string, (float|int|string|\sql\MydbExpression|null)> $update
+     * @param array<string, (float|int|string|\sql\MydbExpressionInterface|null)> $update
      */
     public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool;
 
@@ -39,6 +39,10 @@ interface DataManipulationStatementsInterface
 
     public function updateWhereMany(array $columnSetWhere, array $where, string $table): void;
 
+    /**
+     * @param array<array-key, array<(float|int|string|\sql\MydbExpressionInterface|null)>> $data
+     * @param array<string> $cols
+     */
     public function insertMany(
         array $data,
         array $cols,
@@ -48,12 +52,12 @@ interface DataManipulationStatementsInterface
     ): void;
 
     /**
-     * @param array<string, (float|int|\sql\MydbExpression|string|null)> $data
+     * @param array<string, (float|int|\sql\MydbExpressionInterface|string|null)> $data
      */
     public function insertOne(array $data, string $table): ?string;
 
     /**
-     * @param array<string, (float|int|\sql\MydbExpression|string|null)> $data
+     * @param array<string, (float|int|\sql\MydbExpressionInterface|string|null)> $data
      */
     public function replaceOne(array $data, string $table): ?string;
 
