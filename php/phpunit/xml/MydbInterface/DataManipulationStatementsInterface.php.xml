@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="DataManipulationStatementsInterface.php" path="/MydbInterface">
     <totals>
-      <lines total="70" comments="33" code="37" executable="0" executed="0" percent="0"/>
+      <lines total="74" comments="37" code="37" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
@@ -117,7 +117,7 @@
         <token name="T_DOC_COMMENT">/**</token>
       </line>
       <line no="34">
-        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|string|\sql\MydbExpression|null)&gt; $update</token>
+        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|string|\sql\MydbExpressionInterface|null)&gt; $update</token>
       </line>
       <line no="35">
         <token name="T_DOC_COMMENT">     */</token>
@@ -224,6 +224,19 @@
       <line no="41"/>
       <line no="42">
         <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="43">
+        <token name="T_DOC_COMMENT">     * @param array&lt;array-key, array&lt;(float|int|string|\sql\MydbExpressionInterface|null)&gt;&gt; $data</token>
+      </line>
+      <line no="44">
+        <token name="T_DOC_COMMENT">     * @param array&lt;string&gt; $cols</token>
+      </line>
+      <line no="45">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="46">
+        <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_FUNCTION">function</token>
@@ -231,28 +244,28 @@
         <token name="T_STRING">insertMany</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="43">
+      <line no="47">
         <token name="T_WHITESPACE">        </token>
         <token name="T_ARRAY">array</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$data</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="44">
+      <line no="48">
         <token name="T_WHITESPACE">        </token>
         <token name="T_ARRAY">array</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$cols</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="45">
+      <line no="49">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$table</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="46">
+      <line no="50">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">bool</token>
         <token name="T_WHITESPACE"> </token>
@@ -263,7 +276,7 @@
         <token name="T_STRING">false</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="47">
+      <line no="51">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
@@ -273,7 +286,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">''</token>
       </line>
-      <line no="48">
+      <line no="52">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COLON">:</token>
@@ -281,18 +294,18 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="49"/>
-      <line no="50">
+      <line no="53"/>
+      <line no="54">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="51">
-        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|\sql\MydbExpression|string|null)&gt; $data</token>
+      <line no="55">
+        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|\sql\MydbExpressionInterface|string|null)&gt; $data</token>
       </line>
-      <line no="52">
+      <line no="56">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="53">
+      <line no="57">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -315,18 +328,18 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="54"/>
-      <line no="55">
+      <line no="58"/>
+      <line no="59">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="56">
-        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|\sql\MydbExpression|string|null)&gt; $data</token>
+      <line no="60">
+        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|\sql\MydbExpressionInterface|string|null)&gt; $data</token>
       </line>
-      <line no="57">
+      <line no="61">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="58">
+      <line no="62">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -349,8 +362,8 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="59"/>
-      <line no="60">
+      <line no="63"/>
+      <line no="64">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -368,8 +381,8 @@
         <token name="T_ARRAY">array</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="61"/>
-      <line no="62">
+      <line no="65"/>
+      <line no="66">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -387,8 +400,8 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="63"/>
-      <line no="64">
+      <line no="67"/>
+      <line no="68">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -406,8 +419,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="65"/>
-      <line no="66">
+      <line no="69"/>
+      <line no="70">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -425,8 +438,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="67"/>
-      <line no="68">
+      <line no="71"/>
+      <line no="72">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -444,10 +457,10 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="69">
+      <line no="73">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="70"/>
+      <line no="74"/>
     </source>
   </file>
 </phpunit>

@@ -107,6 +107,10 @@
         <token name="T_CLASS">class</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">MydbExpression</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MydbExpressionInterface</token>
       </line>
       <line no="24">
         <token name="T_OPEN_CURLY">{</token>

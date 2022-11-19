@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="Mydb.php" path="/">
     <totals>
-      <lines total="721" comments="182" code="539" executable="208" executed="193" percent="92.79"/>
+      <lines total="720" comments="181" code="539" executable="208" executed="193" percent="92.79"/>
       <methods count="30" tested="22" percent="73.33"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="0" percent="0.00"/>
@@ -16,30 +16,30 @@
       <method name="open" signature="open(int $retry): bool" start="142" end="145" crap="1" executable="1" executed="1" coverage="100"/>
       <method name="query" signature="query(string $query): ?array" start="157" end="187" crap="6" executable="13" executed="13" coverage="100"/>
       <method name="command" signature="command(string $query): bool" start="193" end="208" crap="3" executable="7" executed="7" coverage="100"/>
-      <method name="getEnumValues" signature="getEnumValues(string $table, string $column): array" start="215" end="252" crap="7" executable="16" executed="16" coverage="100"/>
-      <method name="escape" signature="escape($unescaped, string $quote): string" start="261" end="268" crap="2" executable="3" executed="3" coverage="100"/>
-      <method name="getPrimaryKey" signature="getPrimaryKey(string $table): ?string" start="275" end="296" crap="6.03" executable="11" executed="10" coverage="90.909090909091"/>
-      <method name="beginTransaction" signature="beginTransaction(): void" start="301" end="318" crap="5" executable="9" executed="9" coverage="100"/>
-      <method name="rollbackTransaction" signature="rollbackTransaction(): void" start="323" end="334" crap="3" executable="5" executed="5" coverage="100"/>
-      <method name="commitTransaction" signature="commitTransaction(): void" start="340" end="351" crap="3" executable="5" executed="5" coverage="100"/>
-      <method name="close" signature="close(): void" start="356" end="401" crap="14.40" executable="17" executed="11" coverage="64.705882352941"/>
-      <method name="replace" signature="replace(string $query): ?string" start="407" end="410" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="insert" signature="insert(string $query): ?string" start="416" end="423" crap="2" executable="3" executed="3" coverage="100"/>
-      <method name="select" signature="select(string $query): ?array" start="430" end="433" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="delete" signature="delete(string $query): ?int" start="438" end="450" crap="3" executable="6" executed="6" coverage="100"/>
-      <method name="update" signature="update(string $query): ?int" start="455" end="467" crap="3.04" executable="6" executed="5" coverage="83.333333333333"/>
-      <method name="deleteWhere" signature="deleteWhere(array $whereFields, string $table, array $whereNotFields): ?int" start="472" end="480" crap="2.06" executable="4" executed="3" coverage="75"/>
-      <method name="updateWhere" signature="updateWhere(array $update, array $whereFields, string $table, array $whereNotFields): bool" start="486" end="497" crap="3.07" executable="5" executed="4" coverage="80"/>
-      <method name="updateWhereMany" signature="updateWhereMany(array $columnSetWhere, array $where, string $table): void" start="505" end="509" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="insertMany" signature="insertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicateSql): void" start="515" end="524" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="replaceOne" signature="replaceOne(array $data, string $table): ?string" start="530" end="535" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="insertOne" signature="insertOne(array $data, string $table): ?string" start="541" end="546" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="setTransactionIsolationLevel" signature="setTransactionIsolationLevel(string $isolationLevel): void" start="552" end="558" crap="2" executable="3" executed="3" coverage="100"/>
-      <method name="sendClientRequest" signature="sendClientRequest(string $query): bool" start="564" end="577" crap="2.01" executable="7" executed="6" coverage="85.714285714286"/>
-      <method name="readServerResponse" signature="readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResultInterface" start="582" end="608" crap="6.02" executable="13" executed="12" coverage="92.307692307692"/>
-      <method name="onWarning" signature="onWarning(string $warningMessage, ?string $sql): void" start="610" end="613" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="onError" signature="onError(sql\MydbException $exception, ?string $sql): void" start="618" end="623" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="connect" signature="connect(int $retry): bool" start="633" end="719" crap="17.11" executable="42" executed="39" coverage="92.857142857143"/>
+      <method name="getEnumValues" signature="getEnumValues(string $table, string $column): array" start="215" end="249" crap="7" executable="16" executed="16" coverage="100"/>
+      <method name="escape" signature="escape($unescaped, string $quote): string" start="258" end="265" crap="2" executable="3" executed="3" coverage="100"/>
+      <method name="getPrimaryKey" signature="getPrimaryKey(string $table): ?string" start="272" end="293" crap="6.03" executable="11" executed="10" coverage="90.909090909091"/>
+      <method name="beginTransaction" signature="beginTransaction(): void" start="298" end="315" crap="5" executable="9" executed="9" coverage="100"/>
+      <method name="rollbackTransaction" signature="rollbackTransaction(): void" start="320" end="331" crap="3" executable="5" executed="5" coverage="100"/>
+      <method name="commitTransaction" signature="commitTransaction(): void" start="337" end="348" crap="3" executable="5" executed="5" coverage="100"/>
+      <method name="close" signature="close(): void" start="353" end="398" crap="14.40" executable="17" executed="11" coverage="64.705882352941"/>
+      <method name="replace" signature="replace(string $query): ?string" start="404" end="407" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="insert" signature="insert(string $query): ?string" start="413" end="420" crap="2" executable="3" executed="3" coverage="100"/>
+      <method name="select" signature="select(string $query): ?array" start="427" end="430" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="delete" signature="delete(string $query): ?int" start="435" end="447" crap="3" executable="6" executed="6" coverage="100"/>
+      <method name="update" signature="update(string $query): ?int" start="452" end="464" crap="3.04" executable="6" executed="5" coverage="83.333333333333"/>
+      <method name="deleteWhere" signature="deleteWhere(array $whereFields, string $table, array $whereNotFields): ?int" start="469" end="477" crap="2.06" executable="4" executed="3" coverage="75"/>
+      <method name="updateWhere" signature="updateWhere(array $update, array $whereFields, string $table, array $whereNotFields): bool" start="483" end="494" crap="3.07" executable="5" executed="4" coverage="80"/>
+      <method name="updateWhereMany" signature="updateWhereMany(array $columnSetWhere, array $where, string $table): void" start="502" end="506" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="insertMany" signature="insertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicateSql): void" start="514" end="523" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="replaceOne" signature="replaceOne(array $data, string $table): ?string" start="529" end="534" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="insertOne" signature="insertOne(array $data, string $table): ?string" start="540" end="545" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="setTransactionIsolationLevel" signature="setTransactionIsolationLevel(string $isolationLevel): void" start="551" end="557" crap="2" executable="3" executed="3" coverage="100"/>
+      <method name="sendClientRequest" signature="sendClientRequest(string $query): bool" start="563" end="576" crap="2.01" executable="7" executed="6" coverage="85.714285714286"/>
+      <method name="readServerResponse" signature="readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResultInterface" start="581" end="607" crap="6.02" executable="13" executed="12" coverage="92.307692307692"/>
+      <method name="onWarning" signature="onWarning(string $warningMessage, ?string $sql): void" start="609" end="612" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="onError" signature="onError(sql\MydbException $exception, ?string $sql): void" start="617" end="622" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="connect" signature="connect(int $retry): bool" start="632" end="718" crap="17.11" executable="42" executed="39" coverage="92.857142857143"/>
     </class>
     <coverage>
       <line nr="88">
@@ -1367,68 +1367,68 @@
       <line nr="235">
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
       </line>
-      <line nr="241">
+      <line nr="238">
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
       </line>
-      <line nr="249">
+      <line nr="246">
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
       </line>
-      <line nr="251">
+      <line nr="248">
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
       </line>
-      <line nr="263">
+      <line nr="260">
         <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+      </line>
+      <line nr="261">
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
       </line>
       <line nr="264">
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-      </line>
-      <line nr="267">
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
       </line>
-      <line nr="277">
+      <line nr="274">
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
       </line>
-      <line nr="279">
+      <line nr="276">
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+      </line>
+      <line nr="277">
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
       </line>
       <line nr="280">
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
-      </line>
-      <line nr="283">
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
       </line>
-      <line nr="284">
+      <line nr="281">
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+      </line>
+      <line nr="285">
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+      </line>
+      <line nr="286">
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+      </line>
+      <line nr="287">
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
       </line>
       <line nr="288">
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
       </line>
-      <line nr="289">
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-      </line>
-      <line nr="290">
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-      </line>
-      <line nr="291">
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-      </line>
-      <line nr="295">
+      <line nr="292">
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
       </line>
-      <line nr="303">
+      <line nr="300">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
@@ -1447,11 +1447,11 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="301">
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
       </line>
       <line nr="304">
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-      </line>
-      <line nr="307">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -1469,54 +1469,54 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="305">
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
+      </line>
+      <line nr="306">
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
       </line>
       <line nr="308">
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
       </line>
-      <line nr="309">
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
+      <line nr="310">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteFailure"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="311">
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="313">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteFailure"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
-      <line nr="314">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
-      <line nr="316">
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadwriteFailure"/>
       </line>
-      <line nr="325">
+      <line nr="322">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testFailedToRollbackTransaction"/>
@@ -1531,11 +1531,11 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="323">
+        <covered by="phpunit\ExceptionTest::testFailedToRollbackTransaction"/>
       </line>
       <line nr="326">
-        <covered by="phpunit\ExceptionTest::testFailedToRollbackTransaction"/>
-      </line>
-      <line nr="329">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -1546,49 +1546,49 @@
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testRollbackTransactionSuccess"/>
         <covered by="phpunit\TransactionsTest::testRollbackTransactionFailure"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="327">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testRollbackTransactionSuccess"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="330">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testRollbackTransactionSuccess"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
-      <line nr="333">
         <covered by="phpunit\TransactionsTest::testRollbackTransactionFailure"/>
       </line>
-      <line nr="342">
+      <line nr="339">
         <covered by="phpunit\ExceptionTest::testFailedToCommitTransaction"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
         <covered by="phpunit\TransactionsTest::testCommitTransactionSuccess"/>
         <covered by="phpunit\TransactionsTest::testCommitTransactionFailure"/>
+      </line>
+      <line nr="340">
+        <covered by="phpunit\ExceptionTest::testFailedToCommitTransaction"/>
       </line>
       <line nr="343">
-        <covered by="phpunit\ExceptionTest::testFailedToCommitTransaction"/>
-      </line>
-      <line nr="346">
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
         <covered by="phpunit\TransactionsTest::testCommitTransactionSuccess"/>
         <covered by="phpunit\TransactionsTest::testCommitTransactionFailure"/>
+      </line>
+      <line nr="344">
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testCommitTransactionSuccess"/>
       </line>
       <line nr="347">
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testCommitTransactionSuccess"/>
-      </line>
-      <line nr="350">
         <covered by="phpunit\TransactionsTest::testCommitTransactionFailure"/>
       </line>
-      <line nr="358">
+      <line nr="355">
         <covered by="phpunit\AsyncTest::testAsyncMock"/>
         <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
         <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
@@ -1673,7 +1673,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="359">
+      <line nr="356">
         <covered by="phpunit\AsyncTest::testAsyncMock"/>
         <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
         <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
@@ -1731,7 +1731,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="369">
+      <line nr="366">
         <covered by="phpunit\AsyncTest::testAsyncMock"/>
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -1780,7 +1780,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="374">
+      <line nr="371">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -1803,6 +1803,52 @@
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="372">
+        <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+      </line>
+      <line nr="373">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
@@ -1825,52 +1871,6 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="375">
-        <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
-      </line>
-      <line nr="376">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
-        <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
-      <line nr="378">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -1914,7 +1914,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="387">
+      <line nr="384">
         <covered by="phpunit\AsyncTest::testAsyncMock"/>
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -1963,7 +1963,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="396">
+      <line nr="393">
         <covered by="phpunit\AsyncTest::testAsyncMock"/>
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -2009,39 +2009,39 @@
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="394">
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="397">
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
-      <line nr="400">
         <covered by="phpunit\AsyncTest::testAsyncMock"/>
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -2063,30 +2063,30 @@
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
-      <line nr="409">
+      <line nr="406">
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsertError"/>
       </line>
-      <line nr="418">
+      <line nr="415">
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+      </line>
+      <line nr="416">
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsert"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
       </line>
       <line nr="419">
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-      </line>
-      <line nr="422">
         <covered by="phpunit\InsertTest::testInsertError"/>
       </line>
-      <line nr="432">
+      <line nr="429">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -2120,66 +2120,72 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="440">
+      <line nr="437">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
       </line>
-      <line nr="441">
+      <line nr="438">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
       </line>
-      <line nr="442">
+      <line nr="439">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+      </line>
+      <line nr="440">
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
       </line>
       <line nr="443">
-        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
-      </line>
-      <line nr="446">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
       </line>
-      <line nr="449">
+      <line nr="446">
         <covered by="phpunit\DeleteTest::testDeleteError"/>
       </line>
+      <line nr="454">
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+      </line>
+      <line nr="455">
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+      </line>
+      <line nr="456">
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+      </line>
       <line nr="457">
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-      </line>
-      <line nr="458">
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-      </line>
-      <line nr="459">
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="460">
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-      </line>
-      <line nr="463">
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="474">
+      <line nr="471">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
       </line>
-      <line nr="475">
+      <line nr="472">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
       </line>
-      <line nr="479">
+      <line nr="476">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+      </line>
+      <line nr="485">
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+      </line>
+      <line nr="487">
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
       <line nr="488">
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
@@ -2187,35 +2193,33 @@
       <line nr="490">
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
-      <line nr="491">
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-      </line>
-      <line nr="493">
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-      </line>
-      <line nr="507">
+      <line nr="504">
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="508">
+      <line nr="505">
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="521">
+        <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
       <line nr="522">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
-      <line nr="523">
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-      </line>
-      <line nr="532">
+      <line nr="531">
         <covered by="phpunit\InsertTest::testReplaceOne"/>
       </line>
-      <line nr="534">
+      <line nr="533">
         <covered by="phpunit\InsertTest::testReplaceOne"/>
       </line>
-      <line nr="543">
+      <line nr="542">
         <covered by="phpunit\InsertTest::testInsertOne"/>
       </line>
-      <line nr="545">
+      <line nr="544">
         <covered by="phpunit\InsertTest::testInsertOne"/>
+      </line>
+      <line nr="553">
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
       </line>
       <line nr="554">
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
@@ -2223,10 +2227,53 @@
       </line>
       <line nr="555">
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
       </line>
-      <line nr="556">
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
+      <line nr="565">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="566">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -2275,7 +2322,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="567">
+      <line nr="568">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -2322,7 +2369,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="569">
+      <line nr="570">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -2416,7 +2463,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="572">
+      <line nr="575">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -2463,9 +2510,8 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="576">
+      <line nr="583">
         <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -2473,7 +2519,6 @@
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsertError"/>
         <covered by="phpunit\InsertTest::testInsert"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
@@ -2556,6 +2601,11 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="585">
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+      </line>
+      <line nr="588">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -2574,9 +2624,6 @@
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
-        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
         <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
         <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
@@ -2599,11 +2646,6 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-      </line>
-      <line nr="586">
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
-        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
       </line>
       <line nr="589">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -2648,6 +2690,16 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="590">
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+      </line>
+      <line nr="591">
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+      </line>
+      <line nr="595">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -2688,16 +2740,6 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-      </line>
-      <line nr="591">
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-      </line>
-      <line nr="592">
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
       </line>
       <line nr="596">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -2742,56 +2784,14 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="597">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-      </line>
-      <line nr="598">
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
       </line>
-      <line nr="604">
+      <line nr="603">
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
       </line>
-      <line nr="607">
+      <line nr="606">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -2831,7 +2831,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="612">
+      <line nr="611">
         <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
@@ -2843,7 +2843,7 @@
         <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
       </line>
-      <line nr="620">
+      <line nr="619">
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
@@ -2856,7 +2856,7 @@
         <covered by="phpunit\TransactionsTest::testCommitTransactionFailure"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="622">
+      <line nr="621">
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
@@ -2869,7 +2869,7 @@
         <covered by="phpunit\TransactionsTest::testCommitTransactionFailure"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="635">
+      <line nr="634">
         <covered by="phpunit\AsyncTest::testAsyncMock"/>
         <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
         <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
@@ -2939,7 +2939,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="636">
+      <line nr="635">
         <covered by="phpunit\AsyncTest::testAsyncMock"/>
         <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
         <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
@@ -2976,6 +2976,58 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+      </line>
+      <line nr="638">
+        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
+        <covered by="phpunit\AsyncTest::testAsyncReal"/>
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="639">
         <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
@@ -3081,7 +3133,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="641">
+      <line nr="642">
         <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -3134,7 +3186,6 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="643">
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -3163,7 +3214,6 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
@@ -3185,7 +3235,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="644">
+      <line nr="645">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -3585,7 +3635,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="653">
+      <line nr="655">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -3635,7 +3685,8 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="656">
+      <line nr="658">
+        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -3664,6 +3715,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
@@ -3687,16 +3739,75 @@
       </line>
       <line nr="659">
         <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
         <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
         <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
         <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
+      </line>
+      <line nr="660">
+        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
+      </line>
+      <line nr="662">
+        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
+      </line>
+      <line nr="663">
+        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
+      </line>
+      <line nr="666">
+        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+      </line>
+      <line nr="668">
+        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+      </line>
+      <line nr="669">
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+      </line>
+      <line nr="671">
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+      </line>
+      <line nr="674">
+        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+      </line>
+      <line nr="677">
+        <covered by="phpunit\AsyncTest::testAsyncReal"/>
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -3715,7 +3826,6 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
@@ -3737,73 +3847,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="660">
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
-      </line>
-      <line nr="661">
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
-      </line>
-      <line nr="663">
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
-      </line>
-      <line nr="664">
-        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
-      </line>
-      <line nr="667">
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-      </line>
-      <line nr="669">
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-      </line>
-      <line nr="670">
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-      </line>
-      <line nr="672">
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-      </line>
-      <line nr="675">
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-      </line>
-      <line nr="678">
+      <line nr="679">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -3848,6 +3892,9 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="680">
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
+      </line>
+      <line nr="695">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -3870,7 +3917,6 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -3890,9 +3936,6 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
-      <line nr="681">
-        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
       </line>
       <line nr="696">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
@@ -3937,7 +3980,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="697">
+      <line nr="698">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -4066,7 +4109,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="701">
+      <line nr="704">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -4109,7 +4152,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="705">
+      <line nr="708">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -4195,7 +4238,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="710">
+      <line nr="713">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -4238,50 +4281,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="714">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
-      <line nr="718">
+      <line nr="717">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -5902,16 +5902,6 @@
       <line no="237"/>
       <line no="238">
         <token name="T_WHITESPACE">        </token>
-        <token name="T_DOC_COMMENT">/**</token>
-      </line>
-      <line no="239">
-        <token name="T_DOC_COMMENT">         * @psalm-suppress PossiblyFalseOperand</token>
-      </line>
-      <line no="240">
-        <token name="T_DOC_COMMENT">         */</token>
-      </line>
-      <line no="241">
-        <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$input</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
@@ -5945,12 +5935,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="242"/>
-      <line no="243">
+      <line no="239"/>
+      <line no="240">
         <token name="T_WHITESPACE">        </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreStart</token>
       </line>
-      <line no="244">
+      <line no="241">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -5972,7 +5962,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="245">
+      <line no="242">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -5983,16 +5973,16 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="246">
+      <line no="243">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="247">
+      <line no="244">
         <token name="T_WHITESPACE">        </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreEnd</token>
       </line>
-      <line no="248"/>
-      <line no="249">
+      <line no="245"/>
+      <line no="246">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$values</token>
         <token name="T_WHITESPACE"> </token>
@@ -6016,8 +6006,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="250"/>
-      <line no="251">
+      <line no="247"/>
+      <line no="248">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -6030,34 +6020,34 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="252">
+      <line no="249">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="253"/>
-      <line no="254">
+      <line no="250"/>
+      <line no="251">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="255">
-        <token name="T_DOC_COMMENT">     * @param float|int|string|\sql\MydbExpression|null $unescaped</token>
+      <line no="252">
+        <token name="T_DOC_COMMENT">     * @param float|int|string|\sql\MydbExpressionInterface|null $unescaped</token>
       </line>
-      <line no="256">
+      <line no="253">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\ConnectException</token>
       </line>
-      <line no="257">
+      <line no="254">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="258">
+      <line no="255">
         <token name="T_DOC_COMMENT">     * @SuppressWarnings(PHPMD.NPathComplexity)</token>
       </line>
-      <line no="259">
+      <line no="256">
         <token name="T_DOC_COMMENT">     * @todo reduce NPathComplexity</token>
       </line>
-      <line no="260">
+      <line no="257">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="261">
+      <line no="258">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -6080,11 +6070,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="262">
+      <line no="259">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="263">
+      <line no="260">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6099,7 +6089,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="264">
+      <line no="261">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -6110,12 +6100,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="265">
+      <line no="262">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="266"/>
-      <line no="267">
+      <line no="263"/>
+      <line no="264">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -6132,28 +6122,28 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="268">
+      <line no="265">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="269"/>
-      <line no="270">
+      <line no="266"/>
+      <line no="267">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="271">
+      <line no="268">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="272">
+      <line no="269">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\ConnectException</token>
       </line>
-      <line no="273">
+      <line no="270">
         <token name="T_DOC_COMMENT">     * @todo refactor to composite keys, composite primary-keys, unique keys etc. multiple-values</token>
       </line>
-      <line no="274">
+      <line no="271">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="275">
+      <line no="272">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -6170,11 +6160,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="276">
+      <line no="273">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="277">
+      <line no="274">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$result</token>
         <token name="T_WHITESPACE"> </token>
@@ -6195,8 +6185,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="278"/>
-      <line no="279">
+      <line no="275"/>
+      <line no="276">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6210,19 +6200,19 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="280">
+      <line no="277">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="281">
+      <line no="278">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="282"/>
-      <line no="283">
+      <line no="279"/>
+      <line no="280">
         <token name="T_WHITESPACE">        </token>
         <token name="T_FOREACH">foreach</token>
         <token name="T_WHITESPACE"> </token>
@@ -6236,7 +6226,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="284">
+      <line no="281">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6253,17 +6243,17 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="285">
+      <line no="282">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONTINUE">continue</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="286">
+      <line no="283">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="287"/>
-      <line no="288">
+      <line no="284"/>
+      <line no="285">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6280,7 +6270,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="289">
+      <line no="286">
         <token name="T_WHITESPACE">                </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -6292,7 +6282,7 @@
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="290">
+      <line no="287">
         <token name="T_WHITESPACE">                    </token>
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_WHITESPACE"> </token>
@@ -6303,45 +6293,45 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">'Column_name'</token>
         <token name="T_CLOSE_SQUARE">]</token>
       </line>
-      <line no="291">
+      <line no="288">
         <token name="T_WHITESPACE">                    </token>
         <token name="T_COLON">:</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="292">
+      <line no="289">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="293">
+      <line no="290">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="294"/>
-      <line no="295">
+      <line no="291"/>
+      <line no="292">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="296">
+      <line no="293">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="297"/>
-      <line no="298">
+      <line no="294"/>
+      <line no="295">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="299">
+      <line no="296">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="300">
+      <line no="297">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="301">
+      <line no="298">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -6354,11 +6344,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="302">
+      <line no="299">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="303">
+      <line no="300">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6373,7 +6363,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="304">
+      <line no="301">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -6384,12 +6374,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="305">
+      <line no="302">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="306"/>
-      <line no="307">
+      <line no="303"/>
+      <line no="304">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6405,7 +6395,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="308">
+      <line no="305">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6421,16 +6411,16 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="309">
+      <line no="306">
         <token name="T_WHITESPACE">                </token>
         <token name="T_RETURN">return</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="310">
+      <line no="307">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="311">
+      <line no="308">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -6444,7 +6434,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="312">
+      <line no="309">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
         <token name="T_WHITESPACE"> </token>
@@ -6452,7 +6442,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="313">
+      <line no="310">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6468,16 +6458,16 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="314">
+      <line no="311">
         <token name="T_WHITESPACE">                </token>
         <token name="T_RETURN">return</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="315">
+      <line no="312">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="316">
+      <line no="313">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -6491,26 +6481,26 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="317">
+      <line no="314">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="318">
+      <line no="315">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="319"/>
-      <line no="320">
+      <line no="316"/>
+      <line no="317">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="321">
+      <line no="318">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="322">
+      <line no="319">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="323">
+      <line no="320">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -6523,11 +6513,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="324">
+      <line no="321">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="325">
+      <line no="322">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6544,7 +6534,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="326">
+      <line no="323">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -6555,12 +6545,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="327">
+      <line no="324">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="328"/>
-      <line no="329">
+      <line no="325"/>
+      <line no="326">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6576,17 +6566,17 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="330">
+      <line no="327">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="331">
+      <line no="328">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="332"/>
-      <line no="333">
+      <line no="329"/>
+      <line no="330">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -6600,25 +6590,25 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="334">
+      <line no="331">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="335"/>
-      <line no="336">
+      <line no="332"/>
+      <line no="333">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="337">
+      <line no="334">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\ConnectException</token>
       </line>
-      <line no="338">
+      <line no="335">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="339">
+      <line no="336">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="340">
+      <line no="337">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -6631,11 +6621,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="341">
+      <line no="338">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="342">
+      <line no="339">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6652,7 +6642,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="343">
+      <line no="340">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -6663,12 +6653,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="344">
+      <line no="341">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="345"/>
-      <line no="346">
+      <line no="342"/>
+      <line no="343">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6684,17 +6674,17 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="347">
+      <line no="344">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="348">
+      <line no="345">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="349"/>
-      <line no="350">
+      <line no="346"/>
+      <line no="347">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -6708,22 +6698,22 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="351">
+      <line no="348">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="352"/>
-      <line no="353">
+      <line no="349"/>
+      <line no="350">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="354">
+      <line no="351">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="355">
+      <line no="352">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="356">
+      <line no="353">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -6736,11 +6726,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="357">
+      <line no="354">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="358">
+      <line no="355">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6757,42 +6747,42 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="359">
+      <line no="356">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="360">
+      <line no="357">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="361"/>
-      <line no="362">
+      <line no="358"/>
+      <line no="359">
         <token name="T_WHITESPACE">        </token>
         <token name="T_TRY">try</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="363">
+      <line no="360">
         <token name="T_WHITESPACE">            </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="364">
+      <line no="361">
         <token name="T_DOC_COMMENT">             * No autocommit</token>
       </line>
-      <line no="365">
+      <line no="362">
         <token name="T_DOC_COMMENT">             * No transaction</token>
       </line>
-      <line no="366">
+      <line no="363">
         <token name="T_DOC_COMMENT">             *</token>
       </line>
-      <line no="367">
+      <line no="364">
         <token name="T_DOC_COMMENT">             * Default: commit all commands if transaction was NOT open</token>
       </line>
-      <line no="368">
+      <line no="365">
         <token name="T_DOC_COMMENT">             */</token>
       </line>
-      <line no="369">
+      <line no="366">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6826,20 +6816,20 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="370">
+      <line no="367">
         <token name="T_WHITESPACE">                </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="371">
+      <line no="368">
         <token name="T_DOC_COMMENT">                 * RELEASE clause causes the server to disconnect the current client session</token>
       </line>
-      <line no="372">
+      <line no="369">
         <token name="T_DOC_COMMENT">                 * after terminating the current transaction.</token>
       </line>
-      <line no="373">
+      <line no="370">
         <token name="T_DOC_COMMENT">                 */</token>
       </line>
-      <line no="374">
+      <line no="371">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$commit</token>
         <token name="T_WHITESPACE"> </token>
@@ -6853,7 +6843,7 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="375">
+      <line no="372">
         <token name="T_WHITESPACE">                    </token>
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_WHITESPACE"> </token>
@@ -6865,7 +6855,7 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="376">
+      <line no="373">
         <token name="T_WHITESPACE">                    </token>
         <token name="T_COLON">:</token>
         <token name="T_WHITESPACE"> </token>
@@ -6878,8 +6868,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="377"/>
-      <line no="378">
+      <line no="374"/>
+      <line no="375">
         <token name="T_WHITESPACE">                </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6893,7 +6883,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="379">
+      <line no="376">
         <token name="T_WHITESPACE">                    </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -6907,29 +6897,29 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="380">
+      <line no="377">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="381">
+      <line no="378">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="382"/>
-      <line no="383">
+      <line no="379"/>
+      <line no="380">
         <token name="T_WHITESPACE">            </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="384">
+      <line no="381">
         <token name="T_DOC_COMMENT">             * Explicitly closing open connections and freeing result sets is optional but recommended</token>
       </line>
-      <line no="385">
+      <line no="382">
         <token name="T_DOC_COMMENT">             * Server already closed connection from server-side</token>
       </line>
-      <line no="386">
+      <line no="383">
         <token name="T_DOC_COMMENT">             */</token>
       </line>
-      <line no="387">
+      <line no="384">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -6949,7 +6939,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="388">
+      <line no="385">
         <token name="T_WHITESPACE">                </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -6960,11 +6950,11 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="389">
+      <line no="386">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="390">
+      <line no="387">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
         <token name="T_WHITESPACE"> </token>
@@ -6978,7 +6968,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="391">
+      <line no="388">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -6988,7 +6978,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="392">
+      <line no="389">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
         <token name="T_WHITESPACE"> </token>
@@ -7002,7 +6992,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="393">
+      <line no="390">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -7021,12 +7011,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="394">
+      <line no="391">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="395"/>
-      <line no="396">
+      <line no="392"/>
+      <line no="393">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -7038,17 +7028,17 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="397">
+      <line no="394">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="398">
+      <line no="395">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="399"/>
-      <line no="400">
+      <line no="396"/>
+      <line no="397">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -7059,25 +7049,25 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="401">
+      <line no="398">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="402"/>
-      <line no="403">
+      <line no="399"/>
+      <line no="400">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="404">
+      <line no="401">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\ConnectException</token>
       </line>
-      <line no="405">
+      <line no="402">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="406">
+      <line no="403">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="407">
+      <line no="404">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -7094,11 +7084,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="408">
+      <line no="405">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="409">
+      <line no="406">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -7110,25 +7100,25 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="410">
+      <line no="407">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="411"/>
-      <line no="412">
+      <line no="408"/>
+      <line no="409">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="413">
+      <line no="410">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\ConnectException</token>
       </line>
-      <line no="414">
+      <line no="411">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="415">
+      <line no="412">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="416">
+      <line no="413">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -7145,11 +7135,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="417">
+      <line no="414">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="418">
+      <line no="415">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -7164,7 +7154,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="419">
+      <line no="416">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -7179,40 +7169,40 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="420">
+      <line no="417">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="421"/>
-      <line no="422">
+      <line no="418"/>
+      <line no="419">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="423">
+      <line no="420">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="424"/>
-      <line no="425">
+      <line no="421"/>
+      <line no="422">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="426">
+      <line no="423">
         <token name="T_DOC_COMMENT">     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint</token>
       </line>
-      <line no="427">
+      <line no="424">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="428">
+      <line no="425">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\ConnectException</token>
       </line>
-      <line no="429">
+      <line no="426">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="430">
+      <line no="427">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -7229,11 +7219,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_ARRAY">array</token>
       </line>
-      <line no="431">
+      <line no="428">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="432">
+      <line no="429">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -7245,22 +7235,22 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="433">
+      <line no="430">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="434"/>
-      <line no="435">
+      <line no="431"/>
+      <line no="432">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="436">
+      <line no="433">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="437">
+      <line no="434">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="438">
+      <line no="435">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -7277,11 +7267,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">int</token>
       </line>
-      <line no="439">
+      <line no="436">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="440">
+      <line no="437">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -7296,7 +7286,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="441">
+      <line no="438">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$rows</token>
         <token name="T_WHITESPACE"> </token>
@@ -7311,7 +7301,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="442">
+      <line no="439">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -7325,7 +7315,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="443">
+      <line no="440">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -7342,46 +7332,46 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="444">
+      <line no="441">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="445"/>
-      <line no="446">
+      <line no="442"/>
+      <line no="443">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$rows</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="447">
+      <line no="444">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="448"/>
-      <line no="449">
+      <line no="445"/>
+      <line no="446">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="450">
+      <line no="447">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="451"/>
-      <line no="452">
+      <line no="448"/>
+      <line no="449">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="453">
+      <line no="450">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="454">
+      <line no="451">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="455">
+      <line no="452">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -7398,11 +7388,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">int</token>
       </line>
-      <line no="456">
+      <line no="453">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="457">
+      <line no="454">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -7417,7 +7407,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="458">
+      <line no="455">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$rows</token>
         <token name="T_WHITESPACE"> </token>
@@ -7432,7 +7422,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="459">
+      <line no="456">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -7446,7 +7436,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="460">
+      <line no="457">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -7463,46 +7453,46 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="461">
+      <line no="458">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="462"/>
-      <line no="463">
+      <line no="459"/>
+      <line no="460">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$rows</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="464">
+      <line no="461">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="465"/>
-      <line no="466">
+      <line no="462"/>
+      <line no="463">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="467">
+      <line no="464">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="468"/>
-      <line no="469">
+      <line no="465"/>
+      <line no="466">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="470">
+      <line no="467">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="471">
+      <line no="468">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="472">
+      <line no="469">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -7534,11 +7524,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">int</token>
       </line>
-      <line no="473">
+      <line no="470">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="474">
+      <line no="471">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$query</token>
         <token name="T_WHITESPACE"> </token>
@@ -7560,7 +7550,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="475">
+      <line no="472">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -7574,19 +7564,19 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="476">
+      <line no="473">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="477">
+      <line no="474">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="478"/>
-      <line no="479">
+      <line no="475"/>
+      <line no="476">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -7598,25 +7588,25 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="480">
+      <line no="477">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="481"/>
-      <line no="482">
+      <line no="478"/>
+      <line no="479">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="483">
-        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|string|\sql\MydbExpression|null)&gt; $update</token>
+      <line no="480">
+        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|string|\sql\MydbExpressionInterface|null)&gt; $update</token>
       </line>
-      <line no="484">
+      <line no="481">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="485">
+      <line no="482">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="486">
+      <line no="483">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -7652,11 +7642,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">bool</token>
       </line>
-      <line no="487">
+      <line no="484">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="488">
+      <line no="485">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$query</token>
         <token name="T_WHITESPACE"> </token>
@@ -7681,8 +7671,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="489"/>
-      <line no="490">
+      <line no="486"/>
+      <line no="487">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -7704,7 +7694,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="491">
+      <line no="488">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$affectedRows</token>
         <token name="T_WHITESPACE"> </token>
@@ -7718,8 +7708,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="492"/>
-      <line no="493">
+      <line no="489"/>
+      <line no="490">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -7730,43 +7720,43 @@
         <token name="T_LNUMBER">0</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="494">
+      <line no="491">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="495"/>
-      <line no="496">
+      <line no="492"/>
+      <line no="493">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">false</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="497">
+      <line no="494">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="498"/>
-      <line no="499">
+      <line no="495"/>
+      <line no="496">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="500">
+      <line no="497">
         <token name="T_DOC_COMMENT">     * @param array $columnSetWhere ['col1' =&gt; [ ['current1', 'new1'], ['current2', 'new2']]</token>
       </line>
-      <line no="501">
+      <line no="498">
         <token name="T_DOC_COMMENT">     * @param array $where ['col2' =&gt; 'value2', 'col3' =&gt; ['v3', 'v4']]</token>
       </line>
-      <line no="502">
+      <line no="499">
         <token name="T_DOC_COMMENT">     * @param string $table 'mytable'</token>
       </line>
-      <line no="503">
+      <line no="500">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="504">
+      <line no="501">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="505">
+      <line no="502">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -7792,11 +7782,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="506">
+      <line no="503">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="507">
+      <line no="504">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$sql</token>
         <token name="T_WHITESPACE"> </token>
@@ -7818,7 +7808,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="508">
+      <line no="505">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -7828,25 +7818,31 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="509">
+      <line no="506">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="510"/>
-      <line no="511">
+      <line no="507"/>
+      <line no="508">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="512">
+      <line no="509">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\ConnectException</token>
       </line>
-      <line no="513">
+      <line no="510">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="514">
+      <line no="511">
+        <token name="T_DOC_COMMENT">     * @param array&lt;array-key, array&lt;(float|int|string|\sql\MydbExpressionInterface|null)&gt;&gt; $data</token>
+      </line>
+      <line no="512">
+        <token name="T_DOC_COMMENT">     * @param array&lt;string&gt; $cols</token>
+      </line>
+      <line no="513">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="515">
+      <line no="514">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -7855,28 +7851,28 @@
         <token name="T_STRING">insertMany</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="516">
+      <line no="515">
         <token name="T_WHITESPACE">        </token>
         <token name="T_ARRAY">array</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$data</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="517">
+      <line no="516">
         <token name="T_WHITESPACE">        </token>
         <token name="T_ARRAY">array</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$cols</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="518">
+      <line no="517">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$table</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="519">
+      <line no="518">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">bool</token>
         <token name="T_WHITESPACE"> </token>
@@ -7887,7 +7883,7 @@
         <token name="T_STRING">false</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="520">
+      <line no="519">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
@@ -7897,7 +7893,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">''</token>
       </line>
-      <line no="521">
+      <line no="520">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COLON">:</token>
@@ -7906,7 +7902,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="522">
+      <line no="521">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$sql</token>
         <token name="T_WHITESPACE"> </token>
@@ -7934,7 +7930,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="523">
+      <line no="522">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -7944,25 +7940,25 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="524">
+      <line no="523">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="525"/>
-      <line no="526">
+      <line no="524"/>
+      <line no="525">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="527">
+      <line no="526">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="528">
-        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|\sql\MydbExpression|string|null)&gt; $data</token>
+      <line no="527">
+        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|\sql\MydbExpressionInterface|string|null)&gt; $data</token>
       </line>
-      <line no="529">
+      <line no="528">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="530">
+      <line no="529">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -7984,11 +7980,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="531">
+      <line no="530">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="532">
+      <line no="531">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$query</token>
         <token name="T_WHITESPACE"> </token>
@@ -8012,8 +8008,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="533"/>
-      <line no="534">
+      <line no="532"/>
+      <line no="533">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -8025,25 +8021,25 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="535">
+      <line no="534">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="536"/>
-      <line no="537">
+      <line no="535"/>
+      <line no="536">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="538">
+      <line no="537">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="539">
-        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|\sql\MydbExpression|string|null)&gt; $data</token>
+      <line no="538">
+        <token name="T_DOC_COMMENT">     * @param array&lt;string, (float|int|\sql\MydbExpressionInterface|string|null)&gt; $data</token>
       </line>
-      <line no="540">
+      <line no="539">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="541">
+      <line no="540">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -8065,11 +8061,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="542">
+      <line no="541">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="543">
+      <line no="542">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$query</token>
         <token name="T_WHITESPACE"> </token>
@@ -8093,8 +8089,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="544"/>
-      <line no="545">
+      <line no="543"/>
+      <line no="544">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -8106,25 +8102,25 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="546">
+      <line no="545">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="547"/>
-      <line no="548">
+      <line no="546"/>
+      <line no="547">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="549">
+      <line no="548">
         <token name="T_DOC_COMMENT">     * @see https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html</token>
       </line>
-      <line no="550">
+      <line no="549">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="551">
+      <line no="550">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="552">
+      <line no="551">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -8140,11 +8136,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="553">
+      <line no="552">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="554">
+      <line no="553">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$ok</token>
         <token name="T_WHITESPACE"> </token>
@@ -8160,7 +8156,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="555">
+      <line no="554">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -8174,7 +8170,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="556">
+      <line no="555">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8188,29 +8184,29 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="557">
+      <line no="556">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="558">
+      <line no="557">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="559"/>
-      <line no="560">
+      <line no="558"/>
+      <line no="559">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="561">
+      <line no="560">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\EnvironmentException</token>
       </line>
-      <line no="562">
+      <line no="561">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\TerminationSignalException</token>
       </line>
-      <line no="563">
+      <line no="562">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="564">
+      <line no="563">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -8226,11 +8222,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">bool</token>
       </line>
-      <line no="565">
+      <line no="564">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="566">
+      <line no="565">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8241,7 +8237,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="567">
+      <line no="566">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8252,8 +8248,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="568"/>
-      <line no="569">
+      <line no="567"/>
+      <line no="568">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$result</token>
         <token name="T_WHITESPACE"> </token>
@@ -8269,8 +8265,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="570"/>
-      <line no="571">
+      <line no="569"/>
+      <line no="570">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8281,7 +8277,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="572">
+      <line no="571">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -8297,7 +8293,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="573">
+      <line no="572">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -8308,34 +8304,34 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="574">
+      <line no="573">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="575"/>
-      <line no="576">
+      <line no="574"/>
+      <line no="575">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$result</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="577">
+      <line no="576">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="578"/>
-      <line no="579">
+      <line no="577"/>
+      <line no="578">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="580">
+      <line no="579">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="581">
+      <line no="580">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="582">
+      <line no="581">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -8352,11 +8348,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">MydbMysqliResultInterface</token>
       </line>
-      <line no="583">
+      <line no="582">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="584">
+      <line no="583">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$packet</token>
         <token name="T_WHITESPACE"> </token>
@@ -8374,7 +8370,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="585">
+      <line no="584">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -8388,19 +8384,19 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="586">
+      <line no="585">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="587">
+      <line no="586">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="588"/>
-      <line no="589">
+      <line no="587"/>
+      <line no="588">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$warnings</token>
         <token name="T_WHITESPACE"> </token>
@@ -8413,7 +8409,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="590">
+      <line no="589">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -8430,7 +8426,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="591">
+      <line no="590">
         <token name="T_WHITESPACE">            </token>
         <token name="T_FOREACH">foreach</token>
         <token name="T_WHITESPACE"> </token>
@@ -8444,7 +8440,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="592">
+      <line no="591">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8457,16 +8453,16 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="593">
+      <line no="592">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="594">
+      <line no="593">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="595"/>
-      <line no="596">
+      <line no="594"/>
+      <line no="595">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$errorMessage</token>
         <token name="T_WHITESPACE"> </token>
@@ -8479,7 +8475,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="597">
+      <line no="596">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -8493,7 +8489,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="598">
+      <line no="597">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -8509,17 +8505,17 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="599">
+      <line no="598">
         <token name="T_WHITESPACE">                </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="600">
+      <line no="599">
         <token name="T_DOC_COMMENT">                 * server closed connection</token>
       </line>
-      <line no="601">
+      <line no="600">
         <token name="T_DOC_COMMENT">                 */</token>
       </line>
-      <line no="602">
+      <line no="601">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8530,11 +8526,11 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="603">
+      <line no="602">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="604">
+      <line no="603">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8552,24 +8548,24 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="605">
+      <line no="604">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="606"/>
-      <line no="607">
+      <line no="605"/>
+      <line no="606">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$packet</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="608">
+      <line no="607">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="609"/>
-      <line no="610">
+      <line no="608"/>
+      <line no="609">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -8595,11 +8591,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="611">
+      <line no="610">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="612">
+      <line no="611">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8620,22 +8616,22 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="613">
+      <line no="612">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="614"/>
-      <line no="615">
+      <line no="613"/>
+      <line no="614">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="616">
+      <line no="615">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="617">
+      <line no="616">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="618">
+      <line no="617">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -8661,11 +8657,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="619">
+      <line no="618">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="620">
+      <line no="619">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8690,45 +8686,45 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="621"/>
-      <line no="622">
+      <line no="620"/>
+      <line no="621">
         <token name="T_WHITESPACE">        </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$exception</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="623">
+      <line no="622">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="624"/>
-      <line no="625">
+      <line no="623"/>
+      <line no="624">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="626">
+      <line no="625">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\DisconnectException</token>
       </line>
-      <line no="627">
+      <line no="626">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\TransactionAutocommitException</token>
       </line>
-      <line no="628">
+      <line no="627">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\EnvironmentException</token>
       </line>
-      <line no="629">
+      <line no="628">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
-      <line no="630">
+      <line no="629">
         <token name="T_DOC_COMMENT">     * @SuppressWarnings(PHPMD.NPathComplexity)</token>
       </line>
-      <line no="631">
+      <line no="630">
         <token name="T_DOC_COMMENT">     * @todo reduce NPathComplexity</token>
       </line>
-      <line no="632">
+      <line no="631">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="633">
+      <line no="632">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -8748,11 +8744,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">bool</token>
       </line>
-      <line no="634">
+      <line no="633">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="635">
+      <line no="634">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -8768,19 +8764,19 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="636">
+      <line no="635">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">true</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="637">
+      <line no="636">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="638"/>
-      <line no="639">
+      <line no="637"/>
+      <line no="638">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$connected</token>
         <token name="T_WHITESPACE"> </token>
@@ -8789,7 +8785,7 @@
         <token name="T_STRING">false</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="640">
+      <line no="639">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$init0</token>
         <token name="T_WHITESPACE"> </token>
@@ -8804,7 +8800,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="641">
+      <line no="640">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$init1</token>
         <token name="T_WHITESPACE"> </token>
@@ -8831,8 +8827,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="642"/>
-      <line no="643">
+      <line no="641"/>
+      <line no="642">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -8846,7 +8842,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="644">
+      <line no="643">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$reportingLevel</token>
         <token name="T_WHITESPACE"> </token>
@@ -8868,8 +8864,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="645"/>
-      <line no="646">
+      <line no="644"/>
+      <line no="645">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$connected</token>
         <token name="T_WHITESPACE"> </token>
@@ -8882,7 +8878,7 @@
         <token name="T_STRING">realConnect</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="647">
+      <line no="646">
         <token name="T_WHITESPACE">                </token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_VARIABLE">$this</token>
@@ -8913,7 +8909,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="648">
+      <line no="647">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8924,7 +8920,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="649">
+      <line no="648">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8935,7 +8931,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="650">
+      <line no="649">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8946,7 +8942,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="651">
+      <line no="650">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8957,7 +8953,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="652">
+      <line no="651">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8968,7 +8964,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="653">
+      <line no="652">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8978,13 +8974,13 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="654">
+      <line no="653">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="655"/>
-      <line no="656">
+      <line no="654"/>
+      <line no="655">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -8996,12 +8992,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="657">
+      <line no="656">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="658"/>
-      <line no="659">
+      <line no="657"/>
+      <line no="658">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9015,7 +9011,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="660">
+      <line no="659">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$errorNumber</token>
         <token name="T_WHITESPACE"> </token>
@@ -9045,7 +9041,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="661">
+      <line no="660">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$errorText</token>
         <token name="T_WHITESPACE"> </token>
@@ -9075,8 +9071,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="662"/>
-      <line no="663">
+      <line no="661"/>
+      <line no="662">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9096,7 +9092,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="664">
+      <line no="663">
         <token name="T_WHITESPACE">                </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -9107,12 +9103,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="665">
+      <line no="664">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="666"/>
-      <line no="667">
+      <line no="665"/>
+      <line no="666">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9130,8 +9126,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="668"/>
-      <line no="669">
+      <line no="667"/>
+      <line no="668">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9145,14 +9141,14 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="670">
+      <line no="669">
         <token name="T_WHITESPACE">                </token>
         <token name="T_DEC">--</token>
         <token name="T_VARIABLE">$retry</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="671"/>
-      <line no="672">
+      <line no="670"/>
+      <line no="671">
         <token name="T_WHITESPACE">                </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -9164,24 +9160,24 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="673">
+      <line no="672">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="674"/>
-      <line no="675">
+      <line no="673"/>
+      <line no="674">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">false</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="676">
+      <line no="675">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="677"/>
-      <line no="678">
+      <line no="676"/>
+      <line no="677">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9199,8 +9195,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="679"/>
-      <line no="680">
+      <line no="678"/>
+      <line no="679">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9227,7 +9223,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="681">
+      <line no="680">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -9238,49 +9234,49 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="682">
+      <line no="681">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="683"/>
-      <line no="684">
+      <line no="682"/>
+      <line no="683">
         <token name="T_WHITESPACE">        </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="685">
+      <line no="684">
         <token name="T_DOC_COMMENT">         * Here's a summary of what variables are set by each statement: SET NAMES vs SET CHARSET</token>
       </line>
-      <line no="686">
+      <line no="685">
         <token name="T_DOC_COMMENT">         *</token>
       </line>
-      <line no="687">
+      <line no="686">
         <token name="T_DOC_COMMENT">         * Variable                 SET NAMES   SET CHARSET</token>
       </line>
-      <line no="688">
+      <line no="687">
         <token name="T_DOC_COMMENT">         * character_set_client     argument    argument</token>
       </line>
-      <line no="689">
+      <line no="688">
         <token name="T_DOC_COMMENT">         * character_set_results    argument    argument</token>
       </line>
-      <line no="690">
+      <line no="689">
         <token name="T_DOC_COMMENT">         * character_set_connection argument    default for default db</token>
       </line>
-      <line no="691">
+      <line no="690">
         <token name="T_DOC_COMMENT">         * collation_connection     argument*   default for default db</token>
       </line>
-      <line no="692">
+      <line no="691">
         <token name="T_DOC_COMMENT">         *</token>
       </line>
-      <line no="693">
+      <line no="692">
         <token name="T_DOC_COMMENT">         * SET CHARSET doesn't set the connection charset to the charset you specify in the argument,</token>
       </line>
-      <line no="694">
+      <line no="693">
         <token name="T_DOC_COMMENT">         * instead it sets it to the charset for your current default database</token>
       </line>
-      <line no="695">
+      <line no="694">
         <token name="T_DOC_COMMENT">         */</token>
       </line>
-      <line no="696">
+      <line no="695">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$defaults</token>
         <token name="T_WHITESPACE"> </token>
@@ -9293,17 +9289,17 @@
         <token name="T_STRING">realQuery</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="697">
+      <line no="696">
         <token name="T_WHITESPACE">            </token>
         <token name="T_STRING">sprintf</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="698">
+      <line no="697">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">"SET time_zone = '%s', wait_timeout = %d, names '%s'"</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="699">
+      <line no="698">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9314,7 +9310,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="700">
+      <line no="699">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9325,7 +9321,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="701">
+      <line no="700">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9335,17 +9331,17 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="702">
+      <line no="701">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="703">
+      <line no="702">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="704"/>
-      <line no="705">
+      <line no="703"/>
+      <line no="704">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9359,7 +9355,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="706">
+      <line no="705">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -9370,12 +9366,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="707">
+      <line no="706">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="708"/>
-      <line no="709">
+      <line no="707"/>
+      <line no="708">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$isoLevel</token>
         <token name="T_WHITESPACE"> </token>
@@ -9390,7 +9386,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="710">
+      <line no="709">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9419,7 +9415,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="711">
+      <line no="710">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -9430,12 +9426,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="712">
+      <line no="711">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="713"/>
-      <line no="714">
+      <line no="712"/>
+      <line no="713">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9465,7 +9461,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="715">
+      <line no="714">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -9476,26 +9472,26 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="716">
+      <line no="715">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="717"/>
-      <line no="718">
+      <line no="716"/>
+      <line no="717">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">true</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="719">
+      <line no="718">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="720">
+      <line no="719">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="721"/>
+      <line no="720"/>
     </source>
   </file>
 </phpunit>

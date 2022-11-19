@@ -2,15 +2,15 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="InternalEvent.php" path="/MydbEvent">
     <totals>
-      <lines total="32" comments="11" code="21" executable="3" executed="0" percent="0.00"/>
+      <lines total="30" comments="11" code="19" executable="1" executed="0" percent="0.00"/>
       <methods count="1" tested="0" percent="0.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="0" percent="0.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbEvent\Internal" start="22" executable="3" executed="0" crap="2">
+    <class name="sql\MydbEvent\Internal" start="21" executable="1" executed="0" crap="2">
       <namespace name="sql\MydbEvent"/>
-      <method name="getListeners" signature="getListeners(): SplFixedArray" start="24" end="30" crap="2" executable="3" executed="0" coverage="0"/>
+      <method name="getListeners" signature="getListeners(): array" start="23" end="28" crap="2" executable="1" executed="0" coverage="0"/>
     </class>
     <source>
       <line no="1">
@@ -72,23 +72,17 @@
       <line no="18">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">SplFixedArray</token>
+        <token name="T_NAME_QUALIFIED">sql\MydbEvent</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="19">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">sql\MydbEvent</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="20">
-        <token name="T_USE">use</token>
-        <token name="T_WHITESPACE"> </token>
         <token name="T_NAME_QUALIFIED">sql\MydbListener\InternalListener</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="21"/>
-      <line no="22">
+      <line no="20"/>
+      <line no="21">
         <token name="T_CLASS">class</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">Internal</token>
@@ -97,10 +91,10 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">MydbEvent</token>
       </line>
-      <line no="23">
+      <line no="22">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="24">
+      <line no="23">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -111,58 +105,40 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COLON">:</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">SplFixedArray</token>
+        <token name="T_ARRAY">array</token>
       </line>
-      <line no="25">
+      <line no="24">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="26">
+      <line no="25">
         <token name="T_WHITESPACE">        </token>
-        <token name="T_VARIABLE">$array</token>
+        <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_NEW">new</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">SplFixedArray</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_LNUMBER">1</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="27">
-        <token name="T_WHITESPACE">        </token>
-        <token name="T_VARIABLE">$array</token>
         <token name="T_OPEN_SQUARE">[</token>
-        <token name="T_LNUMBER">0</token>
-        <token name="T_CLOSE_SQUARE">]</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">            </token>
         <token name="T_NEW">new</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">InternalListener</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_SEMICOLON">;</token>
+        <token name="T_COMMA">,</token>
       </line>
-      <line no="28"/>
-      <line no="29">
+      <line no="27">
         <token name="T_WHITESPACE">        </token>
-        <token name="T_RETURN">return</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$array</token>
+        <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="30">
+      <line no="28">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="31">
+      <line no="29">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="32"/>
+      <line no="30"/>
     </source>
   </file>
 </phpunit>

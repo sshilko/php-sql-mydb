@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Fri Nov 18 21:49:38 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+  <build time="Sat Nov 19 1:12:37 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
     <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.0RC2"/>
   </build>
@@ -213,15 +213,15 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4811" comments="1902" code="2909" executable="665" executed="636" percent="95.64"/>
-        <methods count="163" tested="149" percent="91.41"/>
+        <lines total="4841" comments="1930" code="2911" executable="663" executed="634" percent="95.63"/>
+        <methods count="163" tested="148" percent="90.80"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="15" tested="10" percent="66.67"/>
+        <classes count="15" tested="9" percent="60.00"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="MydbEvent">
         <totals>
-          <lines total="32" comments="11" code="21" executable="3" executed="0" percent="0.00"/>
+          <lines total="30" comments="11" code="19" executable="1" executed="0" percent="0.00"/>
           <methods count="1" tested="0" percent="0.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
@@ -229,7 +229,7 @@
         </totals>
         <file name="InternalEvent.php" href="MydbEvent/InternalEvent.php.xml">
           <totals>
-            <lines total="32" comments="11" code="21" executable="3" executed="0" percent="0.00"/>
+            <lines total="30" comments="11" code="19" executable="1" executed="0" percent="0.00"/>
             <methods count="1" tested="0" percent="0.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="0" percent="0.00"/>
@@ -437,7 +437,7 @@
       </directory>
       <directory name="MydbInterface">
         <totals>
-          <lines total="304" comments="180" code="124" executable="0" executed="0" percent="0"/>
+          <lines total="308" comments="184" code="124" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
@@ -472,7 +472,7 @@
         </file>
         <file name="DataManipulationStatementsInterface.php" href="MydbInterface/DataManipulationStatementsInterface.php.xml">
           <totals>
-            <lines total="70" comments="33" code="37" executable="0" executed="0" percent="0"/>
+            <lines total="74" comments="37" code="37" executable="0" executed="0" percent="0"/>
             <methods count="0" tested="0" percent="0"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="0" tested="0" percent="0"/>
@@ -572,7 +572,7 @@
       </directory>
       <file name="Mydb.php" href="Mydb.php.xml">
         <totals>
-          <lines total="721" comments="182" code="539" executable="208" executed="193" percent="92.79"/>
+          <lines total="720" comments="181" code="539" executable="208" executed="193" percent="92.79"/>
           <methods count="30" tested="22" percent="73.33"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
@@ -599,7 +599,7 @@
       </file>
       <file name="MydbEnvironment.php" href="MydbEnvironment.php.xml">
         <totals>
-          <lines total="261" comments="137" code="124" executable="28" executed="28" percent="100.00"/>
+          <lines total="264" comments="136" code="128" executable="30" executed="30" percent="100.00"/>
           <methods count="10" tested="10" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -617,7 +617,7 @@
       </file>
       <file name="MydbEvent.php" href="MydbEvent.php.xml">
         <totals>
-          <lines total="57" comments="17" code="40" executable="8" executed="0" percent="0.00"/>
+          <lines total="59" comments="20" code="39" executable="8" executed="0" percent="0.00"/>
           <methods count="3" tested="0" percent="0.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
@@ -734,16 +734,16 @@
       </file>
       <file name="MydbQueryBuilder.php" href="MydbQueryBuilder.php.xml">
         <totals>
-          <lines total="373" comments="91" code="282" executable="116" executed="116" percent="100.00"/>
-          <methods count="10" tested="10" percent="100.00"/>
+          <lines total="394" comments="111" code="283" executable="114" executed="112" percent="98.25"/>
+          <methods count="10" tested="9" percent="90.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="1" percent="100.00"/>
+          <classes count="1" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
       </file>
       <file name="MydbQueryBuilderInterface.php" href="MydbQueryBuilderInterface.php.xml">
         <totals>
-          <lines total="71" comments="36" code="35" executable="0" executed="0" percent="0"/>
+          <lines total="74" comments="39" code="35" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>

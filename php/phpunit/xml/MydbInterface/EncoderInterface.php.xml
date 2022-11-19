@@ -105,7 +105,7 @@
         <token name="T_DOC_COMMENT">     *</token>
       </line>
       <line no="30">
-        <token name="T_DOC_COMMENT">     * @param float|int|string|\sql\MydbExpression|null $unescaped</token>
+        <token name="T_DOC_COMMENT">     * @param float|int|string|\sql\MydbExpressionInterface|null $unescaped</token>
       </line>
       <line no="31">
         <token name="T_DOC_COMMENT">     */</token>

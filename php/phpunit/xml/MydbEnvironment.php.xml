@@ -2,27 +2,27 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbEnvironment.php" path="/">
     <totals>
-      <lines total="261" comments="137" code="124" executable="28" executed="28" percent="100.00"/>
+      <lines total="264" comments="136" code="128" executable="30" executed="30" percent="100.00"/>
       <methods count="10" tested="10" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbEnvironment" start="42" executable="28" executed="28" crap="18">
+    <class name="sql\MydbEnvironment" start="42" executable="30" executed="30" crap="18">
       <namespace name="sql"/>
-      <method name="gc_collect_cycles" signature="gc_collect_cycles(): void" start="70" end="79" crap="2" executable="2" executed="2" coverage="100"/>
-      <method name="restore_error_handler" signature="restore_error_handler(): void" start="88" end="91" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="set_error_handler" signature="set_error_handler(?callable $callback, int $error_levels): ?callable" start="101" end="107" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="setMysqlndNetReadTimeout" signature="setMysqlndNetReadTimeout(string $timeoutSeconds): bool" start="132" end="135" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="error_reporting" signature="error_reporting(int $level): int" start="144" end="147" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="ignore_user_abort" signature="ignore_user_abort(): int" start="156" end="159" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="ini_set" signature="ini_set(string $key, string $value): string" start="169" end="179" crap="2" executable="3" executed="3" coverage="100"/>
-      <method name="endSignalsTrap" signature="endSignalsTrap(): ?array" start="191" end="220" crap="5" executable="9" executed="9" coverage="100"/>
-      <method name="startSignalsTrap" signature="startSignalsTrap(): void" start="230" end="248" crap="3" executable="7" executed="7" coverage="100"/>
-      <method name="getNullErrorHandler" signature="getNullErrorHandler(): callable" start="254" end="259" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="gc_collect_cycles" signature="gc_collect_cycles(): void" start="69" end="78" crap="2" executable="2" executed="2" coverage="100"/>
+      <method name="restore_error_handler" signature="restore_error_handler(): void" start="87" end="90" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="set_error_handler" signature="set_error_handler(?callable $callback, int $error_levels): ?callable" start="100" end="106" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="setMysqlndNetReadTimeout" signature="setMysqlndNetReadTimeout(string $timeoutSeconds): bool" start="131" end="134" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="error_reporting" signature="error_reporting(int $level): int" start="143" end="146" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="ignore_user_abort" signature="ignore_user_abort(): int" start="155" end="158" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="ini_set" signature="ini_set(string $key, string $value): string" start="168" end="178" crap="2" executable="3" executed="3" coverage="100"/>
+      <method name="endSignalsTrap" signature="endSignalsTrap(): ?array" start="190" end="223" crap="5" executable="10" executed="10" coverage="100"/>
+      <method name="startSignalsTrap" signature="startSignalsTrap(): void" start="233" end="251" crap="3" executable="7" executed="7" coverage="100"/>
+      <method name="getNullErrorHandler" signature="getNullErrorHandler(): callable" start="257" end="262" crap="1" executable="2" executed="2" coverage="100"/>
     </class>
     <coverage>
-      <line nr="72">
+      <line nr="71">
         <covered by="phpunit\AsyncTest::testAsyncMock"/>
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -39,7 +39,7 @@
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
-      <line nr="78">
+      <line nr="77">
         <covered by="phpunit\AsyncTest::testAsyncMock"/>
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -56,7 +56,7 @@
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
-      <line nr="90">
+      <line nr="89">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -103,7 +103,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="106">
+      <line nr="103">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -150,7 +150,54 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="134">
+      <line nr="105">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+      </line>
+      <line nr="133">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -199,7 +246,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="146">
+      <line nr="145">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -249,7 +296,56 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="158">
+      <line nr="157">
+        <covered by="phpunit\AsyncTest::testAsyncReal"/>
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="170">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -347,7 +443,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="172">
+      <line nr="177">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -396,21 +492,17 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="178">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
+      <line nr="195">
         <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
         <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
         <covered by="phpunit\InsertTest::testInsert"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
@@ -420,11 +512,16 @@
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -444,8 +541,9 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="196">
+      <line nr="201">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -547,7 +645,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="203">
+      <line nr="206">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -598,7 +696,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="208">
+      <line nr="211">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -649,109 +747,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="213">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteError"/>
-        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsertError"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
-        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-      </line>
-      <line nr="215">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteError"/>
-        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsertError"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
-        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-      </line>
-      <line nr="217">
+      <line nr="216">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -803,12 +799,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="218">
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
-      </line>
-      <line nr="219">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -859,7 +849,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="232">
+      <line nr="220">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -910,7 +900,13 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="234">
+      <line nr="221">
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+      </line>
+      <line nr="222">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -962,114 +958,114 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="235">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+      </line>
+      <line nr="237">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="238">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteError"/>
-        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsertError"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
         <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
-        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="239">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteError"/>
-        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsertError"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
-        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
-        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-      </line>
-      <line nr="240">
+      <line nr="241">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -1171,7 +1167,109 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="256">
+      <line nr="243">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+      </line>
+      <line nr="245">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGHUP&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;"/>
+        <covered by="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+      </line>
+      <line nr="259">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -1218,7 +1316,7 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
-      <line nr="257">
+      <line nr="260">
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
       </line>
@@ -1525,15 +1623,12 @@
         <token name="T_DOC_COMMENT">     * Original signal handler, which replaced by custon trap</token>
       </line>
       <line no="60">
-        <token name="T_DOC_COMMENT">     *</token>
+        <token name="T_DOC_COMMENT">     * @var array&lt;int, int|resource|string&gt;</token>
       </line>
       <line no="61">
-        <token name="T_DOC_COMMENT">     * @var array</token>
-      </line>
-      <line no="62">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="63">
+      <line no="62">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -1547,24 +1642,24 @@
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="64"/>
-      <line no="65">
+      <line no="63"/>
+      <line no="64">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="66">
+      <line no="65">
         <token name="T_DOC_COMMENT">     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps</token>
       </line>
-      <line no="67">
+      <line no="66">
         <token name="T_DOC_COMMENT">     * @SuppressWarnings("camelCase")</token>
       </line>
-      <line no="68">
+      <line no="67">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.gc-collect-cycles</token>
       </line>
-      <line no="69">
+      <line no="68">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="70">
+      <line no="69">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -1577,11 +1672,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="71">
+      <line no="70">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="72">
+      <line no="71">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -1594,59 +1689,59 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="73">
+      <line no="72">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreStart</token>
       </line>
-      <line no="74">
+      <line no="73">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="75">
+      <line no="74">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreEnd</token>
       </line>
-      <line no="76">
+      <line no="75">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="77"/>
-      <line no="78">
+      <line no="76"/>
+      <line no="77">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">gc_collect_cycles</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="79">
+      <line no="78">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="80"/>
-      <line no="81">
+      <line no="79"/>
+      <line no="80">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="82">
+      <line no="81">
         <token name="T_DOC_COMMENT">     * Restore previous PHP error handler</token>
       </line>
-      <line no="83">
+      <line no="82">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="84">
+      <line no="83">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.restore-error-handler.php</token>
       </line>
-      <line no="85">
+      <line no="84">
         <token name="T_DOC_COMMENT">     * @SuppressWarnings("camelCase")</token>
       </line>
-      <line no="86">
+      <line no="85">
         <token name="T_DOC_COMMENT">     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps</token>
       </line>
-      <line no="87">
+      <line no="86">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="88">
+      <line no="87">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -1659,48 +1754,48 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="89">
+      <line no="88">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="90">
+      <line no="89">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">restore_error_handler</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="91">
+      <line no="90">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="92"/>
-      <line no="93">
+      <line no="91"/>
+      <line no="92">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="94">
+      <line no="93">
         <token name="T_DOC_COMMENT">     * Set custom PHP error handler</token>
       </line>
-      <line no="95">
+      <line no="94">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="96">
+      <line no="95">
         <token name="T_DOC_COMMENT">     * @param callable|null $callback</token>
       </line>
-      <line no="97">
+      <line no="96">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.set-error-handler</token>
       </line>
-      <line no="98">
+      <line no="97">
         <token name="T_DOC_COMMENT">     * @SuppressWarnings("camelCase")</token>
       </line>
-      <line no="99">
+      <line no="98">
         <token name="T_DOC_COMMENT">     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps</token>
       </line>
-      <line no="100">
+      <line no="99">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="101">
+      <line no="100">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -1733,26 +1828,20 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_CALLABLE">callable</token>
       </line>
-      <line no="102">
+      <line no="101">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
+      <line no="102">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_DOC_COMMENT">/** @var callable(int, string, string=, int=, array&lt;array-key, mixed&gt;=):bool|null $newHandler */</token>
+      </line>
       <line no="103">
         <token name="T_WHITESPACE">        </token>
-        <token name="T_DOC_COMMENT">/**</token>
-      </line>
-      <line no="104">
-        <token name="T_DOC_COMMENT">         * @psalm-suppress MixedArgumentTypeCoercion</token>
-      </line>
-      <line no="105">
-        <token name="T_DOC_COMMENT">         */</token>
-      </line>
-      <line no="106">
-        <token name="T_WHITESPACE">        </token>
-        <token name="T_RETURN">return</token>
+        <token name="T_VARIABLE">$newHandler</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">set_error_handler</token>
-        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$callback</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_COALESCE">??</token>
@@ -1762,88 +1851,98 @@
         <token name="T_STRING">getNullErrorHandler</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="104"/>
+      <line no="105">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">set_error_handler</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$newHandler</token>
         <token name="T_COMMA">,</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$error_levels</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="107">
+      <line no="106">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="108"/>
-      <line no="109">
+      <line no="107"/>
+      <line no="108">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="110">
+      <line no="109">
         <token name="T_DOC_COMMENT">     * Set mysqlnd.net_read_timeout php ini value</token>
       </line>
-      <line no="111">
+      <line no="110">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="112">
+      <line no="111">
         <token name="T_DOC_COMMENT">     * mysqlnd and the MySQL Client Library, libmysqlclient use different networking APIs.</token>
       </line>
-      <line no="113">
+      <line no="112">
         <token name="T_DOC_COMMENT">     * mysqlnd uses PHP streams, whereas libmysqlclient uses its own wrapper around the operating level network calls.</token>
       </line>
-      <line no="114">
+      <line no="113">
         <token name="T_DOC_COMMENT">     * PHP, by default, sets a read timeout of 60s for streams.</token>
       </line>
-      <line no="115">
+      <line no="114">
         <token name="T_DOC_COMMENT">     * This is set via php.ini, default_socket_timeout.</token>
       </line>
-      <line no="116">
+      <line no="115">
         <token name="T_DOC_COMMENT">     * This default applies to all streams that set no other timeout value.</token>
       </line>
-      <line no="117">
+      <line no="116">
         <token name="T_DOC_COMMENT">     * mysqlnd does not set any other value and therefore connections of long running queries can be disconnected</token>
       </line>
-      <line no="118">
+      <line no="117">
         <token name="T_DOC_COMMENT">     * after default_socket_timeout seconds resulting in an error message 2006 - MySQL Server has gone away.</token>
       </line>
-      <line no="119">
+      <line no="118">
         <token name="T_DOC_COMMENT">     * The MySQL Client Library sets a default timeout of 24 * 3600 seconds (1 day)</token>
       </line>
-      <line no="120">
+      <line no="119">
         <token name="T_DOC_COMMENT">     * and waits for other timeouts to occur, such as TCP/IP timeouts. mysqlnd now uses the same very long timeout.</token>
       </line>
-      <line no="121">
+      <line no="120">
         <token name="T_DOC_COMMENT">     * The value is configurable through a new php.ini setting: mysqlnd.net_read_timeout.</token>
       </line>
-      <line no="122">
+      <line no="121">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="123">
+      <line no="122">
         <token name="T_DOC_COMMENT">     * mysqlnd.net_read_timeout gets used by any extension (ext/mysql, ext/mysqli, PDO_MySQL) that uses mysqlnd.</token>
       </line>
-      <line no="124">
+      <line no="123">
         <token name="T_DOC_COMMENT">     * mysqlnd tells PHP Streams to use mysqlnd.net_read_timeout.</token>
       </line>
-      <line no="125">
+      <line no="124">
         <token name="T_DOC_COMMENT">     * Please note that there may be subtle differences between MYSQL_OPT_READ_TIMEOUT from the MySQL Client Library</token>
       </line>
-      <line no="126">
+      <line no="125">
         <token name="T_DOC_COMMENT">     * and PHP Streams, for example MYSQL_OPT_READ_TIMEOUT is documented to work only for TCP/IP connections and,</token>
       </line>
-      <line no="127">
+      <line no="126">
         <token name="T_DOC_COMMENT">     * prior to MySQL 5.1.2, only for Windows. PHP streams may not have this limitation.</token>
       </line>
-      <line no="128">
+      <line no="127">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="129">
+      <line no="128">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\EnvironmentException</token>
       </line>
-      <line no="130">
+      <line no="129">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/mysqlnd.config.php</token>
       </line>
-      <line no="131">
+      <line no="130">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="132">
+      <line no="131">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -1859,11 +1958,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">bool</token>
       </line>
-      <line no="133">
+      <line no="132">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="134">
+      <line no="133">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -1880,54 +1979,54 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="135">
+      <line no="134">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="136"/>
-      <line no="137">
+      <line no="135"/>
+      <line no="136">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="138">
+      <line no="137">
         <token name="T_DOC_COMMENT">     * Sets which PHP errors are reported</token>
       </line>
-      <line no="139">
+      <line no="138">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="140">
+      <line no="139">
         <token name="T_DOC_COMMENT">     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps</token>
       </line>
-      <line no="141">
+      <line no="140">
         <token name="T_DOC_COMMENT">     * @SuppressWarnings("camelCase")</token>
       </line>
-      <line no="142">
+      <line no="141">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.error-reporting</token>
       </line>
-      <line no="143">
+      <line no="142">
         <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="143">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">error_reporting</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">int</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$level</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">int</token>
       </line>
       <line no="144">
         <token name="T_WHITESPACE">    </token>
-        <token name="T_PUBLIC">public</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_FUNCTION">function</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">error_reporting</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_STRING">int</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$level</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_COLON">:</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">int</token>
-      </line>
-      <line no="145">
-        <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="146">
+      <line no="145">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -1937,51 +2036,51 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="147">
+      <line no="146">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="148"/>
-      <line no="149">
+      <line no="147"/>
+      <line no="148">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="150">
+      <line no="149">
         <token name="T_DOC_COMMENT">     * Set whether a client disconnect should abort script execution (does not affect CLI)</token>
       </line>
-      <line no="151">
+      <line no="150">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="152">
+      <line no="151">
         <token name="T_DOC_COMMENT">     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps</token>
       </line>
-      <line no="153">
+      <line no="152">
         <token name="T_DOC_COMMENT">     * @SuppressWarnings("camelCase")</token>
       </line>
-      <line no="154">
+      <line no="153">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.ignore-user-abort</token>
       </line>
-      <line no="155">
+      <line no="154">
         <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="155">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">ignore_user_abort</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">int</token>
       </line>
       <line no="156">
         <token name="T_WHITESPACE">    </token>
-        <token name="T_PUBLIC">public</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_FUNCTION">function</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">ignore_user_abort</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_COLON">:</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">int</token>
-      </line>
-      <line no="157">
-        <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="158">
+      <line no="157">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -1990,37 +2089,37 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="159">
+      <line no="158">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="160"/>
-      <line no="161">
+      <line no="159"/>
+      <line no="160">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="162">
+      <line no="161">
         <token name="T_DOC_COMMENT">     * Sets the value of a configuration option</token>
       </line>
-      <line no="163">
+      <line no="162">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="164">
+      <line no="163">
         <token name="T_DOC_COMMENT">     * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps</token>
       </line>
-      <line no="165">
+      <line no="164">
         <token name="T_DOC_COMMENT">     * @SuppressWarnings("camelCase")</token>
       </line>
-      <line no="166">
+      <line no="165">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\EnvironmentException</token>
       </line>
-      <line no="167">
+      <line no="166">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.ini-set</token>
       </line>
-      <line no="168">
+      <line no="167">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="169">
+      <line no="168">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -2041,11 +2140,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="170">
+      <line no="169">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="171">
+      <line no="170">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$result</token>
         <token name="T_WHITESPACE"> </token>
@@ -2060,7 +2159,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="172">
+      <line no="171">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -2074,11 +2173,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="173">
+      <line no="172">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreStart</token>
       </line>
-      <line no="174">
+      <line no="173">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -2089,59 +2188,59 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="175">
+      <line no="174">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreEnd</token>
       </line>
-      <line no="176">
+      <line no="175">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="177"/>
-      <line no="178">
+      <line no="176"/>
+      <line no="177">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$result</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="179">
+      <line no="178">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="180"/>
-      <line no="181">
+      <line no="179"/>
+      <line no="180">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="182">
+      <line no="181">
         <token name="T_DOC_COMMENT">     * Disable custom signal handler</token>
       </line>
-      <line no="183">
+      <line no="182">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="184">
+      <line no="183">
         <token name="T_DOC_COMMENT">     * @see https://wiki.php.net/rfc/async_signals</token>
       </line>
-      <line no="185">
+      <line no="184">
         <token name="T_DOC_COMMENT">     * @see https://blog.pascal-martin.fr/post/php71-en-other-new-things/</token>
       </line>
-      <line no="186">
+      <line no="185">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.pcntl-signal</token>
       </line>
-      <line no="187">
+      <line no="186">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="188">
+      <line no="187">
         <token name="T_DOC_COMMENT">     * @return array|null array of trapped signals</token>
       </line>
-      <line no="189">
+      <line no="188">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\EnvironmentException</token>
       </line>
-      <line no="190">
+      <line no="189">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="191">
+      <line no="190">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -2155,21 +2254,21 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_ARRAY">array</token>
       </line>
-      <line no="192">
+      <line no="191">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="193">
+      <line no="192">
         <token name="T_WHITESPACE">        </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="194">
+      <line no="193">
         <token name="T_DOC_COMMENT">         * Process signals</token>
       </line>
-      <line no="195">
+      <line no="194">
         <token name="T_DOC_COMMENT">         */</token>
       </line>
-      <line no="196">
+      <line no="195">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -2182,11 +2281,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="197">
+      <line no="196">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreStart</token>
       </line>
-      <line no="198">
+      <line no="197">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -2197,16 +2296,16 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="199">
+      <line no="198">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreEnd</token>
       </line>
-      <line no="200">
+      <line no="199">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="201"/>
-      <line no="202">
+      <line no="200"/>
+      <line no="201">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$trappedSignals</token>
         <token name="T_WHITESPACE"> </token>
@@ -2217,7 +2316,7 @@
         <token name="T_STRING">trappedSignals</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="203">
+      <line no="202">
         <token name="T_WHITESPACE">        </token>
         <token name="T_FOREACH">foreach</token>
         <token name="T_WHITESPACE"> </token>
@@ -2233,29 +2332,21 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="204">
+      <line no="203">
         <token name="T_WHITESPACE">            </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="205">
+      <line no="204">
         <token name="T_DOC_COMMENT">             * Reset signals to previous/default handler</token>
       </line>
-      <line no="206">
-        <token name="T_DOC_COMMENT">             * @psalm-suppress MixedArgument</token>
-      </line>
-      <line no="207">
+      <line no="205">
         <token name="T_DOC_COMMENT">             */</token>
       </line>
-      <line no="208">
+      <line no="206">
         <token name="T_WHITESPACE">            </token>
-        <token name="T_IF">if</token>
+        <token name="T_VARIABLE">$newHandler</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_EXCLAMATION_MARK">!</token>
-        <token name="T_STRING">pcntl_signal</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_VARIABLE">$signalNumber</token>
-        <token name="T_COMMA">,</token>
+        <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -2267,16 +2358,41 @@
         <token name="T_COALESCE">??</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">SIG_DFL</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="207"/>
+      <line no="208">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="209">
+        <token name="T_DOC_COMMENT">             * @psalm-suppress PossiblyInvalidArgument</token>
+      </line>
+      <line no="210">
+        <token name="T_DOC_COMMENT">             */</token>
+      </line>
+      <line no="211">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_STRING">pcntl_signal</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$signalNumber</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$newHandler</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="209">
+      <line no="212">
         <token name="T_WHITESPACE">                </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreStart</token>
       </line>
-      <line no="210">
+      <line no="213">
         <token name="T_WHITESPACE">                </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -2287,15 +2403,15 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="211">
+      <line no="214">
         <token name="T_WHITESPACE">                </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreEnd</token>
       </line>
-      <line no="212">
+      <line no="215">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="213">
+      <line no="216">
         <token name="T_WHITESPACE">            </token>
         <token name="T_UNSET">unset</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -2308,11 +2424,11 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="214">
+      <line no="217">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="215">
+      <line no="218">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -2324,8 +2440,8 @@
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="216"/>
-      <line no="217">
+      <line no="219"/>
+      <line no="220">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -2338,50 +2454,50 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_LNUMBER">0</token>
       </line>
-      <line no="218">
+      <line no="221">
         <token name="T_WHITESPACE">            </token>
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$trappedSignals</token>
       </line>
-      <line no="219">
+      <line no="222">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COLON">:</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="220">
+      <line no="223">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="221"/>
-      <line no="222">
+      <line no="224"/>
+      <line no="225">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="223">
+      <line no="226">
         <token name="T_DOC_COMMENT">     * Enable custom signal handler</token>
       </line>
-      <line no="224">
+      <line no="227">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="225">
+      <line no="228">
         <token name="T_DOC_COMMENT">     * @see https://wiki.php.net/rfc/async_signals</token>
       </line>
-      <line no="226">
+      <line no="229">
         <token name="T_DOC_COMMENT">     * @see https://blog.pascal-martin.fr/post/php71-en-other-new-things/</token>
       </line>
-      <line no="227">
+      <line no="230">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.pcntl-signal</token>
       </line>
-      <line no="228">
+      <line no="231">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\EnvironmentException</token>
       </line>
-      <line no="229">
+      <line no="232">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="230">
+      <line no="233">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -2394,11 +2510,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="231">
+      <line no="234">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="232">
+      <line no="235">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -2410,8 +2526,8 @@
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="233"/>
-      <line no="234">
+      <line no="236"/>
+      <line no="237">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$signalHandler</token>
         <token name="T_WHITESPACE"> </token>
@@ -2430,7 +2546,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="235">
+      <line no="238">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -2443,13 +2559,13 @@
         <token name="T_VARIABLE">$signalNumber</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="236">
+      <line no="239">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="237"/>
-      <line no="238">
+      <line no="240"/>
+      <line no="241">
         <token name="T_WHITESPACE">        </token>
         <token name="T_FOREACH">foreach</token>
         <token name="T_WHITESPACE"> </token>
@@ -2465,7 +2581,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="239">
+      <line no="242">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$originalNandler</token>
         <token name="T_WHITESPACE"> </token>
@@ -2477,7 +2593,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="240">
+      <line no="243">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -2491,8 +2607,8 @@
         <token name="T_VARIABLE">$originalNandler</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="241"/>
-      <line no="242">
+      <line no="244"/>
+      <line no="245">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -2509,11 +2625,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="243">
+      <line no="246">
         <token name="T_WHITESPACE">                </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreStart</token>
       </line>
-      <line no="244">
+      <line no="247">
         <token name="T_WHITESPACE">                </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -2524,37 +2640,37 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="245">
+      <line no="248">
         <token name="T_WHITESPACE">                </token>
         <token name="T_COMMENT">// @codeCoverageIgnoreEnd</token>
       </line>
-      <line no="246">
+      <line no="249">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="247">
+      <line no="250">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="248">
+      <line no="251">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="249"/>
-      <line no="250">
+      <line no="252"/>
+      <line no="253">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="251">
+      <line no="254">
         <token name="T_DOC_COMMENT">     * Error handler that does nothing and does not chain</token>
       </line>
-      <line no="252">
+      <line no="255">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.set-error-handler</token>
       </line>
-      <line no="253">
+      <line no="256">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="254">
+      <line no="257">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -2567,11 +2683,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_CALLABLE">callable</token>
       </line>
-      <line no="255">
+      <line no="258">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="256">
+      <line no="259">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -2587,26 +2703,26 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="257">
+      <line no="260">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">true</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="258">
+      <line no="261">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="259">
+      <line no="262">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="260">
+      <line no="263">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="261"/>
+      <line no="264"/>
     </source>
   </file>
 </phpunit>

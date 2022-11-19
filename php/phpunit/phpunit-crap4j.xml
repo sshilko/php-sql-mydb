@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-18 21:49:38</timestamp>
+  <timestamp>2022-11-19 01:12:37</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>164</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>437.74</totalCrap>
+    <totalCrap>438.03</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -565,8 +565,8 @@
       <package>sql</package>
       <className>sql\MydbEvent</className>
       <methodName>getListeners</methodName>
-      <methodSignature>getListeners(): SplFixedArray</methodSignature>
-      <fullMethod>getListeners(): SplFixedArray</fullMethod>
+      <methodSignature>getListeners(): array</methodSignature>
+      <fullMethod>getListeners(): array</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -576,8 +576,8 @@
       <package>sql\MydbEvent</package>
       <className>sql\MydbEvent\Internal</className>
       <methodName>getListeners</methodName>
-      <methodSignature>getListeners(): SplFixedArray</methodSignature>
-      <fullMethod>getListeners(): SplFixedArray</fullMethod>
+      <methodSignature>getListeners(): array</methodSignature>
+      <fullMethod>getListeners(): array</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -1623,8 +1623,8 @@
       <methodName>buildWhere</methodName>
       <methodSignature>buildWhere(array $fields, array $negativeFields, array $likeFields): string</methodSignature>
       <fullMethod>buildWhere(array $fields, array $negativeFields, array $likeFields): string</fullMethod>
-      <crap>17</crap>
-      <complexity>17</complexity>
+      <crap>15</crap>
+      <complexity>15</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1645,9 +1645,9 @@
       <methodName>escape</methodName>
       <methodSignature>escape($unescaped, string $quote): string</methodSignature>
       <fullMethod>escape($unescaped, string $quote): string</fullMethod>
-      <crap>15</crap>
-      <complexity>15</complexity>
-      <coverage>100</coverage>
+      <crap>17.29</crap>
+      <complexity>17</complexity>
+      <coverage>90</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
