@@ -57,8 +57,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
     /**
      * Backup of signal handlers
      * Original signal handler, which replaced by custon trap
-     *
-     * @var array
+     * @var array<int, int|resource|string>
      */
     protected array $trappedHandlers = [];
 
@@ -100,10 +99,10 @@ class MydbEnvironment implements MydbEnvironmentInterface
      */
     public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): ?callable
     {
-        /**
-         * @psalm-suppress MixedArgumentTypeCoercion
-         */
-        return set_error_handler($callback ?? $this->getNullErrorHandler(), $error_levels);
+        /** @var callable(int, string, string=, int=, array<array-key, mixed>=):bool|null $newHandler */
+        $newHandler = $callback ?? $this->getNullErrorHandler();
+
+        return set_error_handler($newHandler, $error_levels);
     }
 
     /**
@@ -203,9 +202,13 @@ class MydbEnvironment implements MydbEnvironmentInterface
         foreach ($this->knownSignals as $signalNumber) {
             /**
              * Reset signals to previous/default handler
-             * @psalm-suppress MixedArgument
              */
-            if (!pcntl_signal($signalNumber, $this->trappedHandlers[$signalNumber] ?? SIG_DFL)) {
+            $newHandler = $this->trappedHandlers[$signalNumber] ?? SIG_DFL;
+
+            /**
+             * @psalm-suppress PossiblyInvalidArgument
+             */
+            if (!pcntl_signal($signalNumber, $newHandler)) {
                 // @codeCoverageIgnoreStart
                 throw new EnvironmentException();
                 // @codeCoverageIgnoreEnd

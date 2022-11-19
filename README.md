@@ -120,6 +120,7 @@ please re-use existing solutions that best fit your requirements.
 
 #### Future roadmap
 
+- php8 stringable test coverage for expression
 - Basic events coverage for internal execution flow
 - Library helper for Repository pattern usage
 - Usage examples

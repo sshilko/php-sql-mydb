@@ -235,9 +235,6 @@ class Mydb implements
             $this->onError(new MydbException("Column not of type '" . implode(',', $types) . "'"));
         }
 
-        /**
-         * @psalm-suppress PossiblyFalseOperand
-         */
         $input = substr((string) $result, (int) strpos((string) $result, '(') + 1, -1);
 
         // @codeCoverageIgnoreStart
@@ -252,7 +249,7 @@ class Mydb implements
     }
 
     /**
-     * @param float|int|string|\sql\MydbExpression|null $unescaped
+     * @param float|int|string|\sql\MydbExpressionInterface|null $unescaped
      * @throws \sql\MydbException\ConnectException
      * @throws \sql\MydbException
      * @SuppressWarnings(PHPMD.NPathComplexity)
@@ -480,7 +477,7 @@ class Mydb implements
     }
 
     /**
-     * @param array<string, (float|int|string|\sql\MydbExpression|null)> $update
+     * @param array<string, (float|int|string|\sql\MydbExpressionInterface|null)> $update
      * @throws \sql\MydbException
      */
     public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool
@@ -511,6 +508,8 @@ class Mydb implements
     /**
      * @throws \sql\MydbException\ConnectException
      * @throws \sql\MydbException
+     * @param array<array-key, array<(float|int|string|\sql\MydbExpressionInterface|null)>> $data
+     * @param array<string> $cols
      */
     public function insertMany(
         array $data,
@@ -525,7 +524,7 @@ class Mydb implements
 
     /**
      * @throws \sql\MydbException
-     * @param array<string, (float|int|\sql\MydbExpression|string|null)> $data
+     * @param array<string, (float|int|\sql\MydbExpressionInterface|string|null)> $data
      */
     public function replaceOne(array $data, string $table): ?string
     {
@@ -536,7 +535,7 @@ class Mydb implements
 
     /**
      * @throws \sql\MydbException
-     * @param array<string, (float|int|\sql\MydbExpression|string|null)> $data
+     * @param array<string, (float|int|\sql\MydbExpressionInterface|string|null)> $data
      */
     public function insertOne(array $data, string $table): ?string
     {

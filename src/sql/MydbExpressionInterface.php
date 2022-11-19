@@ -13,21 +13,17 @@
 
 declare(strict_types = 1);
 
-namespace sql\MydbInterface;
+namespace sql;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
- * @category interfaces
  * @see https://github.com/sshilko/php-sql-mydb
- * @phpcs:disable SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedName
  */
-interface EncoderInterface
+interface MydbExpressionInterface
 {
     /**
-     * Escape value for the SQL query
-     *
-     * @param float|int|string|\sql\MydbExpressionInterface|null $unescaped
+     * As of PHP8.0 this is Stringable interface
      */
-    public function escape($unescaped, string $quote = "'"): string;
+    public function __toString(): string;
 }

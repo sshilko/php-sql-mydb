@@ -26,7 +26,9 @@ use function is_array;
 use function is_float;
 use function is_int;
 use function is_null;
+use function is_object;
 use function is_string;
+use function is_subclass_of;
 use function key;
 use function preg_match;
 use function sprintf;
@@ -76,7 +78,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
     }
 
     /**
-     * @param array<string, (float|int|\sql\MydbExpression|string|null)> $data
+     * @param array<string, (float|int|\sql\MydbExpressionInterface|string|null)> $data
      * @throws \sql\MydbException\QueryBuilderException
      * @psalm-return string
      */
@@ -112,7 +114,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
         $sql = 'UPDATE ' . $table;
         /**
          * @phpcs:disable Generic.Files.LineLength.TooLong
-         * @var array<array-key, array<array-key, array<array-key, (float|int|string|\sql\MydbExpression|null)>>> $columnSetWhere
+         * @var array<array-key, array<array-key, array<array-key, (float|int|string|\sql\MydbExpressionInterface|null)>>> $columnSetWhere
          */
         foreach ($columnSetWhere as $column => $updateValuesMap) {
             /**
@@ -158,7 +160,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
 
     /**
      * @throws \sql\MydbException\QueryBuilderException
-     * @param array<string, (float|int|string|\sql\MydbExpression|null)> $update
+     * @param array<string, (float|int|string|\sql\MydbExpressionInterface|null)> $update
      */
     public function buildUpdateWhere(
         array $update,
@@ -220,6 +222,9 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
 
         $where = [];
 
+        /**
+         * @psalm-var float|int|string|array|\sql\MydbExpressionInterface|null $value
+         */
         foreach ($fields as $field => $value) {
             /**
              * @psalm-suppress InvalidOperand
@@ -235,26 +240,22 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
             if (null === $value) {
                 $queryPart .= ' IS ' . ($isNegative ? 'NOT ' : '') . 'NULL';
             } elseif (is_array($value)) {
-                if (1 === count($value)) {
-                    $qvalue = implode('', $value);
-                    $queryPart .= ($isNegative ? '!' : '') . '=';
-                    $queryPartEscaped = $this->escape($qvalue);
-                    $queryPart .= $queryPartEscaped;
-                } else {
-                    $queryPart .= ($isNegative ? ' NOT' : '') . " IN (";
-                    $inVals = [];
+                $queryPart .= ($isNegative ? ' NOT' : '') . " IN (";
+                $inVals = [];
 
-                    foreach ($value as $val) {
-                        if (null === $val) {
-                            $inNull = true;
-                        } else {
-                            $inValEscaped = $this->escape($val);
-                            $inVals[] = $inValEscaped;
-                        }
+                /**
+                 * @psalm-var float|int|string|\sql\MydbExpressionInterface|null $val
+                 */
+                foreach ($value as $val) {
+                    if (null === $val) {
+                        $inNull = true;
+                    } else {
+                        $inValEscaped = $this->escape($val);
+                        $inVals[] = $inValEscaped;
                     }
-
-                    $queryPart .= implode(',', $inVals) . ')';
                 }
+
+                $queryPart .= implode(',', $inVals) . ')';
             } else {
                 $equality = ($isNegative ? '!' : '') . "=";
 
@@ -289,6 +290,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
     /**
      * @throws \sql\MydbException\QueryBuilderException
      * @see https://dev.mysql.com/doc/refman/8.0/en/insert-on-duplicate.html
+     * @param array<string> $cols
      */
     public function buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string
     {
@@ -298,13 +300,18 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
 
         /**
          * @phpcs:disable SlevomatCodingStandard.Functions.DisallowArrowFunction
-         * @psalm-suppress MissingClosureParamType
          */
-        $mapper = function ($item): string {
+        $mapper = function (array $item): string {
             $escapedArgs = implode(
                 ', ',
+                /**
+                 * @psalm-var float|int|string|\sql\MydbExpressionInterface|null $input
+                 */
                 array_map(function ($input) {
-                        /** @phan-suppress-next-line PhanThrowTypeAbsentForCall */
+                        /**
+                         * @psalm-var float|int|string|\sql\MydbExpressionInterface|null $input
+                         * @phan-suppress-next-line PhanThrowTypeAbsentForCall
+                         */
                         return $this->escape($input);
                 }, $item),
             );
@@ -325,7 +332,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
     }
 
     /**
-     * @param float|int|string|\sql\MydbExpression|null $unescaped
+     * @param float|int|string|\sql\MydbExpressionInterface|null $unescaped
      * @SuppressWarnings(PHPMD.NPathComplexity)
      * @throws \sql\MydbException\QueryBuilderException
      * @todo reduce NPathComplexity
@@ -350,21 +357,35 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
             }
         }
 
-        if ($unescaped instanceof MydbExpression) {
-            return (string) $unescaped;
+        if (is_object($unescaped)) {
+            /**
+             * PHP <=7.4
+             */
+            if ($unescaped instanceof MydbExpressionInterface) {
+                return (string) $unescaped;
+            }
+
+            /**
+             * PHP >=8.0
+             * @todo test coverage for php-8 specific
+             * @psalm-suppress ArgumentTypeCoercion
+             */
+            if (is_subclass_of($unescaped, 'Stringable')) {
+                return (string) $unescaped;
+            }
         }
 
         if (is_null($unescaped)) {
             return '' !== $quote ? $quote . '' . $quote : '';
         }
 
-        if (preg_match('/^(\w)*$/', $unescaped) || preg_match('/^(\w\s)*$/', $unescaped)) {
-            return '' !== $quote ? $quote . $unescaped . $quote : $unescaped;
+        if (preg_match('/^(\w)*$/', (string) $unescaped) || preg_match('/^(\w\s)*$/', (string) $unescaped)) {
+            return '' !== $quote ? $quote . ((string) $unescaped) . $quote : (string) $unescaped;
         }
 
-        $result = $this->mysqli->realEscapeString($unescaped);
+        $result = $this->mysqli->realEscapeString((string) $unescaped);
         if (null === $result) {
-            throw new QueryBuilderException((new QueryBuilderEscapeException($unescaped))->getMessage());
+            throw new QueryBuilderException((new QueryBuilderEscapeException((string) $unescaped))->getMessage());
         }
 
         return '' !== $quote ? $quote . $result . $quote : $result;
