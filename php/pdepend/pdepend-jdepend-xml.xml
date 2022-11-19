@@ -3,14 +3,14 @@
   <Packages>
     <Package name="sql">
       <Stats>
-        <TotalClasses>21</TotalClasses>
+        <TotalClasses>22</TotalClasses>
         <ConcreteClasses>10</ConcreteClasses>
-        <AbstractClasses>11</AbstractClasses>
+        <AbstractClasses>12</AbstractClasses>
         <Ca>3</Ca>
         <Ce>6</Ce>
-        <A>0.52380952380952</A>
+        <A>0.54545454545455</A>
         <I>0.66666666666667</I>
-        <D>0.19047619047619</D>
+        <D>0.21212121212121</D>
       </Stats>
       <ConcreteClasses>
         <Class sourceFile="/app/src/sql/Mydb.php">Mydb</Class>
@@ -30,6 +30,7 @@
         <Class sourceFile="/app/src/sql/MydbEvent.php">MydbEvent</Class>
         <Class sourceFile="/app/src/sql/MydbEventInterface.php">MydbEventInterface</Class>
         <Class sourceFile="/app/src/sql/MydbEventMetadataInterface.php">MydbEventMetadataInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbExpressionInterface.php">MydbExpressionInterface</Class>
         <Class sourceFile="/app/src/sql/MydbInterface.php">MydbInterface</Class>
         <Class sourceFile="/app/src/sql/MydbListener.php">MydbListener</Class>
         <Class sourceFile="/app/src/sql/MydbListenerInterface.php">MydbListenerInterface</Class>
@@ -57,7 +58,7 @@
         <ConcreteClasses>1</ConcreteClasses>
         <AbstractClasses>0</AbstractClasses>
         <Ca>0</Ca>
-        <Ce>3</Ce>
+        <Ce>2</Ce>
         <A>0</A>
         <I>1</I>
         <D>0</D>
@@ -67,7 +68,6 @@
       </ConcreteClasses>
       <AbstractClasses/>
       <DependsUpon>
-        <Package></Package>
         <Package>sql</Package>
         <Package>sql\MydbListener</Package>
       </DependsUpon>

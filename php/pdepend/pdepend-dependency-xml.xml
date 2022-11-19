@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies generated="2022-11-18T21:48:38" pdepend="@package_version@">
+<dependencies generated="2022-11-19T01:11:36" pdepend="@package_version@">
   <package name="sql">
     <class name="Mydb">
       <efferent>
@@ -85,7 +85,6 @@
         <type namespace="sql" name="MydbEventMetadataInterface"/>
         <type namespace="sql" name="MydbListenerInterface"/>
         <type namespace="sql\MydbException" name="EventException"/>
-        <type namespace="" name="SplFixedArray"/>
       </efferent>
       <afferent>
         <type namespace="sql\MydbEvent" name="Internal"/>
@@ -137,12 +136,20 @@
       <file name="/app/src/sql/MydbException.php"/>
     </class>
     <class name="MydbExpression">
-      <efferent/>
-      <afferent>
-        <type namespace="sql" name="MydbQueryBuilder"/>
-      </afferent>
+      <efferent>
+        <type namespace="sql" name="MydbExpressionInterface"/>
+      </efferent>
+      <afferent/>
       <file name="/app/src/sql/MydbExpression.php"/>
     </class>
+    <interface name="MydbExpressionInterface">
+      <efferent/>
+      <afferent>
+        <type namespace="sql" name="MydbExpression"/>
+        <type namespace="sql" name="MydbQueryBuilder"/>
+      </afferent>
+      <file name="/app/src/sql/MydbExpressionInterface.php"/>
+    </interface>
     <interface name="MydbInterface">
       <efferent/>
       <afferent>
@@ -235,7 +242,7 @@
         <type namespace="sql" name="MydbQueryBuilderInterface"/>
         <type namespace="sql\MydbMysqli" name="MydbMysqliEscapeStringInterface"/>
         <type namespace="sql\MydbException" name="QueryBuilderException"/>
-        <type namespace="sql" name="MydbExpression"/>
+        <type namespace="sql" name="MydbExpressionInterface"/>
         <type namespace="sql\MydbException" name="QueryBuilderEscapeException"/>
       </efferent>
       <afferent>
@@ -269,7 +276,6 @@
     <class name="Internal">
       <efferent>
         <type namespace="sql" name="MydbEvent"/>
-        <type namespace="" name="SplFixedArray"/>
         <type namespace="sql\MydbListener" name="InternalListener"/>
       </efferent>
       <afferent/>
