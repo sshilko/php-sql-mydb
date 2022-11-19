@@ -1,1 +1,0 @@
-/home/runner/work/php-sql-mydb/php-sql-mydb/src/sql/Mydb.php:547:50:warning - MissingParamType: Parameter $isolationLevel has no provided type
