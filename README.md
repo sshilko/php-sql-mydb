@@ -106,6 +106,7 @@ This library is **not** intending to become a framework, to *keep focus* and min
 - [Object-relational mapping](https://en.wikipedia.org/wiki/Object–relational_mapping), ORM
 - [Active record](https://en.wikipedia.org/wiki/Active_record_pattern) pattern
 - [Repository](https://symfony.com/doc/current/doctrine.html#querying-for-objects-the-repository) pattern
+- Import and export of data
 
 please re-use existing solutions that best fit your requirements.
 
@@ -120,6 +121,7 @@ please re-use existing solutions that best fit your requirements.
 
 #### Future roadmap
 
+- MariaDB compatibility
 - Library helper for Repository pattern usage
 - Usage examples
 - PHPUnit coverage for command/query raw SQL via events system

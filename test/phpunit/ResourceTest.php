@@ -29,7 +29,7 @@ use function random_int;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class ResourceTest extends includes\BaseTestCase
+final class ResourceTest extends includes\DatabaseTestCase
 {
     public function testOpen(): void
     {

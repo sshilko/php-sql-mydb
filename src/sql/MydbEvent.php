@@ -23,10 +23,7 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
     /**
      * @psalm-return array<array-key, mixed>|null
      */
-    public function getEventMetadata(): ?array
-    {
-        return null;
-    }
+    abstract public function getEventMetadata(): ?array;
 
     /**
      * @throws \sql\MydbException\EventException
@@ -47,8 +44,5 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
     /**
      * @return array<\sql\MydbListenerInterface>
      */
-    protected function getListeners(): array
-    {
-        return [];
-    }
+    abstract protected function getListeners(): array;
 }

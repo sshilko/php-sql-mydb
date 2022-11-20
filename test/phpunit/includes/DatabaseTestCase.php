@@ -33,7 +33,7 @@ use function count;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class BaseTestCase extends TestCase
+class DatabaseTestCase extends TestCase
 {
     /**
      * @psalm-suppress UndefinedConstant

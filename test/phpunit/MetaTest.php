@@ -27,7 +27,7 @@ use function str_replace;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class MetaTest extends includes\BaseTestCase
+final class MetaTest extends includes\DatabaseTestCase
 {
     public function testOpen(): void
     {
@@ -49,8 +49,22 @@ final class MetaTest extends includes\BaseTestCase
     public function testPrimaryKey(): void
     {
         $db = $this->getDefaultDb();
-        $actual = $db->getPrimaryKey('myusers');
-        self::assertSame('id', $actual);
+        $actual = $db->getPrimaryKeys('myusers');
+        self::assertSame(['id'], $actual);
+    }
+
+    public function testPrimaryKeyNotFound(): void
+    {
+        $db = $this->getDefaultDb();
+        $actual = $db->getPrimaryKeys('mynames');
+        self::assertNull($actual);
+    }
+
+    public function testPrimaryKeyComposite(): void
+    {
+        $db = $this->getDefaultDb();
+        $actual = $db->getPrimaryKeys('mycitynames');
+        self::assertSame(['city', 'name'], $actual);
     }
 
     public function testEnum(): void
@@ -533,8 +547,7 @@ ENDUTF8;
             'a' => 'a',
             '1' => '1',
             '1.1' => '1.1',
-            1.10231 => '1.10231',
-            1 => '1',
+            2 => '2',
             122 => '122',
             123456789 => '123456789',
             '\a' => '\\\a',
@@ -617,7 +630,7 @@ ENDUTF8;
                     ) ENGINE=InnoDB"
         );
 
-        $pk = $db->getPrimaryKey('myusers_nopk');
+        $pk = $db->getPrimaryKeys('myusers_nopk');
         self::assertNull($pk);
     }
 
@@ -632,6 +645,6 @@ ENDUTF8;
         $db = $this->getDefaultDb($mysqli);
         self::assertTrue($db->open());
 
-        self::assertNull($db->getPrimaryKey('randomtablename'));
+        self::assertNull($db->getPrimaryKeys('randomtablename'));
     }
 }

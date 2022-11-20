@@ -268,9 +268,9 @@ class Mydb implements
     /**
      * @throws \sql\MydbException
      * @throws \sql\MydbException\ConnectException
-     * @todo refactor to composite keys, composite primary-keys, unique keys etc. multiple-values
+     * @return string[]
      */
-    public function getPrimaryKey(string $table): ?string
+    public function getPrimaryKeys(string $table): ?array
     {
         $result = $this->query($this->queryBuilder->showKeys($table));
 
@@ -278,19 +278,14 @@ class Mydb implements
             return null;
         }
 
+        $keys = [];
         foreach ($result as $row) {
-            if (!isset($row['Key_name'])) {
-                continue;
-            }
-
-            if ('PRIMARY' === $row['Key_name']) {
-                return isset($row['Column_name'])
-                    ? (string) $row['Column_name']
-                    : null;
+            if ('PRIMARY' === $row['Key_name'] && isset($row['Column_name'])) {
+                $keys[] = (string) $row['Column_name'];
             }
         }
 
-        return null;
+        return [] !== $keys ? $keys : null;
     }
 
     /**

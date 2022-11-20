@@ -27,7 +27,7 @@ use function time;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class AsyncTest extends includes\BaseTestCase
+final class AsyncTest extends includes\DatabaseTestCase
 {
     /**
      * @throws \phpunit\MydbException

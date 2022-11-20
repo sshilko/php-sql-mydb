@@ -30,7 +30,7 @@ use function str_replace;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class TransactionsTest extends includes\BaseTestCase
+final class TransactionsTest extends includes\DatabaseTestCase
 {
     /**
      * @throws \phpunit\MydbException
