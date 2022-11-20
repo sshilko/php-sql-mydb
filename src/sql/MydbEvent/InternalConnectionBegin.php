@@ -15,26 +15,13 @@ declare(strict_types = 1);
 
 namespace sql\MydbEvent;
 
-use sql\MydbEvent;
-use sql\MydbListener\InternalListener;
-
-class InternalEvent extends MydbEvent
+class InternalConnectionBegin extends InternalEvent
 {
-
-    /**
-     * @psalm-var array<array-key, mixed>|null
-     */
-    protected ?array $data = null;
-
-    public function getEventMetadata(): ?array
+    public function __construct(string $host, string $dbname)
     {
-        return $this->data;
-    }
-
-    protected function getListeners(): array
-    {
-        return [
-            new InternalListener(),
+        $this->data = [
+            'host' => $host,
+            'dbname' => $dbname,
         ];
     }
 }

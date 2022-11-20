@@ -65,11 +65,12 @@ x-mysql: &mysql
     MYSQL_USER: test
     MYSQL_PASSWORD: pass
     MYSQL_ROOT_PASSWORD: root
+    MYSQL_INITDB_SKIP_TZINFO: 1
   sysctls:
     net.core.somaxconn: 1024
-  volumes:
-    - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
-    - /tmp/dbdata:/var/lib/mysql/
+#  volumes:
+#    - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
+#    - /tmp/dbdata:/var/lib/mysql/
   ulimits:
     nproc: 65535
     nofile:

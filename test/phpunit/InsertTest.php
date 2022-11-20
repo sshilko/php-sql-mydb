@@ -250,6 +250,7 @@ final class InsertTest extends includes\BaseTestCase
             ['id' => '3', 'cost' => '0.30'],
         ];
         self::assertSame($expected, $actual);
+
         $db->insertOne(['id' => 95, 'cost' => 3.21], 'mydecimals');
         $db->insertOne(['id' => 96, 'cost' => 3.2], 'mydecimals');
         $db->insertOne(['id' => 97, 'cost' => '3'], 'mydecimals');

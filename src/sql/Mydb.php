@@ -196,6 +196,7 @@ class Mydb implements
             throw new ConnectException();
         }
 
+
         $result = $this->sendClientRequest($query);
 
         if (false === $result) {
@@ -559,13 +560,16 @@ class Mydb implements
     /**
      * @throws \sql\MydbException\EnvironmentException
      * @throws \sql\MydbException\TerminationSignalException
+     * @throws \sql\MydbException\EventException
      */
     protected function sendClientRequest(string $query): bool
     {
         $this->environment->startSignalsTrap();
         $this->environment->set_error_handler();
 
+        (new MydbEvent\InternalQueryBegin($query))->notify();
         $result = $this->mysqli->realQuery($query);
+        (new MydbEvent\InternalQueryEnd($query, $result))->notify();
 
         $this->environment->restore_error_handler();
         if ($this->environment->endSignalsTrap()) {
@@ -625,6 +629,7 @@ class Mydb implements
      * @throws \sql\MydbException\DisconnectException
      * @throws \sql\MydbException\TransactionAutocommitException
      * @throws \sql\MydbException\EnvironmentException
+     * @throws \sql\MydbException\EventException
      * @throws \sql\MydbException
      * @SuppressWarnings(PHPMD.NPathComplexity)
      * @todo reduce NPathComplexity
@@ -642,15 +647,20 @@ class Mydb implements
         if ($init0 && $init1) {
             $reportingLevel = $this->environment->error_reporting($this->options->getErrorReporting());
 
+            $host = ($this->options->isPersistent() ? 'p:' : '') . $this->credentials->getHost();
+            $dbname = $this->credentials->getDbname();
+
+            (new MydbEvent\InternalConnectionBegin($host, $dbname))->notify();
             $connected = $this->mysqli->realConnect(
-                ($this->options->isPersistent() ? 'p:' : '') . $this->credentials->getHost(),
+                $host,
                 $this->credentials->getUsername(),
                 $this->credentials->getPasswd(),
-                $this->credentials->getDbname(),
+                $dbname,
                 $this->credentials->getPort(),
                 $this->credentials->getSocket(),
                 $this->credentials->getFlags()
             );
+            (new MydbEvent\InternalConnectionEnd($host, $dbname, $connected))->notify();
 
             $this->environment->error_reporting($reportingLevel);
         }
