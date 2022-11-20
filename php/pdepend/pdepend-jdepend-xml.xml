@@ -7,10 +7,10 @@
         <ConcreteClasses>10</ConcreteClasses>
         <AbstractClasses>12</AbstractClasses>
         <Ca>3</Ca>
-        <Ce>6</Ce>
+        <Ce>7</Ce>
         <A>0.54545454545455</A>
-        <I>0.66666666666667</I>
-        <D>0.21212121212121</D>
+        <I>0.7</I>
+        <D>0.24545454545455</D>
       </Stats>
       <ConcreteClasses>
         <Class sourceFile="/app/src/sql/Mydb.php">Mydb</Class>
@@ -41,6 +41,7 @@
       <DependsUpon>
         <Package></Package>
         <Package>Psr\Log</Package>
+        <Package>sql\MydbEvent</Package>
         <Package>sql\MydbException</Package>
         <Package>sql\MydbInterface</Package>
         <Package>sql\MydbListener</Package>
@@ -54,24 +55,30 @@
     </Package>
     <Package name="sql\MydbEvent">
       <Stats>
-        <TotalClasses>1</TotalClasses>
-        <ConcreteClasses>1</ConcreteClasses>
+        <TotalClasses>5</TotalClasses>
+        <ConcreteClasses>5</ConcreteClasses>
         <AbstractClasses>0</AbstractClasses>
-        <Ca>0</Ca>
+        <Ca>1</Ca>
         <Ce>2</Ce>
         <A>0</A>
-        <I>1</I>
-        <D>0</D>
+        <I>0.66666666666667</I>
+        <D>0.33333333333333</D>
       </Stats>
       <ConcreteClasses>
-        <Class sourceFile="/app/src/sql/MydbEvent/InternalEvent.php">Internal</Class>
+        <Class sourceFile="/app/src/sql/MydbEvent/InternalConnectionBegin.php">InternalConnectionBegin</Class>
+        <Class sourceFile="/app/src/sql/MydbEvent/InternalConnectionEnd.php">InternalConnectionEnd</Class>
+        <Class sourceFile="/app/src/sql/MydbEvent/InternalEvent.php">InternalEvent</Class>
+        <Class sourceFile="/app/src/sql/MydbEvent/InternalQueryBegin.php">InternalQueryBegin</Class>
+        <Class sourceFile="/app/src/sql/MydbEvent/InternalQueryEnd.php">InternalQueryEnd</Class>
       </ConcreteClasses>
       <AbstractClasses/>
       <DependsUpon>
         <Package>sql</Package>
         <Package>sql\MydbListener</Package>
       </DependsUpon>
-      <UsedBy/>
+      <UsedBy>
+        <Package>sql</Package>
+      </UsedBy>
     </Package>
     <Package name="sql\MydbException">
       <Stats>
@@ -195,24 +202,24 @@
   <Cycles>
     <Package Name="sql">
       <Package>sql</Package>
-      <Package>sql\MydbException</Package>
+      <Package>sql\MydbEvent</Package>
       <Package>sql</Package>
     </Package>
     <Package Name="sql\MydbEvent">
       <Package>sql\MydbEvent</Package>
       <Package>sql</Package>
-      <Package>sql\MydbException</Package>
-      <Package>sql</Package>
+      <Package>sql\MydbEvent</Package>
     </Package>
     <Package Name="sql\MydbException">
       <Package>sql\MydbException</Package>
       <Package>sql</Package>
-      <Package>sql\MydbException</Package>
+      <Package>sql\MydbEvent</Package>
+      <Package>sql</Package>
     </Package>
     <Package Name="sql\MydbListener">
       <Package>sql\MydbListener</Package>
       <Package>sql</Package>
-      <Package>sql\MydbException</Package>
+      <Package>sql\MydbEvent</Package>
       <Package>sql</Package>
     </Package>
   </Cycles>
