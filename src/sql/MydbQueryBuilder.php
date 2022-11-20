@@ -369,7 +369,6 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
 
             /**
              * PHP >=8.0
-             * @todo test coverage for php-8 specific
              * @psalm-suppress ArgumentTypeCoercion
              */
             if (is_subclass_of($unescaped, 'Stringable')) {

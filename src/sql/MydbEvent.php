@@ -21,23 +21,18 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
 {
 
     /**
-     * @psalm-var array<array-key, string>|null
+     * @psalm-return array<array-key, mixed>|null
      */
-    private ?array $eventMetadata = null;
-
     public function getEventMetadata(): ?array
     {
-        return $this->eventMetadata;
+        return null;
     }
 
     /**
      * @throws \sql\MydbException\EventException
-     * @psalm-param array<array-key, string>|null $metadata
      */
-    public function notify(?array $metadata = null): void
+    public function notify(): void
     {
-        $this->eventMetadata = $metadata;
-
         foreach ($this->getListeners() as $listenerInstance) {
             if ($listenerInstance instanceof MydbListenerInterface) {
                 if (false === $listenerInstance->observe($this)) {

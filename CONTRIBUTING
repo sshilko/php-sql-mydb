@@ -8,11 +8,10 @@ CI steps [definitions](.github)
 - Install [PHP](https://www.php.net/) & [Composer](https://getcomposer.org/) & [Docker Compose](https://docs.docker.com/compose/install/)
 - Install [PHPStorm IDE](https://www.jetbrains.com/phpstorm/) with [PHP Inspections](https://github.com/kalessil/phpinspectionsea) or [VSCode IDE](https://code.visualstudio.com/)
 
-docker-compose build
 docker-compose up -d
 docker-compose exec -T app.php composer install
 
-Different PHP version in containers
+Different PHP language runtime versions are available in named containers
 - PHP7.4 - *app.php*
 - PHP8.0 - *app.php80*
 - PHP8.1 - *app.php81*
@@ -33,6 +32,9 @@ docker-compose exec app.php composer app-phpunit
 docker-compose exec app.php composer app-phpunit -- --filter SelectTest
 docker-compose exec app.php composer app-phpunit-mysql57 -- --filter escape
 docker-compose exec app.php composer app-phpunit-mysql80
+
+docker-compose exec mysql mysql -uroot -proot mydb
+docker-compose exec mysql80 mysql -uroot -proot mydb
 
 ##### Run PHP Code Beautifier & PHP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (all files)
 

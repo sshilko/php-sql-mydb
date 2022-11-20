@@ -22,8 +22,10 @@ use sql\MydbExpression;
 use sql\MydbMysqli\MydbMysqliEscapeStringInterface;
 use sql\MydbQueryBuilder;
 use sql\MydbQueryBuilderInterface;
+use Stringable;
 use function array_merge;
 use function str_replace;
+use const PHP_MAJOR_VERSION;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -260,7 +262,27 @@ final class QueryBuilderTest extends TestCase
                 'negativeFields' => [],
                 'likeFields' => [],
             ],
+            'expression' => [
+                'sql' => "WHERE id=NOW()",
+                'fields' => ['id' => new MydbExpression('NOW()')],
+                'negativeFields' => [],
+                'likeFields' => [],
+            ],
         ];
+
+        if (PHP_MAJOR_VERSION > 7) {
+            $simples['expression8'] = [
+                'sql' => "WHERE id=HELLOWORLD()",
+                'fields' => ['id' => new class() implements Stringable{
+                    public function __toString(): string
+                    {
+                        return 'HELLOWORLD()';
+                    }
+                }],
+                'negativeFields' => [],
+                'likeFields' => [],
+            ];
+        }
 
         $nullTests = [
             'simple array count >1' => [
