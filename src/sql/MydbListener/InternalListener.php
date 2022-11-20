@@ -17,6 +17,8 @@ namespace sql\MydbListener;
 
 use sql\MydbEventMetadataInterface;
 use sql\MydbListener;
+use function is_array;
+use function is_null;
 
 class InternalListener extends MydbListener
 {
