@@ -1623,7 +1623,7 @@
         <token name="T_DOC_COMMENT">     * Original signal handler, which replaced by custon trap</token>
       </line>
       <line no="60">
-        <token name="T_DOC_COMMENT">     * @var array&lt;int, int|resource|string&gt;</token>
+        <token name="T_DOC_COMMENT">     * @psalm-var array&lt;int, int|resource|string&gt;</token>
       </line>
       <line no="61">
         <token name="T_DOC_COMMENT">     */</token>

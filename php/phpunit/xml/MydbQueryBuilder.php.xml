@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbQueryBuilder.php" path="/">
     <totals>
-      <lines total="394" comments="111" code="283" executable="114" executed="112" percent="98.25"/>
+      <lines total="396" comments="113" code="283" executable="114" executed="112" percent="98.25"/>
       <methods count="10" tested="9" percent="90.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="0" percent="0.00"/>
@@ -18,8 +18,8 @@
       <method name="buildUpdateWhere" signature="buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string" start="165" end="195" crap="6" executable="12" executed="12" coverage="100"/>
       <method name="buildDeleteWhere" signature="buildDeleteWhere(string $table, array $fields, array $negativeFields): ?string" start="200" end="210" crap="4" executable="4" executed="4" coverage="100"/>
       <method name="buildWhere" signature="buildWhere(array $fields, array $negativeFields, array $likeFields): string" start="217" end="288" crap="15" executable="32" executed="32" coverage="100"/>
-      <method name="buildInsertMany" signature="buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string" start="295" end="332" crap="7" executable="13" executed="13" coverage="100"/>
-      <method name="escape" signature="escape($unescaped, string $quote): string" start="341" end="392" crap="17.29" executable="20" executed="18" coverage="90"/>
+      <method name="buildInsertMany" signature="buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string" start="295" end="334" crap="7" executable="13" executed="13" coverage="100"/>
+      <method name="escape" signature="escape($unescaped, string $quote): string" start="343" end="394" crap="17.29" executable="20" executed="18" coverage="90"/>
     </class>
     <coverage>
       <line nr="53">
@@ -1115,40 +1115,40 @@
       <line nr="298">
         <covered by="phpunit\QueryBuilderTest::testBuildInsertManyException"/>
       </line>
-      <line nr="304">
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-      </line>
       <line nr="305">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
-      <line nr="310">
+      <line nr="306">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
-      <line nr="315">
+      <line nr="312">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
-      <line nr="319">
+      <line nr="317">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
-      <line nr="322">
+      <line nr="321">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
       <line nr="324">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
-      <line nr="325">
+      <line nr="326">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
       <line nr="327">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
-      <line nr="328">
+      <line nr="329">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
-      <line nr="331">
+      <line nr="330">
         <covered by="phpunit\InsertTest::testInsertMany"/>
       </line>
-      <line nr="343">
+      <line nr="333">
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+      </line>
+      <line nr="345">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
@@ -1207,7 +1207,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="344">
+      <line nr="346">
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple float&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple float&quot;"/>
@@ -1217,7 +1217,7 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
       </line>
-      <line nr="347">
+      <line nr="349">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
@@ -1272,7 +1272,7 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="348">
+      <line nr="350">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
@@ -1303,68 +1303,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #7"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
-      <line nr="354">
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
-        <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
-        <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple int&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple float&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;expression&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;raw null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string caps null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string lowercase null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x even&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple int&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple float&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;raw null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string caps null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string lowercase null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x even&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testEscape"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative null array count &gt;1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count 1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count 1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #0"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #3"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
-      <line nr="355">
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x even&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x even&quot;"/>
       </line>
       <line nr="356">
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;"/>
-      </line>
-      <line nr="360">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
@@ -1414,27 +1354,17 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="364">
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;expression&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      <line nr="357">
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x even&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x even&quot;"/>
       </line>
-      <line nr="365">
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;expression&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      <line nr="358">
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;"/>
       </line>
-      <line nr="378">
+      <line nr="362">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
@@ -1484,12 +1414,27 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="379">
+      <line nr="366">
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;raw null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;raw null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="382">
+      <line nr="367">
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="380">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
@@ -1539,7 +1484,62 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="383">
+      <line nr="381">
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;raw null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;raw null&quot;"/>
+      </line>
+      <line nr="384">
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
+        <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple int&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple float&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;raw null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string caps null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string lowercase null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x even&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple int&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple float&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;raw null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string caps null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string lowercase null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x even&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testEscape"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative null array count &gt;1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count 1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count 1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #0"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #3"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="385">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
@@ -1587,33 +1587,33 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #3"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
-      <line nr="386">
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
-        <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testEscape"/>
-      </line>
-      <line nr="387">
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
-        <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testEscape"/>
       </line>
       <line nr="388">
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
+        <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testEscape"/>
       </line>
-      <line nr="391">
+      <line nr="389">
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
+        <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testEscape"/>
+      </line>
+      <line nr="390">
+        <covered by="phpunit\QueryBuilderTest::testEscape"/>
+      </line>
+      <line nr="393">
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
@@ -3969,9 +3969,12 @@
         <token name="T_DOC_COMMENT">         * @phpcs:disable SlevomatCodingStandard.Functions.DisallowArrowFunction</token>
       </line>
       <line no="303">
-        <token name="T_DOC_COMMENT">         */</token>
+        <token name="T_DOC_COMMENT">         * @throws \sql\MydbException\QueryBuilderException</token>
       </line>
       <line no="304">
+        <token name="T_DOC_COMMENT">         */</token>
+      </line>
+      <line no="305">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$mapper</token>
         <token name="T_WHITESPACE"> </token>
@@ -3990,7 +3993,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="305">
+      <line no="306">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$escapedArgs</token>
         <token name="T_WHITESPACE"> </token>
@@ -3999,22 +4002,25 @@
         <token name="T_STRING">implode</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="306">
+      <line no="307">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">', '</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="307">
+      <line no="308">
         <token name="T_WHITESPACE">                </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="308">
+      <line no="309">
         <token name="T_DOC_COMMENT">                 * @psalm-var float|int|string|\sql\MydbExpressionInterface|null $input</token>
       </line>
-      <line no="309">
+      <line no="310">
+        <token name="T_DOC_COMMENT">                 * @throws \sql\MydbException\QueryBuilderException</token>
+      </line>
+      <line no="311">
         <token name="T_DOC_COMMENT">                 */</token>
       </line>
-      <line no="310">
+      <line no="312">
         <token name="T_WHITESPACE">                </token>
         <token name="T_STRING">array_map</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -4026,20 +4032,20 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="311">
+      <line no="313">
         <token name="T_WHITESPACE">                        </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="312">
+      <line no="314">
         <token name="T_DOC_COMMENT">                         * @psalm-var float|int|string|\sql\MydbExpressionInterface|null $input</token>
       </line>
-      <line no="313">
+      <line no="315">
         <token name="T_DOC_COMMENT">                         * @phan-suppress-next-line PhanThrowTypeAbsentForCall</token>
       </line>
-      <line no="314">
+      <line no="316">
         <token name="T_DOC_COMMENT">                         */</token>
       </line>
-      <line no="315">
+      <line no="317">
         <token name="T_WHITESPACE">                        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4051,7 +4057,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="316">
+      <line no="318">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CLOSE_CURLY">}</token>
         <token name="T_COMMA">,</token>
@@ -4060,13 +4066,13 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="317">
+      <line no="319">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="318"/>
-      <line no="319">
+      <line no="320"/>
+      <line no="321">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4081,13 +4087,13 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">')'</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="320">
+      <line no="322">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="321"/>
-      <line no="322">
+      <line no="323"/>
+      <line no="324">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$values</token>
         <token name="T_WHITESPACE"> </token>
@@ -4102,8 +4108,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="323"/>
-      <line no="324">
+      <line no="325"/>
+      <line no="326">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$query</token>
         <token name="T_WHITESPACE"> </token>
@@ -4138,7 +4144,7 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">" "</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="325">
+      <line no="327">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$query</token>
         <token name="T_WHITESPACE"> </token>
@@ -4171,8 +4177,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="326"/>
-      <line no="327">
+      <line no="328"/>
+      <line no="329">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4194,7 +4200,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="328">
+      <line no="330">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$query</token>
         <token name="T_WHITESPACE"> </token>
@@ -4207,46 +4213,46 @@
         <token name="T_VARIABLE">$onDuplicate</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="329">
+      <line no="331">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="330"/>
-      <line no="331">
+      <line no="332"/>
+      <line no="333">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$query</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="332">
+      <line no="334">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="333"/>
-      <line no="334">
+      <line no="335"/>
+      <line no="336">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="335">
+      <line no="337">
         <token name="T_DOC_COMMENT">     * @param float|int|string|\sql\MydbExpressionInterface|null $unescaped</token>
       </line>
-      <line no="336">
+      <line no="338">
         <token name="T_DOC_COMMENT">     * @SuppressWarnings(PHPMD.NPathComplexity)</token>
       </line>
-      <line no="337">
+      <line no="339">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\QueryBuilderException</token>
       </line>
-      <line no="338">
+      <line no="340">
         <token name="T_DOC_COMMENT">     * @todo reduce NPathComplexity</token>
       </line>
-      <line no="339">
+      <line no="341">
         <token name="T_DOC_COMMENT">     * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh</token>
       </line>
-      <line no="340">
+      <line no="342">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="341">
+      <line no="343">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -4269,11 +4275,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="342">
+      <line no="344">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="343">
+      <line no="345">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4286,7 +4292,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="344">
+      <line no="346">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4295,12 +4301,12 @@
         <token name="T_VARIABLE">$unescaped</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="345">
+      <line no="347">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="346"/>
-      <line no="347">
+      <line no="348"/>
+      <line no="349">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4313,7 +4319,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="348">
+      <line no="350">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4322,22 +4328,22 @@
         <token name="T_VARIABLE">$unescaped</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="349">
+      <line no="351">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="350"/>
-      <line no="351">
+      <line no="352"/>
+      <line no="353">
         <token name="T_WHITESPACE">        </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="352">
+      <line no="354">
         <token name="T_DOC_COMMENT">         * Not quoting '0x...' decimal values</token>
       </line>
-      <line no="353">
+      <line no="355">
         <token name="T_DOC_COMMENT">         */</token>
       </line>
-      <line no="354">
+      <line no="356">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4374,7 +4380,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="355">
+      <line no="357">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4395,7 +4401,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="356">
+      <line no="358">
         <token name="T_WHITESPACE">                </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4415,16 +4421,16 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="357">
+      <line no="359">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="358">
+      <line no="360">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="359"/>
-      <line no="360">
+      <line no="361"/>
+      <line no="362">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4437,17 +4443,17 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="361">
+      <line no="363">
         <token name="T_WHITESPACE">            </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="362">
+      <line no="364">
         <token name="T_DOC_COMMENT">             * PHP &lt;=7.4</token>
       </line>
-      <line no="363">
+      <line no="365">
         <token name="T_DOC_COMMENT">             */</token>
       </line>
-      <line no="364">
+      <line no="366">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4461,7 +4467,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="365">
+      <line no="367">
         <token name="T_WHITESPACE">                </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4470,28 +4476,28 @@
         <token name="T_VARIABLE">$unescaped</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="366">
+      <line no="368">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="367"/>
-      <line no="368">
+      <line no="369"/>
+      <line no="370">
         <token name="T_WHITESPACE">            </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="369">
+      <line no="371">
         <token name="T_DOC_COMMENT">             * PHP &gt;=8.0</token>
       </line>
-      <line no="370">
+      <line no="372">
         <token name="T_DOC_COMMENT">             * @todo test coverage for php-8 specific</token>
       </line>
-      <line no="371">
+      <line no="373">
         <token name="T_DOC_COMMENT">             * @psalm-suppress ArgumentTypeCoercion</token>
       </line>
-      <line no="372">
+      <line no="374">
         <token name="T_DOC_COMMENT">             */</token>
       </line>
-      <line no="373">
+      <line no="375">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4507,7 +4513,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="374">
+      <line no="376">
         <token name="T_WHITESPACE">                </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4516,16 +4522,16 @@
         <token name="T_VARIABLE">$unescaped</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="375">
+      <line no="377">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="376">
+      <line no="378">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="377"/>
-      <line no="378">
+      <line no="379"/>
+      <line no="380">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4538,7 +4544,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="379">
+      <line no="381">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4565,12 +4571,12 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">''</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="380">
+      <line no="382">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="381"/>
-      <line no="382">
+      <line no="383"/>
+      <line no="384">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4600,7 +4606,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="383">
+      <line no="385">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4633,12 +4639,12 @@
         <token name="T_VARIABLE">$unescaped</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="384">
+      <line no="386">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="385"/>
-      <line no="386">
+      <line no="387"/>
+      <line no="388">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$result</token>
         <token name="T_WHITESPACE"> </token>
@@ -4656,7 +4662,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="387">
+      <line no="389">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4670,7 +4676,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="388">
+      <line no="390">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -4695,12 +4701,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="389">
+      <line no="391">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="390"/>
-      <line no="391">
+      <line no="392"/>
+      <line no="393">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4727,14 +4733,14 @@
         <token name="T_VARIABLE">$result</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="392">
+      <line no="394">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="393">
+      <line no="395">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="394"/>
+      <line no="396"/>
     </source>
   </file>
 </phpunit>

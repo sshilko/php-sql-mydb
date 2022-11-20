@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Sat Nov 19 1:12:37 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+  <build time="Sun Nov 20 0:28:22 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
     <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.0RC2"/>
   </build>
@@ -213,7 +213,7 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4841" comments="1930" code="2911" executable="663" executed="634" percent="95.63"/>
+        <lines total="4848" comments="1936" code="2912" executable="663" executed="634" percent="95.63"/>
         <methods count="163" tested="148" percent="90.80"/>
         <functions count="0" tested="0" percent="0"/>
         <classes count="15" tested="9" percent="60.00"/>
@@ -617,7 +617,7 @@
       </file>
       <file name="MydbEvent.php" href="MydbEvent.php.xml">
         <totals>
-          <lines total="59" comments="20" code="39" executable="8" executed="0" percent="0.00"/>
+          <lines total="60" comments="21" code="39" executable="8" executed="0" percent="0.00"/>
           <methods count="3" tested="0" percent="0.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
@@ -626,7 +626,7 @@
       </file>
       <file name="MydbEventInterface.php" href="MydbEventInterface.php.xml">
         <totals>
-          <lines total="22" comments="11" code="11" executable="0" executed="0" percent="0"/>
+          <lines total="26" comments="14" code="12" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
@@ -734,7 +734,7 @@
       </file>
       <file name="MydbQueryBuilder.php" href="MydbQueryBuilder.php.xml">
         <totals>
-          <lines total="394" comments="111" code="283" executable="114" executed="112" percent="98.25"/>
+          <lines total="396" comments="113" code="283" executable="114" executed="112" percent="98.25"/>
           <methods count="10" tested="9" percent="90.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>

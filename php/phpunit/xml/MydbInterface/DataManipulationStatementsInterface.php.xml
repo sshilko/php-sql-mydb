@@ -227,7 +227,7 @@
         <token name="T_DOC_COMMENT">/**</token>
       </line>
       <line no="43">
-        <token name="T_DOC_COMMENT">     * @param array&lt;array-key, array&lt;(float|int|string|\sql\MydbExpressionInterface|null)&gt;&gt; $data</token>
+        <token name="T_DOC_COMMENT">     * @psalm-param array&lt;array-key, array&lt;(float|int|string|\sql\MydbExpressionInterface|null)&gt;&gt; $data</token>
       </line>
       <line no="44">
         <token name="T_DOC_COMMENT">     * @param array&lt;string&gt; $cols</token>

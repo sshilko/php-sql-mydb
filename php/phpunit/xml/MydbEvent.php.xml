@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbEvent.php" path="/">
     <totals>
-      <lines total="59" comments="20" code="39" executable="8" executed="0" percent="0.00"/>
+      <lines total="60" comments="21" code="39" executable="8" executed="0" percent="0.00"/>
       <methods count="3" tested="0" percent="0.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="0" percent="0.00"/>
@@ -11,8 +11,8 @@
     <class name="sql\MydbEvent" start="20" executable="8" executed="0" crap="42">
       <namespace name="sql"/>
       <method name="getEventMetadata" signature="getEventMetadata(): ?array" start="28" end="31" crap="2" executable="1" executed="0" coverage="0"/>
-      <method name="notify" signature="notify(?array $metadata): void" start="36" end="49" crap="20" executable="6" executed="0" coverage="0"/>
-      <method name="getListeners" signature="getListeners(): array" start="54" end="57" crap="2" executable="1" executed="0" coverage="0"/>
+      <method name="notify" signature="notify(?array $metadata): void" start="37" end="50" crap="20" executable="6" executed="0" coverage="0"/>
+      <method name="getListeners" signature="getListeners(): array" start="55" end="58" crap="2" executable="1" executed="0" coverage="0"/>
     </class>
     <source>
       <line no="1">
@@ -101,7 +101,7 @@
         <token name="T_DOC_COMMENT">/**</token>
       </line>
       <line no="24">
-        <token name="T_DOC_COMMENT">     * @return array&lt;string, string&gt;|null</token>
+        <token name="T_DOC_COMMENT">     * @psalm-var array&lt;array-key, string&gt;|null</token>
       </line>
       <line no="25">
         <token name="T_DOC_COMMENT">     */</token>
@@ -161,9 +161,12 @@
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\EventException</token>
       </line>
       <line no="35">
-        <token name="T_DOC_COMMENT">     */</token>
+        <token name="T_DOC_COMMENT">     * @psalm-param array&lt;array-key, string&gt;|null $metadata</token>
       </line>
       <line no="36">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="37">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -184,11 +187,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="37">
+      <line no="38">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="38">
+      <line no="39">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -199,8 +202,8 @@
         <token name="T_VARIABLE">$metadata</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="39"/>
-      <line no="40">
+      <line no="40"/>
+      <line no="41">
         <token name="T_WHITESPACE">        </token>
         <token name="T_FOREACH">foreach</token>
         <token name="T_WHITESPACE"> </token>
@@ -218,7 +221,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="41">
+      <line no="42">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -232,7 +235,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="42">
+      <line no="43">
         <token name="T_WHITESPACE">                </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -251,16 +254,16 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="43">
+      <line no="44">
         <token name="T_WHITESPACE">                    </token>
         <token name="T_BREAK">break</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="44">
+      <line no="45">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="45">
+      <line no="46">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
         <token name="T_WHITESPACE"> </token>
@@ -268,7 +271,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="46">
+      <line no="47">
         <token name="T_WHITESPACE">                </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -279,30 +282,30 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="47">
+      <line no="48">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="48">
+      <line no="49">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="49">
+      <line no="50">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="50"/>
-      <line no="51">
+      <line no="51"/>
+      <line no="52">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="52">
+      <line no="53">
         <token name="T_DOC_COMMENT">     * @return array&lt;\sql\MydbListenerInterface&gt;</token>
       </line>
-      <line no="53">
+      <line no="54">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="54">
+      <line no="55">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -315,11 +318,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_ARRAY">array</token>
       </line>
-      <line no="55">
+      <line no="56">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="56">
+      <line no="57">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -327,14 +330,14 @@
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="57">
+      <line no="58">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="58">
+      <line no="59">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="59"/>
+      <line no="60"/>
     </source>
   </file>
 </phpunit>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668820357">
-  <project timestamp="1668820357">
+<coverage generated="1668904102">
+  <project timestamp="1668904102">
     <file name="/app/src/sql/Mydb.php">
       <class name="sql\Mydb" namespace="global">
         <metrics complexity="103" methods="30" coveredmethods="22" conditionals="0" coveredconditionals="0" statements="208" coveredstatements="193" elements="238" coveredelements="215"/>
@@ -331,16 +331,16 @@
       </class>
       <line num="28" type="method" name="getEventMetadata" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="30" type="stmt" count="0"/>
-      <line num="36" type="method" name="notify" visibility="public" complexity="4" crap="20" count="0"/>
-      <line num="38" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
+      <line num="37" type="method" name="notify" visibility="public" complexity="4" crap="20" count="0"/>
+      <line num="39" type="stmt" count="0"/>
       <line num="41" type="stmt" count="0"/>
       <line num="42" type="stmt" count="0"/>
       <line num="43" type="stmt" count="0"/>
-      <line num="46" type="stmt" count="0"/>
-      <line num="54" type="method" name="getListeners" visibility="protected" complexity="1" crap="2" count="0"/>
-      <line num="56" type="stmt" count="0"/>
-      <metrics loc="59" ncloc="39" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="11" coveredelements="0"/>
+      <line num="44" type="stmt" count="0"/>
+      <line num="47" type="stmt" count="0"/>
+      <line num="55" type="method" name="getListeners" visibility="protected" complexity="1" crap="2" count="0"/>
+      <line num="57" type="stmt" count="0"/>
+      <metrics loc="60" ncloc="39" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="11" coveredelements="0"/>
     </file>
     <file name="/app/src/sql/MydbEvent/InternalEvent.php">
       <class name="sql\MydbEvent\Internal" namespace="global">
@@ -351,7 +351,7 @@
       <metrics loc="30" ncloc="19" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
     </file>
     <file name="/app/src/sql/MydbEventInterface.php">
-      <metrics loc="22" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <metrics loc="26" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/app/src/sql/MydbEventMetadataInterface.php">
       <metrics loc="22" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -1014,39 +1014,39 @@
       <line num="295" type="method" name="buildInsertMany" visibility="public" complexity="7" crap="7" count="2"/>
       <line num="297" type="stmt" count="2"/>
       <line num="298" type="stmt" count="1"/>
-      <line num="304" type="stmt" count="1"/>
       <line num="305" type="stmt" count="1"/>
-      <line num="310" type="stmt" count="1"/>
-      <line num="315" type="stmt" count="1"/>
-      <line num="319" type="stmt" count="1"/>
-      <line num="322" type="stmt" count="1"/>
+      <line num="306" type="stmt" count="1"/>
+      <line num="312" type="stmt" count="1"/>
+      <line num="317" type="stmt" count="1"/>
+      <line num="321" type="stmt" count="1"/>
       <line num="324" type="stmt" count="1"/>
-      <line num="325" type="stmt" count="1"/>
+      <line num="326" type="stmt" count="1"/>
       <line num="327" type="stmt" count="1"/>
-      <line num="328" type="stmt" count="1"/>
-      <line num="331" type="stmt" count="1"/>
-      <line num="341" type="method" name="escape" visibility="public" complexity="17" crap="17.29" count="57"/>
-      <line num="343" type="stmt" count="57"/>
-      <line num="344" type="stmt" count="8"/>
-      <line num="347" type="stmt" count="53"/>
-      <line num="348" type="stmt" count="30"/>
-      <line num="354" type="stmt" count="48"/>
-      <line num="355" type="stmt" count="4"/>
-      <line num="356" type="stmt" count="2"/>
-      <line num="360" type="stmt" count="48"/>
-      <line num="364" type="stmt" count="8"/>
-      <line num="365" type="stmt" count="8"/>
-      <line num="373" type="stmt" count="0"/>
-      <line num="374" type="stmt" count="0"/>
-      <line num="378" type="stmt" count="48"/>
-      <line num="379" type="stmt" count="3"/>
-      <line num="382" type="stmt" count="48"/>
-      <line num="383" type="stmt" count="47"/>
-      <line num="386" type="stmt" count="9"/>
-      <line num="387" type="stmt" count="9"/>
-      <line num="388" type="stmt" count="1"/>
-      <line num="391" type="stmt" count="8"/>
-      <metrics loc="394" ncloc="283" classes="1" methods="10" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="114" coveredstatements="112" elements="124" coveredelements="121"/>
+      <line num="329" type="stmt" count="1"/>
+      <line num="330" type="stmt" count="1"/>
+      <line num="333" type="stmt" count="1"/>
+      <line num="343" type="method" name="escape" visibility="public" complexity="17" crap="17.29" count="57"/>
+      <line num="345" type="stmt" count="57"/>
+      <line num="346" type="stmt" count="8"/>
+      <line num="349" type="stmt" count="53"/>
+      <line num="350" type="stmt" count="30"/>
+      <line num="356" type="stmt" count="48"/>
+      <line num="357" type="stmt" count="4"/>
+      <line num="358" type="stmt" count="2"/>
+      <line num="362" type="stmt" count="48"/>
+      <line num="366" type="stmt" count="8"/>
+      <line num="367" type="stmt" count="8"/>
+      <line num="375" type="stmt" count="0"/>
+      <line num="376" type="stmt" count="0"/>
+      <line num="380" type="stmt" count="48"/>
+      <line num="381" type="stmt" count="3"/>
+      <line num="384" type="stmt" count="48"/>
+      <line num="385" type="stmt" count="47"/>
+      <line num="388" type="stmt" count="9"/>
+      <line num="389" type="stmt" count="9"/>
+      <line num="390" type="stmt" count="1"/>
+      <line num="393" type="stmt" count="8"/>
+      <metrics loc="396" ncloc="283" classes="1" methods="10" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="114" coveredstatements="112" elements="124" coveredelements="121"/>
     </file>
     <file name="/app/src/sql/MydbQueryBuilderInterface.php">
       <metrics loc="74" ncloc="35" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -1100,6 +1100,6 @@
       <line num="203" type="stmt" count="1"/>
       <metrics loc="206" ncloc="124" classes="1" methods="15" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="28" elements="43" coveredelements="43"/>
     </file>
-    <metrics files="55" loc="4841" ncloc="2911" classes="15" methods="163" coveredmethods="148" conditionals="0" coveredconditionals="0" statements="663" coveredstatements="634" elements="826" coveredelements="782"/>
+    <metrics files="55" loc="4848" ncloc="2912" classes="15" methods="163" coveredmethods="148" conditionals="0" coveredconditionals="0" statements="663" coveredstatements="634" elements="826" coveredelements="782"/>
   </project>
 </coverage>

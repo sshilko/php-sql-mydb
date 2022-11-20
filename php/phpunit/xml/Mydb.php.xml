@@ -7834,7 +7834,7 @@
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException</token>
       </line>
       <line no="511">
-        <token name="T_DOC_COMMENT">     * @param array&lt;array-key, array&lt;(float|int|string|\sql\MydbExpressionInterface|null)&gt;&gt; $data</token>
+        <token name="T_DOC_COMMENT">     * @psalm-param array&lt;array-key, array&lt;array-key, (float|int|string|\sql\MydbExpressionInterface|null)&gt;&gt; $data</token>
       </line>
       <line no="512">
         <token name="T_DOC_COMMENT">     * @param array&lt;string&gt; $cols</token>
