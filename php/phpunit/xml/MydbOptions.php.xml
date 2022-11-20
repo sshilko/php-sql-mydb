@@ -55,6 +55,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -108,6 +110,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -161,6 +165,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -220,6 +226,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -274,6 +282,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -327,6 +337,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -389,6 +401,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -445,6 +459,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -502,6 +518,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -554,6 +572,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -608,6 +628,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -664,6 +686,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -720,6 +744,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -774,6 +800,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -818,6 +846,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -865,6 +895,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>

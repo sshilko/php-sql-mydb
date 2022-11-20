@@ -28,6 +28,7 @@
         <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
     </coverage>

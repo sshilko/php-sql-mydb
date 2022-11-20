@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-20 00:28:22</timestamp>
+  <timestamp>2022-11-20 23:11:33</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>164</methodCount>
+    <methodCount>169</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>438.03</totalCrap>
+    <totalCrap>420.69</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -102,12 +102,12 @@
     <method>
       <package>sql</package>
       <className>sql\Mydb</className>
-      <methodName>getPrimaryKey</methodName>
-      <methodSignature>getPrimaryKey(string $table): ?string</methodSignature>
-      <fullMethod>getPrimaryKey(string $table): ?string</fullMethod>
-      <crap>6.03</crap>
+      <methodName>getPrimaryKeys</methodName>
+      <methodSignature>getPrimaryKeys(string $table): ?array</methodSignature>
+      <fullMethod>getPrimaryKeys(string $table): ?array</fullMethod>
+      <crap>6</crap>
       <complexity>6</complexity>
-      <coverage>90.91</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -294,7 +294,7 @@
       <fullMethod>sendClientRequest(string $query): bool</fullMethod>
       <crap>2.01</crap>
       <complexity>2</complexity>
-      <coverage>85.71</coverage>
+      <coverage>88.89</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -336,9 +336,9 @@
       <methodName>connect</methodName>
       <methodSignature>connect(int $retry): bool</methodSignature>
       <fullMethod>connect(int $retry): bool</fullMethod>
-      <crap>17.11</crap>
+      <crap>17.09</crap>
       <complexity>17</complexity>
-      <coverage>92.86</coverage>
+      <coverage>93.18</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -545,20 +545,20 @@
       <methodName>getEventMetadata</methodName>
       <methodSignature>getEventMetadata(): ?array</methodSignature>
       <fullMethod>getEventMetadata(): ?array</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
       <package>sql</package>
       <className>sql\MydbEvent</className>
       <methodName>notify</methodName>
-      <methodSignature>notify(?array $metadata): void</methodSignature>
-      <fullMethod>notify(?array $metadata): void</fullMethod>
-      <crap>20</crap>
+      <methodSignature>notify(): void</methodSignature>
+      <fullMethod>notify(): void</fullMethod>
+      <crap>4</crap>
       <complexity>4</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -567,20 +567,75 @@
       <methodName>getListeners</methodName>
       <methodSignature>getListeners(): array</methodSignature>
       <fullMethod>getListeners(): array</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
       <package>sql\MydbEvent</package>
-      <className>sql\MydbEvent\Internal</className>
+      <className>sql\MydbEvent\InternalConnectionBegin</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(string $host, string $dbname)</methodSignature>
+      <fullMethod>__construct(string $host, string $dbname)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbEvent</package>
+      <className>sql\MydbEvent\InternalConnectionEnd</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(string $host, string $dbname, bool $success)</methodSignature>
+      <fullMethod>__construct(string $host, string $dbname, bool $success)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbEvent</package>
+      <className>sql\MydbEvent\InternalEvent</className>
+      <methodName>getEventMetadata</methodName>
+      <methodSignature>getEventMetadata(): ?array</methodSignature>
+      <fullMethod>getEventMetadata(): ?array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbEvent</package>
+      <className>sql\MydbEvent\InternalEvent</className>
       <methodName>getListeners</methodName>
       <methodSignature>getListeners(): array</methodSignature>
       <fullMethod>getListeners(): array</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbEvent</package>
+      <className>sql\MydbEvent\InternalQueryBegin</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(string $sql)</methodSignature>
+      <fullMethod>__construct(string $sql)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbEvent</package>
+      <className>sql\MydbEvent\InternalQueryEnd</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(string $sql, bool $success)</methodSignature>
+      <fullMethod>__construct(string $sql, bool $success)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -633,9 +688,9 @@
       <methodName>observe</methodName>
       <methodSignature>observe(sql\MydbEventMetadataInterface $event): bool</methodSignature>
       <fullMethod>observe(sql\MydbEventMetadataInterface $event): bool</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -645,8 +700,8 @@
       <methodSignature>onEvent(sql\MydbEventMetadataInterface $event): ?bool</methodSignature>
       <fullMethod>onEvent(sql\MydbEventMetadataInterface $event): ?bool</fullMethod>
       <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1645,9 +1700,9 @@
       <methodName>escape</methodName>
       <methodSignature>escape($unescaped, string $quote): string</methodSignature>
       <fullMethod>escape($unescaped, string $quote): string</fullMethod>
-      <crap>17.29</crap>
+      <crap>17</crap>
       <complexity>17</complexity>
-      <coverage>90</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

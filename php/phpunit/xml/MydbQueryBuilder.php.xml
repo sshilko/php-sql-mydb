@@ -2,13 +2,13 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbQueryBuilder.php" path="/">
     <totals>
-      <lines total="396" comments="113" code="283" executable="114" executed="112" percent="98.25"/>
-      <methods count="10" tested="9" percent="90.00"/>
+      <lines total="395" comments="112" code="283" executable="114" executed="114" percent="100.00"/>
+      <methods count="10" tested="10" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
-      <classes count="1" tested="0" percent="0.00"/>
+      <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbQueryBuilder" start="46" executable="114" executed="112" crap="69">
+    <class name="sql\MydbQueryBuilder" start="46" executable="114" executed="114" crap="69">
       <namespace name="sql"/>
       <method name="__construct" signature="__construct(sql\MydbMysqli\MydbMysqliEscapeStringInterface $mysqli)" start="51" end="54" crap="1" executable="1" executed="1" coverage="100"/>
       <method name="showColumnsLike" signature="showColumnsLike(string $table, string $column): string" start="59" end="66" crap="3" executable="3" executed="3" coverage="100"/>
@@ -19,7 +19,7 @@
       <method name="buildDeleteWhere" signature="buildDeleteWhere(string $table, array $fields, array $negativeFields): ?string" start="200" end="210" crap="4" executable="4" executed="4" coverage="100"/>
       <method name="buildWhere" signature="buildWhere(array $fields, array $negativeFields, array $likeFields): string" start="217" end="288" crap="15" executable="32" executed="32" coverage="100"/>
       <method name="buildInsertMany" signature="buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string" start="295" end="334" crap="7" executable="13" executed="13" coverage="100"/>
-      <method name="escape" signature="escape($unescaped, string $quote): string" start="343" end="394" crap="17.29" executable="20" executed="18" coverage="90"/>
+      <method name="escape" signature="escape($unescaped, string $quote): string" start="343" end="393" crap="17" executable="20" executed="20" coverage="100"/>
     </class>
     <coverage>
       <line nr="53">
@@ -54,6 +54,8 @@
         <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -87,6 +89,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -108,6 +112,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhereException"/>
         <covered by="phpunit\QueryBuilderTest::testBuildInsertManyException"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException1"/>
@@ -185,6 +213,8 @@
       </line>
       <line nr="73">
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
@@ -194,6 +224,8 @@
       </line>
       <line nr="77">
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
@@ -537,6 +569,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -558,6 +592,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhereException"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions3"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
@@ -572,6 +630,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -593,6 +653,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -601,6 +685,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -622,6 +708,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -630,6 +740,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -651,6 +763,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -659,6 +795,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -680,6 +818,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -688,6 +850,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -709,6 +873,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -717,6 +905,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -738,6 +928,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -751,6 +965,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -769,6 +985,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -857,6 +1097,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #0"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
@@ -869,12 +1111,38 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
       <line nr="262">
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #0"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
@@ -887,6 +1155,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
       <line nr="263">
@@ -896,11 +1188,25 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #6"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #8"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
       </line>
       <line nr="266">
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #0"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
@@ -913,12 +1219,38 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
       <line nr="267">
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #0"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
@@ -931,12 +1263,38 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
       <line nr="268">
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #0"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
@@ -949,6 +1307,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
       <line nr="271">
@@ -956,6 +1338,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -977,6 +1361,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -997,6 +1405,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -1018,6 +1428,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -1026,6 +1460,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -1047,6 +1483,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -1055,6 +1515,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -1076,6 +1538,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -1084,6 +1570,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -1105,6 +1593,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -1154,6 +1666,8 @@
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -1186,6 +1700,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -1204,6 +1720,30 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -1212,10 +1752,18 @@
         <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple float&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple float&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #8"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #24"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #25"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #26"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #27"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #28"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #29"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #30"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #31"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #32"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #33"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #34"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #35"/>
       </line>
       <line nr="349">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -1223,6 +1771,8 @@
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -1255,6 +1805,8 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -1269,6 +1821,22 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #5"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #6"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #7"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #8"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -1297,10 +1865,18 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #4"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #5"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #6"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #7"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #12"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #13"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #14"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #15"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #16"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #17"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #18"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #19"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #20"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #21"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #22"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #23"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -1310,6 +1886,8 @@
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -1341,6 +1919,8 @@
         <covered by="phpunit\QueryBuilderTest::testEscape"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -1351,6 +1931,14 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #3"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #4"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #5"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #6"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #7"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #8"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -1370,6 +1958,8 @@
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -1401,6 +1991,8 @@
         <covered by="phpunit\QueryBuilderTest::testEscape"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
@@ -1411,6 +2003,14 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #3"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #4"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #5"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #6"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #7"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #8"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
@@ -1422,6 +2022,8 @@
         <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="367">
@@ -1432,14 +2034,23 @@
         <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="380">
+      <line nr="374">
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
+      </line>
+      <line nr="375">
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
+      </line>
+      <line nr="379">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -1481,13 +2092,81 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #3"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #4"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #5"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #6"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #7"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #8"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="381">
+      <line nr="380">
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;raw null&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;raw null&quot;"/>
+      </line>
+      <line nr="383">
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
+        <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple int&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple float&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;raw null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string caps null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string lowercase null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x even&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple int&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple float&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;raw null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string caps null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string lowercase null&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x even&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testEscape"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative null array count &gt;1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count 1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count 1&quot;"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #0"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #3"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #4"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #5"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #6"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #7"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #8"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="384">
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -1495,6 +2174,8 @@
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
@@ -1523,7 +2204,6 @@
         <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x even&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testEscape"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
@@ -1536,57 +2216,27 @@
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #3"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #4"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #5"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #6"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #7"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #8"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #9"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #10"/>
+        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #11"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="385">
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
+      <line nr="387">
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
         <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple int&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple float&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;expression&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;raw null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string caps null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string lowercase null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x even&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple int&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;simple float&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;expression&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;raw null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string caps null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string lowercase null&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x even&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative null array count &gt;1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count 1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count 1&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #0"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #1"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #2"/>
-        <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set #3"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\QueryBuilderTest::testEscape"/>
       </line>
       <line nr="388">
         <covered by="phpunit\InsertTest::testInsertOne"/>
@@ -1600,20 +2250,9 @@
         <covered by="phpunit\QueryBuilderTest::testEscape"/>
       </line>
       <line nr="389">
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
-        <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
-        <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;string 0x mismatch&quot;"/>
-        <covered by="phpunit\QueryBuilderTest::testReplaceOne with data set &quot;string 0x mismatch&quot;"/>
         <covered by="phpunit\QueryBuilderTest::testEscape"/>
       </line>
-      <line nr="390">
-        <covered by="phpunit\QueryBuilderTest::testEscape"/>
-      </line>
-      <line nr="393">
+      <line nr="392">
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
@@ -4489,15 +5128,12 @@
         <token name="T_DOC_COMMENT">             * PHP &gt;=8.0</token>
       </line>
       <line no="372">
-        <token name="T_DOC_COMMENT">             * @todo test coverage for php-8 specific</token>
-      </line>
-      <line no="373">
         <token name="T_DOC_COMMENT">             * @psalm-suppress ArgumentTypeCoercion</token>
       </line>
-      <line no="374">
+      <line no="373">
         <token name="T_DOC_COMMENT">             */</token>
       </line>
-      <line no="375">
+      <line no="374">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4513,7 +5149,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="376">
+      <line no="375">
         <token name="T_WHITESPACE">                </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4522,16 +5158,16 @@
         <token name="T_VARIABLE">$unescaped</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="377">
+      <line no="376">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="378">
+      <line no="377">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="379"/>
-      <line no="380">
+      <line no="378"/>
+      <line no="379">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4544,7 +5180,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="381">
+      <line no="380">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4571,12 +5207,12 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">''</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="382">
+      <line no="381">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="383"/>
-      <line no="384">
+      <line no="382"/>
+      <line no="383">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4606,7 +5242,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="385">
+      <line no="384">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4639,12 +5275,12 @@
         <token name="T_VARIABLE">$unescaped</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="386">
+      <line no="385">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="387"/>
-      <line no="388">
+      <line no="386"/>
+      <line no="387">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$result</token>
         <token name="T_WHITESPACE"> </token>
@@ -4662,7 +5298,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="389">
+      <line no="388">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -4676,7 +5312,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="390">
+      <line no="389">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -4701,12 +5337,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="391">
+      <line no="390">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="392"/>
-      <line no="393">
+      <line no="391"/>
+      <line no="392">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -4733,14 +5369,14 @@
         <token name="T_VARIABLE">$result</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="394">
+      <line no="393">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="395">
+      <line no="394">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="396"/>
+      <line no="395"/>
     </source>
   </file>
 </phpunit>

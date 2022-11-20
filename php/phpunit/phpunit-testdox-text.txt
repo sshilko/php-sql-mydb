@@ -56,6 +56,8 @@ Meta (phpunit\Meta)
  [x] Open
  [x] Close
  [x] Primary key
+ [x] Primary key not found
+ [x] Primary key composite
  [x] Enum
  [x] Set
  [x] Not real enum or set
@@ -70,6 +72,11 @@ Mydb Environment (phpunit\MydbEnvironment)
  [x] Signal sighup trap with data set "SIGTERM"
  [x] Signal sighup trap with data set "SIGINT"
  [x] Signal sighup trap with data set "SIGINT,SIGTERM,SIGHUP"
+
+Mydb Event (phpunit\MydbEvent)
+ [x] Mydb event listener break
+ [x] Mydb event listener exception
+ [x] Mydb internal event success
 
 Mydb Exception (phpunit\MydbException)
  [x] My exception
@@ -135,6 +142,8 @@ Query Builder (phpunit\QueryBuilder)
  [x] Build update where many with data set "simple"
  [x] Build update where many with data set "prefixed simple"
  [x] Build where with data set "simple"
+ [x] Build where with data set "expression"
+ [x] Build where with data set "expression8"
  [x] Build where with data set "simple array count >1"
  [x] Build where with data set "negative array count >1"
  [x] Build where with data set "simple null array count >1"
@@ -156,6 +165,30 @@ Query Builder (phpunit\QueryBuilder)
  [x] Build where with data set #9
  [x] Build where with data set #10
  [x] Build where with data set #11
+ [x] Build where with data set #12
+ [x] Build where with data set #13
+ [x] Build where with data set #14
+ [x] Build where with data set #15
+ [x] Build where with data set #16
+ [x] Build where with data set #17
+ [x] Build where with data set #18
+ [x] Build where with data set #19
+ [x] Build where with data set #20
+ [x] Build where with data set #21
+ [x] Build where with data set #22
+ [x] Build where with data set #23
+ [x] Build where with data set #24
+ [x] Build where with data set #25
+ [x] Build where with data set #26
+ [x] Build where with data set #27
+ [x] Build where with data set #28
+ [x] Build where with data set #29
+ [x] Build where with data set #30
+ [x] Build where with data set #31
+ [x] Build where with data set #32
+ [x] Build where with data set #33
+ [x] Build where with data set #34
+ [x] Build where with data set #35
  [x] Build where exception
  [x] Build insert many exception
  [x] Build update where many exception 1

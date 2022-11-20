@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Sun Nov 20 0:28:22 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+  <build time="Sun Nov 20 23:11:34 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
     <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.0RC2"/>
   </build>
@@ -52,6 +52,8 @@
       <test name="phpunit\MetaTest::testOpen" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MetaTest::testClose" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MetaTest::testPrimaryKey" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MetaTest::testPrimaryKeyNotFound" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MetaTest::testPrimaryKeyComposite" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MetaTest::testEnum" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MetaTest::testSet" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MetaTest::testNotRealEnumOrSet" size="unknown" result="0" status="PASSED"/>
@@ -64,6 +66,9 @@
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGTERM&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MydbEventTest::testMydbEventListenerBreak" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MydbEventTest::testMydbEventListenerException" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MydbEventTest::testMydbInternalEventSuccess" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MydbExceptionTest::testQueryBuilderException" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testReuseResource" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testOptionsNoInit" size="unknown" result="0" status="PASSED"/>
@@ -120,6 +125,8 @@
       <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;simple&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;negative array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;simple null array count &gt;1&quot;" size="unknown" result="0" status="PASSED"/>
@@ -141,6 +148,30 @@
       <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #9" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #10" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #11" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #12" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #13" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #14" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #15" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #16" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #17" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #18" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #19" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #20" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #21" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #22" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #23" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #24" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #25" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #26" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #27" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #28" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #29" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #30" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #31" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #32" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #33" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #34" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\QueryBuilderTest::testBuildWhere with data set #35" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildWhereException" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildInsertManyException" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereManyException1" size="unknown" result="0" status="PASSED"/>
@@ -213,26 +244,62 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4848" comments="1936" code="2912" executable="663" executed="634" percent="95.63"/>
-        <methods count="163" tested="148" percent="90.80"/>
+        <lines total="4961" comments="1984" code="2977" executable="665" executed="651" percent="97.89"/>
+        <methods count="166" tested="159" percent="95.78"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="15" tested="9" percent="60.00"/>
+        <classes count="19" tested="18" percent="94.74"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="MydbEvent">
         <totals>
-          <lines total="30" comments="11" code="19" executable="1" executed="0" percent="0.00"/>
-          <methods count="1" tested="0" percent="0.00"/>
+          <lines total="153" comments="58" code="95" executable="6" executed="6" percent="100.00"/>
+          <methods count="6" tested="6" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="0" percent="0.00"/>
+          <classes count="5" tested="5" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
+        <file name="InternalConnectionBegin.php" href="MydbEvent/InternalConnectionBegin.php.xml">
+          <totals>
+            <lines total="28" comments="11" code="17" executable="1" executed="1" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="InternalConnectionEnd.php" href="MydbEvent/InternalConnectionEnd.php.xml">
+          <totals>
+            <lines total="29" comments="11" code="18" executable="1" executed="1" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
         <file name="InternalEvent.php" href="MydbEvent/InternalEvent.php.xml">
           <totals>
-            <lines total="30" comments="11" code="19" executable="1" executed="0" percent="0.00"/>
-            <methods count="1" tested="0" percent="0.00"/>
+            <lines total="41" comments="14" code="27" executable="2" executed="2" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
-            <classes count="1" tested="0" percent="0.00"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="InternalQueryBegin.php" href="MydbEvent/InternalQueryBegin.php.xml">
+          <totals>
+            <lines total="27" comments="11" code="16" executable="1" executed="1" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="InternalQueryEnd.php" href="MydbEvent/InternalQueryEnd.php.xml">
+          <totals>
+            <lines total="28" comments="11" code="17" executable="1" executed="1" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
             <traits count="0" tested="0" percent="0"/>
           </totals>
         </file>
@@ -437,7 +504,7 @@
       </directory>
       <directory name="MydbInterface">
         <totals>
-          <lines total="308" comments="184" code="124" executable="0" executed="0" percent="0"/>
+          <lines total="309" comments="185" code="124" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
@@ -445,7 +512,7 @@
         </totals>
         <file name="AdministrationStatementsInterface.php" href="MydbInterface/AdministrationStatementsInterface.php.xml">
           <totals>
-            <lines total="37" comments="24" code="13" executable="0" executed="0" percent="0"/>
+            <lines total="38" comments="25" code="13" executable="0" executed="0" percent="0"/>
             <methods count="0" tested="0" percent="0"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="0" tested="0" percent="0"/>
@@ -518,18 +585,18 @@
       </directory>
       <directory name="MydbListener">
         <totals>
-          <lines total="31" comments="11" code="20" executable="2" executed="0" percent="0.00"/>
-          <methods count="1" tested="0" percent="0.00"/>
+          <lines total="28" comments="11" code="17" executable="1" executed="1" percent="100.00"/>
+          <methods count="1" tested="1" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="0" percent="0.00"/>
+          <classes count="1" tested="1" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
         <file name="InternalListener.php" href="MydbListener/InternalListener.php.xml">
           <totals>
-            <lines total="31" comments="11" code="20" executable="2" executed="0" percent="0.00"/>
-            <methods count="1" tested="0" percent="0.00"/>
+            <lines total="28" comments="11" code="17" executable="1" executed="1" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
-            <classes count="1" tested="0" percent="0.00"/>
+            <classes count="1" tested="1" percent="100.00"/>
             <traits count="0" tested="0" percent="0"/>
           </totals>
         </file>
@@ -572,8 +639,8 @@
       </directory>
       <file name="Mydb.php" href="Mydb.php.xml">
         <totals>
-          <lines total="720" comments="181" code="539" executable="208" executed="193" percent="92.79"/>
-          <methods count="30" tested="22" percent="73.33"/>
+          <lines total="725" comments="183" code="542" executable="209" executed="195" percent="93.30"/>
+          <methods count="30" tested="23" percent="76.67"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
@@ -617,16 +684,16 @@
       </file>
       <file name="MydbEvent.php" href="MydbEvent.php.xml">
         <totals>
-          <lines total="60" comments="21" code="39" executable="8" executed="0" percent="0.00"/>
-          <methods count="3" tested="0" percent="0.00"/>
+          <lines total="49" comments="20" code="29" executable="5" executed="5" percent="100.00"/>
+          <methods count="1" tested="1" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="0" percent="0.00"/>
+          <classes count="1" tested="1" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
       </file>
       <file name="MydbEventInterface.php" href="MydbEventInterface.php.xml">
         <totals>
-          <lines total="26" comments="14" code="12" executable="0" executed="0" percent="0"/>
+          <lines total="22" comments="11" code="11" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
@@ -635,7 +702,7 @@
       </file>
       <file name="MydbEventMetadataInterface.php" href="MydbEventMetadataInterface.php.xml">
         <totals>
-          <lines total="22" comments="11" code="11" executable="0" executed="0" percent="0"/>
+          <lines total="25" comments="14" code="11" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
@@ -671,10 +738,10 @@
       </file>
       <file name="MydbListener.php" href="MydbListener.php.xml">
         <totals>
-          <lines total="27" comments="11" code="16" executable="1" executed="0" percent="0.00"/>
-          <methods count="1" tested="0" percent="0.00"/>
+          <lines total="27" comments="11" code="16" executable="1" executed="1" percent="100.00"/>
+          <methods count="1" tested="1" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="0" percent="0.00"/>
+          <classes count="1" tested="1" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
       </file>
@@ -734,10 +801,10 @@
       </file>
       <file name="MydbQueryBuilder.php" href="MydbQueryBuilder.php.xml">
         <totals>
-          <lines total="396" comments="113" code="283" executable="114" executed="112" percent="98.25"/>
-          <methods count="10" tested="9" percent="90.00"/>
+          <lines total="395" comments="112" code="283" executable="114" executed="114" percent="100.00"/>
+          <methods count="10" tested="10" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="0" percent="0.00"/>
+          <classes count="1" tested="1" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
       </file>

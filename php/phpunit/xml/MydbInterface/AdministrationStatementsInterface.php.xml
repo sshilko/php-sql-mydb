@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="AdministrationStatementsInterface.php" path="/MydbInterface">
     <totals>
-      <lines total="37" comments="24" code="13" executable="0" executed="0" percent="0"/>
+      <lines total="38" comments="25" code="13" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
@@ -99,18 +99,21 @@
         <token name="T_DOC_COMMENT">/**</token>
       </line>
       <line no="28">
-        <token name="T_DOC_COMMENT">     * Get table primary key</token>
+        <token name="T_DOC_COMMENT">     * Get table primary keys</token>
       </line>
       <line no="29">
-        <token name="T_DOC_COMMENT">     */</token>
+        <token name="T_DOC_COMMENT">     * @return string[]</token>
       </line>
       <line no="30">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="31">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_FUNCTION">function</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">getPrimaryKey</token>
+        <token name="T_STRING">getPrimaryKeys</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
@@ -119,21 +122,21 @@
         <token name="T_COLON">:</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_QUESTION_MARK">?</token>
-        <token name="T_STRING">string</token>
+        <token name="T_ARRAY">array</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="31"/>
-      <line no="32">
+      <line no="32"/>
+      <line no="33">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="33">
+      <line no="34">
         <token name="T_DOC_COMMENT">     * @return array&lt;string&gt;</token>
       </line>
-      <line no="34">
+      <line no="35">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="35">
+      <line no="36">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -155,10 +158,10 @@
         <token name="T_ARRAY">array</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="36">
+      <line no="37">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="37"/>
+      <line no="38"/>
     </source>
   </file>
 </phpunit>
