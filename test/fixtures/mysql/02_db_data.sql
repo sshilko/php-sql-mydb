@@ -1,15 +1,13 @@
-/**
- * This file is part of the sshilko/php-sql-mydb package.
- *
- * (c) Sergei Shilko <contact@sshilko.com>
- *
- * MIT License
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
-
- @license https://opensource.org/licenses/mit-license.php MIT
- */
+-- This file is part of the sshilko/php-sql-mydb package.
+--
+-- (c) Sergei Shilko <contact@sshilko.com>
+--
+-- MIT License
+--
+-- For the full copyright and license information, please view the LICENSE
+-- file that was distributed with this source code.
+--
+-- @license https://opensource.org/licenses/mit-license.php MIT
 
 truncate table `countries`;
 INSERT INTO `countries`
@@ -24,7 +22,7 @@ VALUES (1, 'user1'),
        (3, 'user3');
 
 truncate table `myusers_devices`;
-INSERT INTO `myusers_devices`
+INSERT INTO `myusers_devices` (id_binary, id_user, id_reality, time_saved, time_last_update, device_token, semver, sandbox, handler, provider)
 VALUES (0x6578, 1, 1, '2011-01-01 00:00:00', '2011-01-02 00:00:00',
         'd3ab006bf3b4583b254370efd1ffe77fd4cace70457a78256d21e84c5df7a5d8',
         '1.0.0',
@@ -50,5 +48,5 @@ VALUES (0x6578, 1, 1, '2011-01-01 00:00:00', '2011-01-02 00:00:00',
         '1',
         'Sany');
 
-truncate table `mydecimals`;
+TRUNCATE TABLE `mydecimals`;
 INSERT INTO `mydecimals` (id, cost) VALUES (1, 1.1), (2, 1.20), (3, '0.3');

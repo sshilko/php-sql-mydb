@@ -17,14 +17,11 @@ namespace sql\MydbListener;
 
 use sql\MydbEventMetadataInterface;
 use sql\MydbListener;
-use function serialize;
 
 class InternalListener extends MydbListener
 {
     protected function onEvent(MydbEventMetadataInterface $event): ?bool
     {
-        serialize($event);
-
-        return true;
+        return is_array($event->getEventMetadata()) || is_null($event->getEventMetadata());
     }
 }

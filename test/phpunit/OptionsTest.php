@@ -25,7 +25,7 @@ use const E_ALL;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class OptionsTest extends includes\BaseTestCase
+final class OptionsTest extends includes\DatabaseTestCase
 {
     public function testNonInteractiveTimeouts(): void
     {

@@ -25,7 +25,7 @@ use function time;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class ExceptionTest extends includes\BaseTestCase
+final class ExceptionTest extends includes\DatabaseTestCase
 {
     public function testTableDoesNotExist(): void
     {

@@ -1,15 +1,13 @@
-/**
- * This file is part of the sshilko/php-sql-mydb package.
- *
- * (c) Sergei Shilko <contact@sshilko.com>
- *
- * MIT License
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
-
- @license https://opensource.org/licenses/mit-license.php MIT
- */
+-- This file is part of the sshilko/php-sql-mydb package.
+--
+-- (c) Sergei Shilko <contact@sshilko.com>
+--
+-- MIT License
+--
+-- For the full copyright and license information, please view the LICENSE
+-- file that was distributed with this source code.
+--
+-- @license https://opensource.org/licenses/mit-license.php MIT
 
 DROP TABLE IF EXISTS `myusers`;
 CREATE TABLE `myusers`
@@ -43,55 +41,24 @@ CREATE TABLE `myusers_devices`
 (
     `id_binary`        binary(12)          NOT NULL,
     `id_user`          int(10) unsigned    NOT NULL,
-    `id_realm`         tinyint(1) unsigned NOT NULL     DEFAULT '1',
+    `id_reality`       tinyint(1) unsigned NOT NULL     DEFAULT '1',
     `time_saved`       timestamp           NOT NULL     DEFAULT CURRENT_TIMESTAMP,
     `time_last_update` datetime            NOT NULL,
     `device_token`     varchar(255) CHARACTER SET ascii DEFAULT NULL,
-    `version`          varchar(9) CHARACTER SET ascii   DEFAULT NULL,
+    `semver`           varchar(9) CHARACTER SET ascii   DEFAULT NULL,
     `sandbox`          tinyint(1) unsigned NOT NULL     DEFAULT '0',
     `handler`          enum ('1','2','3')  NOT NULL     DEFAULT '1',
     `provider`         set ('Sansunk','Hookle','Sany')  NOT NULL DEFAULT 'Sany',
     KEY `id_user` (`id_user`),
-    KEY `id_realm4` (`id_realm`),
+    KEY `id_reality` (`id_reality`),
     KEY `device_token` (`device_token`(5)),
     KEY `id_binary` (`id_binary`(6))
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8
-    PARTITION BY LIST (MOD(id_user, 32))
+) ENGINE = InnoDB DEFAULT CHARSET = utf8
+    PARTITION BY LIST (MOD(id_user, 2))
     SUBPARTITION BY KEY (device_token)
     SUBPARTITIONS 2
-    (PARTITION p0 VALUES IN (0) ENGINE = InnoDB,
-    PARTITION p1 VALUES IN (1) ENGINE = InnoDB,
-    PARTITION p2 VALUES IN (2) ENGINE = InnoDB,
-    PARTITION p3 VALUES IN (3) ENGINE = InnoDB,
-    PARTITION p4 VALUES IN (4) ENGINE = InnoDB,
-    PARTITION p5 VALUES IN (5) ENGINE = InnoDB,
-    PARTITION p6 VALUES IN (6) ENGINE = InnoDB,
-    PARTITION p7 VALUES IN (7) ENGINE = InnoDB,
-    PARTITION p8 VALUES IN (8) ENGINE = InnoDB,
-    PARTITION p9 VALUES IN (9) ENGINE = InnoDB,
-    PARTITION p10 VALUES IN (10) ENGINE = InnoDB,
-    PARTITION p11 VALUES IN (11) ENGINE = InnoDB,
-    PARTITION p12 VALUES IN (12) ENGINE = InnoDB,
-    PARTITION p13 VALUES IN (13) ENGINE = InnoDB,
-    PARTITION p14 VALUES IN (14) ENGINE = InnoDB,
-    PARTITION p15 VALUES IN (15) ENGINE = InnoDB,
-    PARTITION p16 VALUES IN (16) ENGINE = InnoDB,
-    PARTITION p17 VALUES IN (17) ENGINE = InnoDB,
-    PARTITION p18 VALUES IN (18) ENGINE = InnoDB,
-    PARTITION p19 VALUES IN (19) ENGINE = InnoDB,
-    PARTITION p20 VALUES IN (20) ENGINE = InnoDB,
-    PARTITION p21 VALUES IN (21) ENGINE = InnoDB,
-    PARTITION p22 VALUES IN (22) ENGINE = InnoDB,
-    PARTITION p23 VALUES IN (23) ENGINE = InnoDB,
-    PARTITION p24 VALUES IN (24) ENGINE = InnoDB,
-    PARTITION p25 VALUES IN (25) ENGINE = InnoDB,
-    PARTITION p26 VALUES IN (26) ENGINE = InnoDB,
-    PARTITION p27 VALUES IN (27) ENGINE = InnoDB,
-    PARTITION p28 VALUES IN (28) ENGINE = InnoDB,
-    PARTITION p29 VALUES IN (29) ENGINE = InnoDB,
-    PARTITION p30 VALUES IN (30) ENGINE = InnoDB,
-    PARTITION p31 VALUES IN (31) ENGINE = InnoDB);
+   (PARTITION p0 VALUES IN (0) ENGINE = InnoDB,
+    PARTITION p1 VALUES IN (1) ENGINE = InnoDB);
 
 DROP TABLE IF EXISTS `myusers_languages`;
 CREATE TABLE `myusers_languages`
@@ -111,3 +78,18 @@ CREATE TABLE `mydecimals` (
    `comment` varchar(6) DEFAULT NULL,
    PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+DROP TABLE IF EXISTS `mynames`;
+CREATE TABLE `mynames`
+(
+    `name` varchar(10) NOT NULL,
+    UNIQUE KEY (`name`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+
+DROP TABLE IF EXISTS `mycitynames`;
+CREATE TABLE `mycitynames`
+(
+    `city` varchar(10) NOT NULL,
+    `name` varchar(10) NOT NULL,
+    PRIMARY KEY (`city`, `name`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;

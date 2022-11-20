@@ -25,7 +25,7 @@ use function array_merge;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class InsertTest extends includes\BaseTestCase
+final class InsertTest extends includes\DatabaseTestCase
 {
     public function testReplace(): void
     {

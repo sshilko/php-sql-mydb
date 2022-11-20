@@ -21,7 +21,7 @@ namespace phpunit;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class SelectTest extends includes\BaseTestCase
+final class SelectTest extends includes\DatabaseTestCase
 {
     /**
      * @return array<array<string, string>>
@@ -49,7 +49,8 @@ final class SelectTest extends includes\BaseTestCase
                 'sql' =>
                     'SELECT myusers.id, HEX(id_binary) as id_binary
                        FROM myusers
-                       JOIN myusers_devices ON (myusers_devices.id_user = myusers.id)',
+                       JOIN myusers_devices ON (myusers_devices.id_user = myusers.id)
+                   ORDER BY id_binary ASC',
                 'expects' => [
                     ['id' => '1', 'id_binary' => '657800000000000000000000'],
                     ['id' => '1', 'id_binary' => '657861000000000000000000'],

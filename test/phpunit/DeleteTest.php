@@ -24,7 +24,7 @@ use sql\MydbMysqli;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class DeleteTest extends includes\BaseTestCase
+final class DeleteTest extends includes\DatabaseTestCase
 {
     public function testDelete(): void
     {

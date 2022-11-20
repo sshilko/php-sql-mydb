@@ -25,7 +25,7 @@ use sql\MydbMysqli;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class UpdateTest extends includes\BaseTestCase
+final class UpdateTest extends includes\DatabaseTestCase
 {
     public function testUpdateWhere(): void
     {

@@ -26,7 +26,7 @@ use function mysqli_init;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class MysqliTest extends includes\BaseTestCase
+final class MysqliTest extends includes\DatabaseTestCase
 {
     public function testReuseResource(): void
     {

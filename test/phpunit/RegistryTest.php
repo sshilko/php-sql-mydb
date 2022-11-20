@@ -25,7 +25,7 @@ use function serialize;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
-final class RegistryTest extends includes\BaseTestCase
+final class RegistryTest extends includes\DatabaseTestCase
 {
     public function testRegistryEmpty1(): void
     {

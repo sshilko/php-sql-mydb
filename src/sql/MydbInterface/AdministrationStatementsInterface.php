@@ -25,9 +25,10 @@ namespace sql\MydbInterface;
 interface AdministrationStatementsInterface
 {
     /**
-     * Get table primary key
+     * Get table primary keys
+     * @return string[]
      */
-    public function getPrimaryKey(string $table): ?string;
+    public function getPrimaryKeys(string $table): ?array;
 
     /**
      * @return array<string>
