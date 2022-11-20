@@ -46,10 +46,10 @@ Search.appendIndex(
             "summary": "Escape\u0020value\u0020for\u0020the\u0020SQL\u0020query",
             "url": "classes/sql-Mydb.html#method_escape"
         },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003AgetPrimaryKey\u0028\u0029",
-            "name": "getPrimaryKey",
-            "summary": "Get\u0020table\u0020primary\u0020key",
-            "url": "classes/sql-Mydb.html#method_getPrimaryKey"
+            "fqsen": "\\sql\\Mydb\u003A\u003AgetPrimaryKeys\u0028\u0029",
+            "name": "getPrimaryKeys",
+            "summary": "Get\u0020table\u0020primary\u0020keys",
+            "url": "classes/sql-Mydb.html#method_getPrimaryKeys"
         },                {
             "fqsen": "\\sql\\Mydb\u003A\u003AbeginTransaction\u0028\u0029",
             "name": "beginTransaction",
@@ -691,10 +691,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbInterface-AdministrationStatementsInterface.html"
         },                {
-            "fqsen": "\\sql\\MydbInterface\\AdministrationStatementsInterface\u003A\u003AgetPrimaryKey\u0028\u0029",
-            "name": "getPrimaryKey",
-            "summary": "Get\u0020table\u0020primary\u0020key",
-            "url": "classes/sql-MydbInterface-AdministrationStatementsInterface.html#method_getPrimaryKey"
+            "fqsen": "\\sql\\MydbInterface\\AdministrationStatementsInterface\u003A\u003AgetPrimaryKeys\u0028\u0029",
+            "name": "getPrimaryKeys",
+            "summary": "Get\u0020table\u0020primary\u0020keys",
+            "url": "classes/sql-MydbInterface-AdministrationStatementsInterface.html#method_getPrimaryKeys"
         },                {
             "fqsen": "\\sql\\MydbInterface\\AdministrationStatementsInterface\u003A\u003AgetEnumValues\u0028\u0029",
             "name": "getEnumValues",
