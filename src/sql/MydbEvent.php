@@ -21,7 +21,7 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
 {
 
     /**
-     * @return array<string, string>|null
+     * @psalm-var array<array-key, string>|null
      */
     private ?array $eventMetadata = null;
 
@@ -32,6 +32,7 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
 
     /**
      * @throws \sql\MydbException\EventException
+     * @psalm-param array<array-key, string>|null $metadata
      */
     public function notify(?array $metadata = null): void
     {

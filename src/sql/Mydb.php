@@ -508,7 +508,7 @@ class Mydb implements
     /**
      * @throws \sql\MydbException\ConnectException
      * @throws \sql\MydbException
-     * @param array<array-key, array<(float|int|string|\sql\MydbExpressionInterface|null)>> $data
+     * @psalm-param array<array-key, array<array-key, (float|int|string|\sql\MydbExpressionInterface|null)>> $data
      * @param array<string> $cols
      */
     public function insertMany(

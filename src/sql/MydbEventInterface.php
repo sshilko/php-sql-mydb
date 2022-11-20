@@ -17,5 +17,9 @@ namespace sql;
 
 interface MydbEventInterface
 {
+
+    /**
+     * @psalm-param array<array-key, string>|null $metadata
+     */
     public function notify(?array $metadata = null): void;
 }
