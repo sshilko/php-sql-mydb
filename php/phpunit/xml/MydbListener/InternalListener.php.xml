@@ -2,18 +2,18 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="InternalListener.php" path="/MydbListener">
     <totals>
-      <lines total="28" comments="11" code="17" executable="1" executed="1" percent="100.00"/>
+      <lines total="30" comments="11" code="19" executable="1" executed="1" percent="100.00"/>
       <methods count="1" tested="1" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbListener\InternalListener" start="21" executable="1" executed="1" crap="2">
+    <class name="sql\MydbListener\InternalListener" start="23" executable="1" executed="1" crap="2">
       <namespace name="sql\MydbListener"/>
-      <method name="onEvent" signature="onEvent(sql\MydbEventMetadataInterface $event): ?bool" start="23" end="26" crap="2" executable="1" executed="1" coverage="100"/>
+      <method name="onEvent" signature="onEvent(sql\MydbEventMetadataInterface $event): ?bool" start="25" end="28" crap="2" executable="1" executed="1" coverage="100"/>
     </class>
     <coverage>
-      <line nr="25">
+      <line nr="27">
         <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
@@ -145,8 +145,24 @@
         <token name="T_NAME_QUALIFIED">sql\MydbListener</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="20"/>
+      <line no="20">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">is_array</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
       <line no="21">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">is_null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="22"/>
+      <line no="23">
         <token name="T_CLASS">class</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">InternalListener</token>
@@ -155,10 +171,10 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">MydbListener</token>
       </line>
-      <line no="22">
+      <line no="24">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="23">
+      <line no="25">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -175,11 +191,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_STRING">bool</token>
       </line>
-      <line no="24">
+      <line no="26">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="25">
+      <line no="27">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -204,14 +220,14 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="26">
+      <line no="28">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="27">
+      <line no="29">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="28"/>
+      <line no="30"/>
     </source>
   </file>
 </phpunit>

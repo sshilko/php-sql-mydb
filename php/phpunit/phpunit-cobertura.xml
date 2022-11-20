@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.97894736842105" branch-rate="0" lines-covered="651" lines-valid="665" branches-covered="0" branches-valid="0" complexity="416" version="0.4" timestamp="1668985893">
+<coverage line-rate="0.97894736842105" branch-rate="0" lines-covered="651" lines-valid="665" branches-covered="0" branches-valid="0" complexity="417" version="0.4" timestamp="1668986665">
   <sources>
     <source>/app/src/sql</source>
   </sources>
   <packages>
-    <package name="Mydb.php" line-rate="0.93301435406699" branch-rate="0" complexity="103">
+    <package name="Mydb.php" line-rate="0.93301435406699" branch-rate="0" complexity="104">
       <classes>
-        <class name="sql\Mydb" filename="Mydb.php" line-rate="0.93301435406699" branch-rate="0" complexity="103">
+        <class name="sql\Mydb" filename="Mydb.php" line-rate="0.93301435406699" branch-rate="0" complexity="104">
           <methods>
             <method name="__construct" signature="sql\MydbCredentialsInterface $credentials, Psr\Log\LoggerInterface $logger, ?sql\MydbOptionsInterface $options, ?sql\MydbMysqliInterface $mysqli, ?sql\MydbEnvironmentInterface $environment, ?sql\MydbQueryBuilderInterface $queryBuilder, ?sql\MydbListenerInterface $eventListener" line-rate="1" branch-rate="0" complexity="1">
               <lines>
@@ -100,7 +100,7 @@
                 <line number="265" hits="3"/>
               </lines>
             </method>
-            <method name="getPrimaryKeys" signature="string $table" line-rate="1" branch-rate="0" complexity="6">
+            <method name="getPrimaryKeys" signature="string $table" line-rate="1" branch-rate="0" complexity="7">
               <lines>
                 <line number="275" hits="5"/>
                 <line number="277" hits="5"/>
@@ -745,20 +745,20 @@
           <methods>
             <method name="notify" signature="" line-rate="1" branch-rate="0" complexity="4">
               <lines>
-                <line number="33" hits="61"/>
-                <line number="34" hits="61"/>
-                <line number="35" hits="60"/>
-                <line number="36" hits="1"/>
-                <line number="39" hits="1"/>
+                <line number="38" hits="61"/>
+                <line number="39" hits="61"/>
+                <line number="40" hits="60"/>
+                <line number="41" hits="1"/>
+                <line number="44" hits="1"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="33" hits="61"/>
-            <line number="34" hits="61"/>
-            <line number="35" hits="60"/>
-            <line number="36" hits="1"/>
-            <line number="39" hits="1"/>
+            <line number="38" hits="61"/>
+            <line number="39" hits="61"/>
+            <line number="40" hits="60"/>
+            <line number="41" hits="1"/>
+            <line number="44" hits="1"/>
           </lines>
         </class>
       </classes>
@@ -1110,12 +1110,12 @@
           <methods>
             <method name="onEvent" signature="sql\MydbEventMetadataInterface $event" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="25" hits="60"/>
+                <line number="27" hits="60"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="25" hits="60"/>
+            <line number="27" hits="60"/>
           </lines>
         </class>
       </classes>

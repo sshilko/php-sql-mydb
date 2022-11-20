@@ -102,7 +102,7 @@
         <token name="T_DOC_COMMENT">     * Get table primary keys</token>
       </line>
       <line no="29">
-        <token name="T_DOC_COMMENT">     * @return string[]</token>
+        <token name="T_DOC_COMMENT">     * @return ?array&lt;string&gt;</token>
       </line>
       <line no="30">
         <token name="T_DOC_COMMENT">     */</token>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Sun Nov 20 23:11:34 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+  <build time="Sun Nov 20 23:24:26 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
     <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.0RC2"/>
   </build>
@@ -244,7 +244,7 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4961" comments="1984" code="2977" executable="665" executed="651" percent="97.89"/>
+        <lines total="4963" comments="1984" code="2979" executable="665" executed="651" percent="97.89"/>
         <methods count="166" tested="159" percent="95.78"/>
         <functions count="0" tested="0" percent="0"/>
         <classes count="19" tested="18" percent="94.74"/>
@@ -585,7 +585,7 @@
       </directory>
       <directory name="MydbListener">
         <totals>
-          <lines total="28" comments="11" code="17" executable="1" executed="1" percent="100.00"/>
+          <lines total="30" comments="11" code="19" executable="1" executed="1" percent="100.00"/>
           <methods count="1" tested="1" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -593,7 +593,7 @@
         </totals>
         <file name="InternalListener.php" href="MydbListener/InternalListener.php.xml">
           <totals>
-            <lines total="28" comments="11" code="17" executable="1" executed="1" percent="100.00"/>
+            <lines total="30" comments="11" code="19" executable="1" executed="1" percent="100.00"/>
             <methods count="1" tested="1" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="1" percent="100.00"/>

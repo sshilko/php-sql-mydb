@@ -8,7 +8,7 @@
       <classes count="1" tested="0" percent="0.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\Mydb" start="51" executable="209" executed="195" crap="106.19">
+    <class name="sql\Mydb" start="51" executable="209" executed="195" crap="107.25">
       <namespace name="sql"/>
       <method name="__construct" signature="__construct(sql\MydbCredentialsInterface $credentials, Psr\Log\LoggerInterface $logger, ?sql\MydbOptionsInterface $options, ?sql\MydbMysqliInterface $mysqli, ?sql\MydbEnvironmentInterface $environment, ?sql\MydbQueryBuilderInterface $queryBuilder, ?sql\MydbListenerInterface $eventListener)" start="79" end="95" crap="1" executable="7" executed="7" coverage="100"/>
       <method name="__destruct" signature="__destruct()" start="104" end="108" crap="1" executable="2" executed="2" coverage="100"/>
@@ -18,7 +18,7 @@
       <method name="command" signature="command(string $query): bool" start="193" end="209" crap="3" executable="7" executed="7" coverage="100"/>
       <method name="getEnumValues" signature="getEnumValues(string $table, string $column): array" start="216" end="250" crap="7" executable="16" executed="16" coverage="100"/>
       <method name="escape" signature="escape($unescaped, string $quote): string" start="259" end="266" crap="2" executable="3" executed="3" coverage="100"/>
-      <method name="getPrimaryKeys" signature="getPrimaryKeys(string $table): ?array" start="273" end="289" crap="6" executable="8" executed="8" coverage="100"/>
+      <method name="getPrimaryKeys" signature="getPrimaryKeys(string $table): ?array" start="273" end="289" crap="7" executable="8" executed="8" coverage="100"/>
       <method name="beginTransaction" signature="beginTransaction(): void" start="294" end="311" crap="5" executable="9" executed="9" coverage="100"/>
       <method name="rollbackTransaction" signature="rollbackTransaction(): void" start="316" end="327" crap="3" executable="5" executed="5" coverage="100"/>
       <method name="commitTransaction" signature="commitTransaction(): void" start="333" end="344" crap="3" executable="5" executed="5" coverage="100"/>
@@ -6482,7 +6482,7 @@
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\ConnectException</token>
       </line>
       <line no="271">
-        <token name="T_DOC_COMMENT">     * @return string[]</token>
+        <token name="T_DOC_COMMENT">     * @return ?array&lt;string&gt;</token>
       </line>
       <line no="272">
         <token name="T_DOC_COMMENT">     */</token>
@@ -6585,6 +6585,16 @@
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_ISSET">isset</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$row</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Key_name'</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_AND">&amp;&amp;</token>
+        <token name="T_WHITESPACE"> </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'PRIMARY'</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_IS_IDENTICAL">===</token>

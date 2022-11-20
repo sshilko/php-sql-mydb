@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-20 23:11:33</timestamp>
+  <timestamp>2022-11-20 23:24:25</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>169</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>420.69</totalCrap>
+    <totalCrap>421.69</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -105,8 +105,8 @@
       <methodName>getPrimaryKeys</methodName>
       <methodSignature>getPrimaryKeys(string $table): ?array</methodSignature>
       <fullMethod>getPrimaryKeys(string $table): ?array</fullMethod>
-      <crap>6</crap>
-      <complexity>6</complexity>
+      <crap>7</crap>
+      <complexity>7</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -553,22 +553,22 @@
     <method>
       <package>sql</package>
       <className>sql\MydbEvent</className>
-      <methodName>notify</methodName>
-      <methodSignature>notify(): void</methodSignature>
-      <fullMethod>notify(): void</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
+      <methodName>getListeners</methodName>
+      <methodSignature>getListeners(): array</methodSignature>
+      <fullMethod>getListeners(): array</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
       <package>sql</package>
       <className>sql\MydbEvent</className>
-      <methodName>getListeners</methodName>
-      <methodSignature>getListeners(): array</methodSignature>
-      <fullMethod>getListeners(): array</fullMethod>
-      <crap>0</crap>
-      <complexity>0</complexity>
+      <methodName>notify</methodName>
+      <methodSignature>notify(): void</methodSignature>
+      <fullMethod>notify(): void</fullMethod>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>

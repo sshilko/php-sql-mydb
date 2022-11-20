@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668985893">
-  <project timestamp="1668985893">
+<coverage generated="1668986665">
+  <project timestamp="1668986665">
     <file name="/app/src/sql/Mydb.php">
       <class name="sql\Mydb" namespace="global">
-        <metrics complexity="103" methods="30" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="209" coveredstatements="195" elements="239" coveredelements="218"/>
+        <metrics complexity="104" methods="30" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="209" coveredstatements="195" elements="239" coveredelements="218"/>
       </class>
       <line num="79" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="85"/>
       <line num="88" type="stmt" count="85"/>
@@ -72,7 +72,7 @@
       <line num="261" type="stmt" count="4"/>
       <line num="262" type="stmt" count="1"/>
       <line num="265" type="stmt" count="3"/>
-      <line num="273" type="method" name="getPrimaryKeys" visibility="public" complexity="6" crap="6" count="5"/>
+      <line num="273" type="method" name="getPrimaryKeys" visibility="public" complexity="7" crap="7" count="5"/>
       <line num="275" type="stmt" count="5"/>
       <line num="277" type="stmt" count="5"/>
       <line num="278" type="stmt" count="1"/>
@@ -330,12 +330,12 @@
       <class name="sql\MydbEvent" namespace="global">
         <metrics complexity="4" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
       </class>
-      <line num="31" type="method" name="notify" visibility="public" complexity="4" crap="4" count="61"/>
-      <line num="33" type="stmt" count="61"/>
-      <line num="34" type="stmt" count="61"/>
-      <line num="35" type="stmt" count="60"/>
-      <line num="36" type="stmt" count="1"/>
-      <line num="39" type="stmt" count="1"/>
+      <line num="36" type="method" name="notify" visibility="public" complexity="4" crap="4" count="61"/>
+      <line num="38" type="stmt" count="61"/>
+      <line num="39" type="stmt" count="61"/>
+      <line num="40" type="stmt" count="60"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
       <metrics loc="49" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
     </file>
     <file name="/app/src/sql/MydbEvent/InternalConnectionBegin.php">
@@ -569,9 +569,9 @@
       <class name="sql\MydbListener\InternalListener" namespace="global">
         <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
-      <line num="23" type="method" name="onEvent" visibility="protected" complexity="2" crap="2" count="60"/>
-      <line num="25" type="stmt" count="60"/>
-      <metrics loc="28" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      <line num="25" type="method" name="onEvent" visibility="protected" complexity="2" crap="2" count="60"/>
+      <line num="27" type="stmt" count="60"/>
+      <metrics loc="30" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/app/src/sql/MydbListenerInterface.php">
       <metrics loc="22" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -1129,6 +1129,6 @@
       <line num="203" type="stmt" count="1"/>
       <metrics loc="206" ncloc="124" classes="1" methods="15" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="28" elements="43" coveredelements="43"/>
     </file>
-    <metrics files="59" loc="4961" ncloc="2977" classes="19" methods="166" coveredmethods="159" conditionals="0" coveredconditionals="0" statements="665" coveredstatements="651" elements="831" coveredelements="810"/>
+    <metrics files="59" loc="4963" ncloc="2979" classes="19" methods="166" coveredmethods="159" conditionals="0" coveredconditionals="0" statements="665" coveredstatements="651" elements="831" coveredelements="810"/>
   </project>
 </coverage>
