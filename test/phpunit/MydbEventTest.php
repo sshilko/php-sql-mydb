@@ -46,7 +46,7 @@ final class MydbEventTest extends TestCase
 
                     protected function onEvent(MydbEventMetadataInterface $event): ?bool
                     {
-                        serialize($event);
+                        serialize($event->getEventMetadata());
 
                         return false;
                     }
