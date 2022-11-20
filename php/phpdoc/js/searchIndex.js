@@ -436,15 +436,65 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbEnvironmentInterface.html#method_startSignalsTrap"
         },                {
-            "fqsen": "\\sql\\MydbEvent\\Internal",
-            "name": "Internal",
+            "fqsen": "\\sql\\MydbEvent\\InternalConnectionBegin",
+            "name": "InternalConnectionBegin",
             "summary": "",
-            "url": "classes/sql-MydbEvent-Internal.html"
+            "url": "classes/sql-MydbEvent-InternalConnectionBegin.html"
         },                {
-            "fqsen": "\\sql\\MydbEvent\\Internal\u003A\u003AgetListeners\u0028\u0029",
+            "fqsen": "\\sql\\MydbEvent\\InternalConnectionBegin\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalConnectionBegin.html#method___construct"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalConnectionEnd",
+            "name": "InternalConnectionEnd",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalConnectionEnd.html"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalConnectionEnd\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalConnectionEnd.html#method___construct"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalEvent",
+            "name": "InternalEvent",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalEvent.html"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalEvent\u003A\u003AgetEventMetadata\u0028\u0029",
+            "name": "getEventMetadata",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalEvent.html#method_getEventMetadata"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalEvent\u003A\u003AgetListeners\u0028\u0029",
             "name": "getListeners",
             "summary": "",
-            "url": "classes/sql-MydbEvent-Internal.html#method_getListeners"
+            "url": "classes/sql-MydbEvent-InternalEvent.html#method_getListeners"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalEvent\u003A\u003A\u0024data",
+            "name": "data",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalEvent.html#property_data"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalQueryBegin",
+            "name": "InternalQueryBegin",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalQueryBegin.html"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalQueryBegin\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalQueryBegin.html#method___construct"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalQueryEnd",
+            "name": "InternalQueryEnd",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalQueryEnd.html"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalQueryEnd\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalQueryEnd.html#method___construct"
         },                {
             "fqsen": "\\sql\\MydbEvent",
             "name": "MydbEvent",
@@ -465,11 +515,6 @@ Search.appendIndex(
             "name": "getListeners",
             "summary": "",
             "url": "classes/sql-MydbEvent.html#method_getListeners"
-        },                {
-            "fqsen": "\\sql\\MydbEvent\u003A\u003A\u0024eventMetadata",
-            "name": "eventMetadata",
-            "summary": "",
-            "url": "classes/sql-MydbEvent.html#property_eventMetadata"
         },                {
             "fqsen": "\\sql\\MydbEventInterface",
             "name": "MydbEventInterface",
