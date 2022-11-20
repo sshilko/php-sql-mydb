@@ -57,7 +57,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
     /**
      * Backup of signal handlers
      * Original signal handler, which replaced by custon trap
-     * @var array<int, int|resource|string>
+     * @psalm-var array<int, int|resource|string>
      */
     protected array $trappedHandlers = [];
 

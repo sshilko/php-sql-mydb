@@ -300,12 +300,14 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
 
         /**
          * @phpcs:disable SlevomatCodingStandard.Functions.DisallowArrowFunction
+         * @throws \sql\MydbException\QueryBuilderException
          */
         $mapper = function (array $item): string {
             $escapedArgs = implode(
                 ', ',
                 /**
                  * @psalm-var float|int|string|\sql\MydbExpressionInterface|null $input
+                 * @throws \sql\MydbException\QueryBuilderException
                  */
                 array_map(function ($input) {
                         /**

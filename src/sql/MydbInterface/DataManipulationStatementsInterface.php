@@ -40,7 +40,7 @@ interface DataManipulationStatementsInterface
     public function updateWhereMany(array $columnSetWhere, array $where, string $table): void;
 
     /**
-     * @param array<array-key, array<(float|int|string|\sql\MydbExpressionInterface|null)>> $data
+     * @psalm-param array<array-key, array<(float|int|string|\sql\MydbExpressionInterface|null)>> $data
      * @param array<string> $cols
      */
     public function insertMany(
