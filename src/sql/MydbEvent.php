@@ -26,6 +26,11 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
     abstract public function getEventMetadata(): ?array;
 
     /**
+     * @return array<\sql\MydbListenerInterface>
+     */
+    abstract protected function getListeners(): array;
+
+    /**
      * @throws \sql\MydbException\EventException
      */
     public function notify(): void
@@ -40,9 +45,4 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
             }
         }
     }
-
-    /**
-     * @return array<\sql\MydbListenerInterface>
-     */
-    abstract protected function getListeners(): array;
 }

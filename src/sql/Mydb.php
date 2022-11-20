@@ -268,7 +268,7 @@ class Mydb implements
     /**
      * @throws \sql\MydbException
      * @throws \sql\MydbException\ConnectException
-     * @return string[]
+     * @return ?array<string>
      */
     public function getPrimaryKeys(string $table): ?array
     {
@@ -280,7 +280,7 @@ class Mydb implements
 
         $keys = [];
         foreach ($result as $row) {
-            if ('PRIMARY' === $row['Key_name'] && isset($row['Column_name'])) {
+            if (isset($row['Key_name']) && 'PRIMARY' === $row['Key_name'] && isset($row['Column_name'])) {
                 $keys[] = (string) $row['Column_name'];
             }
         }

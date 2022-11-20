@@ -20,6 +20,8 @@ use sql\MydbEvent;
 use sql\MydbEventMetadataInterface;
 use sql\MydbException\EventException;
 use sql\MydbListener;
+use stdClass;
+use function serialize;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -44,13 +46,15 @@ final class MydbEventTest extends TestCase
 
                     protected function onEvent(MydbEventMetadataInterface $event): ?bool
                     {
+                        serialize($event);
+
                         return false;
                     }
                 }];
             }
         };
 
-        self::assertNull((new $class)->notify());
+        self::assertNull((new $class())->notify());
     }
 
     public function testMydbEventListenerException(): void
@@ -64,12 +68,12 @@ final class MydbEventTest extends TestCase
 
             protected function getListeners(): array
             {
-                return [new \stdClass()];
+                return [new stdClass()];
             }
         };
 
         $this->expectException(EventException::class);
-        (new $class)->notify();
+        (new $class())->notify();
     }
 
     public function testMydbInternalEventSuccess(): void

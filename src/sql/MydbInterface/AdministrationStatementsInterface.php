@@ -26,7 +26,7 @@ interface AdministrationStatementsInterface
 {
     /**
      * Get table primary keys
-     * @return string[]
+     * @return ?array<string>
      */
     public function getPrimaryKeys(string $table): ?array;
 
