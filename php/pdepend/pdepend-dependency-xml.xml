@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies generated="2022-11-20T23:23:13" pdepend="@package_version@">
+<dependencies generated="2022-11-26T01:16:04" pdepend="@package_version@">
   <package name="sql">
     <class name="Mydb">
       <efferent>
@@ -9,7 +9,6 @@
         <type namespace="sql\MydbInterface" name="QueryInterface"/>
         <type namespace="sql\MydbInterface" name="DataManipulationStatementsInterface"/>
         <type namespace="sql\MydbInterface" name="TransactionInterface"/>
-        <type namespace="sql\MydbInterface" name="AsyncInterface"/>
         <type namespace="sql\MydbInterface" name="AdministrationStatementsInterface"/>
         <type namespace="sql\MydbInterface" name="RemoteResourceInterface"/>
         <type namespace="sql" name="MydbCredentialsInterface"/>
@@ -25,7 +24,6 @@
         <type namespace="sql" name="MydbQueryBuilder"/>
         <type namespace="sql\MydbListener" name="InternalListener"/>
         <type namespace="sql\MydbException" name="ConnectException"/>
-        <type namespace="sql\MydbException" name="AsyncException"/>
         <type namespace="sql\MydbException" name="InternalException"/>
         <type namespace="sql" name="MydbException"/>
         <type namespace="sql\MydbException" name="TransactionBeginReadonlyException"/>
@@ -118,7 +116,6 @@
       </efferent>
       <afferent>
         <type namespace="sql" name="Mydb"/>
-        <type namespace="sql\MydbException" name="AsyncException"/>
         <type namespace="sql\MydbException" name="ConnectException"/>
         <type namespace="sql\MydbException" name="DeleteException"/>
         <type namespace="sql\MydbException" name="DisconnectException"/>
@@ -328,15 +325,6 @@
     </class>
   </package>
   <package name="sql\MydbException">
-    <class name="AsyncException">
-      <efferent>
-        <type namespace="sql" name="MydbException"/>
-      </efferent>
-      <afferent>
-        <type namespace="sql" name="Mydb"/>
-      </afferent>
-      <file name="/app/src/sql/MydbException/AsyncException.php"/>
-    </class>
     <class name="ConnectException">
       <efferent>
         <type namespace="sql" name="MydbException"/>
@@ -528,13 +516,6 @@
         <type namespace="sql" name="Mydb"/>
       </afferent>
       <file name="/app/src/sql/MydbInterface/AdministrationStatementsInterface.php"/>
-    </interface>
-    <interface name="AsyncInterface">
-      <efferent/>
-      <afferent>
-        <type namespace="sql" name="Mydb"/>
-      </afferent>
-      <file name="/app/src/sql/MydbInterface/AsyncInterface.php"/>
     </interface>
     <interface name="CommandInterface">
       <efferent/>

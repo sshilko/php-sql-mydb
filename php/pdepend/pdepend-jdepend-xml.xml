@@ -82,8 +82,8 @@
     </Package>
     <Package name="sql\MydbException">
       <Stats>
-        <TotalClasses>21</TotalClasses>
-        <ConcreteClasses>21</ConcreteClasses>
+        <TotalClasses>20</TotalClasses>
+        <ConcreteClasses>20</ConcreteClasses>
         <AbstractClasses>0</AbstractClasses>
         <Ca>1</Ca>
         <Ce>2</Ce>
@@ -92,7 +92,6 @@
         <D>0.33333333333333</D>
       </Stats>
       <ConcreteClasses>
-        <Class sourceFile="/app/src/sql/MydbException/AsyncException.php">AsyncException</Class>
         <Class sourceFile="/app/src/sql/MydbException/ConnectException.php">ConnectException</Class>
         <Class sourceFile="/app/src/sql/MydbException/DeleteException.php">DeleteException</Class>
         <Class sourceFile="/app/src/sql/MydbException/DisconnectException.php">DisconnectException</Class>
@@ -125,9 +124,9 @@
     </Package>
     <Package name="sql\MydbInterface">
       <Stats>
-        <TotalClasses>8</TotalClasses>
+        <TotalClasses>7</TotalClasses>
         <ConcreteClasses>0</ConcreteClasses>
-        <AbstractClasses>8</AbstractClasses>
+        <AbstractClasses>7</AbstractClasses>
         <Ca>1</Ca>
         <Ce>0</Ce>
         <A>1</A>
@@ -137,7 +136,6 @@
       <ConcreteClasses/>
       <AbstractClasses>
         <Class sourceFile="/app/src/sql/MydbInterface/AdministrationStatementsInterface.php">AdministrationStatementsInterface</Class>
-        <Class sourceFile="/app/src/sql/MydbInterface/AsyncInterface.php">AsyncInterface</Class>
         <Class sourceFile="/app/src/sql/MydbInterface/CommandInterface.php">CommandInterface</Class>
         <Class sourceFile="/app/src/sql/MydbInterface/DataManipulationStatementsInterface.php">DataManipulationStatementsInterface</Class>
         <Class sourceFile="/app/src/sql/MydbInterface/EncoderInterface.php">EncoderInterface</Class>
