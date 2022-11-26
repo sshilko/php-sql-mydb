@@ -28,6 +28,4 @@ interface TransactionInterface
     public function commitTransaction(): void;
 
     public function rollbackTransaction(): void;
-
-    public function setTransactionIsolationLevel(string $isolationLevel): void;
 }

@@ -22,6 +22,7 @@ use sql\MydbOptions;
 use sql\MydbRegistry;
 
 include_once __DIR__ . '/../vendor/autoload.php';
+include_once __DIR__ . '/MydbRepository/UserRepository.php';
 
 $registry = new MydbRegistry();
 $mylogger = new MydbLogger();
@@ -68,8 +69,6 @@ assert(['10', '20'] === array_column($mydb->select("SELECT id, name FROM users O
 echo $mydb->updateWhere(['id' => 99], ['id' => 10], 'users');
 assert(['20', '99'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
-$mydb->rollbackTransaction();
-
 $db10 = new Mydb($auth, $mylogger, $opts);
 $db10->open();
 
@@ -81,5 +80,11 @@ $registry['db3'] = $db20;
 $db10->close();
 $db20->close();
 
+$userRepo = new MydbRepository\UserRepository($registry);
+$user20 = $userRepo->findById(20);
+assert('user20' === $user20[0]['name']);
+
+$mydb->rollbackTransaction();
 echo 'OK';
+exit(0);
 // @codeCoverageIgnoreEnd

@@ -28,6 +28,7 @@ use sql\MydbException\TransactionCommitException;
 use sql\MydbException\TransactionIsolationException;
 use sql\MydbException\TransactionRollbackException;
 use sql\MydbException\UpdateException;
+use sql\MydbInterface\RemoteResourceInterface;
 use sql\MydbListener\InternalListener;
 use sql\MydbMysqli\MydbMysqliResultInterface;
 use Throwable;
@@ -47,15 +48,7 @@ use function substr;
  * @see https://github.com/sshilko/php-sql-mydb
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class Mydb implements
-    MydbInterface,
-    MydbInterface\EncoderInterface,
-    MydbInterface\CommandInterface,
-    MydbInterface\QueryInterface,
-    MydbInterface\DataManipulationStatementsInterface,
-    MydbInterface\TransactionInterface,
-    MydbInterface\AdministrationStatementsInterface,
-    MydbInterface\RemoteResourceInterface
+class Mydb implements MydbInterface, RemoteResourceInterface
 {
 
     protected MydbMysqliInterface $mysqli;
@@ -509,18 +502,6 @@ class Mydb implements
         $query = $this->queryBuilder->insertOne($data, $table, MydbQueryBuilderInterface::SQL_INSERT);
 
         return $this->insert($query);
-    }
-
-    /**
-     * @see https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
-     * @throws \sql\MydbException
-     */
-    public function setTransactionIsolationLevel(string $isolationLevel): void
-    {
-        $ok = $this->mysqli->setTransactionIsolationLevel($isolationLevel);
-        if (false === $ok) {
-            $this->onError(new TransactionIsolationException());
-        }
     }
 
     /**
