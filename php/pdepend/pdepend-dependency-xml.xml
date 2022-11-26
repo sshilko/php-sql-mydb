@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies generated="2022-11-26T01:30:48" pdepend="@package_version@">
+<dependencies generated="2022-11-26T17:06:18" pdepend="@package_version@">
   <package name="sql">
     <class name="Mydb">
       <efferent>
         <type namespace="sql" name="MydbInterface"/>
-        <type namespace="sql\MydbInterface" name="EncoderInterface"/>
-        <type namespace="sql\MydbInterface" name="CommandInterface"/>
-        <type namespace="sql\MydbInterface" name="QueryInterface"/>
-        <type namespace="sql\MydbInterface" name="DataManipulationStatementsInterface"/>
-        <type namespace="sql\MydbInterface" name="TransactionInterface"/>
-        <type namespace="sql\MydbInterface" name="AdministrationStatementsInterface"/>
         <type namespace="sql\MydbInterface" name="RemoteResourceInterface"/>
         <type namespace="sql" name="MydbCredentialsInterface"/>
         <type namespace="Psr\Log" name="LoggerInterface"/>
@@ -34,7 +28,6 @@
         <type namespace="" name="Throwable"/>
         <type namespace="sql\MydbException" name="DeleteException"/>
         <type namespace="sql\MydbException" name="UpdateException"/>
-        <type namespace="sql\MydbException" name="TransactionIsolationException"/>
         <type namespace="sql\MydbEvent" name="InternalQueryBegin"/>
         <type namespace="sql\MydbEvent" name="InternalQueryEnd"/>
         <type namespace="sql\MydbException" name="TerminationSignalException"/>
@@ -42,6 +35,7 @@
         <type namespace="sql\MydbEvent" name="InternalConnectionBegin"/>
         <type namespace="sql\MydbEvent" name="InternalConnectionEnd"/>
         <type namespace="sql\MydbException" name="TransactionAutocommitException"/>
+        <type namespace="sql\MydbException" name="TransactionIsolationException"/>
       </efferent>
       <afferent/>
       <file name="/app/src/sql/Mydb.php"/>
@@ -152,10 +146,19 @@
       <file name="/app/src/sql/MydbExpressionInterface.php"/>
     </interface>
     <interface name="MydbInterface">
-      <efferent/>
+      <efferent>
+        <type namespace="sql\MydbInterface" name="EncoderInterface"/>
+        <type namespace="sql\MydbInterface" name="CommandInterface"/>
+        <type namespace="sql\MydbInterface" name="QueryInterface"/>
+        <type namespace="sql\MydbInterface" name="DataManipulationStatementsInterface"/>
+        <type namespace="sql\MydbInterface" name="TransactionInterface"/>
+        <type namespace="sql\MydbInterface" name="AdministrationStatementsInterface"/>
+      </efferent>
       <afferent>
         <type namespace="sql" name="Mydb"/>
         <type namespace="sql" name="MydbRegistry"/>
+        <type namespace="sql" name="MydbRepository"/>
+        <type namespace="sql" name="MydbRepositoryInterface"/>
       </afferent>
       <file name="/app/src/sql/MydbInterface.php"/>
     </interface>
@@ -269,9 +272,29 @@
         <type namespace="sql\MydbException" name="RegistryException"/>
         <type namespace="sql" name="MydbInterface"/>
       </efferent>
-      <afferent/>
+      <afferent>
+        <type namespace="sql" name="MydbRepository"/>
+      </afferent>
       <file name="/app/src/sql/MydbRegistry.php"/>
     </class>
+    <class name="MydbRepository">
+      <efferent>
+        <type namespace="sql" name="MydbRepositoryInterface"/>
+        <type namespace="sql" name="MydbRegistry"/>
+        <type namespace="sql" name="MydbInterface"/>
+      </efferent>
+      <afferent/>
+      <file name="/app/src/sql/MydbRepository.php"/>
+    </class>
+    <interface name="MydbRepositoryInterface">
+      <efferent>
+        <type namespace="sql" name="MydbInterface"/>
+      </efferent>
+      <afferent>
+        <type namespace="sql" name="MydbRepository"/>
+      </afferent>
+      <file name="/app/src/sql/MydbRepositoryInterface.php"/>
+    </interface>
   </package>
   <package name="sql\MydbEvent">
     <class name="InternalConnectionBegin">
@@ -513,35 +536,35 @@
     <interface name="AdministrationStatementsInterface">
       <efferent/>
       <afferent>
-        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbInterface"/>
       </afferent>
       <file name="/app/src/sql/MydbInterface/AdministrationStatementsInterface.php"/>
     </interface>
     <interface name="CommandInterface">
       <efferent/>
       <afferent>
-        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbInterface"/>
       </afferent>
       <file name="/app/src/sql/MydbInterface/CommandInterface.php"/>
     </interface>
     <interface name="DataManipulationStatementsInterface">
       <efferent/>
       <afferent>
-        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbInterface"/>
       </afferent>
       <file name="/app/src/sql/MydbInterface/DataManipulationStatementsInterface.php"/>
     </interface>
     <interface name="EncoderInterface">
       <efferent/>
       <afferent>
-        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbInterface"/>
       </afferent>
       <file name="/app/src/sql/MydbInterface/EncoderInterface.php"/>
     </interface>
     <interface name="QueryInterface">
       <efferent/>
       <afferent>
-        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbInterface"/>
       </afferent>
       <file name="/app/src/sql/MydbInterface/QueryInterface.php"/>
     </interface>
@@ -555,7 +578,7 @@
     <interface name="TransactionInterface">
       <efferent/>
       <afferent>
-        <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbInterface"/>
       </afferent>
       <file name="/app/src/sql/MydbInterface/TransactionInterface.php"/>
     </interface>

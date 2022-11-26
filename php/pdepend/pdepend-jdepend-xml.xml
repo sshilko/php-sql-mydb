@@ -3,14 +3,14 @@
   <Packages>
     <Package name="sql">
       <Stats>
-        <TotalClasses>22</TotalClasses>
+        <TotalClasses>24</TotalClasses>
         <ConcreteClasses>10</ConcreteClasses>
-        <AbstractClasses>12</AbstractClasses>
+        <AbstractClasses>14</AbstractClasses>
         <Ca>3</Ca>
         <Ce>7</Ce>
-        <A>0.54545454545455</A>
+        <A>0.58333333333333</A>
         <I>0.7</I>
-        <D>0.24545454545455</D>
+        <D>0.28333333333333</D>
       </Stats>
       <ConcreteClasses>
         <Class sourceFile="/app/src/sql/Mydb.php">Mydb</Class>
@@ -37,6 +37,8 @@
         <Class sourceFile="/app/src/sql/MydbMysqliInterface.php">MydbMysqliInterface</Class>
         <Class sourceFile="/app/src/sql/MydbOptionsInterface.php">MydbOptionsInterface</Class>
         <Class sourceFile="/app/src/sql/MydbQueryBuilderInterface.php">MydbQueryBuilderInterface</Class>
+        <Class sourceFile="/app/src/sql/MydbRepository.php">MydbRepository</Class>
+        <Class sourceFile="/app/src/sql/MydbRepositoryInterface.php">MydbRepositoryInterface</Class>
       </AbstractClasses>
       <DependsUpon>
         <Package></Package>
