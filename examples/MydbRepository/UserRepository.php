@@ -15,6 +15,7 @@ declare(strict_types = 1);
  */
 
 // @codeCoverageIgnoreStart
+
 namespace MydbRepository;
 
 use sql\MydbRepository;
