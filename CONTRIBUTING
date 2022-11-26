@@ -22,7 +22,7 @@ docker-compose exec %php-container% composer %composer-script%
 
 git add -A
 docker-compose exec app.php composer app-pre-commit
-docker-compose exec app.php composer app-code-quality
+docker-compose exec app.php composer app-quality
 git commit -m "new-feature-message"
 
 

@@ -31,7 +31,7 @@
             "@putenv XDEBUG_MODE=off",
             "pre-commit run --config build/.pre-commit-config.yaml"
         ],
-        "app-code-quality": [
+        "app-quality": [
             "@app-phpcbf",
             "@app-phpcs",
             "@app-phpcpd",

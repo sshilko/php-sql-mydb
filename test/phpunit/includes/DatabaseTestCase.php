@@ -102,10 +102,14 @@ class DatabaseTestCase extends TestCase
     protected function getDefaultDb(
         ?MydbMysqliInterface $mysqli = null,
         ?MydbOptionsInterface $options = null,
-        ?MydbEnvironmentInterface $environment = null
+        ?MydbEnvironmentInterface $environment = null,
+        bool $refresh = false
     ): MydbInterface {
-        if (!isset(static::$registry['db0'])) {
+        if (!isset(static::$registry['db0']) || true === $refresh) {
             $credentials = new MydbCredentials(self::HOST, self::USER, self::PASS, self::NAME, (int) self::PORT);
+            if (isset(static::$registry['db0'])) {
+                unset(static::$registry['db0']);
+            }
             static::$registry['db0'] = new Mydb($credentials, $this->logger, $options, $mysqli, $environment);
         }
 

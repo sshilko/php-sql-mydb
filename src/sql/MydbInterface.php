@@ -20,7 +20,13 @@ namespace sql;
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbInterface
+interface MydbInterface extends
+    MydbInterface\EncoderInterface,
+    MydbInterface\CommandInterface,
+    MydbInterface\QueryInterface,
+    MydbInterface\DataManipulationStatementsInterface,
+    MydbInterface\TransactionInterface,
+    MydbInterface\AdministrationStatementsInterface
 {
 
 }

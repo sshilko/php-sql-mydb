@@ -18,7 +18,6 @@ namespace phpunit;
 use sql\MydbException\TransactionBeginReadonlyException;
 use sql\MydbException\TransactionBeginReadwriteException;
 use sql\MydbException\TransactionCommitException;
-use sql\MydbException\TransactionIsolationException;
 use sql\MydbException\TransactionRollbackException;
 use sql\MydbMysqli;
 use sql\MydbOptions;
@@ -70,23 +69,8 @@ final class TransactionsTest extends includes\DatabaseTestCase
         $db->close();
     }
 
-    /**
-     * @throws \sql\MydbException
-     */
-    public function testTransactionIsolationLevelException(): void
-    {
-        $mysqli = $this->createMock(MydbMysqli::class);
-        $db = $this->getDefaultDb($mysqli);
-        $mysqli->expects(self::once())->method('setTransactionIsolationLevel')->willReturn(false);
-        self::expectException(TransactionIsolationException::class);
-        $db->setTransactionIsolationLevel('hello');
-    }
-
     public function testTransactionIsolationLevel(): void
     {
-        $db = $this->getDefaultDb();
-        $db->open();
-
         $levels = [
             'REPEATABLE READ',
             'REPEATABLE READ',
@@ -96,12 +80,16 @@ final class TransactionsTest extends includes\DatabaseTestCase
         ];
 
         foreach ($levels as $l) {
-            $db->setTransactionIsolationLevel($l);
+            $mysqli = new MydbMysqli();
+            $options = new MydbOptions();
+            $options->setTransactionIsolationLevel($l);
+
+            $db = $this->getDefaultDb($mysqli, $options, null, true);
+            $db->open();
             $row = $db->select('SELECT @@transaction_isolation as n');
             self::assertSame($row[0]['n'], str_replace(' ', '-', $l));
+            $db->close();
         }
-
-        $db->close();
     }
 
     public function testBeginTransactionReadonlySuccess(): void

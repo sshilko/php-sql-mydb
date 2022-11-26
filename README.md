@@ -65,7 +65,7 @@ composer require sshilko/php-sql-mydb:@dev
 - Friendly transactions
   - `autocommit = 0`
   - explicit `commit` [on gracefull shutdown](https://dev.mysql.com/doc/refman/5.7/en/innodb-autocommit-commit-rollback.html)
-- Explicit timeouts  
+- Explicit timeouts
   - 05 seconds `client-side` connect-timeout
   - 89 seconds `server-side` SELECT query timeout
   - 90 seconds `client-side` read-timeout for any query
@@ -122,7 +122,6 @@ please re-use existing solutions that best fit your requirements.
 
 #### Future roadmap
 
-- Library helper for Repository pattern usage
 - PHPUnit coverage for command/query raw SQL via events system
 - Packagist export & release stable version
 
