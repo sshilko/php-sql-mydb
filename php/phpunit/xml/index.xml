@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Sat Nov 26 1:17:41 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+  <build time="Sat Nov 26 1:27:00 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
     <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.0RC2"/>
   </build>
@@ -236,7 +236,7 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4864" comments="1944" code="2920" executable="651" executed="635" percent="97.54"/>
+        <lines total="4862" comments="1944" code="2918" executable="651" executed="635" percent="97.54"/>
         <methods count="164" tested="155" percent="94.51"/>
         <functions count="0" tested="0" percent="0"/>
         <classes count="19" tested="17" percent="89.47"/>
@@ -739,7 +739,7 @@
       </file>
       <file name="MydbMysqli.php" href="MydbMysqli.php.xml">
         <totals>
-          <lines total="608" comments="198" code="410" executable="138" executed="136" percent="98.55"/>
+          <lines total="606" comments="198" code="408" executable="138" executed="136" percent="98.55"/>
           <methods count="30" tested="28" percent="93.33"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
