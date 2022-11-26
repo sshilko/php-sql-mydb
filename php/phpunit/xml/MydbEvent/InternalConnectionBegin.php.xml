@@ -14,7 +14,6 @@
     </class>
     <coverage>
       <line nr="22">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>

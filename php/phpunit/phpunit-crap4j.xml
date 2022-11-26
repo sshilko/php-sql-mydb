@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-20 23:24:25</timestamp>
+  <timestamp>2022-11-26 01:17:40</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>169</methodCount>
+    <methodCount>167</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>421.69</totalCrap>
+    <totalCrap>412.82</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -30,17 +30,6 @@
       <fullMethod>__destruct()</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql</package>
-      <className>sql\Mydb</className>
-      <methodName>async</methodName>
-      <methodSignature>async(string $command): void</methodSignature>
-      <fullMethod>async(string $command): void</fullMethod>
-      <crap>7</crap>
-      <complexity>7</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -941,9 +930,9 @@
       <methodName>getMysqli</methodName>
       <methodSignature>getMysqli(): ?mysqli</methodSignature>
       <fullMethod>getMysqli(): ?mysqli</fullMethod>
-      <crap>1</crap>
+      <crap>2</crap>
       <complexity>1</complexity>
-      <coverage>100</coverage>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1059,17 +1048,6 @@
     <method>
       <package>sql</package>
       <className>sql\MydbMysqli</className>
-      <methodName>mysqliQueryAsync</methodName>
-      <methodSignature>mysqliQueryAsync(string $command): bool</methodSignature>
-      <fullMethod>mysqliQueryAsync(string $command): bool</fullMethod>
-      <crap>3</crap>
-      <complexity>3</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql</package>
-      <className>sql\MydbMysqli</className>
       <methodName>close</methodName>
       <methodSignature>close(): bool</methodSignature>
       <fullMethod>close(): bool</fullMethod>
@@ -1161,9 +1139,9 @@
       <methodName>autocommit</methodName>
       <methodSignature>autocommit(bool $enable): bool</methodSignature>
       <fullMethod>autocommit(bool $enable): bool</fullMethod>
-      <crap>4</crap>
+      <crap>4.13</crap>
       <complexity>4</complexity>
-      <coverage>100</coverage>
+      <coverage>80</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

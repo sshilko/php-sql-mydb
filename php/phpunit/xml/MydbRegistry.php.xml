@@ -34,13 +34,6 @@
         <covered by="phpunit\RegistryTest::testRegistryUnserialize1"/>
       </line>
       <line nr="68">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -122,13 +115,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="69">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -213,13 +199,6 @@
         <covered by="phpunit\RegistryTest::testRegistryEmpty1"/>
       </line>
       <line nr="73">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -300,13 +279,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="81">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -388,13 +360,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="82">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -479,13 +444,6 @@
         <covered by="phpunit\RegistryTest::testRegistryEmpty2"/>
       </line>
       <line nr="86">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -566,13 +524,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="94">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -653,13 +604,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="102">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -740,13 +684,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="112">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -827,13 +764,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="117">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -875,7 +805,6 @@
         <covered by="phpunit\MysqliTest::testExtractResponseNoInit"/>
         <covered by="phpunit\MysqliTest::testEscapeNoInit"/>
         <covered by="phpunit\MysqliTest::testTransactionsNoInit"/>
-        <covered by="phpunit\MysqliTest::testAsyncNoInit"/>
         <covered by="phpunit\MysqliTest::testCloseNoInit"/>
         <covered by="phpunit\MysqliTest::testAffectedRowsNoInit"/>
         <covered by="phpunit\MysqliTest::testWarningsNoInit"/>
@@ -954,13 +883,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="129">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -1043,13 +965,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="141">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -1131,13 +1046,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="142">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -1221,13 +1129,6 @@
         <covered by="phpunit\RegistryTest::testRegistryEmpty3"/>
       </line>
       <line nr="158">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -1309,13 +1210,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="159">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -1396,13 +1290,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="161">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -1486,13 +1373,6 @@
         <covered by="phpunit\RegistryTest::testRegistrySet"/>
       </line>
       <line nr="175">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -1577,13 +1457,6 @@
         <covered by="phpunit\RegistryTest::testRegistryUnSet1"/>
       </line>
       <line nr="179">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>

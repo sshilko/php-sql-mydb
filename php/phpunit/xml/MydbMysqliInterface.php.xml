@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbMysqliInterface.php" path="/">
     <totals>
-      <lines total="100" comments="23" code="77" executable="0" executed="0" percent="0"/>
+      <lines total="98" comments="23" code="75" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
@@ -424,24 +424,6 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_FUNCTION">function</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">mysqliQueryAsync</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_STRING">string</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$command</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_COLON">:</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">bool</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="70"/>
-      <line no="71">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_PUBLIC">public</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_FUNCTION">function</token>
-        <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">close</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
@@ -450,8 +432,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="72"/>
-      <line no="73">
+      <line no="70"/>
+      <line no="71">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -466,8 +448,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="74"/>
-      <line no="75">
+      <line no="72"/>
+      <line no="73">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -482,8 +464,8 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="76"/>
-      <line no="77">
+      <line no="74"/>
+      <line no="75">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -497,8 +479,8 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="78"/>
-      <line no="79">
+      <line no="76"/>
+      <line no="77">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -513,8 +495,8 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="80"/>
-      <line no="81">
+      <line no="78"/>
+      <line no="79">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -529,8 +511,8 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="82"/>
-      <line no="83">
+      <line no="80"/>
+      <line no="81">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -545,18 +527,18 @@
         <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="84"/>
-      <line no="85">
+      <line no="82"/>
+      <line no="83">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="86">
+      <line no="84">
         <token name="T_DOC_COMMENT">     * @return int|string|null</token>
       </line>
-      <line no="87">
+      <line no="85">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="88">
+      <line no="86">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -567,8 +549,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="89"/>
-      <line no="90">
+      <line no="87"/>
+      <line no="88">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -585,21 +567,21 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="91"/>
-      <line no="92">
+      <line no="89"/>
+      <line no="90">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="93">
+      <line no="91">
         <token name="T_DOC_COMMENT">    * @param array&lt;int, string&gt; $events</token>
       </line>
-      <line no="94">
+      <line no="92">
         <token name="T_DOC_COMMENT">     * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference</token>
       </line>
-      <line no="95">
+      <line no="93">
         <token name="T_DOC_COMMENT">    */</token>
       </line>
-      <line no="96">
+      <line no="94">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -623,8 +605,8 @@
         <token name="T_STRING">mysqli_result</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="97"/>
-      <line no="98">
+      <line no="95"/>
+      <line no="96">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -638,10 +620,10 @@
         <token name="T_ARRAY">array</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="99">
+      <line no="97">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="100"/>
+      <line no="98"/>
     </source>
   </file>
 </phpunit>

@@ -15,7 +15,6 @@
     </class>
     <coverage>
       <line nr="31">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -77,7 +76,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="37">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>

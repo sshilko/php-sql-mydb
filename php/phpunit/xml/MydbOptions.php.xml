@@ -41,7 +41,6 @@
     </class>
     <coverage>
       <line nr="191">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -90,7 +89,6 @@
         <covered by="phpunit\OptionsTest::testNonInteractiveTimeouts"/>
       </line>
       <line nr="201">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -145,7 +143,6 @@
         <covered by="phpunit\OptionsTest::testServerSideSelectTimeouts"/>
       </line>
       <line nr="211">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -206,7 +203,6 @@
         <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
       </line>
       <line nr="221">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -262,7 +258,6 @@
         <covered by="phpunit\OptionsTest::testErrorReporting"/>
       </line>
       <line nr="231">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -317,7 +312,6 @@
         <covered by="phpunit\OptionsTest::testReadTimeout"/>
       </line>
       <line nr="241">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -381,7 +375,6 @@
         <covered by="phpunit\OptionsTest::testNetworkBuffer"/>
       </line>
       <line nr="258">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -445,7 +438,6 @@
         <covered by="phpunit\OptionsTest::testSetReadBuffer"/>
       </line>
       <line nr="274">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -504,7 +496,6 @@
         <covered by="phpunit\OptionsTest::testMysqliReport"/>
       </line>
       <line nr="290">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -553,12 +544,6 @@
         <covered by="phpunit\OptionsTest::testSetTimeZone"/>
       </line>
       <line nr="300">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -606,15 +591,9 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="305">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\OptionsTest::testAutocommit"/>
       </line>
       <line nr="310">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -663,10 +642,6 @@
         <covered by="phpunit\OptionsTest::testCharset"/>
       </line>
       <line nr="320">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -720,17 +695,9 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="325">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\OptionsTest::testPersistent"/>
       </line>
       <line nr="330">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -777,16 +744,10 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="335">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\OptionsTest::testReadonly"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
       </line>
       <line nr="340">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -832,7 +793,6 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="341">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -881,7 +841,6 @@
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
       </line>
       <line nr="348">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>

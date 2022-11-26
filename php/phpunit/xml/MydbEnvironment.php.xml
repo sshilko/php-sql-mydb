@@ -23,8 +23,6 @@
     </class>
     <coverage>
       <line nr="71">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -40,8 +38,6 @@
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
       </line>
       <line nr="77">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\InsertTest::testReplace"/>
@@ -204,7 +200,6 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
       </line>
       <line nr="133">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -255,7 +250,6 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="145">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -307,7 +301,6 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="157">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -358,7 +351,6 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="170">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -409,7 +401,6 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="171">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -460,7 +451,6 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="177">
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>

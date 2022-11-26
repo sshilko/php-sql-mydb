@@ -1,18 +1,11 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Sun Nov 20 23:24:26 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+  <build time="Sat Nov 26 1:17:41 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
     <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.0RC2"/>
   </build>
   <project source="/app/src/sql">
     <tests>
-      <test name="phpunit\AsyncTest::testAsyncMock" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\AsyncTest::testAsyncNotConnected" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\AsyncTest::testAsyncReadonly" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\AsyncTest::testAsyncNotAutocommit" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\AsyncTest::testAsyncTransactionOpen" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\AsyncTest::testAsyncFailedCommand" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\AsyncTest::testAsyncReal" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\DeleteTest::testDelete" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\DeleteTest::testDeleteError" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\DeleteTest::testDeleteInternalError" size="unknown" result="0" status="PASSED"/>
@@ -77,7 +70,6 @@
       <test name="phpunit\MysqliTest::testExtractResponseNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testEscapeNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testTransactionsNoInit" size="unknown" result="0" status="PASSED"/>
-      <test name="phpunit\MysqliTest::testAsyncNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testCloseNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testAffectedRowsNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testWarningsNoInit" size="unknown" result="0" status="PASSED"/>
@@ -244,10 +236,10 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4963" comments="1984" code="2979" executable="665" executed="651" percent="97.89"/>
-        <methods count="166" tested="159" percent="95.78"/>
+        <lines total="4864" comments="1944" code="2920" executable="651" executed="635" percent="97.54"/>
+        <methods count="164" tested="155" percent="94.51"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="19" tested="18" percent="94.74"/>
+        <classes count="19" tested="17" percent="89.47"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="MydbEvent">
@@ -306,21 +298,12 @@
       </directory>
       <directory name="MydbException">
         <totals>
-          <lines total="631" comments="357" code="274" executable="1" executed="1" percent="100.00"/>
+          <lines total="601" comments="340" code="261" executable="1" executed="1" percent="100.00"/>
           <methods count="1" tested="1" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
-        <file name="AsyncException.php" href="MydbException/AsyncException.php.xml">
-          <totals>
-            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
-            <methods count="0" tested="0" percent="0"/>
-            <functions count="0" tested="0" percent="0"/>
-            <classes count="0" tested="0" percent="0"/>
-            <traits count="0" tested="0" percent="0"/>
-          </totals>
-        </file>
         <file name="ConnectException.php" href="MydbException/ConnectException.php.xml">
           <totals>
             <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
@@ -504,7 +487,7 @@
       </directory>
       <directory name="MydbInterface">
         <totals>
-          <lines total="309" comments="185" code="124" executable="0" executed="0" percent="0"/>
+          <lines total="281" comments="168" code="113" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
@@ -513,15 +496,6 @@
         <file name="AdministrationStatementsInterface.php" href="MydbInterface/AdministrationStatementsInterface.php.xml">
           <totals>
             <lines total="38" comments="25" code="13" executable="0" executed="0" percent="0"/>
-            <methods count="0" tested="0" percent="0"/>
-            <functions count="0" tested="0" percent="0"/>
-            <classes count="0" tested="0" percent="0"/>
-            <traits count="0" tested="0" percent="0"/>
-          </totals>
-        </file>
-        <file name="AsyncInterface.php" href="MydbInterface/AsyncInterface.php.xml">
-          <totals>
-            <lines total="28" comments="17" code="11" executable="0" executed="0" percent="0"/>
             <methods count="0" tested="0" percent="0"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="0" tested="0" percent="0"/>
@@ -639,8 +613,8 @@
       </directory>
       <file name="Mydb.php" href="Mydb.php.xml">
         <totals>
-          <lines total="725" comments="183" code="542" executable="209" executed="195" percent="93.30"/>
-          <methods count="30" tested="23" percent="76.67"/>
+          <lines total="696" comments="177" code="519" executable="199" executed="185" percent="92.96"/>
+          <methods count="29" tested="22" percent="75.86"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
@@ -765,16 +739,16 @@
       </file>
       <file name="MydbMysqli.php" href="MydbMysqli.php.xml">
         <totals>
-          <lines total="618" comments="198" code="420" executable="142" executed="142" percent="100.00"/>
-          <methods count="31" tested="31" percent="100.00"/>
+          <lines total="608" comments="198" code="410" executable="138" executed="136" percent="98.55"/>
+          <methods count="30" tested="28" percent="93.33"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="1" percent="100.00"/>
+          <classes count="1" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
       </file>
       <file name="MydbMysqliInterface.php" href="MydbMysqliInterface.php.xml">
         <totals>
-          <lines total="100" comments="23" code="77" executable="0" executed="0" percent="0"/>
+          <lines total="98" comments="23" code="75" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>

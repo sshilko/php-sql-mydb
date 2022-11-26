@@ -23,13 +23,6 @@
     </class>
     <coverage>
       <line nr="53">
-        <covered by="phpunit\AsyncTest::testAsyncMock"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotConnected"/>
-        <covered by="phpunit\AsyncTest::testAsyncReadonly"/>
-        <covered by="phpunit\AsyncTest::testAsyncNotAutocommit"/>
-        <covered by="phpunit\AsyncTest::testAsyncTransactionOpen"/>
-        <covered by="phpunit\AsyncTest::testAsyncFailedCommand"/>
-        <covered by="phpunit\AsyncTest::testAsyncReal"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>

@@ -1,13 +1,3 @@
-Async (phpunit\Async)
- [x] Async
- [x] Async mock
- [x] Async not connected
- [x] Async readonly
- [x] Async not autocommit
- [x] Async transaction open
- [x] Async failed command
- [x] Async real
-
 Delete (phpunit\Delete)
  [x] Delete
  [x] Delete error
@@ -90,7 +80,6 @@ Mysqli (phpunit\Mysqli)
  [x] Extract response no init
  [x] Escape no init
  [x] Transactions no init
- [x] Async no init
  [x] Close no init
  [x] Affected rows no init
  [x] Warnings no init
