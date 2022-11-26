@@ -15,10 +15,7 @@ declare(strict_types = 1);
  */
 
 // @codeCoverageIgnoreStart
-
 namespace MydbRepository;
-
-declare(strict_types = 1);
 
 use sql\MydbRepository;
 
