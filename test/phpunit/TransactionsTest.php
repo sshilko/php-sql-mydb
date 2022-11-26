@@ -84,7 +84,7 @@ final class TransactionsTest extends includes\DatabaseTestCase
             $options = new MydbOptions();
             $options->setTransactionIsolationLevel($l);
 
-            $db = $this->getDefaultDb($mysqli, $options, null, true);
+            $db = $this->getDefaultDb($mysqli, $options, null, null, true);
             $db->open();
             $row = $db->select('SELECT @@transaction_isolation as n');
             self::assertSame($row[0]['n'], str_replace(' ', '-', $l));

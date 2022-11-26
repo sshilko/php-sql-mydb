@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use RuntimeException;
 use sql\MydbEnvironment;
 use sql\MydbException;
 use sql\MydbException\DisconnectException;
@@ -114,6 +115,76 @@ final class ResourceTest extends includes\DatabaseTestCase
         $mysqli->expects(self::once())->method('commit')->willReturn(true);
         $mysqli->method('close')->willReturn(true);
         $envs->expects(self::once())->method('gc_collect_cycles');
+        $db->close();
+    }
+
+    public function testTransactionExceptionOnPersistentClose(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $options = $this->createMock(MydbOptions::class);
+
+        $db = $this->getDefaultDb($mysqli, $options);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(true);
+
+        $options->expects(self::once())->method('isAutocommit')->willReturn(false);
+        $mysqli->expects(self::once())->method('isTransactionOpen')->willReturn(false);
+        $options->expects(self::once())->method('isPersistent')->willReturn(true);
+        $mysqli->expects(self::once())->method('commit')->willReturn(false);
+        $mysqli->expects(self::never())->method('commitAndRelease');
+
+        $this->expectException(MydbException\TransactionCommitException::class);
+        $db->close();
+    }
+
+    public function testTransactionExceptionOnNonPersistentClose(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $options = $this->createMock(MydbOptions::class);
+
+        $db = $this->getDefaultDb($mysqli, $options);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(true);
+
+        $options->expects(self::once())->method('isAutocommit')->willReturn(false);
+        $mysqli->expects(self::once())->method('isTransactionOpen')->willReturn(false);
+        $options->expects(self::once())->method('isPersistent')->willReturn(false);
+        $mysqli->expects(self::never())->method('commit');
+        $mysqli->expects(self::once())->method('commitAndRelease')->willReturn(false);
+
+        $this->expectException(MydbException\TransactionCommitException::class);
+        $db->close();
+    }
+
+    public function testDisconnectExceptionOnClose(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $options = $this->createMock(MydbOptions::class);
+
+        $db = $this->getDefaultDb($mysqli, $options);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(true);
+
+        $options->expects(self::once())->method('isAutocommit')->willReturn(true);
+
+        $mysqli->expects(self::once())->method('close')->willReturn(false);
+        $this->expectException(MydbException\DisconnectException::class);
+        $db->close();
+    }
+
+    public function testUncaughtExceptionBecomesInternalExceptionOnClose(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $options = $this->createMock(MydbOptions::class);
+
+        $db = $this->getDefaultDb($mysqli, $options);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(true);
+
+        $options->expects(self::once())->method('isAutocommit')->willReturn(true);
+
+        $mysqli->expects(self::once())->method('close')->willThrowException(new RuntimeException('ho-ho'));
+        $this->expectException(MydbException\InternalException::class);
         $db->close();
     }
 
@@ -236,7 +307,7 @@ final class ResourceTest extends includes\DatabaseTestCase
         $db = $this->getDefaultDb($mysqli);
         self::assertTrue($db->open());
 
-        self::expectException(MydbException\InternalException::class);
+        $this->expectException(MydbException\InternalException::class);
         self::assertNull($db->query('SELECT 1'));
     }
 }

@@ -17,6 +17,7 @@ namespace phpunit;
 
 use sql\MydbException\DeleteException;
 use sql\MydbMysqli;
+use sql\MydbQueryBuilderInterface;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -120,5 +121,15 @@ final class DeleteTest extends includes\DatabaseTestCase
 
         $db->rollbackTransaction();
         $db->close();
+    }
+
+    public function testDeleteWhereReturnsNull(): void
+    {
+        $builder = $this->createMock(MydbQueryBuilderInterface::class);
+
+        $db = $this->getDefaultDb(null, null, null, $builder);
+
+        $builder->expects(self::once())->method('buildDeleteWhere')->willReturn(null);
+        self::assertNull($db->deleteWhere([], ''));
     }
 }

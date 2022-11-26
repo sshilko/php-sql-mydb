@@ -312,7 +312,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      */
     public function close(): void
     {
-        if (!$this->mysqli->isConnected()) {
+        if (false === $this->mysqli->isConnected()) {
             return;
         }
 
@@ -333,7 +333,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
                     : $this->mysqli->commitAndRelease();
 
                 if (false === $commit) {
-                    $this->onError(new TransactionCommitException());
+                    throw new TransactionCommitException();
                 }
             }
 

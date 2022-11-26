@@ -145,4 +145,17 @@ final class UpdateTest extends includes\DatabaseTestCase
 
         self::assertNull($result);
     }
+
+    public function testUpdateReturnsNull(): void
+    {
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $db = $this->getDefaultDb($mysqli);
+
+        $sql = "UPDATE myusers SET id = 10000 WHERE id IN (991, 992)";
+        $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
+        $mysqli->expects(self::once())->method('realQuery')->with($sql)->willReturn(false);
+        $mysqli->expects(self::never())->method('readServerResponse');
+        $result = $db->update($sql);
+        self::assertNull($result);
+    }
 }
