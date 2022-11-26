@@ -341,11 +341,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbEventMetadataInterface.html#method_getEventMetadata"
         },                {
-            "fqsen": "\\sql\\MydbException\\AsyncException",
-            "name": "AsyncException",
-            "summary": "",
-            "url": "classes/sql-MydbException-AsyncException.html"
-        },                {
             "fqsen": "\\sql\\MydbException\\ConnectException",
             "name": "ConnectException",
             "summary": "",
@@ -490,16 +485,6 @@ Search.appendIndex(
             "name": "__toString",
             "summary": "As\u0020of\u0020PHP8.0\u0020this\u0020is\u0020Stringable\u0020interface",
             "url": "classes/sql-MydbExpressionInterface.html#method___toString"
-        },                {
-            "fqsen": "\\sql\\MydbInterface\\AsyncInterface",
-            "name": "AsyncInterface",
-            "summary": "",
-            "url": "classes/sql-MydbInterface-AsyncInterface.html"
-        },                {
-            "fqsen": "\\sql\\MydbInterface\\AsyncInterface\u003A\u003Aasync\u0028\u0029",
-            "name": "async",
-            "summary": "",
-            "url": "classes/sql-MydbInterface-AsyncInterface.html#method_async"
         },                {
             "fqsen": "\\sql\\MydbInterface\\CommandInterface",
             "name": "CommandInterface",
@@ -981,11 +966,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbMysqli.html#method_mysqliReport"
         },                {
-            "fqsen": "\\sql\\MydbMysqli\u003A\u003AmysqliQueryAsync\u0028\u0029",
-            "name": "mysqliQueryAsync",
-            "summary": "",
-            "url": "classes/sql-MydbMysqli.html#method_mysqliQueryAsync"
-        },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003Aclose\u0028\u0029",
             "name": "close",
             "summary": "",
@@ -1210,11 +1190,6 @@ Search.appendIndex(
             "name": "mysqliReport",
             "summary": "",
             "url": "classes/sql-MydbMysqliInterface.html#method_mysqliReport"
-        },                {
-            "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003AmysqliQueryAsync\u0028\u0029",
-            "name": "mysqliQueryAsync",
-            "summary": "",
-            "url": "classes/sql-MydbMysqliInterface.html#method_mysqliQueryAsync"
         },                {
             "fqsen": "\\sql\\MydbMysqliInterface\u003A\u003Aclose\u0028\u0029",
             "name": "close",
