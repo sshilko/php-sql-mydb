@@ -24,6 +24,7 @@ use sql\MydbInterface;
 use sql\MydbMysqliInterface;
 use sql\MydbOptions;
 use sql\MydbOptionsInterface;
+use sql\MydbQueryBuilderInterface;
 use sql\MydbRegistry;
 use function count;
 
@@ -103,6 +104,7 @@ class DatabaseTestCase extends TestCase
         ?MydbMysqliInterface $mysqli = null,
         ?MydbOptionsInterface $options = null,
         ?MydbEnvironmentInterface $environment = null,
+        ?MydbQueryBuilderInterface $builder = null,
         bool $refresh = false
     ): MydbInterface {
         if (!isset(static::$registry['db0']) || true === $refresh) {
@@ -110,7 +112,7 @@ class DatabaseTestCase extends TestCase
             if (isset(static::$registry['db0'])) {
                 unset(static::$registry['db0']);
             }
-            static::$registry['db0'] = new Mydb($credentials, $this->logger, $options, $mysqli, $environment);
+            static::$registry['db0'] = new Mydb($credentials, $this->logger, $options, $mysqli, $environment, $builder);
         }
 
         return static::$registry['db0'];
