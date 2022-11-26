@@ -611,11 +611,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbInterface-TransactionInterface.html#method_rollbackTransaction"
         },                {
-            "fqsen": "\\sql\\MydbInterface\\TransactionInterface\u003A\u003AsetTransactionIsolationLevel\u0028\u0029",
-            "name": "setTransactionIsolationLevel",
-            "summary": "",
-            "url": "classes/sql-MydbInterface-TransactionInterface.html#method_setTransactionIsolationLevel"
-        },                {
             "fqsen": "\\sql\\MydbInterface",
             "name": "MydbInterface",
             "summary": "",
@@ -1855,6 +1850,41 @@ Search.appendIndex(
             "name": "instance",
             "summary": "",
             "url": "classes/sql-MydbRegistry.html#property_instance"
+        },                {
+            "fqsen": "\\sql\\MydbRepository",
+            "name": "MydbRepository",
+            "summary": "",
+            "url": "classes/sql-MydbRepository.html"
+        },                {
+            "fqsen": "\\sql\\MydbRepository\u003A\u003AgetDatabaseIdentifier\u0028\u0029",
+            "name": "getDatabaseIdentifier",
+            "summary": "",
+            "url": "classes/sql-MydbRepository.html#method_getDatabaseIdentifier"
+        },                {
+            "fqsen": "\\sql\\MydbRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/sql-MydbRepository.html#method___construct"
+        },                {
+            "fqsen": "\\sql\\MydbRepository\u003A\u003AgetDatabase\u0028\u0029",
+            "name": "getDatabase",
+            "summary": "",
+            "url": "classes/sql-MydbRepository.html#method_getDatabase"
+        },                {
+            "fqsen": "\\sql\\MydbRepository\u003A\u003A\u0024registry",
+            "name": "registry",
+            "summary": "",
+            "url": "classes/sql-MydbRepository.html#property_registry"
+        },                {
+            "fqsen": "\\sql\\MydbRepositoryInterface",
+            "name": "MydbRepositoryInterface",
+            "summary": "",
+            "url": "classes/sql-MydbRepositoryInterface.html"
+        },                {
+            "fqsen": "\\sql\\MydbRepositoryInterface\u003A\u003AgetDatabase\u0028\u0029",
+            "name": "getDatabase",
+            "summary": "",
+            "url": "classes/sql-MydbRepositoryInterface.html#method_getDatabase"
         },                {
             "fqsen": "\\",
             "name": "\\",
