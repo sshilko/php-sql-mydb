@@ -73,8 +73,7 @@
         ],
         "app-phpunit": [
             "@app-phpunit-mysql57",
-            "@app-phpunit-mysql80",
-            "@app-phpunit-maria10"
+            "@app-phpunit-mysql80"
         ],
         "app-phpunit-mysql57": [
             "@putenv XDEBUG_MODE=off",
