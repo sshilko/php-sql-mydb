@@ -38,6 +38,7 @@
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -69,6 +70,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty1"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -76,6 +78,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -99,7 +105,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -113,12 +118,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="69">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -150,6 +157,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty1"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -157,6 +165,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -180,7 +192,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -194,6 +205,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="70">
         <covered by="phpunit\RegistryTest::testRegistryEmpty1"/>
@@ -203,6 +215,7 @@
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -233,6 +246,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -240,6 +254,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -263,7 +281,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -277,12 +294,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="81">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -314,6 +333,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty2"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -321,6 +341,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -344,7 +368,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -358,12 +381,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="82">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -395,6 +420,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty2"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -402,6 +428,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -425,7 +455,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -439,6 +468,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="83">
         <covered by="phpunit\RegistryTest::testRegistryEmpty2"/>
@@ -448,6 +478,7 @@
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -478,6 +509,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -485,6 +517,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -508,7 +544,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -522,12 +557,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="94">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -558,6 +595,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -565,6 +603,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -588,7 +630,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -602,12 +643,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="102">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -638,6 +681,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -645,6 +689,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -668,7 +716,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -682,12 +729,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="112">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -718,6 +767,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -725,6 +775,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -748,7 +802,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -762,12 +815,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="117">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -837,6 +892,7 @@
         <covered by="phpunit\RegistryTest::testRegistryUnserialize1"/>
         <covered by="phpunit\RegistryTest::testRegistryUnserialize2"/>
         <covered by="phpunit\RegistryTest::testRegistryClone"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -844,6 +900,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -867,7 +927,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -881,12 +940,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="129">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -919,6 +980,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty3"/>
         <covered by="phpunit\RegistryTest::testRegistryUnSet1"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -926,6 +988,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -949,7 +1015,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -963,12 +1028,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="141">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -1000,6 +1067,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty3"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -1007,6 +1075,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -1030,7 +1102,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -1044,12 +1115,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="142">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -1080,6 +1153,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -1087,6 +1161,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -1110,7 +1188,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -1124,6 +1201,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="145">
         <covered by="phpunit\RegistryTest::testRegistryEmpty3"/>
@@ -1133,6 +1211,7 @@
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -1164,6 +1243,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\RegistryTest::testRegistrySet"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -1171,6 +1251,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -1194,7 +1278,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -1208,12 +1291,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="159">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -1244,6 +1329,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -1251,6 +1337,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -1274,7 +1364,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -1288,12 +1377,14 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="161">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -1324,6 +1415,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -1331,6 +1423,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -1354,7 +1450,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -1368,6 +1463,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="164">
         <covered by="phpunit\RegistryTest::testRegistrySet"/>
@@ -1377,6 +1473,7 @@
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -1408,6 +1505,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\RegistryTest::testRegistryUnSet1"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -1415,6 +1513,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -1438,7 +1540,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -1452,6 +1553,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="176">
         <covered by="phpunit\RegistryTest::testRegistryUnSet1"/>
@@ -1461,6 +1563,7 @@
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhereReturnsNull"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
@@ -1491,6 +1594,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -1498,6 +1602,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -1521,7 +1629,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -1535,6 +1642,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="187">
         <covered by="phpunit\RegistryTest::testRegistryClone"/>

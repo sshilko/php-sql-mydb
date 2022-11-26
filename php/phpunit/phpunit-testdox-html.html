@@ -36,6 +36,7 @@
             <li style="color: #555753;">✓ Delete error</li>
             <li style="color: #555753;">✓ Delete internal error</li>
             <li style="color: #555753;">✓ Delete where</li>
+            <li style="color: #555753;">✓ Delete where returns null</li>
         </ul>
         <h2 id="phpunit\ExceptionTest">Exception (phpunit\Exception)</h2>
         <ul>
@@ -251,6 +252,10 @@
             <li style="color: #555753;">✓ Registry unserialize 2</li>
             <li style="color: #555753;">✓ Registry clone</li>
         </ul>
+        <h2 id="phpunit\RepositoryTest">Repository (phpunit\Repository)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Registry</li>
+        </ul>
         <h2 id="phpunit\ResourceTest">Resource (phpunit\Resource)</h2>
         <ul>
             <li style="color: #555753;">✓ Open</li>
@@ -260,6 +265,10 @@
             <li style="color: #555753;">✓ Close not connected</li>
             <li style="color: #555753;">✓ Will commit not persistent transaction when no autocommit and no transaction on close</li>
             <li style="color: #555753;">✓ Will commit is persistent transaction when no autocommit and no transaction on close</li>
+            <li style="color: #555753;">✓ Transaction exception on persistent close</li>
+            <li style="color: #555753;">✓ Transaction exception on non persistent close</li>
+            <li style="color: #555753;">✓ Disconnect exception on close</li>
+            <li style="color: #555753;">✓ Uncaught exception becomes internal exception on close</li>
             <li style="color: #555753;">✓ No gc when not connected</li>
             <li style="color: #555753;">✓ Gc when connected</li>
             <li style="color: #555753;">✓ Do no commit transaction when autocommit enabled on close</li>
@@ -289,7 +298,6 @@
         <ul>
             <li style="color: #555753;">✓ Begin transaction readonly real</li>
             <li style="color: #555753;">✓ Begin transaction read write real</li>
-            <li style="color: #555753;">✓ Transaction isolation level exception</li>
             <li style="color: #555753;">✓ Transaction isolation level</li>
             <li style="color: #555753;">✓ Begin transaction readonly success</li>
             <li style="color: #555753;">✓ Begin transaction readonly failure</li>
@@ -306,6 +314,7 @@
             <li style="color: #555753;">✓ Update</li>
             <li style="color: #555753;">✓ Update many</li>
             <li style="color: #555753;">✓ Update internal error</li>
+            <li style="color: #555753;">✓ Update returns null</li>
         </ul>
     </body>
 </html>

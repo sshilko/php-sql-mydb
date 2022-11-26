@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-26 01:31:57</timestamp>
+  <timestamp>2022-11-26 17:48:18</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>167</methodCount>
+    <methodCount>169</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>412.82</totalCrap>
+    <totalCrap>408.32</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -138,9 +138,9 @@
       <methodName>close</methodName>
       <methodSignature>close(): void</methodSignature>
       <fullMethod>close(): void</fullMethod>
-      <crap>14.4</crap>
+      <crap>10</crap>
       <complexity>10</complexity>
-      <coverage>64.71</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -193,9 +193,9 @@
       <methodName>update</methodName>
       <methodSignature>update(string $query): ?int</methodSignature>
       <fullMethod>update(string $query): ?int</fullMethod>
-      <crap>3.04</crap>
+      <crap>3</crap>
       <complexity>3</complexity>
-      <coverage>83.33</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -204,9 +204,9 @@
       <methodName>deleteWhere</methodName>
       <methodSignature>deleteWhere(array $whereFields, string $table, array $whereNotFields): ?int</methodSignature>
       <fullMethod>deleteWhere(array $whereFields, string $table, array $whereNotFields): ?int</fullMethod>
-      <crap>2.06</crap>
+      <crap>2</crap>
       <complexity>2</complexity>
-      <coverage>75</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -261,17 +261,6 @@
       <fullMethod>insertOne(array $data, string $table): ?string</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql</package>
-      <className>sql\Mydb</className>
-      <methodName>setTransactionIsolationLevel</methodName>
-      <methodSignature>setTransactionIsolationLevel(string $isolationLevel): void</methodSignature>
-      <fullMethod>setTransactionIsolationLevel(string $isolationLevel): void</fullMethod>
-      <crap>2</crap>
-      <complexity>2</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1843,6 +1832,39 @@
       <methodName>__unserialize</methodName>
       <methodSignature>__unserialize(array $data): void</methodSignature>
       <fullMethod>__unserialize(array $data): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRepository</className>
+      <methodName>getDatabaseIdentifier</methodName>
+      <methodSignature>getDatabaseIdentifier(): string</methodSignature>
+      <fullMethod>getDatabaseIdentifier(): string</fullMethod>
+      <crap>0</crap>
+      <complexity>0</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRepository</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(sql\MydbRegistry $registry)</methodSignature>
+      <fullMethod>__construct(sql\MydbRegistry $registry)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbRepository</className>
+      <methodName>getDatabase</methodName>
+      <methodSignature>getDatabase(): sql\MydbInterface</methodSignature>
+      <fullMethod>getDatabase(): sql\MydbInterface</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>

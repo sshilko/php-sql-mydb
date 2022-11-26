@@ -886,6 +886,7 @@
       </line>
       <line nr="353">
         <covered by="phpunit\OptionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
       </line>
     </coverage>
     <source>

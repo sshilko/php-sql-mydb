@@ -3,6 +3,7 @@ Delete (phpunit\Delete)
  [x] Delete error
  [x] Delete internal error
  [x] Delete where
+ [x] Delete where returns null
 
 Exception (phpunit\Exception)
  [x] Table does not exist
@@ -207,6 +208,9 @@ Registry (phpunit\Registry)
  [x] Registry unserialize 2
  [x] Registry clone
 
+Repository (phpunit\Repository)
+ [x] Registry
+
 Resource (phpunit\Resource)
  [x] Open
  [x] Open close error
@@ -215,6 +219,10 @@ Resource (phpunit\Resource)
  [x] Close not connected
  [x] Will commit not persistent transaction when no autocommit and no transaction on close
  [x] Will commit is persistent transaction when no autocommit and no transaction on close
+ [x] Transaction exception on persistent close
+ [x] Transaction exception on non persistent close
+ [x] Disconnect exception on close
+ [x] Uncaught exception becomes internal exception on close
  [x] No gc when not connected
  [x] Gc when connected
  [x] Do no commit transaction when autocommit enabled on close
@@ -242,7 +250,6 @@ Select (phpunit\Select)
 Transactions (phpunit\Transactions)
  [x] Begin transaction readonly real
  [x] Begin transaction read write real
- [x] Transaction isolation level exception
  [x] Transaction isolation level
  [x] Begin transaction readonly success
  [x] Begin transaction readonly failure
@@ -258,4 +265,5 @@ Update (phpunit\Update)
  [x] Update
  [x] Update many
  [x] Update internal error
+ [x] Update returns null
 

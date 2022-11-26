@@ -144,6 +144,7 @@
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions3"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions4"/>
         <covered by="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions5"/>
+        <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
         <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
@@ -151,6 +152,10 @@
         <covered by="phpunit\ResourceTest::testCloseNotConnected"/>
         <covered by="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
         <covered by="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose"/>
+        <covered by="phpunit\ResourceTest::testDisconnectExceptionOnClose"/>
+        <covered by="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose"/>
         <covered by="phpunit\ResourceTest::testNoGcWhenNotConnected"/>
         <covered by="phpunit\ResourceTest::testGcWhenConnected"/>
         <covered by="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose"/>
@@ -174,7 +179,6 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevelException"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure"/>
@@ -188,6 +192,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
       <line nr="61">
         <covered by="phpunit\MetaTest::testEnum"/>

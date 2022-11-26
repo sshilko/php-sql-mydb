@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbInterface.php" path="/">
     <totals>
-      <lines total="27" comments="16" code="11" executable="0" executed="0" percent="0"/>
+      <lines total="33" comments="16" code="17" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
@@ -84,15 +84,46 @@
         <token name="T_INTERFACE">interface</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">MydbInterface</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXTENDS">extends</token>
       </line>
       <line no="24">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_NAME_QUALIFIED">MydbInterface\EncoderInterface</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_NAME_QUALIFIED">MydbInterface\CommandInterface</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_NAME_QUALIFIED">MydbInterface\QueryInterface</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_NAME_QUALIFIED">MydbInterface\DataManipulationStatementsInterface</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_NAME_QUALIFIED">MydbInterface\TransactionInterface</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_NAME_QUALIFIED">MydbInterface\AdministrationStatementsInterface</token>
+      </line>
+      <line no="30">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="25"/>
-      <line no="26">
+      <line no="31"/>
+      <line no="32">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="27"/>
+      <line no="33"/>
     </source>
   </file>
 </phpunit>
