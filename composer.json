@@ -73,7 +73,8 @@
         ],
         "app-phpunit": [
             "@app-phpunit-mysql57",
-            "@app-phpunit-mysql80"
+            "@app-phpunit-mysql80",
+            "@app-phpunit-maria10"
         ],
         "app-phpunit-mysql57": [
             "@putenv XDEBUG_MODE=off",
@@ -85,6 +86,11 @@
             "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mysql80",
             "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml $1"
         ],
+        "app-phpunit-maria10": [
+            "@putenv XDEBUG_MODE=off",
+            "@putenv PHPUNIT_MYSQL_MYDB1_HOST=maria10",
+            "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml $1"
+        ],
         "app-phpunit-mysql57-coverage": [
             "@putenv XDEBUG_MODE=coverage",
             "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mysql",
@@ -93,6 +99,11 @@
         "app-phpunit-mysql80-coverage": [
             "@putenv XDEBUG_MODE=coverage",
             "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mysql80",
+            "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml"
+        ],
+        "app-phpunit-maria10-coverage": [
+            "@putenv XDEBUG_MODE=coverage",
+            "@putenv PHPUNIT_MYSQL_MYDB1_HOST=maria10",
             "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml"
         ],
         "app-phpunit-badges-coverage": [

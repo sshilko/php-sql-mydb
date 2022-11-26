@@ -9,6 +9,7 @@
 /vendor export-ignore
 /build export-ignore
 /test export-ignore
+/examples export-ignore
 /.github export-ignore
 /.editorconfig export-ignore
 /.env export-ignore

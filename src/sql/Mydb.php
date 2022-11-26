@@ -16,7 +16,6 @@ declare(strict_types = 1);
 namespace sql;
 
 use Psr\Log\LoggerInterface;
-use sql\MydbException\AsyncException;
 use sql\MydbException\ConnectException;
 use sql\MydbException\DeleteException;
 use sql\MydbException\DisconnectException;
@@ -55,7 +54,6 @@ class Mydb implements
     MydbInterface\QueryInterface,
     MydbInterface\DataManipulationStatementsInterface,
     MydbInterface\TransactionInterface,
-    MydbInterface\AsyncInterface,
     MydbInterface\AdministrationStatementsInterface,
     MydbInterface\RemoteResourceInterface
 {
@@ -105,33 +103,6 @@ class Mydb implements
     {
         $this->terminating = true;
         $this->close();
-    }
-
-    /**
-     * With MYSQLI_ASYNC (available with mysqlnd), it is possible to perform query asynchronously.
-     * mysqli_poll() is then used to get results from such queries.
-     * @throws \sql\MydbException
-     * @throws \sql\MydbException\ConnectException
-     */
-    public function async(string $command): void
-    {
-        if (!$this->connect()) {
-            throw new ConnectException();
-        }
-
-        if (false === $this->options->isAutocommit() ||
-            $this->options->isPersistent() ||
-            $this->options->isReadonly()) {
-            throw new AsyncException('Async is safe only with autocommit=true & non-persistent & rw configuration');
-        }
-
-        if ($this->mysqli->isTransactionOpen()) {
-            throw new AsyncException('Detected transaction pending, refusing to execute async query');
-        }
-
-        if (false === $this->mysqli->mysqliQueryAsync($command)) {
-            throw new AsyncException('Async command failed');
-        }
     }
 
     /**

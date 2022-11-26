@@ -95,13 +95,6 @@ final class MysqliTest extends includes\DatabaseTestCase
         self::assertFalse($result);
     }
 
-    public function testAsyncNoInit(): void
-    {
-        $mysqli = new MydbMysqli();
-        $result = $mysqli->mysqliQueryAsync('SELECT 1');
-        self::assertFalse($result);
-    }
-
     public function testCloseNoInit(): void
     {
         $mysqli = new MydbMysqli();

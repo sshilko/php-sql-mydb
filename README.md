@@ -56,6 +56,7 @@ composer require sshilko/php-sql-mydb:@dev
 
 - PHP 7.4, 8.0, 8.1
 - MySQL >=5.7.8, 8.0
+- MariaDB not compatible
 
 #### How this client helps you talk SQL to MySQL server
 
@@ -121,9 +122,7 @@ please re-use existing solutions that best fit your requirements.
 
 #### Future roadmap
 
-- MariaDB compatibility
 - Library helper for Repository pattern usage
-- Usage examples
 - PHPUnit coverage for command/query raw SQL via events system
 - Packagist export & release stable version
 
