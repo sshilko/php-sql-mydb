@@ -66,8 +66,6 @@ interface MydbMysqliInterface extends MydbMysqliEscapeStringInterface
 
     public function mysqliReport(int $level): bool;
 
-    public function mysqliQueryAsync(string $command): bool;
-
     public function close(): bool;
 
     public function getConnectErrno(): ?int;

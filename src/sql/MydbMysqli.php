@@ -440,16 +440,6 @@ class MydbMysqli implements MydbMysqliInterface
         return mysqli_report($level);
     }
 
-    public function mysqliQueryAsync(string $command): bool
-    {
-        $mysqli = $this->getMysqli();
-        if (!$mysqli || !$this->isConnected()) {
-            return false;
-        }
-
-        return false !== mysqli_query($mysqli, $command, MYSQLI_ASYNC);
-    }
-
     public function close(): bool
     {
         if ($this->mysqli) {
