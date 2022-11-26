@@ -10,17 +10,26 @@
  * file that was distributed with this source code.
  * @license https://opensource.org/licenses/mit-license.php MIT
  */
+// @codeCoverageIgnoreStart
+
+
 declare(strict_types = 1);
+
+use sql\Mydb;
+use sql\MydbCredentials;
+use sql\MydbLogger;
+use sql\MydbOptions;
+use sql\MydbRegistry;
 
 include_once __DIR__ . '/../vendor/autoload.php';
 
-$registry = new \sql\MydbRegistry();
-$mylogger = new \sql\MydbLogger();
+$registry = new MydbRegistry();
+$mylogger = new MydbLogger();
 
-$auth = new \sql\MydbCredentials('127.0.0.1', 'root', 'root', 'mydb', 3306);
-$opts = new \sql\MydbOptions();
-$opts->setTransactionIsolationLevel(\sql\MydbOptions::TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED);
-$mydb = new \sql\Mydb($auth, $mylogger, $opts);
+$auth = new MydbCredentials('127.0.0.1', 'root', 'root', 'mydb', 3306);
+$opts = new MydbOptions();
+$opts->setTransactionIsolationLevel(MydbOptions::TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED);
+$mydb = new Mydb($auth, $mylogger, $opts);
 
 $mydb->beginTransaction();
 
@@ -29,20 +38,20 @@ $array2 = $mydb->query("SELECT 123");
 
 assert($array1 === $array2);
 
-$mydb->command('CREATE TEMPORARY TABLE `users` (
+echo $mydb->command('CREATE TEMPORARY TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `myenum` enum ("e1","e2")  NOT NULL DEFAULT "e1",
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4');
 
-$user10 = $mydb->insert("INSERT INTO users (id, name) VALUES (10, 'user10')");
-$user20 = $mydb->insertOne(['id' => 20, 'name' => 'user20'], 'users');
+echo $mydb->insert("INSERT INTO users (id, name) VALUES (10, 'user10')");
+echo $mydb->insertOne(['id' => 20, 'name' => 'user20'], 'users');
 $mydb->insertMany([[30, 'user30'], [40, 'user40']], ['id', 'name'], 'users');
 
 assert(['10', '20', '30', '40'] === array_column($mydb->query("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
-$mydb->delete('DELETE FROM users WHERE id = 40');
+echo $mydb->delete('DELETE FROM users WHERE id = 40');
 
 assert(['10', '20', '30'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
@@ -52,19 +61,19 @@ assert(['e1', 'e2'] === $enum);
 $prim = $mydb->getPrimaryKeys('users');
 assert(['id'] === $prim);
 
-$mydb->deleteWhere(['id' => '30'], 'users');
+echo $mydb->deleteWhere(['id' => '30'], 'users');
 
 assert(['10', '20'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
-$mydb->updateWhere(['id' => 99], ['id' => 10], 'users');
+echo $mydb->updateWhere(['id' => 99], ['id' => 10], 'users');
 assert(['20', '99'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
 $mydb->rollbackTransaction();
 
-$db10 = new \sql\Mydb($auth, $mylogger, $opts);
+$db10 = new Mydb($auth, $mylogger, $opts);
 $db10->open();
 
-$db20 = new \sql\Mydb($auth, $mylogger, $opts);
+$db20 = new Mydb($auth, $mylogger, $opts);
 $registry['db1'] = $mydb;
 $registry['db2'] = $db10;
 $registry['db3'] = $db20;
@@ -73,3 +82,4 @@ $db10->close();
 $db20->close();
 
 echo 'OK';
+// @codeCoverageIgnoreEnd
