@@ -4,10 +4,10 @@
 [42;1m                              [0m
 ------------------------------
 
-Checks took 3.81 seconds and used 380.687MB of memory
-Psalm was able to infer types for 99.9249% of the codebase
+Checks took 5.34 seconds and used 380.780MB of memory
+Psalm was able to infer types for 99.9251% of the codebase
 -----------------
-99.766% ../src/sql/Mydb.php (1 mixed)
+99.763% ../src/sql/Mydb.php (1 mixed)
 100.000% ../src/sql/MydbCredentials.php (0 mixed)
 100.000% ../src/sql/MydbEnvironment.php (0 mixed)
 100.000% ../src/sql/MydbEvent.php (0 mixed)
@@ -26,4 +26,5 @@ Psalm was able to infer types for 99.9249% of the codebase
 100.000% ../src/sql/MydbOptions.php (0 mixed)
 100.000% ../src/sql/MydbQueryBuilder.php (0 mixed)
 100.000% ../src/sql/MydbRegistry.php (0 mixed)
+100.000% ../src/sql/MydbRepository.php (0 mixed)
 
