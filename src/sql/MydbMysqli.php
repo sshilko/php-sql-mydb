@@ -496,7 +496,7 @@ class MydbMysqli implements MydbMysqliInterface
     public function getAffectedRows(): ?int
     {
         $rows = $this->mysqli
-            ? $this->mysqli->affected_rows
+            ? (int) $this->mysqli->affected_rows
             : null;
         if (0 === $rows || $rows > 0) {
             return $rows;

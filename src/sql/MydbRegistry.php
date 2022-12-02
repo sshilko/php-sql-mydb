@@ -34,6 +34,8 @@ use function serialize;
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
+ *
+ * @psalm-suppress MissingTemplateParam
  */
 class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Serializable
 {
