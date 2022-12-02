@@ -341,6 +341,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbEventMetadataInterface.html#method_getEventMetadata"
         },                {
+            "fqsen": "\\sql\\MydbException\\ConnectDefaultsException",
+            "name": "ConnectDefaultsException",
+            "summary": "",
+            "url": "classes/sql-MydbException-ConnectDefaultsException.html"
+        },                {
             "fqsen": "\\sql\\MydbException\\ConnectException",
             "name": "ConnectException",
             "summary": "",
@@ -405,6 +410,11 @@ Search.appendIndex(
             "name": "RegistryException",
             "summary": "",
             "url": "classes/sql-MydbException-RegistryException.html"
+        },                {
+            "fqsen": "\\sql\\MydbException\\ServerGoneException",
+            "name": "ServerGoneException",
+            "summary": "",
+            "url": "classes/sql-MydbException-ServerGoneException.html"
         },                {
             "fqsen": "\\sql\\MydbException\\TerminationSignalException",
             "name": "TerminationSignalException",

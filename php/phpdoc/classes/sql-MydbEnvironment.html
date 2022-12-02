@@ -217,7 +217,7 @@ Original signal handler, which replaced by custon trap</dd>
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbEnvironment.html#method_endSignalsTrap">endSignalsTrap()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|null    </span>
+                                &nbsp;: array&lt;string|int, int&gt;|null    </span>
 </dt>
 <dd>Disable custom signal handler</dd>
 
@@ -259,7 +259,7 @@ Original signal handler, which replaced by custon trap</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/sql-MydbEnvironment.html#method_set_error_handler">set_error_handler()</a>
     <span>
-                                &nbsp;: callable|null    </span>
+                                &nbsp;: void    </span>
 </dt>
 <dd>Set custom PHP error handler</dd>
 
@@ -439,7 +439,7 @@ Original signal handler, which replaced by custon trap</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">endSignalsTrap</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span></code>
+                    <span class="phpdocumentor-signature__name">endSignalsTrap</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;|null</span></code>
 
     
     
@@ -484,7 +484,7 @@ Original signal handler, which replaced by custon trap</p>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;|null</span>
             &mdash;
             <section class="phpdocumentor-description"><p>array of trapped signals</p>
 </section>
@@ -874,7 +874,7 @@ Original signal handler, which replaced by custon trap</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">set_error_handler</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">callable|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$error_levels</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">E_ALL | E_STRICT</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">callable|null</span></code>
+                    <span class="phpdocumentor-signature__name">set_error_handler</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">callable|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$error_levels</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">E_ALL | E_STRICT</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -931,7 +931,7 @@ Original signal handler, which replaced by custon trap</p>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">callable|null</span>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
     
