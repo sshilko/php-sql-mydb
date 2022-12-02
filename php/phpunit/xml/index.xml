@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Fri Dec 2 23:21:29 UTC 2022" phpunit="9.5.26" coverage="9.2.19">
+  <build time="Fri Dec 2 23:33:21 UTC 2022" phpunit="9.5.26" coverage="9.2.19">
     <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.0RC2"/>
   </build>
@@ -250,7 +250,7 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4973" comments="2002" code="2971" executable="649" executed="649" percent="100.00"/>
+        <lines total="4975" comments="2004" code="2971" executable="649" executed="649" percent="100.00"/>
         <methods count="165" tested="165" percent="100.00"/>
         <functions count="0" tested="0" percent="0"/>
         <classes count="20" tested="20" percent="100.00"/>
@@ -825,7 +825,7 @@
       </file>
       <file name="MydbRegistry.php" href="MydbRegistry.php.xml">
         <totals>
-          <lines total="206" comments="82" code="124" executable="28" executed="28" percent="100.00"/>
+          <lines total="208" comments="84" code="124" executable="28" executed="28" percent="100.00"/>
           <methods count="15" tested="15" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>

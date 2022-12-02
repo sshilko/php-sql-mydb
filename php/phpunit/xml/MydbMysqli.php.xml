@@ -6766,6 +6766,8 @@
         <token name="T_WHITESPACE">            </token>
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_WHITESPACE"> </token>
+        <token name="T_INT_CAST">(int)</token>
+        <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">mysqli</token>
