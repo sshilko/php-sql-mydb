@@ -84,8 +84,8 @@
     </Package>
     <Package name="sql\MydbException">
       <Stats>
-        <TotalClasses>20</TotalClasses>
-        <ConcreteClasses>20</ConcreteClasses>
+        <TotalClasses>22</TotalClasses>
+        <ConcreteClasses>22</ConcreteClasses>
         <AbstractClasses>0</AbstractClasses>
         <Ca>1</Ca>
         <Ce>2</Ce>
@@ -94,6 +94,7 @@
         <D>0.33333333333333</D>
       </Stats>
       <ConcreteClasses>
+        <Class sourceFile="/app/src/sql/MydbException/ConnectDefaultsException.php">ConnectDefaultsException</Class>
         <Class sourceFile="/app/src/sql/MydbException/ConnectException.php">ConnectException</Class>
         <Class sourceFile="/app/src/sql/MydbException/DeleteException.php">DeleteException</Class>
         <Class sourceFile="/app/src/sql/MydbException/DisconnectException.php">DisconnectException</Class>
@@ -105,6 +106,7 @@
         <Class sourceFile="/app/src/sql/MydbException/QueryBuilderEscapeException.php">QueryBuilderEscapeException</Class>
         <Class sourceFile="/app/src/sql/MydbException/QueryBuilderException.php">QueryBuilderException</Class>
         <Class sourceFile="/app/src/sql/MydbException/RegistryException.php">RegistryException</Class>
+        <Class sourceFile="/app/src/sql/MydbException/ServerGoneException.php">ServerGoneException</Class>
         <Class sourceFile="/app/src/sql/MydbException/TerminationSignalException.php">TerminationSignalException</Class>
         <Class sourceFile="/app/src/sql/MydbException/TransactionAutocommitException.php">TransactionAutocommitException</Class>
         <Class sourceFile="/app/src/sql/MydbException/TransactionBeginException.php">TransactionBeginException</Class>
