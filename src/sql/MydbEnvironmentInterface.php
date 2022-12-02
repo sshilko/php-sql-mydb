@@ -42,7 +42,7 @@ interface MydbEnvironmentInterface
      * @SuppressWarnings("camelCase")
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
-    public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): ?callable;
+    public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): void;
 
     public function setMysqlndNetReadTimeout(string $timeoutSeconds): bool;
 

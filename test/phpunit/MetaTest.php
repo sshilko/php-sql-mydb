@@ -20,6 +20,7 @@ use sql\MydbExpression;
 use sql\MydbMysqliInterface;
 use function explode;
 use function str_replace;
+use const PHP_MAJOR_VERSION;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
@@ -564,6 +565,7 @@ ENDUTF8;
             'NULL' => 'NULL',
             'null' => 'null',
         ];
+
         $utf8Tests = explode("\n", $utf8);
         foreach ($utf8Tests as $t) {
             /**
@@ -586,6 +588,28 @@ ENDUTF8;
 
         $actual = $db->escape(new MydbExpression('hello world " unescaped null'));
         self::assertSame('hello world " unescaped null', $actual);
+
+        $stringableObject = new class {
+            /**
+             * in PHP8 all classes that implement __toString automatically implement Stringable interface
+             */
+            public function __toString(): string
+            {
+                return 'NOW(123)';
+            }
+        };
+
+        $actual = $db->escape($stringableObject);
+        switch (PHP_MAJOR_VERSION) {
+            case 7:
+                self::assertSame("'NOW(123)'", $actual);
+
+                break;
+            default:
+                self::assertSame('NOW(123)', $actual);
+
+                break;
+        }
     }
 
     public function testSingleQuotedEscape(): void

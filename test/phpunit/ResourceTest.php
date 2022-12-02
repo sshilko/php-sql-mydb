@@ -18,6 +18,7 @@ namespace phpunit;
 use RuntimeException;
 use sql\MydbEnvironment;
 use sql\MydbException;
+use sql\MydbException\ConnectDefaultsException;
 use sql\MydbException\DisconnectException;
 use sql\MydbMysqli;
 use sql\MydbMysqliInterface;
@@ -309,5 +310,80 @@ final class ResourceTest extends includes\DatabaseTestCase
 
         $this->expectException(MydbException\InternalException::class);
         self::assertNull($db->query('SELECT 1'));
+    }
+
+    public function testConnectingDefaultsFailed(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $options = $this->createMock(MydbOptions::class);
+        $envs = $this->createMock(MydbEnvironment::class);
+
+        $db = $this->getDefaultDb($mysqli, $options, $envs);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
+        $mysqli->expects(self::once())->method('init')->willReturn(true);
+        $mysqli->expects(self::once())->method('setTransportOptions')->willReturn(true);
+        $mysqli->expects(self::once())->method('realConnect')->willReturn(true);
+        $mysqli->expects(self::once())->method('autocommit')->willReturn(true);
+
+        $options->expects(self::once())->method('getTimeZone')->willReturn('UTC123');
+        $options->expects(self::once())->method('getNonInteractiveTimeout')->willReturn(123);
+        $options->expects(self::once())->method('getCharset')->willReturn('ascii56');
+
+        $mysqli->expects(self::once())->method('realQuery')
+            ->with("SET time_zone = 'UTC123', wait_timeout = 123, names 'ascii56'")->willReturn(false);
+
+        $this->expectException(ConnectDefaultsException::class);
+
+        $db->open();
+    }
+
+    public function testConnectingTransactionIsolationFailed(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $options = $this->createMock(MydbOptions::class);
+        $envs = $this->createMock(MydbEnvironment::class);
+
+        $db = $this->getDefaultDb($mysqli, $options, $envs);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
+        $mysqli->expects(self::once())->method('init')->willReturn(true);
+        $mysqli->expects(self::once())->method('setTransportOptions')->willReturn(true);
+        $mysqli->expects(self::once())->method('realConnect')->willReturn(true);
+        $mysqli->expects(self::once())->method('autocommit')->willReturn(true);
+        $mysqli->expects(self::once())->method('realQuery')->willReturn(true);
+
+        $options->expects(self::once())->method('getTransactionIsolationLevel')->willReturn('yes123');
+        $mysqli->expects(self::once())->method('setTransactionIsolationLevel')->with('yes123')->willReturn(false);
+
+        $this->expectException(MydbException\TransactionIsolationException::class);
+
+        $db->open();
+    }
+
+    public function testConnectingTransactionAutocommitFailed(): void
+    {
+        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $options = $this->createMock(MydbOptions::class);
+        $envs = $this->createMock(MydbEnvironment::class);
+
+        $db = $this->getDefaultDb($mysqli, $options, $envs);
+
+        $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
+        $mysqli->expects(self::once())->method('init')->willReturn(true);
+        $mysqli->expects(self::once())->method('setTransportOptions')->willReturn(true);
+        $mysqli->expects(self::once())->method('realConnect')->willReturn(true);
+        $mysqli->expects(self::once())->method('autocommit')->willReturn(true);
+        $mysqli->expects(self::once())->method('realQuery')->willReturn(true);
+
+        $options->expects(self::once())->method('getTransactionIsolationLevel');
+        $mysqli->expects(self::never())->method('setTransactionIsolationLevel');
+
+        $options->expects(self::once())->method('isReadonly')->willReturn(true);
+        $mysqli->expects(self::once())->method('beginTransactionReadonly')->willReturn(false);
+
+        $this->expectException(MydbException\TransactionAutocommitException::class);
+
+        $db->open();
     }
 }

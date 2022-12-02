@@ -103,4 +103,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.php81
+  app.php82:
+    <<: *app
+    image: app/php82
+    container_name: app.php82
+    build:
+      context: .
+      dockerfile: Dockerfile.php82
 

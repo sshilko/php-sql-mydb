@@ -15,6 +15,13 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use sql\MydbEnvironment;
+use sql\MydbException\ServerGoneException;
+use sql\MydbException\TerminationSignalException;
+use sql\MydbMysqli;
+use sql\MydbMysqli\MydbMysqliResult;
+use const SIGQUIT;
+
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
@@ -142,5 +149,48 @@ final class SelectTest extends includes\DatabaseTestCase
         $db = $this->getDefaultDb();
         $actual = $db->select($sql);
         self::assertSame($expects, $actual);
+    }
+
+    public function testTerminationDuringQuery(): void
+    {
+        $db1 = $this->getDefaultDb();
+        $db1->open();
+        $actual = $db1->query("SELECT 1+1 as n");
+        self::assertSame([['n' => '2']], $actual);
+
+        $mysqli = $this->createMock(MydbMysqli::class);
+        $env = $this->createMock(MydbEnvironment::class);
+        $db2 = $this->getDefaultDb($mysqli, null, $env, null, true);
+
+        $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
+
+        $env->expects(self::once())->method('startSignalsTrap');
+        $env->expects(self::once())->method('set_error_handler');
+        $env->expects(self::once())->method('restore_error_handler');
+        $env->expects(self::once())->method('endSignalsTrap')->willReturn([SIGQUIT]);
+
+        $this->expectException(TerminationSignalException::class);
+        $db2->query("SELECT 2+2 as m");
+    }
+
+    public function testServerGoneDuringQuery(): void
+    {
+        $sql = $this->createMock(MydbMysqli::class);
+        $env = $this->createMock(MydbEnvironment::class);
+        $db1 = $this->getDefaultDb($sql, null, $env, null, true);
+
+        $res = new MydbMysqliResult(null, [], 1);
+        $res->setErrorNumber(2002);
+        $res->setErrorMessage('hello-world-123');
+
+        $sql->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
+        $sql->expects(self::once())->method('realQuery')->willReturn(true);
+        $sql->expects(self::once())->method('readServerResponse')->willReturn($res);
+        $sql->expects(self::once())->method('isServerGone')->willReturn(true);
+        $sql->expects(self::once())->method('close');
+
+        $this->expectException(ServerGoneException::class);
+        $this->expectExceptionMessage('hello-world-123');
+        $db1->query("SELECT 1+1");
     }
 }

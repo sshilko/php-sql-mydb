@@ -97,12 +97,12 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @SuppressWarnings("camelCase")
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
-    public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): ?callable
+    public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): void
     {
         /** @var callable(int, string, string=, int=, array<array-key, mixed>=):bool|null $newHandler */
         $newHandler = $callback ?? $this->getNullErrorHandler();
 
-        return set_error_handler($newHandler, $error_levels);
+        set_error_handler($newHandler, $error_levels);
     }
 
     /**
@@ -184,7 +184,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @see https://blog.pascal-martin.fr/post/php71-en-other-new-things/
      * @see https://www.php.net/manual/en/function.pcntl-signal
      *
-     * @return array|null array of trapped signals
+     * @return array<int>|null array of trapped signals
      * @throws \sql\MydbException\EnvironmentException
      */
     public function endSignalsTrap(): ?array
