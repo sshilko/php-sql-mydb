@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="1" branch-rate="0" lines-covered="651" lines-valid="651" branches-covered="0" branches-valid="0" complexity="408" version="0.4" timestamp="1670023155">
+<coverage line-rate="1" branch-rate="0" lines-covered="649" lines-valid="649" branches-covered="0" branches-valid="0" complexity="408" version="0.4" timestamp="1670023289">
   <sources>
     <source>/app/src/sql</source>
   </sources>
@@ -1427,8 +1427,6 @@
             <method name="realConnect" signature="string $host, string $username, string $password, string $dbname, ?int $port, ?string $socket, int $flags" line-rate="1" branch-rate="0" complexity="4">
               <lines>
                 <line number="422" hits="50"/>
-                <line number="427" hits="50"/>
-                <line number="428" hits="50"/>
                 <line number="431" hits="44"/>
                 <line number="433" hits="44"/>
                 <line number="436" hits="6"/>
@@ -1625,8 +1623,6 @@
             <line number="407" hits="1"/>
             <line number="410" hits="1"/>
             <line number="422" hits="50"/>
-            <line number="427" hits="50"/>
-            <line number="428" hits="50"/>
             <line number="431" hits="44"/>
             <line number="433" hits="44"/>
             <line number="436" hits="6"/>
