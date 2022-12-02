@@ -18,12 +18,13 @@ namespace phpunit;
 use sql\MydbException\UpdateException;
 use sql\MydbExpression;
 use sql\MydbMysqli;
+use sql\MydbQueryBuilderInterface;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  *
- * @see https://github.com/sshilko/php-sql-mydb
+ * @see https://github.buildDeleteWherecom/sshilko/php-sql-mydb
  */
 final class UpdateTest extends includes\DatabaseTestCase
 {
@@ -54,7 +55,9 @@ final class UpdateTest extends includes\DatabaseTestCase
         ];
         self::assertSame($reality, $actual);
 
-        $db->updateWhere(['name' => 'hello'], ['id' => [1, 2, 3, 4]], 'myusers');
+        $affectedRows = $db->updateWhere(['name' => 'hello'], ['id' => [1, 2, 3, 4, 5, 6, 77, 88]], 'myusers');
+        self::assertSame(3, $affectedRows);
+
         $actual = $db->select("SELECT id, name FROM myusers");
         $reality = [
             ['id' => '1', 'name' => 'hello'],
@@ -82,7 +85,7 @@ final class UpdateTest extends includes\DatabaseTestCase
 
         self::assertSame($defaults, $actual);
 
-        $db->update("UPDATE myusers SET name = 'userabc' WHERE id = 1");
+        self::assertSame(1, $db->update("UPDATE myusers SET name = 'userabc' WHERE id = 1"));
 
         $actual = $db->select("SELECT id, name FROM myusers");
         $reality = [
@@ -157,5 +160,15 @@ final class UpdateTest extends includes\DatabaseTestCase
         $mysqli->expects(self::never())->method('readServerResponse');
         $result = $db->update($sql);
         self::assertNull($result);
+    }
+
+    public function testDeleteWhereReturnsNull(): void
+    {
+        $builder = $this->createMock(MydbQueryBuilderInterface::class);
+
+        $db = $this->getDefaultDb(null, null, null, $builder);
+
+        $builder->expects(self::once())->method('buildUpdateWhere')->willReturn(null);
+        self::assertNull($db->updateWhere([], [], ''));
     }
 }

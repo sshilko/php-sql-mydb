@@ -33,7 +33,7 @@ interface DataManipulationStatementsInterface
     /**
      * @param array<string, (float|int|string|\sql\MydbExpressionInterface|null)> $update
      */
-    public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool;
+    public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): ?int;
 
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): ?int;
 

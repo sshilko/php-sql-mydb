@@ -16,10 +16,12 @@ declare(strict_types = 1);
 namespace sql;
 
 use Psr\Log\LoggerInterface;
+use sql\MydbException\ConnectDefaultsException;
 use sql\MydbException\ConnectException;
 use sql\MydbException\DeleteException;
 use sql\MydbException\DisconnectException;
 use sql\MydbException\InternalException;
+use sql\MydbException\ServerGoneException;
 use sql\MydbException\TerminationSignalException;
 use sql\MydbException\TransactionAutocommitException;
 use sql\MydbException\TransactionBeginReadonlyException;
@@ -126,6 +128,9 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         }
 
         $result = $this->sendClientRequest($query);
+        /**
+         * We should always read server response, no matter whether sendClientRequest result
+         */
         $packet = $this->readServerResponse($query);
 
         if (false === $result || null === $packet) {
@@ -440,17 +445,15 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @param array<string, (float|int|string|\sql\MydbExpressionInterface|null)> $update
      * @throws \sql\MydbException
      */
-    public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): bool
+    public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): ?int
     {
         $query = $this->queryBuilder->buildUpdateWhere($update, $whereFields, $table, $whereNotFields);
 
         if ('' !== $query && null !== $query) {
-            $affectedRows = $this->update($query);
-
-            return $affectedRows >= 0;
+            return $this->update($query);
         }
 
-        return false;
+        return null;
     }
 
     /**
@@ -519,7 +522,8 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         (new MydbEvent\InternalQueryEnd($query, $result))->notify();
 
         $this->environment->restore_error_handler();
-        if ($this->environment->endSignalsTrap()) {
+        $hasPendingSignals = $this->environment->endSignalsTrap();
+        if (null !== $hasPendingSignals && count($hasPendingSignals) > 0) {
             throw new TerminationSignalException();
         }
 
@@ -547,11 +551,13 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         if (null !== $errorMessage) {
             if ($this->mysqli->isServerGone()) {
                 /**
-                 * server closed connection
+                 * server closed connection, do close() and ignore result of operation
                  */
                 $this->mysqli->close();
+                $this->onError(new ServerGoneException($errorMessage), $query);
+            } else {
+                $this->onError(new InternalException($errorMessage), $query);
             }
-            $this->onError(new InternalException($errorMessage), $query);
         }
 
         return $packet;
@@ -659,7 +665,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         );
 
         if (false === $defaults) {
-            throw new InternalException();
+            throw new ConnectDefaultsException();
         }
 
         $isoLevel = $this->options->getTransactionIsolationLevel();

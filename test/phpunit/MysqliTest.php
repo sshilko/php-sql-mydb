@@ -36,6 +36,14 @@ final class MysqliTest extends includes\DatabaseTestCase
         self::assertFalse($result);
     }
 
+    public function testGetMysqli(): void
+    {
+        $resource = mysqli_init();
+        $mysqli = new MydbMysqli($resource);
+        $result = $mysqli->getMysqli();
+        self::assertSame($resource, $result);
+    }
+
     /**
      * @throws \phpunit\EnvironmentException
      */
@@ -93,6 +101,33 @@ final class MysqliTest extends includes\DatabaseTestCase
         self::assertFalse($result);
         $result = $mysqli->autocommit(false);
         self::assertFalse($result);
+    }
+
+    public function testTransactionsWillFinishWhenForcedAutocommit(): void
+    {
+        $mysqli = new MydbMysqli();
+
+        $db = $this->getDefaultDb($mysqli);
+
+        $result = $mysqli->beginTransactionReadwrite();
+        self::assertFalse($result);
+
+        self::assertTrue($db->open());
+
+        $result = $mysqli->beginTransactionReadwrite();
+        self::assertTrue($result);
+
+        self::assertTrue($mysqli->isTransactionOpen());
+
+        $result = $mysqli->autocommit(true);
+        self::assertTrue($result);
+
+        self::assertFalse($mysqli->isTransactionOpen());
+
+        $result = $mysqli->rollback();
+        self::assertTrue($result);
+
+        $db->close();
     }
 
     public function testCloseNoInit(): void

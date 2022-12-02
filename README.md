@@ -122,8 +122,7 @@ please re-use existing solutions that best fit your requirements.
 
 #### Future roadmap
 
-- PHPUnit coverage for command/query raw SQL via events system
-- Packagist export & release stable version
+- PHP 8.2 stable ci
 
 #### Contributing
 

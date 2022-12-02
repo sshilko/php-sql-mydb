@@ -373,6 +373,9 @@ class MydbMysqli implements MydbMysqliInterface
      */
     public function rollback(): bool
     {
+        /**
+         * ignore isTransaction state, do not rely on it, instead do what user requested
+         */
         if ($this->mysqli && $this->isConnected() && $this->mysqli->rollback(self::MYSQLI_TRANS_COR_NO_RELEASE)) {
             $this->isTransaction = false;
 
