@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-11-28 10:52:41</timestamp>
+  <timestamp>2022-12-02 23:19:15</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>169</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>408.32</totalCrap>
+    <totalCrap>408</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -213,11 +213,11 @@
       <package>sql</package>
       <className>sql\Mydb</className>
       <methodName>updateWhere</methodName>
-      <methodSignature>updateWhere(array $update, array $whereFields, string $table, array $whereNotFields): bool</methodSignature>
-      <fullMethod>updateWhere(array $update, array $whereFields, string $table, array $whereNotFields): bool</fullMethod>
-      <crap>3.07</crap>
+      <methodSignature>updateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?int</methodSignature>
+      <fullMethod>updateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?int</fullMethod>
+      <crap>3</crap>
       <complexity>3</complexity>
-      <coverage>80</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -270,9 +270,9 @@
       <methodName>sendClientRequest</methodName>
       <methodSignature>sendClientRequest(string $query): bool</methodSignature>
       <fullMethod>sendClientRequest(string $query): bool</fullMethod>
-      <crap>2.01</crap>
-      <complexity>2</complexity>
-      <coverage>88.89</coverage>
+      <crap>3</crap>
+      <complexity>3</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -281,9 +281,9 @@
       <methodName>readServerResponse</methodName>
       <methodSignature>readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResultInterface</methodSignature>
       <fullMethod>readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResultInterface</fullMethod>
-      <crap>6.02</crap>
+      <crap>6</crap>
       <complexity>6</complexity>
-      <coverage>92.31</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -314,9 +314,9 @@
       <methodName>connect</methodName>
       <methodSignature>connect(int $retry): bool</methodSignature>
       <fullMethod>connect(int $retry): bool</fullMethod>
-      <crap>17.09</crap>
+      <crap>17</crap>
       <complexity>17</complexity>
-      <coverage>93.18</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -433,8 +433,8 @@
       <package>sql</package>
       <className>sql\MydbEnvironment</className>
       <methodName>set_error_handler</methodName>
-      <methodSignature>set_error_handler(?callable $callback, int $error_levels): ?callable</methodSignature>
-      <fullMethod>set_error_handler(?callable $callback, int $error_levels): ?callable</fullMethod>
+      <methodSignature>set_error_handler(?callable $callback, int $error_levels): void</methodSignature>
+      <fullMethod>set_error_handler(?callable $callback, int $error_levels): void</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -919,9 +919,9 @@
       <methodName>getMysqli</methodName>
       <methodSignature>getMysqli(): ?mysqli</methodSignature>
       <fullMethod>getMysqli(): ?mysqli</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1128,9 +1128,9 @@
       <methodName>autocommit</methodName>
       <methodSignature>autocommit(bool $enable): bool</methodSignature>
       <fullMethod>autocommit(bool $enable): bool</fullMethod>
-      <crap>4.13</crap>
+      <crap>4</crap>
       <complexity>4</complexity>
-      <coverage>80</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

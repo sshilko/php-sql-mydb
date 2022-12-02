@@ -156,7 +156,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COLON">:</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">bool</token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">int</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="37"/>

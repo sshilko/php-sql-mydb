@@ -116,12 +116,14 @@
         <h2 id="phpunit\MysqliTest">Mysqli (phpunit\Mysqli)</h2>
         <ul>
             <li style="color: #555753;">✓ Reuse resource</li>
+            <li style="color: #555753;">✓ Get mysqli</li>
             <li style="color: #555753;">✓ Options no init</li>
             <li style="color: #555753;">✓ Query no init</li>
             <li style="color: #555753;">✓ Read response no init</li>
             <li style="color: #555753;">✓ Extract response no init</li>
             <li style="color: #555753;">✓ Escape no init</li>
             <li style="color: #555753;">✓ Transactions no init</li>
+            <li style="color: #555753;">✓ Transactions will finish when forced autocommit</li>
             <li style="color: #555753;">✓ Close no init</li>
             <li style="color: #555753;">✓ Affected rows no init</li>
             <li style="color: #555753;">✓ Warnings no init</li>
@@ -277,6 +279,9 @@
             <li style="color: #555753;">✓ Query bad server response</li>
             <li style="color: #555753;">✓ Query bad server response packet field count is zero</li>
             <li style="color: #555753;">✓ Query bad server response packet field count is not zero but bad result</li>
+            <li style="color: #555753;">✓ Connecting defaults failed</li>
+            <li style="color: #555753;">✓ Connecting transaction isolation failed</li>
+            <li style="color: #555753;">✓ Connecting transaction autocommit failed</li>
         </ul>
         <h2 id="phpunit\SelectTest">Select (phpunit\Select)</h2>
         <ul>
@@ -293,6 +298,8 @@
             <li style="color: #555753;">✓ Simple select with data set "simple select LIMIT OFFSET"</li>
             <li style="color: #555753;">✓ Simple select with data set "simple select ALL"</li>
             <li style="color: #555753;">✓ Simple select with data set "simple select SQL_SMALL_RESULT"</li>
+            <li style="color: #555753;">✓ Termination during query</li>
+            <li style="color: #555753;">✓ Server gone during query</li>
         </ul>
         <h2 id="phpunit\TransactionsTest">Transactions (phpunit\Transactions)</h2>
         <ul>
@@ -315,6 +322,7 @@
             <li style="color: #555753;">✓ Update many</li>
             <li style="color: #555753;">✓ Update internal error</li>
             <li style="color: #555753;">✓ Update returns null</li>
+            <li style="color: #555753;">✓ Delete where returns null</li>
         </ul>
     </body>
 </html>

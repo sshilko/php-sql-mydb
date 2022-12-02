@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Mon Nov 28 10:52:41 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
+  <build time="Fri Dec 2 23:19:15 UTC 2022" phpunit="9.5.26" coverage="9.2.18">
     <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.0RC2"/>
   </build>
@@ -65,12 +65,14 @@
       <test name="phpunit\MydbEventTest::testMydbInternalEventSuccess" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MydbExceptionTest::testQueryBuilderException" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testReuseResource" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testGetMysqli" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testOptionsNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testQueryNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testReadResponseNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testExtractResponseNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testEscapeNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testTransactionsNoInit" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testCloseNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testAffectedRowsNoInit" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\MysqliTest::testWarningsNoInit" size="unknown" result="0" status="PASSED"/>
@@ -210,6 +212,9 @@
       <test name="phpunit\ResourceTest::testQueryBadServerResponse" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testConnectingDefaultsFailed" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testConnectingTransactionIsolationFailed" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;" size="unknown" result="0" status="PASSED"/>
@@ -223,6 +228,8 @@
       <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testTerminationDuringQuery" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\SelectTest::testServerGoneDuringQuery" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadonlyReal" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadWriteReal" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\TransactionsTest::testTransactionIsolationLevel" size="unknown" result="0" status="PASSED"/>
@@ -239,13 +246,14 @@
       <test name="phpunit\UpdateTest::testUpdateMany" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\UpdateTest::testUpdateInternalError" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\UpdateTest::testUpdateReturnsNull" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\UpdateTest::testDeleteWhereReturnsNull" size="unknown" result="0" status="PASSED"/>
     </tests>
     <directory name="/">
       <totals>
-        <lines total="4904" comments="1962" code="2942" executable="650" executed="642" percent="98.77"/>
-        <methods count="165" tested="159" percent="96.36"/>
+        <lines total="4973" comments="2002" code="2971" executable="651" executed="651" percent="100.00"/>
+        <methods count="165" tested="165" percent="100.00"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="20" tested="18" percent="90.00"/>
+        <classes count="20" tested="20" percent="100.00"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="MydbEvent">
@@ -304,12 +312,21 @@
       </directory>
       <directory name="MydbException">
         <totals>
-          <lines total="601" comments="340" code="261" executable="1" executed="1" percent="100.00"/>
+          <lines total="661" comments="374" code="287" executable="1" executed="1" percent="100.00"/>
           <methods count="1" tested="1" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
+        <file name="ConnectDefaultsException.php" href="MydbException/ConnectDefaultsException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
         <file name="ConnectException.php" href="MydbException/ConnectException.php.xml">
           <totals>
             <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
@@ -401,6 +418,15 @@
           </totals>
         </file>
         <file name="RegistryException.php" href="MydbException/RegistryException.php.xml">
+          <totals>
+            <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="ServerGoneException.php" href="MydbException/ServerGoneException.php.xml">
           <totals>
             <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
             <methods count="0" tested="0" percent="0"/>
@@ -619,10 +645,10 @@
       </directory>
       <file name="Mydb.php" href="Mydb.php.xml">
         <totals>
-          <lines total="677" comments="173" code="504" executable="196" executed="190" percent="96.94"/>
-          <methods count="28" tested="24" percent="85.71"/>
+          <lines total="683" comments="176" code="507" executable="197" executed="197" percent="100.00"/>
+          <methods count="28" tested="28" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="0" percent="0.00"/>
+          <classes count="1" tested="1" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
       </file>
@@ -745,10 +771,10 @@
       </file>
       <file name="MydbMysqli.php" href="MydbMysqli.php.xml">
         <totals>
-          <lines total="606" comments="198" code="408" executable="138" executed="136" percent="98.55"/>
-          <methods count="30" tested="28" percent="93.33"/>
+          <lines total="609" comments="201" code="408" executable="138" executed="138" percent="100.00"/>
+          <methods count="30" tested="30" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="0" percent="0.00"/>
+          <classes count="1" tested="1" percent="100.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
       </file>

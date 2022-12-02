@@ -75,12 +75,14 @@ Mydb Exception (phpunit\MydbException)
 
 Mysqli (phpunit\Mysqli)
  [x] Reuse resource
+ [x] Get mysqli
  [x] Options no init
  [x] Query no init
  [x] Read response no init
  [x] Extract response no init
  [x] Escape no init
  [x] Transactions no init
+ [x] Transactions will finish when forced autocommit
  [x] Close no init
  [x] Affected rows no init
  [x] Warnings no init
@@ -231,6 +233,9 @@ Resource (phpunit\Resource)
  [x] Query bad server response
  [x] Query bad server response packet field count is zero
  [x] Query bad server response packet field count is not zero but bad result
+ [x] Connecting defaults failed
+ [x] Connecting transaction isolation failed
+ [x] Connecting transaction autocommit failed
 
 Select (phpunit\Select)
  [x] Simple select with data set "simple select all"
@@ -246,6 +251,8 @@ Select (phpunit\Select)
  [x] Simple select with data set "simple select LIMIT OFFSET"
  [x] Simple select with data set "simple select ALL"
  [x] Simple select with data set "simple select SQL_SMALL_RESULT"
+ [x] Termination during query
+ [x] Server gone during query
 
 Transactions (phpunit\Transactions)
  [x] Begin transaction readonly real
@@ -266,4 +273,5 @@ Update (phpunit\Update)
  [x] Update many
  [x] Update internal error
  [x] Update returns null
+ [x] Delete where returns null
 

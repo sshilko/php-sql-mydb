@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Code Coverage for /app/src/sql/MydbInterface/QueryInterface.php</title>
+  <title>Code Coverage for /app/src/sql/MydbException/ConnectDefaultsException.php</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../_css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="../_css/octicons.css" rel="stylesheet" type="text/css">
@@ -17,8 +17,8 @@
       <nav aria-label="breadcrumb">
        <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="../index.html">/app/src/sql</a></li>
-         <li class="breadcrumb-item"><a href="index.html">MydbInterface</a></li>
-         <li class="breadcrumb-item active">QueryInterface.php</li>
+         <li class="breadcrumb-item"><a href="index.html">MydbException</a></li>
+         <li class="breadcrumb-item active">ConnectDefaultsException.php</li>
 
        </ol>
       </nav>
@@ -56,6 +56,20 @@
        <td class=" small"><div align="right">0&nbsp;/&nbsp;0</div></td>
       </tr>
 
+      <tr>
+       <td class=""><abbr title="sql\MydbException\ConnectDefaultsException">ConnectDefaultsException</abbr></td>
+       <td class=" big"></td>
+       <td class=" small"><div align="right">n/a</div></td>
+       <td class=" small"><div align="right">0&nbsp;/&nbsp;0</div></td>
+       <td class=" big"></td>
+       <td class=" small"><div align="right">n/a</div></td>
+       <td class=" small"><div align="right">0&nbsp;/&nbsp;0</div></td>
+       <td class=" small">0</td>
+       <td class=" big"></td>
+       <td class=" small"><div align="right">n/a</div></td>
+       <td class=" small"><div align="right">0&nbsp;/&nbsp;0</div></td>
+      </tr>
+
 
      </tbody>
     </table>
@@ -77,21 +91,20 @@
     <tr class=" d-flex"><td  class="col-1 text-right"><a id="13" href="#13">13</a></td><td class="col-11 codeLine"></td></tr>
     <tr class=" d-flex"><td  class="col-1 text-right"><a id="14" href="#14">14</a></td><td class="col-11 codeLine"><span class="keyword">declare</span><span class="keyword">(</span><span class="default">strict_types</span><span class="default">&nbsp;</span><span class="keyword">=</span><span class="default">&nbsp;</span><span class="default">1</span><span class="keyword">)</span><span class="keyword">;</span></td></tr>
     <tr class=" d-flex"><td  class="col-1 text-right"><a id="15" href="#15">15</a></td><td class="col-11 codeLine"></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="16" href="#16">16</a></td><td class="col-11 codeLine"><span class="keyword">namespace</span><span class="default">&nbsp;</span><span class="default">sql\MydbInterface</span><span class="keyword">;</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="16" href="#16">16</a></td><td class="col-11 codeLine"><span class="keyword">namespace</span><span class="default">&nbsp;</span><span class="default">sql\MydbException</span><span class="keyword">;</span></td></tr>
     <tr class=" d-flex"><td  class="col-1 text-right"><a id="17" href="#17">17</a></td><td class="col-11 codeLine"></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="18" href="#18">18</a></td><td class="col-11 codeLine"><span class="comment">/**</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="19" href="#19">19</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*&nbsp;@author&nbsp;Sergei&nbsp;Shilko&nbsp;&lt;contact@sshilko.com&gt;</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="20" href="#20">20</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*&nbsp;@license&nbsp;https://opensource.org/licenses/mit-license.php&nbsp;MIT</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="21" href="#21">21</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*&nbsp;@category&nbsp;interfaces</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="22" href="#22">22</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*&nbsp;@see&nbsp;https://github.com/sshilko/php-sql-mydb</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="23" href="#23">23</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*/</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="24" href="#24">24</a></td><td class="col-11 codeLine"><span class="keyword">interface</span><span class="default">&nbsp;</span><span class="default">QueryInterface</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="25" href="#25">25</a></td><td class="col-11 codeLine"><span class="keyword">{</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="26" href="#26">26</a></td><td class="col-11 codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/**</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="27" href="#27">27</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@phpcs:disable&nbsp;SlevomatCodingStandard.TypeHints.ReturnTypeHint</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="28" href="#28">28</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="29" href="#29">29</a></td><td class="col-11 codeLine"><span class="default">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span class="default">&nbsp;</span><span class="keyword">function</span><span class="default">&nbsp;</span><span class="default">query</span><span class="keyword">(</span><span class="default">string</span><span class="default">&nbsp;</span><span class="default">$query</span><span class="keyword">)</span><span class="keyword">:</span><span class="default">&nbsp;</span><span class="keyword">?</span><span class="keyword">array</span><span class="keyword">;</span></td></tr>
-    <tr class=" d-flex"><td  class="col-1 text-right"><a id="30" href="#30">30</a></td><td class="col-11 codeLine"><span class="keyword">}</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="18" href="#18">18</a></td><td class="col-11 codeLine"><span class="keyword">use</span><span class="default">&nbsp;</span><span class="default">sql\MydbException</span><span class="keyword">;</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="19" href="#19">19</a></td><td class="col-11 codeLine"></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="20" href="#20">20</a></td><td class="col-11 codeLine"><span class="comment">/**</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="21" href="#21">21</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*&nbsp;@author&nbsp;Sergei&nbsp;Shilko&nbsp;&lt;contact@sshilko.com&gt;</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="22" href="#22">22</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*&nbsp;@license&nbsp;https://opensource.org/licenses/mit-license.php&nbsp;MIT</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="23" href="#23">23</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*&nbsp;@category&nbsp;exceptions</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="24" href="#24">24</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*&nbsp;@see&nbsp;https://github.com/sshilko/php-sql-mydb</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="25" href="#25">25</a></td><td class="col-11 codeLine"><span class="comment">&nbsp;*/</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="26" href="#26">26</a></td><td class="col-11 codeLine"><span class="keyword">class</span><span class="default">&nbsp;</span><span class="default">ConnectDefaultsException</span><span class="default">&nbsp;</span><span class="keyword">extends</span><span class="default">&nbsp;</span><span class="default">MydbException</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="27" href="#27">27</a></td><td class="col-11 codeLine"><span class="keyword">{</span></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="28" href="#28">28</a></td><td class="col-11 codeLine"></td></tr>
+    <tr class=" d-flex"><td  class="col-1 text-right"><a id="29" href="#29">29</a></td><td class="col-11 codeLine"><span class="keyword">}</span></td></tr>
 
 </tbody>
 </table>

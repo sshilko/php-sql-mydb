@@ -57,6 +57,7 @@
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\QueryBuilderTest::testShowColumnsLike"/>
         <covered by="phpunit\QueryBuilderTest::testShowKeys"/>
         <covered by="phpunit\QueryBuilderTest::testInsertOne with data set &quot;simple int&quot;"/>
@@ -164,6 +165,9 @@
         <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
         <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
         <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
@@ -177,6 +181,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
@@ -2036,9 +2042,11 @@
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
       <line nr="374">
+        <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
       </line>
       <line nr="375">
+        <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\QueryBuilderTest::testBuildWhere with data set &quot;expression8&quot;"/>
       </line>
       <line nr="379">
