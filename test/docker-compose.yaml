@@ -54,8 +54,8 @@ x-mysql: &mysql
     test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
     timeout: 1s
     interval: 2s
-    retries: 2
-    start_period: 4s
+    retries: 3
+    start_period: 5s
   logging:
     options:
       max-size: "4m"

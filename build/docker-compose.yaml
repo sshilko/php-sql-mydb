@@ -24,9 +24,9 @@ x-app: &app
   healthcheck:
    #test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
     test: ["CMD", "php", "examples/example.php"]
-    timeout: 1s
-    start_period: 1s
-    interval: 1s
+    timeout: 2s
+    start_period: 5s
+    interval: 2s
     retries: 3
   cpus: 1.5
   mem_limit: "1100M"
