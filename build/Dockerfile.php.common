@@ -65,14 +65,15 @@ RUN chmod +x /usr/bin/phpdoc
 
 #phan/phan php-ast dependency
 #https://github.com/mlocati/docker-php-extension-installer
-COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+COPY --from=mlocati/php-extension-installer:1.5.49 /usr/bin/install-php-extensions /usr/local/bin/
 RUN install-php-extensions ast
 
 ADD https://phar.phpunit.de/phpcpd.phar /usr/bin/phpcpd
 RUN chmod +x /usr/bin/phpcpd
 
 #phpunit coverage requirement
-RUN mkdir /root/tmp && pear config-set temp_dir /root/tmp && install-php-extensions xdebug-3.1.6
+ARG xdebug_php_extension=xdebug
+RUN mkdir /root/tmp && pear config-set temp_dir /root/tmp && install-php-extensions ${xdebug_php_extension}
 ENV XDEBUG_MODE "coverage"
 
 RUN docker-php-ext-enable opcache

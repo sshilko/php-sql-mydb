@@ -7,7 +7,7 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
-name: 8.1 PHPUnit
+name: 8.2 PHPUnit
 
 on:
   push:
@@ -32,14 +32,14 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php81') }}
+          key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php82') }}
 
       - name: Load cached Docker image
         run: docker load -i /tmp/docker-save/snapshot.tar || true
         if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
 
       - name: Build Docker image
-        run: ls -l && docker build -f build/Dockerfile.php81 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php-image-cache ./build
+        run: ls -l && docker build -f build/Dockerfile.php82 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php-image-cache ./build
         if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
         env:
           DOCKER_BUILDKIT: '1'
@@ -63,21 +63,21 @@ jobs:
       uses: actions/cache@v3
       with:
         path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php81') }}
+        key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php82') }}
 
     - name: Load cached Docker image
-      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php81
+      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php82
 
     - name: Docker boot
       env:
         DOCKER_BUILDKIT: '1'
         COMPOSE_DOCKER_CLI_BUILD: '1'
-        SERVICES_NAME: "app.php81 mysql mysql80"
+        SERVICES_NAME: "app.php82 mysql mysql80"
       run: docker-compose up --no-build -d $SERVICES_NAME
       timeout-minutes: 1
 
     - name: Wait for all services to become healthy
-      run: for SVC in "app.php81" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 5; done; done
+      run: for SVC in "app.php82" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 5; done; done
       timeout-minutes: 1
 
     - name: Sleep
@@ -92,8 +92,7 @@ jobs:
         key: ${{ runner.os }}-php-${{ hashFiles('/composer.lock') }}-composer-dev
 
     - name: Docker install dependencies
-      run: docker-compose exec -T app.php81 composer install
+      run: docker-compose exec -T app.php82 composer install
 
-      # Docs: https://phpunit.readthedocs.io/en/9.5/
     - name: Docker run PHPUnit
-      run: docker-compose exec -T app.php81 composer app-phpunit
+      run: docker-compose exec -T app.php82 composer app-phpunit

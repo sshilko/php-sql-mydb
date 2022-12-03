@@ -12,7 +12,6 @@
  */
 // @codeCoverageIgnoreStart
 
-
 declare(strict_types = 1);
 
 use sql\Mydb;
@@ -27,7 +26,7 @@ include_once __DIR__ . '/MydbRepository/UserRepository.php';
 $registry = new MydbRegistry();
 $mylogger = new MydbLogger();
 
-$auth = new MydbCredentials('127.0.0.1', 'root', 'root', 'mydb', 3306);
+$auth = new MydbCredentials('mysql', 'root', 'root', 'mydb', 3306);
 $opts = new MydbOptions();
 $opts->setTransactionIsolationLevel(MydbOptions::TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED);
 $mydb = new Mydb($auth, $mylogger, $opts);
@@ -66,7 +65,7 @@ echo $mydb->deleteWhere(['id' => '30'], 'users');
 
 assert(['10', '20'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
-echo $mydb->updateWhere(['id' => 99], ['id' => 10], 'users');
+assert(1, $mydb->updateWhere(['id' => 99], ['id' => 10], 'users'));
 assert(['20', '99'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
 $db10 = new Mydb($auth, $mylogger, $opts);

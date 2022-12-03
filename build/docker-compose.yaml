@@ -15,18 +15,19 @@ x-app: &app
   dns: 1.1.1.1
   dns_opt:
     - use-vc
-  stop_grace_period: 5s
+  stop_grace_period: 4s
   platform: linux/amd64
   logging:
     options:
       max-size: "1m"
       max-file: "2"
   healthcheck:
-    test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
-    timeout: 2s
-    start_period: 2s
-    interval: 5s
-    retries: 2
+   #test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
+    test: ["CMD", "php", "examples/example.php"]
+    timeout: 1s
+    start_period: 1s
+    interval: 1s
+    retries: 3
   cpus: 1.5
   mem_limit: "1100M"
   pids_limit: 100
@@ -89,6 +90,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.php74
+      args:
+        xdebug_php_extension: xdebug-3.0.0
   app.php80:
     <<: *app
     image: app/php80
@@ -96,6 +99,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.php80
+      args:
+        xdebug_php_extension: xdebug-3.1.6
   app.php81:
     <<: *app
     image: app/php81
@@ -103,6 +108,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.php81
+      args:
+        xdebug_php_extension: xdebug-3.1.6
   app.php82:
     <<: *app
     image: app/php82
@@ -110,4 +117,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.php82
+      args:
+        xdebug_php_extension: xdebug
 

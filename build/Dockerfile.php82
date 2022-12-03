@@ -9,6 +9,6 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
-FROM --platform=linux/amd64 library/composer:2.4
-FROM --platform=linux/amd64 library/php:8.1-cli
+FROM --platform=linux/amd64 library/composer:latest
+FROM --platform=linux/amd64 library/php:8.2.0RC7-cli
 INCLUDE+ Dockerfile.php.common
