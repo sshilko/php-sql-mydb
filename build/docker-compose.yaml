@@ -22,8 +22,8 @@ x-app: &app
       max-size: "1m"
       max-file: "2"
   healthcheck:
-   #test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
-    test: ["CMD", "php", "examples/example.php"]
+    test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
+   #test: ["CMD", "php", "examples/example.php"]
     timeout: 2s
     start_period: 5s
     interval: 2s
