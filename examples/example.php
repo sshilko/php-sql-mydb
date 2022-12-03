@@ -12,6 +12,7 @@
  */
 // @codeCoverageIgnoreStart
 
+
 declare(strict_types = 1);
 
 use sql\Mydb;
