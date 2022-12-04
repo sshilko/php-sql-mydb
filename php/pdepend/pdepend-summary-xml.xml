@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2022-12-03T00:24:30" pdepend="@package_version@" ahh="0.5" andc="0.65116279069767" calls="285" ccn="347" ccn2="413" cloc="1832" clsa="3" clsc="39" eloc="2051" fanout="69" leafs="36" lloc="1358" loc="5005" maxDIT="4" ncloc="3173" noc="42" nof="0" noi="20" nom="282" nop="6" roots="3">
+<metrics generated="2022-12-04T00:42:12" pdepend="@package_version@" ahh="0.5" andc="0.65116279069767" calls="291" ccn="352" ccn2="418" cloc="1835" clsa="3" clsc="39" eloc="2078" fanout="71" leafs="36" lloc="1377" loc="5044" maxDIT="4" ncloc="3209" noc="42" nof="0" noi="20" nom="286" nop="6" roots="3">
   <files>
-    <file name="/app/src/sql/Mydb.php" loc="683" cloc="176" eloc="398" lloc="261" ncloc="507"/>
+    <file name="/app/src/sql/Mydb.php" loc="685" cloc="176" eloc="400" lloc="261" ncloc="509"/>
     <file name="/app/src/sql/MydbCredentials.php" loc="140" cloc="63" eloc="58" lloc="31" ncloc="77"/>
     <file name="/app/src/sql/MydbEnvironment.php" loc="264" cloc="136" eloc="101" lloc="79" ncloc="128"/>
-    <file name="/app/src/sql/MydbEvent.php" loc="49" cloc="20" eloc="21" lloc="13" ncloc="29"/>
+    <file name="/app/src/sql/MydbEvent.php" loc="54" cloc="20" eloc="25" lloc="15" ncloc="34"/>
     <file name="/app/src/sql/MydbException.php" loc="29" cloc="16" eloc="7" lloc="3" ncloc="13"/>
     <file name="/app/src/sql/MydbExpression.php" loc="38" cloc="16" eloc="15" lloc="7" ncloc="22"/>
     <file name="/app/src/sql/MydbListener.php" loc="27" cloc="11" eloc="11" lloc="6" ncloc="16"/>
@@ -16,7 +16,7 @@
     <file name="/app/src/sql/MydbRepository.php" loc="35" cloc="11" eloc="16" lloc="9" ncloc="24"/>
     <file name="/app/src/sql/MydbEvent/InternalConnectionBegin.php" loc="28" cloc="11" eloc="13" lloc="4" ncloc="17"/>
     <file name="/app/src/sql/MydbEvent/InternalConnectionEnd.php" loc="29" cloc="11" eloc="14" lloc="4" ncloc="18"/>
-    <file name="/app/src/sql/MydbEvent/InternalEvent.php" loc="41" cloc="14" eloc="19" lloc="9" ncloc="27"/>
+    <file name="/app/src/sql/MydbEvent/InternalEvent.php" loc="51" cloc="17" eloc="23" lloc="13" ncloc="34"/>
     <file name="/app/src/sql/MydbEvent/InternalQueryBegin.php" loc="27" cloc="11" eloc="12" lloc="4" ncloc="16"/>
     <file name="/app/src/sql/MydbEvent/InternalQueryEnd.php" loc="28" cloc="11" eloc="13" lloc="4" ncloc="17"/>
     <file name="/app/src/sql/MydbException/ConnectDefaultsException.php" loc="30" cloc="17" eloc="7" lloc="3" ncloc="13"/>
@@ -41,13 +41,13 @@
     <file name="/app/src/sql/MydbException/TransactionIsolationException.php" loc="28" cloc="17" eloc="6" lloc="2" ncloc="11"/>
     <file name="/app/src/sql/MydbException/TransactionRollbackException.php" loc="30" cloc="17" eloc="7" lloc="3" ncloc="13"/>
     <file name="/app/src/sql/MydbException/UpdateException.php" loc="30" cloc="17" eloc="7" lloc="3" ncloc="13"/>
-    <file name="/app/src/sql/MydbListener/InternalListener.php" loc="30" cloc="11" eloc="14" lloc="10" ncloc="19"/>
+    <file name="/app/src/sql/MydbListener/InternalListener.php" loc="50" cloc="11" eloc="30" lloc="21" ncloc="39"/>
     <file name="/app/src/sql/MydbMysqli/MydbMysqliResult.php" loc="105" cloc="11" eloc="51" lloc="30" ncloc="94"/>
   </files>
-  <package name="sql" noc="13" noi="11" nom="238" nof="0" cr="0.5325" rcr="0.66">
-    <class name="Mydb" fqname="sql\Mydb" start="53" end="682" loc="630" cloc="159" eloc="316" lloc="186" ncloc="471" dit="0" noam="0" nocc="0" noom="0" nom="28" cr="0.15" rcr="1.05525" ca="0" cbo="35" ce="35" impl="8" cis="23" csz="36" npm="23" vars="8" varsi="8" varsnp="0" wmc="96" wmci="96" wmcnp="68">
+  <package name="sql" noc="13" noi="11" nom="240" nof="0" cr="0.5325" rcr="0.66">
+    <class name="Mydb" fqname="sql\Mydb" start="53" end="684" loc="632" cloc="159" eloc="318" lloc="186" ncloc="473" dit="0" noam="0" nocc="0" noom="0" nom="28" cr="0.15" rcr="1.05525" ca="0" cbo="35" ce="35" impl="8" cis="23" csz="36" npm="23" vars="8" varsi="8" varsnp="0" wmc="96" wmci="96" wmcnp="68">
       <file name="/app/src/sql/Mydb.php"/>
-      <method name="__construct" start="72" end="88" ccn="1" ccn2="1" loc="17" cloc="0" eloc="9" lloc="7" ncloc="17" npath="1" hnt="25" hnd="46" hv="138.08904890143" hd="3.9" hl="0.25641025641026" he="538.54729071556" ht="29.919293928642" hb="0.022064528034667" hi="35.407448436263" mi="64.064262164111"/>
+      <method name="__construct" start="72" end="88" ccn="1" ccn2="1" loc="17" cloc="0" eloc="9" lloc="7" ncloc="17" npath="1" hnt="25" hnd="47" hv="138.86472129194" hd="3.7142857142857" hl="0.26923076923077" he="515.78325051292" ht="28.654625028496" hb="0.021438294627048" hi="37.386655732446" mi="64.047228447557"/>
       <method name="__destruct" start="97" end="101" ccn="1" ccn2="1" loc="5" cloc="0" eloc="4" lloc="2" ncloc="5" npath="1" hnt="8" hnd="9" hv="25.359400011538" hd="5" hl="0.2" he="126.79700005769" ht="7.0442777809829" hb="0.0084130098545288" hi="5.0718800023077" mi="76.900382516713"/>
       <method name="open" start="108" end="111" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="7" hnd="7" hv="19.651484454403" hd="6.25" hl="0.16" he="122.82177784002" ht="6.8234321022233" hb="0.0082362400950509" hi="3.1442375127045" mi="80.401219851729"/>
       <method name="query" start="123" end="156" ccn="5" ccn2="6" loc="34" cloc="6" eloc="21" lloc="12" ncloc="28" npath="18" hnt="30" hnd="67" hv="181.98267571373" hd="10.25" hl="0.097560975609756" he="1865.3224260658" ht="103.62902367032" hb="0.050510463415291" hi="17.754407386706" mi="54.525378210087"/>
@@ -70,11 +70,11 @@
       <method name="insertMany" start="477" end="486" ccn="1" ccn2="1" loc="10" cloc="0" eloc="4" lloc="2" ncloc="10" npath="1" hnt="14" hnd="20" hv="60.506993328423" hd="3.6666666666667" hl="0.27272727272727" he="221.85897553755" ht="12.325498640975" hb="0.012216029724133" hi="16.501907271388" mi="74.255956027448"/>
       <method name="replaceOne" start="492" end="497" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="13" hnd="17" hv="53.137016936254" hd="5" hl="0.2" he="265.68508468127" ht="14.760282482293" hb="0.013776012496875" hi="10.627403387251" mi="74.650928406552"/>
       <method name="insertOne" start="503" end="508" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="13" hnd="17" hv="53.137016936254" hd="5" hl="0.2" he="265.68508468127" ht="14.760282482293" hb="0.013776012496875" hi="10.627403387251" mi="74.650928406552"/>
-      <method name="sendClientRequest" start="515" end="531" ccn="2" ccn2="3" loc="17" cloc="0" eloc="13" lloc="10" ncloc="17" npath="3" hnt="29" hnd="57" hv="169.15381041078" hd="9.5454545454545" hl="0.1047619047619" he="1614.6500084665" ht="89.70277824814" hb="0.045877281774741" hi="17.720875376367" mi="59.694512640833"/>
+      <method name="sendClientRequest" start="515" end="531" ccn="2" ccn2="3" loc="17" cloc="0" eloc="13" lloc="10" ncloc="17" npath="3" hnt="31" hnd="63" hv="185.2956776285" hd="10.5625" hl="0.094674556213018" he="1957.185594951" ht="108.73253305283" hb="0.052155496697542" hi="17.542786047668" mi="59.41734842948"/>
       <method name="readServerResponse" start="536" end="564" ccn="6" ccn2="6" loc="29" cloc="3" eloc="22" lloc="14" ncloc="26" npath="18" hnt="31" hnd="76" hv="193.68575291675" hd="9.4354838709677" hl="0.10598290598291" he="1827.5187976822" ht="101.52882209346" hb="0.049825689098799" hi="20.527378941604" mi="53.895134371665"/>
       <method name="onWarning" start="566" end="569" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="11" hnd="11" hv="38.05374780501" hd="6.125" hl="0.16326530612245" he="233.07920530569" ht="12.948844739205" hb="0.01262450710429" hi="6.2128567844915" mi="78.391627559531"/>
       <method name="onError" start="574" end="579" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="13" hnd="15" hv="50.789577742911" hd="8" hl="0.125" he="406.31662194329" ht="22.573145663516" hb="0.018286130075594" hi="6.3486972178638" mi="74.788325883442"/>
-      <method name="connect" start="590" end="681" ccn="13" ccn2="17" loc="92" cloc="12" eloc="61" lloc="35" ncloc="80" npath="4896" hnt="81" hnd="243" hv="641.90981279207" hd="13.709677419355" hl="0.072941176470588" he="8800.3764656977" ht="488.90980364987" hb="0.14208435035504" hi="46.821656933069" mi="39.110359509244"/>
+      <method name="connect" start="590" end="683" ccn="13" ccn2="17" loc="94" cloc="12" eloc="63" lloc="35" ncloc="82" npath="4896" hnt="83" hnd="249" hv="660.68016036165" hd="14.589473684211" hl="0.068542568542569" he="9638.9758132763" ht="535.49865629313" hb="0.15097301874102" hi="45.284715176304" mi="38.71708433363"/>
     </class>
     <class name="MydbCredentials" fqname="sql\MydbCredentials" start="23" end="139" loc="117" cloc="47" eloc="30" lloc="14" ncloc="70" dit="0" noam="0" nocc="0" noom="0" nom="8" cr="0.15" rcr="0.2775" ca="0" cbo="0" ce="0" impl="1" cis="8" csz="15" npm="8" vars="7" varsi="7" varsnp="0" wmc="8" wmci="8" wmcnp="8">
       <file name="/app/src/sql/MydbCredentials.php"/>
@@ -100,11 +100,12 @@
       <method name="startSignalsTrap" start="233" end="251" ccn="3" ccn2="3" loc="19" cloc="2" eloc="13" lloc="9" ncloc="17" npath="3" hnt="21" hnd="44" hv="114.64806399138" hd="10.5" hl="0.095238095238095" he="1203.8046719095" ht="66.878037328307" hb="0.037720962134407" hi="10.918863237275" mi="60.877258111103"/>
       <method name="getNullErrorHandler" start="257" end="262" ccn="1" ccn2="1" loc="6" cloc="0" eloc="5" lloc="3" ncloc="6" npath="1" hnt="6" hnd="9" hv="19.019550008654" hd="20" hl="0.05" he="380.39100017308" ht="21.132833342949" hb="0.017499765701582" hi="0.95097750043269" mi="75.661213654408"/>
     </class>
-    <class name="MydbEvent" fqname="sql\MydbEvent" start="20" end="48" loc="29" cloc="9" eloc="11" lloc="5" ncloc="20" dit="0" noam="0" nocc="1" noom="0" nom="3" cr="0.711" rcr="0.405" ca="0" cbo="2" ce="2" impl="2" cis="2" csz="3" npm="2" vars="0" varsi="0" varsnp="0" wmc="6" wmci="6" wmcnp="5">
+    <class name="MydbEvent" fqname="sql\MydbEvent" start="20" end="53" loc="34" cloc="9" eloc="14" lloc="6" ncloc="25" dit="0" noam="0" nocc="1" noom="0" nom="4" cr="0.711" rcr="0.405" ca="0" cbo="2" ce="2" impl="2" cis="3" csz="4" npm="3" vars="0" varsi="0" varsnp="0" wmc="7" wmci="7" wmcnp="6">
       <file name="/app/src/sql/MydbEvent.php"/>
       <method name="getEventMetadata" start="26" end="26" ccn="1" ccn2="1" loc="1" cloc="0" eloc="0" lloc="0" ncloc="1" npath="1" hnt="3" hnd="3" hv="4.7548875021635" hd="4.5" hl="0.22222222222222" he="21.396993759736" ht="1.1887218755409" hb="0.0025690974927435" hi="1.0566416671474" mi="100"/>
       <method name="getListeners" start="31" end="31" ccn="1" ccn2="1" loc="1" cloc="0" eloc="0" lloc="0" ncloc="1" npath="1" hnt="3" hnd="3" hv="4.7548875021635" hd="4.5" hl="0.22222222222222" he="21.396993759736" ht="1.1887218755409" hb="0.0025690974927435" hi="1.0566416671474" mi="100"/>
       <method name="notify" start="36" end="47" ccn="4" ccn2="4" loc="12" cloc="0" eloc="11" lloc="5" ncloc="12" npath="4" hnt="19" hnd="28" hv="91.339743519094" hd="15" hl="0.066666666666667" he="1370.0961527864" ht="76.116452932579" hb="0.041119337593728" hi="6.0893162346063" mi="63.016520106344"/>
+      <method name="getEventName" start="49" end="52" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="12.5" hl="0.08" he="193.87218755409" ht="10.770677086338" hb="0.011165780490257" hi="1.2407820003462" mi="81.120955834208"/>
     </class>
     <class name="MydbException" fqname="sql\MydbException" start="25" end="28" loc="4" cloc="0" eloc="0" lloc="0" ncloc="4" dit="2" noam="0" nocc="19" noom="0" nom="0" cr="2.897625" rcr="0.2775" ca="1" cbo="0" ce="0" impl="0" cis="0" csz="0" npm="0" vars="0" varsi="0" varsnp="0" wmc="0" wmci="0" wmcnp="0">
       <file name="/app/src/sql/MydbException.php"/>
@@ -239,25 +240,26 @@
       <method name="getDatabase" start="30" end="33" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="8" hnd="8" hv="24" hd="9" hl="0.11111111111111" he="216" ht="12" hb="0.012" hi="2.6666666666667" mi="79.793333921501"/>
     </class>
   </package>
-  <package name="sql\MydbEvent" noc="5" noi="0" nom="6" nof="0" cr="0.15" rcr="0.17671428571429">
-    <class name="InternalConnectionBegin" fqname="sql\MydbEvent\InternalConnectionBegin" start="18" end="27" loc="10" cloc="0" eloc="6" lloc="1" ncloc="10" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.255028125" ca="1" cbo="0" ce="0" impl="2" cis="1" csz="1" npm="1" vars="0" varsi="1" varsnp="0" wmc="1" wmci="7" wmcnp="1">
+  <package name="sql\MydbEvent" noc="5" noi="0" nom="7" nof="0" cr="0.15" rcr="0.17671428571429">
+    <class name="InternalConnectionBegin" fqname="sql\MydbEvent\InternalConnectionBegin" start="18" end="27" loc="10" cloc="0" eloc="6" lloc="1" ncloc="10" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.255028125" ca="2" cbo="0" ce="0" impl="2" cis="1" csz="1" npm="1" vars="0" varsi="2" varsnp="0" wmc="1" wmci="9" wmcnp="1">
       <file name="/app/src/sql/MydbEvent/InternalConnectionBegin.php"/>
       <method name="__construct" start="20" end="26" ccn="1" ccn2="1" loc="7" cloc="0" eloc="6" lloc="1" ncloc="7" npath="1" hnt="12" hnd="14" hv="45.688259064691" hd="6.3" hl="0.15873015873016" he="287.83603210755" ht="15.990890672642" hb="0.014531446636858" hi="7.2521046134431" mi="71.268959982422"/>
     </class>
-    <class name="InternalConnectionEnd" fqname="sql\MydbEvent\InternalConnectionEnd" start="18" end="28" loc="11" cloc="0" eloc="7" lloc="1" ncloc="11" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.255028125" ca="1" cbo="0" ce="0" impl="2" cis="1" csz="1" npm="1" vars="0" varsi="1" varsnp="0" wmc="1" wmci="7" wmcnp="1">
+    <class name="InternalConnectionEnd" fqname="sql\MydbEvent\InternalConnectionEnd" start="18" end="28" loc="11" cloc="0" eloc="7" lloc="1" ncloc="11" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.255028125" ca="2" cbo="0" ce="0" impl="2" cis="1" csz="1" npm="1" vars="0" varsi="2" varsnp="0" wmc="1" wmci="9" wmcnp="1">
       <file name="/app/src/sql/MydbEvent/InternalConnectionEnd.php"/>
       <method name="__construct" start="20" end="27" ccn="1" ccn2="1" loc="8" cloc="0" eloc="7" lloc="1" ncloc="8" npath="1" hnt="14" hnd="18" hv="58.378950020192" hd="5.5" hl="0.18181818181818" he="321.08422511106" ht="17.83801250617" hb="0.015629966891368" hi="10.614354549126" mi="69.063209128252"/>
     </class>
-    <class name="InternalEvent" fqname="sql\MydbEvent\InternalEvent" start="21" end="40" loc="20" cloc="3" eloc="8" lloc="2" ncloc="17" dit="1" noam="0" nocc="4" noom="0" nom="2" cr="0.66" rcr="0.49425" ca="0" cbo="1" ce="1" impl="2" cis="1" csz="3" npm="1" vars="1" varsi="1" varsnp="0" wmc="2" wmci="6" wmcnp="1">
+    <class name="InternalEvent" fqname="sql\MydbEvent\InternalEvent" start="21" end="50" loc="30" cloc="6" eloc="10" lloc="4" ncloc="24" dit="1" noam="1" nocc="4" noom="0" nom="3" cr="0.66" rcr="0.49425" ca="0" cbo="0" ce="0" impl="2" cis="2" csz="5" npm="2" vars="2" varsi="2" varsnp="0" wmc="3" wmci="8" wmcnp="2">
       <file name="/app/src/sql/MydbEvent/InternalEvent.php"/>
-      <method name="getEventMetadata" start="29" end="32" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="5" hnd="5" hv="11.609640474437" hd="8" hl="0.125" he="92.877123795494" ht="5.1598402108608" hb="0.0068362496969366" hi="1.4512050593046" mi="82.001716149821"/>
-      <method name="getListeners" start="34" end="39" ccn="1" ccn2="1" loc="6" cloc="0" eloc="5" lloc="1" ncloc="6" npath="1" hnt="8" hnd="8" hv="24" hd="24.5" hl="0.040816326530612" he="588" ht="32.666666666667" hb="0.023395390363168" hi="0.97959183673469" mi="74.953933275297"/>
+      <method name="getEventMetadata" start="31" end="34" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="5" hnd="5" hv="11.609640474437" hd="8" hl="0.125" he="92.877123795494" ht="5.1598402108608" hb="0.0068362496969366" hi="1.4512050593046" mi="82.001716149821"/>
+      <method name="setListeners" start="39" end="44" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="8" hnd="9" hv="25.359400011538" hd="5" hl="0.2" he="126.79700005769" ht="7.0442777809829" hb="0.0084130098545288" hi="5.0718800023077" mi="76.900382516713"/>
+      <method name="getListeners" start="46" end="49" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="5" hnd="5" hv="11.609640474437" hd="8" hl="0.125" he="92.877123795494" ht="5.1598402108608" hb="0.0068362496969366" hi="1.4512050593046" mi="82.001716149821"/>
     </class>
-    <class name="InternalQueryBegin" fqname="sql\MydbEvent\InternalQueryBegin" start="18" end="26" loc="9" cloc="0" eloc="5" lloc="1" ncloc="9" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.255028125" ca="1" cbo="0" ce="0" impl="2" cis="1" csz="1" npm="1" vars="0" varsi="1" varsnp="0" wmc="1" wmci="7" wmcnp="1">
+    <class name="InternalQueryBegin" fqname="sql\MydbEvent\InternalQueryBegin" start="18" end="26" loc="9" cloc="0" eloc="5" lloc="1" ncloc="9" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.255028125" ca="1" cbo="0" ce="0" impl="2" cis="1" csz="1" npm="1" vars="0" varsi="2" varsnp="0" wmc="1" wmci="9" wmcnp="1">
       <file name="/app/src/sql/MydbEvent/InternalQueryBegin.php"/>
       <method name="__construct" start="20" end="25" ccn="1" ccn2="1" loc="6" cloc="0" eloc="5" lloc="1" ncloc="6" npath="1" hnt="10" hnd="10" hv="33.219280948874" hd="8.1666666666667" hl="0.12244897959184" he="271.2907944158" ht="15.071710800878" hb="0.013969111487834" hi="4.0676670549641" mi="73.965396159465"/>
     </class>
-    <class name="InternalQueryEnd" fqname="sql\MydbEvent\InternalQueryEnd" start="18" end="27" loc="10" cloc="0" eloc="6" lloc="1" ncloc="10" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.255028125" ca="1" cbo="0" ce="0" impl="2" cis="1" csz="1" npm="1" vars="0" varsi="1" varsnp="0" wmc="1" wmci="7" wmcnp="1">
+    <class name="InternalQueryEnd" fqname="sql\MydbEvent\InternalQueryEnd" start="18" end="27" loc="10" cloc="0" eloc="6" lloc="1" ncloc="10" dit="2" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.255028125" ca="1" cbo="0" ce="0" impl="2" cis="1" csz="1" npm="1" vars="0" varsi="2" varsnp="0" wmc="1" wmci="9" wmcnp="1">
       <file name="/app/src/sql/MydbEvent/InternalQueryEnd.php"/>
       <method name="__construct" start="20" end="26" ccn="1" ccn2="1" loc="7" cloc="0" eloc="6" lloc="1" ncloc="7" npath="1" hnt="12" hnd="14" hv="45.688259064691" hd="6.3" hl="0.15873015873016" he="287.83603210755" ht="15.990890672642" hb="0.014531446636858" hi="7.2521046134431" mi="71.268959982422"/>
     </class>
@@ -331,10 +333,11 @@
       <file name="/app/src/sql/MydbException/UpdateException.php"/>
     </class>
   </package>
-  <package name="sql\MydbListener" noc="1" noi="0" nom="1" nof="0" cr="0.15" rcr="0.17671428571429">
-    <class name="InternalListener" fqname="sql\MydbListener\InternalListener" start="23" end="29" loc="7" cloc="0" eloc="3" lloc="1" ncloc="7" dit="1" noam="0" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.385875" ca="2" cbo="1" ce="1" impl="1" cis="0" csz="1" npm="0" vars="0" varsi="0" varsnp="0" wmc="2" wmci="3" wmcnp="0">
+  <package name="sql\MydbListener" noc="1" noi="0" nom="2" nof="0" cr="0.15" rcr="0.17671428571429">
+    <class name="InternalListener" fqname="sql\MydbListener\InternalListener" start="27" end="49" loc="23" cloc="0" eloc="13" lloc="5" ncloc="23" dit="1" noam="1" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.385875" ca="1" cbo="4" ce="4" impl="1" cis="1" csz="3" npm="1" vars="1" varsi="1" varsnp="0" wmc="5" wmci="6" wmcnp="1">
       <file name="/app/src/sql/MydbListener/InternalListener.php"/>
-      <method name="onEvent" start="25" end="28" ccn="1" ccn2="2" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="9" hnd="13" hv="33.30395746327" hd="6.75" hl="0.14814814814815" he="224.80171287707" ht="12.488984048726" hb="0.012323814594592" hi="4.9339196241881" mi="78.662552347201"/>
+      <method name="__construct" start="32" end="35" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="4" hl="0.25" he="62.039100017308" ht="3.4466166676282" hb="0.0052238304343202" hi="3.8774437510817" mi="81.120955834208"/>
+      <method name="onEvent" start="37" end="48" ccn="3" ccn2="4" loc="12" cloc="0" eloc="10" lloc="4" ncloc="12" npath="3" hnt="21" hnd="36" hv="108.56842503029" hd="8.8461538461538" hl="0.11304347826087" he="960.41299065255" ht="53.356277258475" hb="0.03244771328196" hi="12.272952394728" mi="63.394001328262"/>
     </class>
   </package>
   <package name="sql\MydbMysqli" noc="1" noi="2" nom="15" nof="0" cr="0.180175" rcr="0.15">

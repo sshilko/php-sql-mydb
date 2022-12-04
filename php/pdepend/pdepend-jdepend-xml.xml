@@ -60,11 +60,11 @@
         <TotalClasses>5</TotalClasses>
         <ConcreteClasses>5</ConcreteClasses>
         <AbstractClasses>0</AbstractClasses>
-        <Ca>1</Ca>
-        <Ce>2</Ce>
+        <Ca>2</Ca>
+        <Ce>1</Ce>
         <A>0</A>
-        <I>0.66666666666667</I>
-        <D>0.33333333333333</D>
+        <I>0.33333333333333</I>
+        <D>0.66666666666667</D>
       </Stats>
       <ConcreteClasses>
         <Class sourceFile="/app/src/sql/MydbEvent/InternalConnectionBegin.php">InternalConnectionBegin</Class>
@@ -76,10 +76,10 @@
       <AbstractClasses/>
       <DependsUpon>
         <Package>sql</Package>
-        <Package>sql\MydbListener</Package>
       </DependsUpon>
       <UsedBy>
         <Package>sql</Package>
+        <Package>sql\MydbListener</Package>
       </UsedBy>
     </Package>
     <Package name="sql\MydbException">
@@ -157,22 +157,23 @@
         <TotalClasses>1</TotalClasses>
         <ConcreteClasses>1</ConcreteClasses>
         <AbstractClasses>0</AbstractClasses>
-        <Ca>2</Ca>
-        <Ce>1</Ce>
+        <Ca>1</Ca>
+        <Ce>3</Ce>
         <A>0</A>
-        <I>0.33333333333333</I>
-        <D>0.66666666666667</D>
+        <I>0.75</I>
+        <D>0.25</D>
       </Stats>
       <ConcreteClasses>
         <Class sourceFile="/app/src/sql/MydbListener/InternalListener.php">InternalListener</Class>
       </ConcreteClasses>
       <AbstractClasses/>
       <DependsUpon>
+        <Package>Psr\Log</Package>
         <Package>sql</Package>
+        <Package>sql\MydbEvent</Package>
       </DependsUpon>
       <UsedBy>
         <Package>sql</Package>
-        <Package>sql\MydbEvent</Package>
       </UsedBy>
     </Package>
     <Package name="sql\MydbMysqli">
