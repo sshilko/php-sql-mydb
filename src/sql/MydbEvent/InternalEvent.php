@@ -21,6 +21,9 @@ use sql\MydbEventInterface;
 class InternalEvent extends MydbEvent
 {
 
+    /**
+     * @psalm-var array<\sql\MydbListenerInterface>
+     */
     protected array $listeners = [];
 
     /**
@@ -34,7 +37,7 @@ class InternalEvent extends MydbEvent
     }
 
     /**
-     * @param array<\sql\MydbListenerInterface> $listeners
+     * @psalm-param array<\sql\MydbListenerInterface> $listeners
      */
     public function setListeners(array $listeners): MydbEventInterface
     {
@@ -43,6 +46,9 @@ class InternalEvent extends MydbEvent
         return $this;
     }
 
+    /**
+     * @psalm-return array<\sql\MydbListenerInterface>
+     */
     protected function getListeners(): array
     {
         return $this->listeners;
