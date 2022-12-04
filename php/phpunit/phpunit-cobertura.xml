@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="1" branch-rate="0" lines-covered="659" lines-valid="659" branches-covered="0" branches-valid="0" complexity="413" version="0.4" timestamp="1670114582">
+<coverage line-rate="1" branch-rate="0" lines-covered="659" lines-valid="659" branches-covered="0" branches-valid="0" complexity="413" version="0.4" timestamp="1670115637">
   <sources>
     <source>/app/src/sql</source>
   </sources>
@@ -779,26 +779,26 @@
           <methods>
             <method name="getEventMetadata" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="33" hits="66"/>
+                <line number="36" hits="66"/>
               </lines>
             </method>
             <method name="setListeners" signature="array $listeners" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="41" hits="65"/>
-                <line number="43" hits="65"/>
+                <line number="44" hits="65"/>
+                <line number="46" hits="65"/>
               </lines>
             </method>
             <method name="getListeners" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="48" hits="65"/>
+                <line number="54" hits="65"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="33" hits="66"/>
-            <line number="41" hits="65"/>
-            <line number="43" hits="65"/>
-            <line number="48" hits="65"/>
+            <line number="36" hits="66"/>
+            <line number="44" hits="65"/>
+            <line number="46" hits="65"/>
+            <line number="54" hits="65"/>
           </lines>
         </class>
       </classes>

@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="InternalEvent.php" path="/MydbEvent">
     <totals>
-      <lines total="51" comments="17" code="34" executable="4" executed="4" percent="100.00"/>
+      <lines total="57" comments="23" code="34" executable="4" executed="4" percent="100.00"/>
       <methods count="3" tested="3" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
@@ -10,12 +10,12 @@
     </totals>
     <class name="sql\MydbEvent\InternalEvent" start="21" executable="4" executed="4" crap="3">
       <namespace name="sql\MydbEvent"/>
-      <method name="getEventMetadata" signature="getEventMetadata(): ?array" start="31" end="34" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="setListeners" signature="setListeners(array $listeners): sql\MydbEventInterface" start="39" end="44" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="getListeners" signature="getListeners(): array" start="46" end="49" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getEventMetadata" signature="getEventMetadata(): ?array" start="34" end="37" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="setListeners" signature="setListeners(array $listeners): sql\MydbEventInterface" start="42" end="47" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="getListeners" signature="getListeners(): array" start="52" end="55" crap="1" executable="1" executed="1" coverage="100"/>
     </class>
     <coverage>
-      <line nr="33">
+      <line nr="36">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -83,7 +83,7 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
         <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
-      <line nr="41">
+      <line nr="44">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -150,7 +150,7 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
         <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
-      <line nr="43">
+      <line nr="46">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -217,7 +217,7 @@
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
         <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
-      <line nr="48">
+      <line nr="54">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
@@ -370,6 +370,16 @@
       <line no="23"/>
       <line no="24">
         <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="25">
+        <token name="T_DOC_COMMENT">     * @psalm-var array&lt;\sql\MydbListenerInterface&gt;</token>
+      </line>
+      <line no="26">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_ARRAY">array</token>
@@ -382,18 +392,18 @@
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="25"/>
-      <line no="26">
+      <line no="28"/>
+      <line no="29">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="27">
+      <line no="30">
         <token name="T_DOC_COMMENT">     * @psalm-var array&lt;array-key, mixed&gt;|null</token>
       </line>
-      <line no="28">
+      <line no="31">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="29">
+      <line no="32">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -407,8 +417,8 @@
         <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="30"/>
-      <line no="31">
+      <line no="33"/>
+      <line no="34">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -422,11 +432,11 @@
         <token name="T_QUESTION_MARK">?</token>
         <token name="T_ARRAY">array</token>
       </line>
-      <line no="32">
+      <line no="35">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="33">
+      <line no="36">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -435,22 +445,22 @@
         <token name="T_STRING">data</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="34">
+      <line no="37">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="35"/>
-      <line no="36">
+      <line no="38"/>
+      <line no="39">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="37">
-        <token name="T_DOC_COMMENT">     * @param array&lt;\sql\MydbListenerInterface&gt; $listeners</token>
+      <line no="40">
+        <token name="T_DOC_COMMENT">     * @psalm-param array&lt;\sql\MydbListenerInterface&gt; $listeners</token>
       </line>
-      <line no="38">
+      <line no="41">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="39">
+      <line no="42">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -466,11 +476,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">MydbEventInterface</token>
       </line>
-      <line no="40">
+      <line no="43">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="41">
+      <line no="44">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -481,20 +491,30 @@
         <token name="T_VARIABLE">$listeners</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="42"/>
-      <line no="43">
+      <line no="45"/>
+      <line no="46">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="44">
+      <line no="47">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="45"/>
-      <line no="46">
+      <line no="48"/>
+      <line no="49">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="50">
+        <token name="T_DOC_COMMENT">     * @psalm-return array&lt;\sql\MydbListenerInterface&gt;</token>
+      </line>
+      <line no="51">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="52">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -507,11 +527,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_ARRAY">array</token>
       </line>
-      <line no="47">
+      <line no="53">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="48">
+      <line no="54">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -520,14 +540,14 @@
         <token name="T_STRING">listeners</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="49">
+      <line no="55">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="50">
+      <line no="56">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="51"/>
+      <line no="57"/>
     </source>
   </file>
 </phpunit>

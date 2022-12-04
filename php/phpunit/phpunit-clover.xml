@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670114582">
-  <project timestamp="1670114582">
+<coverage generated="1670115637">
+  <project timestamp="1670115637">
     <file name="/app/src/sql/Mydb.php">
       <class name="sql\Mydb" namespace="global">
         <metrics complexity="96" methods="28" coveredmethods="28" conditionals="0" coveredconditionals="0" statements="199" coveredstatements="199" elements="227" coveredelements="227"/>
@@ -348,14 +348,14 @@
       <class name="sql\MydbEvent\InternalEvent" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
       </class>
-      <line num="31" type="method" name="getEventMetadata" visibility="public" complexity="1" crap="1" count="66"/>
-      <line num="33" type="stmt" count="66"/>
-      <line num="39" type="method" name="setListeners" visibility="public" complexity="1" crap="1" count="65"/>
-      <line num="41" type="stmt" count="65"/>
-      <line num="43" type="stmt" count="65"/>
-      <line num="46" type="method" name="getListeners" visibility="protected" complexity="1" crap="1" count="65"/>
-      <line num="48" type="stmt" count="65"/>
-      <metrics loc="51" ncloc="34" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
+      <line num="34" type="method" name="getEventMetadata" visibility="public" complexity="1" crap="1" count="66"/>
+      <line num="36" type="stmt" count="66"/>
+      <line num="42" type="method" name="setListeners" visibility="public" complexity="1" crap="1" count="65"/>
+      <line num="44" type="stmt" count="65"/>
+      <line num="46" type="stmt" count="65"/>
+      <line num="52" type="method" name="getListeners" visibility="protected" complexity="1" crap="1" count="65"/>
+      <line num="54" type="stmt" count="65"/>
+      <metrics loc="57" ncloc="34" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
     </file>
     <file name="/app/src/sql/MydbEvent/InternalQueryBegin.php">
       <class name="sql\MydbEvent\InternalQueryBegin" namespace="global">
@@ -1137,6 +1137,6 @@
     <file name="/app/src/sql/MydbRepositoryInterface.php">
       <metrics loc="22" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="61" loc="5014" ncloc="3007" classes="20" methods="168" coveredmethods="168" conditionals="0" coveredconditionals="0" statements="659" coveredstatements="659" elements="827" coveredelements="827"/>
+    <metrics files="61" loc="5020" ncloc="3007" classes="20" methods="168" coveredmethods="168" conditionals="0" coveredconditionals="0" statements="659" coveredstatements="659" elements="827" coveredelements="827"/>
   </project>
 </coverage>

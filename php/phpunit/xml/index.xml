@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Sun Dec 4 0:43:03 UTC 2022" phpunit="9.5.26" coverage="9.2.19">
+  <build time="Sun Dec 4 1:00:37 UTC 2022" phpunit="9.5.26" coverage="9.2.19">
     <runtime name="PHP" version="8.1.12" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.2.0RC2"/>
   </build>
@@ -250,7 +250,7 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="5014" comments="2007" code="3007" executable="659" executed="659" percent="100.00"/>
+        <lines total="5020" comments="2013" code="3007" executable="659" executed="659" percent="100.00"/>
         <methods count="168" tested="168" percent="100.00"/>
         <functions count="0" tested="0" percent="0"/>
         <classes count="20" tested="20" percent="100.00"/>
@@ -258,7 +258,7 @@
       </totals>
       <directory name="MydbEvent">
         <totals>
-          <lines total="163" comments="61" code="102" executable="8" executed="8" percent="100.00"/>
+          <lines total="169" comments="67" code="102" executable="8" executed="8" percent="100.00"/>
           <methods count="7" tested="7" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="5" tested="5" percent="100.00"/>
@@ -284,7 +284,7 @@
         </file>
         <file name="InternalEvent.php" href="MydbEvent/InternalEvent.php.xml">
           <totals>
-            <lines total="51" comments="17" code="34" executable="4" executed="4" percent="100.00"/>
+            <lines total="57" comments="23" code="34" executable="4" executed="4" percent="100.00"/>
             <methods count="3" tested="3" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="1" percent="100.00"/>
