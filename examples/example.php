@@ -26,8 +26,9 @@ include_once __DIR__ . '/MydbRepository/UserRepository.php';
 
 $registry = new MydbRegistry();
 $mylogger = new MydbLogger();
+$sqlHost  = 'mysql' === gethostbyname('mysql') ? '0.0.0.0' : gethostbyname('mysql');
 
-$auth = new MydbCredentials('mysql', 'root', 'root', 'mydb', 3306);
+$auth = new MydbCredentials($sqlHost, 'root', 'root', 'mydb', 3306);
 $opts = new MydbOptions();
 $opts->setTransactionIsolationLevel(MydbOptions::TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED);
 $mydb = new Mydb($auth, $mylogger, $opts);
@@ -39,20 +40,27 @@ $array2 = $mydb->query("SELECT 123");
 
 assert($array1 === $array2);
 
-echo $mydb->command('CREATE TEMPORARY TABLE `users` (
+$created = $mydb->command('CREATE TEMPORARY TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `myenum` enum ("e1","e2")  NOT NULL DEFAULT "e1",
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4');
 
-echo $mydb->insert("INSERT INTO users (id, name) VALUES (10, 'user10')");
-echo $mydb->insertOne(['id' => 20, 'name' => 'user20'], 'users');
+assert(true === $created);
+
+$insertedStringId = $mydb->insert("INSERT INTO users (id, name) VALUES (10, 'user10')");
+assert('10' === $insertedStringId);
+
+$insertedStringId = $mydb->insertOne(['id' => 20, 'name' => 'user20'], 'users');
+assert('20' === $insertedStringId);
+
 $mydb->insertMany([[30, 'user30'], [40, 'user40']], ['id', 'name'], 'users');
 
 assert(['10', '20', '30', '40'] === array_column($mydb->query("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
-echo $mydb->delete('DELETE FROM users WHERE id = 40');
+$deletedRowsCount = $mydb->delete('DELETE FROM users WHERE id = 40');
+assert(1 === $deletedRowsCount);
 
 assert(['10', '20', '30'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
@@ -62,7 +70,8 @@ assert(['e1', 'e2'] === $enum);
 $prim = $mydb->getPrimaryKeys('users');
 assert(['id'] === $prim);
 
-echo $mydb->deleteWhere(['id' => '30'], 'users');
+$deletedRowsCount = $mydb->deleteWhere(['id' => '30'], 'users');
+assert(1 === $deletedRowsCount);
 
 assert(['10', '20'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
@@ -85,6 +94,6 @@ $user20 = $userRepo->findById(20);
 assert('user20' === $user20[0]['name']);
 
 $mydb->rollbackTransaction();
-echo 'OK';
+echo 'OK' . PHP_EOL;
 exit(0);
 // @codeCoverageIgnoreEnd

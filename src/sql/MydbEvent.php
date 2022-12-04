@@ -45,4 +45,9 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
             }
         }
     }
+
+    public function getEventName(): string
+    {
+        return static::class;
+    }
 }

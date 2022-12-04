@@ -123,6 +123,7 @@ please re-use existing solutions that best fit your requirements.
 #### Future roadmap
 
 - PHP 8.2 stable ci
+- MydbFactory responsible for initializing defaults
 
 #### Contributing
 
