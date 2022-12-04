@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbEventMetadataInterface.php" path="/">
     <totals>
-      <lines total="25" comments="14" code="11" executable="0" executed="0" percent="0"/>
+      <lines total="27" comments="14" code="13" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
@@ -98,10 +98,25 @@
         <token name="T_ARRAY">array</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="24">
+      <line no="24"/>
+      <line no="25">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getEventName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="26">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="25"/>
+      <line no="27"/>
     </source>
   </file>
 </phpunit>

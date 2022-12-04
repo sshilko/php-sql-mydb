@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2022-12-03 00:25:36</timestamp>
+  <timestamp>2022-12-04 00:43:02</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>169</methodCount>
+    <methodCount>172</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>408</totalCrap>
+    <totalCrap>413</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -551,6 +551,17 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
+      <package>sql</package>
+      <className>sql\MydbEvent</className>
+      <methodName>getEventName</methodName>
+      <methodSignature>getEventName(): string</methodSignature>
+      <fullMethod>getEventName(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
       <package>sql\MydbEvent</package>
       <className>sql\MydbEvent\InternalConnectionBegin</className>
       <methodName>__construct</methodName>
@@ -578,6 +589,17 @@
       <methodName>getEventMetadata</methodName>
       <methodSignature>getEventMetadata(): ?array</methodSignature>
       <fullMethod>getEventMetadata(): ?array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbEvent</package>
+      <className>sql\MydbEvent\InternalEvent</className>
+      <methodName>setListeners</methodName>
+      <methodSignature>setListeners(array $listeners): sql\MydbEventInterface</methodSignature>
+      <fullMethod>setListeners(array $listeners): sql\MydbEventInterface</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -674,11 +696,22 @@
     <method>
       <package>sql\MydbListener</package>
       <className>sql\MydbListener\InternalListener</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(?Psr\Log\LoggerInterface $logger)</methodSignature>
+      <fullMethod>__construct(?Psr\Log\LoggerInterface $logger)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql\MydbListener</package>
+      <className>sql\MydbListener\InternalListener</className>
       <methodName>onEvent</methodName>
       <methodSignature>onEvent(sql\MydbEventMetadataInterface $event): ?bool</methodSignature>
       <fullMethod>onEvent(sql\MydbEventMetadataInterface $event): ?bool</fullMethod>
-      <crap>2</crap>
-      <complexity>2</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>

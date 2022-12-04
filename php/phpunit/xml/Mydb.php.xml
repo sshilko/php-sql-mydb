@@ -2,13 +2,13 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="Mydb.php" path="/">
     <totals>
-      <lines total="683" comments="176" code="507" executable="197" executed="197" percent="100.00"/>
+      <lines total="685" comments="176" code="509" executable="199" executed="199" percent="100.00"/>
       <methods count="28" tested="28" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\Mydb" start="53" executable="197" executed="197" crap="96">
+    <class name="sql\Mydb" start="53" executable="199" executed="199" crap="96">
       <namespace name="sql"/>
       <method name="__construct" signature="__construct(sql\MydbCredentialsInterface $credentials, Psr\Log\LoggerInterface $logger, ?sql\MydbOptionsInterface $options, ?sql\MydbMysqliInterface $mysqli, ?sql\MydbEnvironmentInterface $environment, ?sql\MydbQueryBuilderInterface $queryBuilder, ?sql\MydbListenerInterface $eventListener)" start="72" end="88" crap="1" executable="7" executed="7" coverage="100"/>
       <method name="__destruct" signature="__destruct()" start="97" end="101" crap="1" executable="2" executed="2" coverage="100"/>
@@ -37,7 +37,7 @@
       <method name="readServerResponse" signature="readServerResponse(string $query): ?sql\MydbMysqli\MydbMysqliResultInterface" start="536" end="564" crap="6" executable="14" executed="14" coverage="100"/>
       <method name="onWarning" signature="onWarning(string $warningMessage, ?string $sql): void" start="566" end="569" crap="1" executable="1" executed="1" coverage="100"/>
       <method name="onError" signature="onError(sql\MydbException $exception, ?string $sql): void" start="574" end="579" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="connect" signature="connect(int $retry): bool" start="590" end="681" crap="17" executable="44" executed="44" coverage="100"/>
+      <method name="connect" signature="connect(int $retry): bool" start="590" end="683" crap="17" executable="46" executed="46" coverage="100"/>
     </class>
     <coverage>
       <line nr="81">
@@ -3851,7 +3851,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="609">
+      <line nr="608">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -3963,7 +3963,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="612">
+      <line nr="611">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -4131,7 +4131,63 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="616">
+      <line nr="615">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="617">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -4243,7 +4299,63 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="621">
+      <line nr="620">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="623">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -4300,16 +4412,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="622">
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
-      </line>
-      <line nr="623">
+      <line nr="624">
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
@@ -4327,16 +4430,17 @@
         <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
       </line>
-      <line nr="626">
-        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
-      </line>
-      <line nr="629">
+      <line nr="627">
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
         <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
         <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
         <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
+      </line>
+      <line nr="628">
+        <covered by="phpunit\ResourceTest::testOpenCloseError"/>
       </line>
       <line nr="631">
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
@@ -4346,13 +4450,7 @@
         <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
         <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
       </line>
-      <line nr="632">
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-      </line>
-      <line nr="634">
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-      </line>
-      <line nr="637">
+      <line nr="633">
         <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
@@ -4360,55 +4458,19 @@
         <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
         <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
       </line>
-      <line nr="640">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
-        <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
-        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      <line nr="634">
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+      </line>
+      <line nr="636">
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+      </line>
+      <line nr="639">
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
       </line>
       <line nr="642">
         <covered by="phpunit\DeleteTest::testDelete"/>
@@ -4460,10 +4522,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="643">
-        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
-      </line>
-      <line nr="658">
+      <line nr="644">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -4488,6 +4547,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
         <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
         <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
         <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
@@ -4512,7 +4572,10 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="659">
+      <line nr="645">
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
+      </line>
+      <line nr="660">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -4610,55 +4673,6 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="662">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
-        <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-      </line>
       <line nr="663">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
@@ -4708,7 +4722,7 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="667">
+      <line nr="664">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -4757,10 +4771,56 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="668">
+      <line nr="665">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="671">
+      <line nr="669">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -4785,6 +4845,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
         <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
         <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
         <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
@@ -4808,58 +4869,109 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="672">
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
-        <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
-        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      <line nr="670">
+        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
       </line>
       <line nr="673">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="674">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+      </line>
+      <line nr="675">
         <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
       </line>
-      <line nr="676">
+      <line nr="678">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -4906,10 +5018,10 @@
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="677">
+      <line nr="679">
         <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
       </line>
-      <line nr="680">
+      <line nr="682">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
@@ -5523,6 +5635,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">InternalListener</token>
         <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$logger</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
@@ -8575,6 +8688,15 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setListeners</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">eventListener</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">notify</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
@@ -8608,6 +8730,15 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$result</token>
         <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setListeners</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">eventListener</token>
+        <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">notify</token>
@@ -9332,13 +9463,25 @@
         <token name="T_VARIABLE">$dbname</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="607">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setListeners</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">eventListener</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">notify</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="607">
+      <line no="608">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$connected</token>
         <token name="T_WHITESPACE"> </token>
@@ -9351,12 +9494,12 @@
         <token name="T_STRING">realConnect</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="608">
+      <line no="609">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$host</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="609">
+      <line no="610">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9367,7 +9510,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="610">
+      <line no="611">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9378,12 +9521,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="611">
+      <line no="612">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$dbname</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="612">
+      <line no="613">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9394,7 +9537,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="613">
+      <line no="614">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9405,7 +9548,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="614">
+      <line no="615">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9415,12 +9558,12 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="615">
+      <line no="616">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="616">
+      <line no="617">
         <token name="T_WHITESPACE">            </token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_NEW">new</token>
@@ -9436,14 +9579,26 @@
         <token name="T_VARIABLE">$connected</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="618">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setListeners</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">eventListener</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">notify</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="617"/>
-      <line no="618">
+      <line no="619"/>
+      <line no="620">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9455,12 +9610,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="619">
+      <line no="621">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="620"/>
-      <line no="621">
+      <line no="622"/>
+      <line no="623">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9474,7 +9629,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="622">
+      <line no="624">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$errorNumber</token>
         <token name="T_WHITESPACE"> </token>
@@ -9504,7 +9659,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="623">
+      <line no="625">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$errorText</token>
         <token name="T_WHITESPACE"> </token>
@@ -9534,8 +9689,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="624"/>
-      <line no="625">
+      <line no="626"/>
+      <line no="627">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9555,7 +9710,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="626">
+      <line no="628">
         <token name="T_WHITESPACE">                </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -9566,12 +9721,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="627">
+      <line no="629">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="628"/>
-      <line no="629">
+      <line no="630"/>
+      <line no="631">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9589,8 +9744,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="630"/>
-      <line no="631">
+      <line no="632"/>
+      <line no="633">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9604,14 +9759,14 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="632">
+      <line no="634">
         <token name="T_WHITESPACE">                </token>
         <token name="T_DEC">--</token>
         <token name="T_VARIABLE">$retry</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="633"/>
-      <line no="634">
+      <line no="635"/>
+      <line no="636">
         <token name="T_WHITESPACE">                </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -9623,24 +9778,24 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="635">
+      <line no="637">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="636"/>
-      <line no="637">
+      <line no="638"/>
+      <line no="639">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">false</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="638">
+      <line no="640">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="639"/>
-      <line no="640">
+      <line no="641"/>
+      <line no="642">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9658,8 +9813,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="641"/>
-      <line no="642">
+      <line no="643"/>
+      <line no="644">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9686,7 +9841,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="643">
+      <line no="645">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -9697,49 +9852,49 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="644">
+      <line no="646">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="645"/>
-      <line no="646">
+      <line no="647"/>
+      <line no="648">
         <token name="T_WHITESPACE">        </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="647">
+      <line no="649">
         <token name="T_DOC_COMMENT">         * Here's a summary of what variables are set by each statement: SET NAMES vs SET CHARSET</token>
       </line>
-      <line no="648">
-        <token name="T_DOC_COMMENT">         *</token>
-      </line>
-      <line no="649">
-        <token name="T_DOC_COMMENT">         * Variable                 SET NAMES   SET CHARSET</token>
-      </line>
       <line no="650">
-        <token name="T_DOC_COMMENT">         * character_set_client     argument    argument</token>
+        <token name="T_DOC_COMMENT">         *</token>
       </line>
       <line no="651">
-        <token name="T_DOC_COMMENT">         * character_set_results    argument    argument</token>
+        <token name="T_DOC_COMMENT">         * Variable                 SET NAMES   SET CHARSET</token>
       </line>
       <line no="652">
-        <token name="T_DOC_COMMENT">         * character_set_connection argument    default for default db</token>
+        <token name="T_DOC_COMMENT">         * character_set_client     argument    argument</token>
       </line>
       <line no="653">
-        <token name="T_DOC_COMMENT">         * collation_connection     argument*   default for default db</token>
+        <token name="T_DOC_COMMENT">         * character_set_results    argument    argument</token>
       </line>
       <line no="654">
-        <token name="T_DOC_COMMENT">         *</token>
+        <token name="T_DOC_COMMENT">         * character_set_connection argument    default for default db</token>
       </line>
       <line no="655">
-        <token name="T_DOC_COMMENT">         * SET CHARSET doesn't set the connection charset to the charset you specify in the argument,</token>
+        <token name="T_DOC_COMMENT">         * collation_connection     argument*   default for default db</token>
       </line>
       <line no="656">
-        <token name="T_DOC_COMMENT">         * instead it sets it to the charset for your current default database</token>
+        <token name="T_DOC_COMMENT">         *</token>
       </line>
       <line no="657">
-        <token name="T_DOC_COMMENT">         */</token>
+        <token name="T_DOC_COMMENT">         * SET CHARSET doesn't set the connection charset to the charset you specify in the argument,</token>
       </line>
       <line no="658">
+        <token name="T_DOC_COMMENT">         * instead it sets it to the charset for your current default database</token>
+      </line>
+      <line no="659">
+        <token name="T_DOC_COMMENT">         */</token>
+      </line>
+      <line no="660">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$defaults</token>
         <token name="T_WHITESPACE"> </token>
@@ -9752,17 +9907,17 @@
         <token name="T_STRING">realQuery</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="659">
+      <line no="661">
         <token name="T_WHITESPACE">            </token>
         <token name="T_STRING">sprintf</token>
         <token name="T_OPEN_BRACKET">(</token>
       </line>
-      <line no="660">
+      <line no="662">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">"SET time_zone = '%s', wait_timeout = %d, names '%s'"</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="661">
+      <line no="663">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9773,7 +9928,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="662">
+      <line no="664">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9784,7 +9939,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="663">
+      <line no="665">
         <token name="T_WHITESPACE">                </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -9794,17 +9949,17 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="664">
+      <line no="666">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="665">
+      <line no="667">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="666"/>
-      <line no="667">
+      <line no="668"/>
+      <line no="669">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9818,7 +9973,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="668">
+      <line no="670">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -9829,12 +9984,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="669">
+      <line no="671">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="670"/>
-      <line no="671">
+      <line no="672"/>
+      <line no="673">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$isoLevel</token>
         <token name="T_WHITESPACE"> </token>
@@ -9849,7 +10004,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="672">
+      <line no="674">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9878,7 +10033,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="673">
+      <line no="675">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -9889,12 +10044,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="674">
+      <line no="676">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="675"/>
-      <line no="676">
+      <line no="677"/>
+      <line no="678">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -9924,7 +10079,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="677">
+      <line no="679">
         <token name="T_WHITESPACE">            </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -9935,26 +10090,26 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="678">
+      <line no="680">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="679"/>
-      <line no="680">
+      <line no="681"/>
+      <line no="682">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">true</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="681">
+      <line no="683">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="682">
+      <line no="684">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="683"/>
+      <line no="685"/>
     </source>
   </file>
 </phpunit>

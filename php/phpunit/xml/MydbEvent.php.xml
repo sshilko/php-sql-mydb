@@ -2,17 +2,18 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbEvent.php" path="/">
     <totals>
-      <lines total="49" comments="20" code="29" executable="5" executed="5" percent="100.00"/>
-      <methods count="1" tested="1" percent="100.00"/>
+      <lines total="54" comments="20" code="34" executable="6" executed="6" percent="100.00"/>
+      <methods count="2" tested="2" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbEvent" start="20" executable="5" executed="5" crap="4">
+    <class name="sql\MydbEvent" start="20" executable="6" executed="6" crap="5">
       <namespace name="sql"/>
       <method name="getEventMetadata" signature="getEventMetadata(): ?array" start="26" end="26" crap="0" executable="0" executed="0" coverage="100"/>
       <method name="getListeners" signature="getListeners(): array" start="31" end="31" crap="0" executable="0" executed="0" coverage="100"/>
       <method name="notify" signature="notify(): void" start="36" end="47" crap="4" executable="5" executed="5" coverage="100"/>
+      <method name="getEventName" signature="getEventName(): string" start="49" end="52" crap="1" executable="1" executed="1" coverage="100"/>
     </class>
     <coverage>
       <line nr="38">
@@ -226,6 +227,74 @@
       </line>
       <line nr="44">
         <covered by="phpunit\MydbEventTest::testMydbEventListenerException"/>
+      </line>
+      <line nr="51">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\MydbEventTest::testMydbInternalEventSuccess"/>
+        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
       </line>
     </coverage>
     <source>
@@ -483,10 +552,41 @@
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="48">
+      <line no="48"/>
+      <line no="49">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getEventName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="50">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="51">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STATIC">static</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_CLASS">class</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="52">
+        <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="49"/>
+      <line no="53">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="54"/>
     </source>
   </file>
 </phpunit>

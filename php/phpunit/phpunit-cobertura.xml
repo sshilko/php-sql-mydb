@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="1" branch-rate="0" lines-covered="649" lines-valid="649" branches-covered="0" branches-valid="0" complexity="408" version="0.4" timestamp="1670027136">
+<coverage line-rate="1" branch-rate="0" lines-covered="659" lines-valid="659" branches-covered="0" branches-valid="0" complexity="413" version="0.4" timestamp="1670114582">
   <sources>
     <source>/app/src/sql</source>
   </sources>
@@ -283,39 +283,41 @@
                 <line number="604" hits="54"/>
                 <line number="606" hits="54"/>
                 <line number="607" hits="54"/>
-                <line number="609" hits="54"/>
+                <line number="608" hits="54"/>
                 <line number="610" hits="54"/>
-                <line number="612" hits="54"/>
+                <line number="611" hits="54"/>
                 <line number="613" hits="54"/>
                 <line number="614" hits="54"/>
-                <line number="616" hits="54"/>
+                <line number="615" hits="54"/>
+                <line number="617" hits="54"/>
                 <line number="618" hits="54"/>
-                <line number="621" hits="55"/>
-                <line number="622" hits="7"/>
-                <line number="623" hits="7"/>
+                <line number="620" hits="54"/>
+                <line number="623" hits="55"/>
+                <line number="624" hits="7"/>
                 <line number="625" hits="7"/>
-                <line number="626" hits="1"/>
-                <line number="629" hits="6"/>
+                <line number="627" hits="7"/>
+                <line number="628" hits="1"/>
                 <line number="631" hits="6"/>
-                <line number="632" hits="1"/>
+                <line number="633" hits="6"/>
                 <line number="634" hits="1"/>
-                <line number="637" hits="6"/>
-                <line number="640" hits="48"/>
+                <line number="636" hits="1"/>
+                <line number="639" hits="6"/>
                 <line number="642" hits="48"/>
-                <line number="643" hits="1"/>
-                <line number="658" hits="47"/>
-                <line number="659" hits="47"/>
+                <line number="644" hits="48"/>
+                <line number="645" hits="1"/>
+                <line number="660" hits="47"/>
                 <line number="661" hits="47"/>
-                <line number="662" hits="47"/>
                 <line number="663" hits="47"/>
-                <line number="667" hits="47"/>
-                <line number="668" hits="1"/>
-                <line number="671" hits="46"/>
-                <line number="672" hits="46"/>
-                <line number="673" hits="1"/>
-                <line number="676" hits="45"/>
-                <line number="677" hits="1"/>
-                <line number="680" hits="44"/>
+                <line number="664" hits="47"/>
+                <line number="665" hits="47"/>
+                <line number="669" hits="47"/>
+                <line number="670" hits="1"/>
+                <line number="673" hits="46"/>
+                <line number="674" hits="46"/>
+                <line number="675" hits="1"/>
+                <line number="678" hits="45"/>
+                <line number="679" hits="1"/>
+                <line number="682" hits="44"/>
               </lines>
             </method>
           </methods>
@@ -484,39 +486,41 @@
             <line number="604" hits="54"/>
             <line number="606" hits="54"/>
             <line number="607" hits="54"/>
-            <line number="609" hits="54"/>
+            <line number="608" hits="54"/>
             <line number="610" hits="54"/>
-            <line number="612" hits="54"/>
+            <line number="611" hits="54"/>
             <line number="613" hits="54"/>
             <line number="614" hits="54"/>
-            <line number="616" hits="54"/>
+            <line number="615" hits="54"/>
+            <line number="617" hits="54"/>
             <line number="618" hits="54"/>
-            <line number="621" hits="55"/>
-            <line number="622" hits="7"/>
-            <line number="623" hits="7"/>
+            <line number="620" hits="54"/>
+            <line number="623" hits="55"/>
+            <line number="624" hits="7"/>
             <line number="625" hits="7"/>
-            <line number="626" hits="1"/>
-            <line number="629" hits="6"/>
+            <line number="627" hits="7"/>
+            <line number="628" hits="1"/>
             <line number="631" hits="6"/>
-            <line number="632" hits="1"/>
+            <line number="633" hits="6"/>
             <line number="634" hits="1"/>
-            <line number="637" hits="6"/>
-            <line number="640" hits="48"/>
+            <line number="636" hits="1"/>
+            <line number="639" hits="6"/>
             <line number="642" hits="48"/>
-            <line number="643" hits="1"/>
-            <line number="658" hits="47"/>
-            <line number="659" hits="47"/>
+            <line number="644" hits="48"/>
+            <line number="645" hits="1"/>
+            <line number="660" hits="47"/>
             <line number="661" hits="47"/>
-            <line number="662" hits="47"/>
             <line number="663" hits="47"/>
-            <line number="667" hits="47"/>
-            <line number="668" hits="1"/>
-            <line number="671" hits="46"/>
-            <line number="672" hits="46"/>
-            <line number="673" hits="1"/>
-            <line number="676" hits="45"/>
-            <line number="677" hits="1"/>
-            <line number="680" hits="44"/>
+            <line number="664" hits="47"/>
+            <line number="665" hits="47"/>
+            <line number="669" hits="47"/>
+            <line number="670" hits="1"/>
+            <line number="673" hits="46"/>
+            <line number="674" hits="46"/>
+            <line number="675" hits="1"/>
+            <line number="678" hits="45"/>
+            <line number="679" hits="1"/>
+            <line number="682" hits="44"/>
           </lines>
         </class>
       </classes>
@@ -707,9 +711,9 @@
     <package name="MydbEnvironmentInterface.php" line-rate="0" branch-rate="0" complexity="0">
       <classes/>
     </package>
-    <package name="MydbEvent.php" line-rate="1" branch-rate="0" complexity="4">
+    <package name="MydbEvent.php" line-rate="1" branch-rate="0" complexity="5">
       <classes>
-        <class name="sql\MydbEvent" filename="MydbEvent.php" line-rate="1" branch-rate="0" complexity="4">
+        <class name="sql\MydbEvent" filename="MydbEvent.php" line-rate="1" branch-rate="0" complexity="5">
           <methods>
             <method name="notify" signature="" line-rate="1" branch-rate="0" complexity="4">
               <lines>
@@ -720,6 +724,11 @@
                 <line number="44" hits="1"/>
               </lines>
             </method>
+            <method name="getEventName" signature="" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="51" hits="66"/>
+              </lines>
+            </method>
           </methods>
           <lines>
             <line number="38" hits="67"/>
@@ -727,6 +736,7 @@
             <line number="40" hits="66"/>
             <line number="41" hits="1"/>
             <line number="44" hits="1"/>
+            <line number="51" hits="66"/>
           </lines>
         </class>
       </classes>
@@ -763,24 +773,32 @@
         </class>
       </classes>
     </package>
-    <package name="MydbEvent/InternalEvent.php" line-rate="1" branch-rate="0" complexity="2">
+    <package name="MydbEvent/InternalEvent.php" line-rate="1" branch-rate="0" complexity="3">
       <classes>
-        <class name="sql\MydbEvent\InternalEvent" filename="MydbEvent/InternalEvent.php" line-rate="1" branch-rate="0" complexity="2">
+        <class name="sql\MydbEvent\InternalEvent" filename="MydbEvent/InternalEvent.php" line-rate="1" branch-rate="0" complexity="3">
           <methods>
             <method name="getEventMetadata" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="31" hits="66"/>
+                <line number="33" hits="66"/>
+              </lines>
+            </method>
+            <method name="setListeners" signature="array $listeners" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="41" hits="65"/>
+                <line number="43" hits="65"/>
               </lines>
             </method>
             <method name="getListeners" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="37" hits="65"/>
+                <line number="48" hits="65"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="31" hits="66"/>
-            <line number="37" hits="65"/>
+            <line number="33" hits="66"/>
+            <line number="41" hits="65"/>
+            <line number="43" hits="65"/>
+            <line number="48" hits="65"/>
           </lines>
         </class>
       </classes>
@@ -1077,18 +1095,32 @@
         </class>
       </classes>
     </package>
-    <package name="MydbListener/InternalListener.php" line-rate="1" branch-rate="0" complexity="2">
+    <package name="MydbListener/InternalListener.php" line-rate="1" branch-rate="0" complexity="5">
       <classes>
-        <class name="sql\MydbListener\InternalListener" filename="MydbListener/InternalListener.php" line-rate="1" branch-rate="0" complexity="2">
+        <class name="sql\MydbListener\InternalListener" filename="MydbListener/InternalListener.php" line-rate="1" branch-rate="0" complexity="5">
           <methods>
-            <method name="onEvent" signature="sql\MydbEventMetadataInterface $event" line-rate="1" branch-rate="0" complexity="2">
+            <method name="__construct" signature="?Psr\Log\LoggerInterface $logger" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="27" hits="66"/>
+                <line number="34" hits="92"/>
+              </lines>
+            </method>
+            <method name="onEvent" signature="sql\MydbEventMetadataInterface $event" line-rate="1" branch-rate="0" complexity="4">
+              <lines>
+                <line number="39" hits="66"/>
+                <line number="40" hits="54"/>
+                <line number="41" hits="54"/>
+                <line number="42" hits="54"/>
+                <line number="47" hits="66"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="27" hits="66"/>
+            <line number="34" hits="92"/>
+            <line number="39" hits="66"/>
+            <line number="40" hits="54"/>
+            <line number="41" hits="54"/>
+            <line number="42" hits="54"/>
+            <line number="47" hits="66"/>
           </lines>
         </class>
       </classes>
