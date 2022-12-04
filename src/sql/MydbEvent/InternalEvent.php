@@ -16,10 +16,12 @@ declare(strict_types = 1);
 namespace sql\MydbEvent;
 
 use sql\MydbEvent;
-use sql\MydbListener\InternalListener;
+use sql\MydbEventInterface;
 
 class InternalEvent extends MydbEvent
 {
+
+    protected array $listeners = [];
 
     /**
      * @psalm-var array<array-key, mixed>|null
@@ -31,10 +33,18 @@ class InternalEvent extends MydbEvent
         return $this->data;
     }
 
+    /**
+     * @param array<\sql\MydbListenerInterface> $listeners
+     */
+    public function setListeners(array $listeners): MydbEventInterface
+    {
+        $this->listeners = $listeners;
+
+        return $this;
+    }
+
     protected function getListeners(): array
     {
-        return [
-            new InternalListener(),
-        ];
+        return $this->listeners;
     }
 }

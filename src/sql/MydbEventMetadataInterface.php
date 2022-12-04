@@ -21,4 +21,6 @@ interface MydbEventMetadataInterface
      * @psalm-return array<array-key, mixed>|null
      */
     public function getEventMetadata(): ?array;
+
+    public function getEventName(): string;
 }

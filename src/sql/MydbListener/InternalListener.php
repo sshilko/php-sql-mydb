@@ -15,15 +15,35 @@ declare(strict_types = 1);
 
 namespace sql\MydbListener;
 
+use Psr\Log\LoggerInterface;
+use sql\MydbEvent\InternalConnectionBegin;
+use sql\MydbEvent\InternalConnectionEnd;
 use sql\MydbEventMetadataInterface;
 use sql\MydbListener;
+use function in_array;
 use function is_array;
 use function is_null;
 
 class InternalListener extends MydbListener
 {
+
+    protected ?LoggerInterface $logger;
+
+    public function __construct(?LoggerInterface $logger = null)
+    {
+        $this->logger = $logger;
+    }
+
     protected function onEvent(MydbEventMetadataInterface $event): ?bool
     {
+        if (in_array($event->getEventName(), [InternalConnectionBegin::class, InternalConnectionEnd::class], true)) {
+            if ($this->logger) {
+                $this->logger->debug(
+                    'Received event: ' . $event->getEventName()
+                );
+            }
+        }
+
         return is_array($event->getEventMetadata()) || is_null($event->getEventMetadata());
     }
 }

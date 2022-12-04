@@ -84,7 +84,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         $this->mysqli = $mysqli ?? new MydbMysqli();
         $this->environment = $environment ?? new MydbEnvironment();
         $this->queryBuilder = $queryBuilder ?? new MydbQueryBuilder($this->mysqli);
-        $this->eventListener = $eventListener ?? new InternalListener();
+        $this->eventListener = $eventListener ?? new InternalListener($logger);
     }
 
     /**
@@ -517,9 +517,9 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         $this->environment->startSignalsTrap();
         $this->environment->set_error_handler();
 
-        (new MydbEvent\InternalQueryBegin($query))->notify();
+        (new MydbEvent\InternalQueryBegin($query))->setListeners([$this->eventListener])->notify();
         $result = $this->mysqli->realQuery($query);
-        (new MydbEvent\InternalQueryEnd($query, $result))->notify();
+        (new MydbEvent\InternalQueryEnd($query, $result))->setListeners([$this->eventListener])->notify();
 
         $this->environment->restore_error_handler();
         $hasPendingSignals = $this->environment->endSignalsTrap();
@@ -603,7 +603,8 @@ class Mydb implements MydbInterface, RemoteResourceInterface
             $host = ($this->options->isPersistent() ? 'p:' : '') . $this->credentials->getHost();
             $dbname = $this->credentials->getDbname();
 
-            (new MydbEvent\InternalConnectionBegin($host, $dbname))->notify();
+            (new MydbEvent\InternalConnectionBegin($host, $dbname))
+                ->setListeners([$this->eventListener])->notify();
             $connected = $this->mysqli->realConnect(
                 $host,
                 $this->credentials->getUsername(),
@@ -613,7 +614,8 @@ class Mydb implements MydbInterface, RemoteResourceInterface
                 $this->credentials->getSocket(),
                 $this->credentials->getFlags()
             );
-            (new MydbEvent\InternalConnectionEnd($host, $dbname, $connected))->notify();
+            (new MydbEvent\InternalConnectionEnd($host, $dbname, $connected))
+                ->setListeners([$this->eventListener])->notify();
 
             $this->environment->error_reporting($reportingLevel);
         }
