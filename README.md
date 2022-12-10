@@ -49,7 +49,7 @@ Simple PHP client for MySQL database
 #### Installation
 
 ```
-composer require sshilko/php-sql-mydb:@dev
+composer require sshilko/php-sql-mydb
 ```
 
 #### [Compatibility](http://sshilko.com/php-sql-mydb/php/)
