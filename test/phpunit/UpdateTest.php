@@ -24,7 +24,7 @@ use sql\MydbQueryBuilderInterface;
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  *
- * @see https://github.buildDeleteWherecom/sshilko/php-sql-mydb
+ * @see https://github.com/sshilko/php-sql-mydb
  */
 final class UpdateTest extends includes\DatabaseTestCase
 {
