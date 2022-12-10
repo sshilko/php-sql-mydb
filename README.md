@@ -38,6 +38,7 @@ MyDb - Component
     <a href="http://sshilko.com/php-sql-mydb/php/phpunit/html/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml/badge.svg" alt="7.4 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit80.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit80.yml/badge.svg" alt="8.0 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml/badge.svg" alt="8.1 PHPUnit build"></a>
+    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit82.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit82.yml/badge.svg" alt="8.2 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/github-pages.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/github-pages.yml/badge.svg" alt="GithubPages build"></a>
     <br/>
     </p>
