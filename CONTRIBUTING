@@ -15,6 +15,7 @@ Different PHP language runtime versions are available in named containers
 - PHP7.4 - *app.php*
 - PHP8.0 - *app.php80*
 - PHP8.1 - *app.php81*
+- PHP8.2 - *app.php81*
 
 docker-compose exec %php-container% composer %composer-script%
 
@@ -32,6 +33,8 @@ docker-compose exec app.php composer app-phpunit
 docker-compose exec app.php composer app-phpunit -- --filter SelectTest
 docker-compose exec app.php composer app-phpunit-mysql57 -- --filter escape
 docker-compose exec app.php composer app-phpunit-mysql80
+
+docker-compose exec app.php82 composer app-phpunit-mysql80
 
 docker-compose exec mysql mysql -uroot -proot mydb
 docker-compose exec mysql80 mysql -uroot -proot mydb

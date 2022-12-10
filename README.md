@@ -54,9 +54,9 @@ composer require sshilko/php-sql-mydb
 
 #### [Compatibility](http://sshilko.com/php-sql-mydb/php/)
 
-- PHP 7.4, 8.0, 8.1
+- PHP 7.4, 8.0, 8.1, 8.2
 - MySQL >=5.7.8, 8.0
-- MariaDB not compatible
+- MariaDB not compatible (TODO)
 
 #### How this client helps you talk SQL to MySQL server
 
@@ -122,7 +122,7 @@ please re-use existing solutions that best fit your requirements.
 
 #### Future roadmap
 
-- PHP 8.2 stable ci
+- MariaDB compatibility layer (variables and init command syntax is different between mysql and mariadb)
 - MydbFactory responsible for initializing defaults
 
 #### Contributing
