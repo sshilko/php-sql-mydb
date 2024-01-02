@@ -55,11 +55,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
 
     protected MydbMysqliInterface $mysqli;
 
-    protected MydbCredentialsInterface $credentials;
-
     protected MydbOptionsInterface $options;
-
-    protected LoggerInterface $logger;
 
     protected MydbEnvironmentInterface $environment;
 
@@ -70,16 +66,14 @@ class Mydb implements MydbInterface, RemoteResourceInterface
     protected bool $terminating = false;
 
     public function __construct(
-        MydbCredentialsInterface $credentials,
-        LoggerInterface $logger,
+        protected MydbCredentialsInterface $credentials,
+        protected LoggerInterface $logger,
         ?MydbOptionsInterface $options = null,
         ?MydbMysqliInterface $mysqli = null,
         ?MydbEnvironmentInterface $environment = null,
         ?MydbQueryBuilderInterface $queryBuilder = null,
-        ?MydbListenerInterface $eventListener = null
+        ?MydbListenerInterface $eventListener = null,
     ) {
-        $this->credentials = $credentials;
-        $this->logger = $logger;
         $this->options = $options ?? new MydbOptions();
         $this->mysqli = $mysqli ?? new MydbMysqli();
         $this->environment = $environment ?? new MydbEnvironment();
@@ -211,7 +205,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         /**
          * @psalm-suppress DocblockTypeContradiction
          */
-        if ('' === $input || false === $input) {
+        if ('' === $input) {
             throw new MydbException();
         }
         // @codeCoverageIgnoreEnd
@@ -482,7 +476,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         array $cols,
         string $table,
         bool $ignore = false,
-        string $onDuplicateSql = ''
+        string $onDuplicateSql = '',
     ): void {
         $sql = $this->queryBuilder->buildInsertMany($data, $cols, $table, $ignore, $onDuplicateSql);
         $this->insert($sql);

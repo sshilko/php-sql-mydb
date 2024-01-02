@@ -47,7 +47,7 @@ return [
     // (See `backward_compatibility_checks` for additional options)
     // TODO: Set this.
     'target_php_version' => '8.1',
-    'minimum_target_php_version' => '7.4',
+    'minimum_target_php_version' => '8.0',
 
     // A list of directories that should be parsed for class and
     // method information. After excluding the directories

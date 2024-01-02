@@ -46,11 +46,8 @@ use function trim;
 class MydbQueryBuilder implements MydbQueryBuilderInterface
 {
 
-    protected MydbMysqliEscapeStringInterface $mysqli;
-
-    public function __construct(MydbMysqliEscapeStringInterface $mysqli)
+    public function __construct(protected MydbMysqliEscapeStringInterface $mysqli)
     {
-        $this->mysqli = $mysqli;
     }
 
     /**
@@ -166,7 +163,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
         array $update,
         array $whereFields,
         string $table,
-        array $whereNotFields = []
+        array $whereNotFields = [],
     ): ?string {
         if ('' === $table || [] === $update || is_int(key($update))) {
             throw new QueryBuilderException();
@@ -380,12 +377,21 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
             return '' !== $quote ? $quote . '' . $quote : '';
         }
 
+        /**
+         * @psalm-suppress RedundantCastGivenDocblockType
+         */
         if (preg_match('/^(\w)*$/', (string) $unescaped) || preg_match('/^(\w\s)*$/', (string) $unescaped)) {
             return '' !== $quote ? $quote . ((string) $unescaped) . $quote : (string) $unescaped;
         }
 
+        /**
+         * @psalm-suppress RedundantCastGivenDocblockType
+         */
         $result = $this->mysqli->realEscapeString((string) $unescaped);
         if (null === $result) {
+            /**
+             * @psalm-suppress RedundantCastGivenDocblockType
+             */
             throw new QueryBuilderException((new QueryBuilderEscapeException((string) $unescaped))->getMessage());
         }
 

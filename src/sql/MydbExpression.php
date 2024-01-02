@@ -23,11 +23,8 @@ namespace sql;
 class MydbExpression implements MydbExpressionInterface
 {
 
-    protected string $input;
-
-    public function __construct(string $input)
+    public function __construct(protected string $input)
     {
-        $this->input = $input;
     }
 
     public function __toString(): string

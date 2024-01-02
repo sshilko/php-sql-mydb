@@ -12,10 +12,10 @@
  @license https://opensource.org/licenses/mit-license.php MIT
 -->
 <psalm
-    phpVersion="8.1"
     threads="1"
     findUnusedCode="false"
     findUnusedVariablesAndParams="true"
+    findUnusedBaselineEntry="false"
     checkForThrowsDocblock="false"
     ensureArrayIntOffsetsExist="true"
     ensureArrayStringOffsetsExist="true"

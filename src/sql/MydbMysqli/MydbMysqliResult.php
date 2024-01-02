@@ -32,6 +32,7 @@ class MydbMysqliResult implements MydbMysqliResultInterface
 
     /**
      * @psalm-var array<array-key, string>
+     * @phpcs:disable SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion.RequiredConstructorPropertyPromotion
      */
     protected array $warnings;
 
@@ -39,12 +40,10 @@ class MydbMysqliResult implements MydbMysqliResultInterface
 
     protected int $errorNumber = 0;
 
-    protected int $fieldsCount;
-
     /**
      * @psalm-param array<array-key, string> $warnings
      */
-    public function __construct(?mysqli_result $result, array $warnings, int $fieldsCount)
+    public function __construct(?mysqli_result $result, array $warnings, protected int $fieldsCount)
     {
         if (null !== $result) {
             $this->result = $result->fetch_all(self::MYSQLI_ASSOC);
@@ -52,7 +51,6 @@ class MydbMysqliResult implements MydbMysqliResultInterface
         }
 
         $this->warnings = $warnings;
-        $this->fieldsCount = $fieldsCount;
     }
 
     public function getFieldCount(): int

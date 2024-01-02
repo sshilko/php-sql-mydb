@@ -12,7 +12,7 @@ docker-compose up --force-recreate -d
 docker-compose exec -T app.php81 composer install
 
 Different PHP language runtime versions are available in named containers
-- PHP7.4 - *app.php*
+- PHP7.4 - *app.php* (deprecated)
 - PHP8.0 - *app.php80*
 - PHP8.1 - *app.php81*
 - PHP8.2 - *app.php81*
@@ -22,17 +22,17 @@ docker-compose exec %php-container% composer %composer-script%
 #### How to check code quality before commit
 
 git add -A
-docker-compose exec app.php composer app-pre-commit
-docker-compose exec app.php composer app-quality
+docker-compose exec app.php81 composer app-pre-commit
+docker-compose exec app.php81 composer app-quality
 git commit -m "new-feature-message"
 
 
 ##### Run [PHPUnit](https://phpunit.de) test suite
 
-docker-compose exec app.php composer app-phpunit
-docker-compose exec app.php composer app-phpunit -- --filter SelectTest
-docker-compose exec app.php composer app-phpunit-mysql57 -- --filter escape
-docker-compose exec app.php composer app-phpunit-mysql80
+docker-compose exec app.php81 composer app-phpunit
+docker-compose exec app.php81 composer app-phpunit -- --filter SelectTest
+docker-compose exec app.php81 composer app-phpunit-mysql57 -- --filter escape
+docker-compose exec app.php81 composer app-phpunit-mysql80
 
 docker-compose exec app.php82 composer app-phpunit-mysql80
 
@@ -41,35 +41,35 @@ docker-compose exec mysql80 mysql -uroot -proot mydb
 
 ##### Run PHP Code Beautifier & PHP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (all files)
 
-docker-compose exec app.php composer app-phpcbf
-docker-compose exec app.php composer app-phpcs
+docker-compose exec app.php81 composer app-phpcbf
+docker-compose exec app.php81 composer app-phpcs
 
 ##### Run [Psalm](https://psalm.dev) - a static analysis tool for PHP (all files)
 
-docker-compose exec app.php composer app-psalm
-docker-compose exec app.php composer app-psalm-alter
-docker-compose exec app.php composer app-psalm-taint
+docker-compose exec app.php81 composer app-psalm
+docker-compose exec app.php81 composer app-psalm-alter
+docker-compose exec app.php81 composer app-psalm-taint
 
 ##### Run [PHPStan](https://phpstan.org) - PHP Static Analysis Tool (all files)
 
-docker-compose exec app.php composer app-phpstan`
+docker-compose exec app.php81 composer app-phpstan
 
 ##### Run [PHPMD](https://phpmd.org) - PHP Mess Detector
 
-docker-compose exec app.php composer app-phpmd
+docker-compose exec app.php81 composer app-phpmd
 
 ##### Run [Phan](https://github.com/phan/phan) - PHP Phan static analyzer
 
-docker-compose exec app.php composer app-phan
+docker-compose exec app.php81 composer app-phan
 
 ##### Run [phpDocumentor](https://www.phpdoc.org) - [phpDocumentor](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/)
 
-docker-compose exec app.php composer app-phpdoc
+docker-compose exec app.php81 composer app-phpdoc
 
 ##### Run [PHPCPD](https://github.com/sebastianbergmann/phpcpd) - PHPCPD Copy/Paste Detector (CPD) for PHP code
 
-docker-compose exec app.php composer app-phpcpd
+docker-compose exec app.php81 composer app-phpcpd
 
 ##### Run [Pdepend](https://pdepend.org) - PHP quality of design - extensibility, reusability and maintainability
 
-docker-compose exec app.php composer app-pdepend
+docker-compose exec app.php81 composer app-pdepend

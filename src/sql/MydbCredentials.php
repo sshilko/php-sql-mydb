@@ -91,7 +91,7 @@ class MydbCredentials implements MydbCredentialsInterface
         string $dbname,
         ?int $port = null,
         ?string $socket = null,
-        int $flags = 0
+        int $flags = 0,
     ) {
         $this->host = $host;
         $this->username = $username;

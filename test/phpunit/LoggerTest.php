@@ -261,7 +261,7 @@ final class LoggerTest extends TestCase
         array $ctx,
         string $stdout,
         string $stderr,
-        bool $isError = false
+        bool $isError = false,
     ): void {
         $api = $isError
             ? ['warning', 'emergency', 'alert', 'critical']
