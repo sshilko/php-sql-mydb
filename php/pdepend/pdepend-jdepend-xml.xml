@@ -41,18 +41,18 @@
         <Class sourceFile="/app/src/sql/MydbRepositoryInterface.php">MydbRepositoryInterface</Class>
       </AbstractClasses>
       <DependsUpon>
-        <Package>Psr\Log</Package>
-        <Package></Package>
-        <Package>sql\MydbListener</Package>
-        <Package>sql\MydbMysqli</Package>
-        <Package>sql\MydbInterface</Package>
         <Package>sql\MydbException</Package>
         <Package>sql\MydbEvent</Package>
+        <Package>sql\MydbInterface</Package>
+        <Package>sql\MydbMysqli</Package>
+        <Package>sql\MydbListener</Package>
+        <Package></Package>
+        <Package>Psr\Log</Package>
       </DependsUpon>
       <UsedBy>
-        <Package>sql\MydbListener</Package>
         <Package>sql\MydbException</Package>
         <Package>sql\MydbEvent</Package>
+        <Package>sql\MydbListener</Package>
       </UsedBy>
     </Package>
     <Package name="sql\MydbEvent">
@@ -78,8 +78,8 @@
         <Package>sql</Package>
       </DependsUpon>
       <UsedBy>
-        <Package>sql\MydbListener</Package>
         <Package>sql</Package>
+        <Package>sql\MydbListener</Package>
       </UsedBy>
     </Package>
     <Package name="sql\MydbException">
@@ -119,8 +119,8 @@
       </ConcreteClasses>
       <AbstractClasses/>
       <DependsUpon>
-        <Package></Package>
         <Package>sql</Package>
+        <Package></Package>
       </DependsUpon>
       <UsedBy>
         <Package>sql</Package>
@@ -168,9 +168,9 @@
       </ConcreteClasses>
       <AbstractClasses/>
       <DependsUpon>
-        <Package>Psr\Log</Package>
-        <Package>sql</Package>
         <Package>sql\MydbEvent</Package>
+        <Package>sql</Package>
+        <Package>Psr\Log</Package>
       </DependsUpon>
       <UsedBy>
         <Package>sql</Package>
@@ -205,25 +205,26 @@
   <Cycles>
     <Package Name="sql">
       <Package>sql</Package>
-      <Package>sql\MydbListener</Package>
+      <Package>sql\MydbException</Package>
       <Package>sql</Package>
     </Package>
     <Package Name="sql\MydbEvent">
       <Package>sql\MydbEvent</Package>
       <Package>sql</Package>
-      <Package>sql\MydbListener</Package>
+      <Package>sql\MydbException</Package>
       <Package>sql</Package>
     </Package>
     <Package Name="sql\MydbException">
       <Package>sql\MydbException</Package>
       <Package>sql</Package>
-      <Package>sql\MydbListener</Package>
-      <Package>sql</Package>
+      <Package>sql\MydbException</Package>
     </Package>
     <Package Name="sql\MydbListener">
       <Package>sql\MydbListener</Package>
+      <Package>sql\MydbEvent</Package>
       <Package>sql</Package>
-      <Package>sql\MydbListener</Package>
+      <Package>sql\MydbException</Package>
+      <Package>sql</Package>
     </Package>
   </Cycles>
 </PDepend>
