@@ -9,7 +9,7 @@ CI steps [definitions](.github)
 - Install [PHPStorm IDE](https://www.jetbrains.com/phpstorm/) with [PHP Inspections](https://github.com/kalessil/phpinspectionsea) or [VSCode IDE](https://code.visualstudio.com/)
 
 docker-compose up --force-recreate -d
-docker-compose exec -T app.php composer install
+docker-compose exec -T app.php81 composer install
 
 Different PHP language runtime versions are available in named containers
 - PHP7.4 - *app.php*

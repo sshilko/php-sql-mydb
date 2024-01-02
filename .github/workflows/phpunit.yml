@@ -7,11 +7,11 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
-name: 7.4 PHPUnit
+name: 8.1 PHPUnit
 
 on:
   workflow_run:
-    workflows: [ "7.4 Docker" ]
+    workflows: [ "8.1 Docker" ]
     types:
       - completed
 
@@ -29,14 +29,14 @@ jobs:
 
     - name: Set build date for cache expiry
       id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m')"
+      run: echo "::set-output name=date::$(date +'%Y%m')"
 
     - name: Load cached app docker image
       id: docker-php-image-cache
       uses: actions/cache@v3
       with:
         path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php74') }}-${{ steps.date.outputs.date }}
+        key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php81') }}-${{ steps.date.outputs.date }}
 
     - name: Load cached Docker image
       run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php
@@ -45,12 +45,12 @@ jobs:
       env:
         DOCKER_BUILDKIT: '1'
         COMPOSE_DOCKER_CLI_BUILD: '1'
-        SERVICES_NAME: "app.php mysql mysql80"
-      run: docker-compose up --no-build -d $SERVICES_NAME
+        SERVICES_NAME: "app.php81 mysql mysql80"
+      run: docker-compose up -d $SERVICES_NAME
       timeout-minutes: 1
 
     - name: Wait for all services to become healthy
-      run: for SVC in "app.php" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 5; done; done
+      run: for SVC in "app.php81" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 5; done; done
       timeout-minutes: 2
 
     - name: Sleep
@@ -65,23 +65,23 @@ jobs:
         key: ${{ runner.os }}-php-${{ hashFiles('/composer.lock') }}-composer-dev
 
     - name: Docker install dependencies
-      run: docker-compose exec -T app.php composer install
+      run: docker-compose exec -T app.php81 composer install
 
       # Docs: https://phpunit.readthedocs.io/en/9.5/
     - name: Docker run PHPUnit with MySQL5.7
-      run: docker-compose exec -T app.php composer app-phpunit-mysql57
+      run: docker-compose exec -T app.php81 composer app-phpunit-mysql57
 
     - name: Docker run PHPUnit with MySQL8.0 & Coverage
-      run: docker-compose exec -T app.php composer app-phpunit-mysql80-coverage
+      run: docker-compose exec -T app.php81 composer app-phpunit-mysql80-coverage
 
     - name: Docker run PHPUnit badge generation
       id: app-phpunit-badges-coverage
       continue-on-error: true
       run: |
         #3 attempts to generate badges
-        docker-compose exec -T app.php composer app-phpunit-badges-coverage || \
-        docker-compose exec -T app.php composer app-phpunit-badges-coverage || \
-        docker-compose exec -T app.php composer app-phpunit-badges-coverage
+        docker-compose exec -T app.php81 composer app-phpunit-badges-coverage || \
+        docker-compose exec -T app.php81 composer app-phpunit-badges-coverage || \
+        docker-compose exec -T app.php81 composer app-phpunit-badges-coverage
 
       # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
     - name: Generate PHPUnit coverage badge
