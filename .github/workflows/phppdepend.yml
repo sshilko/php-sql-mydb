@@ -29,7 +29,7 @@ jobs:
 
     - name: Set build date for cache expiry
       id: date
-      run: echo "::set-output name=date::$(date +'%Y.%m')"
+      run: echo "$(date +'%Y.%m'); php81" | md5 >> >> "$GITHUB_OUTPUT"
 
     - name: Load cached app docker image
       id: docker-php-image-cache
@@ -59,7 +59,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('/composer.lock') }}-composer-dev
+        key: ${{ runner.os }}-php81-${{ hashFiles('composer.lock') }}-composer-dev
 
     - name: Docker install dependencies
       run: docker-compose exec -T app.php81 composer install

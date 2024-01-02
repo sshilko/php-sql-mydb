@@ -69,7 +69,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php-xbuild80-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php80') }}
+        key: ${{ runner.os }}-docker-php-build80-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php80', 'composer.lock') }}
     - name: Load cached Docker image
       run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php80
 
@@ -94,7 +94,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('/composer.lock') }}-composer-dev
+        key: ${{ runner.os }}-php80-${{ hashFiles('composer.lock') }}-composer-dev
 
     - name: Docker install dependencies
       run: docker-compose exec -T app.php80 composer install
