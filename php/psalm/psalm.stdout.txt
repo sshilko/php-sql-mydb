@@ -1,13 +1,13 @@
 ------------------------------
-[42;1m                              [0m
-[42;30;1m       No errors found!       [0m
-[42;1m                              [0m
+[42;2m                              [0m
+[42;30;2m       No errors found!       [0m
+[42;2m                              [0m
 ------------------------------
 
-Checks took 3.51 seconds and used 382.513MB of memory
-Psalm was able to infer types for 99.9268% of the codebase
+Checks took 4.49 seconds and used 278.144MB of memory
+Psalm was able to infer types for 99.9264% of the codebase
 -----------------
-99.772% ../src/sql/Mydb.php (1 mixed)
+99.771% ../src/sql/Mydb.php (1 mixed)
 100.000% ../src/sql/MydbCredentials.php (0 mixed)
 100.000% ../src/sql/MydbEnvironment.php (0 mixed)
 100.000% ../src/sql/MydbEvent.php (0 mixed)
