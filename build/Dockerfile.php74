@@ -12,3 +12,5 @@
 FROM --platform=linux/amd64 library/composer:2.0
 FROM --platform=linux/amd64 library/php:7.4-cli
 INCLUDE+ Dockerfile.php.common
+
+# Change this line to invalidate github workflow cache for app/php-image-cache:latest
