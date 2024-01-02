@@ -208,6 +208,9 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         $input = substr((string) $result, (int) strpos((string) $result, '(') + 1, -1);
 
         // @codeCoverageIgnoreStart
+        /**
+         * @psalm-suppress DocblockTypeContradiction
+         */
         if ('' === $input || false === $input) {
             throw new MydbException();
         }
