@@ -151,20 +151,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-Mydb.html#property_mysqli"
         },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003A\u0024credentials",
-            "name": "credentials",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#property_credentials"
-        },                {
             "fqsen": "\\sql\\Mydb\u003A\u003A\u0024options",
             "name": "options",
             "summary": "",
             "url": "classes/sql-Mydb.html#property_options"
-        },                {
-            "fqsen": "\\sql\\Mydb\u003A\u003A\u0024logger",
-            "name": "logger",
-            "summary": "",
-            "url": "classes/sql-Mydb.html#property_logger"
         },                {
             "fqsen": "\\sql\\Mydb\u003A\u003A\u0024environment",
             "name": "environment",
@@ -185,6 +175,16 @@ Search.appendIndex(
             "name": "terminating",
             "summary": "",
             "url": "classes/sql-Mydb.html#property_terminating"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003A\u0024credentials",
+            "name": "credentials",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#property_credentials"
+        },                {
+            "fqsen": "\\sql\\Mydb\u003A\u003A\u0024logger",
+            "name": "logger",
+            "summary": "",
+            "url": "classes/sql-Mydb.html#property_logger"
         },                {
             "fqsen": "\\sql\\MydbCredentials",
             "name": "MydbCredentials",
