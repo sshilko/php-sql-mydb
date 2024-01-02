@@ -286,6 +286,7 @@
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">''</token>
+        <token name="T_COMMA">,</token>
       </line>
       <line no="52">
         <token name="T_WHITESPACE">    </token>

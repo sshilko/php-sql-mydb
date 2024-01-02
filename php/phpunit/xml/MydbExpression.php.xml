@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbExpression.php" path="/">
     <totals>
-      <lines total="38" comments="16" code="22" executable="2" executed="2" percent="100.00"/>
+      <lines total="35" comments="16" code="19" executable="2" executed="2" percent="100.00"/>
       <methods count="2" tested="2" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
@@ -10,17 +10,17 @@
     </totals>
     <class name="sql\MydbExpression" start="23" executable="2" executed="2" crap="2">
       <namespace name="sql"/>
-      <method name="__construct" signature="__construct(string $input)" start="28" end="31" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="__toString" signature="__toString(): string" start="33" end="36" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="__construct" signature="__construct(string $input)" start="26" end="28" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="__toString" signature="__toString(): string" start="30" end="33" crap="1" executable="1" executed="1" coverage="100"/>
     </class>
     <coverage>
-      <line nr="30">
+      <line nr="28">
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
       </line>
-      <line nr="35">
+      <line nr="32">
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
         <covered by="phpunit\MetaTest::testEscape"/>
@@ -119,48 +119,29 @@
       <line no="25"/>
       <line no="26">
         <token name="T_WHITESPACE">    </token>
-        <token name="T_PROTECTED">protected</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">string</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$input</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="27"/>
-      <line no="28">
-        <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_FUNCTION">function</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">__construct</token>
         <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">string</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$input</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="29">
+      <line no="27">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="30">
-        <token name="T_WHITESPACE">        </token>
-        <token name="T_VARIABLE">$this</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">input</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$input</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="31">
+      <line no="28">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="32"/>
-      <line no="33">
+      <line no="29"/>
+      <line no="30">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -173,11 +154,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="34">
+      <line no="31">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="35">
+      <line no="32">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -186,14 +167,14 @@
         <token name="T_STRING">input</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="36">
+      <line no="33">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="37">
+      <line no="34">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="38"/>
+      <line no="35"/>
     </source>
   </file>
 </phpunit>

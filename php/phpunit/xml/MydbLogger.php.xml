@@ -2,13 +2,13 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbLogger.php" path="/">
     <totals>
-      <lines total="343" comments="130" code="213" executable="59" executed="59" percent="100.00"/>
+      <lines total="343" comments="130" code="213" executable="61" executed="61" percent="100.00"/>
       <methods count="15" tested="15" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbLogger" start="48" executable="59" executed="59" crap="42">
+    <class name="sql\MydbLogger" start="48" executable="61" executed="61" crap="42">
       <namespace name="sql"/>
       <method name="__construct" signature="__construct($stdout, $stderr, string $stdeol)" start="79" end="91" crap="3" executable="5" executed="5" coverage="100"/>
       <method name="__destruct" signature="__destruct()" start="93" end="111" crap="3" executable="7" executed="7" coverage="100"/>
@@ -23,7 +23,7 @@
       <method name="debug" signature="debug($message, array $context): void" start="207" end="210" crap="1" executable="1" executed="1" coverage="100"/>
       <method name="checkStreamResource" signature="checkStreamResource($stream): void" start="217" end="237" crap="7" executable="7" executed="7" coverage="100"/>
       <method name="writeOutput" signature="writeOutput($stream, string $data): void" start="246" end="296" crap="9" executable="13" executed="13" coverage="100"/>
-      <method name="fwrite" signature="fwrite($stream, string $data): ?int" start="301" end="329" crap="3" executable="7" executed="7" coverage="100"/>
+      <method name="fwrite" signature="fwrite($stream, string $data): ?int" start="301" end="329" crap="3" executable="9" executed="9" coverage="100"/>
       <method name="formatter" signature="formatter($var): string" start="334" end="341" crap="2" executable="3" executed="3" coverage="100"/>
     </class>
     <coverage>
@@ -535,6 +535,15 @@
         <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;chars&quot;"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
       </line>
+      <line nr="315">
+        <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;nothing&quot;"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;nothing-array&quot;"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;nothing-error&quot;"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;something&quot;"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;chars&quot;"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+      </line>
       <line nr="318">
         <covered by="phpunit\LoggerTest::testLoggerError"/>
         <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;nothing&quot;"/>
@@ -602,6 +611,15 @@
       </line>
       <line nr="340">
         <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+      </line>
+      <line nr="316">
+        <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;nothing&quot;"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;nothing-array&quot;"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;nothing-error&quot;"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;something&quot;"/>
+        <covered by="phpunit\LoggerTest::testLoggerWithStrings with data set &quot;chars&quot;"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
       </line>
     </coverage>

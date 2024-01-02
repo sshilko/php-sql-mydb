@@ -294,6 +294,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_SQUARE">[</token>
         <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_COMMA">,</token>
       </line>
       <line no="54">
         <token name="T_WHITESPACE">    </token>

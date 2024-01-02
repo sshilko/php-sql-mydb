@@ -71,6 +71,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty1"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -165,6 +166,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty1"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -261,6 +263,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -355,6 +358,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty2"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -449,6 +453,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty2"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -545,6 +550,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -638,6 +644,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -731,6 +738,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -824,6 +832,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -952,6 +961,7 @@
         <covered by="phpunit\RegistryTest::testRegistryEmpty3"/>
         <covered by="phpunit\RegistryTest::testRegistrySet"/>
         <covered by="phpunit\RegistryTest::testRegistryUnSet1"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RegistryTest::testRegistrySerialize1"/>
         <covered by="phpunit\RegistryTest::testRegistrySerialize2"/>
         <covered by="phpunit\RegistryTest::testRegistryUnserialize1"/>
@@ -1052,6 +1062,7 @@
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty3"/>
         <covered by="phpunit\RegistryTest::testRegistryUnSet1"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -1146,6 +1157,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\RegistryTest::testRegistryEmpty3"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -1239,6 +1251,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -1336,6 +1349,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\RegistryTest::testRegistrySet"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -1429,6 +1443,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -1522,6 +1537,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -1619,6 +1635,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
         <covered by="phpunit\RegistryTest::testRegistryUnSet1"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>
@@ -1715,6 +1732,7 @@
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\RegistryTest::testRegistryUnSet2"/>
         <covered by="phpunit\RepositoryTest::testRegistry"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
         <covered by="phpunit\ResourceTest::testOpenCloseError"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Tue Jan 2 22:15:54 UTC 2024" phpunit="9.5.26" coverage="9.2.19">
+  <build time="Tue Jan 2 23:50:52 UTC 2024" phpunit="9.6.15" coverage="9.2.30">
     <runtime name="PHP" version="8.1.27" url="https://secure.php.net/"/>
     <driver name="xdebug" version="3.1.6"/>
   </build>
@@ -187,6 +187,7 @@
       <test name="phpunit\RegistryTest::testRegistryEmpty3" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\RegistryTest::testRegistrySet" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\RegistryTest::testRegistryUnSet1" size="unknown" result="0" status="PASSED"/>
+      <test name="phpunit\RegistryTest::testRegistryUnSet2" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\RegistryTest::testRegistrySerialize1" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\RegistryTest::testRegistrySerialize2" size="unknown" result="0" status="PASSED"/>
       <test name="phpunit\RegistryTest::testRegistryUnserialize1" size="unknown" result="0" status="PASSED"/>
@@ -250,7 +251,7 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="5023" comments="2016" code="3007" executable="659" executed="659" percent="100.00"/>
+        <lines total="5011" comments="2025" code="2986" executable="699" executed="699" percent="100.00"/>
         <methods count="168" tested="168" percent="100.00"/>
         <functions count="0" tested="0" percent="0"/>
         <classes count="20" tested="20" percent="100.00"/>
@@ -258,7 +259,7 @@
       </totals>
       <directory name="MydbEvent">
         <totals>
-          <lines total="169" comments="67" code="102" executable="8" executed="8" percent="100.00"/>
+          <lines total="169" comments="67" code="102" executable="20" executed="20" percent="100.00"/>
           <methods count="7" tested="7" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="5" tested="5" percent="100.00"/>
@@ -266,7 +267,7 @@
         </totals>
         <file name="InternalConnectionBegin.php" href="MydbEvent/InternalConnectionBegin.php.xml">
           <totals>
-            <lines total="28" comments="11" code="17" executable="1" executed="1" percent="100.00"/>
+            <lines total="28" comments="11" code="17" executable="4" executed="4" percent="100.00"/>
             <methods count="1" tested="1" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="1" percent="100.00"/>
@@ -275,7 +276,7 @@
         </file>
         <file name="InternalConnectionEnd.php" href="MydbEvent/InternalConnectionEnd.php.xml">
           <totals>
-            <lines total="29" comments="11" code="18" executable="1" executed="1" percent="100.00"/>
+            <lines total="29" comments="11" code="18" executable="5" executed="5" percent="100.00"/>
             <methods count="1" tested="1" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="1" percent="100.00"/>
@@ -293,7 +294,7 @@
         </file>
         <file name="InternalQueryBegin.php" href="MydbEvent/InternalQueryBegin.php.xml">
           <totals>
-            <lines total="27" comments="11" code="16" executable="1" executed="1" percent="100.00"/>
+            <lines total="27" comments="11" code="16" executable="3" executed="3" percent="100.00"/>
             <methods count="1" tested="1" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="1" percent="100.00"/>
@@ -302,7 +303,7 @@
         </file>
         <file name="InternalQueryEnd.php" href="MydbEvent/InternalQueryEnd.php.xml">
           <totals>
-            <lines total="28" comments="11" code="17" executable="1" executed="1" percent="100.00"/>
+            <lines total="28" comments="11" code="17" executable="4" executed="4" percent="100.00"/>
             <methods count="1" tested="1" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="1" percent="100.00"/>
@@ -591,7 +592,7 @@
       </directory>
       <directory name="MydbListener">
         <totals>
-          <lines total="50" comments="11" code="39" executable="6" executed="6" percent="100.00"/>
+          <lines total="47" comments="11" code="36" executable="7" executed="7" percent="100.00"/>
           <methods count="2" tested="2" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -599,7 +600,7 @@
         </totals>
         <file name="InternalListener.php" href="MydbListener/InternalListener.php.xml">
           <totals>
-            <lines total="50" comments="11" code="39" executable="6" executed="6" percent="100.00"/>
+            <lines total="47" comments="11" code="36" executable="7" executed="7" percent="100.00"/>
             <methods count="2" tested="2" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="1" percent="100.00"/>
@@ -609,7 +610,7 @@
       </directory>
       <directory name="MydbMysqli">
         <totals>
-          <lines total="180" comments="67" code="113" executable="16" executed="16" percent="100.00"/>
+          <lines total="178" comments="68" code="110" executable="15" executed="15" percent="100.00"/>
           <methods count="7" tested="7" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -626,7 +627,7 @@
         </file>
         <file name="MydbMysqliResult.php" href="MydbMysqli/MydbMysqliResult.php.xml">
           <totals>
-            <lines total="105" comments="28" code="77" executable="16" executed="16" percent="100.00"/>
+            <lines total="103" comments="29" code="74" executable="15" executed="15" percent="100.00"/>
             <methods count="7" tested="7" percent="100.00"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="1" percent="100.00"/>
@@ -645,7 +646,7 @@
       </directory>
       <file name="Mydb.php" href="Mydb.php.xml">
         <totals>
-          <lines total="688" comments="179" code="509" executable="199" executed="199" percent="100.00"/>
+          <lines total="682" comments="179" code="503" executable="205" executed="205" percent="100.00"/>
           <methods count="28" tested="28" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -672,7 +673,7 @@
       </file>
       <file name="MydbEnvironment.php" href="MydbEnvironment.php.xml">
         <totals>
-          <lines total="264" comments="136" code="128" executable="30" executed="30" percent="100.00"/>
+          <lines total="264" comments="136" code="128" executable="32" executed="32" percent="100.00"/>
           <methods count="10" tested="10" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -726,7 +727,7 @@
       </file>
       <file name="MydbExpression.php" href="MydbExpression.php.xml">
         <totals>
-          <lines total="38" comments="16" code="22" executable="2" executed="2" percent="100.00"/>
+          <lines total="35" comments="16" code="19" executable="2" executed="2" percent="100.00"/>
           <methods count="2" tested="2" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -762,7 +763,7 @@
       </file>
       <file name="MydbLogger.php" href="MydbLogger.php.xml">
         <totals>
-          <lines total="343" comments="130" code="213" executable="59" executed="59" percent="100.00"/>
+          <lines total="343" comments="130" code="213" executable="61" executed="61" percent="100.00"/>
           <methods count="15" tested="15" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -771,7 +772,7 @@
       </file>
       <file name="MydbMysqli.php" href="MydbMysqli.php.xml">
         <totals>
-          <lines total="609" comments="201" code="408" executable="136" executed="136" percent="100.00"/>
+          <lines total="608" comments="200" code="408" executable="146" executed="146" percent="100.00"/>
           <methods count="30" tested="30" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -807,7 +808,7 @@
       </file>
       <file name="MydbQueryBuilder.php" href="MydbQueryBuilder.php.xml">
         <totals>
-          <lines total="395" comments="112" code="283" executable="114" executed="114" percent="100.00"/>
+          <lines total="401" comments="121" code="280" executable="122" executed="122" percent="100.00"/>
           <methods count="10" tested="10" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -834,7 +835,7 @@
       </file>
       <file name="MydbRepository.php" href="MydbRepository.php.xml">
         <totals>
-          <lines total="35" comments="11" code="24" executable="2" executed="2" percent="100.00"/>
+          <lines total="32" comments="11" code="21" executable="2" executed="2" percent="100.00"/>
           <methods count="2" tested="2" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>

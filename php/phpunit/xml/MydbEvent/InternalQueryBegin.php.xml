@@ -2,18 +2,122 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="InternalQueryBegin.php" path="/MydbEvent">
     <totals>
-      <lines total="27" comments="11" code="16" executable="1" executed="1" percent="100.00"/>
+      <lines total="27" comments="11" code="16" executable="3" executed="3" percent="100.00"/>
       <methods count="1" tested="1" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbEvent\InternalQueryBegin" start="18" executable="1" executed="1" crap="1">
+    <class name="sql\MydbEvent\InternalQueryBegin" start="18" executable="3" executed="3" crap="1">
       <namespace name="sql\MydbEvent"/>
-      <method name="__construct" signature="__construct(string $sql)" start="20" end="25" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="__construct" signature="__construct(string $sql)" start="20" end="25" crap="1" executable="3" executed="3" coverage="100"/>
     </class>
     <coverage>
       <line nr="22">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
+      </line>
+      <line nr="23">
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;complex select all&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select JOIN&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select UNION&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ORDER BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select WHERE&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select COUNT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select GROUP BY&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select HAVING&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select ALL&quot;"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
+      </line>
+      <line nr="24">
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>

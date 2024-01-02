@@ -6,323 +6,344 @@
         <style>
             body {
                 text-rendering: optimizeLegibility;
+                font-family: Source SansSerif Pro, Arial, sans-serif;
                 font-variant-ligatures: common-ligatures;
                 font-kerning: normal;
-                margin-left: 2em;
-                background-color: #ffffff;
-                color: #000000;
+                margin-left: 2rem;
+                background-color: #fff;
+                color: #000;
             }
 
             body > ul > li {
-                font-family: Source Serif Pro, PT Sans, Trebuchet MS, Helvetica, Arial;
-                font-size: 2em;
+                font-size: larger;
             }
 
             h2 {
-                font-family: Tahoma, Helvetica, Arial;
-                font-size: 3em;
+                font-size: larger;
+                text-decoration-line: underline;
+                text-decoration-thickness: 2px;
+                margin: 0;
+                padding: 0.5rem 0;
             }
 
             ul {
                 list-style: none;
-                margin-bottom: 1em;
+                margin: 0 0 2rem;
+                padding: 0 0 0 1rem;
+                text-indent: -1rem;
+            }
+
+            .success:before {
+                color: #4e9a06;
+                content: '✓';
+                padding-right: 0.5rem;
+            }
+
+            .defect {
+                color: #a40000;
+            }
+
+            .defect:before {
+                color: #a40000;
+                content: '✗';
+                padding-right: 0.5rem;
             }
         </style>
     </head>
     <body>
-        <h2 id="phpunit\DeleteTest">Delete (phpunit\Delete)</h2>
+        <h2>Delete (phpunit\Delete)</h2>
         <ul>
-            <li style="color: #555753;">✓ Delete</li>
-            <li style="color: #555753;">✓ Delete error</li>
-            <li style="color: #555753;">✓ Delete internal error</li>
-            <li style="color: #555753;">✓ Delete where</li>
-            <li style="color: #555753;">✓ Delete where returns null</li>
+            <li class="success">Delete</li>
+            <li class="success">Delete error</li>
+            <li class="success">Delete internal error</li>
+            <li class="success">Delete where</li>
+            <li class="success">Delete where returns null</li>
         </ul>
-        <h2 id="phpunit\ExceptionTest">Exception (phpunit\Exception)</h2>
+        <h2>Exception (phpunit\Exception)</h2>
         <ul>
-            <li style="color: #555753;">✓ Table does not exist</li>
-            <li style="color: #555753;">✓ Failed to connect</li>
-            <li style="color: #555753;">✓ Failed to connect after retry</li>
-            <li style="color: #555753;">✓ Failed to connect lazy</li>
-            <li style="color: #555753;">✓ Failed to command lazy</li>
-            <li style="color: #555753;">✓ Failed to begin transaction</li>
-            <li style="color: #555753;">✓ Failed to rollback transaction</li>
-            <li style="color: #555753;">✓ Failed to commit transaction</li>
-            <li style="color: #555753;">✓ Failed to escape lazy</li>
-            <li style="color: #555753;">✓ My sql warning</li>
-            <li style="color: #555753;">✓ My sql error</li>
+            <li class="success">Table does not exist</li>
+            <li class="success">Failed to connect</li>
+            <li class="success">Failed to connect after retry</li>
+            <li class="success">Failed to connect lazy</li>
+            <li class="success">Failed to command lazy</li>
+            <li class="success">Failed to begin transaction</li>
+            <li class="success">Failed to rollback transaction</li>
+            <li class="success">Failed to commit transaction</li>
+            <li class="success">Failed to escape lazy</li>
+            <li class="success">My sql warning</li>
+            <li class="success">My sql error</li>
         </ul>
-        <h2 id="phpunit\InsertTest">Insert (phpunit\Insert)</h2>
+        <h2>Insert (phpunit\Insert)</h2>
         <ul>
-            <li style="color: #555753;">✓ Replace</li>
-            <li style="color: #555753;">✓ Replace one</li>
-            <li style="color: #555753;">✓ Insert error</li>
-            <li style="color: #555753;">✓ Insert</li>
-            <li style="color: #555753;">✓ Insert many</li>
-            <li style="color: #555753;">✓ Insert one</li>
+            <li class="success">Replace</li>
+            <li class="success">Replace one</li>
+            <li class="success">Insert error</li>
+            <li class="success">Insert</li>
+            <li class="success">Insert many</li>
+            <li class="success">Insert one</li>
         </ul>
-        <h2 id="phpunit\LoggerTest">Logger (phpunit\Logger)</h2>
+        <h2>Logger (phpunit\Logger)</h2>
         <ul>
-            <li style="color: #555753;">✓ Logger error</li>
-            <li style="color: #555753;">✓ Logger constructor out</li>
-            <li style="color: #555753;">✓ Logger constructor err</li>
-            <li style="color: #555753;">✓ Logger stream err end</li>
-            <li style="color: #555753;">✓ Logger stream out closed</li>
-            <li style="color: #555753;">✓ Logger stream err closed</li>
-            <li style="color: #555753;">✓ Logger stream out bad mode</li>
-            <li style="color: #555753;">✓ Logger stream err bad mode</li>
-            <li style="color: #555753;">✓ Logger stream out end</li>
-            <li style="color: #555753;">✓ Logger with strings with data set "nothing"</li>
-            <li style="color: #555753;">✓ Logger with strings with data set "nothing-array"</li>
-            <li style="color: #555753;">✓ Logger with strings with data set "nothing-error"</li>
-            <li style="color: #555753;">✓ Logger with strings with data set "something"</li>
-            <li style="color: #555753;">✓ Logger with strings with data set "chars"</li>
-            <li style="color: #555753;">✓ Logger with context</li>
+            <li class="success">Logger error</li>
+            <li class="success">Logger constructor out</li>
+            <li class="success">Logger constructor err</li>
+            <li class="success">Logger stream err end</li>
+            <li class="success">Logger stream out closed</li>
+            <li class="success">Logger stream err closed</li>
+            <li class="success">Logger stream out bad mode</li>
+            <li class="success">Logger stream err bad mode</li>
+            <li class="success">Logger stream out end</li>
+            <li class="success">Logger with strings with data set "nothing"</li>
+            <li class="success">Logger with strings with data set "nothing-array"</li>
+            <li class="success">Logger with strings with data set "nothing-error"</li>
+            <li class="success">Logger with strings with data set "something"</li>
+            <li class="success">Logger with strings with data set "chars"</li>
+            <li class="success">Logger with context</li>
         </ul>
-        <h2 id="phpunit\MetaTest">Meta (phpunit\Meta)</h2>
+        <h2>Meta (phpunit\Meta)</h2>
         <ul>
-            <li style="color: #555753;">✓ Open</li>
-            <li style="color: #555753;">✓ Close</li>
-            <li style="color: #555753;">✓ Primary key</li>
-            <li style="color: #555753;">✓ Primary key not found</li>
-            <li style="color: #555753;">✓ Primary key composite</li>
-            <li style="color: #555753;">✓ Enum</li>
-            <li style="color: #555753;">✓ Set</li>
-            <li style="color: #555753;">✓ Not real enum or set</li>
-            <li style="color: #555753;">✓ Escape</li>
-            <li style="color: #555753;">✓ Single quoted escape</li>
-            <li style="color: #555753;">✓ Double quoted escape</li>
-            <li style="color: #555753;">✓ Primary key not defined</li>
-            <li style="color: #555753;">✓ Primary key query failed</li>
+            <li class="success">Open</li>
+            <li class="success">Close</li>
+            <li class="success">Primary key</li>
+            <li class="success">Primary key not found</li>
+            <li class="success">Primary key composite</li>
+            <li class="success">Enum</li>
+            <li class="success">Set</li>
+            <li class="success">Not real enum or set</li>
+            <li class="success">Escape</li>
+            <li class="success">Single quoted escape</li>
+            <li class="success">Double quoted escape</li>
+            <li class="success">Primary key not defined</li>
+            <li class="success">Primary key query failed</li>
         </ul>
-        <h2 id="phpunit\MydbEnvironmentTest">Mydb Environment (phpunit\MydbEnvironment)</h2>
+        <h2>Mydb Environment (phpunit\MydbEnvironment)</h2>
         <ul>
-            <li style="color: #555753;">✓ Signal sighup trap with data set "SIGHUP"</li>
-            <li style="color: #555753;">✓ Signal sighup trap with data set "SIGTERM"</li>
-            <li style="color: #555753;">✓ Signal sighup trap with data set "SIGINT"</li>
-            <li style="color: #555753;">✓ Signal sighup trap with data set "SIGINT,SIGTERM,SIGHUP"</li>
+            <li class="success">Signal sighup trap with data set "SIGHUP"</li>
+            <li class="success">Signal sighup trap with data set "SIGTERM"</li>
+            <li class="success">Signal sighup trap with data set "SIGINT"</li>
+            <li class="success">Signal sighup trap with data set "SIGINT,SIGTERM,SIGHUP"</li>
         </ul>
-        <h2 id="phpunit\MydbEventTest">Mydb Event (phpunit\MydbEvent)</h2>
+        <h2>Mydb Event (phpunit\MydbEvent)</h2>
         <ul>
-            <li style="color: #555753;">✓ Mydb event listener break</li>
-            <li style="color: #555753;">✓ Mydb event listener exception</li>
-            <li style="color: #555753;">✓ Mydb internal event success</li>
+            <li class="success">Mydb event listener break</li>
+            <li class="success">Mydb event listener exception</li>
+            <li class="success">Mydb internal event success</li>
         </ul>
-        <h2 id="phpunit\MydbExceptionTest">Mydb Exception (phpunit\MydbException)</h2>
+        <h2>Mydb Exception (phpunit\MydbException)</h2>
         <ul>
-            <li style="color: #555753;">✓ My exception</li>
-            <li style="color: #555753;">✓ Query builder exception</li>
+            <li class="success">My exception</li>
+            <li class="success">Query builder exception</li>
         </ul>
-        <h2 id="phpunit\MysqliTest">Mysqli (phpunit\Mysqli)</h2>
+        <h2>Mysqli (phpunit\Mysqli)</h2>
         <ul>
-            <li style="color: #555753;">✓ Reuse resource</li>
-            <li style="color: #555753;">✓ Get mysqli</li>
-            <li style="color: #555753;">✓ Options no init</li>
-            <li style="color: #555753;">✓ Query no init</li>
-            <li style="color: #555753;">✓ Read response no init</li>
-            <li style="color: #555753;">✓ Extract response no init</li>
-            <li style="color: #555753;">✓ Escape no init</li>
-            <li style="color: #555753;">✓ Transactions no init</li>
-            <li style="color: #555753;">✓ Transactions will finish when forced autocommit</li>
-            <li style="color: #555753;">✓ Close no init</li>
-            <li style="color: #555753;">✓ Affected rows no init</li>
-            <li style="color: #555753;">✓ Warnings no init</li>
+            <li class="success">Reuse resource</li>
+            <li class="success">Get mysqli</li>
+            <li class="success">Options no init</li>
+            <li class="success">Query no init</li>
+            <li class="success">Read response no init</li>
+            <li class="success">Extract response no init</li>
+            <li class="success">Escape no init</li>
+            <li class="success">Transactions no init</li>
+            <li class="success">Transactions will finish when forced autocommit</li>
+            <li class="success">Close no init</li>
+            <li class="success">Affected rows no init</li>
+            <li class="success">Warnings no init</li>
         </ul>
-        <h2 id="phpunit\OptionsTest">Options (phpunit\Options)</h2>
+        <h2>Options (phpunit\Options)</h2>
         <ul>
-            <li style="color: #555753;">✓ Non interactive timeouts</li>
-            <li style="color: #555753;">✓ Transaction isolation level</li>
-            <li style="color: #555753;">✓ Server side select timeouts</li>
-            <li style="color: #555753;">✓ Error reporting</li>
-            <li style="color: #555753;">✓ Read timeout</li>
-            <li style="color: #555753;">✓ Network buffer</li>
-            <li style="color: #555753;">✓ Network buffer min</li>
-            <li style="color: #555753;">✓ Network buffer max</li>
-            <li style="color: #555753;">✓ Set read buffer</li>
-            <li style="color: #555753;">✓ Set read buffer min</li>
-            <li style="color: #555753;">✓ Set read buffer max</li>
-            <li style="color: #555753;">✓ Mysqli report</li>
-            <li style="color: #555753;">✓ Mysqli report min</li>
-            <li style="color: #555753;">✓ Mysqli report max</li>
-            <li style="color: #555753;">✓ Set time zone</li>
-            <li style="color: #555753;">✓ Autocommit</li>
-            <li style="color: #555753;">✓ Charset</li>
-            <li style="color: #555753;">✓ Persistent</li>
-            <li style="color: #555753;">✓ Readonly</li>
+            <li class="success">Non interactive timeouts</li>
+            <li class="success">Transaction isolation level</li>
+            <li class="success">Server side select timeouts</li>
+            <li class="success">Error reporting</li>
+            <li class="success">Read timeout</li>
+            <li class="success">Network buffer</li>
+            <li class="success">Network buffer min</li>
+            <li class="success">Network buffer max</li>
+            <li class="success">Set read buffer</li>
+            <li class="success">Set read buffer min</li>
+            <li class="success">Set read buffer max</li>
+            <li class="success">Mysqli report</li>
+            <li class="success">Mysqli report min</li>
+            <li class="success">Mysqli report max</li>
+            <li class="success">Set time zone</li>
+            <li class="success">Autocommit</li>
+            <li class="success">Charset</li>
+            <li class="success">Persistent</li>
+            <li class="success">Readonly</li>
         </ul>
-        <h2 id="phpunit\QueryBuilderTest">Query Builder (phpunit\QueryBuilder)</h2>
+        <h2>Query Builder (phpunit\QueryBuilder)</h2>
         <ul>
-            <li style="color: #555753;">✓ Show columns like</li>
-            <li style="color: #555753;">✓ Show keys</li>
-            <li style="color: #555753;">✓ Insert one with data set "simple int"</li>
-            <li style="color: #555753;">✓ Insert one with data set "simple float"</li>
-            <li style="color: #555753;">✓ Insert one with data set "expression"</li>
-            <li style="color: #555753;">✓ Insert one with data set "raw null"</li>
-            <li style="color: #555753;">✓ Insert one with data set "string caps null"</li>
-            <li style="color: #555753;">✓ Insert one with data set "string lowercase null"</li>
-            <li style="color: #555753;">✓ Insert one with data set "string 0x"</li>
-            <li style="color: #555753;">✓ Insert one with data set "string 0x even"</li>
-            <li style="color: #555753;">✓ Insert one with data set "string 0x mismatch"</li>
-            <li style="color: #555753;">✓ Insert replace one exception</li>
-            <li style="color: #555753;">✓ Replace one with data set "simple int"</li>
-            <li style="color: #555753;">✓ Replace one with data set "simple float"</li>
-            <li style="color: #555753;">✓ Replace one with data set "expression"</li>
-            <li style="color: #555753;">✓ Replace one with data set "raw null"</li>
-            <li style="color: #555753;">✓ Replace one with data set "string caps null"</li>
-            <li style="color: #555753;">✓ Replace one with data set "string lowercase null"</li>
-            <li style="color: #555753;">✓ Replace one with data set "string 0x"</li>
-            <li style="color: #555753;">✓ Replace one with data set "string 0x even"</li>
-            <li style="color: #555753;">✓ Replace one with data set "string 0x mismatch"</li>
-            <li style="color: #555753;">✓ Escape</li>
-            <li style="color: #555753;">✓ Build update where many with data set "simple"</li>
-            <li style="color: #555753;">✓ Build update where many with data set "prefixed simple"</li>
-            <li style="color: #555753;">✓ Build where with data set "simple"</li>
-            <li style="color: #555753;">✓ Build where with data set "expression"</li>
-            <li style="color: #555753;">✓ Build where with data set "expression8"</li>
-            <li style="color: #555753;">✓ Build where with data set "simple array count >1"</li>
-            <li style="color: #555753;">✓ Build where with data set "negative array count >1"</li>
-            <li style="color: #555753;">✓ Build where with data set "simple null array count >1"</li>
-            <li style="color: #555753;">✓ Build where with data set "negative null array count >1"</li>
-            <li style="color: #555753;">✓ Build where with data set "simple array count 1"</li>
-            <li style="color: #555753;">✓ Build where with data set "negative array count 1"</li>
-            <li style="color: #555753;">✓ Build where with data set "simple null"</li>
-            <li style="color: #555753;">✓ Build where with data set "negative null"</li>
-            <li style="color: #555753;">✓ Build where with data set "like null"</li>
-            <li style="color: #555753;">✓ Build where with data set #0</li>
-            <li style="color: #555753;">✓ Build where with data set #1</li>
-            <li style="color: #555753;">✓ Build where with data set #2</li>
-            <li style="color: #555753;">✓ Build where with data set #3</li>
-            <li style="color: #555753;">✓ Build where with data set #4</li>
-            <li style="color: #555753;">✓ Build where with data set #5</li>
-            <li style="color: #555753;">✓ Build where with data set #6</li>
-            <li style="color: #555753;">✓ Build where with data set #7</li>
-            <li style="color: #555753;">✓ Build where with data set #8</li>
-            <li style="color: #555753;">✓ Build where with data set #9</li>
-            <li style="color: #555753;">✓ Build where with data set #10</li>
-            <li style="color: #555753;">✓ Build where with data set #11</li>
-            <li style="color: #555753;">✓ Build where with data set #12</li>
-            <li style="color: #555753;">✓ Build where with data set #13</li>
-            <li style="color: #555753;">✓ Build where with data set #14</li>
-            <li style="color: #555753;">✓ Build where with data set #15</li>
-            <li style="color: #555753;">✓ Build where with data set #16</li>
-            <li style="color: #555753;">✓ Build where with data set #17</li>
-            <li style="color: #555753;">✓ Build where with data set #18</li>
-            <li style="color: #555753;">✓ Build where with data set #19</li>
-            <li style="color: #555753;">✓ Build where with data set #20</li>
-            <li style="color: #555753;">✓ Build where with data set #21</li>
-            <li style="color: #555753;">✓ Build where with data set #22</li>
-            <li style="color: #555753;">✓ Build where with data set #23</li>
-            <li style="color: #555753;">✓ Build where with data set #24</li>
-            <li style="color: #555753;">✓ Build where with data set #25</li>
-            <li style="color: #555753;">✓ Build where with data set #26</li>
-            <li style="color: #555753;">✓ Build where with data set #27</li>
-            <li style="color: #555753;">✓ Build where with data set #28</li>
-            <li style="color: #555753;">✓ Build where with data set #29</li>
-            <li style="color: #555753;">✓ Build where with data set #30</li>
-            <li style="color: #555753;">✓ Build where with data set #31</li>
-            <li style="color: #555753;">✓ Build where with data set #32</li>
-            <li style="color: #555753;">✓ Build where with data set #33</li>
-            <li style="color: #555753;">✓ Build where with data set #34</li>
-            <li style="color: #555753;">✓ Build where with data set #35</li>
-            <li style="color: #555753;">✓ Build where exception</li>
-            <li style="color: #555753;">✓ Build insert many exception</li>
-            <li style="color: #555753;">✓ Build update where many exception 1</li>
-            <li style="color: #555753;">✓ Build update where many exception 2</li>
-            <li style="color: #555753;">✓ Build update where many exception 3</li>
-            <li style="color: #555753;">✓ Build update where many exception 4</li>
-            <li style="color: #555753;">✓ Build update where many exception 5</li>
-            <li style="color: #555753;">✓ Build update where many exception 6</li>
-            <li style="color: #555753;">✓ Build update where many exception 7</li>
-            <li style="color: #555753;">✓ Build delete where exceptions</li>
-            <li style="color: #555753;">✓ Build update where exceptions 1</li>
-            <li style="color: #555753;">✓ Build update where exceptions 2</li>
-            <li style="color: #555753;">✓ Build update where exceptions 3</li>
-            <li style="color: #555753;">✓ Build update where exceptions 4</li>
-            <li style="color: #555753;">✓ Build update where exceptions 5</li>
+            <li class="success">Show columns like</li>
+            <li class="success">Show keys</li>
+            <li class="success">Insert one with data set "simple int"</li>
+            <li class="success">Insert one with data set "simple float"</li>
+            <li class="success">Insert one with data set "expression"</li>
+            <li class="success">Insert one with data set "raw null"</li>
+            <li class="success">Insert one with data set "string caps null"</li>
+            <li class="success">Insert one with data set "string lowercase null"</li>
+            <li class="success">Insert one with data set "string 0x"</li>
+            <li class="success">Insert one with data set "string 0x even"</li>
+            <li class="success">Insert one with data set "string 0x mismatch"</li>
+            <li class="success">Insert replace one exception</li>
+            <li class="success">Replace one with data set "simple int"</li>
+            <li class="success">Replace one with data set "simple float"</li>
+            <li class="success">Replace one with data set "expression"</li>
+            <li class="success">Replace one with data set "raw null"</li>
+            <li class="success">Replace one with data set "string caps null"</li>
+            <li class="success">Replace one with data set "string lowercase null"</li>
+            <li class="success">Replace one with data set "string 0x"</li>
+            <li class="success">Replace one with data set "string 0x even"</li>
+            <li class="success">Replace one with data set "string 0x mismatch"</li>
+            <li class="success">Escape</li>
+            <li class="success">Build update where many with data set "simple"</li>
+            <li class="success">Build update where many with data set "prefixed simple"</li>
+            <li class="success">Build where with data set "simple"</li>
+            <li class="success">Build where with data set "expression"</li>
+            <li class="success">Build where with data set "expression8"</li>
+            <li class="success">Build where with data set "simple array count >1"</li>
+            <li class="success">Build where with data set "negative array count >1"</li>
+            <li class="success">Build where with data set "simple null array count >1"</li>
+            <li class="success">Build where with data set "negative null array count >1"</li>
+            <li class="success">Build where with data set "simple array count 1"</li>
+            <li class="success">Build where with data set "negative array count 1"</li>
+            <li class="success">Build where with data set "simple null"</li>
+            <li class="success">Build where with data set "negative null"</li>
+            <li class="success">Build where with data set "like null"</li>
+            <li class="success">Build where with data set #0</li>
+            <li class="success">Build where with data set #1</li>
+            <li class="success">Build where with data set #2</li>
+            <li class="success">Build where with data set #3</li>
+            <li class="success">Build where with data set #4</li>
+            <li class="success">Build where with data set #5</li>
+            <li class="success">Build where with data set #6</li>
+            <li class="success">Build where with data set #7</li>
+            <li class="success">Build where with data set #8</li>
+            <li class="success">Build where with data set #9</li>
+            <li class="success">Build where with data set #10</li>
+            <li class="success">Build where with data set #11</li>
+            <li class="success">Build where with data set #12</li>
+            <li class="success">Build where with data set #13</li>
+            <li class="success">Build where with data set #14</li>
+            <li class="success">Build where with data set #15</li>
+            <li class="success">Build where with data set #16</li>
+            <li class="success">Build where with data set #17</li>
+            <li class="success">Build where with data set #18</li>
+            <li class="success">Build where with data set #19</li>
+            <li class="success">Build where with data set #20</li>
+            <li class="success">Build where with data set #21</li>
+            <li class="success">Build where with data set #22</li>
+            <li class="success">Build where with data set #23</li>
+            <li class="success">Build where with data set #24</li>
+            <li class="success">Build where with data set #25</li>
+            <li class="success">Build where with data set #26</li>
+            <li class="success">Build where with data set #27</li>
+            <li class="success">Build where with data set #28</li>
+            <li class="success">Build where with data set #29</li>
+            <li class="success">Build where with data set #30</li>
+            <li class="success">Build where with data set #31</li>
+            <li class="success">Build where with data set #32</li>
+            <li class="success">Build where with data set #33</li>
+            <li class="success">Build where with data set #34</li>
+            <li class="success">Build where with data set #35</li>
+            <li class="success">Build where exception</li>
+            <li class="success">Build insert many exception</li>
+            <li class="success">Build update where many exception 1</li>
+            <li class="success">Build update where many exception 2</li>
+            <li class="success">Build update where many exception 3</li>
+            <li class="success">Build update where many exception 4</li>
+            <li class="success">Build update where many exception 5</li>
+            <li class="success">Build update where many exception 6</li>
+            <li class="success">Build update where many exception 7</li>
+            <li class="success">Build delete where exceptions</li>
+            <li class="success">Build update where exceptions 1</li>
+            <li class="success">Build update where exceptions 2</li>
+            <li class="success">Build update where exceptions 3</li>
+            <li class="success">Build update where exceptions 4</li>
+            <li class="success">Build update where exceptions 5</li>
         </ul>
-        <h2 id="phpunit\RegistryTest">Registry (phpunit\Registry)</h2>
+        <h2>Registry (phpunit\Registry)</h2>
         <ul>
-            <li style="color: #555753;">✓ Registry empty 1</li>
-            <li style="color: #555753;">✓ Registry empty 2</li>
-            <li style="color: #555753;">✓ Registry empty 3</li>
-            <li style="color: #555753;">✓ Registry set</li>
-            <li style="color: #555753;">✓ Registry un set 1</li>
-            <li style="color: #555753;">✓ Registry un set 2</li>
-            <li style="color: #555753;">✓ Registry serialize 1</li>
-            <li style="color: #555753;">✓ Registry serialize 2</li>
-            <li style="color: #555753;">✓ Registry unserialize 1</li>
-            <li style="color: #555753;">✓ Registry unserialize 2</li>
-            <li style="color: #555753;">✓ Registry clone</li>
+            <li class="success">Registry empty 1</li>
+            <li class="success">Registry empty 2</li>
+            <li class="success">Registry empty 3</li>
+            <li class="success">Registry set</li>
+            <li class="success">Registry un set 1</li>
+            <li class="success">Registry un set 2</li>
+            <li class="success">Registry serialize 1</li>
+            <li class="success">Registry serialize 2</li>
+            <li class="success">Registry unserialize 1</li>
+            <li class="success">Registry unserialize 2</li>
+            <li class="success">Registry clone</li>
         </ul>
-        <h2 id="phpunit\RepositoryTest">Repository (phpunit\Repository)</h2>
+        <h2>Repository (phpunit\Repository)</h2>
         <ul>
-            <li style="color: #555753;">✓ Registry</li>
+            <li class="success">Registry</li>
         </ul>
-        <h2 id="phpunit\ResourceTest">Resource (phpunit\Resource)</h2>
+        <h2>Resource (phpunit\Resource)</h2>
         <ul>
-            <li style="color: #555753;">✓ Open</li>
-            <li style="color: #555753;">✓ Open close error</li>
-            <li style="color: #555753;">✓ Open autocommit failed</li>
-            <li style="color: #555753;">✓ Simple close</li>
-            <li style="color: #555753;">✓ Close not connected</li>
-            <li style="color: #555753;">✓ Will commit not persistent transaction when no autocommit and no transaction on close</li>
-            <li style="color: #555753;">✓ Will commit is persistent transaction when no autocommit and no transaction on close</li>
-            <li style="color: #555753;">✓ Transaction exception on persistent close</li>
-            <li style="color: #555753;">✓ Transaction exception on non persistent close</li>
-            <li style="color: #555753;">✓ Disconnect exception on close</li>
-            <li style="color: #555753;">✓ Uncaught exception becomes internal exception on close</li>
-            <li style="color: #555753;">✓ No gc when not connected</li>
-            <li style="color: #555753;">✓ Gc when connected</li>
-            <li style="color: #555753;">✓ Do no commit transaction when autocommit enabled on close</li>
-            <li style="color: #555753;">✓ Do no commit transaction when transaction explicitly started on close</li>
-            <li style="color: #555753;">✓ Query bad client request</li>
-            <li style="color: #555753;">✓ Query bad server response</li>
-            <li style="color: #555753;">✓ Query bad server response packet field count is zero</li>
-            <li style="color: #555753;">✓ Query bad server response packet field count is not zero but bad result</li>
-            <li style="color: #555753;">✓ Connecting defaults failed</li>
-            <li style="color: #555753;">✓ Connecting transaction isolation failed</li>
-            <li style="color: #555753;">✓ Connecting transaction autocommit failed</li>
+            <li class="success">Open</li>
+            <li class="success">Open close error</li>
+            <li class="success">Open autocommit failed</li>
+            <li class="success">Simple close</li>
+            <li class="success">Close not connected</li>
+            <li class="success">Will commit not persistent transaction when no autocommit and no transaction on close</li>
+            <li class="success">Will commit is persistent transaction when no autocommit and no transaction on close</li>
+            <li class="success">Transaction exception on persistent close</li>
+            <li class="success">Transaction exception on non persistent close</li>
+            <li class="success">Disconnect exception on close</li>
+            <li class="success">Uncaught exception becomes internal exception on close</li>
+            <li class="success">No gc when not connected</li>
+            <li class="success">Gc when connected</li>
+            <li class="success">Do no commit transaction when autocommit enabled on close</li>
+            <li class="success">Do no commit transaction when transaction explicitly started on close</li>
+            <li class="success">Query bad client request</li>
+            <li class="success">Query bad server response</li>
+            <li class="success">Query bad server response packet field count is zero</li>
+            <li class="success">Query bad server response packet field count is not zero but bad result</li>
+            <li class="success">Connecting defaults failed</li>
+            <li class="success">Connecting transaction isolation failed</li>
+            <li class="success">Connecting transaction autocommit failed</li>
         </ul>
-        <h2 id="phpunit\SelectTest">Select (phpunit\Select)</h2>
+        <h2>Select (phpunit\Select)</h2>
         <ul>
-            <li style="color: #555753;">✓ Simple select with data set "simple select all"</li>
-            <li style="color: #555753;">✓ Simple select with data set "complex select all"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select JOIN"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select UNION"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select ORDER BY"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select WHERE"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select COUNT"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select GROUP BY"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select HAVING"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select LIMIT"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select LIMIT OFFSET"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select ALL"</li>
-            <li style="color: #555753;">✓ Simple select with data set "simple select SQL_SMALL_RESULT"</li>
-            <li style="color: #555753;">✓ Termination during query</li>
-            <li style="color: #555753;">✓ Server gone during query</li>
+            <li class="success">Simple select with data set "simple select all"</li>
+            <li class="success">Simple select with data set "complex select all"</li>
+            <li class="success">Simple select with data set "simple select JOIN"</li>
+            <li class="success">Simple select with data set "simple select UNION"</li>
+            <li class="success">Simple select with data set "simple select ORDER BY"</li>
+            <li class="success">Simple select with data set "simple select WHERE"</li>
+            <li class="success">Simple select with data set "simple select COUNT"</li>
+            <li class="success">Simple select with data set "simple select GROUP BY"</li>
+            <li class="success">Simple select with data set "simple select HAVING"</li>
+            <li class="success">Simple select with data set "simple select LIMIT"</li>
+            <li class="success">Simple select with data set "simple select LIMIT OFFSET"</li>
+            <li class="success">Simple select with data set "simple select ALL"</li>
+            <li class="success">Simple select with data set "simple select SQL_SMALL_RESULT"</li>
+            <li class="success">Termination during query</li>
+            <li class="success">Server gone during query</li>
         </ul>
-        <h2 id="phpunit\TransactionsTest">Transactions (phpunit\Transactions)</h2>
+        <h2>Transactions (phpunit\Transactions)</h2>
         <ul>
-            <li style="color: #555753;">✓ Begin transaction readonly real</li>
-            <li style="color: #555753;">✓ Begin transaction read write real</li>
-            <li style="color: #555753;">✓ Transaction isolation level</li>
-            <li style="color: #555753;">✓ Begin transaction readonly success</li>
-            <li style="color: #555753;">✓ Begin transaction readonly failure</li>
-            <li style="color: #555753;">✓ Begin transaction readwrite success</li>
-            <li style="color: #555753;">✓ Begin transaction readwrite failure</li>
-            <li style="color: #555753;">✓ Rollback transaction success</li>
-            <li style="color: #555753;">✓ Rollback transaction failure</li>
-            <li style="color: #555753;">✓ Commit transaction success</li>
-            <li style="color: #555753;">✓ Commit transaction failure</li>
+            <li class="success">Begin transaction readonly real</li>
+            <li class="success">Begin transaction read write real</li>
+            <li class="success">Transaction isolation level</li>
+            <li class="success">Begin transaction readonly success</li>
+            <li class="success">Begin transaction readonly failure</li>
+            <li class="success">Begin transaction readwrite success</li>
+            <li class="success">Begin transaction readwrite failure</li>
+            <li class="success">Rollback transaction success</li>
+            <li class="success">Rollback transaction failure</li>
+            <li class="success">Commit transaction success</li>
+            <li class="success">Commit transaction failure</li>
         </ul>
-        <h2 id="phpunit\UpdateTest">Update (phpunit\Update)</h2>
+        <h2>Update (phpunit\Update)</h2>
         <ul>
-            <li style="color: #555753;">✓ Update where</li>
-            <li style="color: #555753;">✓ Update</li>
-            <li style="color: #555753;">✓ Update many</li>
-            <li style="color: #555753;">✓ Update internal error</li>
-            <li style="color: #555753;">✓ Update returns null</li>
-            <li style="color: #555753;">✓ Delete where returns null</li>
+            <li class="success">Update where</li>
+            <li class="success">Update</li>
+            <li class="success">Update many</li>
+            <li class="success">Update internal error</li>
+            <li class="success">Update returns null</li>
+            <li class="success">Delete where returns null</li>
         </ul>
     </body>
 </html>

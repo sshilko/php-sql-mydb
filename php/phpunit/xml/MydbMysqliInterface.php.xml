@@ -390,6 +390,7 @@
         <token name="T_STRING">int</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$flags</token>
+        <token name="T_COMMA">,</token>
       </line>
       <line no="65">
         <token name="T_WHITESPACE">    </token>
@@ -533,7 +534,7 @@
         <token name="T_DOC_COMMENT">/**</token>
       </line>
       <line no="84">
-        <token name="T_DOC_COMMENT">     * @return int|string|null</token>
+        <token name="T_DOC_COMMENT">     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint</token>
       </line>
       <line no="85">
         <token name="T_DOC_COMMENT">     */</token>
@@ -547,6 +548,13 @@
         <token name="T_STRING">getInsertId</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">int</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">string</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">null</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="87"/>
@@ -573,13 +581,13 @@
         <token name="T_DOC_COMMENT">/**</token>
       </line>
       <line no="91">
-        <token name="T_DOC_COMMENT">    * @param array&lt;int, string&gt; $events</token>
+        <token name="T_DOC_COMMENT">     * @param array&lt;int, string&gt; $events</token>
       </line>
       <line no="92">
         <token name="T_DOC_COMMENT">     * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference</token>
       </line>
       <line no="93">
-        <token name="T_DOC_COMMENT">    */</token>
+        <token name="T_DOC_COMMENT">     */</token>
       </line>
       <line no="94">
         <token name="T_WHITESPACE">    </token>

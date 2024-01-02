@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-01-02 22:15:54</timestamp>
+  <timestamp>2024-01-02 23:50:52</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>172</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>413</totalCrap>
+    <totalCrap>412</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -72,8 +72,8 @@
       <methodName>getEnumValues</methodName>
       <methodSignature>getEnumValues(string $table, string $column): array</methodSignature>
       <fullMethod>getEnumValues(string $table, string $column): array</fullMethod>
-      <crap>7</crap>
-      <complexity>7</complexity>
+      <crap>6</crap>
+      <complexity>6</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1148,8 +1148,8 @@
       <package>sql</package>
       <className>sql\MydbMysqli</className>
       <methodName>getInsertId</methodName>
-      <methodSignature>getInsertId()</methodSignature>
-      <fullMethod>getInsertId()</fullMethod>
+      <methodSignature>getInsertId(): int|string|null</methodSignature>
+      <fullMethod>getInsertId(): int|string|null</fullMethod>
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
