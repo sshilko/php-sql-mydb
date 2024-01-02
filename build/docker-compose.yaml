@@ -118,5 +118,5 @@ services:
       context: .
       dockerfile: Dockerfile.php82
       args:
-        xdebug_php_extension: xdebug
+        xdebug_php_extension: xdebug-3.2.0
 
