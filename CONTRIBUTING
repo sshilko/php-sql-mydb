@@ -26,6 +26,7 @@ docker-compose exec app.php81 composer app-pre-commit
 docker-compose exec app.php81 composer app-quality
 git commit -m "new-feature-message"
 
+docker-compose exec -it app.php80 bash
 
 ##### Run [PHPUnit](https://phpunit.de) test suite
 
