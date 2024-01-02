@@ -41,18 +41,18 @@
         <Class sourceFile="/app/src/sql/MydbRepositoryInterface.php">MydbRepositoryInterface</Class>
       </AbstractClasses>
       <DependsUpon>
-        <Package>Psr\Log</Package>
         <Package></Package>
-        <Package>sql\MydbMysqli</Package>
-        <Package>sql\MydbListener</Package>
-        <Package>sql\MydbInterface</Package>
+        <Package>Psr\Log</Package>
         <Package>sql\MydbEvent</Package>
         <Package>sql\MydbException</Package>
+        <Package>sql\MydbInterface</Package>
+        <Package>sql\MydbListener</Package>
+        <Package>sql\MydbMysqli</Package>
       </DependsUpon>
       <UsedBy>
-        <Package>sql\MydbListener</Package>
         <Package>sql\MydbEvent</Package>
         <Package>sql\MydbException</Package>
+        <Package>sql\MydbListener</Package>
       </UsedBy>
     </Package>
     <Package name="sql\MydbEvent">
@@ -78,8 +78,8 @@
         <Package>sql</Package>
       </DependsUpon>
       <UsedBy>
-        <Package>sql\MydbListener</Package>
         <Package>sql</Package>
+        <Package>sql\MydbListener</Package>
       </UsedBy>
     </Package>
     <Package name="sql\MydbException">
@@ -169,8 +169,8 @@
       <AbstractClasses/>
       <DependsUpon>
         <Package>Psr\Log</Package>
-        <Package>sql\MydbEvent</Package>
         <Package>sql</Package>
+        <Package>sql\MydbEvent</Package>
       </DependsUpon>
       <UsedBy>
         <Package>sql</Package>
@@ -205,28 +205,25 @@
   <Cycles>
     <Package Name="sql">
       <Package>sql</Package>
-      <Package>sql\MydbListener</Package>
       <Package>sql\MydbEvent</Package>
       <Package>sql</Package>
     </Package>
     <Package Name="sql\MydbEvent">
       <Package>sql\MydbEvent</Package>
       <Package>sql</Package>
-      <Package>sql\MydbListener</Package>
       <Package>sql\MydbEvent</Package>
     </Package>
     <Package Name="sql\MydbException">
       <Package>sql\MydbException</Package>
       <Package>sql</Package>
-      <Package>sql\MydbListener</Package>
       <Package>sql\MydbEvent</Package>
       <Package>sql</Package>
     </Package>
     <Package Name="sql\MydbListener">
       <Package>sql\MydbListener</Package>
+      <Package>sql</Package>
       <Package>sql\MydbEvent</Package>
       <Package>sql</Package>
-      <Package>sql\MydbListener</Package>
     </Package>
   </Cycles>
 </PDepend>
