@@ -29,14 +29,14 @@ jobs:
 
     - name: Set build date for cache expiry
       id: date
-      run: echo "$(date +'%Y.%m'); php81" | md5 >> >> "$GITHUB_OUTPUT"
+      run: echo "IMGCACHE=$(date +'%Y.%m php81')" >> "$GITHUB_OUTPUT"
 
     - name: Load cached app docker image
       id: docker-php-image-cache
       uses: actions/cache@v3
       with:
         path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php81') }}-${{ steps.date.outputs.date }}
+        key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php81') }}-${{ steps.date.outputs.IMGCACHE }}
 
     - name: Load cached Docker image
       run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php
