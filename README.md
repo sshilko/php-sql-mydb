@@ -28,14 +28,14 @@ MyDb - Component
     <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/pages/php/phpunit/phpunit-coverage-badge-lines.svg" alt="PHPUnit lines coverage" />
     <img src="https://raw.githubusercontent.com/sshilko/php-sql-mydb/pages/php/phpunit/phpunit-coverage-badge-methods.svg" alt="PHPUnit methods coverage" />
     <br/>
-    <a href="https://sshilko.com/php-sql-mydb/php/phan/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpphan.yml/badge.svg" alt="7.4 Phan build"></a>
-    <a href="https://sshilko.com/php-sql-mydb/php/psalm/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phppsalm.yml/badge.svg" alt="7.4 Psalm build"></a>
-    <a href="https://sshilko.com/php-sql-mydb/php/phpmd/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml/badge.svg" alt="7.4 PHPMd build"></a>
-    <a href="https://sshilko.com/php-sql-mydb/php/phpstan/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml/badge.svg" alt="7.4 PHPStan build"></a>
-    <a href="https://sshilko.com/php-sql-mydb/php/phpcs/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml/badge.svg" alt="7.4 PHPCodeSniffer build"></a>
-    <a href="https://sshilko.com/php-sql-mydb/php/phpdoc/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpdoc.yml/badge.svg" alt="7.4 PHPDocumentor build"></a>
-    <a href="https://sshilko.com/php-sql-mydb/php/pdepend/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phppdepend.yml/badge.svg" alt="7.4 Pdepend build"></a>
-    <a href="https://sshilko.com/php-sql-mydb/php/phpunit/html/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml/badge.svg" alt="7.4 PHPUnit build"></a>
+    <a href="https://sshilko.com/php-sql-mydb/php/phan/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpphan.yml/badge.svg" alt="8.1 Phan build"></a>
+    <a href="https://sshilko.com/php-sql-mydb/php/psalm/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phppsalm.yml/badge.svg" alt="8.1 Psalm build"></a>
+    <a href="https://sshilko.com/php-sql-mydb/php/phpmd/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpmd.yml/badge.svg" alt="8.1 PHPMd build"></a>
+    <a href="https://sshilko.com/php-sql-mydb/php/phpstan/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpstan.yml/badge.svg" alt="8.1 PHPStan build"></a>
+    <a href="https://sshilko.com/php-sql-mydb/php/phpcs/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml/badge.svg" alt="8.1 PHPCodeSniffer build"></a>
+    <a href="https://sshilko.com/php-sql-mydb/php/phpdoc/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpdoc.yml/badge.svg" alt="8.1 PHPDocumentor build"></a>
+    <a href="https://sshilko.com/php-sql-mydb/php/pdepend/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phppdepend.yml/badge.svg" alt="8.1 Pdepend build"></a>
+    <a href="https://sshilko.com/php-sql-mydb/php/phpunit/html/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml/badge.svg" alt="8.1 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit80.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit80.yml/badge.svg" alt="8.0 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit81.yml/badge.svg" alt="8.1 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit82.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit82.yml/badge.svg" alt="8.2 PHPUnit build"></a>

@@ -7,7 +7,7 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
-name: 7.4 Docker
+name: 8.1 Docker
 
 on:
   push:
@@ -29,21 +29,21 @@ jobs:
 
       - name: Set build date for cache expiry
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m')"
+        run: echo "::set-output name=date::$(date +'%Y%m')"
 
       - name: Cache Docker php-image
         id: docker-php-image-cache
         uses: actions/cache@v3
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php74') }}-${{ steps.date.outputs.date }}
+          key: ${{ runner.os }}-docker-php-build-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php81') }}-${{ steps.date.outputs.date }}
 
       - name: Load cached Docker image
         run: docker load -i /tmp/docker-save/snapshot.tar || true
         if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
 
       - name: Build Docker image
-        run: ls -l && docker build -f build/Dockerfile.php74 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php-image-cache ./build
+        run: ls -l && docker build -f build/Dockerfile.php81 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php-image-cache ./build
         if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
         env:
           DOCKER_BUILDKIT: '1'

@@ -73,7 +73,7 @@ jobs:
         DOCKER_BUILDKIT: '1'
         COMPOSE_DOCKER_CLI_BUILD: '1'
         SERVICES_NAME: "app.php82 mysql mysql80"
-      run: docker-compose up --no-build -d $SERVICES_NAME
+      run: docker-compose up -d $SERVICES_NAME
       timeout-minutes: 1
 
     - name: Wait for all services to become healthy
