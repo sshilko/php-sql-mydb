@@ -72,7 +72,7 @@ ADD https://phar.phpunit.de/phpcpd.phar /usr/bin/phpcpd
 RUN chmod +x /usr/bin/phpcpd
 
 #phpunit coverage requirement
-ARG xdebug_php_extension=xdebug
+ARG xdebug_php_extension
 RUN mkdir /root/tmp && pear config-set temp_dir /root/tmp && install-php-extensions ${xdebug_php_extension}
 ENV XDEBUG_MODE "coverage"
 
