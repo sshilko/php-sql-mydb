@@ -105,7 +105,7 @@ class DatabaseTestCase extends TestCase
         ?MydbOptionsInterface $options = null,
         ?MydbEnvironmentInterface $environment = null,
         ?MydbQueryBuilderInterface $builder = null,
-        bool $refresh = false
+        bool $refresh = false,
     ): MydbInterface {
         if (!isset(static::$registry['db0']) || true === $refresh) {
             $credentials = new MydbCredentials(self::HOST, self::USER, self::PASS, self::NAME, (int) self::PORT);

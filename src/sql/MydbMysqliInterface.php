@@ -61,7 +61,7 @@ interface MydbMysqliInterface extends MydbMysqliEscapeStringInterface
         string $dbname,
         ?int $port,
         ?string $socket,
-        int $flags
+        int $flags,
     ): bool;
 
     public function mysqliReport(int $level): bool;
@@ -81,16 +81,16 @@ interface MydbMysqliInterface extends MydbMysqliEscapeStringInterface
     public function getAffectedRows(): ?int;
 
     /**
-     * @return int|string|null
+     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint
      */
-    public function getInsertId();
+    public function getInsertId(): int|string|null;
 
     public function autocommit(bool $enable): bool;
 
     /**
-    * @param array<int, string> $events
+     * @param array<int, string> $events
      * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference
-    */
+     */
     public function extractServerResponse(MydbEnvironmentInterface $environment, array &$events): ?mysqli_result;
 
     public function getWarnings(): array;

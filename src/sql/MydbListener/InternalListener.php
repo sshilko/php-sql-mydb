@@ -27,11 +27,8 @@ use function is_null;
 class InternalListener extends MydbListener
 {
 
-    protected ?LoggerInterface $logger;
-
-    public function __construct(?LoggerInterface $logger = null)
+    public function __construct(protected ?LoggerInterface $logger = null)
     {
-        $this->logger = $logger;
     }
 
     protected function onEvent(MydbEventMetadataInterface $event): ?bool

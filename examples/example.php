@@ -15,6 +15,7 @@
 
 declare(strict_types = 1);
 
+use MydbRepository\UserRepository;
 use sql\Mydb;
 use sql\MydbCredentials;
 use sql\MydbLogger;
@@ -23,6 +24,7 @@ use sql\MydbRegistry;
 
 include_once __DIR__ . '/../vendor/autoload.php';
 include_once __DIR__ . '/MydbRepository/UserRepository.php';
+
 
 $registry = new MydbRegistry();
 $mylogger = new MydbLogger();
@@ -89,7 +91,7 @@ $registry['db3'] = $db20;
 $db10->close();
 $db20->close();
 
-$userRepo = new MydbRepository\UserRepository($registry);
+$userRepo = new UserRepository($registry);
 $user20 = $userRepo->findById(20);
 assert('user20' === $user20[0]['name']);
 

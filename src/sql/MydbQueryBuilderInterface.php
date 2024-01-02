@@ -50,7 +50,7 @@ interface MydbQueryBuilderInterface
         array $update,
         array $whereFields,
         string $table,
-        array $whereNotFields = []
+        array $whereNotFields = [],
     ): ?string;
 
     public function buildDeleteWhere(string $table, array $fields = [], array $negativeFields = []): ?string;

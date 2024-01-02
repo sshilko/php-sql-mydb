@@ -18,13 +18,10 @@ namespace sql;
 abstract class MydbRepository implements MydbRepositoryInterface
 {
 
-    private MydbRegistry $registry;
-
     abstract public function getDatabaseIdentifier(): string;
 
-    public function __construct(MydbRegistry $registry)
+    public function __construct(private MydbRegistry $registry)
     {
-        $this->registry = $registry;
     }
 
     public function getDatabase(): MydbInterface

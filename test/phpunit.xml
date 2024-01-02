@@ -50,7 +50,7 @@
     <!-- https://phpunit.readthedocs.io/en/9.5/configuration.html#the-phpunit-element -->
     <testsuites>
         <testsuite name="phpunit">
-            <directory phpVersion="7.4.0" phpVersionOperator=">=">./phpunit</directory>
+            <directory phpVersion="8.0.0" phpVersionOperator=">=">./phpunit</directory>
         </testsuite>
     </testsuites>
 

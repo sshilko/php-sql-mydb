@@ -55,7 +55,7 @@ composer require sshilko/php-sql-mydb
 
 #### [Compatibility](https://sshilko.com/php-sql-mydb/php/)
 
-- PHP 7.4, 8.0, 8.1, 8.2
+- PHP 8.0, 8.1, 8.2
 - MySQL >=5.7.8, 8.0
 - MariaDB not compatible (TODO)
 

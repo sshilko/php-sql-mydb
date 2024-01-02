@@ -417,7 +417,7 @@ class MydbMysqli implements MydbMysqliInterface
         string $dbname,
         ?int $port,
         ?string $socket,
-        int $flags
+        int $flags,
     ): bool {
         if ($this->mysqli && !$this->isConnected() && $this->mysqli->real_connect(
             $host,
@@ -513,9 +513,9 @@ class MydbMysqli implements MydbMysqliInterface
     }
 
     /**
-     * @return int|string|null
+     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint
      */
-    public function getInsertId()
+    public function getInsertId(): int|string|null
     {
         return $this->mysqli
             ? $this->mysqli->insert_id
@@ -553,7 +553,6 @@ class MydbMysqli implements MydbMysqliInterface
          * @psalm-suppress UnusedClosureParam
          */
         $environment->set_error_handler(static function (int $errno, string $error) use (&$events) {
-            /** @var array<int, string> $events */
             $events[$errno] = $error;
 
             return true;
