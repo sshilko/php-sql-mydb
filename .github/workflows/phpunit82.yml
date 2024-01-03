@@ -35,21 +35,21 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php82-xbuild-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php82', 'composer.lock') }}
+          key: ${{ runner.os }}-docker-php82-build-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php82', 'composer.lock') }}
 
       - name: Load cached Docker image
         run: docker load -i /tmp/docker-save/snapshot.tar || true
         if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
 
       - name: Build Docker image
-        run: ls -l && docker build -f build/Dockerfile.php82 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php-image-cache ./build
+        run: ls -l && docker build -f build/Dockerfile.php82 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php82-image-cache ./build
         if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
         env:
           DOCKER_BUILDKIT: '1'
           COMPOSE_DOCKER_CLI_BUILD: '1'
 
       - name: Tag Docker image
-        run: docker tag app/php-image app/php-image-cache && mkdir -p /tmp/docker-save && docker save app/php-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
+        run: docker tag app/php-image app/php82-image-cache && mkdir -p /tmp/docker-save && docker save app/php82-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
         if: always() && steps.docker-php-image-cache.outputs.cache-hit != 'true'
 
   build:
@@ -66,10 +66,10 @@ jobs:
       uses: actions/cache@v3
       with:
         path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php82-build-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php82') }}
+        key: ${{ runner.os }}-docker-php82-build-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php82', 'composer.lock') }}
 
     - name: Load cached Docker image
-      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php82
+      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php82-image-cache app/php82
 
     - name: Docker boot
       env:
