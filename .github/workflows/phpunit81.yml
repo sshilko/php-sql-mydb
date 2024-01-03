@@ -35,7 +35,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php-xbuild81-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php81', 'composer.lock') }}
+          key: ${{ runner.os }}-docker-php-build81-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php81', 'composer.lock') }}
 
       - name: Load cached Docker image
         run: docker load -i /tmp/docker-save/snapshot.tar || true
@@ -66,7 +66,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php-build81-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php81') }}
+        key: ${{ runner.os }}-docker-php-build81-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php81', 'composer.lock') }}
 
     - name: Load cached Docker image
       run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php81

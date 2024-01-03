@@ -27,16 +27,12 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Set build date for cache expiry
-        id: date
-        run: echo "IMGCACHE=$(date +'%Y.%m php81')" >> "$GITHUB_OUTPUT"
-
       - name: Cache Docker php-image
         id: docker-php-image-cache
         uses: actions/cache@v3
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('/build/Dockerfile.php.common', '/build/Dockerfile.php81') }}-${{ steps.date.outputs.IMGCACHE }}
+          key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php.common', '/build/Dockerfile.php81') }}
 
       - name: Load cached Docker image
         run: docker load -i /tmp/docker-save/snapshot.tar || true
