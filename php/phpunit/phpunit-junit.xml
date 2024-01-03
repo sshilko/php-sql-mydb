@@ -1,297 +1,297 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="243" assertions="767" errors="0" warnings="0" failures="0" skipped="0" time="7.334350">
-    <testsuite name="phpunit" tests="243" assertions="767" errors="0" warnings="0" failures="0" skipped="0" time="7.334350">
-      <testsuite name="phpunit\DeleteTest" file="/app/test/phpunit/DeleteTest.php" tests="5" assertions="14" errors="0" warnings="0" failures="0" skipped="0" time="0.040286">
-        <testcase name="testDelete" class="phpunit\DeleteTest" classname="phpunit.DeleteTest" file="/app/test/phpunit/DeleteTest.php" line="30" assertions="4" time="0.025071"/>
-        <testcase name="testDeleteError" class="phpunit\DeleteTest" classname="phpunit.DeleteTest" file="/app/test/phpunit/DeleteTest.php" line="61" assertions="2" time="0.006564"/>
-        <testcase name="testDeleteInternalError" class="phpunit\DeleteTest" classname="phpunit.DeleteTest" file="/app/test/phpunit/DeleteTest.php" line="76" assertions="2" time="0.001959"/>
-        <testcase name="testDeleteWhere" class="phpunit\DeleteTest" classname="phpunit.DeleteTest" file="/app/test/phpunit/DeleteTest.php" line="95" assertions="4" time="0.005164"/>
-        <testcase name="testDeleteWhereReturnsNull" class="phpunit\DeleteTest" classname="phpunit.DeleteTest" file="/app/test/phpunit/DeleteTest.php" line="126" assertions="2" time="0.001529"/>
+  <testsuite name="" tests="243" assertions="767" errors="0" warnings="0" failures="0" skipped="0" time="7.346639">
+    <testsuite name="phpunit" tests="243" assertions="767" errors="0" warnings="0" failures="0" skipped="0" time="7.346639">
+      <testsuite name="phpunit\DeleteTest" file="/app/test/phpunit/DeleteTest.php" tests="5" assertions="14" errors="0" warnings="0" failures="0" skipped="0" time="0.040329">
+        <testcase name="testDelete" class="phpunit\DeleteTest" classname="phpunit.DeleteTest" file="/app/test/phpunit/DeleteTest.php" line="30" assertions="4" time="0.025507"/>
+        <testcase name="testDeleteError" class="phpunit\DeleteTest" classname="phpunit.DeleteTest" file="/app/test/phpunit/DeleteTest.php" line="61" assertions="2" time="0.006511"/>
+        <testcase name="testDeleteInternalError" class="phpunit\DeleteTest" classname="phpunit.DeleteTest" file="/app/test/phpunit/DeleteTest.php" line="76" assertions="2" time="0.001951"/>
+        <testcase name="testDeleteWhere" class="phpunit\DeleteTest" classname="phpunit.DeleteTest" file="/app/test/phpunit/DeleteTest.php" line="95" assertions="4" time="0.004868"/>
+        <testcase name="testDeleteWhereReturnsNull" class="phpunit\DeleteTest" classname="phpunit.DeleteTest" file="/app/test/phpunit/DeleteTest.php" line="126" assertions="2" time="0.001491"/>
       </testsuite>
-      <testsuite name="phpunit\ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" tests="11" assertions="18" errors="0" warnings="0" failures="0" skipped="0" time="7.024642">
-        <testcase name="testTableDoesNotExist" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="30" assertions="2" time="0.003670"/>
-        <testcase name="testFailedToConnect" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="53" assertions="2" time="1.001448"/>
-        <testcase name="testFailedToConnectAfterRetry" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="64" assertions="2" time="2.003704"/>
-        <testcase name="testFailedToConnectLazy" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="76" assertions="2" time="1.002480"/>
-        <testcase name="testFailedToCommandLazy" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="87" assertions="2" time="1.002151"/>
-        <testcase name="testFailedToBeginTransaction" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="98" assertions="1" time="1.002152"/>
-        <testcase name="testFailedToRollbackTransaction" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="108" assertions="1" time="0.000610"/>
-        <testcase name="testFailedToCommitTransaction" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="118" assertions="1" time="0.000548"/>
-        <testcase name="testFailedToEscapeLazy" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="128" assertions="2" time="1.002229"/>
-        <testcase name="testMySqlWarning" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="136" assertions="2" time="0.003386"/>
-        <testcase name="testMySqlError" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="144" assertions="1" time="0.002264"/>
+      <testsuite name="phpunit\ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" tests="11" assertions="18" errors="0" warnings="0" failures="0" skipped="0" time="7.026291">
+        <testcase name="testTableDoesNotExist" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="30" assertions="2" time="0.003632"/>
+        <testcase name="testFailedToConnect" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="53" assertions="2" time="1.002141"/>
+        <testcase name="testFailedToConnectAfterRetry" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="64" assertions="2" time="2.002866"/>
+        <testcase name="testFailedToConnectLazy" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="76" assertions="2" time="1.002527"/>
+        <testcase name="testFailedToCommandLazy" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="87" assertions="2" time="1.001694"/>
+        <testcase name="testFailedToBeginTransaction" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="98" assertions="1" time="1.002354"/>
+        <testcase name="testFailedToRollbackTransaction" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="108" assertions="1" time="0.000727"/>
+        <testcase name="testFailedToCommitTransaction" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="118" assertions="1" time="0.000557"/>
+        <testcase name="testFailedToEscapeLazy" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="128" assertions="2" time="1.002265"/>
+        <testcase name="testMySqlWarning" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="136" assertions="2" time="0.005361"/>
+        <testcase name="testMySqlError" class="phpunit\ExceptionTest" classname="phpunit.ExceptionTest" file="/app/test/phpunit/ExceptionTest.php" line="144" assertions="1" time="0.002167"/>
       </testsuite>
-      <testsuite name="phpunit\InsertTest" file="/app/test/phpunit/InsertTest.php" tests="6" assertions="16" errors="0" warnings="0" failures="0" skipped="0" time="0.022650">
-        <testcase name="testReplace" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="30" assertions="2" time="0.003516"/>
-        <testcase name="testReplaceOne" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="59" assertions="2" time="0.002922"/>
-        <testcase name="testInsertError" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="88" assertions="2" time="0.001118"/>
-        <testcase name="testInsert" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="102" assertions="2" time="0.002868"/>
-        <testcase name="testInsertMany" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="132" assertions="4" time="0.005370"/>
-        <testcase name="testInsertOne" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="218" assertions="4" time="0.006855"/>
+      <testsuite name="phpunit\InsertTest" file="/app/test/phpunit/InsertTest.php" tests="6" assertions="16" errors="0" warnings="0" failures="0" skipped="0" time="0.021770">
+        <testcase name="testReplace" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="30" assertions="2" time="0.003414"/>
+        <testcase name="testReplaceOne" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="59" assertions="2" time="0.002787"/>
+        <testcase name="testInsertError" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="88" assertions="2" time="0.001145"/>
+        <testcase name="testInsert" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="102" assertions="2" time="0.002748"/>
+        <testcase name="testInsertMany" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="132" assertions="4" time="0.004918"/>
+        <testcase name="testInsertOne" class="phpunit\InsertTest" classname="phpunit.InsertTest" file="/app/test/phpunit/InsertTest.php" line="218" assertions="4" time="0.006757"/>
       </testsuite>
-      <testsuite name="phpunit\LoggerTest" file="/app/test/phpunit/LoggerTest.php" tests="15" assertions="76" errors="0" warnings="0" failures="0" skipped="0" time="0.007547">
-        <testcase name="testLoggerError" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="130" assertions="2" time="0.001098"/>
-        <testcase name="testLoggerConstructorOut" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="149" assertions="1" time="0.000421"/>
-        <testcase name="testLoggerConstructorErr" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="161" assertions="1" time="0.000379"/>
-        <testcase name="testLoggerStreamErrEnd" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="174" assertions="1" time="0.000476"/>
-        <testcase name="testLoggerStreamOutClosed" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="189" assertions="1" time="0.000471"/>
-        <testcase name="testLoggerStreamErrClosed" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="202" assertions="1" time="0.000397"/>
-        <testcase name="testLoggerStreamOutBadMode" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="215" assertions="1" time="0.000379"/>
-        <testcase name="testLoggerStreamErrBadMode" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="226" assertions="1" time="0.000416"/>
-        <testcase name="testLoggerStreamOutEnd" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="240" assertions="1" time="0.000465"/>
-        <testsuite name="phpunit\LoggerTest::testLoggerWithStrings" tests="5" assertions="64" errors="0" warnings="0" failures="0" skipped="0" time="0.002614">
-          <testcase name="testLoggerWithStrings with data set &quot;nothing&quot;" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="259" assertions="14" time="0.000526"/>
-          <testcase name="testLoggerWithStrings with data set &quot;nothing-array&quot;" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="259" assertions="14" time="0.000507"/>
-          <testcase name="testLoggerWithStrings with data set &quot;nothing-error&quot;" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="259" assertions="12" time="0.000488"/>
-          <testcase name="testLoggerWithStrings with data set &quot;something&quot;" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="259" assertions="12" time="0.000580"/>
-          <testcase name="testLoggerWithStrings with data set &quot;chars&quot;" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="259" assertions="12" time="0.000514"/>
+      <testsuite name="phpunit\LoggerTest" file="/app/test/phpunit/LoggerTest.php" tests="15" assertions="76" errors="0" warnings="0" failures="0" skipped="0" time="0.007720">
+        <testcase name="testLoggerError" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="130" assertions="2" time="0.001106"/>
+        <testcase name="testLoggerConstructorOut" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="149" assertions="1" time="0.000490"/>
+        <testcase name="testLoggerConstructorErr" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="161" assertions="1" time="0.000321"/>
+        <testcase name="testLoggerStreamErrEnd" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="174" assertions="1" time="0.000479"/>
+        <testcase name="testLoggerStreamOutClosed" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="189" assertions="1" time="0.000485"/>
+        <testcase name="testLoggerStreamErrClosed" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="202" assertions="1" time="0.000403"/>
+        <testcase name="testLoggerStreamOutBadMode" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="215" assertions="1" time="0.000403"/>
+        <testcase name="testLoggerStreamErrBadMode" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="226" assertions="1" time="0.000401"/>
+        <testcase name="testLoggerStreamOutEnd" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="240" assertions="1" time="0.000455"/>
+        <testsuite name="phpunit\LoggerTest::testLoggerWithStrings" tests="5" assertions="64" errors="0" warnings="0" failures="0" skipped="0" time="0.002737">
+          <testcase name="testLoggerWithStrings with data set &quot;nothing&quot;" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="259" assertions="14" time="0.000557"/>
+          <testcase name="testLoggerWithStrings with data set &quot;nothing-array&quot;" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="259" assertions="14" time="0.000506"/>
+          <testcase name="testLoggerWithStrings with data set &quot;nothing-error&quot;" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="259" assertions="12" time="0.000533"/>
+          <testcase name="testLoggerWithStrings with data set &quot;something&quot;" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="259" assertions="12" time="0.000574"/>
+          <testcase name="testLoggerWithStrings with data set &quot;chars&quot;" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="259" assertions="12" time="0.000567"/>
         </testsuite>
-        <testcase name="testLoggerWithContext" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="297" assertions="2" time="0.000431"/>
+        <testcase name="testLoggerWithContext" class="phpunit\LoggerTest" classname="phpunit.LoggerTest" file="/app/test/phpunit/LoggerTest.php" line="297" assertions="2" time="0.000440"/>
       </testsuite>
-      <testsuite name="phpunit\MetaTest" file="/app/test/phpunit/MetaTest.php" tests="13" assertions="361" errors="0" warnings="0" failures="0" skipped="0" time="0.063919">
-        <testcase name="testOpen" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="33" assertions="1" time="0.002595"/>
-        <testcase name="testClose" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="42" assertions="1" time="0.002058"/>
-        <testcase name="testPrimaryKey" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="50" assertions="1" time="0.011004"/>
-        <testcase name="testPrimaryKeyNotFound" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="57" assertions="1" time="0.002941"/>
-        <testcase name="testPrimaryKeyComposite" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="64" assertions="1" time="0.003632"/>
-        <testcase name="testEnum" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="71" assertions="1" time="0.012037"/>
-        <testcase name="testSet" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="78" assertions="1" time="0.002887"/>
-        <testcase name="testNotRealEnumOrSet" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="85" assertions="2" time="0.003072"/>
-        <testcase name="testEscape" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="93" assertions="342" time="0.006860"/>
-        <testcase name="testSingleQuotedEscape" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="615" assertions="3" time="0.001736"/>
-        <testcase name="testDoubleQuotedEscape" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="630" assertions="3" time="0.001650"/>
-        <testcase name="testPrimaryKeyNotDefined" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="645" assertions="1" time="0.010561"/>
-        <testcase name="testPrimaryKeyQueryFailed" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="661" assertions="3" time="0.002886"/>
+      <testsuite name="phpunit\MetaTest" file="/app/test/phpunit/MetaTest.php" tests="13" assertions="361" errors="0" warnings="0" failures="0" skipped="0" time="0.068515">
+        <testcase name="testOpen" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="33" assertions="1" time="0.003162"/>
+        <testcase name="testClose" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="42" assertions="1" time="0.002137"/>
+        <testcase name="testPrimaryKey" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="50" assertions="1" time="0.020071"/>
+        <testcase name="testPrimaryKeyNotFound" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="57" assertions="1" time="0.003002"/>
+        <testcase name="testPrimaryKeyComposite" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="64" assertions="1" time="0.003563"/>
+        <testcase name="testEnum" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="71" assertions="1" time="0.007509"/>
+        <testcase name="testSet" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="78" assertions="1" time="0.002862"/>
+        <testcase name="testNotRealEnumOrSet" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="85" assertions="2" time="0.002855"/>
+        <testcase name="testEscape" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="93" assertions="342" time="0.007005"/>
+        <testcase name="testSingleQuotedEscape" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="615" assertions="3" time="0.001691"/>
+        <testcase name="testDoubleQuotedEscape" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="630" assertions="3" time="0.001697"/>
+        <testcase name="testPrimaryKeyNotDefined" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="645" assertions="1" time="0.010102"/>
+        <testcase name="testPrimaryKeyQueryFailed" class="phpunit\MetaTest" classname="phpunit.MetaTest" file="/app/test/phpunit/MetaTest.php" line="661" assertions="3" time="0.002860"/>
       </testsuite>
-      <testsuite name="phpunit\MydbEnvironmentTest" file="/app/test/phpunit/MydbEnvironmentTest.php" tests="4" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.001651">
-        <testsuite name="phpunit\MydbEnvironmentTest::testSignalSighupTrap" tests="4" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.001651">
-          <testcase name="testSignalSighupTrap with data set &quot;SIGHUP&quot;" class="phpunit\MydbEnvironmentTest" classname="phpunit.MydbEnvironmentTest" file="/app/test/phpunit/MydbEnvironmentTest.php" line="64" assertions="1" time="0.000483"/>
-          <testcase name="testSignalSighupTrap with data set &quot;SIGTERM&quot;" class="phpunit\MydbEnvironmentTest" classname="phpunit.MydbEnvironmentTest" file="/app/test/phpunit/MydbEnvironmentTest.php" line="64" assertions="1" time="0.000402"/>
-          <testcase name="testSignalSighupTrap with data set &quot;SIGINT&quot;" class="phpunit\MydbEnvironmentTest" classname="phpunit.MydbEnvironmentTest" file="/app/test/phpunit/MydbEnvironmentTest.php" line="64" assertions="1" time="0.000356"/>
-          <testcase name="testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;" class="phpunit\MydbEnvironmentTest" classname="phpunit.MydbEnvironmentTest" file="/app/test/phpunit/MydbEnvironmentTest.php" line="64" assertions="1" time="0.000410"/>
+      <testsuite name="phpunit\MydbEnvironmentTest" file="/app/test/phpunit/MydbEnvironmentTest.php" tests="4" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.001972">
+        <testsuite name="phpunit\MydbEnvironmentTest::testSignalSighupTrap" tests="4" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.001972">
+          <testcase name="testSignalSighupTrap with data set &quot;SIGHUP&quot;" class="phpunit\MydbEnvironmentTest" classname="phpunit.MydbEnvironmentTest" file="/app/test/phpunit/MydbEnvironmentTest.php" line="64" assertions="1" time="0.000486"/>
+          <testcase name="testSignalSighupTrap with data set &quot;SIGTERM&quot;" class="phpunit\MydbEnvironmentTest" classname="phpunit.MydbEnvironmentTest" file="/app/test/phpunit/MydbEnvironmentTest.php" line="64" assertions="1" time="0.000454"/>
+          <testcase name="testSignalSighupTrap with data set &quot;SIGINT&quot;" class="phpunit\MydbEnvironmentTest" classname="phpunit.MydbEnvironmentTest" file="/app/test/phpunit/MydbEnvironmentTest.php" line="64" assertions="1" time="0.000493"/>
+          <testcase name="testSignalSighupTrap with data set &quot;SIGINT,SIGTERM,SIGHUP&quot;" class="phpunit\MydbEnvironmentTest" classname="phpunit.MydbEnvironmentTest" file="/app/test/phpunit/MydbEnvironmentTest.php" line="64" assertions="1" time="0.000538"/>
         </testsuite>
       </testsuite>
-      <testsuite name="phpunit\MydbEventTest" file="/app/test/phpunit/MydbEventTest.php" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.001150">
-        <testcase name="testMydbEventListenerBreak" class="phpunit\MydbEventTest" classname="phpunit.MydbEventTest" file="/app/test/phpunit/MydbEventTest.php" line="34" assertions="1" time="0.000359"/>
-        <testcase name="testMydbEventListenerException" class="phpunit\MydbEventTest" classname="phpunit.MydbEventTest" file="/app/test/phpunit/MydbEventTest.php" line="60" assertions="1" time="0.000482"/>
-        <testcase name="testMydbInternalEventSuccess" class="phpunit\MydbEventTest" classname="phpunit.MydbEventTest" file="/app/test/phpunit/MydbEventTest.php" line="79" assertions="2" time="0.000309"/>
+      <testsuite name="phpunit\MydbEventTest" file="/app/test/phpunit/MydbEventTest.php" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.001298">
+        <testcase name="testMydbEventListenerBreak" class="phpunit\MydbEventTest" classname="phpunit.MydbEventTest" file="/app/test/phpunit/MydbEventTest.php" line="34" assertions="1" time="0.000377"/>
+        <testcase name="testMydbEventListenerException" class="phpunit\MydbEventTest" classname="phpunit.MydbEventTest" file="/app/test/phpunit/MydbEventTest.php" line="60" assertions="1" time="0.000575"/>
+        <testcase name="testMydbInternalEventSuccess" class="phpunit\MydbEventTest" classname="phpunit.MydbEventTest" file="/app/test/phpunit/MydbEventTest.php" line="79" assertions="2" time="0.000346"/>
       </testsuite>
-      <testsuite name="phpunit\MydbExceptionTest" file="/app/test/phpunit/MydbExceptionTest.php" tests="2" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.000986">
-        <testcase name="testMyException" class="phpunit\MydbExceptionTest" classname="phpunit.MydbExceptionTest" file="/app/test/phpunit/MydbExceptionTest.php" line="34" assertions="2" time="0.000373"/>
-        <testcase name="testQueryBuilderException" class="phpunit\MydbExceptionTest" classname="phpunit.MydbExceptionTest" file="/app/test/phpunit/MydbExceptionTest.php" line="47" assertions="2" time="0.000613"/>
+      <testsuite name="phpunit\MydbExceptionTest" file="/app/test/phpunit/MydbExceptionTest.php" tests="2" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.000942">
+        <testcase name="testMyException" class="phpunit\MydbExceptionTest" classname="phpunit.MydbExceptionTest" file="/app/test/phpunit/MydbExceptionTest.php" line="34" assertions="2" time="0.000387"/>
+        <testcase name="testQueryBuilderException" class="phpunit\MydbExceptionTest" classname="phpunit.MydbExceptionTest" file="/app/test/phpunit/MydbExceptionTest.php" line="47" assertions="2" time="0.000555"/>
       </testsuite>
-      <testsuite name="phpunit\MysqliTest" file="/app/test/phpunit/MysqliTest.php" tests="12" assertions="25" errors="0" warnings="0" failures="0" skipped="0" time="0.007664">
-        <testcase name="testReuseResource" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="31" assertions="1" time="0.000489"/>
-        <testcase name="testGetMysqli" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="39" assertions="1" time="0.000470"/>
-        <testcase name="testOptionsNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="50" assertions="1" time="0.000453"/>
-        <testcase name="testQueryNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="57" assertions="1" time="0.000446"/>
-        <testcase name="testReadResponseNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="64" assertions="1" time="0.000470"/>
-        <testcase name="testExtractResponseNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="71" assertions="2" time="0.000466"/>
-        <testcase name="testEscapeNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="80" assertions="1" time="0.000442"/>
-        <testcase name="testTransactionsNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="87" assertions="7" time="0.000487"/>
-        <testcase name="testTransactionsWillFinishWhenForcedAutocommit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="106" assertions="7" time="0.002534"/>
-        <testcase name="testCloseNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="133" assertions="1" time="0.000519"/>
-        <testcase name="testAffectedRowsNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="140" assertions="1" time="0.000445"/>
-        <testcase name="testWarningsNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="147" assertions="1" time="0.000445"/>
+      <testsuite name="phpunit\MysqliTest" file="/app/test/phpunit/MysqliTest.php" tests="12" assertions="25" errors="0" warnings="0" failures="0" skipped="0" time="0.007792">
+        <testcase name="testReuseResource" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="31" assertions="1" time="0.000500"/>
+        <testcase name="testGetMysqli" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="39" assertions="1" time="0.000462"/>
+        <testcase name="testOptionsNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="50" assertions="1" time="0.000463"/>
+        <testcase name="testQueryNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="57" assertions="1" time="0.000450"/>
+        <testcase name="testReadResponseNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="64" assertions="1" time="0.000478"/>
+        <testcase name="testExtractResponseNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="71" assertions="2" time="0.000463"/>
+        <testcase name="testEscapeNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="80" assertions="1" time="0.000452"/>
+        <testcase name="testTransactionsNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="87" assertions="7" time="0.000503"/>
+        <testcase name="testTransactionsWillFinishWhenForcedAutocommit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="106" assertions="7" time="0.002591"/>
+        <testcase name="testCloseNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="133" assertions="1" time="0.000530"/>
+        <testcase name="testAffectedRowsNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="140" assertions="1" time="0.000448"/>
+        <testcase name="testWarningsNoInit" class="phpunit\MysqliTest" classname="phpunit.MysqliTest" file="/app/test/phpunit/MysqliTest.php" line="147" assertions="1" time="0.000451"/>
       </testsuite>
-      <testsuite name="phpunit\OptionsTest" file="/app/test/phpunit/OptionsTest.php" tests="19" assertions="27" errors="0" warnings="0" failures="0" skipped="0" time="0.008557">
-        <testcase name="testNonInteractiveTimeouts" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="30" assertions="1" time="0.000437"/>
-        <testcase name="testTransactionIsolationLevel" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="37" assertions="6" time="0.000466"/>
-        <testcase name="testServerSideSelectTimeouts" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="57" assertions="1" time="0.000413"/>
-        <testcase name="testErrorReporting" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="64" assertions="1" time="0.000427"/>
-        <testcase name="testReadTimeout" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="71" assertions="1" time="0.000405"/>
-        <testcase name="testNetworkBuffer" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="81" assertions="1" time="0.000429"/>
-        <testcase name="testNetworkBufferMin" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="91" assertions="1" time="0.000552"/>
-        <testcase name="testNetworkBufferMax" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="101" assertions="1" time="0.000373"/>
-        <testcase name="testSetReadBuffer" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="111" assertions="1" time="0.000473"/>
-        <testcase name="testSetReadBufferMin" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="121" assertions="1" time="0.000476"/>
-        <testcase name="testSetReadBufferMax" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="131" assertions="1" time="0.000465"/>
-        <testcase name="testMysqliReport" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="141" assertions="1" time="0.000483"/>
-        <testcase name="testMysqliReportMin" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="151" assertions="1" time="0.000449"/>
-        <testcase name="testMysqliReportMax" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="161" assertions="1" time="0.000448"/>
-        <testcase name="testSetTimeZone" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="168" assertions="1" time="0.000430"/>
-        <testcase name="testAutocommit" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="175" assertions="2" time="0.000452"/>
-        <testcase name="testCharset" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="184" assertions="1" time="0.000460"/>
-        <testcase name="testPersistent" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="191" assertions="2" time="0.000448"/>
-        <testcase name="testReadonly" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="200" assertions="2" time="0.000471"/>
+      <testsuite name="phpunit\OptionsTest" file="/app/test/phpunit/OptionsTest.php" tests="19" assertions="27" errors="0" warnings="0" failures="0" skipped="0" time="0.008618">
+        <testcase name="testNonInteractiveTimeouts" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="30" assertions="1" time="0.000428"/>
+        <testcase name="testTransactionIsolationLevel" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="37" assertions="6" time="0.000459"/>
+        <testcase name="testServerSideSelectTimeouts" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="57" assertions="1" time="0.000457"/>
+        <testcase name="testErrorReporting" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="64" assertions="1" time="0.000448"/>
+        <testcase name="testReadTimeout" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="71" assertions="1" time="0.000433"/>
+        <testcase name="testNetworkBuffer" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="81" assertions="1" time="0.000441"/>
+        <testcase name="testNetworkBufferMin" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="91" assertions="1" time="0.000619"/>
+        <testcase name="testNetworkBufferMax" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="101" assertions="1" time="0.000376"/>
+        <testcase name="testSetReadBuffer" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="111" assertions="1" time="0.000452"/>
+        <testcase name="testSetReadBufferMin" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="121" assertions="1" time="0.000459"/>
+        <testcase name="testSetReadBufferMax" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="131" assertions="1" time="0.000466"/>
+        <testcase name="testMysqliReport" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="141" assertions="1" time="0.000444"/>
+        <testcase name="testMysqliReportMin" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="151" assertions="1" time="0.000459"/>
+        <testcase name="testMysqliReportMax" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="161" assertions="1" time="0.000457"/>
+        <testcase name="testSetTimeZone" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="168" assertions="1" time="0.000421"/>
+        <testcase name="testAutocommit" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="175" assertions="2" time="0.000444"/>
+        <testcase name="testCharset" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="184" assertions="1" time="0.000432"/>
+        <testcase name="testPersistent" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="191" assertions="2" time="0.000477"/>
+        <testcase name="testReadonly" class="phpunit\OptionsTest" classname="phpunit.OptionsTest" file="/app/test/phpunit/OptionsTest.php" line="200" assertions="2" time="0.000443"/>
       </testsuite>
-      <testsuite name="phpunit\QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" tests="87" assertions="102" errors="0" warnings="0" failures="0" skipped="0" time="0.042347">
-        <testcase name="testShowColumnsLike" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="57" assertions="3" time="0.001121"/>
-        <testcase name="testShowKeys" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="72" assertions="3" time="0.000446"/>
-        <testsuite name="phpunit\QueryBuilderTest::testInsertOne" tests="9" assertions="18" errors="0" warnings="0" failures="0" skipped="0" time="0.004542">
-          <testcase name="testInsertOne with data set &quot;simple int&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000498"/>
-          <testcase name="testInsertOne with data set &quot;simple float&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000534"/>
-          <testcase name="testInsertOne with data set &quot;expression&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000492"/>
-          <testcase name="testInsertOne with data set &quot;raw null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000447"/>
-          <testcase name="testInsertOne with data set &quot;string caps null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000533"/>
-          <testcase name="testInsertOne with data set &quot;string lowercase null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000500"/>
-          <testcase name="testInsertOne with data set &quot;string 0x&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000523"/>
-          <testcase name="testInsertOne with data set &quot;string 0x even&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000519"/>
-          <testcase name="testInsertOne with data set &quot;string 0x mismatch&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000497"/>
+      <testsuite name="phpunit\QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" tests="87" assertions="102" errors="0" warnings="0" failures="0" skipped="0" time="0.043953">
+        <testcase name="testShowColumnsLike" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="57" assertions="3" time="0.001141"/>
+        <testcase name="testShowKeys" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="72" assertions="3" time="0.000542"/>
+        <testsuite name="phpunit\QueryBuilderTest::testInsertOne" tests="9" assertions="18" errors="0" warnings="0" failures="0" skipped="0" time="0.005396">
+          <testcase name="testInsertOne with data set &quot;simple int&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000632"/>
+          <testcase name="testInsertOne with data set &quot;simple float&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000672"/>
+          <testcase name="testInsertOne with data set &quot;expression&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000599"/>
+          <testcase name="testInsertOne with data set &quot;raw null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000558"/>
+          <testcase name="testInsertOne with data set &quot;string caps null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000668"/>
+          <testcase name="testInsertOne with data set &quot;string lowercase null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000674"/>
+          <testcase name="testInsertOne with data set &quot;string 0x&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000577"/>
+          <testcase name="testInsertOne with data set &quot;string 0x even&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000517"/>
+          <testcase name="testInsertOne with data set &quot;string 0x mismatch&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="87" assertions="2" time="0.000499"/>
         </testsuite>
-        <testcase name="testInsertReplaceOneException" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="96" assertions="1" time="0.000470"/>
-        <testsuite name="phpunit\QueryBuilderTest::testReplaceOne" tests="9" assertions="9" errors="0" warnings="0" failures="0" skipped="0" time="0.004279">
-          <testcase name="testReplaceOne with data set &quot;simple int&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000497"/>
-          <testcase name="testReplaceOne with data set &quot;simple float&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000474"/>
-          <testcase name="testReplaceOne with data set &quot;expression&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000473"/>
-          <testcase name="testReplaceOne with data set &quot;raw null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000462"/>
-          <testcase name="testReplaceOne with data set &quot;string caps null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000457"/>
-          <testcase name="testReplaceOne with data set &quot;string lowercase null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000459"/>
-          <testcase name="testReplaceOne with data set &quot;string 0x&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000479"/>
-          <testcase name="testReplaceOne with data set &quot;string 0x even&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000463"/>
-          <testcase name="testReplaceOne with data set &quot;string 0x mismatch&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000515"/>
+        <testcase name="testInsertReplaceOneException" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="96" assertions="1" time="0.000467"/>
+        <testsuite name="phpunit\QueryBuilderTest::testReplaceOne" tests="9" assertions="9" errors="0" warnings="0" failures="0" skipped="0" time="0.004218">
+          <testcase name="testReplaceOne with data set &quot;simple int&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000475"/>
+          <testcase name="testReplaceOne with data set &quot;simple float&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000445"/>
+          <testcase name="testReplaceOne with data set &quot;expression&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000460"/>
+          <testcase name="testReplaceOne with data set &quot;raw null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000440"/>
+          <testcase name="testReplaceOne with data set &quot;string caps null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000493"/>
+          <testcase name="testReplaceOne with data set &quot;string lowercase null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000450"/>
+          <testcase name="testReplaceOne with data set &quot;string 0x&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000441"/>
+          <testcase name="testReplaceOne with data set &quot;string 0x even&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000505"/>
+          <testcase name="testReplaceOne with data set &quot;string 0x mismatch&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="114" assertions="1" time="0.000508"/>
         </testsuite>
-        <testcase name="testEscape" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="121" assertions="3" time="0.000600"/>
-        <testsuite name="phpunit\QueryBuilderTest::testBuildUpdateWhereMany" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.001093">
-          <testcase name="testBuildUpdateWhereMany with data set &quot;simple&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="135" assertions="1" time="0.000517"/>
-          <testcase name="testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="135" assertions="1" time="0.000576"/>
+        <testcase name="testEscape" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="121" assertions="3" time="0.000585"/>
+        <testsuite name="phpunit\QueryBuilderTest::testBuildUpdateWhereMany" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.001100">
+          <testcase name="testBuildUpdateWhereMany with data set &quot;simple&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="135" assertions="1" time="0.000564"/>
+          <testcase name="testBuildUpdateWhereMany with data set &quot;prefixed simple&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="135" assertions="1" time="0.000536"/>
         </testsuite>
-        <testsuite name="phpunit\QueryBuilderTest::testBuildWhere" tests="48" assertions="48" errors="0" warnings="0" failures="0" skipped="0" time="0.022792">
-          <testcase name="testBuildWhere with data set &quot;simple&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000475"/>
-          <testcase name="testBuildWhere with data set &quot;expression&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000470"/>
-          <testcase name="testBuildWhere with data set &quot;expression8&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000492"/>
-          <testcase name="testBuildWhere with data set &quot;simple array count &gt;1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000504"/>
-          <testcase name="testBuildWhere with data set &quot;negative array count &gt;1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000515"/>
-          <testcase name="testBuildWhere with data set &quot;simple null array count &gt;1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000484"/>
-          <testcase name="testBuildWhere with data set &quot;negative null array count &gt;1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000483"/>
-          <testcase name="testBuildWhere with data set &quot;simple array count 1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000472"/>
-          <testcase name="testBuildWhere with data set &quot;negative array count 1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000490"/>
-          <testcase name="testBuildWhere with data set &quot;simple null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000459"/>
-          <testcase name="testBuildWhere with data set &quot;negative null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000454"/>
-          <testcase name="testBuildWhere with data set &quot;like null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000454"/>
-          <testcase name="testBuildWhere with data set #0" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000464"/>
-          <testcase name="testBuildWhere with data set #1" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000478"/>
-          <testcase name="testBuildWhere with data set #2" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000465"/>
-          <testcase name="testBuildWhere with data set #3" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000466"/>
-          <testcase name="testBuildWhere with data set #4" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000522"/>
-          <testcase name="testBuildWhere with data set #5" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000465"/>
-          <testcase name="testBuildWhere with data set #6" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000487"/>
-          <testcase name="testBuildWhere with data set #7" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000487"/>
-          <testcase name="testBuildWhere with data set #8" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000470"/>
-          <testcase name="testBuildWhere with data set #9" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000467"/>
-          <testcase name="testBuildWhere with data set #10" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000464"/>
-          <testcase name="testBuildWhere with data set #11" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000462"/>
-          <testcase name="testBuildWhere with data set #12" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000464"/>
-          <testcase name="testBuildWhere with data set #13" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000463"/>
-          <testcase name="testBuildWhere with data set #14" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000462"/>
-          <testcase name="testBuildWhere with data set #15" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000456"/>
+        <testsuite name="phpunit\QueryBuilderTest::testBuildWhere" tests="48" assertions="48" errors="0" warnings="0" failures="0" skipped="0" time="0.023355">
+          <testcase name="testBuildWhere with data set &quot;simple&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000500"/>
+          <testcase name="testBuildWhere with data set &quot;expression&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000495"/>
+          <testcase name="testBuildWhere with data set &quot;expression8&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000468"/>
+          <testcase name="testBuildWhere with data set &quot;simple array count &gt;1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000476"/>
+          <testcase name="testBuildWhere with data set &quot;negative array count &gt;1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000529"/>
+          <testcase name="testBuildWhere with data set &quot;simple null array count &gt;1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000471"/>
+          <testcase name="testBuildWhere with data set &quot;negative null array count &gt;1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000481"/>
+          <testcase name="testBuildWhere with data set &quot;simple array count 1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000568"/>
+          <testcase name="testBuildWhere with data set &quot;negative array count 1&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000475"/>
+          <testcase name="testBuildWhere with data set &quot;simple null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000454"/>
+          <testcase name="testBuildWhere with data set &quot;negative null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000443"/>
+          <testcase name="testBuildWhere with data set &quot;like null&quot;" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000484"/>
+          <testcase name="testBuildWhere with data set #0" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000469"/>
+          <testcase name="testBuildWhere with data set #1" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000498"/>
+          <testcase name="testBuildWhere with data set #2" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000491"/>
+          <testcase name="testBuildWhere with data set #3" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000483"/>
+          <testcase name="testBuildWhere with data set #4" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000519"/>
+          <testcase name="testBuildWhere with data set #5" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000478"/>
+          <testcase name="testBuildWhere with data set #6" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000476"/>
+          <testcase name="testBuildWhere with data set #7" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000512"/>
+          <testcase name="testBuildWhere with data set #8" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000474"/>
+          <testcase name="testBuildWhere with data set #9" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000479"/>
+          <testcase name="testBuildWhere with data set #10" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000457"/>
+          <testcase name="testBuildWhere with data set #11" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000482"/>
+          <testcase name="testBuildWhere with data set #12" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000495"/>
+          <testcase name="testBuildWhere with data set #13" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000483"/>
+          <testcase name="testBuildWhere with data set #14" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000483"/>
+          <testcase name="testBuildWhere with data set #15" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000492"/>
           <testcase name="testBuildWhere with data set #16" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000476"/>
-          <testcase name="testBuildWhere with data set #17" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000471"/>
-          <testcase name="testBuildWhere with data set #18" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000468"/>
-          <testcase name="testBuildWhere with data set #19" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000464"/>
-          <testcase name="testBuildWhere with data set #20" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000463"/>
-          <testcase name="testBuildWhere with data set #21" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000466"/>
-          <testcase name="testBuildWhere with data set #22" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000466"/>
-          <testcase name="testBuildWhere with data set #23" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000501"/>
-          <testcase name="testBuildWhere with data set #24" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000476"/>
-          <testcase name="testBuildWhere with data set #25" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000470"/>
-          <testcase name="testBuildWhere with data set #26" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000521"/>
-          <testcase name="testBuildWhere with data set #27" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000476"/>
-          <testcase name="testBuildWhere with data set #28" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000466"/>
-          <testcase name="testBuildWhere with data set #29" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000481"/>
-          <testcase name="testBuildWhere with data set #30" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000473"/>
-          <testcase name="testBuildWhere with data set #31" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000474"/>
-          <testcase name="testBuildWhere with data set #32" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000465"/>
-          <testcase name="testBuildWhere with data set #33" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000476"/>
-          <testcase name="testBuildWhere with data set #34" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000486"/>
-          <testcase name="testBuildWhere with data set #35" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000463"/>
+          <testcase name="testBuildWhere with data set #17" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000482"/>
+          <testcase name="testBuildWhere with data set #18" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000477"/>
+          <testcase name="testBuildWhere with data set #19" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000470"/>
+          <testcase name="testBuildWhere with data set #20" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000486"/>
+          <testcase name="testBuildWhere with data set #21" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000482"/>
+          <testcase name="testBuildWhere with data set #22" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000476"/>
+          <testcase name="testBuildWhere with data set #23" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000492"/>
+          <testcase name="testBuildWhere with data set #24" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000478"/>
+          <testcase name="testBuildWhere with data set #25" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000479"/>
+          <testcase name="testBuildWhere with data set #26" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000494"/>
+          <testcase name="testBuildWhere with data set #27" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000490"/>
+          <testcase name="testBuildWhere with data set #28" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000477"/>
+          <testcase name="testBuildWhere with data set #29" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000513"/>
+          <testcase name="testBuildWhere with data set #30" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000450"/>
+          <testcase name="testBuildWhere with data set #31" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000490"/>
+          <testcase name="testBuildWhere with data set #32" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000480"/>
+          <testcase name="testBuildWhere with data set #33" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000483"/>
+          <testcase name="testBuildWhere with data set #34" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000480"/>
+          <testcase name="testBuildWhere with data set #35" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="144" assertions="1" time="0.000584"/>
         </testsuite>
-        <testcase name="testBuildWhereException" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="150" assertions="1" time="0.000473"/>
-        <testcase name="testBuildInsertManyException" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="156" assertions="1" time="0.000469"/>
-        <testcase name="testBuildUpdateWhereManyException1" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="171" assertions="1" time="0.000467"/>
-        <testcase name="testBuildUpdateWhereManyException2" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="177" assertions="1" time="0.000472"/>
-        <testcase name="testBuildUpdateWhereManyException3" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="183" assertions="1" time="0.000471"/>
-        <testcase name="testBuildUpdateWhereManyException4" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="189" assertions="1" time="0.000441"/>
-        <testcase name="testBuildUpdateWhereManyException5" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="195" assertions="1" time="0.000465"/>
-        <testcase name="testBuildUpdateWhereManyException6" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="201" assertions="1" time="0.000458"/>
-        <testcase name="testBuildUpdateWhereManyException7" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="207" assertions="1" time="0.000473"/>
-        <testcase name="testbuildDeleteWhereExceptions" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="366" assertions="1" time="0.000463"/>
-        <testcase name="testBuildUpdateWhereExceptions1" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="378" assertions="1" time="0.000479"/>
-        <testcase name="testBuildUpdateWhereExceptions2" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="384" assertions="1" time="0.000437"/>
-        <testcase name="testBuildUpdateWhereExceptions3" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="390" assertions="1" time="0.000505"/>
-        <testcase name="testBuildUpdateWhereExceptions4" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="396" assertions="1" time="0.000468"/>
-        <testcase name="testBuildUpdateWhereExceptions5" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="402" assertions="1" time="0.000464"/>
+        <testcase name="testBuildWhereException" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="150" assertions="1" time="0.000472"/>
+        <testcase name="testBuildInsertManyException" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="156" assertions="1" time="0.000456"/>
+        <testcase name="testBuildUpdateWhereManyException1" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="171" assertions="1" time="0.000500"/>
+        <testcase name="testBuildUpdateWhereManyException2" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="177" assertions="1" time="0.000480"/>
+        <testcase name="testBuildUpdateWhereManyException3" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="183" assertions="1" time="0.000478"/>
+        <testcase name="testBuildUpdateWhereManyException4" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="189" assertions="1" time="0.000485"/>
+        <testcase name="testBuildUpdateWhereManyException5" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="195" assertions="1" time="0.000469"/>
+        <testcase name="testBuildUpdateWhereManyException6" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="201" assertions="1" time="0.000482"/>
+        <testcase name="testBuildUpdateWhereManyException7" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="207" assertions="1" time="0.000474"/>
+        <testcase name="testbuildDeleteWhereExceptions" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="366" assertions="1" time="0.000475"/>
+        <testcase name="testBuildUpdateWhereExceptions1" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="378" assertions="1" time="0.000487"/>
+        <testcase name="testBuildUpdateWhereExceptions2" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="384" assertions="1" time="0.000474"/>
+        <testcase name="testBuildUpdateWhereExceptions3" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="390" assertions="1" time="0.000488"/>
+        <testcase name="testBuildUpdateWhereExceptions4" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="396" assertions="1" time="0.000477"/>
+        <testcase name="testBuildUpdateWhereExceptions5" class="phpunit\QueryBuilderTest" classname="phpunit.QueryBuilderTest" file="/app/test/phpunit/QueryBuilderTest.php" line="402" assertions="1" time="0.000451"/>
       </testsuite>
-      <testsuite name="phpunit\RegistryTest" file="/app/test/phpunit/RegistryTest.php" tests="11" assertions="10" errors="0" warnings="0" failures="0" skipped="0" time="0.004882">
-        <testcase name="testRegistryEmpty1" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="30" assertions="1" time="0.000408"/>
-        <testcase name="testRegistryEmpty2" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="36" assertions="1" time="0.000434"/>
-        <testcase name="testRegistryEmpty3" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="42" assertions="1" time="0.000550"/>
-        <testcase name="testRegistrySet" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="49" assertions="1" time="0.000369"/>
-        <testcase name="testRegistryUnSet1" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="56" assertions="1" time="0.000427"/>
-        <testcase name="testRegistryUnSet2" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="63" assertions="0" time="0.000483"/>
-        <testcase name="testRegistrySerialize1" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="71" assertions="1" time="0.000464"/>
-        <testcase name="testRegistrySerialize2" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="78" assertions="1" time="0.000419"/>
-        <testcase name="testRegistryUnserialize1" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="85" assertions="1" time="0.000451"/>
-        <testcase name="testRegistryUnserialize2" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="92" assertions="1" time="0.000431"/>
-        <testcase name="testRegistryClone" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="99" assertions="1" time="0.000446"/>
+      <testsuite name="phpunit\RegistryTest" file="/app/test/phpunit/RegistryTest.php" tests="11" assertions="10" errors="0" warnings="0" failures="0" skipped="0" time="0.005206">
+        <testcase name="testRegistryEmpty1" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="30" assertions="1" time="0.000434"/>
+        <testcase name="testRegistryEmpty2" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="36" assertions="1" time="0.000437"/>
+        <testcase name="testRegistryEmpty3" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="42" assertions="1" time="0.000627"/>
+        <testcase name="testRegistrySet" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="49" assertions="1" time="0.000398"/>
+        <testcase name="testRegistryUnSet1" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="56" assertions="1" time="0.000479"/>
+        <testcase name="testRegistryUnSet2" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="63" assertions="0" time="0.000541"/>
+        <testcase name="testRegistrySerialize1" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="71" assertions="1" time="0.000479"/>
+        <testcase name="testRegistrySerialize2" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="78" assertions="1" time="0.000455"/>
+        <testcase name="testRegistryUnserialize1" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="85" assertions="1" time="0.000442"/>
+        <testcase name="testRegistryUnserialize2" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="92" assertions="1" time="0.000451"/>
+        <testcase name="testRegistryClone" class="phpunit\RegistryTest" classname="phpunit.RegistryTest" file="/app/test/phpunit/RegistryTest.php" line="99" assertions="1" time="0.000463"/>
       </testsuite>
-      <testsuite name="phpunit\RepositoryTest" file="/app/test/phpunit/RepositoryTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.000745">
-        <testcase name="testRegistry" class="phpunit\RepositoryTest" classname="phpunit.RepositoryTest" file="/app/test/phpunit/RepositoryTest.php" line="29" assertions="2" time="0.000745"/>
+      <testsuite name="phpunit\RepositoryTest" file="/app/test/phpunit/RepositoryTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.000808">
+        <testcase name="testRegistry" class="phpunit\RepositoryTest" classname="phpunit.RepositoryTest" file="/app/test/phpunit/RepositoryTest.php" line="29" assertions="2" time="0.000808"/>
       </testsuite>
-      <testsuite name="phpunit\ResourceTest" file="/app/test/phpunit/ResourceTest.php" tests="22" assertions="50" errors="0" warnings="0" failures="0" skipped="0" time="0.033631">
-        <testcase name="testOpen" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="36" assertions="1" time="0.001610"/>
-        <testcase name="testOpenCloseError" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="42" assertions="2" time="0.001268"/>
-        <testcase name="testOpenAutocommitFailed" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="55" assertions="2" time="0.001597"/>
-        <testcase name="testSimpleClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="71" assertions="1" time="0.000475"/>
-        <testcase name="testCloseNotConnected" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="77" assertions="1" time="0.000741"/>
-        <testcase name="testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="85" assertions="2" time="0.004142"/>
-        <testcase name="testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="105" assertions="2" time="0.001515"/>
-        <testcase name="testTransactionExceptionOnPersistentClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="122" assertions="3" time="0.001615"/>
-        <testcase name="testTransactionExceptionOnNonPersistentClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="141" assertions="3" time="0.001384"/>
-        <testcase name="testDisconnectExceptionOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="160" assertions="3" time="0.001084"/>
-        <testcase name="testUncaughtExceptionBecomesInternalExceptionOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="176" assertions="3" time="0.001215"/>
-        <testcase name="testNoGcWhenNotConnected" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="192" assertions="1" time="0.000771"/>
-        <testcase name="testGcWhenConnected" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="202" assertions="1" time="0.001253"/>
-        <testcase name="testDoNoCommitTransactionWhenAutocommitEnabledOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="218" assertions="1" time="0.001368"/>
-        <testcase name="testDoNoCommitTransactionWhenTransactionExplicitlyStartedOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="234" assertions="1" time="0.001245"/>
-        <testcase name="testQueryBadClientRequest" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="249" assertions="3" time="0.001032"/>
-        <testcase name="testQueryBadServerResponse" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="262" assertions="3" time="0.001160"/>
-        <testcase name="testQueryBadServerResponsePacketFieldCountIsZero" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="276" assertions="4" time="0.001858"/>
-        <testcase name="testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="295" assertions="4" time="0.001414"/>
-        <testcase name="testConnectingDefaultsFailed" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="315" assertions="3" time="0.002429"/>
-        <testcase name="testConnectingTransactionIsolationFailed" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="341" assertions="3" time="0.002262"/>
-        <testcase name="testConnectingTransactionAutocommitFailed" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="364" assertions="3" time="0.002192"/>
+      <testsuite name="phpunit\ResourceTest" file="/app/test/phpunit/ResourceTest.php" tests="22" assertions="50" errors="0" warnings="0" failures="0" skipped="0" time="0.033815">
+        <testcase name="testOpen" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="36" assertions="1" time="0.001830"/>
+        <testcase name="testOpenCloseError" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="42" assertions="2" time="0.001406"/>
+        <testcase name="testOpenAutocommitFailed" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="55" assertions="2" time="0.001622"/>
+        <testcase name="testSimpleClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="71" assertions="1" time="0.000474"/>
+        <testcase name="testCloseNotConnected" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="77" assertions="1" time="0.000737"/>
+        <testcase name="testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="85" assertions="2" time="0.004173"/>
+        <testcase name="testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="105" assertions="2" time="0.001530"/>
+        <testcase name="testTransactionExceptionOnPersistentClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="122" assertions="3" time="0.001582"/>
+        <testcase name="testTransactionExceptionOnNonPersistentClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="141" assertions="3" time="0.001322"/>
+        <testcase name="testDisconnectExceptionOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="160" assertions="3" time="0.001067"/>
+        <testcase name="testUncaughtExceptionBecomesInternalExceptionOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="176" assertions="3" time="0.001201"/>
+        <testcase name="testNoGcWhenNotConnected" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="192" assertions="1" time="0.000802"/>
+        <testcase name="testGcWhenConnected" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="202" assertions="1" time="0.001223"/>
+        <testcase name="testDoNoCommitTransactionWhenAutocommitEnabledOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="218" assertions="1" time="0.001341"/>
+        <testcase name="testDoNoCommitTransactionWhenTransactionExplicitlyStartedOnClose" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="234" assertions="1" time="0.001247"/>
+        <testcase name="testQueryBadClientRequest" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="249" assertions="3" time="0.001020"/>
+        <testcase name="testQueryBadServerResponse" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="262" assertions="3" time="0.001143"/>
+        <testcase name="testQueryBadServerResponsePacketFieldCountIsZero" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="276" assertions="4" time="0.001878"/>
+        <testcase name="testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="295" assertions="4" time="0.001388"/>
+        <testcase name="testConnectingDefaultsFailed" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="315" assertions="3" time="0.002431"/>
+        <testcase name="testConnectingTransactionIsolationFailed" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="341" assertions="3" time="0.002205"/>
+        <testcase name="testConnectingTransactionAutocommitFailed" class="phpunit\ResourceTest" classname="phpunit.ResourceTest" file="/app/test/phpunit/ResourceTest.php" line="364" assertions="3" time="0.002191"/>
       </testsuite>
-      <testsuite name="phpunit\SelectTest" file="/app/test/phpunit/SelectTest.php" tests="15" assertions="20" errors="0" warnings="0" failures="0" skipped="0" time="0.037193">
-        <testsuite name="phpunit\SelectTest::testSimpleSelect" tests="13" assertions="13" errors="0" warnings="0" failures="0" skipped="0" time="0.033018">
-          <testcase name="testSimpleSelect with data set &quot;simple select all&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002099"/>
-          <testcase name="testSimpleSelect with data set &quot;complex select all&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.001890"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select JOIN&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.007467"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select UNION&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002531"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select ORDER BY&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.001880"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select WHERE&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002072"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select COUNT&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002617"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select GROUP BY&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002160"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select HAVING&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002445"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select LIMIT&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002008"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.001979"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select ALL&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.001934"/>
-          <testcase name="testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.001937"/>
+      <testsuite name="phpunit\SelectTest" file="/app/test/phpunit/SelectTest.php" tests="15" assertions="20" errors="0" warnings="0" failures="0" skipped="0" time="0.038880">
+        <testsuite name="phpunit\SelectTest::testSimpleSelect" tests="13" assertions="13" errors="0" warnings="0" failures="0" skipped="0" time="0.034688">
+          <testcase name="testSimpleSelect with data set &quot;simple select all&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002383"/>
+          <testcase name="testSimpleSelect with data set &quot;complex select all&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002053"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select JOIN&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.007341"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select UNION&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.003099"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select ORDER BY&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002015"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select WHERE&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002316"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select COUNT&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002783"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select GROUP BY&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002229"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select HAVING&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002347"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select LIMIT&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002023"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select LIMIT OFFSET&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002089"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select ALL&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.002078"/>
+          <testcase name="testSimpleSelect with data set &quot;simple select SQL_SMALL_RESULT&quot;" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="147" assertions="1" time="0.001932"/>
         </testsuite>
-        <testcase name="testTerminationDuringQuery" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="154" assertions="4" time="0.002641"/>
+        <testcase name="testTerminationDuringQuery" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="154" assertions="4" time="0.002660"/>
         <testcase name="testServerGoneDuringQuery" class="phpunit\SelectTest" classname="phpunit.SelectTest" file="/app/test/phpunit/SelectTest.php" line="176" assertions="3" time="0.001533"/>
       </testsuite>
-      <testsuite name="phpunit\TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" tests="11" assertions="19" errors="0" warnings="0" failures="0" skipped="0" time="0.023375">
-        <testcase name="testBeginTransactionReadonlyReal" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="38" assertions="1" time="0.003901"/>
-        <testcase name="testBeginTransactionReadWriteReal" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="59" assertions="1" time="0.002520"/>
-        <testcase name="testTransactionIsolationLevel" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="72" assertions="5" time="0.008749"/>
-        <testcase name="testBeginTransactionReadonlySuccess" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="95" assertions="1" time="0.001114"/>
-        <testcase name="testBeginTransactionReadonlyFailure" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="108" assertions="2" time="0.001243"/>
-        <testcase name="testBeginTransactionReadwriteSuccess" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="122" assertions="1" time="0.000947"/>
-        <testcase name="testBeginTransactionReadwriteFailure" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="135" assertions="2" time="0.001238"/>
-        <testcase name="testRollbackTransactionSuccess" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="149" assertions="1" time="0.000810"/>
-        <testcase name="testRollbackTransactionFailure" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="161" assertions="2" time="0.001060"/>
-        <testcase name="testCommitTransactionSuccess" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="174" assertions="1" time="0.000828"/>
-        <testcase name="testCommitTransactionFailure" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="186" assertions="2" time="0.000965"/>
+      <testsuite name="phpunit\TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" tests="11" assertions="19" errors="0" warnings="0" failures="0" skipped="0" time="0.024244">
+        <testcase name="testBeginTransactionReadonlyReal" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="38" assertions="1" time="0.004278"/>
+        <testcase name="testBeginTransactionReadWriteReal" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="59" assertions="1" time="0.002612"/>
+        <testcase name="testTransactionIsolationLevel" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="72" assertions="5" time="0.009059"/>
+        <testcase name="testBeginTransactionReadonlySuccess" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="95" assertions="1" time="0.001141"/>
+        <testcase name="testBeginTransactionReadonlyFailure" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="108" assertions="2" time="0.001236"/>
+        <testcase name="testBeginTransactionReadwriteSuccess" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="122" assertions="1" time="0.000922"/>
+        <testcase name="testBeginTransactionReadwriteFailure" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="135" assertions="2" time="0.001319"/>
+        <testcase name="testRollbackTransactionSuccess" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="149" assertions="1" time="0.000806"/>
+        <testcase name="testRollbackTransactionFailure" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="161" assertions="2" time="0.001128"/>
+        <testcase name="testCommitTransactionSuccess" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="174" assertions="1" time="0.000791"/>
+        <testcase name="testCommitTransactionFailure" class="phpunit\TransactionsTest" classname="phpunit.TransactionsTest" file="/app/test/phpunit/TransactionsTest.php" line="186" assertions="2" time="0.000953"/>
       </testsuite>
-      <testsuite name="phpunit\UpdateTest" file="/app/test/phpunit/UpdateTest.php" tests="6" assertions="15" errors="0" warnings="0" failures="0" skipped="0" time="0.013124">
-        <testcase name="testUpdateWhere" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="31" assertions="4" time="0.004436"/>
-        <testcase name="testUpdate" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="73" assertions="3" time="0.002673"/>
-        <testcase name="testUpdateMany" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="100" assertions="2" time="0.002710"/>
-        <testcase name="testUpdateInternalError" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="132" assertions="2" time="0.001578"/>
-        <testcase name="testUpdateReturnsNull" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="152" assertions="2" time="0.001021"/>
-        <testcase name="testDeleteWhereReturnsNull" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="165" assertions="2" time="0.000705"/>
+      <testsuite name="phpunit\UpdateTest" file="/app/test/phpunit/UpdateTest.php" tests="6" assertions="15" errors="0" warnings="0" failures="0" skipped="0" time="0.014485">
+        <testcase name="testUpdateWhere" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="31" assertions="4" time="0.005270"/>
+        <testcase name="testUpdate" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="73" assertions="3" time="0.002871"/>
+        <testcase name="testUpdateMany" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="100" assertions="2" time="0.002979"/>
+        <testcase name="testUpdateInternalError" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="132" assertions="2" time="0.001611"/>
+        <testcase name="testUpdateReturnsNull" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="152" assertions="2" time="0.001008"/>
+        <testcase name="testDeleteWhereReturnsNull" class="phpunit\UpdateTest" classname="phpunit.UpdateTest" file="/app/test/phpunit/UpdateTest.php" line="165" assertions="2" time="0.000745"/>
       </testsuite>
     </testsuite>
   </testsuite>
