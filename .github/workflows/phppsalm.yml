@@ -11,60 +11,59 @@ name: 8.3 Psalm
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 
 permissions:
   contents: read
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'skip-ci')"
     timeout-minutes: 5
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v5
 
-    - name: PHP setup
-      uses: shivammathur/setup-php@v2    
-      with: 
-        php-version: '8.3'
-        extensions: simplexml,dom,xml,intl,ast,mysql,xdebug
-        coverage: xdebug
+      - name: PHP setup
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: simplexml,dom,xml,intl,ast,mysql,xdebug
+          coverage: xdebug
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate
+      - name: Validate composer.json and composer.lock
+        run: composer validate
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
 
-    - name: PHP Version
-      run: php --version
+      - name: PHP Version
+        run: php --version
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --optimize-autoloader
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --optimize-autoloader
 
-      # Docs: https://github.com/psalm/shepherd
-    - name: Run psalm suite and send shepherd stats psalm.dev
-      run: composer app-psalm -- --shepherd > $PWD/build/tmp/psalm.stdout.txt
-    - name: Echo psalm output
-      run: cat $PWD/build/tmp/psalm.stdout.txt
+        # Docs: https://github.com/psalm/shepherd
+      - name: Run psalm suite and send shepherd stats psalm.dev
+        run: composer app-psalm -- --shepherd > $PWD/build/tmp/psalm.stdout.txt
+      - name: Echo psalm output
+        run: cat $PWD/build/tmp/psalm.stdout.txt
 
-    # https://github.com/actions/upload-artifact
-    - name: Upload Psalm artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        retention-days: 1
-        name: psalm-output
-        path: |
-          build/tmp/psalm.stdout.txt
-          build/tmp/psalm.txt
+      # https://github.com/actions/upload-artifact
+      - name: Upload Psalm artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          retention-days: 1
+          name: psalm-output
+          path: |
+            build/tmp/psalm.stdout.txt
+            build/tmp/psalm.txt
   pages:
     needs: build
     runs-on: ubuntu-latest
@@ -73,7 +72,7 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout pages branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           ref: pages
 

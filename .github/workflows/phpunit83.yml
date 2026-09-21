@@ -11,7 +11,7 @@ name: 8.3 PHPUnit
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 
 permissions:
   contents: read
@@ -22,7 +22,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'skip-ci')"
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -45,8 +45,8 @@ jobs:
         run: ls -l && docker build -f build/Dockerfile.php83 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php83-image-cache ./build
         if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
         env:
-          DOCKER_BUILDKIT: '1'
-          COMPOSE_DOCKER_CLI_BUILD: '1'
+          DOCKER_BUILDKIT: "1"
+          COMPOSE_DOCKER_CLI_BUILD: "1"
 
       - name: Tag Docker image
         run: docker tag app/php-image app/php83-image-cache && mkdir -p /tmp/docker-save && docker save app/php83-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
@@ -59,43 +59,43 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
-    - name: Load cached app docker image
-      id: docker-php-image-cache
-      uses: actions/cache@v3
-      with:
-        path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83', 'composer.lock') }}
+      - name: Load cached app docker image
+        id: docker-php-image-cache
+        uses: actions/cache@v3
+        with:
+          path: /tmp/docker-save
+          key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83', 'composer.lock') }}
 
-    - name: Load cached Docker image
-      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php83-image-cache app/php83
+      - name: Load cached Docker image
+        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php83-image-cache app/php83
 
-    - name: Docker boot
-      env:
-        DOCKER_BUILDKIT: '1'
-        COMPOSE_DOCKER_CLI_BUILD: '1'
-        SERVICES_NAME: "app.php83 mysql mysql80"
-      run: docker-compose up -d $SERVICES_NAME
-      timeout-minutes: 1
+      - name: Docker boot
+        env:
+          DOCKER_BUILDKIT: "1"
+          COMPOSE_DOCKER_CLI_BUILD: "1"
+          SERVICES_NAME: "app.php83 mysql mysql80"
+        run: docker-compose up -d $SERVICES_NAME
+        timeout-minutes: 1
 
-    - name: Wait for all services to become healthy
-      run: for SVC in "app.php83" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 5; done; done
-      timeout-minutes: 2
+      - name: Wait for all services to become healthy
+        run: for SVC in "app.php83" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 5; done; done
+        timeout-minutes: 2
 
-    - name: Sleep
-      run: sleep 4
-    - run: docker-compose ps
+      - name: Sleep
+        run: sleep 4
+      - run: docker-compose ps
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
 
-    - name: Docker install dependencies
-      run: docker-compose exec -T app.php83 composer install
+      - name: Docker install dependencies
+        run: docker-compose exec -T app.php83 composer install
 
-    - name: Docker run PHPUnit
-      run: docker-compose exec -T app.php83 composer app-phpunit
+      - name: Docker run PHPUnit
+        run: docker-compose exec -T app.php83 composer app-phpunit

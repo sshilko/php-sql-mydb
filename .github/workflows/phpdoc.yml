@@ -11,7 +11,7 @@ name: 8.3 PHPDocumentor
 
 on:
   workflow_run:
-    workflows: [ "8.3 Docker" ]
+    workflows: ["8.3 Docker"]
     types:
       - completed
 
@@ -25,50 +25,50 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
-    - name: Load cached app docker image
-      id: docker-php-image-cache
-      uses: actions/cache@v3
-      with:
-        path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83') }}
+      - name: Load cached app docker image
+        id: docker-php-image-cache
+        uses: actions/cache@v3
+        with:
+          path: /tmp/docker-save
+          key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83') }}
 
-    - name: Load cached Docker image
-      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php
+      - name: Load cached Docker image
+        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php
 
-    - name: Docker boot
-      env:
-        SERVICES_NAME: "app.php83"
-      run: docker-compose up -d $SERVICES_NAME
+      - name: Docker boot
+        env:
+          SERVICES_NAME: "app.php83"
+        run: docker-compose up -d $SERVICES_NAME
 
-    - run: docker-compose ps
+      - run: docker-compose ps
 
-    - name: Sleep
-      run: sleep 6
-      timeout-minutes: 1
+      - name: Sleep
+        run: sleep 6
+        timeout-minutes: 1
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
 
-    - name: Docker install dependencies
-      run: docker-compose exec -T app.php83 composer install
+      - name: Docker install dependencies
+        run: docker-compose exec -T app.php83 composer install
 
-      # Docs: https://phpunit.readthedocs.io/en/9.5/
-    - name: Docker run PHPDoc
-      run: docker-compose exec -T app.php83 composer app-phpdoc
+        # Docs: https://phpunit.readthedocs.io/en/9.5/
+      - name: Docker run PHPDoc
+        run: docker-compose exec -T app.php83 composer app-phpdoc
 
-      # https://github.com/actions/upload-artifact
-    - name: Upload PHPDoc artifacts
-      uses: actions/upload-artifact@v4
-      with:
+        # https://github.com/actions/upload-artifact
+      - name: Upload PHPDoc artifacts
+        uses: actions/upload-artifact@v4
+        with:
           name: phpdoc-output
           path: |
-              build/tmp/phpdoc-output
+            build/tmp/phpdoc-output
           retention-days: 1
 
   docs:
@@ -78,31 +78,30 @@ jobs:
     permissions: write-all
     steps:
       # https://github.com/actions/checkout
-    - name: Checkout pages branch
-      uses: actions/checkout@v3
-      with:
-        ref: pages
+      - name: Checkout pages branch
+        uses: actions/checkout@v5
+        with:
+          ref: pages
 
-    # https://github.com/marketplace/actions/download-a-build-artifact
-    - name: Download all PHPUnit artifacts
-      uses: actions/download-artifact@v4
-      with:
+      # https://github.com/marketplace/actions/download-a-build-artifact
+      - name: Download all PHPUnit artifacts
+        uses: actions/download-artifact@v4
+        with:
           name: phpdoc-output
           path: php/phpdoc
 
-    - uses: nick-fields/retry@v2
-      name: Commit phpdoc details
-      continue-on-error: true
-      with:
+      - uses: nick-fields/retry@v2
+        name: Commit phpdoc details
+        continue-on-error: true
+        with:
           timeout_seconds: 20
           max_attempts: 3
           retry_on: error
           command: |
-              git status
-              git config user.name github-actions
-              git config user.email github-actions@github.com
-              git pull
-              git add php/phpdoc/*
-              git commit -m "generated phpdoc artifacts from revision ${GITHUB_SHA::7}"
-              git push
-
+            git status
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git pull
+            git add php/phpdoc/*
+            git commit -m "generated phpdoc artifacts from revision ${GITHUB_SHA::7}"
+            git push

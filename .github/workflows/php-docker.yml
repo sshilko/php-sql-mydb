@@ -11,7 +11,7 @@ name: 8.3 Docker
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 
 permissions:
   contents: read
@@ -22,7 +22,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'skip-ci')"
     timeout-minutes: 6
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -42,8 +42,8 @@ jobs:
         run: ls -l && docker build -f build/Dockerfile.php83 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php-image-cache ./build
         if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
         env:
-          DOCKER_BUILDKIT: '1'
-          COMPOSE_DOCKER_CLI_BUILD: '1'
+          DOCKER_BUILDKIT: "1"
+          COMPOSE_DOCKER_CLI_BUILD: "1"
 
       - name: Tag Docker image
         run: docker tag app/php-image app/php-image-cache && mkdir -p /tmp/docker-save && docker save app/php-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true

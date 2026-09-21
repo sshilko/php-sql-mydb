@@ -11,26 +11,25 @@ name: 8.3 PHPCS
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 
 permissions:
   contents: read
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'skip-ci')"
     timeout-minutes: 5
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: PHP setup
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version: "8.3"
           extensions: simplexml,dom,xml,intl,ast,mysql,xdebug
           coverage: xdebug
 
@@ -57,47 +56,48 @@ jobs:
 
         # Docs: https://github.com/squizlabs/PHP_CodeSniffer
       - name: Run PHPCodeSniffer github.com/squizlabs/PHP_CodeSniffer
-        run: composer app-phpcs
+        run:
+          composer app-phpcs
 
           # https://github.com/actions/upload-artifact
       - name: Upload PHPCS artifacts
         uses: actions/upload-artifact@v4
         with:
-            name: phpcs-output
-            path: |
-                build/tmp/phpcs.txt
-            retention-days: 1
+          name: phpcs-output
+          path: |
+            build/tmp/phpcs.txt
+          retention-days: 1
   pages:
-      needs: build
-      runs-on: ubuntu-latest
-      timeout-minutes: 2
-      permissions: write-all
-      steps:
-          # https://github.com/actions/checkout
-          - name: Checkout pages branch
-            uses: actions/checkout@v3
-            with:
-                ref: pages
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions: write-all
+    steps:
+      # https://github.com/actions/checkout
+      - name: Checkout pages branch
+        uses: actions/checkout@v5
+        with:
+          ref: pages
 
-          # https://github.com/marketplace/actions/download-a-build-artifact
-          - name: Download all PHPCS artifacts
-            uses: actions/download-artifact@v4
-            with:
-                name: phpcs-output
-                path: php/phpcs
+      # https://github.com/marketplace/actions/download-a-build-artifact
+      - name: Download all PHPCS artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: phpcs-output
+          path: php/phpcs
 
-          - uses: nick-fields/retry@v2
-            name: Commit php/phpcs
-            continue-on-error: true
-            with:
-                timeout_seconds: 20
-                max_attempts: 3
-                retry_on: error
-                command: |
-                    git status
-                    git config user.name github-actions
-                    git config user.email github-actions@github.com
-                    git pull
-                    git add php/phpcs/phpcs.txt
-                    git commit -m "generated phpcs docs from revision ${GITHUB_SHA::7}"
-                    git push
+      - uses: nick-fields/retry@v2
+        name: Commit php/phpcs
+        continue-on-error: true
+        with:
+          timeout_seconds: 20
+          max_attempts: 3
+          retry_on: error
+          command: |
+            git status
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git pull
+            git add php/phpcs/phpcs.txt
+            git commit -m "generated phpcs docs from revision ${GITHUB_SHA::7}"
+            git push
