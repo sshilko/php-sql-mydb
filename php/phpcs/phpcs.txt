@@ -1,0 +1,44 @@
+WARNING: The PHP_CodeSniffer standard uses 1 deprecated sniff
+--------------------------------------------------------------------------------
+-  SlevomatCodingStandard.TypeHints.UnionTypeHintFormat
+   This sniff has been deprecated since Slevomat Coding Standard 8.16.0 and
+   will be removed in Slevomat Coding Standard 9.0.0. Use
+   SlevomatCodingStandard.TypeHints.DNFTypeHintFormat instead.
+
+Deprecated sniffs are still run, but will stop working at some point in the
+future.
+
+File,Line,Column,Type,Message,Source,Severity,Fixable
+WARNING: The PHP_CodeSniffer standard uses 1 deprecated sniff
+--------------------------------------------------------------------------------
+-  SlevomatCodingStandard.TypeHints.UnionTypeHintFormat
+   This sniff has been deprecated since Slevomat Coding Standard 8.16.0 and
+   will be removed in Slevomat Coding Standard 9.0.0. Use
+   SlevomatCodingStandard.TypeHints.DNFTypeHintFormat instead.
+
+Deprecated sniffs are still run, but will stop working at some point in the
+future.
+
+File,Line,Column,Type,Message,Source,Severity,Fixable
+WARNING: The PHP_CodeSniffer standard uses 1 deprecated sniff
+--------------------------------------------------------------------------------
+-  SlevomatCodingStandard.TypeHints.UnionTypeHintFormat
+   This sniff has been deprecated since Slevomat Coding Standard 8.16.0 and
+   will be removed in Slevomat Coding Standard 9.0.0. Use
+   SlevomatCodingStandard.TypeHints.DNFTypeHintFormat instead.
+
+Deprecated sniffs are still run, but will stop working at some point in the
+future.
+
+File,Line,Column,Type,Message,Source,Severity,Fixable
+WARNING: The PHP_CodeSniffer standard uses 1 deprecated sniff
+--------------------------------------------------------------------------------
+-  SlevomatCodingStandard.TypeHints.UnionTypeHintFormat
+   This sniff has been deprecated since Slevomat Coding Standard 8.16.0 and
+   will be removed in Slevomat Coding Standard 9.0.0. Use
+   SlevomatCodingStandard.TypeHints.DNFTypeHintFormat instead.
+
+Deprecated sniffs are still run, but will stop working at some point in the
+future.
+
+File,Line,Column,Type,Message,Source,Severity,Fixable
