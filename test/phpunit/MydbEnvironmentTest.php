@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use sql\MydbEnvironment;
 use function getmypid;
@@ -35,7 +36,7 @@ final class MydbEnvironmentTest extends TestCase
      * @return array<array<string, string>>
      * @throws \phpunit\Exception
      */
-    public function dataProviderSignals(): array
+    public static function dataProviderSignals(): array
     {
         return [
             'SIGHUP' => [
@@ -58,9 +59,9 @@ final class MydbEnvironmentTest extends TestCase
     }
 
     /**
-     * @dataProvider dataProviderSignals
      * @throws \phpunit\EnvironmentException
      */
+    #[DataProvider('dataProviderSignals')]
     public function testSignalSighupTrap(array $signals, array $expect): void
     {
         $env = new MydbEnvironment();

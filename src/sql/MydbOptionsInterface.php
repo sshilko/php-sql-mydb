@@ -25,11 +25,11 @@ interface MydbOptionsInterface
     /**
      * @see https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html
      */
-    public const TRANSACTION_ISOLATION_LEVEL_DEFAULT          = 'REPEATABLE READ';
-    public const TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ  = 'REPEATABLE READ';
-    public const TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED   = 'READ COMMITTED';
-    public const TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED = 'READ UNCOMMITTED';
-    public const TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE     = 'SERIALIZABLE';
+    public const string TRANSACTION_ISOLATION_LEVEL_DEFAULT          = 'REPEATABLE READ';
+    public const string TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ  = 'REPEATABLE READ';
+    public const string TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED   = 'READ COMMITTED';
+    public const string TRANSACTION_ISOLATION_LEVEL_READ_UNCOMMITTED = 'READ UNCOMMITTED';
+    public const string TRANSACTION_ISOLATION_LEVEL_SERIALIZABLE     = 'SERIALIZABLE';
 
     public function getNonInteractiveTimeout(): int;
 

@@ -7,7 +7,7 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
-name: 8.1 PHPUnit
+name: 8.3 PHPUnit
 
 on:
   push:
@@ -35,21 +35,21 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php-build81-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php81', 'composer.lock') }}
+          key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83', 'composer.lock') }}
 
       - name: Load cached Docker image
         run: docker load -i /tmp/docker-save/snapshot.tar || true
         if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
 
       - name: Build Docker image
-        run: ls -l && docker build -f build/Dockerfile.php81 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php-image-cache ./build
+        run: ls -l && docker build -f build/Dockerfile.php83 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php83-image-cache ./build
         if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
         env:
           DOCKER_BUILDKIT: '1'
           COMPOSE_DOCKER_CLI_BUILD: '1'
 
       - name: Tag Docker image
-        run: docker tag app/php-image app/php-image-cache && mkdir -p /tmp/docker-save && docker save app/php-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
+        run: docker tag app/php-image app/php83-image-cache && mkdir -p /tmp/docker-save && docker save app/php83-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
         if: always() && steps.docker-php-image-cache.outputs.cache-hit != 'true'
 
   build:
@@ -66,21 +66,21 @@ jobs:
       uses: actions/cache@v3
       with:
         path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php-build81-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php81', 'composer.lock') }}
+        key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83', 'composer.lock') }}
 
     - name: Load cached Docker image
-      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php81
+      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php83-image-cache app/php83
 
     - name: Docker boot
       env:
         DOCKER_BUILDKIT: '1'
         COMPOSE_DOCKER_CLI_BUILD: '1'
-        SERVICES_NAME: "app.php81 mysql mysql80"
+        SERVICES_NAME: "app.php83 mysql mysql80"
       run: docker-compose up -d $SERVICES_NAME
       timeout-minutes: 1
 
     - name: Wait for all services to become healthy
-      run: for SVC in "app.php81" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 5; done; done
+      run: for SVC in "app.php83" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 5; done; done
       timeout-minutes: 2
 
     - name: Sleep
@@ -92,11 +92,10 @@ jobs:
       uses: actions/cache@v3
       with:
         path: vendor
-        key: ${{ runner.os }}-php81-${{ hashFiles('composer.lock') }}-composer-dev
+        key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
 
     - name: Docker install dependencies
-      run: docker-compose exec -T app.php81 composer install
+      run: docker-compose exec -T app.php83 composer install
 
-      # Docs: https://phpunit.readthedocs.io/en/9.5/
     - name: Docker run PHPUnit
-      run: docker-compose exec -T app.php81 composer app-phpunit
+      run: docker-compose exec -T app.php83 composer app-phpunit

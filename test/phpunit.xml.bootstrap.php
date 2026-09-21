@@ -21,4 +21,9 @@ foreach (glob(__DIR__ . '/phpunit/includes/*.php') as $filename) {
 /**
  * @phpcs:disable
  */
-define("PHPUNIT_MYSQL_MYDB1_HOST", $_ENV['PHPUNIT_MYSQL_MYDB1_HOST'] ?? 'mysql');
+$mysqlHost = getenv('PHPUNIT_MYSQL_MYDB1_HOST');
+if (false === $mysqlHost) {
+    $mysqlHost = 'mysql';
+}
+
+define('PHPUNIT_MYSQL_MYDB1_HOST', $mysqlHost);

@@ -16,6 +16,7 @@ declare(strict_types = 1);
 namespace sql\MydbMysqli;
 
 use mysqli_result;
+use Override;
 use const MYSQLI_ASSOC;
 
 /**
@@ -26,15 +27,9 @@ use const MYSQLI_ASSOC;
  */
 class MydbMysqliResult implements MydbMysqliResultInterface
 {
-    protected const MYSQLI_ASSOC = MYSQLI_ASSOC;
+    protected const int MYSQLI_ASSOC = MYSQLI_ASSOC;
 
-    protected ?array $result = null;
-
-    /**
-     * @psalm-var array<array-key, string>
-     * @phpcs:disable SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion.RequiredConstructorPropertyPromotion
-     */
-    protected array $warnings;
+    protected readonly ?array $result;
 
     protected ?string $errorMessage = null;
 
@@ -43,16 +38,17 @@ class MydbMysqliResult implements MydbMysqliResultInterface
     /**
      * @psalm-param array<array-key, string> $warnings
      */
-    public function __construct(?mysqli_result $result, array $warnings, protected int $fieldsCount)
+    public function __construct(?mysqli_result $result, protected readonly array $warnings, protected int $fieldsCount)
     {
         if (null !== $result) {
             $this->result = $result->fetch_all(self::MYSQLI_ASSOC);
             $result->free();
+        } else {
+            $this->result = null;
         }
-
-        $this->warnings = $warnings;
     }
 
+    #[Override]
     public function getFieldCount(): int
     {
         return $this->fieldsCount;
@@ -61,24 +57,28 @@ class MydbMysqliResult implements MydbMysqliResultInterface
     /**
      * @psalm-return array<array-key, string>
      */
+    #[Override]
     public function getWarnings(): array
     {
         return $this->warnings;
     }
 
+    #[Override]
     public function setErrorMessage(string $errorMessage): void
     {
         $this->errorMessage = $errorMessage;
     }
 
+    #[Override]
     public function setErrorNumber(int $errorNumber): void
     {
         $this->errorNumber = $errorNumber;
     }
 
+    #[Override]
     public function getError(): ?string
     {
-        if ($this->result) {
+        if (null !== $this->result) {
             return null;
         }
 
@@ -95,6 +95,7 @@ class MydbMysqliResult implements MydbMysqliResultInterface
         return null;
     }
 
+    #[Override]
     public function getResult(): ?array
     {
         return $this->result;

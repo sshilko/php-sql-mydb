@@ -12,7 +12,6 @@
  */
 // @codeCoverageIgnoreStart
 
-
 declare(strict_types = 1);
 
 use MydbRepository\UserRepository;

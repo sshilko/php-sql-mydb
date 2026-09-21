@@ -22,8 +22,8 @@ namespace sql;
  */
 interface MydbQueryBuilderInterface
 {
-    public const SQL_INSERT  = 'INSERT';
-    public const SQL_REPLACE = 'REPLACE';
+    public const string SQL_INSERT  = 'INSERT';
+    public const string SQL_REPLACE = 'REPLACE';
 
     public function showColumnsLike(string $table, string $column): string;
 

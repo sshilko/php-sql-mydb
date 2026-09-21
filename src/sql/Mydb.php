@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Override;
 use Psr\Log\LoggerInterface;
 use sql\MydbException\ConnectDefaultsException;
 use sql\MydbException\ConnectException;
@@ -99,6 +100,8 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @param int $retry retry failed connection attempts
      * @throws \sql\MydbException
      */
+
+    #[Override]
     public function open(int $retry = 0): bool
     {
         return $this->connect($retry);
@@ -114,6 +117,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @throws \sql\MydbException\ConnectException
      * @throws \sql\MydbException
      */
+    #[Override]
     public function query(string $query): ?array
     {
 
@@ -153,6 +157,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
      * @throws \sql\MydbException
      */
+    #[Override]
     public function command(string $query): bool
     {
         if (!$this->connect()) {
@@ -176,6 +181,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @throws \sql\MydbException
      * @psalm-return list<string>
      */
+    #[Override]
     public function getEnumValues(string $table, string $column): array
     {
         $query = $this->queryBuilder->showColumnsLike($table, $column);
@@ -210,7 +216,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         }
         // @codeCoverageIgnoreEnd
 
-        $values = explode(',', preg_replace("/'/", '', $input));
+        $values = explode(',', (string) preg_replace("/'/", '', $input));
 
         return array_map('strval', $values);
     }
@@ -222,6 +228,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @SuppressWarnings(PHPMD.NPathComplexity)
      * @todo reduce NPathComplexity
      */
+    #[Override]
     public function escape($unescaped, string $quote = "'"): string
     {
         if (!$this->connect()) {
@@ -236,6 +243,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @throws \sql\MydbException\ConnectException
      * @return ?array<string>
      */
+    #[Override]
     public function getPrimaryKeys(string $table): ?array
     {
         $result = $this->query($this->queryBuilder->showKeys($table));
@@ -257,6 +265,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
     /**
      * @throws \sql\MydbException
      */
+    #[Override]
     public function beginTransaction(): void
     {
         if (!$this->connect()) {
@@ -279,6 +288,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
     /**
      * @throws \sql\MydbException
      */
+    #[Override]
     public function rollbackTransaction(): void
     {
         if (!$this->mysqli->isConnected()) {
@@ -296,6 +306,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @throws \sql\MydbException\ConnectException
      * @throws \sql\MydbException
      */
+    #[Override]
     public function commitTransaction(): void
     {
         if (!$this->mysqli->isConnected()) {
@@ -312,6 +323,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
     /**
      * @throws \sql\MydbException
      */
+    #[Override]
     public function close(): void
     {
         if (false === $this->mysqli->isConnected()) {
@@ -363,6 +375,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @throws \sql\MydbException\ConnectException
      * @throws \sql\MydbException
      */
+    #[Override]
     public function replace(string $query): ?string
     {
         return $this->insert($query);
@@ -372,6 +385,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @throws \sql\MydbException\ConnectException
      * @throws \sql\MydbException
      */
+    #[Override]
     public function insert(string $query): ?string
     {
         if ($this->command($query)) {
@@ -386,6 +400,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @throws \sql\MydbException
      * @throws \sql\MydbException\ConnectException
      */
+    #[Override]
     public function select(string $query): ?array
     {
         return $this->query($query);
@@ -394,6 +409,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
     /**
      * @throws \sql\MydbException
      */
+    #[Override]
     public function delete(string $query): ?int
     {
         if ($this->command($query)) {
@@ -411,6 +427,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
     /**
      * @throws \sql\MydbException
      */
+    #[Override]
     public function update(string $query): ?int
     {
         if ($this->command($query)) {
@@ -428,6 +445,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
     /**
      * @throws \sql\MydbException
      */
+    #[Override]
     public function deleteWhere(array $whereFields, string $table, array $whereNotFields = []): ?int
     {
         $query = $this->queryBuilder->buildDeleteWhere($table, $whereFields, $whereNotFields);
@@ -442,6 +460,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @param array<string, (float|int|string|\sql\MydbExpressionInterface|null)> $update
      * @throws \sql\MydbException
      */
+    #[Override]
     public function updateWhere(array $update, array $whereFields, string $table, array $whereNotFields = []): ?int
     {
         $query = $this->queryBuilder->buildUpdateWhere($update, $whereFields, $table, $whereNotFields);
@@ -459,6 +478,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @param string $table 'mytable'
      * @throws \sql\MydbException
      */
+    #[Override]
     public function updateWhereMany(array $columnSetWhere, array $where, string $table): void
     {
         $sql = $this->queryBuilder->buildUpdateWhereMany($columnSetWhere, $where, $table);
@@ -471,6 +491,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @psalm-param array<array-key, array<array-key, (float|int|string|\sql\MydbExpressionInterface|null)>> $data
      * @param array<string> $cols
      */
+    #[Override]
     public function insertMany(
         array $data,
         array $cols,
@@ -486,6 +507,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @throws \sql\MydbException
      * @param array<string, (float|int|\sql\MydbExpressionInterface|string|null)> $data
      */
+    #[Override]
     public function replaceOne(array $data, string $table): ?string
     {
         $query = $this->queryBuilder->insertOne($data, $table, MydbQueryBuilderInterface::SQL_REPLACE);
@@ -497,6 +519,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @throws \sql\MydbException
      * @param array<string, (float|int|\sql\MydbExpressionInterface|string|null)> $data
      */
+    #[Override]
     public function insertOne(array $data, string $table): ?string
     {
         $query = $this->queryBuilder->insertOne($data, $table, MydbQueryBuilderInterface::SQL_INSERT);
@@ -618,8 +641,13 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         }
 
         if (false === $connected) {
-            $errorNumber = (string) ($this->mysqli->getConnectErrno() ?: $this->mysqli->getErrNo());
-            $errorText = (string) ($this->mysqli->getConnectError() ?: $this->mysqli->getError());
+            $connectErrno = $this->mysqli->getConnectErrno();
+            $connectError = $this->mysqli->getConnectError();
+
+            $errorNumber = (string) (null !== $connectErrno && 0 !== $connectErrno
+                ? $connectErrno : $this->mysqli->getErrNo());
+            $errorText = (string) (null !== $connectError && '' !== $connectError
+                ? $connectError : $this->mysqli->getError());
 
             if (false === $this->mysqli->close()) {
                 throw new DisconnectException();

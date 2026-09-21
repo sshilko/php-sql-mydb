@@ -7,11 +7,11 @@
 # For the full copyright and license information, please view the LICENSE
 # file that was distributed with this source code.
 # @license https://opensource.org/licenses/mit-license.php MIT
-name: 8.1 PHPDocumentor
+name: 8.3 PHPDocumentor
 
 on:
   workflow_run:
-    workflows: [ "8.1 Docker" ]
+    workflows: [ "8.3 Docker" ]
     types:
       - completed
 
@@ -32,14 +32,14 @@ jobs:
       uses: actions/cache@v3
       with:
         path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php81') }}
+        key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83') }}
 
     - name: Load cached Docker image
       run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php
 
     - name: Docker boot
       env:
-        SERVICES_NAME: "app.php81"
+        SERVICES_NAME: "app.php83"
       run: docker-compose up -d $SERVICES_NAME
 
     - run: docker-compose ps
@@ -53,14 +53,14 @@ jobs:
       uses: actions/cache@v3
       with:
         path: vendor
-        key: ${{ runner.os }}-php81-${{ hashFiles('composer.lock') }}-composer-dev
+        key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
 
     - name: Docker install dependencies
-      run: docker-compose exec -T app.php81 composer install
+      run: docker-compose exec -T app.php83 composer install
 
       # Docs: https://phpunit.readthedocs.io/en/9.5/
     - name: Docker run PHPDoc
-      run: docker-compose exec -T app.php81 composer app-phpdoc
+      run: docker-compose exec -T app.php83 composer app-phpdoc
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPDoc artifacts

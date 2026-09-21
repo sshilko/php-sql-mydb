@@ -18,7 +18,7 @@ namespace sql;
 use ArrayAccess;
 use Countable;
 use Iterator;
-use Serializable;
+use Override;
 use sql\MydbException\RegistryException;
 use Traversable;
 use function count;
@@ -37,7 +37,7 @@ use function serialize;
  *
  * @psalm-suppress MissingTemplateParam
  */
-class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Serializable
+class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator
 {
 
     /**
@@ -45,7 +45,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      */
     protected array $instance = [];
 
-    /**
+/**
      * @throws \sql\MydbException\RegistryException
      */
     public function serialize(): ?string
@@ -57,7 +57,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      * @throws \sql\MydbException\RegistryException
      * @phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
      */
-    public function unserialize($data): void
+    public function unserialize(mixed $data): void
     {
         throw new RegistryException(serialize($data));
     }
@@ -65,6 +65,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
     /**
      * Return the current element
      */
+    #[Override]
     public function current(): ?MydbInterface
     {
         $result = current($this->instance);
@@ -78,6 +79,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
     /**
      * Return the key of the current element
      */
+    #[Override]
     public function key(): ?string
     {
         $result = key($this->instance);
@@ -91,6 +93,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
     /**
      * Move forward to next element
      */
+    #[Override]
     public function next(): void
     {
         next($this->instance);
@@ -99,6 +102,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
     /**
      * Rewind the Iterator to the first element
      */
+    #[Override]
     public function rewind(): void
     {
         reset($this->instance);
@@ -109,11 +113,13 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      * @return bool The return value will be boolean and then evaluated.
      * Returns true on success or false on failure.
      */
+    #[Override]
     public function valid(): bool
     {
         return false !== current($this->instance);
     }
 
+    #[Override]
     public function count(): int
     {
         return count($this->instance);
@@ -126,6 +132,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      * @param string $offset
      * @return bool true on success or false on failure.
      */
+    #[Override]
     public function offsetExists($offset): bool
     {
         return isset($this->instance[$offset]);
@@ -138,6 +145,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      * @param string $offset
      * @throws \sql\MydbException\RegistryException
      */
+    #[Override]
     public function offsetGet($offset): MydbInterface
     {
         if ($this->offsetExists($offset)) {
@@ -155,6 +163,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      * @param \sql\MydbInterface $value
      * @throws \sql\MydbException\RegistryException
      */
+    #[Override]
     public function offsetSet($offset, $value): void
     {
         if ($value instanceof MydbInterface && !$this->offsetExists($offset)) {
@@ -172,6 +181,7 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator, Ser
      * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
      * @param string $offset
      */
+    #[Override]
     public function offsetUnset($offset): void
     {
         if (!$this->offsetExists($offset)) {

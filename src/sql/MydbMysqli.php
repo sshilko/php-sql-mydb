@@ -17,6 +17,7 @@ namespace sql;
 
 use mysqli;
 use mysqli_result;
+use Override;
 use sql\MydbMysqli\MydbMysqliResult;
 use function array_merge;
 use function array_values;
@@ -52,31 +53,31 @@ class MydbMysqli implements MydbMysqliInterface
      * Command to execute when connecting to MySQL server. Will automatically be re-executed when reconnecting.
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_INIT_COMMAND = MYSQLI_INIT_COMMAND;
+    public const int MYSQLI_INIT_COMMAND = MYSQLI_INIT_COMMAND;
 
     /**
      * Connect timeout in seconds
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_OPT_CONNECT_TIMEOUT = MYSQLI_OPT_CONNECT_TIMEOUT;
+    public const int MYSQLI_OPT_CONNECT_TIMEOUT = MYSQLI_OPT_CONNECT_TIMEOUT;
 
     /**
      * The size of the internal command/network buffer. Only valid for mysqlnd.
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_OPT_NET_CMD_BUFFER_SIZE = MYSQLI_OPT_NET_CMD_BUFFER_SIZE;
+    public const int MYSQLI_OPT_NET_CMD_BUFFER_SIZE = MYSQLI_OPT_NET_CMD_BUFFER_SIZE;
 
     /**
      * Maximum read chunk size in bytes when reading the body of a MySQL command packet. Only valid for mysqlnd.
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_OPT_NET_READ_BUFFER_SIZE = MYSQLI_OPT_NET_READ_BUFFER_SIZE;
+    public const int MYSQLI_OPT_NET_READ_BUFFER_SIZE = MYSQLI_OPT_NET_READ_BUFFER_SIZE;
 
     /**
      * Command execution result timeout in seconds. Available as of PHP 7.2.0.
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_OPT_READ_TIMEOUT = MYSQLI_OPT_READ_TIMEOUT;
+    public const int MYSQLI_OPT_READ_TIMEOUT = MYSQLI_OPT_READ_TIMEOUT;
 
     /**
      * Copy results from the internal mysqlnd buffer into the PHP variables fetched.
@@ -86,7 +87,7 @@ class MydbMysqli implements MydbMysqliInterface
      * results may be released earlier (available with mysqlnd only)
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_STORE_RESULT_COPY_DATA = MYSQLI_STORE_RESULT_COPY_DATA;
+    public const int MYSQLI_STORE_RESULT_COPY_DATA = MYSQLI_STORE_RESULT_COPY_DATA;
 
     /**
      * Appends "RELEASE" to mysqli_commit() or mysqli_rollback().
@@ -96,20 +97,20 @@ class MydbMysqli implements MydbMysqliInterface
      * @see https://dev.mysql.com/doc/refman/8.0/en/commit.html
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_TRANS_COR_RELEASE = MYSQLI_TRANS_COR_RELEASE;
+    public const int MYSQLI_TRANS_COR_RELEASE = MYSQLI_TRANS_COR_RELEASE;
 
     /**
      * Start the transaction as "START TRANSACTION READ ONLY" with mysqli_begin_transaction().
      *
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_TRANS_START_READ_ONLY = MYSQLI_TRANS_START_READ_ONLY;
+    public const int MYSQLI_TRANS_START_READ_ONLY = MYSQLI_TRANS_START_READ_ONLY;
 
     /**
      * Start the transaction as "START TRANSACTION READ WRITE" with mysqli_begin_transaction().
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_TRANS_START_READ_WRITE = MYSQLI_TRANS_START_READ_WRITE;
+    public const int MYSQLI_TRANS_START_READ_WRITE = MYSQLI_TRANS_START_READ_WRITE;
 
     /**
      * Appends "NO RELEASE" to mysqli_commit() or mysqli_rollback().
@@ -119,34 +120,34 @@ class MydbMysqli implements MydbMysqliInterface
      * @see https://dev.mysql.com/doc/refman/8.0/en/commit.html
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_TRANS_COR_NO_RELEASE = MYSQLI_TRANS_COR_NO_RELEASE;
+    public const int MYSQLI_TRANS_COR_NO_RELEASE = MYSQLI_TRANS_COR_NO_RELEASE;
 
     /**
      * Set all options on (report all), report all warnings/errors.
      *
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_REPORT_ALL = MYSQLI_REPORT_ALL;
+    public const int MYSQLI_REPORT_ALL = MYSQLI_REPORT_ALL;
 
     /**
      * Report if no index or bad index was used in a query.
      *
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_REPORT_INDEX = MYSQLI_REPORT_INDEX;
+    public const int MYSQLI_REPORT_INDEX = MYSQLI_REPORT_INDEX;
 
     /**
      * Throw a mysqli_sql_exception for errors instead of warnings.
      *
      * @see https://www.php.net/manual/en/mysqli.constants.php
      */
-    public const MYSQLI_REPORT_STRICT = MYSQLI_REPORT_STRICT;
+    public const int MYSQLI_REPORT_STRICT = MYSQLI_REPORT_STRICT;
 
     /**
      * Safe MySQL SQL_MODE
      * @see https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html#sqlmode_traditional
      */
-    protected const SQL_MODE = 'TRADITIONAL';
+    protected const string SQL_MODE = 'TRADITIONAL';
 
     /**
      * Mysqli instance
@@ -185,6 +186,8 @@ class MydbMysqli implements MydbMysqliInterface
      * Allocate mysqli resource instance, no physical connection to remote is done
      *
      */
+
+    #[Override]
     public function init(): bool
     {
         if (null !== $this->mysqli) {
@@ -210,6 +213,7 @@ class MydbMysqli implements MydbMysqliInterface
      * @see https://www.php.net/manual/en/mysqli.options.php
      * @throws \sql\MydbException\EnvironmentException
      */
+    #[Override]
     public function setTransportOptions(MydbOptionsInterface $options, MydbEnvironmentInterface $environment): bool
     {
         if (null === $this->mysqli) {
@@ -243,6 +247,7 @@ class MydbMysqli implements MydbMysqliInterface
             $this->mysqli->options(self::MYSQLI_OPT_NET_READ_BUFFER_SIZE, $options->getNetworkReadBuffer());
     }
 
+    #[Override]
     public function setTransactionIsolationLevel(string $level): bool
     {
         /**
@@ -254,6 +259,7 @@ class MydbMysqli implements MydbMysqliInterface
         return $this->realQuery(sprintf('SET SESSION TRANSACTION ISOLATION LEVEL %s', $level));
     }
 
+    #[Override]
     public function isTransactionOpen(): bool
     {
         /**
@@ -262,11 +268,13 @@ class MydbMysqli implements MydbMysqliInterface
         return $this->isTransaction;
     }
 
+    #[Override]
     public function isConnected(): bool
     {
         return $this->mysqli && $this->isConnected;
     }
 
+    #[Override]
     public function getMysqli(): ?mysqli
     {
         return $this->mysqli;
@@ -275,6 +283,7 @@ class MydbMysqli implements MydbMysqliInterface
     /**
      * @see https://www.php.net/manual/en/mysqli.real-query.php
      */
+    #[Override]
     public function realQuery(string $query): bool
     {
         if ($this->mysqli && $this->isConnected()) {
@@ -287,6 +296,7 @@ class MydbMysqli implements MydbMysqliInterface
     /**
      * React to mysqli resource changes after query/command execution
      */
+    #[Override]
     public function readServerResponse(MydbEnvironmentInterface $environment): ?MydbMysqliResult
     {
         if ($this->mysqli && $this->isConnected()) {
@@ -327,6 +337,7 @@ class MydbMysqli implements MydbMysqliInterface
     /**
      * @see https://www.php.net/manual/en/mysqli.real-escape-string.php
      */
+    #[Override]
     public function realEscapeString(string $string): ?string
     {
         if (!$this->mysqli || !$this->isConnected()) {
@@ -339,6 +350,7 @@ class MydbMysqli implements MydbMysqliInterface
     /**
      * @see https://www.php.net/manual/en/mysqli.begin-transaction.php
      */
+    #[Override]
     public function beginTransactionReadwrite(): bool
     {
         if ($this->mysqli &&
@@ -355,6 +367,7 @@ class MydbMysqli implements MydbMysqliInterface
     /**
      * @see https://www.php.net/manual/en/mysqli.begin-transaction.php
      */
+    #[Override]
     public function beginTransactionReadonly(): bool
     {
         if ($this->mysqli &&
@@ -371,6 +384,7 @@ class MydbMysqli implements MydbMysqliInterface
     /**
      * @see https://www.php.net/manual/en/mysqli.rollback.php
      */
+    #[Override]
     public function rollback(): bool
     {
         /**
@@ -388,6 +402,7 @@ class MydbMysqli implements MydbMysqliInterface
     /**
      * Commit transaction and release connection from server side
      */
+    #[Override]
     public function commitAndRelease(): bool
     {
         if ($this->mysqli && $this->isConnected() && $this->mysqli->commit(self::MYSQLI_TRANS_COR_RELEASE)) {
@@ -399,6 +414,7 @@ class MydbMysqli implements MydbMysqliInterface
         return false;
     }
 
+    #[Override]
     public function commit(): bool
     {
         if ($this->mysqli && $this->isConnected() && $this->mysqli->commit(self::MYSQLI_TRANS_COR_NO_RELEASE)) {
@@ -410,6 +426,7 @@ class MydbMysqli implements MydbMysqliInterface
         return false;
     }
 
+    #[Override]
     public function realConnect(
         string $host,
         string $username,
@@ -419,28 +436,34 @@ class MydbMysqli implements MydbMysqliInterface
         ?string $socket,
         int $flags,
     ): bool {
-        if ($this->mysqli && !$this->isConnected() && $this->mysqli->real_connect(
-            $host,
-            $username,
-            $password,
-            $dbname,
-            (int) $port,
-            (string) $socket,
-            $flags
-        )) {
-            $this->isConnected = true;
+        if ($this->mysqli && !$this->isConnected()) {
+            $connected = $this->mysqli->real_connect(
+                $host,
+                $username,
+                $password,
+                $dbname,
+                (int) $port,
+                (string) $socket,
+                $flags
+            );
 
-            return true;
+            if ($connected) {
+                $this->isConnected = true;
+
+                return true;
+            }
         }
 
         return false;
     }
 
+    #[Override]
     public function mysqliReport(int $level): bool
     {
         return mysqli_report($level);
     }
 
+    #[Override]
     public function close(): bool
     {
         if ($this->mysqli) {
@@ -460,6 +483,7 @@ class MydbMysqli implements MydbMysqliInterface
         return false;
     }
 
+    #[Override]
     public function getConnectErrno(): ?int
     {
         return $this->mysqli
@@ -467,6 +491,7 @@ class MydbMysqli implements MydbMysqliInterface
             : null;
     }
 
+    #[Override]
     public function getConnectError(): ?string
     {
         return $this->mysqli
@@ -474,11 +499,13 @@ class MydbMysqli implements MydbMysqliInterface
             : null;
     }
 
+    #[Override]
     public function isServerGone(): bool
     {
         return in_array($this->getErrNo(), [2002, 2006], true);
     }
 
+    #[Override]
     public function getError(): ?string
     {
         return $this->mysqli
@@ -486,6 +513,7 @@ class MydbMysqli implements MydbMysqliInterface
             : null;
     }
 
+    #[Override]
     public function getErrNo(): ?int
     {
         return $this->mysqli
@@ -493,6 +521,7 @@ class MydbMysqli implements MydbMysqliInterface
             : null;
     }
 
+    #[Override]
     public function getAffectedRows(): ?int
     {
         $rows = $this->mysqli
@@ -515,6 +544,7 @@ class MydbMysqli implements MydbMysqliInterface
     /**
      * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint
      */
+    #[Override]
     public function getInsertId(): int|string|null
     {
         return $this->mysqli
@@ -522,6 +552,7 @@ class MydbMysqli implements MydbMysqliInterface
             : null;
     }
 
+    #[Override]
     public function autocommit(bool $enable): bool
     {
         if ($this->mysqli && $this->mysqli->autocommit($enable)) {
@@ -543,6 +574,7 @@ class MydbMysqli implements MydbMysqliInterface
      * @phpcs:disable SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference
      * @param array<int, string> $events
      */
+    #[Override]
     public function extractServerResponse(MydbEnvironmentInterface $environment, array &$events): ?mysqli_result
     {
         if (null === $this->mysqli) {
@@ -568,6 +600,7 @@ class MydbMysqli implements MydbMysqliInterface
         return $result;
     }
 
+    #[Override]
     public function getWarnings(): array
     {
         if ($this->mysqli) {

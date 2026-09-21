@@ -11,7 +11,7 @@ name: PHPUnit
 
 on:
   workflow_run:
-    workflows: [ "8.1 Docker" ]
+    workflows: ["8.3 Docker"]
     types:
       - completed
 
@@ -25,88 +25,84 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Load cached app docker image
-      id: docker-php-image-cache
-      uses: actions/cache@v3
-      with:
-        path: /tmp/docker-save
-        key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php81') }}
+      - name: Load cached app docker image
+        id: docker-php-image-cache
+        uses: actions/cache@v3
+        with:
+          path: /tmp/docker-save
+          key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83') }}
 
-    - name: Load cached Docker image
-      run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php
+      - name: Load cached Docker image
+        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php
 
-    - name: Docker boot
-      env:
-        DOCKER_BUILDKIT: '1'
-        COMPOSE_DOCKER_CLI_BUILD: '1'
-        SERVICES_NAME: "app.php81 mysql mysql80"
-      run: docker-compose up -d $SERVICES_NAME
-      timeout-minutes: 6
+      - name: Docker boot
+        env:
+          DOCKER_BUILDKIT: "1"
+          COMPOSE_DOCKER_CLI_BUILD: "1"
+          SERVICES_NAME: "app.php83 mysql mysql80"
+        run: docker-compose up -d $SERVICES_NAME
+        timeout-minutes: 6
 
-    - name: Wait for all services to become healthy
-      run: for SVC in "app.php81" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 5; done; done
-      timeout-minutes: 2
+      - name: Wait for all services to become healthy
+        run: for SVC in "app.php83" "mysql" "mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker-compose ps && sleep 5; done; done
+        timeout-minutes: 2
 
-    - name: Sleep
-      run: sleep 4
-    - run: docker-compose ps
+      - name: Sleep
+        run: sleep 4
+      - run: docker-compose ps
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php81-${{ hashFiles('composer.lock') }}-composer-dev
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
 
-    - name: Docker install dependencies
-      run: docker-compose exec -T app.php81 composer install
+      - name: Docker install dependencies
+        run: docker-compose exec -T app.php83 composer install
 
-      # Docs: https://phpunit.readthedocs.io/en/9.5/
-    - name: Docker run PHPUnit with MySQL5.7
-      run: docker-compose exec -T app.php81 composer app-phpunit-mysql57
+      - name: Docker run PHPUnit with MySQL8.0 & Coverage
+        run: docker-compose exec -T app.php83 composer app-phpunit-mysql80-coverage
 
-    - name: Docker run PHPUnit with MySQL8.0 & Coverage
-      run: docker-compose exec -T app.php81 composer app-phpunit-mysql80-coverage
+      - name: Docker run PHPUnit badge generation
+        id: app-phpunit-badges-coverage
+        continue-on-error: true
+        run: |
+          #3 attempts to generate badges
+          docker-compose exec -T app.php83 composer app-phpunit-badges-coverage || \
+          docker-compose exec -T app.php83 composer app-phpunit-badges-coverage || \
+          docker-compose exec -T app.php83 composer app-phpunit-badges-coverage
 
-    - name: Docker run PHPUnit badge generation
-      id: app-phpunit-badges-coverage
-      continue-on-error: true
-      run: |
-        #3 attempts to generate badges
-        docker-compose exec -T app.php81 composer app-phpunit-badges-coverage || \
-        docker-compose exec -T app.php81 composer app-phpunit-badges-coverage || \
-        docker-compose exec -T app.php81 composer app-phpunit-badges-coverage
+        # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
+      - name: Generate PHPUnit coverage badge
+        uses: timkrase/phpunit-coverage-badge@v1.2.0
+        with:
+          coverage_badge_path: "test/tmp/phpunit-coverage-badge.svg"
+          push_badge: false
+          report: test/tmp/phpunit-clover.xml
 
-      # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
-    - name: Generate PHPUnit coverage badge
-      uses: timkrase/phpunit-coverage-badge@v1.2.0
-      with:
-        coverage_badge_path: 'test/tmp/phpunit-coverage-badge.svg'
-        push_badge: false
-        report: test/tmp/phpunit-clover.xml
-
-      # https://github.com/actions/upload-artifact
-    - name: Upload PHPUnit artifacts
-      uses: actions/upload-artifact@v3
-      with:
+        # https://github.com/actions/upload-artifact
+      - name: Upload PHPUnit artifacts
+        uses: actions/upload-artifact@v3
+        with:
           name: phpunit-output
           path: |
-              test/tmp/html
-              test/tmp/xml
-              test/tmp/phpunit-testdox-html.html
-              test/tmp/phpunit-testdox-text.txt
-              test/tmp/phpunit-clover.xml
-              test/tmp/phpunit-junit.xml
-              test/tmp/phpunit-cobertura.xml
-              test/tmp/phpunit-crap4j.xml
-              test/tmp/phpunit-xml.xml
-              test/tmp/phpunit-coverage.txt
-              test/tmp/phpunit-coverage-badge.svg
-              test/tmp/phpunit-coverage-badge-lines.svg
-              test/tmp/phpunit-coverage-badge-classes.svg
-              test/tmp/phpunit-coverage-badge-methods.svg
+            test/tmp/html
+            test/tmp/xml
+            test/tmp/phpunit-testdox-html.html
+            test/tmp/phpunit-testdox-text.txt
+            test/tmp/phpunit-clover.xml
+            test/tmp/phpunit-junit.xml
+            test/tmp/phpunit-cobertura.xml
+            test/tmp/phpunit-crap4j.xml
+            test/tmp/phpunit-xml.xml
+            test/tmp/phpunit-coverage.txt
+            test/tmp/phpunit-coverage-badge.svg
+            test/tmp/phpunit-coverage-badge-lines.svg
+            test/tmp/phpunit-coverage-badge-classes.svg
+            test/tmp/phpunit-coverage-badge-methods.svg
           retention-days: 1
 
   badges:
@@ -116,31 +112,30 @@ jobs:
     permissions: write-all
     steps:
       # https://github.com/actions/checkout
-    - name: Checkout pages branch
-      uses: actions/checkout@v3
-      with:
-        ref: pages
+      - name: Checkout pages branch
+        uses: actions/checkout@v3
+        with:
+          ref: pages
 
-    # https://github.com/marketplace/actions/download-a-build-artifact
-    - name: Download all PHPUnit artifacts
-      uses: actions/download-artifact@v3
-      with:
+      # https://github.com/marketplace/actions/download-a-build-artifact
+      - name: Download all PHPUnit artifacts
+        uses: actions/download-artifact@v3
+        with:
           name: phpunit-output
           path: php/phpunit
 
-    - uses: nick-fields/retry@v2
-      name: Commit coverage details
-      continue-on-error: true
-      with:
+      - uses: nick-fields/retry@v2
+        name: Commit coverage details
+        continue-on-error: true
+        with:
           timeout_seconds: 20
           max_attempts: 3
           retry_on: error
           command: |
-              git status
-              git config user.name github-actions
-              git config user.email github-actions@github.com
-              git pull
-              git add php/phpunit/*
-              git commit -m "generated phpunit artifacts from revision ${GITHUB_SHA::7}"
-              git push
-
+            git status
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git pull
+            git add php/phpunit/*
+            git commit -m "generated phpunit artifacts from revision ${GITHUB_SHA::7}"
+            git push

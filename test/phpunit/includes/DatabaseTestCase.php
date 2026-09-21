@@ -39,37 +39,37 @@ class DatabaseTestCase extends TestCase
     /**
      * @psalm-suppress UndefinedConstant
      */
-    private const HOST = PHPUNIT_MYSQL_MYDB1_HOST;
+    private const string HOST = PHPUNIT_MYSQL_MYDB1_HOST;
 
     /**
      * @psalm-suppress UndefinedConstant
      */
-    private const PORT = PHPUNIT_MYSQL_MYDB1_PORT;
+    private const string PORT = PHPUNIT_MYSQL_MYDB1_PORT;
 
     /**
      * @psalm-suppress UndefinedConstant
      */
-    private const USER = PHPUNIT_MYSQL_MYDB1_USER;
+    private const string USER = PHPUNIT_MYSQL_MYDB1_USER;
 
     /**
      * @psalm-suppress UndefinedConstant
      */
-    private const PASS = PHPUNIT_MYSQL_MYDB1_PASS;
+    private const string PASS = PHPUNIT_MYSQL_MYDB1_PASS;
 
     /**
      * @psalm-suppress UndefinedConstant
      */
-    private const NAME = PHPUNIT_MYSQL_MYDB1_NAME;
+    private const string NAME = PHPUNIT_MYSQL_MYDB1_NAME;
 
     /**
      * @psalm-suppress UndefinedConstant
      */
-    private const ROOT_U = PHPUNIT_MYSQL_ROOT_USER;
+    private const string ROOT_U = PHPUNIT_MYSQL_ROOT_USER;
 
     /**
      * @psalm-suppress UndefinedConstant
      */
-    private const ROOT_P = PHPUNIT_MYSQL_ROOT_PASS;
+    private const string ROOT_P = PHPUNIT_MYSQL_ROOT_PASS;
 
     /**
      * @var \phpunit\includes\MockObject|\Psr\Log\LoggerInterface
