@@ -436,18 +436,22 @@ class MydbMysqli implements MydbMysqliInterface
         ?string $socket,
         int $flags,
     ): bool {
-        if ($this->mysqli && !$this->isConnected() && $this->mysqli->real_connect(
-            $host,
-            $username,
-            $password,
-            $dbname,
-            (int) $port,
-            (string) $socket,
-            $flags
-        )) {
-            $this->isConnected = true;
+        if ($this->mysqli && !$this->isConnected()) {
+            $connected = $this->mysqli->real_connect(
+                $host,
+                $username,
+                $password,
+                $dbname,
+                (int) $port,
+                (string) $socket,
+                $flags
+            );
 
-            return true;
+            if ($connected) {
+                $this->isConnected = true;
+
+                return true;
+            }
         }
 
         return false;

@@ -12,35 +12,34 @@
  @license https://opensource.org/licenses/mit-license.php MIT
 -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
-         backupGlobals="true"
-         bootstrap="phpunit.xml.bootstrap.php"
-         cacheDirectory="tmp/phpunit-cache-result"
-         colors="true"
-         columns="60"
-         processIsolation="false"
-         stopOnDefect="false"
-         stopOnError="false"
-         stopOnFailure="false"
-         stopOnWarning="false"
-         stopOnIncomplete="false"
-         stopOnSkipped="false"
-         stopOnRisky="false"
-         failOnRisky="true"
-         failOnWarning="true"
-         failOnIncomplete="true"
-         failOnSkipped="true"
-         defaultTimeLimit="0"
-         enforceTimeLimit="false"
-         testdox="true"
-         executionOrder="depends,defects"
-
-         beStrictAboutOutputDuringTests="false"
-         beStrictAboutChangesToGlobalState="true"
-         displayDetailsOnTestsThatTriggerDeprecations="false"
-         displayDetailsOnTestsThatTriggerErrors="true"
-         displayDetailsOnTestsThatTriggerNotices="true"
-         displayDetailsOnTestsThatTriggerWarnings="true">
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+    backupGlobals="true"
+    bootstrap="phpunit.xml.bootstrap.php"
+    cacheDirectory="tmp/phpunit-cache-result"
+    colors="true"
+    columns="60"
+    processIsolation="false"
+    stopOnDefect="false"
+    stopOnError="false"
+    stopOnFailure="false"
+    stopOnWarning="false"
+    stopOnIncomplete="false"
+    stopOnSkipped="false"
+    stopOnRisky="false"
+    failOnRisky="true"
+    failOnWarning="false"
+    failOnIncomplete="true"
+    failOnSkipped="true"
+    defaultTimeLimit="0"
+    enforceTimeLimit="false"
+    testdox="true"
+    executionOrder="depends,defects"
+    beStrictAboutOutputDuringTests="false"
+    beStrictAboutChangesToGlobalState="true"
+    displayDetailsOnTestsThatTriggerDeprecations="false"
+    displayDetailsOnTestsThatTriggerErrors="true"
+    displayDetailsOnTestsThatTriggerNotices="true"
+    displayDetailsOnTestsThatTriggerWarnings="true">
     <!-- https://phpunit.readthedocs.io/en/10.5/configuration.html#the-phpunit-element -->
     <testsuites>
         <testsuite name="phpunit">
@@ -50,12 +49,12 @@
 
     <!-- https://phpunit.readthedocs.io/en/10.5/code-coverage-analysis.html -->
     <source ignoreSuppressionOfDeprecations="true"
-            ignoreSuppressionOfPhpDeprecations="true"
-            ignoreSuppressionOfErrors="true"
-            ignoreSuppressionOfNotices="true"
-            ignoreSuppressionOfPhpNotices="true"
-            ignoreSuppressionOfWarnings="true"
-            ignoreSuppressionOfPhpWarnings="true">
+        ignoreSuppressionOfPhpDeprecations="true"
+        ignoreSuppressionOfErrors="true"
+        ignoreSuppressionOfNotices="true"
+        ignoreSuppressionOfPhpNotices="true"
+        ignoreSuppressionOfWarnings="true"
+        ignoreSuppressionOfPhpWarnings="true">
         <include>
             <directory suffix=".php">../src</directory>
         </include>
@@ -63,35 +62,36 @@
 
     <!-- https://phpunit.readthedocs.io/en/10.5/configuration.html#the-coverage-element -->
     <coverage cacheDirectory="./tmp/phpunit-coverage-cache-directory"
-              includeUncoveredFiles="true"
-              pathCoverage="false"
-              ignoreDeprecatedCodeUnits="true"
-              disableCodeCoverageIgnore="false">
+        includeUncoveredFiles="true"
+        pathCoverage="false"
+        ignoreDeprecatedCodeUnits="true"
+        disableCodeCoverageIgnore="false">
         <report>
             <clover outputFile="./tmp/phpunit-clover.xml" />
             <crap4j outputFile="./tmp/phpunit-crap4j.xml" />
             <cobertura outputFile="./tmp/phpunit-cobertura.xml" />
             <xml outputDirectory="./tmp/xml" />
-            <html outputDirectory="./tmp/html" lowUpperBound="50" highLowerBound="90"/>
-            <text outputFile="./tmp/phpunit-coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
+            <html outputDirectory="./tmp/html" lowUpperBound="50" highLowerBound="90" />
+            <text outputFile="./tmp/phpunit-coverage.txt" showUncoveredFiles="false"
+                showOnlySummary="true" />
         </report>
     </coverage>
 
     <logging>
-        <junit outputFile="tmp/phpunit-junit.xml"/>
-        <testdoxText outputFile="tmp/phpunit-testdox-text.txt"/>
-        <testdoxHtml outputFile="tmp/phpunit-testdox-html.html"/>
+        <junit outputFile="tmp/phpunit-junit.xml" />
+        <testdoxText outputFile="tmp/phpunit-testdox-text.txt" />
+        <testdoxHtml outputFile="tmp/phpunit-testdox-html.html" />
     </logging>
 
     <php>
         <includePath>phpunit/base/</includePath>
 
-        <const name="PHPUNIT_MYSQL_MYDB1_USER" value="test"/>
-        <const name="PHPUNIT_MYSQL_MYDB1_PORT" value="3306"/>
-        <const name="PHPUNIT_MYSQL_MYDB1_NAME" value="mydb"/>
-        <const name="PHPUNIT_MYSQL_MYDB1_PASS" value="pass"/>
-        <const name="PHPUNIT_MYSQL_ROOT_USER" value="root"/>
-        <const name="PHPUNIT_MYSQL_ROOT_PASS" value="root"/>
+        <const name="PHPUNIT_MYSQL_MYDB1_USER" value="test" />
+        <const name="PHPUNIT_MYSQL_MYDB1_PORT" value="3306" />
+        <const name="PHPUNIT_MYSQL_MYDB1_NAME" value="mydb" />
+        <const name="PHPUNIT_MYSQL_MYDB1_PASS" value="pass" />
+        <const name="PHPUNIT_MYSQL_ROOT_USER" value="root" />
+        <const name="PHPUNIT_MYSQL_ROOT_PASS" value="root" />
 
         <ini name="display_errors" value="On" />
         <ini name="display_startup_errors" value="On" />
