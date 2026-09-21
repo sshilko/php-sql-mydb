@@ -1,0 +1,40 @@
+name: opencode
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  opencode:
+    # Requires comment to contain /oc or /opencode AND author must be OWNER or MEMBER/COLLABORATOR
+    if: >-
+      (contains(github.event.comment.body, '/oc') || contains(github.event.comment.body, '/opencode')) &&
+      (
+        github.event.comment.author_association == 'OWNER' ||
+        github.event.comment.author_association == 'MEMBER' ||
+        github.event.comment.author_association == 'COLLABORATOR'
+      )
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write # Allows OpenCode to commit code changes & create branches
+      pull-requests: write # Allows OpenCode to open PRs and post PR review comments
+      issues: write # Allows OpenCode to post comment replies on issues
+      actions: write # Save dependency/build caches, rerun failed jobs
+      checks: write # Create check runs, report test/lint results
+      statuses: write # Update commit build statuses (pass/fail indicators)
+      security-events: write # Create/modify SARIF security scan results (Dependabot/CodeQL)
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Run opencode
+        uses: anomalyco/opencode/github@latest
+        env:
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+        with:
+          model: opencode/big-pickle
