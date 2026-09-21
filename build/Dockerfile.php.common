@@ -82,6 +82,7 @@ RUN mkdir /root/tmp && pear config-set temp_dir /root/tmp && install-php-extensi
 ENV XDEBUG_MODE "coverage"
 
 RUN docker-php-ext-enable opcache
+RUN git config --global --add safe.directory /app
 
 STOPSIGNAL SIGINT
 ENTRYPOINT [ "/bin/bash" ]

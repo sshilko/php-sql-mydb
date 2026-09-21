@@ -29,7 +29,8 @@ x-app: &app
     interval: 2s
     retries: 3
   cpus: 1.5
-  mem_limit: "1100M"
+  mem_limit: "2200M"
+  shm_size: "2gb"
   pids_limit: 100
   ulimits:
     nproc: 65535
@@ -37,7 +38,7 @@ x-app: &app
       soft: 262140
       hard: 262140
   tmpfs:
-    - /tmp
+    - /tmp:size=512M
   volumes:
     - ./php.ini:/usr/local/etc/php/php.ini:ro,cached
     - ./../:/app:rw,cached

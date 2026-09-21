@@ -55,15 +55,15 @@
         ],
         "app-psalm": [
             "@putenv XDEBUG_MODE=off",
-            "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true --long-progress --stats --disable-extension=xdebug --report=$PWD/build/tmp/psalm.txt $1"
+            "php -d opcache.enable_cli=0 ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true --long-progress --stats --disable-extension=xdebug --report=$PWD/build/tmp/psalm.txt $1"
         ],
         "app-psalm-alter": [
             "@putenv XDEBUG_MODE=off",
-            "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --alter --issues=MissingParamType,MissingReturnType,InvalidReturnType,InvalidNullableReturnType,InvalidFalsableReturnType,PossiblyUndefinedVariable,UnnecessaryVarAnnotation,ParamNameMismatch"
+            "php -d opcache.enable_cli=0 ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --threads=1 --memory-limit=-1 --alter --issues=MissingParamType,MissingReturnType,InvalidReturnType,InvalidNullableReturnType,InvalidFalsableReturnType,PossiblyUndefinedVariable,UnnecessaryVarAnnotation,ParamNameMismatch"
         ],
         "app-psalm-taint": [
             "@putenv XDEBUG_MODE=off",
-            "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --taint-analysis --long-progress --disable-extension=xdebug"
+            "php -d opcache.enable_cli=0 ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --threads=1 --memory-limit=-1 --taint-analysis --long-progress --disable-extension=xdebug"
         ],
         "app-phpcbf": [
             "@putenv XDEBUG_MODE=off",
@@ -136,7 +136,7 @@
         "pdepend/pdepend": "^2.12",
         "phan/phan": "^5.4",
         "phpmd/phpmd": "^2.13",
-        "phpstan/phpstan": "^1.12",
+        "phpstan/phpstan": "^2",
         "phpunit/phpunit": "^10.5",
         "psalm/phar": "6.0.0",
         "slevomat/coding-standard": "^8.14",
