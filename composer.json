@@ -11,8 +11,18 @@
             "role": "Developer"
         }
     ],
-    "keywords": ["mysql", "php", "database", "mysqli", "pdo", "mysqlnd"],
+    "keywords": [
+        "mysql",
+        "php",
+        "database",
+        "mysqli",
+        "pdo",
+        "mysqlnd"
+    ],
     "config": {
+        "platform": {
+            "php": "8.3"
+        },
         "vendor-dir": "vendor",
         "preferred-install": {
             "*": "dist"
@@ -43,7 +53,7 @@
             "@app-psalm",
             "@app-phan"
         ],
-        "app-psalm":[
+        "app-psalm": [
             "@putenv XDEBUG_MODE=off",
             "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --memory-limit=-1 --no-diff --show-info=true --long-progress --stats --disable-extension=xdebug --report=$PWD/build/tmp/psalm.txt $1"
         ],
@@ -55,15 +65,15 @@
             "@putenv XDEBUG_MODE=off",
             "php ./vendor/bin/psalm.phar --php-version=$(php -r 'echo PHP_VERSION;') --config build/psalm.xml --taint-analysis --long-progress --disable-extension=xdebug"
         ],
-        "app-phpcbf":[
+        "app-phpcbf": [
             "@putenv XDEBUG_MODE=off",
             "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpcbf"
         ],
-        "app-phpcs":[
+        "app-phpcs": [
             "@putenv XDEBUG_MODE=off",
             "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpcs"
         ],
-        "app-phpstan":[
+        "app-phpstan": [
             "@putenv XDEBUG_MODE=off",
             "pre-commit run --all-files --config build/.pre-commit-config.yaml php-code-phpstan"
         ],
@@ -72,13 +82,7 @@
             "php ./vendor/phpmd/phpmd/src/bin/phpmd --reportfile build/tmp/phpmd.txt src/ ansi build/phpmd-rulesets.xml; cat build/tmp/phpmd.txt"
         ],
         "app-phpunit": [
-            "@app-phpunit-mysql57",
             "@app-phpunit-mysql80"
-        ],
-        "app-phpunit-mysql57": [
-            "@putenv XDEBUG_MODE=off",
-            "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mysql",
-            "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml $1"
         ],
         "app-phpunit-mysql80": [
             "@putenv XDEBUG_MODE=off",
@@ -89,11 +93,6 @@
             "@putenv XDEBUG_MODE=off",
             "@putenv PHPUNIT_MYSQL_MYDB1_HOST=maria10",
             "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml $1"
-        ],
-        "app-phpunit-mysql57-coverage": [
-            "@putenv XDEBUG_MODE=coverage",
-            "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mysql",
-            "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml"
         ],
         "app-phpunit-mysql80-coverage": [
             "@putenv XDEBUG_MODE=coverage",

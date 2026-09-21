@@ -33,8 +33,7 @@ docker-compose exec -it app.php83 bash
 
 docker-compose exec app.php83 composer app-phpunit
 docker-compose exec app.php83 composer app-phpunit -- --filter SelectTest
-docker-compose exec app.php83 composer app-phpunit-mysql57 -- --filter escape
-docker-compose exec app.php83 composer app-phpunit-mysql80
+docker-compose exec app.php83 composer app-phpunit-mysql80 -- --filter escape
 
 docker-compose exec mysql mysql -uroot -proot mydb
 docker-compose exec mysql80 mysql -uroot -proot mydb

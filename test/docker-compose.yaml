@@ -65,14 +65,14 @@ x-mysql: &mysql
     MYSQL_USER: test
     MYSQL_PASSWORD: pass
     MYSQL_ROOT_PASSWORD: root
-   #MYSQL_INITDB_SKIP_TZINFO: 0
+    #MYSQL_INITDB_SKIP_TZINFO: 0
   sysctls:
     net.core.somaxconn: 1024
-# tmpfs:
-#   - /var/lib/mysql/
-#  volumes:
-#    - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
-#    - /tmp/dbdata:/var/lib/mysql/
+  # tmpfs:
+  #   - /var/lib/mysql/
+  #  volumes:
+  #    - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro,cached
+  #    - /tmp/dbdata:/var/lib/mysql/
   ulimits:
     nproc: 65535
     nofile:
@@ -82,20 +82,19 @@ x-mysql: &mysql
   extra_hosts:
     - "host.docker.internal:host-gateway"
 
-version: '3.7'
 services:
   #@see https://hub.docker.com/_/mysql
-  mysql:
-    <<: *mysql
-    image: library/mysql:5.7.40-debian
-    container_name: mysql
-    expose:
-      - "3306"
-    ports:
-      - "3306:3306/tcp"
-    volumes:
-      - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro
-    #  - ./../test/tmp/mysql-dbdata57:/var/lib/mysql/:rw
+  # mysql:
+  #   <<: *mysql
+  #   image: library/mysql:5.7.40-debian
+  #   container_name: mysql
+  #   expose:
+  #     - "3306"
+  #   ports:
+  #     - "3306:3306/tcp"
+  #   volumes:
+  #     - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro
+  #   #  - ./../test/tmp/mysql-dbdata57:/var/lib/mysql/:rw
 
   mysql80:
     <<: *mysql
@@ -109,14 +108,14 @@ services:
       - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro
     #  - ./../test/tmp/mysql-dbdata80:/var/lib/mysql/:rw
 
-  maria10:
-    <<: *mysql
-    image: library/mariadb:10.10
-    container_name: maria10
-    expose:
-      - "5306"
-    ports:
-      - "5306:3306/tcp"
-    volumes:
-      - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro
-   #  - ./../test/tmp/maria-dbdata10:/var/lib/mysql/:rw
+  # maria10:
+  #   <<: *mysql
+  #   image: library/mariadb:10.10
+  #   container_name: maria10
+  #   expose:
+  #     - "5306"
+  #   ports:
+  #     - "5306:3306/tcp"
+  #   volumes:
+  #     - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro
+  #   #  - ./../test/tmp/maria-dbdata10:/var/lib/mysql/:rw

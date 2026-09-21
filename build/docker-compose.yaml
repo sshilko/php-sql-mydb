@@ -9,7 +9,7 @@
 # @license https://opensource.org/licenses/mit-license.php MIT
 x-app: &app
   pull_policy: never
- #container_name: app
+  #container_name: app
   tty: true
   stdin_open: true
   dns: 1.1.1.1
@@ -23,7 +23,7 @@ x-app: &app
       max-file: "2"
   healthcheck:
     test: ["CMD", "nc", "-w1", "-zv", "mysql", "3306"]
-   #test: ["CMD", "php", "examples/example.php"]
+    #test: ["CMD", "php", "examples/example.php"]
     timeout: 2s
     start_period: 5s
     interval: 2s
@@ -43,32 +43,32 @@ x-app: &app
     - ./../:/app:rw,cached
   sysctls:
     net.ipv4.tcp_synack_retries: 2 # Number of times SYNACKs for passive TCP connection.
-    net.ipv4.ip_local_port_range: '2000 65535' # Allowed local port range
+    net.ipv4.ip_local_port_range: "2000 65535" # Allowed local port range
     net.ipv4.tcp_rfc1337: 1 # Protect Against TCP Time-Wait
     net.ipv4.tcp_fin_timeout: 15 # Decrease the time default value for tcp_fin_timeout connection
-#   fs.file-max: 2097152 # Increase size of file handles and inode cache
-#   vm.swappiness: 10 # Do less swapping
-#   vm.dirty_ratio: 60 # Do less swapping
-#   vm.dirty_background_ratio: 2 # Do less swapping
+    #   fs.file-max: 2097152 # Increase size of file handles and inode cache
+    #   vm.swappiness: 10 # Do less swapping
+    #   vm.dirty_ratio: 60 # Do less swapping
+    #   vm.dirty_background_ratio: 2 # Do less swapping
 
     net.ipv4.tcp_keepalive_time: 300 # Decrease the time default value for connections to keep alive
     net.ipv4.tcp_keepalive_probes: 5 # Decrease the time default value for connections to keep alive
     net.ipv4.tcp_keepalive_intvl: 15 # Decrease the time default value for connections to keep alive
-#   net.core.rmem_default: 31457280 # Default Socket Receive Buffer
-#   net.core.rmem_max: 12582912 # Maximum Socket Receive Buffer
-#   net.core.wmem_default: 31457280 # Default Socket Send Buffer
-#   net.core.wmem_max: 12582912 # Maximum Socket Send Buffer
+    #   net.core.rmem_default: 31457280 # Default Socket Receive Buffer
+    #   net.core.rmem_max: 12582912 # Maximum Socket Receive Buffer
+    #   net.core.wmem_default: 31457280 # Default Socket Send Buffer
+    #   net.core.wmem_max: 12582912 # Maximum Socket Send Buffer
     net.core.somaxconn: 4096 # Increase number of incoming connections
-#   net.core.netdev_max_backlog: 65536 # Increase number of incoming connections backlog
-#   net.core.optmem_max: 25165824 # Increase the maximum amount of option memory buffers
-#   net.ipv4.tcp_mem: '65536 131072 262144' # Increase the maximum total buffer-space allocatable
-#   net.ipv4.udp_mem: '65536 131072 262144' # This is measured in units of pages (4096 bytes)
+    #   net.core.netdev_max_backlog: 65536 # Increase number of incoming connections backlog
+    #   net.core.optmem_max: 25165824 # Increase the maximum amount of option memory buffers
+    #   net.ipv4.tcp_mem: '65536 131072 262144' # Increase the maximum total buffer-space allocatable
+    #   net.ipv4.udp_mem: '65536 131072 262144' # This is measured in units of pages (4096 bytes)
     net.ipv4.tcp_rmem: 8192 87380 16777216 # Increase the read-buffer space allocatable
     net.ipv4.udp_rmem_min: 16384 # Increase the read-buffer space allocatable
     net.ipv4.tcp_wmem: 8192 65536 16777216 # Increase the write-buffer-space allocatable
     net.ipv4.udp_wmem_min: 16384 # Increase the write-buffer-space allocatable
     net.ipv4.tcp_max_tw_buckets: 1440000 # Increase the tcp-time-wait buckets pool size to prevent simple DOS attacks
-#   net.ipv4.tcp_tw_recycle: 1 # Increase the tcp-time-wait buckets pool size to prevent simple DOS attacks
+    #   net.ipv4.tcp_tw_recycle: 1 # Increase the tcp-time-wait buckets pool size to prevent simple DOS attacks
     net.ipv4.tcp_tw_reuse: 1 # Increase the tcp-time-wait buckets pool size to prevent simple DOS attacks
 
   environment:
@@ -81,44 +81,43 @@ x-app: &app
     - "host.docker.internal:host-gateway"
   restart: on-failure:2
 
-version: "3.7"
 services:
-  app.php:
-    <<: *app
-    image: app/php
-    container_name: app.php
-    build:
-      context: .
-      dockerfile: Dockerfile.php74
-      args:
-        xdebug_php_extension: xdebug-3.0.0
-  app.php80:
-    <<: *app
-    image: app/php80
-    container_name: app.php80
-    build:
-      context: .
-      dockerfile: Dockerfile.php80
-      args:
-        xdebug_php_extension: xdebug-3.1.6
-  app.php81:
-    <<: *app
-    image: app/php81
-    container_name: app.php81
-    build:
-      context: .
-      dockerfile: Dockerfile.php81
-      args:
-        xdebug_php_extension: xdebug-3.1.6
-  app.php82:
-    <<: *app
-    image: app/php82
-    container_name: app.php82
-    build:
-      context: .
-      dockerfile: Dockerfile.php82
-      args:
-        xdebug_php_extension: xdebug-3.2.0
+  # app.php:
+  #   <<: *app
+  #   image: app/php
+  #   container_name: app.php
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.php74
+  #     args:
+  #       xdebug_php_extension: xdebug-3.0.0
+  # app.php80:
+  #   <<: *app
+  #   image: app/php80
+  #   container_name: app.php80
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.php80
+  #     args:
+  #       xdebug_php_extension: xdebug-3.1.6
+  # app.php81:
+  #   <<: *app
+  #   image: app/php81
+  #   container_name: app.php81
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.php81
+  #     args:
+  #       xdebug_php_extension: xdebug-3.1.6
+  # app.php82:
+  #   <<: *app
+  #   image: app/php82
+  #   container_name: app.php82
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.php82
+  #     args:
+  #       xdebug_php_extension: xdebug-3.2.0
   app.php83:
     <<: *app
     image: app/php83
@@ -127,5 +126,4 @@ services:
       context: .
       dockerfile: Dockerfile.php83
       args:
-        xdebug_php_extension: xdebug-3.2.0
-
+        xdebug_php_extension: xdebug-3.3.0
