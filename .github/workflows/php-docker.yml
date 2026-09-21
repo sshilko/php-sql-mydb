@@ -29,7 +29,7 @@ jobs:
 
       - name: Cache Docker php-image
         id: docker-php-image-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: /tmp/docker-save
           key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83') }}

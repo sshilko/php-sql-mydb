@@ -29,7 +29,7 @@ jobs:
 
       - name: Load cached app docker image
         id: docker-php-image-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: /tmp/docker-save
           key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83') }}
@@ -42,9 +42,9 @@ jobs:
           DOCKER_BUILDKIT: "1"
           COMPOSE_DOCKER_CLI_BUILD: "1"
           SERVICES_NAME: "app.php83"
-        run: docker-compose up -d $SERVICES_NAME
+        run: docker compose up -d $SERVICES_NAME
 
-      - run: docker-compose ps
+      - run: docker compose ps
 
       - name: Sleep
         run: sleep 6
@@ -52,17 +52,17 @@ jobs:
 
       - name: Cache Composer packages
         id: composer-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: vendor
           key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
 
       - name: Docker install dependencies
-        run: docker-compose exec -T app.php83 composer install
+        run: docker compose exec -T app.php83 composer install
 
         # Docs: https://phpunit.readthedocs.io/en/9.5/
       - name: Docker run PHPUnit with MySQL5.7
-        run: docker-compose exec -T app.php83 composer app-pdepend
+        run: docker compose exec -T app.php83 composer app-pdepend
 
         # https://github.com/actions/upload-artifact
       - name: Upload Pdepend artifacts
