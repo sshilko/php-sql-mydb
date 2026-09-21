@@ -1,0 +1,30 @@
+------------------------------
+[42;2m                              [0m
+[42;30;2m       No errors found!       [0m
+[42;2m                              [0m
+------------------------------
+
+Checks took 4.47 seconds and used 304.834MB of memory
+Psalm was able to infer types for 99.9258% of the codebase
+-----------------
+99.772% ../src/sql/Mydb.php (1 mixed)
+100.000% ../src/sql/MydbCredentials.php (0 mixed)
+100.000% ../src/sql/MydbEnvironment.php (0 mixed)
+100.000% ../src/sql/MydbEvent.php (0 mixed)
+100.000% ../src/sql/MydbEvent/InternalConnectionBegin.php (0 mixed)
+100.000% ../src/sql/MydbEvent/InternalConnectionEnd.php (0 mixed)
+100.000% ../src/sql/MydbEvent/InternalEvent.php (0 mixed)
+100.000% ../src/sql/MydbEvent/InternalQueryBegin.php (0 mixed)
+100.000% ../src/sql/MydbEvent/InternalQueryEnd.php (0 mixed)
+100.000% ../src/sql/MydbException/QueryBuilderEscapeException.php (0 mixed)
+100.000% ../src/sql/MydbExpression.php (0 mixed)
+100.000% ../src/sql/MydbListener.php (0 mixed)
+100.000% ../src/sql/MydbListener/InternalListener.php (0 mixed)
+100.000% ../src/sql/MydbLogger.php (0 mixed)
+100.000% ../src/sql/MydbMysqli.php (0 mixed)
+100.000% ../src/sql/MydbMysqli/MydbMysqliResult.php (0 mixed)
+100.000% ../src/sql/MydbOptions.php (0 mixed)
+100.000% ../src/sql/MydbQueryBuilder.php (0 mixed)
+100.000% ../src/sql/MydbRegistry.php (0 mixed)
+100.000% ../src/sql/MydbRepository.php (0 mixed)
+
