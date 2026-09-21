@@ -61,7 +61,7 @@ jobs:
 
           # https://github.com/actions/upload-artifact
       - name: Upload PHPStan artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
             name: phpstan-output
             path: |
@@ -81,7 +81,7 @@ jobs:
 
           # https://github.com/marketplace/actions/download-a-build-artifact
           - name: Download all PHPStan artifacts
-            uses: actions/download-artifact@v3
+            uses: actions/download-artifact@v4
             with:
                 name: phpstan-output
                 path: php/phpstan

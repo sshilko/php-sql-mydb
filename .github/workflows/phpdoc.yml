@@ -64,7 +64,7 @@ jobs:
 
       # https://github.com/actions/upload-artifact
     - name: Upload PHPDoc artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
           name: phpdoc-output
           path: |
@@ -85,7 +85,7 @@ jobs:
 
     # https://github.com/marketplace/actions/download-a-build-artifact
     - name: Download all PHPUnit artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
           name: phpdoc-output
           path: php/phpdoc

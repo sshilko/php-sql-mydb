@@ -61,7 +61,7 @@ jobs:
 
           # https://github.com/actions/upload-artifact
       - name: Upload PHPCS artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
             name: phpcs-output
             path: |
@@ -81,7 +81,7 @@ jobs:
 
           # https://github.com/marketplace/actions/download-a-build-artifact
           - name: Download all PHPCS artifacts
-            uses: actions/download-artifact@v3
+            uses: actions/download-artifact@v4
             with:
                 name: phpcs-output
                 path: php/phpcs
