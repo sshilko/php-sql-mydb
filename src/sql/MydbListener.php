@@ -15,10 +15,13 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Override;
+
 abstract class MydbListener implements MydbListenerInterface
 {
     abstract protected function onEvent(MydbEventMetadataInterface $event): ?bool;
 
+    #[Override]
     public function observe(MydbEventMetadataInterface $event): bool
     {
         return false !== $this->onEvent($event);

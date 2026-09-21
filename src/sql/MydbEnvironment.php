@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Override;
 use sql\MydbException\EnvironmentException;
 use function count;
 use function error_reporting;
@@ -66,6 +67,8 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @SuppressWarnings("camelCase")
      * @see https://www.php.net/manual/en/function.gc-collect-cycles
      */
+
+    #[Override]
     public function gc_collect_cycles(): void
     {
         if (!gc_enabled()) {
@@ -84,6 +87,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @SuppressWarnings("camelCase")
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
+    #[Override]
     public function restore_error_handler(): void
     {
         restore_error_handler();
@@ -97,6 +101,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @SuppressWarnings("camelCase")
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
+    #[Override]
     public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): void
     {
         /** @var callable(int, string, string=, int=, array<array-key, mixed>=):bool|null $newHandler */
@@ -128,6 +133,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @throws \sql\MydbException\EnvironmentException
      * @see https://www.php.net/manual/en/mysqlnd.config.php
      */
+    #[Override]
     public function setMysqlndNetReadTimeout(string $timeoutSeconds): bool
     {
         return (bool) $this->ini_set('mysqlnd.net_read_timeout', $timeoutSeconds);
@@ -140,6 +146,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @SuppressWarnings("camelCase")
      * @see https://www.php.net/manual/en/function.error-reporting
      */
+    #[Override]
     public function error_reporting(int $level): int
     {
         return error_reporting($level);
@@ -152,6 +159,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @SuppressWarnings("camelCase")
      * @see https://www.php.net/manual/en/function.ignore-user-abort
      */
+    #[Override]
     public function ignore_user_abort(): int
     {
         return ignore_user_abort();
@@ -165,6 +173,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @throws \sql\MydbException\EnvironmentException
      * @see https://www.php.net/manual/en/function.ini-set
      */
+    #[Override]
     public function ini_set(string $key, string $value): string
     {
         $result = ini_set($key, $value);
@@ -187,6 +196,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @return array<int>|null array of trapped signals
      * @throws \sql\MydbException\EnvironmentException
      */
+    #[Override]
     public function endSignalsTrap(): ?array
     {
         /**
@@ -230,6 +240,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * @see https://www.php.net/manual/en/function.pcntl-signal
      * @throws \sql\MydbException\EnvironmentException
      */
+    #[Override]
     public function startSignalsTrap(): void
     {
         $this->trappedSignals = [];

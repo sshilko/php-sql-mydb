@@ -15,18 +15,21 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Override;
+
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class MydbExpression implements MydbExpressionInterface
+readonly class MydbExpression implements MydbExpressionInterface
 {
 
     public function __construct(protected string $input)
     {
     }
 
+    #[Override]
     public function __toString(): string
     {
         return $this->input;

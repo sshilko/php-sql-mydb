@@ -132,20 +132,22 @@
     "prefer-stable": true,
     "require-dev": {
         "ext-posix": "*",
-        "ext-ast": "*",
+        "composer/composer": "^2",
         "nikic/php-parser": "^4",
         "pdepend/pdepend": "^2.12",
         "phan/phan": "^5.4",
         "phpmd/phpmd": "^2.13",
-        "phpstan/phpstan": "^1.8",
-        "phpunit/phpunit": "^9.5",
-        "psalm/phar": "*",
-        "slevomat/coding-standard": "^8.4",
-        "squizlabs/php_codesniffer": "^3.8",
-        "composer/composer": "^2"
+        "phpstan/phpstan": "^1.12",
+        "phpunit/phpunit": "^10.5",
+        "psalm/phar": "6.0.0",
+        "slevomat/coding-standard": "^8.14",
+        "squizlabs/php_codesniffer": "^3.8"
+    },
+    "suggest": {
+        "ext-ast": "Performance boost for phan"
     },
     "require": {
-        "php": "^8.0 || ^8.1 || ^8.2",
+        "php": "^8.3",
         "ext-mysqli": "*",
         "ext-mysqlnd": "*",
         "ext-pcntl": "*",

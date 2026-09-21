@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Override;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use sql\MydbException\LoggerException;
@@ -47,7 +48,7 @@ use const STDOUT;
  */
 class MydbLogger implements LoggerInterface
 {
-    protected const IO_WRITE_ATTEMPTS = 3;
+    protected const int IO_WRITE_ATTEMPTS = 3;
 
     /**
      * Opened resource, STDOUT
@@ -68,7 +69,7 @@ class MydbLogger implements LoggerInterface
     /**
      * End of line delimiter
      */
-    protected string $stdeol = PHP_EOL;
+    protected readonly string $stdeol;
 
     /**
      * @param resource $stdout
@@ -114,6 +115,8 @@ class MydbLogger implements LoggerInterface
      * @throws \sql\MydbException\LoggerException
      * @param array|string $message
      */
+
+    #[Override]
     public function error($message, array $context = []): void
     {
         if ([] !== $message && '' !== $message) {
@@ -133,6 +136,7 @@ class MydbLogger implements LoggerInterface
      * @throws \sql\MydbException\LoggerException
      * @phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
      */
+    #[Override]
     public function log($level, $message, array $context = []): void
     {
         if ([] !== $message && '' !== $message) {
@@ -150,6 +154,7 @@ class MydbLogger implements LoggerInterface
      * @param array|string $message
      * @throws \sql\MydbException\LoggerException
      */
+    #[Override]
     public function warning($message, array $context = []): void
     {
         $this->error($message, $context);
@@ -159,6 +164,7 @@ class MydbLogger implements LoggerInterface
      * @param array|string $message
      * @throws \sql\MydbException\LoggerException
      */
+    #[Override]
     public function emergency($message, array $context = []): void
     {
         $this->error($message, $context);
@@ -168,6 +174,7 @@ class MydbLogger implements LoggerInterface
      * @param array|string $message
      * @throws \sql\MydbException\LoggerException
      */
+    #[Override]
     public function alert($message, array $context = []): void
     {
         $this->error($message, $context);
@@ -177,6 +184,7 @@ class MydbLogger implements LoggerInterface
      * @param array|string $message
      * @throws \sql\MydbException\LoggerException
      */
+    #[Override]
     public function critical($message, array $context = []): void
     {
         $this->error($message, $context);
@@ -186,6 +194,7 @@ class MydbLogger implements LoggerInterface
      * @param array|string $message
      * @throws \sql\MydbException\LoggerException
      */
+    #[Override]
     public function notice($message, array $context = []): void
     {
         $this->log(LogLevel::NOTICE, $message, $context);
@@ -195,6 +204,7 @@ class MydbLogger implements LoggerInterface
      * @param array|string $message
      * @throws \sql\MydbException\LoggerException
      */
+    #[Override]
     public function info($message, array $context = []): void
     {
         $this->log(LogLevel::INFO, $message, $context);
@@ -204,6 +214,7 @@ class MydbLogger implements LoggerInterface
      * @param array|string $message
      * @throws \sql\MydbException\LoggerException
      */
+    #[Override]
     public function debug($message, array $context = []): void
     {
         $this->log(LogLevel::DEBUG, $message, $context);

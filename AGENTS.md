@@ -18,7 +18,7 @@ Guidance for AI agents and contributors working in this repository.
 
 - PHP client/library for MySQL, built on `mysqli`/`mysqlnd`
 - PSR-4 autoload namespace `sql\` mapped to `src/sql`
-- Currently supports PHP 8.0 - 8.2 (incrementally moving to PHP 8.3)
+- Currently supports PHP 8.3
   - supported MySQL 5.7.8+, 8.0; MariaDB not yet compatible
 - MIT licensed, authored by Sergei Shilko <contact@sshilko.com>
 
@@ -34,7 +34,7 @@ Guidance for AI agents and contributors working in this repository.
 ## Development workflow
 
 CI and quality tooling usually runs inside Docker containers
-(`app.php80`, `app.php81`, `app.php82`), see `CONTRIBUTING`.
+(`app.php80`, `app.php81`, `app.php82`, `app.php83`), see `CONTRIBUTING`.
 
 Run quality checks and tests:
 

@@ -12,18 +12,12 @@
  @license https://opensource.org/licenses/mit-license.php MIT
 -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/9.5/phpunit.xsd"
-         backupGlobals="false"
-         backupStaticAttributes="false"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+         backupGlobals="true"
          bootstrap="phpunit.xml.bootstrap.php"
-         cacheResult="true"
-         cacheResultFile="tmp/phpunit-cache-result"
+         cacheDirectory="tmp/phpunit-cache-result"
          colors="true"
          columns="60"
-         convertDeprecationsToExceptions="false"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnDefect="false"
          stopOnError="false"
@@ -34,32 +28,44 @@
          stopOnRisky="false"
          failOnRisky="true"
          failOnWarning="true"
-         defaultTimeLimit="5"
+         failOnIncomplete="true"
+         failOnSkipped="true"
+         defaultTimeLimit="0"
+         enforceTimeLimit="false"
          testdox="true"
-         noInteraction="false"
-         forceCoversAnnotation="false"
          executionOrder="depends,defects"
-         beStrictAboutCoversAnnotation="true"
+
          beStrictAboutOutputDuringTests="false"
-         timeoutForSmallTests="1"
-         timeoutForMediumTests="6"
-         timeoutForLargeTests="11"
-         enforceTimeLimit="true"
          beStrictAboutChangesToGlobalState="true"
-         verbose="true">
-    <!-- https://phpunit.readthedocs.io/en/9.5/configuration.html#the-phpunit-element -->
+         displayDetailsOnTestsThatTriggerDeprecations="false"
+         displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerNotices="true"
+         displayDetailsOnTestsThatTriggerWarnings="true">
+    <!-- https://phpunit.readthedocs.io/en/10.5/configuration.html#the-phpunit-element -->
     <testsuites>
         <testsuite name="phpunit">
-            <directory phpVersion="8.0.0" phpVersionOperator=">=">./phpunit</directory>
+            <directory phpVersion="8.3.0" phpVersionOperator=">=">./phpunit</directory>
         </testsuite>
     </testsuites>
 
-    <!-- https://phpunit.readthedocs.io/en/9.5/code-coverage-analysis.html -->
-    <!-- https://phpunit.readthedocs.io/en/9.5/configuration.html#the-coverage-element -->
+    <!-- https://phpunit.readthedocs.io/en/10.5/code-coverage-analysis.html -->
+    <source ignoreSuppressionOfDeprecations="true"
+            ignoreSuppressionOfPhpDeprecations="true"
+            ignoreSuppressionOfErrors="true"
+            ignoreSuppressionOfNotices="true"
+            ignoreSuppressionOfPhpNotices="true"
+            ignoreSuppressionOfWarnings="true"
+            ignoreSuppressionOfPhpWarnings="true">
+        <include>
+            <directory suffix=".php">../src</directory>
+        </include>
+    </source>
+
+    <!-- https://phpunit.readthedocs.io/en/10.5/configuration.html#the-coverage-element -->
     <coverage cacheDirectory="./tmp/phpunit-coverage-cache-directory"
               includeUncoveredFiles="true"
-              processUncoveredFiles="true"
               pathCoverage="false"
+              ignoreDeprecatedCodeUnits="true"
               disableCodeCoverageIgnore="false">
         <report>
             <clover outputFile="./tmp/phpunit-clover.xml" />
@@ -69,9 +75,6 @@
             <html outputDirectory="./tmp/html" lowUpperBound="50" highLowerBound="90"/>
             <text outputFile="./tmp/phpunit-coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
         </report>
-        <include>
-            <directory suffix=".php">../src</directory>
-        </include>
     </coverage>
 
     <logging>
@@ -79,13 +82,6 @@
         <testdoxText outputFile="tmp/phpunit-testdox-text.txt"/>
         <testdoxHtml outputFile="tmp/phpunit-testdox-html.html"/>
     </logging>
-
-    <!--
-    <listeners>
-    </listeners>
-    <extensions>
-    </extensions>
-    -->
 
     <php>
         <includePath>phpunit/base/</includePath>

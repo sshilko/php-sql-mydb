@@ -27,7 +27,7 @@ use function sprintf;
  */
 class QueryBuilderEscapeException extends MydbException
 {
-    protected const MESSAGE_TEMPLATE = 'Failed to escape value: %s';
+    protected const string MESSAGE_TEMPLATE = 'Failed to escape value: %s';
 
     public function __construct(string $message = "", int $code = 0, ?Throwable $previous = null)
     {

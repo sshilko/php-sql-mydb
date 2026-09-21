@@ -51,7 +51,10 @@
 
         <exclude name="SlevomatCodingStandard.Commenting" />
 
+        <exclude name="SlevomatCodingStandard.Attributes.AttributesOrder" />
+
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming" />
+        <exclude name="SlevomatCodingStandard.Classes.ClassStructure" />
         <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming" />
@@ -60,7 +63,6 @@
         <exclude name="SlevomatCodingStandard.Classes.ClassLength" />
         <exclude name="SlevomatCodingStandard.Files.FileLength" />
         <exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName" />
-        <exclude name="SlevomatCodingStandard.Files.FunctionLength" />
         <exclude name="SlevomatCodingStandard.Files.LineLength.LineTooLong" />
 
         <exclude name="SlevomatCodingStandard.Functions.DisallowTrailingCommaInCall" />

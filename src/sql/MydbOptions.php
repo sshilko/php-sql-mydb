@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Override;
 use sql\MydbException\OptionException;
 use const E_ALL;
 use const E_NOTICE;
@@ -27,13 +28,13 @@ use const E_WARNING;
  */
 class MydbOptions implements MydbOptionsInterface
 {
-    protected const NET_CMD_BUFFER_SIZE_MIN = 4096;
+    protected const int NET_CMD_BUFFER_SIZE_MIN = 4096;
 
-    protected const NET_CMD_BUFFER_SIZE_MAX = 16384;
+    protected const int NET_CMD_BUFFER_SIZE_MAX = 16384;
 
-    protected const NET_READ_BUFFER_MIN = 8192;
+    protected const int NET_READ_BUFFER_MIN = 8192;
 
-    protected const NET_READ_BUFFER_MAX = 131072;
+    protected const int NET_READ_BUFFER_MAX = 131072;
 
     /**
      * The execution timeout ONLY APPLIES TO "SELECT" statements, seconds
@@ -186,56 +187,67 @@ class MydbOptions implements MydbOptionsInterface
      */
     protected bool $readonly = false;
 
+    #[Override]
     public function getNonInteractiveTimeout(): int
     {
         return $this->nonInteractiveTimeout;
     }
 
+    #[Override]
     public function setNonInteractiveTimeout(int $nonInteractiveTimeout): void
     {
         $this->nonInteractiveTimeout = $nonInteractiveTimeout;
     }
 
+    #[Override]
     public function getServerSideSelectTimeout(): int
     {
         return $this->serverSideSelectTimeout;
     }
 
+    #[Override]
     public function setServerSideSelectTimeout(int $seconds): void
     {
         $this->serverSideSelectTimeout = $seconds;
     }
 
+    #[Override]
     public function getConnectTimeout(): int
     {
         return $this->connectTimeout;
     }
 
+    #[Override]
     public function setConnectTimeout(int $seconds): void
     {
         $this->connectTimeout = $seconds;
     }
 
+    #[Override]
     public function getErrorReporting(): int
     {
         return $this->errorReporting;
     }
 
+    #[Override]
     public function setErrorReporting(int $errorReporting): void
     {
         $this->errorReporting = $errorReporting;
     }
 
+    #[Override]
     public function getReadTimeout(): int
     {
         return $this->readTimeout;
     }
 
+    #[Override]
     public function setReadTimeout(int $seconds): void
     {
         $this->readTimeout = $seconds;
     }
 
+    #[Override]
     public function getNetworkBufferSize(): int
     {
         return $this->networkBufferSize;
@@ -245,6 +257,7 @@ class MydbOptions implements MydbOptionsInterface
      * @param int $bytes bytes
      * @throws \sql\MydbException\OptionException
      */
+    #[Override]
     public function setNetworkBufferSize(int $bytes): void
     {
         if ($bytes < self::NET_CMD_BUFFER_SIZE_MIN || $bytes > self::NET_CMD_BUFFER_SIZE_MAX) {
@@ -253,6 +266,7 @@ class MydbOptions implements MydbOptionsInterface
         $this->networkBufferSize = $bytes;
     }
 
+    #[Override]
     public function getNetworkReadBuffer(): int
     {
         return $this->networkReadBuffer;
@@ -261,6 +275,7 @@ class MydbOptions implements MydbOptionsInterface
     /**
      * @throws \sql\MydbException\OptionException
      */
+    #[Override]
     public function setNetworkReadBuffer(int $bytes): void
     {
         if ($bytes < self::NET_READ_BUFFER_MIN || $bytes > self::NET_READ_BUFFER_MAX) {
@@ -269,6 +284,7 @@ class MydbOptions implements MydbOptionsInterface
         $this->networkReadBuffer = $bytes;
     }
 
+    #[Override]
     public function getClientErrorLevel(): int
     {
         return $this->clientErrorLevel;
@@ -277,6 +293,7 @@ class MydbOptions implements MydbOptionsInterface
     /**
      * @throws \sql\MydbException\OptionException
      */
+    #[Override]
     public function setClientErrorLevel(int $mysqliReport): void
     {
         if ($mysqliReport > 255 || $mysqliReport < 0) {
@@ -285,56 +302,67 @@ class MydbOptions implements MydbOptionsInterface
         $this->clientErrorLevel = $mysqliReport;
     }
 
+    #[Override]
     public function getTimeZone(): string
     {
         return $this->timeZone;
     }
 
+    #[Override]
     public function setTimeZone(string $timeZone): void
     {
         $this->timeZone = $timeZone;
     }
 
+    #[Override]
     public function isAutocommit(): bool
     {
         return $this->autocommit;
     }
 
+    #[Override]
     public function setAutocommit(bool $autocommit): void
     {
         $this->autocommit = $autocommit;
     }
 
+    #[Override]
     public function getCharset(): string
     {
         return $this->charset;
     }
 
+    #[Override]
     public function setCharset(string $charset): void
     {
         $this->charset = $charset;
     }
 
+    #[Override]
     public function isPersistent(): bool
     {
         return $this->persistent;
     }
 
+    #[Override]
     public function setPersistent(bool $persistent): void
     {
         $this->persistent = $persistent;
     }
 
+    #[Override]
     public function isReadonly(): bool
     {
         return $this->readonly;
     }
 
+    #[Override]
     public function setReadonly(bool $readonly): void
     {
         $this->readonly = $readonly;
     }
 
+    #[Override]
     public function getTransactionIsolationLevel(): ?string
     {
         $userLevel = $this->transactionIsolationLevel;
@@ -348,6 +376,7 @@ class MydbOptions implements MydbOptionsInterface
         return $userLevel;
     }
 
+    #[Override]
     public function setTransactionIsolationLevel(string $isolationLevel): void
     {
         $this->transactionIsolationLevel = $isolationLevel;

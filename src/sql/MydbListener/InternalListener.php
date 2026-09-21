@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace sql\MydbListener;
 
+use Override;
 use Psr\Log\LoggerInterface;
 use sql\MydbEvent\InternalConnectionBegin;
 use sql\MydbEvent\InternalConnectionEnd;
@@ -27,10 +28,11 @@ use function is_null;
 class InternalListener extends MydbListener
 {
 
-    public function __construct(protected ?LoggerInterface $logger = null)
+    public function __construct(protected readonly ?LoggerInterface $logger = null)
     {
     }
 
+    #[Override]
     protected function onEvent(MydbEventMetadataInterface $event): ?bool
     {
         if (in_array($event->getEventName(), [InternalConnectionBegin::class, InternalConnectionEnd::class], true)) {

@@ -119,4 +119,13 @@ services:
       dockerfile: Dockerfile.php82
       args:
         xdebug_php_extension: xdebug-3.2.0
+  app.php83:
+    <<: *app
+    image: app/php83
+    container_name: app.php83
+    build:
+      context: .
+      dockerfile: Dockerfile.php83
+      args:
+        xdebug_php_extension: xdebug-3.2.0
 

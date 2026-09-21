@@ -16,6 +16,7 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use sql\MydbException\QueryBuilderException;
 use sql\MydbExpression;
@@ -81,9 +82,7 @@ final class QueryBuilderTest extends TestCase
         $this->builder->showKeys('');
     }
 
-    /**
-     * @dataProvider dataProviderTestInsertOne
-     */
+    #[DataProvider('dataProviderTestInsertOne')]
     public function testInsertOne(string $sql, string $table, $data): void
     {
         $real = $this->builder->insertOne($data, $table, 'INSERT');
@@ -108,9 +107,7 @@ final class QueryBuilderTest extends TestCase
         $this->builder->insertOne([], 'db1.table1', 'REPLACE');
     }
 
-    /**
-     * @dataProvider dataProviderTestInsertOne
-     */
+    #[DataProvider('dataProviderTestInsertOne')]
     public function testReplaceOne(string $sql, string $table, $data): void
     {
         $real = $this->builder->insertOne($data, $table, 'REPLACE');
@@ -129,18 +126,14 @@ final class QueryBuilderTest extends TestCase
         $builder->escape('a $ b');
     }
 
-    /**
-     * @dataProvider dataProviderTestBuildUpdateWhereMany
-     */
+    #[DataProvider('dataProviderTestBuildUpdateWhereMany')]
     public function testBuildUpdateWhereMany(string $sql, array $columnSetWhere, array $where, string $table): void
     {
         $real = $this->builder->buildUpdateWhereMany($columnSetWhere, $where, $table);
         self::assertSame($sql, $real);
     }
 
-    /**
-     * @dataProvider dataProviderTestBuildWhere
-     */
+    #[DataProvider('dataProviderTestBuildWhere')]
     public function testBuildWhere($sql, array $fields, array $negativeFields, array $likeFields): void
     {
         $real = $this->builder->buildWhere($fields, $negativeFields, $likeFields);
@@ -214,7 +207,7 @@ final class QueryBuilderTest extends TestCase
      * @return array<array<string, string>>
      * @phpcs:disable Generic.Files.LineLength.TooLong
      */
-    public function dataProviderTestBuildUpdateWhereMany(): array
+    public static function dataProviderTestBuildUpdateWhereMany(): array
     {
         return [
             'simple' => [
@@ -253,7 +246,7 @@ final class QueryBuilderTest extends TestCase
      * @phpcs:disable Generic.Files.LineLength.TooLong
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */
-    public function dataProviderTestBuildWhere(): array
+    public static function dataProviderTestBuildWhere(): array
     {
         $simples = [
             'simple' => [
@@ -408,7 +401,7 @@ final class QueryBuilderTest extends TestCase
     /**
      * @return array<array<string, string>>
      */
-    public function dataProviderTestInsertOne(): array
+    public static function dataProviderTestInsertOne(): array
     {
         return [
             'simple int' => [

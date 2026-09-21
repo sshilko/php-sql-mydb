@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Override;
 use sql\MydbException\EventException;
 
 abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterface
@@ -33,6 +34,8 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
     /**
      * @throws \sql\MydbException\EventException
      */
+
+    #[Override]
     public function notify(): void
     {
         foreach ($this->getListeners() as $listenerInstance) {

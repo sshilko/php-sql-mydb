@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace sql\MydbEvent;
 
+use Override;
 use sql\MydbEvent;
 use sql\MydbEventInterface;
 
@@ -31,6 +32,7 @@ class InternalEvent extends MydbEvent
      */
     protected ?array $data = null;
 
+    #[Override]
     public function getEventMetadata(): ?array
     {
         return $this->data;

@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use sql\MydbException\LoggerException;
@@ -76,48 +77,48 @@ final class LoggerTest extends TestCase
      * @return array<array<string, string>>
      * @throws \phpunit\Exception
      */
-    public function dataProviderStrings(): array
+    public static function dataProviderStrings(): array
     {
-        $eol = $this->stdeol;
+        $eol = PHP_EOL;
         $randomString = bin2hex(random_bytes(random_int(2, 20)));
 
         return [
             'nothing' => [
-                'message' => '',
-                'context' => [],
+                'strOrArray' => '',
+                'ctx' => [],
                 'stdout' => '',
                 'stderr' => '',
                 'isError' => true,
             ],
             'nothing-array' => [
-                'message' => [],
-                'context' => [],
+                'strOrArray' => [],
+                'ctx' => [],
                 'stdout' => '',
                 'stderr' => '',
                 'isError' => true,
             ],
             'nothing-error' => [
-                'message' => '',
-                'context' => [],
+                'strOrArray' => '',
+                'ctx' => [],
                 'stdout' => '',
                 'stderr' => '',
             ],
             'something' => [
-                'message' => $randomString,
-                'context' => [],
+                'strOrArray' => $randomString,
+                'ctx' => [],
                 'stdout' => '',
                 'stderr' => $randomString . $eol,
                 'isError' => true,
             ],
             'something' => [
-                'message' => $randomString,
-                'context' => [],
+                'strOrArray' => $randomString,
+                'ctx' => [],
                 'stdout' => $randomString . $eol,
                 'stderr' => '',
             ],
             'chars' => [
-                'message' => '___-123\'\"&*^!@&#${}AXC__DA',
-                'context' => [],
+                'strOrArray' => '___-123\'\"&*^!@&#${}AXC__DA',
+                'ctx' => [],
                 'stdout' => '___-123\'\"&*^!@&#${}AXC__DA' . $eol,
                 'stderr' => '',
             ],
@@ -253,9 +254,9 @@ final class LoggerTest extends TestCase
     }
 
     /**
-     * @dataProvider dataProviderStrings
      * @throws \sql\MydbException\LoggerException
      */
+    #[DataProvider('dataProviderStrings')]
     public function testLoggerWithStrings(
         $strOrArray,
         array $ctx,

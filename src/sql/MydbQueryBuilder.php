@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Override;
 use sql\MydbException\QueryBuilderEscapeException;
 use sql\MydbException\QueryBuilderException;
 use sql\MydbMysqli\MydbMysqliEscapeStringInterface;
@@ -32,8 +33,8 @@ use function is_subclass_of;
 use function key;
 use function preg_match;
 use function sprintf;
+use function str_starts_with;
 use function strlen;
-use function strpos;
 use function strtoupper;
 use function substr;
 use function trim;
@@ -53,6 +54,8 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
     /**
      * @throws \sql\MydbException\QueryBuilderException
      */
+
+    #[Override]
     public function showColumnsLike(string $table, string $column): string
     {
         if ('' === $table || '' === $column) {
@@ -65,6 +68,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
     /**
      * @throws \sql\MydbException\QueryBuilderException
      */
+    #[Override]
     public function showKeys(string $table): string
     {
         if ('' === $table) {
@@ -79,6 +83,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      * @throws \sql\MydbException\QueryBuilderException
      * @psalm-return string
      */
+    #[Override]
     public function insertOne(array $data, string $table, string $type): string
     {
         if ('' === $table || 0 === count($data)) {
@@ -102,6 +107,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      * @throws \sql\MydbException\QueryBuilderException
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */
+    #[Override]
     public function buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string
     {
         if ('' === $table) {
@@ -159,6 +165,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      * @throws \sql\MydbException\QueryBuilderException
      * @param array<string, (float|int|string|\sql\MydbExpressionInterface|null)> $update
      */
+    #[Override]
     public function buildUpdateWhere(
         array $update,
         array $whereFields,
@@ -194,6 +201,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
     /**
      * @throws \sql\MydbException\QueryBuilderException
      */
+    #[Override]
     public function buildDeleteWhere(string $table, array $fields = [], array $negativeFields = []): ?string
     {
         if ('' === $table || 0 === count($fields) || !is_string(key($fields))) {
@@ -211,6 +219,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      * @todo will this need real db connection to escape()? add test for all possible cases
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */
+    #[Override]
     public function buildWhere(array $fields, array $negativeFields = [], array $likeFields = []): string
     {
         if ([] === $fields) {
@@ -289,6 +298,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      * @see https://dev.mysql.com/doc/refman/8.0/en/insert-on-duplicate.html
      * @param array<string> $cols
      */
+    #[Override]
     public function buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string
     {
         if ('' === $table || [] === $data || [] === $cols) {
@@ -337,6 +347,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
      * @todo reduce NPathComplexity
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */
+    #[Override]
     public function escape($unescaped, string $quote = "'"): string
     {
         if (is_float($unescaped)) {
@@ -350,7 +361,7 @@ class MydbQueryBuilder implements MydbQueryBuilderInterface
         /**
          * Not quoting '0x...' decimal values
          */
-        if (is_string($unescaped) && 0 === strpos($unescaped, '0x') && preg_match('/^[a-zA-Z0-9]+$/', $unescaped)) {
+        if (is_string($unescaped) && str_starts_with($unescaped, '0x') && preg_match('/^[a-zA-Z0-9]+$/', $unescaped)) {
             if (0 === strlen($unescaped) % 2) {
                 return '0x' . strtoupper(substr($unescaped, 2));
             }

@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use sql\MydbEnvironment;
 use sql\MydbException\ServerGoneException;
 use sql\MydbException\TerminationSignalException;
@@ -33,7 +34,7 @@ final class SelectTest extends includes\DatabaseTestCase
     /**
      * @return array<array<string, string>>
      */
-    public function dataProviderTestSimpleSelect(): array
+    public static function dataProviderTestSimpleSelect(): array
     {
         return [
             'simple select all' => [
@@ -141,9 +142,7 @@ final class SelectTest extends includes\DatabaseTestCase
         ];
     }
 
-    /**
-     * @dataProvider dataProviderTestSimpleSelect
-     */
+    #[DataProvider('dataProviderTestSimpleSelect')]
     public function testSimpleSelect(string $sql, $expects): void
     {
         $db = $this->getDefaultDb();
