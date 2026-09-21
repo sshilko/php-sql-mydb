@@ -75,7 +75,7 @@ jobs:
         env:
           DOCKER_BUILDKIT: "1"
           COMPOSE_DOCKER_CLI_BUILD: "1"
-          SERVICES_NAME: "app.php83 mysql mysql80"
+          SERVICES_NAME: "app.php83 mysql80"
         run: docker compose up -d $SERVICES_NAME
         timeout-minutes: 1
 
