@@ -23,7 +23,7 @@ MyDb - Component
     <a href="https://sshilko.com/php-sql-mydb/php/phpcs/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpcs.yml/badge.svg" alt="8.3 PHPCodeSniffer build"></a>
     <a href="https://sshilko.com/php-sql-mydb/php/phpdoc/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpdoc.yml/badge.svg" alt="8.3 PHPDocumentor build"></a>
     <a href="https://sshilko.com/php-sql-mydb/php/pdepend/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phppdepend.yml/badge.svg" alt="8.3 Pdepend build"></a>
-    <a href="https://sshilko.com/php-sql-mydb/php/phpunit/html/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit.yml/badge.svg" alt="8.3 PHPUnit build"></a>
+    <a href="https://sshilko.com/php-sql-mydb/php/phpunit/html/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit83.yml/badge.svg" alt="8.3 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit83.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit83.yml/badge.svg" alt="8.3 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/github-pages.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/github-pages.yml/badge.svg" alt="GithubPages build"></a>
     <br/>
