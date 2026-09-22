@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1790043633">
-  <project timestamp="1790043633">
+<coverage generated="1790104452">
+  <project timestamp="1790104452">
     <file name="/app/src/sql/Mydb.php">
       <class name="sql\Mydb" namespace="global">
         <metrics complexity="97" methods="28" coveredmethods="28" conditionals="0" coveredconditionals="0" statements="209" coveredstatements="209" elements="237" coveredelements="237"/>
@@ -554,9 +554,7 @@
       <class name="sql\MydbFactory" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="29" coveredstatements="29" elements="32" coveredelements="32"/>
       </class>
-      <line num="32" type="method" name="createOptions" visibility="public" complexity="1" crap="1" count="5"/>
-      <line num="34" type="stmt" count="5"/>
-      <line num="35" type="stmt" count="5"/>
+      <line num="34" type="method" name="createOptions" visibility="public" complexity="1" crap="1" count="5"/>
       <line num="36" type="stmt" count="5"/>
       <line num="37" type="stmt" count="5"/>
       <line num="38" type="stmt" count="5"/>
@@ -569,24 +567,26 @@
       <line num="45" type="stmt" count="5"/>
       <line num="46" type="stmt" count="5"/>
       <line num="47" type="stmt" count="5"/>
+      <line num="48" type="stmt" count="5"/>
       <line num="49" type="stmt" count="5"/>
-      <line num="55" type="method" name="createReadonlyOptions" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="57" type="stmt" count="2"/>
-      <line num="58" type="stmt" count="2"/>
-      <line num="59" type="stmt" count="2"/>
-      <line num="60" type="stmt" count="2"/>
+      <line num="51" type="stmt" count="5"/>
+      <line num="59" type="method" name="createReadonlyOptions" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="61" type="stmt" count="2"/>
       <line num="62" type="stmt" count="2"/>
-      <line num="76" type="method" name="create" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="85" type="stmt" count="2"/>
-      <line num="86" type="stmt" count="2"/>
-      <line num="87" type="stmt" count="2"/>
-      <line num="88" type="stmt" count="2"/>
-      <line num="89" type="stmt" count="2"/>
-      <line num="90" type="stmt" count="2"/>
+      <line num="63" type="stmt" count="2"/>
+      <line num="64" type="stmt" count="2"/>
+      <line num="66" type="stmt" count="2"/>
+      <line num="82" type="method" name="create" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="91" type="stmt" count="2"/>
       <line num="92" type="stmt" count="2"/>
       <line num="93" type="stmt" count="2"/>
-      <metrics loc="96" ncloc="61" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="29" coveredstatements="29" elements="32" coveredelements="32"/>
+      <line num="94" type="stmt" count="2"/>
+      <line num="95" type="stmt" count="2"/>
+      <line num="96" type="stmt" count="2"/>
+      <line num="97" type="stmt" count="2"/>
+      <line num="98" type="stmt" count="2"/>
+      <line num="99" type="stmt" count="2"/>
+      <metrics loc="102" ncloc="61" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="29" coveredstatements="29" elements="32" coveredelements="32"/>
     </file>
     <file name="/app/src/sql/MydbInterface.php">
       <metrics loc="33" ncloc="17" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -1218,6 +1218,6 @@
     <file name="/app/src/sql/MydbRepositoryInterface.php">
       <metrics loc="22" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="63" loc="5305" ncloc="3223" classes="21" methods="171" coveredmethods="171" conditionals="0" coveredconditionals="0" statements="728" coveredstatements="728" elements="899" coveredelements="899"/>
+    <metrics files="63" loc="5311" ncloc="3223" classes="21" methods="171" coveredmethods="171" conditionals="0" coveredconditionals="0" statements="728" coveredstatements="728" elements="899" coveredelements="899"/>
   </project>
 </coverage>
