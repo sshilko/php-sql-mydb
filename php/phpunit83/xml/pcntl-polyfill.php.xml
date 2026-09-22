@@ -2,15 +2,16 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="pcntl-polyfill.php" path="/">
     <totals>
-      <lines total="171" comments="33" code="138" executable="0" executed="0" percent="0"/>
+      <lines total="210" comments="50" code="160" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
-      <functions count="3" tested="3" percent="100.00"/>
+      <functions count="4" tested="4" percent="100.00"/>
       <classes count="0" tested="0" percent="0"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <function name="pcntl_signal" signature="pcntl_signal(int $signal, int|string|callable $handler, bool $restartSysCalls): bool" start="135" crap="1" executable="0" executed="0" coverage="100"/>
-    <function name="pcntl_signal_dispatch" signature="pcntl_signal_dispatch(): bool" start="149" crap="1" executable="0" executed="0" coverage="100"/>
-    <function name="pcntl_signal_get_handler" signature="pcntl_signal_get_handler(int $signal): int|string|false" start="163" crap="1" executable="0" executed="0" coverage="100"/>
+    <function name="pcntl_signal" signature="pcntl_signal(int $signal, int|string|callable $handler, bool $restartSysCalls): bool" start="146" crap="3" executable="0" executed="0" coverage="100"/>
+    <function name="posix_kill" signature="posix_kill(int $processId, int $signal): bool" start="168" crap="3" executable="0" executed="0" coverage="100"/>
+    <function name="pcntl_signal_dispatch" signature="pcntl_signal_dispatch(): bool" start="188" crap="1" executable="0" executed="0" coverage="100"/>
+    <function name="pcntl_signal_get_handler" signature="pcntl_signal_get_handler(int $signal): int|string|false" start="202" crap="1" executable="0" executed="0" coverage="100"/>
     <source>
       <line no="1">
         <token name="T_OPEN_TAG">&lt;?php</token>
@@ -1045,6 +1046,9 @@
       </line>
       <line no="127"/>
       <line no="128">
+        <token name="T_COMMENT">// phpcs:disable SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable.DisallowedSuperGlobalVariable</token>
+      </line>
+      <line no="129">
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -1057,26 +1061,67 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="129">
+      <line no="130">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="130">
-        <token name="T_DOC_COMMENT">     * Report that a signal handler was installed, in reality nothing was done.</token>
-      </line>
       <line no="131">
-        <token name="T_DOC_COMMENT">     *</token>
+        <token name="T_DOC_COMMENT">     * Shared registry of simulated signal handlers shared by the pcntl_signal()</token>
       </line>
       <line no="132">
-        <token name="T_DOC_COMMENT">     * @param int|string|callable $handler</token>
+        <token name="T_DOC_COMMENT">     * and posix_kill() polyfills, keyed by signal number.</token>
       </line>
       <line no="133">
-        <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.pcntl-signal.php</token>
+        <token name="T_DOC_COMMENT">     *</token>
       </line>
       <line no="134">
-        <token name="T_DOC_COMMENT">     */</token>
+        <token name="T_DOC_COMMENT">     * @var array&lt;int, int|string|callable&gt;</token>
       </line>
       <line no="135">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="136">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_COMMENT">// phpcs:disable PSR1.Files.SideEffects.FoundWithSymbols</token>
+      </line>
+      <line no="137">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_VARIABLE">$GLOBALS</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'pcntl_polyfill_signal_handlers'</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COALESCE_EQUAL">??=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="138">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_COMMENT">// phpcs:enable PSR1.Files.SideEffects.FoundWithSymbols</token>
+      </line>
+      <line no="139"/>
+      <line no="140">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="141">
+        <token name="T_DOC_COMMENT">     * Register or reset a simulated signal handler that posix_kill() will invoke.</token>
+      </line>
+      <line no="142">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="143">
+        <token name="T_DOC_COMMENT">     * @param int|string|callable $handler</token>
+      </line>
+      <line no="144">
+        <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.pcntl-signal.php</token>
+      </line>
+      <line no="145">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="146">
         <token name="T_WHITESPACE">    </token>
         <token name="T_FUNCTION">function</token>
         <token name="T_WHITESPACE"> </token>
@@ -1108,41 +1153,246 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">bool</token>
       </line>
-      <line no="136">
+      <line no="147">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="137">
+      <line no="148">
         <token name="T_WHITESPACE">        </token>
         <token name="T_UNSET">unset</token>
         <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_VARIABLE">$signal</token>
-        <token name="T_COMMA">,</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$handler</token>
-        <token name="T_COMMA">,</token>
-        <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$restartSysCalls</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="138"/>
-      <line no="139">
+      <line no="149">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">SIG_DFL</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$handler</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_OR">||</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">SIG_IGN</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$handler</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="150">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_UNSET">unset</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$GLOBALS</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'pcntl_polyfill_signal_handlers'</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$signal</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="151"/>
+      <line no="152">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">true</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="153">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="154"/>
+      <line no="155">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$GLOBALS</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'pcntl_polyfill_signal_handlers'</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$signal</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$handler</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="156"/>
+      <line no="157">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">true</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="140">
+      <line no="158">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="141">
+      <line no="159">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="142"/>
-      <line no="143">
+      <line no="160"/>
+      <line no="161">
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_STRING">function_exists</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'posix_kill'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="162">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="163">
+        <token name="T_DOC_COMMENT">     * Deliver a signal to the current process by invoking the simulated handler</token>
+      </line>
+      <line no="164">
+        <token name="T_DOC_COMMENT">     * registered through the pcntl_signal() polyfill.</token>
+      </line>
+      <line no="165">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="166">
+        <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.posix-kill.php</token>
+      </line>
+      <line no="167">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="168">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">posix_kill</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">int</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$processId</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">int</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$signal</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">bool</token>
+      </line>
+      <line no="169">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="170">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_UNSET">unset</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$processId</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="171">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_DOC_COMMENT">/** @var array&lt;int, int|string|callable&gt; $handlers */</token>
+      </line>
+      <line no="172">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$handlers</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$GLOBALS</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'pcntl_polyfill_signal_handlers'</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COALESCE">??</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="173">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_ISSET">isset</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$handlers</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$signal</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_AND">&amp;&amp;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">is_callable</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$handlers</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$signal</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="174">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_STRING">call_user_func</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$handlers</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$signal</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$signal</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="175">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="176"/>
+      <line no="177">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">true</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="178">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="179">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="180">
+        <token name="T_COMMENT">// phpcs:enable SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable.DisallowedSuperGlobalVariable</token>
+      </line>
+      <line no="181"/>
+      <line no="182">
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -1155,23 +1405,23 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="144">
+      <line no="183">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="145">
+      <line no="184">
         <token name="T_DOC_COMMENT">     * Report that pending signals were dispatched, there are none on Windows.</token>
       </line>
-      <line no="146">
+      <line no="185">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="147">
+      <line no="186">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.pcntl-signal-dispatch.php</token>
       </line>
-      <line no="148">
+      <line no="187">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="149">
+      <line no="188">
         <token name="T_WHITESPACE">    </token>
         <token name="T_FUNCTION">function</token>
         <token name="T_WHITESPACE"> </token>
@@ -1182,26 +1432,26 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">bool</token>
       </line>
-      <line no="150">
+      <line no="189">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="151">
+      <line no="190">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">true</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="152">
+      <line no="191">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="153">
+      <line no="192">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="154"/>
-      <line no="155">
+      <line no="193"/>
+      <line no="194">
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -1214,29 +1464,29 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="156">
+      <line no="195">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="157">
+      <line no="196">
         <token name="T_DOC_COMMENT">     * Report the default signal handler, no handlers are ever installed.</token>
       </line>
-      <line no="158">
+      <line no="197">
         <token name="T_DOC_COMMENT">     *</token>
       </line>
-      <line no="159">
+      <line no="198">
         <token name="T_DOC_COMMENT">     * @psalm-suppress LessSpecificReturnType the polyfill always returns the</token>
       </line>
-      <line no="160">
+      <line no="199">
         <token name="T_DOC_COMMENT">     *     default handler while the real function may return a string handler</token>
       </line>
-      <line no="161">
+      <line no="200">
         <token name="T_DOC_COMMENT">     * @see https://www.php.net/manual/en/function.pcntl-signal-get-handler.php</token>
       </line>
-      <line no="162">
+      <line no="201">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="163">
+      <line no="202">
         <token name="T_WHITESPACE">    </token>
         <token name="T_FUNCTION">function</token>
         <token name="T_WHITESPACE"> </token>
@@ -1254,11 +1504,11 @@
         <token name="T_PIPE">|</token>
         <token name="T_STRING">false</token>
       </line>
-      <line no="164">
+      <line no="203">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="165">
+      <line no="204">
         <token name="T_WHITESPACE">        </token>
         <token name="T_UNSET">unset</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -1266,25 +1516,25 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="166"/>
-      <line no="167">
+      <line no="205"/>
+      <line no="206">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">SIG_DFL</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="168">
+      <line no="207">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="169">
+      <line no="208">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="170">
+      <line no="209">
         <token name="T_COMMENT">// @codeCoverageIgnoreEnd</token>
       </line>
-      <line no="171"/>
+      <line no="210"/>
     </source>
   </file>
 </phpunit>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2026-09-22 01:32:17</timestamp>
+  <timestamp>2026-09-22 02:09:00</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>172</methodCount>
+    <methodCount>175</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>414</totalCrap>
+    <totalCrap>417</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -666,6 +666,39 @@
       <methodName>__toString</methodName>
       <methodSignature>__toString(): string</methodSignature>
       <fullMethod>__toString(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbFactory</className>
+      <methodName>createOptions</methodName>
+      <methodSignature>createOptions(): sql\MydbOptionsInterface</methodSignature>
+      <fullMethod>createOptions(): sql\MydbOptionsInterface</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbFactory</className>
+      <methodName>createReadonlyOptions</methodName>
+      <methodSignature>createReadonlyOptions(): sql\MydbOptionsInterface</methodSignature>
+      <fullMethod>createReadonlyOptions(): sql\MydbOptionsInterface</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbFactory</className>
+      <methodName>create</methodName>
+      <methodSignature>create(sql\MydbCredentialsInterface $credentials, Psr\Log\LoggerInterface $logger, ?sql\MydbOptionsInterface $options, ?sql\MydbMysqliInterface $mysqli, ?sql\MydbEnvironmentInterface $environment, ?sql\MydbQueryBuilderInterface $queryBuilder, ?sql\MydbListenerInterface $listener): sql\Mydb</methodSignature>
+      <fullMethod>create(sql\MydbCredentialsInterface $credentials, Psr\Log\LoggerInterface $logger, ?sql\MydbOptionsInterface $options, ?sql\MydbMysqliInterface $mysqli, ?sql\MydbEnvironmentInterface $environment, ?sql\MydbQueryBuilderInterface $queryBuilder, ?sql\MydbListenerInterface $listener): sql\Mydb</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>

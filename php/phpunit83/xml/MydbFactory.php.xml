@@ -1,0 +1,772 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="MydbFactory.php" path="/">
+    <totals>
+      <lines total="96" comments="35" code="61" executable="29" executed="29" percent="100.00"/>
+      <methods count="3" tested="3" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="sql\MydbFactory" start="27" executable="29" executed="29" crap="3">
+      <namespace name="sql"/>
+      <method name="createOptions" signature="createOptions(): sql\MydbOptionsInterface" start="32" end="50" crap="1" executable="15" executed="15" coverage="100"/>
+      <method name="createReadonlyOptions" signature="createReadonlyOptions(): sql\MydbOptionsInterface" start="55" end="63" crap="1" executable="5" executed="5" coverage="100"/>
+      <method name="create" signature="create(sql\MydbCredentialsInterface $credentials, Psr\Log\LoggerInterface $logger, ?sql\MydbOptionsInterface $options, ?sql\MydbMysqliInterface $mysqli, ?sql\MydbEnvironmentInterface $environment, ?sql\MydbQueryBuilderInterface $queryBuilder, ?sql\MydbListenerInterface $listener): sql\Mydb" start="76" end="94" crap="1" executable="9" executed="9" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="34">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="35">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="36">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="37">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="38">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="39">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="40">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="41">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="42">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="43">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="44">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="45">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="46">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="47">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="49">
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateOptionsInitializesDefaults"/>
+      </line>
+      <line nr="57">
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="58">
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="59">
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="60">
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="62">
+        <covered by="phpunit\MydbFactoryTest::testCreateReadonlyOptions"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="85">
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="86">
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="88">
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="87">
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="89">
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="90">
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="91">
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="92">
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+      <line nr="93">
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateWithOptions"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="3">
+        <token name="T_DOC_COMMENT"> * This file is part of the sshilko/php-sql-mydb package.</token>
+      </line>
+      <line no="4">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="5">
+        <token name="T_DOC_COMMENT"> * (c) Sergei Shilko &lt;contact@sshilko.com&gt;</token>
+      </line>
+      <line no="6">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="7">
+        <token name="T_DOC_COMMENT"> * MIT License</token>
+      </line>
+      <line no="8">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="9">
+        <token name="T_DOC_COMMENT"> * For the full copyright and license information, please view the LICENSE</token>
+      </line>
+      <line no="10">
+        <token name="T_DOC_COMMENT"> * file that was distributed with this source code.</token>
+      </line>
+      <line no="11">
+        <token name="T_DOC_COMMENT"> * @license https://opensource.org/licenses/mit-license.php MIT</token>
+      </line>
+      <line no="12">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="13"/>
+      <line no="14">
+        <token name="T_DECLARE">declare</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strict_types</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">1</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="15"/>
+      <line no="16">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">sql</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="17"/>
+      <line no="18">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Psr\Log\LoggerInterface</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="19"/>
+      <line no="20">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="21">
+        <token name="T_DOC_COMMENT"> * Initializes library defaults and assembles Mydb instances</token>
+      </line>
+      <line no="22">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="23">
+        <token name="T_DOC_COMMENT"> * @author Sergei Shilko &lt;contact@sshilko.com&gt;</token>
+      </line>
+      <line no="24">
+        <token name="T_DOC_COMMENT"> * @license https://opensource.org/licenses/mit-license.php MIT</token>
+      </line>
+      <line no="25">
+        <token name="T_DOC_COMMENT"> * @see https://github.com/sshilko/php-sql-mydb</token>
+      </line>
+      <line no="26">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="27">
+        <token name="T_FINAL">final</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MydbFactory</token>
+      </line>
+      <line no="28">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="30">
+        <token name="T_DOC_COMMENT">     * Create options initialized with library defaults</token>
+      </line>
+      <line no="31">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">createOptions</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MydbOptionsInterface</token>
+      </line>
+      <line no="33">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="34">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setServerSideSelectTimeout</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_SERVER_SELECT_TIMEOUT</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="36">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setConnectTimeout</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_CONNECT_TIMEOUT</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="37">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setErrorReporting</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_ERROR_REPORTING</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setReadTimeout</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_READ_TIMEOUT</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setNetworkBufferSize</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_NETWORK_BUFFER_SIZE</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="40">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setNetworkReadBuffer</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_NETWORK_READ_BUFFER</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="41">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setClientErrorLevel</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_CLIENT_ERROR_LEVEL</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="42">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setTimeZone</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_TIMEZONE</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="43">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setNonInteractiveTimeout</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_NON_INTERACTIVE_TIMEOUT</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="44">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setAutocommit</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_AUTOCOMMIT</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="45">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setCharset</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_CHARSET</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="46">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setPersistent</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_PERSISTENT</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="47">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setReadonly</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">DEFAULT_READONLY</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="48"/>
+      <line no="49">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="50">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="51"/>
+      <line no="52">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="53">
+        <token name="T_DOC_COMMENT">     * Create options preconfigured for a readonly connection</token>
+      </line>
+      <line no="54">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="55">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">createReadonlyOptions</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MydbOptionsInterface</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="57">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">createOptions</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="58">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setReadonly</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">true</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="59">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setAutocommit</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">true</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="60">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">setTransactionIsolationLevel</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MydbOptions</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="61"/>
+      <line no="62">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="63">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="64"/>
+      <line no="65">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="66">
+        <token name="T_DOC_COMMENT">     * Assemble a Mydb instance, initializing defaults where not provided</token>
+      </line>
+      <line no="67">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="68">
+        <token name="T_DOC_COMMENT">     * @param \sql\MydbCredentialsInterface $credentials database credentials</token>
+      </line>
+      <line no="69">
+        <token name="T_DOC_COMMENT">     * @param \Psr\Log\LoggerInterface $logger PSR-3 logger</token>
+      </line>
+      <line no="70">
+        <token name="T_DOC_COMMENT">     * @param \sql\MydbOptionsInterface|null $options options, defaults when omitted</token>
+      </line>
+      <line no="71">
+        <token name="T_DOC_COMMENT">     * @param \sql\MydbMysqliInterface|null $mysqli mysqli facade, default when omitted</token>
+      </line>
+      <line no="72">
+        <token name="T_DOC_COMMENT">     * @param \sql\MydbEnvironmentInterface|null $environment environment facade, default when omitted</token>
+      </line>
+      <line no="73">
+        <token name="T_DOC_COMMENT">     * @param \sql\MydbQueryBuilderInterface|null $queryBuilder SQL builder, default when omitted</token>
+      </line>
+      <line no="74">
+        <token name="T_DOC_COMMENT">     * @param \sql\MydbListenerInterface|null $listener event listener, default when omitted</token>
+      </line>
+      <line no="75">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="76">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">create</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="77">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">MydbCredentialsInterface</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$credentials</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="78">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">LoggerInterface</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$logger</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MydbLogger</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="79">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">MydbOptionsInterface</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="80">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">MydbMysqliInterface</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$mysqli</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="81">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">MydbEnvironmentInterface</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$environment</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="82">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">MydbQueryBuilderInterface</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$queryBuilder</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="83">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">MydbListenerInterface</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$listener</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="84">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Mydb</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="85">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Mydb</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="86">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$credentials</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="87">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$logger</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="88">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$options</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_COALESCE">??</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">createOptions</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="89">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$mysqli</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="90">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$environment</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="91">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$queryBuilder</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="92">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$listener</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="93">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="94">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="95">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="96"/>
+    </source>
+  </file>
+</phpunit>

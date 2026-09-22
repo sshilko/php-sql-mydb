@@ -79,6 +79,13 @@ Mydb Exception (phpunit\MydbException)
  [x] My exception
  [x] Query builder exception
 
+Mydb Factory (phpunit\MydbFactory)
+ [x] Create options initializes defaults
+ [x] Create options matches new mydb options
+ [x] Create readonly options
+ [x] Create defaults
+ [x] Create with options
+
 Mydb Modernization (phpunit\MydbModernization)
  [x] Mydb credentials is readonly class
  [x] Mydb credentials constructor is promoted

@@ -43,6 +43,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="86">
         <covered by="phpunit\LoggerTest::testLoggerConstructorOut"/>
@@ -64,6 +65,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="90">
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#nothing"/>
@@ -81,6 +83,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="91">
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#nothing"/>
@@ -98,6 +101,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="99">
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#nothing"/>
@@ -115,6 +119,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="100">
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#nothing"/>
@@ -132,6 +137,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="101">
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#nothing"/>
@@ -149,6 +155,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="107">
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#nothing"/>
@@ -166,6 +173,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="108">
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#nothing"/>
@@ -183,6 +191,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="109">
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#nothing"/>
@@ -200,6 +209,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="111">
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#nothing"/>
@@ -217,6 +227,7 @@
         <covered by="phpunit\LoggerTest::testLoggerStreamErrBadMode"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerWithContext"/>
+        <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="122">
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#nothing"/>
