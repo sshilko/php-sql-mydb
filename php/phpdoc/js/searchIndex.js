@@ -1703,7 +1703,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_CLIENT_ERROR_LEVEL",
             "name": "DEFAULT_CLIENT_ERROR_LEVEL",
-            "summary": "Default\u0020mysqli\u0020client\u0020error\u0020reporting\u0020level",
+            "summary": "Default\u0020mysqli\u0020client\u0020error\u0020reporting\u0020level\u003B\u0020equals\nMYSQLI_REPORT_ALL\u0020\u005E\u0020MYSQLI_REPORT_STRICT\u0020\u005E\u0020MYSQLI_REPORT_INDEX",
             "url": "classes/sql-MydbOptions.html#constant_DEFAULT_CLIENT_ERROR_LEVEL"
         },                {
             "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_TIMEZONE",

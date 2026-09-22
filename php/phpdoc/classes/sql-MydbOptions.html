@@ -222,9 +222,10 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="classes/sql-MydbOptions.html#constant_DEFAULT_CLIENT_ERROR_LEVEL">DEFAULT_CLIENT_ERROR_LEVEL</a>
     <span>
-        &nbsp;: int&nbsp;= (int) \sql\MydbMysqli::MYSQLI_REPORT_ALL ^ (int...                            </span>
+        &nbsp;: int&nbsp;= 249                            </span>
 </dt>
-<dd>Default mysqli client error reporting level</dd>
+<dd>Default mysqli client error reporting level; equals
+MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_STRICT ^ MYSQLI_REPORT_INDEX</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="classes/sql-MydbOptions.html#constant_DEFAULT_CONNECT_TIMEOUT">DEFAULT_CONNECT_TIMEOUT</a>
@@ -691,18 +692,19 @@ X = 0, not enabled.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/MydbOptions.php"><a href="files/src-sql-mydboptions.html"><abbr title="src/sql/MydbOptions.php">MydbOptions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Default mysqli client error reporting level</p>
+        <p class="phpdocumentor-summary">Default mysqli client error reporting level; equals
+MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_STRICT ^ MYSQLI_REPORT_INDEX</p>
 
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">DEFAULT_CLIENT_ERROR_LEVEL</span>
-    = <span class="phpdocumentor-signature__default-value">(int) \sql\MydbMysqli::MYSQLI_REPORT_ALL ^ (int) \sql\MydbMysqli::MYSQLI_REPORT_STRICT ^ (int) \sql\MydbMysqli::MYSQLI_REPORT_INDEX</span>
+    = <span class="phpdocumentor-signature__default-value">249</span>
 </code>
 
 
