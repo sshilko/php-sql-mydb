@@ -374,7 +374,15 @@
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>Report that a signal handler was installed, in reality nothing was done.</dd>
+<dd>Register or reset a simulated signal handler that posix_kill() will invoke.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a class="" href="namespaces/default.html#function_posix_kill">posix_kill()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Deliver a signal to the current process by invoking the simulated handler
+registered through the pcntl_signal() polyfill.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a class="" href="namespaces/default.html#function_pcntl_signal_dispatch">pcntl_signal_dispatch()</a>
@@ -1496,11 +1504,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/pcntl-polyfill.php"><a href="files/src-sql-pcntl-polyfill.html"><abbr title="src/sql/pcntl-polyfill.php">pcntl-polyfill.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">147</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Report that a signal handler was installed, in reality nothing was done.</p>
+        <p class="phpdocumentor-summary">Register or reset a simulated signal handler that posix_kill() will invoke.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1556,6 +1564,68 @@
 
 </article>
                     <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_posix_kill">
+        posix_kill()
+        <a href="namespaces/default.html#function_posix_kill" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/sql/pcntl-polyfill.php"><a href="files/src-sql-pcntl-polyfill.html"><abbr title="src/sql/pcntl-polyfill.php">pcntl-polyfill.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">171</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Deliver a signal to the current process by invoking the simulated handler
+registered through the pcntl_signal() polyfill.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                    <span class="phpdocumentor-signature__name">posix_kill</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$processId</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$signal</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$processId</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$signal</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="function_posix_kill_tags">
+        Tags
+        <a href="namespaces/default.html#function_posix_kill_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">see</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/function.posix-kill.php">https://www.php.net/manual/en/function.posix-kill.php</a></span>
+                                                                
+                                    </dd>
+                        </dl>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article class="phpdocumentor-element -function - ">
     <h4 class="phpdocumentor-element__name" id="function_pcntl_signal_dispatch">
         pcntl_signal_dispatch()
         <a href="namespaces/default.html#function_pcntl_signal_dispatch" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1564,7 +1634,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/pcntl-polyfill.php"><a href="files/src-sql-pcntl-polyfill.html"><abbr title="src/sql/pcntl-polyfill.php">pcntl-polyfill.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">149</span>
+    <span class="phpdocumentor-element-found-in__line">191</span>
 
     </aside>
 
@@ -1608,7 +1678,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/sql/pcntl-polyfill.php"><a href="files/src-sql-pcntl-polyfill.html"><abbr title="src/sql/pcntl-polyfill.php">pcntl-polyfill.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">205</span>
 
     </aside>
 
@@ -1729,6 +1799,7 @@ default handler while the real function may return a string handler</p>
                                                     <li class=""><a href="namespaces/default.html#function_pcntl_signal">pcntl_signal()</a></li>
                                                     <li class=""><a href="namespaces/default.html#function_pcntl_signal_dispatch">pcntl_signal_dispatch()</a></li>
                                                     <li class=""><a href="namespaces/default.html#function_pcntl_signal_get_handler">pcntl_signal_get_handler()</a></li>
+                                                    <li class=""><a href="namespaces/default.html#function_posix_kill">posix_kill()</a></li>
                                             </ul>
                 </li>
                     </ul>

@@ -701,6 +701,26 @@ Search.appendIndex(
             "summary": "As\u0020of\u0020PHP8.0\u0020this\u0020is\u0020Stringable\u0020interface",
             "url": "classes/sql-MydbExpressionInterface.html#method___toString"
         },                {
+            "fqsen": "\\sql\\MydbFactory",
+            "name": "MydbFactory",
+            "summary": "Initializes\u0020library\u0020defaults\u0020and\u0020assembles\u0020Mydb\u0020instances",
+            "url": "classes/sql-MydbFactory.html"
+        },                {
+            "fqsen": "\\sql\\MydbFactory\u003A\u003AcreateOptions\u0028\u0029",
+            "name": "createOptions",
+            "summary": "Create\u0020options\u0020initialized\u0020with\u0020library\u0020defaults",
+            "url": "classes/sql-MydbFactory.html#method_createOptions"
+        },                {
+            "fqsen": "\\sql\\MydbFactory\u003A\u003AcreateReadonlyOptions\u0028\u0029",
+            "name": "createReadonlyOptions",
+            "summary": "Create\u0020options\u0020preconfigured\u0020for\u0020a\u0020readonly\u0020connection",
+            "url": "classes/sql-MydbFactory.html#method_createReadonlyOptions"
+        },                {
+            "fqsen": "\\sql\\MydbFactory\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Assemble\u0020a\u0020Mydb\u0020instance,\u0020initializing\u0020defaults\u0020where\u0020not\u0020provided",
+            "url": "classes/sql-MydbFactory.html#method_create"
+        },                {
             "fqsen": "\\sql\\MydbInterface\\AdministrationStatementsInterface",
             "name": "AdministrationStatementsInterface",
             "summary": "",
@@ -1646,6 +1666,71 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbOptions.html#constant_NET_READ_BUFFER_MAX"
         },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_CONNECT_TIMEOUT",
+            "name": "DEFAULT_CONNECT_TIMEOUT",
+            "summary": "Default\u0020connect\u0020timeout,\u0020seconds",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_CONNECT_TIMEOUT"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_SERVER_SELECT_TIMEOUT",
+            "name": "DEFAULT_SERVER_SELECT_TIMEOUT",
+            "summary": "Default\u0020server\u002Dside\u0020SELECT\u0020timeout,\u0020seconds",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_SERVER_SELECT_TIMEOUT"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_READ_TIMEOUT",
+            "name": "DEFAULT_READ_TIMEOUT",
+            "summary": "Default\u0020client\u002Dside\u0020read\u0020timeout,\u0020seconds",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_READ_TIMEOUT"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_NON_INTERACTIVE_TIMEOUT",
+            "name": "DEFAULT_NON_INTERACTIVE_TIMEOUT",
+            "summary": "Default\u0020non\u002Dinteractive\u0020connection\u0020idle\u0020timeout,\u0020seconds",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_NON_INTERACTIVE_TIMEOUT"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_NETWORK_BUFFER_SIZE",
+            "name": "DEFAULT_NETWORK_BUFFER_SIZE",
+            "summary": "Default\u0020internal\u0020network\u0020command\u0020buffer\u0020size,\u0020bytes",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_NETWORK_BUFFER_SIZE"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_NETWORK_READ_BUFFER",
+            "name": "DEFAULT_NETWORK_READ_BUFFER",
+            "summary": "Default\u0020network\u0020read\u0020buffer\u0020size,\u0020bytes",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_NETWORK_READ_BUFFER"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_ERROR_REPORTING",
+            "name": "DEFAULT_ERROR_REPORTING",
+            "summary": "Default\u0020PHP\u0020error\u0020reporting\u0020level",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_ERROR_REPORTING"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_CLIENT_ERROR_LEVEL",
+            "name": "DEFAULT_CLIENT_ERROR_LEVEL",
+            "summary": "Default\u0020mysqli\u0020client\u0020error\u0020reporting\u0020level",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_CLIENT_ERROR_LEVEL"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_TIMEZONE",
+            "name": "DEFAULT_TIMEZONE",
+            "summary": "Default\u0020session\u0020time\u0020zone",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_TIMEZONE"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_CHARSET",
+            "name": "DEFAULT_CHARSET",
+            "summary": "Default\u0020character\u0020set",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_CHARSET"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_AUTOCOMMIT",
+            "name": "DEFAULT_AUTOCOMMIT",
+            "summary": "Default\u0020autocommit\u0020mode",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_AUTOCOMMIT"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_PERSISTENT",
+            "name": "DEFAULT_PERSISTENT",
+            "summary": "Default\u0020persistent\u0020mode",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_PERSISTENT"
+        },                {
+            "fqsen": "\\sql\\MydbOptions\u003A\u003ADEFAULT_READONLY",
+            "name": "DEFAULT_READONLY",
+            "summary": "Default\u0020readonly\u0020mode",
+            "url": "classes/sql-MydbOptions.html#constant_DEFAULT_READONLY"
+        },                {
             "fqsen": "\\sql\\MydbOptions\u003A\u003A\u0024serverSideSelectTimeout",
             "name": "serverSideSelectTimeout",
             "summary": "The\u0020execution\u0020timeout\u0020ONLY\u0020APPLIES\u0020TO\u0020\u0022SELECT\u0022\u0020statements,\u0020seconds\nX\u0020\u003E\u00200,\u0020enabled\nX\u0020\u003D\u00200,\u0020not\u0020enabled.",
@@ -2308,8 +2393,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\pcntl_signal\u0028\u0029",
             "name": "pcntl_signal",
-            "summary": "Report\u0020that\u0020a\u0020signal\u0020handler\u0020was\u0020installed,\u0020in\u0020reality\u0020nothing\u0020was\u0020done.",
+            "summary": "Register\u0020or\u0020reset\u0020a\u0020simulated\u0020signal\u0020handler\u0020that\u0020posix_kill\u0028\u0029\u0020will\u0020invoke.",
             "url": "namespaces/default.html#function_pcntl_signal"
+        },                {
+            "fqsen": "\\posix_kill\u0028\u0029",
+            "name": "posix_kill",
+            "summary": "Deliver\u0020a\u0020signal\u0020to\u0020the\u0020current\u0020process\u0020by\u0020invoking\u0020the\u0020simulated\u0020handler\nregistered\u0020through\u0020the\u0020pcntl_signal\u0028\u0029\u0020polyfill.",
+            "url": "namespaces/default.html#function_posix_kill"
         },                {
             "fqsen": "\\pcntl_signal_dispatch\u0028\u0029",
             "name": "pcntl_signal_dispatch",
