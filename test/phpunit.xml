@@ -58,6 +58,10 @@
         <include>
             <directory suffix=".php">../src</directory>
         </include>
+        <exclude>
+            <file>../src/sql/pcntl-polyfill.php</file>
+            <directory suffix=".php">../examples</directory>
+        </exclude>
     </source>
 
     <!-- https://phpunit.readthedocs.io/en/10.5/configuration.html#the-coverage-element -->

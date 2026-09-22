@@ -148,7 +148,7 @@ if (!function_exists('pcntl_signal')) {
     {
         unset($restartSysCalls);
         /** @var array<int, int|string|callable> $handlers */
-        $handlers = $GLOBALS['pcntl_polyfill_signal_handlers'];
+        $handlers = $GLOBALS['pcntl_polyfill_signal_handlers'] ?? [];
         if (SIG_DFL === $handler || SIG_IGN === $handler) {
             unset($handlers[$signal]);
         } else {
@@ -172,7 +172,7 @@ if (!function_exists('posix_kill')) {
     {
         unset($processId);
         /** @var array<int, int|string|callable> $handlers */
-        $handlers = $GLOBALS['pcntl_polyfill_signal_handlers'];
+        $handlers = $GLOBALS['pcntl_polyfill_signal_handlers'] ?? [];
         if (isset($handlers[$signal]) && is_callable($handlers[$signal])) {
             call_user_func($handlers[$signal], $signal);
         }

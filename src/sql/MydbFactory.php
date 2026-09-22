@@ -38,7 +38,7 @@ final readonly class MydbFactory
         $options->setReadTimeout(MydbOptions::DEFAULT_READ_TIMEOUT);
         $options->setNetworkBufferSize(MydbOptions::DEFAULT_NETWORK_BUFFER_SIZE);
         $options->setNetworkReadBuffer(MydbOptions::DEFAULT_NETWORK_READ_BUFFER);
-        $options->setClientErrorLevel((int) MydbOptions::DEFAULT_CLIENT_ERROR_LEVEL);
+        $options->setClientErrorLevel(MydbOptions::DEFAULT_CLIENT_ERROR_LEVEL);
         $options->setTimeZone(MydbOptions::DEFAULT_TIMEZONE);
         $options->setNonInteractiveTimeout(MydbOptions::DEFAULT_NON_INTERACTIVE_TIMEOUT);
         $options->setAutocommit(MydbOptions::DEFAULT_AUTOCOMMIT);

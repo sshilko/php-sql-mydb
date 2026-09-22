@@ -72,10 +72,10 @@ class MydbOptions implements MydbOptionsInterface
     public const int DEFAULT_ERROR_REPORTING = E_ALL & ~E_WARNING & ~E_NOTICE;
 
     /**
-     * Default mysqli client error reporting level
+     * Default mysqli client error reporting level; equals
+     * MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_STRICT ^ MYSQLI_REPORT_INDEX
      */
-    public const int DEFAULT_CLIENT_ERROR_LEVEL =
-        (int) MydbMysqli::MYSQLI_REPORT_ALL ^ (int) MydbMysqli::MYSQLI_REPORT_STRICT ^ (int) MydbMysqli::MYSQLI_REPORT_INDEX;
+    public const int DEFAULT_CLIENT_ERROR_LEVEL = 249;
 
     /**
      * Default session time zone

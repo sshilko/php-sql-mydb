@@ -16,6 +16,8 @@ parameters:
         - ../test/phpunit.xml.bootstrap.php
     excludePaths:
         - ../test/*
+        - ../examples/*
+        - ../src/sql/pcntl-polyfill.php
     parallel:
         maximumNumberOfProcesses: 4
         processTimeout: 300.0

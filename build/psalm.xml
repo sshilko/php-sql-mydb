@@ -32,6 +32,8 @@
         <directory name="../src" />
         <ignoreFiles>
             <directory name="../vendor" />
+            <file name="../src/sql/pcntl-polyfill.php" />
+            <directory name="../examples" />
         </ignoreFiles>
     </projectFiles>
     <extraFiles>
