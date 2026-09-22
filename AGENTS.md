@@ -21,16 +21,62 @@ Guidance for AI agents and contributors working in this repository.
 
 ## Development workflow
 
-CI and quality tooling usually runs inside Docker containers
-(`app.php80`, `app.php81`, `app.php82`, `app.php83`), see `CONTRIBUTING`.
+CI and quality tooling runs inside Docker containers (see `CONTRIBUTING`). The
+default runtime is `app.php83` (PHP 8.3.33 with mysqli, pcntl, ast, xdebug,
+opcache); MySQL 8.0 runs as `mysql80`. Do not run the quality tools directly on
+a Windows host: the host PHP interpreter is not the supported runtime and
+breaks several tools.
 
-Run quality checks and tests:
+Start the containers:
 
-- `composer install`
-- `composer app-quality` - PHPCS/CBF, PHPMD, PHPCPD, PDepend, PHPStan, Psalm, Phan
-- `composer app-phpunit` - PHPUnit against MySQL 5.7 and 8.0
-- `composer app-phpunit-mysql80 -- --filter <TestFilter>` - single test filter
-- `composer app-pre-commit` - pre-commit hooks from `build/.pre-commit-config.yaml`
+- `docker compose up -d app.php83 mysql80`
+  (uses `.env`: project name `app`,
+  `COMPOSE_FILE=build/docker-compose.yaml:test/docker-compose.yaml`)
+
+Run tests and quality checks inside the container:
+
+- `docker compose exec -w /app app.php83 composer app-quality` - all quality gates
+- `docker compose exec -w /app app.php83 composer app-phpunit-mysql80` - PHPUnit against MySQL 8.0
+- `docker compose exec -w /app app.php83 composer app-phpunit-mysql80 -- --filter <TestFilter>` - filtered tests
+- `docker compose exec -w /app app.php83 pre-commit run --all-files --config build/.pre-commit-config.yaml` - pre-commit hooks
+
+Or locally after `composer install`: `composer app-phpunit`, `composer app-pre-commit`, `composer app-quality`.
+
+### Static analysis gotchas
+
+- `src/sql/pcntl-polyfill.php` is a Windows-only fallback for `pcntl_signal()` /
+  `posix_kill()` and is excluded from PHPStan (`build/phpstan.neon`
+  `excludePaths`), Psalm (`build/psalm.xml` `ignoreFiles`) and PHPUnit coverage
+  (`test/phpunit.xml` source exclude). Inside the file, PHPCS rules are relaxed
+  via scoped `// phpcs:disable` comments (Slevomat `DisallowSuperGlobalVariable`,
+  PSR1 `SideEffects`).
+- Composer 2 loads `autoload.files` inside a closure, so a top-level `$x = []`
+  is closure-local and never a global. The polyfill seeds `$GLOBALS[...]` at
+  load time so it exists before PHPUnit takes its first global-state snapshot
+  (`beStrictAboutChangesToGlobalState` and `failOnRisky` are enabled).
+- PHPCS and the pre-commit hooks skip `examples/` (`phpcs-ruleset.xml`
+  `<exclude-pattern>*/examples/*</exclude-pattern>` and top-level pre-commit
+  `exclude: ^(vendor/.*|examples/.*)$`); demos are not gated.
+- PHPMD `<exclude-pattern>` entries only work as direct children of `<ruleset>`;
+  `@SuppressWarnings` annotations do not work on global functions.
+- The default `composer app-psalm` invocation aborts in this image with
+  "Fatal Error Insufficient shared memory!". Working invocation:
+
+  ```
+  php -n -d zend_extension=opcache -d opcache.enable_cli=1 -d opcache.jit=0202 \
+    -d opcache.jit_buffer_size=100M -d extension=mysqli -d extension=pcntl \
+    -d extension=ast -d extension=xdebug ./vendor/bin/psalm.phar \
+    --config build/psalm.xml --no-cache --threads=1
+  ```
+
+- Psalm reports pre-existing mysqli-stub gaps (`UndefinedConstant MYSQLI_*`,
+  `UndefinedClass mysqli*`) in `MydbMysqli*` and `MydbEnvironment`; these are
+  informational in CI (artifacts/badges), not a hard gate.
+- Phan needs `ext-ast`, which is installed in the container (`composer app-phan`).
+- Calling `docker exec` from Windows PowerShell mangles `$?`, variables, and
+  nested quotes; prefer simple top-level commands or a bash wrapper.
+- The full PHPUnit run emits one expected `mysqli::real_connect()`
+  "Connection timed out" warning from the failure-path tests in `ExceptionTest`.
 
 ## Conventions
 
