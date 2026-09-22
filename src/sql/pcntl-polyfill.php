@@ -131,10 +131,11 @@ if (!function_exists('pcntl_signal')) {
      * Shared registry of simulated signal handlers shared by the pcntl_signal()
      * and posix_kill() polyfills, keyed by signal number.
      *
-     * @var array<int, int|string|callable>
+     * @var array<int, int|string|callable> $pcntlPolyfillSignalHandlers
      */
+    $pcntlPolyfillSignalHandlers = [];
     // phpcs:disable PSR1.Files.SideEffects.FoundWithSymbols
-    $GLOBALS['pcntl_polyfill_signal_handlers'] ??= [];
+    $GLOBALS['pcntl_polyfill_signal_handlers'] = $pcntlPolyfillSignalHandlers;
     // phpcs:enable PSR1.Files.SideEffects.FoundWithSymbols
 
     /**
@@ -146,13 +147,15 @@ if (!function_exists('pcntl_signal')) {
     function pcntl_signal(int $signal, int|string|callable $handler, bool $restartSysCalls = true): bool
     {
         unset($restartSysCalls);
+        /** @var array<int, int|string|callable> $handlers */
+        $handlers = $GLOBALS['pcntl_polyfill_signal_handlers'];
         if (SIG_DFL === $handler || SIG_IGN === $handler) {
-            unset($GLOBALS['pcntl_polyfill_signal_handlers'][$signal]);
-
-            return true;
+            unset($handlers[$signal]);
+        } else {
+            $handlers[$signal] = $handler;
         }
 
-        $GLOBALS['pcntl_polyfill_signal_handlers'][$signal] = $handler;
+        $GLOBALS['pcntl_polyfill_signal_handlers'] = $handlers;
 
         return true;
     }
@@ -169,7 +172,7 @@ if (!function_exists('posix_kill')) {
     {
         unset($processId);
         /** @var array<int, int|string|callable> $handlers */
-        $handlers = $GLOBALS['pcntl_polyfill_signal_handlers'] ?? [];
+        $handlers = $GLOBALS['pcntl_polyfill_signal_handlers'];
         if (isset($handlers[$signal]) && is_callable($handlers[$signal])) {
             call_user_func($handlers[$signal], $signal);
         }

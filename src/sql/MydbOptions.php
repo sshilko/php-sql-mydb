@@ -75,7 +75,7 @@ class MydbOptions implements MydbOptionsInterface
      * Default mysqli client error reporting level
      */
     public const int DEFAULT_CLIENT_ERROR_LEVEL =
-        MydbMysqli::MYSQLI_REPORT_ALL ^ MydbMysqli::MYSQLI_REPORT_STRICT ^ MydbMysqli::MYSQLI_REPORT_INDEX;
+        (int) MydbMysqli::MYSQLI_REPORT_ALL ^ (int) MydbMysqli::MYSQLI_REPORT_STRICT ^ (int) MydbMysqli::MYSQLI_REPORT_INDEX;
 
     /**
      * Default session time zone
