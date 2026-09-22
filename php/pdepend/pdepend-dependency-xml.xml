@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies generated="2026-09-22T01:32:26" pdepend="@package_version@">
+<dependencies generated="2026-09-22T02:08:57" pdepend="@package_version@">
   <package name="sql">
     <class name="Mydb">
       <efferent>
@@ -39,7 +39,9 @@
         <type namespace="sql\MydbException" name="ConnectDefaultsException"/>
         <type namespace="sql\MydbException" name="TransactionIsolationException"/>
       </efferent>
-      <afferent/>
+      <afferent>
+        <type namespace="sql" name="MydbFactory"/>
+      </afferent>
       <file name="/app/src/sql/Mydb.php"/>
     </class>
     <class name="MydbCredentials">
@@ -54,6 +56,7 @@
       <afferent>
         <type namespace="sql" name="Mydb"/>
         <type namespace="sql" name="MydbCredentials"/>
+        <type namespace="sql" name="MydbFactory"/>
       </afferent>
       <file name="/app/src/sql/MydbCredentialsInterface.php"/>
     </interface>
@@ -72,6 +75,7 @@
       <afferent>
         <type namespace="sql" name="Mydb"/>
         <type namespace="sql" name="MydbEnvironment"/>
+        <type namespace="sql" name="MydbFactory"/>
         <type namespace="sql" name="MydbMysqli"/>
         <type namespace="sql" name="MydbMysqliInterface"/>
       </afferent>
@@ -150,6 +154,21 @@
       </afferent>
       <file name="/app/src/sql/MydbExpressionInterface.php"/>
     </interface>
+    <class name="MydbFactory">
+      <efferent>
+        <type namespace="sql" name="MydbOptionsInterface"/>
+        <type namespace="sql" name="MydbOptions"/>
+        <type namespace="sql" name="MydbCredentialsInterface"/>
+        <type namespace="Psr\Log" name="LoggerInterface"/>
+        <type namespace="sql" name="MydbMysqliInterface"/>
+        <type namespace="sql" name="MydbEnvironmentInterface"/>
+        <type namespace="sql" name="MydbQueryBuilderInterface"/>
+        <type namespace="sql" name="MydbListenerInterface"/>
+        <type namespace="sql" name="Mydb"/>
+      </efferent>
+      <afferent/>
+      <file name="/app/src/sql/MydbFactory.php"/>
+    </class>
     <interface name="MydbInterface">
       <efferent>
         <type namespace="sql\MydbInterface" name="EncoderInterface"/>
@@ -184,6 +203,7 @@
       <afferent>
         <type namespace="sql" name="Mydb"/>
         <type namespace="sql" name="MydbEvent"/>
+        <type namespace="sql" name="MydbFactory"/>
         <type namespace="sql" name="MydbListener"/>
       </afferent>
       <file name="/app/src/sql/MydbListenerInterface.php"/>
@@ -222,6 +242,7 @@
       </efferent>
       <afferent>
         <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbFactory"/>
         <type namespace="sql" name="MydbMysqli"/>
       </afferent>
       <file name="/app/src/sql/MydbMysqliInterface.php"/>
@@ -233,6 +254,7 @@
       </efferent>
       <afferent>
         <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbFactory"/>
       </afferent>
       <file name="/app/src/sql/MydbOptions.php"/>
     </class>
@@ -240,6 +262,7 @@
       <efferent/>
       <afferent>
         <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbFactory"/>
         <type namespace="sql" name="MydbMysqli"/>
         <type namespace="sql" name="MydbMysqliInterface"/>
         <type namespace="sql" name="MydbOptions"/>
@@ -263,6 +286,7 @@
       <efferent/>
       <afferent>
         <type namespace="sql" name="Mydb"/>
+        <type namespace="sql" name="MydbFactory"/>
         <type namespace="sql" name="MydbQueryBuilder"/>
       </afferent>
       <file name="/app/src/sql/MydbQueryBuilderInterface.php"/>
