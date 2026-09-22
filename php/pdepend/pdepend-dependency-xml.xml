@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies generated="2026-09-22T02:08:57" pdepend="@package_version@">
+<dependencies generated="2026-09-22T02:09:46" pdepend="@package_version@">
   <package name="sql">
     <class name="Mydb">
       <efferent>
