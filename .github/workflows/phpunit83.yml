@@ -35,7 +35,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83', 'composer.lock') }}
+          key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php83', 'composer.lock') }}
 
       - name: Load cached Docker image
         run: docker load -i /tmp/docker-save/snapshot.tar || true
@@ -66,7 +66,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php.common', 'build/Dockerfile.php83', 'composer.lock') }}
+          key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php83', 'composer.lock') }}
 
       - name: Load cached Docker image
         run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php83-image-cache app/php83
