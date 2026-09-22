@@ -29,7 +29,7 @@ final readonly class MydbFactory
     /**
      * Create options initialized with library defaults
      *
-     * @throws MydbException\OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function createOptions(): MydbOptionsInterface
     {
@@ -54,7 +54,7 @@ final readonly class MydbFactory
     /**
      * Create options preconfigured for a readonly connection
      *
-     * @throws MydbException\OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function createReadonlyOptions(): MydbOptionsInterface
     {
@@ -77,7 +77,7 @@ final readonly class MydbFactory
      * @param \sql\MydbQueryBuilderInterface|null $queryBuilder SQL builder, default when omitted
      * @param \sql\MydbListenerInterface|null $listener event listener, default when omitted
      *
-     * @throws MydbException\OptionException
+     * @throws \sql\MydbException\OptionException
      */
     public function create(
         MydbCredentialsInterface $credentials,

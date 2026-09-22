@@ -20,6 +20,7 @@
 <!-- https://github.com/symplify/easy-coding-standard#ignore-what-you-cant-fix -->
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>*/examples/*</exclude-pattern>
+    <exclude-pattern>*/src/sql/pcntl-polyfill.php</exclude-pattern>
 
     <arg name="error-severity" value="1" />
     <arg name="warning-severity" value="1" />
@@ -41,6 +42,7 @@
     <rule ref="PSR2"/>
     <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint" />
+        <exclude name="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat" />
         <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversablePropertyTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification" />
