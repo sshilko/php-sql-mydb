@@ -285,7 +285,7 @@
         <token name="T_DOC_COMMENT">     *</token>
       </line>
       <line no="32">
-        <token name="T_DOC_COMMENT">     * @throws MydbException\OptionException</token>
+        <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\OptionException</token>
       </line>
       <line no="33">
         <token name="T_DOC_COMMENT">     */</token>
@@ -500,7 +500,7 @@
         <token name="T_DOC_COMMENT">     *</token>
       </line>
       <line no="57">
-        <token name="T_DOC_COMMENT">     * @throws MydbException\OptionException</token>
+        <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\OptionException</token>
       </line>
       <line no="58">
         <token name="T_DOC_COMMENT">     */</token>
@@ -615,7 +615,7 @@
         <token name="T_DOC_COMMENT">     *</token>
       </line>
       <line no="80">
-        <token name="T_DOC_COMMENT">     * @throws MydbException\OptionException</token>
+        <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\OptionException</token>
       </line>
       <line no="81">
         <token name="T_DOC_COMMENT">     */</token>
