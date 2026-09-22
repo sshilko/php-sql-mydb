@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1790042940">
-  <project timestamp="1790042940">
+<coverage generated="1790043633">
+  <project timestamp="1790043633">
     <file name="/app/src/sql/Mydb.php">
       <class name="sql\Mydb" namespace="global">
         <metrics complexity="97" methods="28" coveredmethods="28" conditionals="0" coveredconditionals="0" statements="209" coveredstatements="209" elements="237" coveredelements="237"/>
@@ -1010,7 +1010,7 @@
       <line num="440" type="stmt" count="45"/>
       <line num="443" type="method" name="setTransactionIsolationLevel" visibility="public" complexity="1" crap="1" count="4"/>
       <line num="446" type="stmt" count="4"/>
-      <metrics loc="449" ncloc="260" classes="1" methods="28" coveredmethods="28" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="65" coveredelements="65"/>
+      <metrics loc="449" ncloc="259" classes="1" methods="28" coveredmethods="28" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="37" elements="65" coveredelements="65"/>
     </file>
     <file name="/app/src/sql/MydbOptionsInterface.php">
       <metrics loc="90" ncloc="71" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -1218,9 +1218,6 @@
     <file name="/app/src/sql/MydbRepositoryInterface.php">
       <metrics loc="22" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <file name="/app/src/sql/pcntl-polyfill.php">
-      <metrics loc="210" ncloc="160" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-    </file>
-    <metrics files="64" loc="5515" ncloc="3384" classes="21" methods="171" coveredmethods="171" conditionals="0" coveredconditionals="0" statements="728" coveredstatements="728" elements="899" coveredelements="899"/>
+    <metrics files="63" loc="5305" ncloc="3223" classes="21" methods="171" coveredmethods="171" conditionals="0" coveredconditionals="0" statements="728" coveredstatements="728" elements="899" coveredelements="899"/>
   </project>
 </coverage>

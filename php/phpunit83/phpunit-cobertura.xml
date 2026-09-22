@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="1" branch-rate="0" lines-covered="728" lines-valid="728" branches-covered="0" branches-valid="0" complexity="417" version="0.4" timestamp="1790042940">
+<coverage line-rate="1" branch-rate="0" lines-covered="728" lines-valid="728" branches-covered="0" branches-valid="0" complexity="417" version="0.4" timestamp="1790043633">
   <sources>
     <source>/app/src/sql</source>
   </sources>
@@ -2589,9 +2589,6 @@
       </classes>
     </package>
     <package name="MydbRepositoryInterface.php" line-rate="0" branch-rate="0" complexity="0">
-      <classes/>
-    </package>
-    <package name="pcntl-polyfill.php" line-rate="0" branch-rate="0" complexity="0">
       <classes/>
     </package>
   </packages>

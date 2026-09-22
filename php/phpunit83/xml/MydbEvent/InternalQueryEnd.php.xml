@@ -27,8 +27,8 @@
         <covered by="phpunit\InsertTest::testInsert"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
@@ -79,8 +79,8 @@
         <covered by="phpunit\InsertTest::testInsert"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
@@ -131,8 +131,8 @@
         <covered by="phpunit\InsertTest::testInsert"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
@@ -183,8 +183,8 @@
         <covered by="phpunit\InsertTest::testInsert"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Tue Sep 22 2:09:00 UTC 2026" phpunit="10.5.64" coverage="10.1.16">
+  <build time="Tue Sep 22 2:20:33 UTC 2026" phpunit="10.5.64" coverage="10.1.16">
     <runtime name="PHP" version="8.3.33" url="https://www.php.net/"/>
     <driver name="xdebug" version="3.3.0"/>
   </build>
@@ -43,17 +43,17 @@
       <test name="phpunit\LoggerTest::testLoggerStreamErrBadMode" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerStreamOutEnd" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerWithContext" size="unknown" status="success"/>
+      <test name="phpunit\MetaTest::testOpen" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testClose" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testSingleQuotedEscape" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testDoubleQuotedEscape" size="unknown" status="success"/>
-      <test name="phpunit\MetaTest::testOpen" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testSet" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testNotRealEnumOrSet" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKeyQueryFailed" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKeyNotFound" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKeyComposite" size="unknown" status="success"/>
-      <test name="phpunit\MetaTest::testEscape" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testEnum" size="unknown" status="success"/>
+      <test name="phpunit\MetaTest::testEscape" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKey" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKeyNotDefined" size="unknown" status="success"/>
       <test name="phpunit\MydbCredentialsTest::testDefaultParameterValues" size="unknown" status="success"/>
@@ -65,8 +65,8 @@
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap#SIGINT" size="unknown" status="success"/>
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap#SIGINT,SIGTERM,SIGHUP" size="unknown" status="success"/>
       <test name="phpunit\MydbEventTest::testMydbEventListenerBreak" size="unknown" status="success"/>
-      <test name="phpunit\MydbEventTest::testMydbInternalEventSuccess" size="unknown" status="success"/>
       <test name="phpunit\MydbEventTest::testMydbEventListenerException" size="unknown" status="success"/>
+      <test name="phpunit\MydbEventTest::testMydbInternalEventSuccess" size="unknown" status="success"/>
       <test name="phpunit\MydbExceptionTest::testQueryBuilderException" size="unknown" status="success"/>
       <test name="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions" size="unknown" status="success"/>
       <test name="phpunit\MydbFactoryTest::testCreateReadonlyOptions" size="unknown" status="success"/>
@@ -97,6 +97,7 @@
       <test name="phpunit\OptionsTest::testErrorReporting" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testReadTimeout" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testNetworkBuffer" size="unknown" status="success"/>
+      <test name="phpunit\OptionsTest::testNetworkBufferMin" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testNetworkBufferMax" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testSetReadBuffer" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testSetReadBufferMin" size="unknown" status="success"/>
@@ -109,7 +110,6 @@
       <test name="phpunit\OptionsTest::testCharset" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testPersistent" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testReadonly" size="unknown" status="success"/>
-      <test name="phpunit\OptionsTest::testNetworkBufferMin" size="unknown" status="success"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne#simple int" size="unknown" status="success"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne#simple float" size="unknown" status="success"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne#expression" size="unknown" status="success"/>
@@ -199,6 +199,7 @@
       <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions5" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryEmpty1" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryEmpty2" size="unknown" status="success"/>
+      <test name="phpunit\RegistryTest::testRegistryEmpty3" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistrySet" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryUnSet1" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryUnSet2" size="unknown" status="success"/>
@@ -207,7 +208,6 @@
       <test name="phpunit\RegistryTest::testRegistryUnserialize1" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryUnserialize2" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryClone" size="unknown" status="success"/>
-      <test name="phpunit\RegistryTest::testRegistryEmpty3" size="unknown" status="success"/>
       <test name="phpunit\RepositoryTest::testRegistry" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testSimpleClose" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testCloseNotConnected" size="unknown" status="success"/>
@@ -249,12 +249,12 @@
       <test name="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testRollbackTransactionSuccess" size="unknown" status="success"/>
+      <test name="phpunit\TransactionsTest::testRollbackTransactionFailure" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testCommitTransactionSuccess" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testCommitTransactionFailure" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadWriteReal" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadwriteFailure" size="unknown" status="success"/>
-      <test name="phpunit\TransactionsTest::testRollbackTransactionFailure" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadonlyReal" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testTransactionIsolationLevel" size="unknown" status="success"/>
       <test name="phpunit\UpdateTest::testUpdateReturnsNull" size="unknown" status="success"/>
@@ -266,9 +266,9 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="5515" comments="2131" code="3384" executable="728" executed="728" percent="100.00"/>
+        <lines total="5305" comments="2082" code="3223" executable="728" executed="728" percent="100.00"/>
         <methods count="171" tested="171" percent="100.00"/>
-        <functions count="4" tested="4" percent="100.00"/>
+        <functions count="0" tested="0" percent="0"/>
         <classes count="21" tested="21" percent="100.00"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
@@ -823,7 +823,7 @@
       </file>
       <file name="MydbOptions.php" href="MydbOptions.php.xml">
         <totals>
-          <lines total="449" comments="189" code="260" executable="37" executed="37" percent="100.00"/>
+          <lines total="449" comments="190" code="259" executable="37" executed="37" percent="100.00"/>
           <methods count="28" tested="28" percent="100.00"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="1" percent="100.00"/>
@@ -880,15 +880,6 @@
           <lines total="22" comments="11" code="11" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="0" tested="0" percent="0"/>
-          <traits count="0" tested="0" percent="0"/>
-        </totals>
-      </file>
-      <file name="pcntl-polyfill.php" href="pcntl-polyfill.php.xml">
-        <totals>
-          <lines total="210" comments="50" code="160" executable="0" executed="0" percent="0"/>
-          <methods count="0" tested="0" percent="0"/>
-          <functions count="4" tested="4" percent="100.00"/>
           <classes count="0" tested="0" percent="0"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
