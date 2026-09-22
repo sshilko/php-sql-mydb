@@ -125,20 +125,59 @@ if (!defined('SIGRTMAX')) {
     define('SIGRTMAX', 64);
 }
 
+// phpcs:disable SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable.DisallowedSuperGlobalVariable
 if (!function_exists('pcntl_signal')) {
     /**
-     * Report that a signal handler was installed, in reality nothing was done.
+     * Shared registry of simulated signal handlers shared by the pcntl_signal()
+     * and posix_kill() polyfills, keyed by signal number.
+     *
+     * @var array<int, int|string|callable>
+     */
+    // phpcs:disable PSR1.Files.SideEffects.FoundWithSymbols
+    $GLOBALS['pcntl_polyfill_signal_handlers'] ??= [];
+    // phpcs:enable PSR1.Files.SideEffects.FoundWithSymbols
+
+    /**
+     * Register or reset a simulated signal handler that posix_kill() will invoke.
      *
      * @param int|string|callable $handler
      * @see https://www.php.net/manual/en/function.pcntl-signal.php
      */
     function pcntl_signal(int $signal, int|string|callable $handler, bool $restartSysCalls = true): bool
     {
-        unset($signal, $handler, $restartSysCalls);
+        unset($restartSysCalls);
+        if (SIG_DFL === $handler || SIG_IGN === $handler) {
+            unset($GLOBALS['pcntl_polyfill_signal_handlers'][$signal]);
+
+            return true;
+        }
+
+        $GLOBALS['pcntl_polyfill_signal_handlers'][$signal] = $handler;
 
         return true;
     }
 }
+
+if (!function_exists('posix_kill')) {
+    /**
+     * Deliver a signal to the current process by invoking the simulated handler
+     * registered through the pcntl_signal() polyfill.
+     *
+     * @see https://www.php.net/manual/en/function.posix-kill.php
+     */
+    function posix_kill(int $processId, int $signal): bool
+    {
+        unset($processId);
+        /** @var array<int, int|string|callable> $handlers */
+        $handlers = $GLOBALS['pcntl_polyfill_signal_handlers'] ?? [];
+        if (isset($handlers[$signal]) && is_callable($handlers[$signal])) {
+            call_user_func($handlers[$signal], $signal);
+        }
+
+        return true;
+    }
+}
+// phpcs:enable SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable.DisallowedSuperGlobalVariable
 
 if (!function_exists('pcntl_signal_dispatch')) {
     /**

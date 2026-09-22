@@ -54,4 +54,9 @@
         <exclude name="ShortVariable" />
         <exclude name="LongVariable" />
     </rule>
+
+    <!-- The pcntl/posix polyfill intentionally shares signal handlers through a
+         superglobal because the two global functions cannot otherwise share
+         mutable state; standard global-variable rules do not apply to it. -->
+    <exclude-pattern>*/pcntl-polyfill.php</exclude-pattern>
 </ruleset>

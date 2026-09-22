@@ -15,8 +15,8 @@
 declare(strict_types = 1);
 
 use MydbRepository\UserRepository;
-use sql\Mydb;
 use sql\MydbCredentials;
+use sql\MydbFactory;
 use sql\MydbLogger;
 use sql\MydbOptions;
 use sql\MydbRegistry;
@@ -30,9 +30,10 @@ $mylogger = new MydbLogger();
 $sqlHost  = 'mysql' === gethostbyname('mysql') ? '0.0.0.0' : gethostbyname('mysql');
 
 $auth = new MydbCredentials($sqlHost, 'root', 'root', 'mydb', 3306);
-$opts = new MydbOptions();
+$factory = new MydbFactory();
+$opts = $factory->createOptions();
 $opts->setTransactionIsolationLevel(MydbOptions::TRANSACTION_ISOLATION_LEVEL_READ_COMMITTED);
-$mydb = new Mydb($auth, $mylogger, $opts);
+$mydb = $factory->create($auth, $mylogger, $opts);
 
 $mydb->beginTransaction();
 
@@ -79,10 +80,10 @@ assert(['10', '20'] === array_column($mydb->select("SELECT id, name FROM users O
 assert(1, $mydb->updateWhere(['id' => 99], ['id' => 10], 'users'));
 assert(['20', '99'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
-$db10 = new Mydb($auth, $mylogger, $opts);
+$db10 = $factory->create($auth, $mylogger, $opts);
 $db10->open();
 
-$db20 = new Mydb($auth, $mylogger, $opts);
+$db20 = $factory->create($auth, $mylogger, $opts);
 $registry['db1'] = $mydb;
 $registry['db2'] = $db10;
 $registry['db3'] = $db20;

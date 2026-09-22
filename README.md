@@ -25,7 +25,6 @@ MyDb - Component
     <a href="https://sshilko.com/php-sql-mydb/php/pdepend/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phppdepend.yml/badge.svg" alt="8.3 Pdepend build"></a>
     <a href="https://sshilko.com/php-sql-mydb/php/phpunit/html/"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit83.yml/badge.svg" alt="8.3 PHPUnit build"></a>
     <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit83.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/phpunit83.yml/badge.svg" alt="8.3 PHPUnit build"></a>
-    <a href="https://github.com/sshilko/php-sql-mydb/actions/workflows/github-pages.yml"><img src="https://github.com/sshilko/php-sql-mydb/actions/workflows/github-pages.yml/badge.svg" alt="GithubPages build"></a>
     <br/>
     </p>
 
@@ -42,7 +41,7 @@ composer require sshilko/php-sql-mydb
 #### [Compatibility](https://sshilko.com/php-sql-mydb/php/)
 
 - PHP >=8.3
-- MySQL >=5.7, 8.0
+- MySQL 8.0
 
 #### How this client helps you talk SQL to MySQL server
 
@@ -105,10 +104,6 @@ please re-use existing solutions that best fit your requirements.
 * Optimize for my use-case, focus on bottlenecks, remember that there is no ~~NoSQL~~ silver bullet
 * Do not optimize early - resources like CPU, memory are cheap
 * Focus on building architecture, learn from others and improve over time
-
-#### Future roadmap
-
-- MydbFactory responsible for initializing defaults
 
 #### Contributing
 

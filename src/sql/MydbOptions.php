@@ -37,20 +37,86 @@ class MydbOptions implements MydbOptionsInterface
     protected const int NET_READ_BUFFER_MAX = 131072;
 
     /**
+     * Default connect timeout, seconds
+     */
+    public const int DEFAULT_CONNECT_TIMEOUT = 5;
+
+    /**
+     * Default server-side SELECT timeout, seconds
+     */
+    public const int DEFAULT_SERVER_SELECT_TIMEOUT = 89;
+
+    /**
+     * Default client-side read timeout, seconds
+     */
+    public const int DEFAULT_READ_TIMEOUT = 90;
+
+    /**
+     * Default non-interactive connection idle timeout, seconds
+     */
+    public const int DEFAULT_NON_INTERACTIVE_TIMEOUT = 7200;
+
+    /**
+     * Default internal network command buffer size, bytes
+     */
+    public const int DEFAULT_NETWORK_BUFFER_SIZE = 6144;
+
+    /**
+     * Default network read buffer size, bytes
+     */
+    public const int DEFAULT_NETWORK_READ_BUFFER = 49152;
+
+    /**
+     * Default PHP error reporting level
+     */
+    public const int DEFAULT_ERROR_REPORTING = E_ALL & ~E_WARNING & ~E_NOTICE;
+
+    /**
+     * Default mysqli client error reporting level
+     */
+    public const int DEFAULT_CLIENT_ERROR_LEVEL =
+        MydbMysqli::MYSQLI_REPORT_ALL ^ MydbMysqli::MYSQLI_REPORT_STRICT ^ MydbMysqli::MYSQLI_REPORT_INDEX;
+
+    /**
+     * Default session time zone
+     */
+    public const string DEFAULT_TIMEZONE = 'UTC';
+
+    /**
+     * Default character set
+     */
+    public const string DEFAULT_CHARSET = 'utf8mb4';
+
+    /**
+     * Default autocommit mode
+     */
+    public const bool DEFAULT_AUTOCOMMIT = false;
+
+    /**
+     * Default persistent mode
+     */
+    public const bool DEFAULT_PERSISTENT = false;
+
+    /**
+     * Default readonly mode
+     */
+    public const bool DEFAULT_READONLY = false;
+
+    /**
      * The execution timeout ONLY APPLIES TO "SELECT" statements, seconds
      * X > 0, enabled
      * X = 0, not enabled.
      *
      * @see https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_max_execution_time
      */
-    protected int $serverSideSelectTimeout = 89;
+    protected int $serverSideSelectTimeout = self::DEFAULT_SERVER_SELECT_TIMEOUT;
 
     /**
      * MySql client connection timeout, seconds
      */
-    protected int $connectTimeout = 5;
+    protected int $connectTimeout = self::DEFAULT_CONNECT_TIMEOUT;
 
-    protected int $errorReporting = E_ALL & ~E_WARNING & ~E_NOTICE;
+    protected int $errorReporting = self::DEFAULT_ERROR_REPORTING;
 
     /**
      * The timeout in seconds for each attempt to read from the server.
@@ -60,7 +126,7 @@ class MydbOptions implements MydbOptionsInterface
      * @see https://github.com/php/php-src/blob/a03c1ed7aa2325d91595dcf9371297ab45543517/
      *      ext/mysqli/tests/mysqli_constants.phpt#L24
      */
-    protected int $readTimeout = 90;
+    protected int $readTimeout = self::DEFAULT_READ_TIMEOUT;
 
     /**
      * Internal network buffer of mysqlnd.net_cmd_buffer_size bytes for every connection
@@ -92,7 +158,7 @@ class MydbOptions implements MydbOptionsInterface
      * @see mysqlnd.net_cmd_buffer_size
      * @see http://php.net/manual/en/mysqlnd.config.php
      */
-    protected int $networkBufferSize = 6144;
+    protected int $networkBufferSize = self::DEFAULT_NETWORK_BUFFER_SIZE;
 
     /**
      * More memory for better performance
@@ -114,7 +180,7 @@ class MydbOptions implements MydbOptionsInterface
      * @see http://php.net/manual/en/mysqlnd.config.php
      * @see http://blog.ulf-wendel.de/2007/php-mysqlnd-saves-40-memory-finally-new-tuning-options/
      */
-    protected int $networkReadBuffer = 49152;
+    protected int $networkReadBuffer = self::DEFAULT_NETWORK_READ_BUFFER;
 
     /**
      * Sets mysqli error reporting mode
@@ -130,9 +196,7 @@ class MydbOptions implements MydbOptionsInterface
      *
      * @see https://www.php.net/manual/en/function.mysqli-report.php
      */
-    protected int $clientErrorLevel = MydbMysqli::MYSQLI_REPORT_ALL ^
-                                      MydbMysqli::MYSQLI_REPORT_STRICT ^
-                                      MydbMysqli::MYSQLI_REPORT_INDEX;
+    protected int $clientErrorLevel = self::DEFAULT_CLIENT_ERROR_LEVEL;
 
     /**
      * Transaction isolation is one of the foundations of database processing.
@@ -156,13 +220,13 @@ class MydbOptions implements MydbOptionsInterface
      *
      * @see https://dev.mysql.com/doc/refman/8.0/en/time-zone-support.html
      */
-    protected string $timeZone = 'UTC';
+    protected string $timeZone = self::DEFAULT_TIMEZONE;
 
     /**
      * The number of seconds the server waits for activity
      * on a non-interactive TCP/IP or UNIX File connection before closing it
      */
-    protected int $nonInteractiveTimeout = 7200;
+    protected int $nonInteractiveTimeout = self::DEFAULT_NON_INTERACTIVE_TIMEOUT;
 
     /**
      * Recommended defaults:
@@ -170,9 +234,9 @@ class MydbOptions implements MydbOptionsInterface
      * true for ro connection
      * true for async connection
      */
-    protected bool $autocommit = false;
+    protected bool $autocommit = self::DEFAULT_AUTOCOMMIT;
 
-    protected string $charset = 'utf8mb4';
+    protected string $charset = self::DEFAULT_CHARSET;
 
     /**
      * Transaction block will also carry over to the next script
@@ -180,12 +244,12 @@ class MydbOptions implements MydbOptionsInterface
      *
      * @see http://php.net/manual/en/features.persistent-connections.php
      */
-    protected bool $persistent = false;
+    protected bool $persistent = self::DEFAULT_PERSISTENT;
 
     /**
      * Readonly connection
      */
-    protected bool $readonly = false;
+    protected bool $readonly = self::DEFAULT_READONLY;
 
     #[Override]
     public function getNonInteractiveTimeout(): int
