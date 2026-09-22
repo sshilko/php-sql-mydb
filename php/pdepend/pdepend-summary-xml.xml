@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2026-09-22T01:03:15" pdepend="@package_version@" ahh="0.5" andc="0.65116279069767" calls="291" ccn="356" ccn2="422" cloc="1977" clsa="3" clsc="39" eloc="2197" fanout="72" leafs="36" lloc="1446" loc="5312" maxDIT="4" ncloc="3335" noc="42" nof="3" noi="20" nom="286" nop="7" roots="3">
+<metrics generated="2026-09-22T01:19:03" pdepend="@package_version@" ahh="0.5" andc="0.65116279069767" calls="291" ccn="356" ccn2="422" cloc="1981" clsa="3" clsc="39" eloc="2197" fanout="72" leafs="36" lloc="1446" loc="5316" maxDIT="4" ncloc="3335" noc="42" nof="3" noi="20" nom="286" nop="7" roots="3">
   <files>
-    <file name="/app/src/sql/pcntl-polyfill.php" loc="167" cloc="29" eloc="130" lloc="84" ncloc="138"/>
+    <file name="/app/src/sql/pcntl-polyfill.php" loc="171" cloc="33" eloc="130" lloc="84" ncloc="138"/>
     <file name="/app/src/sql/Mydb.php" loc="710" cloc="200" eloc="401" lloc="260" ncloc="510"/>
     <file name="/app/src/sql/MydbCredentials.php" loc="97" cloc="38" eloc="46" lloc="19" ncloc="59"/>
     <file name="/app/src/sql/MydbEnvironment.php" loc="275" cloc="145" eloc="102" lloc="80" ncloc="130"/>
@@ -46,13 +46,13 @@
     <file name="/app/src/sql/MydbMysqli/MydbMysqliResult.php" loc="104" cloc="14" eloc="49" lloc="27" ncloc="90"/>
   </files>
   <package name="+global" noc="0" noi="0" nom="0" nof="3">
-    <function name="pcntl_signal" start="134" end="139" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="12" hnd="10" hv="39.863137138648" hd="6" hl="0.16666666666667" he="239.17882283189" ht="13.287712379549" hb="0.012843810659451" hi="6.6438561897747" mi="75.524959572308">
+    <function name="pcntl_signal" start="135" end="140" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="12" hnd="10" hv="39.863137138648" hd="6" hl="0.16666666666667" he="239.17882283189" ht="13.287712379549" hb="0.012843810659451" hi="6.6438561897747" mi="75.524959572308">
       <file name="/app/src/sql/pcntl-polyfill.php"/>
     </function>
-    <function name="pcntl_signal_dispatch" start="148" end="151" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="4" hnd="4" hv="8" hd="4.5" hl="0.22222222222222" he="36" ht="2" hb="0.0036342411856643" hi="1.7777777777778" mi="83.134143220375">
+    <function name="pcntl_signal_dispatch" start="149" end="152" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="4" hnd="4" hv="8" hd="4.5" hl="0.22222222222222" he="36" ht="2" hb="0.0036342411856643" hi="1.7777777777778" mi="83.134143220375">
       <file name="/app/src/sql/pcntl-polyfill.php"/>
     </function>
-    <function name="pcntl_signal_get_handler" start="160" end="165" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="8" hnd="7" hv="22.458839376461" hd="7.5" hl="0.13333333333333" he="168.44129532346" ht="9.357849740192" hb="0.010166648149537" hi="2.9945119168614" mi="77.269750369059">
+    <function name="pcntl_signal_get_handler" start="163" end="168" ccn="1" ccn2="1" loc="6" cloc="0" eloc="4" lloc="2" ncloc="6" npath="1" hnt="8" hnd="7" hv="22.458839376461" hd="7.5" hl="0.13333333333333" he="168.44129532346" ht="9.357849740192" hb="0.010166648149537" hi="2.9945119168614" mi="77.269750369059">
       <file name="/app/src/sql/pcntl-polyfill.php"/>
     </function>
   </package>
