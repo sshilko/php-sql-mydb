@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2026-09-22T02:20:52" pdepend="@package_version@" ahh="0.46666666666667" andc="0.63636363636364" calls="311" ccn="362" ccn2="430" cloc="2037" clsa="3" clsc="40" eloc="2267" fanout="81" leafs="37" lloc="1487" loc="5518" maxDIT="4" ncloc="3481" noc="43" nof="4" noi="20" nom="289" nop="7" roots="3">
+<metrics generated="2026-09-22T19:14:00" pdepend="@package_version@" ahh="0.46666666666667" andc="0.63636363636364" calls="311" ccn="362" ccn2="430" cloc="2043" clsa="3" clsc="40" eloc="2267" fanout="82" leafs="37" lloc="1487" loc="5524" maxDIT="4" ncloc="3481" noc="43" nof="4" noi="20" nom="289" nop="7" roots="3">
   <files>
     <file name="/app/src/sql/pcntl-polyfill.php" loc="213" cloc="51" eloc="150" lloc="98" ncloc="162"/>
     <file name="/app/src/sql/Mydb.php" loc="710" cloc="200" eloc="401" lloc="260" ncloc="510"/>
@@ -8,7 +8,7 @@
     <file name="/app/src/sql/MydbEvent.php" loc="57" cloc="21" eloc="26" lloc="16" ncloc="36"/>
     <file name="/app/src/sql/MydbException.php" loc="29" cloc="16" eloc="7" lloc="3" ncloc="13"/>
     <file name="/app/src/sql/MydbExpression.php" loc="38" cloc="17" eloc="14" lloc="6" ncloc="21"/>
-    <file name="/app/src/sql/MydbFactory.php" loc="96" cloc="35" eloc="52" lloc="27" ncloc="61"/>
+    <file name="/app/src/sql/MydbFactory.php" loc="102" cloc="41" eloc="52" lloc="27" ncloc="61"/>
     <file name="/app/src/sql/MydbListener.php" loc="30" cloc="12" eloc="12" lloc="7" ncloc="18"/>
     <file name="/app/src/sql/MydbLogger.php" loc="354" cloc="120" eloc="141" lloc="87" ncloc="234"/>
     <file name="/app/src/sql/MydbMysqli.php" loc="641" cloc="140" eloc="278" lloc="151" ncloc="501"/>
@@ -131,11 +131,11 @@
       <method name="__construct" start="28" end="30" ccn="1" ccn2="1" loc="3" cloc="0" eloc="2" lloc="0" ncloc="3" npath="1" hnt="2" hnd="2" hv="2" hd="2" hl="0.5" he="4" ht="0.22222222222222" hb="0.00083994736659658" hi="1" mi="91.191023588314"/>
       <method name="__toString" start="33" end="36" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="5" hnd="5" hv="11.609640474437" hd="8" hl="0.125" he="92.877123795494" ht="5.1598402108608" hb="0.0068362496969366" hi="1.4512050593046" mi="82.001716149821"/>
     </class>
-    <class name="MydbFactory" fqname="sql\MydbFactory" start="27" end="95" loc="69" cloc="17" eloc="35" lloc="21" ncloc="52" dit="0" noam="0" nocc="0" noom="0" nom="3" cr="0.15" rcr="0.15" ca="0" cbo="9" ce="9" impl="0" cis="3" csz="3" npm="3" vars="0" varsi="0" varsnp="0" wmc="3" wmci="3" wmcnp="3">
+    <class name="MydbFactory" fqname="sql\MydbFactory" start="27" end="101" loc="75" cloc="23" eloc="35" lloc="21" ncloc="52" dit="0" noam="0" nocc="0" noom="0" nom="3" cr="0.15" rcr="0.15" ca="0" cbo="10" ce="10" impl="0" cis="3" csz="3" npm="3" vars="0" varsi="0" varsnp="0" wmc="3" wmci="3" wmcnp="3">
       <file name="/app/src/sql/MydbFactory.php"/>
-      <method name="createOptions" start="32" end="50" ccn="1" ccn2="1" loc="19" cloc="0" eloc="17" lloc="15" ncloc="19" npath="1" hnt="62" hnd="34" hv="315.42269615752" hd="3.5357142857143" hl="0.28282828282828" he="1115.2445328427" ht="61.95802960237" hb="0.035847495086566" hi="89.210459519299" mi="55.527247333707"/>
-      <method name="createReadonlyOptions" start="55" end="63" ccn="1" ccn2="1" loc="9" cloc="0" eloc="7" lloc="5" ncloc="9" npath="1" hnt="22" hnd="13" hv="81.409673799104" hd="5.5714285714286" hl="0.17948717948718" he="453.56818259501" ht="25.198232366389" hb="0.019677675736714" hi="14.611992733173" mi="68.051980245688"/>
-      <method name="create" start="76" end="94" ccn="1" ccn2="1" loc="19" cloc="0" eloc="11" lloc="1" ncloc="19" npath="1" hnt="23" hnd="16" hv="92" hd="5.4444444444444" hl="0.18367346938776" he="500.88888888889" ht="27.827160493827" hb="0.021023564126092" hi="16.897959183673" mi="63.3981263041"/>
+      <method name="createOptions" start="34" end="52" ccn="1" ccn2="1" loc="19" cloc="0" eloc="17" lloc="15" ncloc="19" npath="1" hnt="62" hnd="34" hv="315.42269615752" hd="3.5357142857143" hl="0.28282828282828" he="1115.2445328427" ht="61.95802960237" hb="0.035847495086566" hi="89.210459519299" mi="55.527247333707"/>
+      <method name="createReadonlyOptions" start="59" end="67" ccn="1" ccn2="1" loc="9" cloc="0" eloc="7" lloc="5" ncloc="9" npath="1" hnt="22" hnd="13" hv="81.409673799104" hd="5.5714285714286" hl="0.17948717948718" he="453.56818259501" ht="25.198232366389" hb="0.019677675736714" hi="14.611992733173" mi="68.051980245688"/>
+      <method name="create" start="82" end="100" ccn="1" ccn2="1" loc="19" cloc="0" eloc="11" lloc="1" ncloc="19" npath="1" hnt="23" hnd="16" hv="92" hd="5.4444444444444" hl="0.18367346938776" he="500.88888888889" ht="27.827160493827" hb="0.021023564126092" hi="16.897959183673" mi="63.3981263041"/>
     </class>
     <class name="MydbListener" fqname="sql\MydbListener" start="20" end="29" loc="10" cloc="1" eloc="3" lloc="1" ncloc="9" dit="0" noam="0" nocc="1" noom="0" nom="2" cr="0.2775" rcr="0.2775" ca="0" cbo="1" ce="1" impl="1" cis="1" csz="2" npm="1" vars="0" varsi="0" varsnp="0" wmc="2" wmci="2" wmcnp="1">
       <file name="/app/src/sql/MydbListener.php"/>
