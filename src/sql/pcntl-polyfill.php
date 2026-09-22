@@ -15,6 +15,7 @@
 
 declare(strict_types = 1);
 
+// @codeCoverageIgnoreStart
 if (!defined('SIG_DFL')) {
     define('SIG_DFL', 0);
 }
@@ -155,6 +156,8 @@ if (!function_exists('pcntl_signal_get_handler')) {
     /**
      * Report the default signal handler, no handlers are ever installed.
      *
+     * @psalm-suppress LessSpecificReturnType the polyfill always returns the
+     *     default handler while the real function may return a string handler
      * @see https://www.php.net/manual/en/function.pcntl-signal-get-handler.php
      */
     function pcntl_signal_get_handler(int $signal): int|string|false
@@ -164,3 +167,4 @@ if (!function_exists('pcntl_signal_get_handler')) {
         return SIG_DFL;
     }
 }
+// @codeCoverageIgnoreEnd

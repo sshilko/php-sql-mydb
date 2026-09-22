@@ -99,3 +99,79 @@ jobs:
 
       - name: Docker run PHPUnit
         run: docker compose exec -T app.php83 composer app-phpunit
+
+      - name: Docker run PHPUnit with MySQL8.0 & Coverage
+        run: docker compose exec -T app.php83 composer app-phpunit-mysql80-coverage
+
+      - name: Docker run PHPUnit badge generation
+        id: app-phpunit-badges-coverage
+        continue-on-error: true
+        run: |
+          #3 attempts to generate badges
+          docker compose exec -T app.php83 composer app-phpunit-badges-coverage || \
+          docker compose exec -T app.php83 composer app-phpunit-badges-coverage || \
+          docker compose exec -T app.php83 composer app-phpunit-badges-coverage
+
+        # Docs: https://github.com/marketplace/actions/phpunit-coverage-badge
+      - name: Generate PHPUnit coverage badge
+        uses: timkrase/phpunit-coverage-badge@v1.2.0
+        with:
+          coverage_badge_path: "test/tmp/phpunit-coverage-badge.svg"
+          push_badge: false
+          report: test/tmp/phpunit-clover.xml
+
+        # https://github.com/actions/upload-artifact
+      - name: Upload PHPUnit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: phpunit-output
+          path: |
+            test/tmp/html
+            test/tmp/xml
+            test/tmp/phpunit-testdox-html.html
+            test/tmp/phpunit-testdox-text.txt
+            test/tmp/phpunit-clover.xml
+            test/tmp/phpunit-junit.xml
+            test/tmp/phpunit-cobertura.xml
+            test/tmp/phpunit-crap4j.xml
+            test/tmp/phpunit-coverage.txt
+            test/tmp/phpunit-coverage-badge.svg
+            test/tmp/phpunit-coverage-badge-lines.svg
+            test/tmp/phpunit-coverage-badge-classes.svg
+            test/tmp/phpunit-coverage-badge-methods.svg
+          retention-days: 1
+
+  badges:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions: write-all
+    steps:
+      # https://github.com/actions/checkout
+      - name: Checkout pages branch
+        uses: actions/checkout@v5
+        with:
+          ref: pages
+
+      # https://github.com/marketplace/actions/download-a-build-artifact
+      - name: Download all PHPUnit artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: phpunit-output
+          path: php/phpunit83
+
+      - uses: nick-fields/retry@v2
+        name: Commit coverage details
+        continue-on-error: true
+        with:
+          timeout_seconds: 20
+          max_attempts: 3
+          retry_on: error
+          command: |
+            git status
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git pull
+            git add php/phpunit83/*
+            git commit -m "generated phpunit artifacts from revision ${GITHUB_SHA::7}"
+            git push
