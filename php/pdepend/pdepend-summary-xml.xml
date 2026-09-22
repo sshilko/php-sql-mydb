@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2026-09-22T19:14:00" pdepend="@package_version@" ahh="0.46666666666667" andc="0.63636363636364" calls="311" ccn="362" ccn2="430" cloc="2043" clsa="3" clsc="40" eloc="2267" fanout="82" leafs="37" lloc="1487" loc="5524" maxDIT="4" ncloc="3481" noc="43" nof="4" noi="20" nom="289" nop="7" roots="3">
+<metrics generated="2026-09-22T19:25:06" pdepend="@package_version@" ahh="0.46666666666667" andc="0.63636363636364" calls="311" ccn="362" ccn2="430" cloc="2043" clsa="3" clsc="40" eloc="2267" fanout="82" leafs="37" lloc="1487" loc="5524" maxDIT="4" ncloc="3481" noc="43" nof="4" noi="20" nom="289" nop="7" roots="3">
   <files>
     <file name="/app/src/sql/pcntl-polyfill.php" loc="213" cloc="51" eloc="150" lloc="98" ncloc="162"/>
     <file name="/app/src/sql/Mydb.php" loc="710" cloc="200" eloc="401" lloc="260" ncloc="510"/>
@@ -311,7 +311,7 @@
     <class name="LoggerException" fqname="sql\MydbException\LoggerException" start="26" end="29" loc="4" cloc="0" eloc="0" lloc="0" ncloc="4" dit="3" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.16241447368421" ca="1" cbo="0" ce="0" impl="0" cis="0" csz="0" npm="0" vars="0" varsi="0" varsnp="0" wmc="0" wmci="0" wmcnp="0">
       <file name="/app/src/sql/MydbException/LoggerException.php"/>
     </class>
-    <class name="OptionException" fqname="sql\MydbException\OptionException" start="26" end="29" loc="4" cloc="0" eloc="0" lloc="0" ncloc="4" dit="3" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.16241447368421" ca="1" cbo="0" ce="0" impl="0" cis="0" csz="0" npm="0" vars="0" varsi="0" varsnp="0" wmc="0" wmci="0" wmcnp="0">
+    <class name="OptionException" fqname="sql\MydbException\OptionException" start="26" end="29" loc="4" cloc="0" eloc="0" lloc="0" ncloc="4" dit="3" noam="0" nocc="0" noom="0" nom="0" cr="0.15" rcr="0.16241447368421" ca="2" cbo="0" ce="0" impl="0" cis="0" csz="0" npm="0" vars="0" varsi="0" varsnp="0" wmc="0" wmci="0" wmcnp="0">
       <file name="/app/src/sql/MydbException/OptionException.php"/>
     </class>
     <class name="QueryBuilderEscapeException" fqname="sql\MydbException\QueryBuilderEscapeException" start="28" end="36" loc="9" cloc="0" eloc="3" lloc="1" ncloc="9" dit="3" noam="1" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.16241447368421" ca="1" cbo="1" ce="1" impl="0" cis="1" csz="1" npm="1" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
