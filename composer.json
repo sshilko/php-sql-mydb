@@ -143,19 +143,22 @@
         "squizlabs/php_codesniffer": "^3.8"
     },
     "suggest": {
-        "ext-ast": "Performance boost for phan"
+        "ext-ast": "Performance boost for phan",
+        "ext-pcntl": "Real signal dispatch for query termination (a no-op polyfill is bundled)"
     },
     "require": {
         "php": "^8.3",
         "ext-mysqli": "*",
         "ext-mysqlnd": "*",
-        "ext-pcntl": "*",
         "psr/log": "^1",
         "composer-plugin-api": "^2"
     },
     "autoload": {
         "psr-4": {
             "sql\\": "src/sql"
-        }
+        },
+        "files": [
+            "src/sql/pcntl-polyfill.php"
+        ]
     }
 }
