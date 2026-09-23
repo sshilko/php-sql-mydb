@@ -33,7 +33,7 @@ final class DeleteTest extends includes\DatabaseTestCase
         $db->open();
         $db->beginTransaction();
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -45,7 +45,7 @@ final class DeleteTest extends includes\DatabaseTestCase
         $affected = $db->delete("DELETE FROM myusers WHERE id IN (2,3)");
         self::assertSame(2, $affected);
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual  = $db->select("SELECT id, name FROM myusers");
         $reality = [
             ['id' => '1', 'name' => 'user1'],
         ];
@@ -61,7 +61,7 @@ final class DeleteTest extends includes\DatabaseTestCase
     public function testDeleteError(): void
     {
         $mysqli = $this->createMock(MydbMysqli::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $sql = "DELETE FROM myusers WHERE id IN (991, 992)";
 
@@ -76,7 +76,7 @@ final class DeleteTest extends includes\DatabaseTestCase
     public function testDeleteInternalError(): void
     {
         $mysqli = $this->createMock(MydbMysqli::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $sql = "DELETE FROM myusers WHERE id IN (991, 992)";
 
@@ -98,7 +98,7 @@ final class DeleteTest extends includes\DatabaseTestCase
         $db->open();
         $db->beginTransaction();
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -110,7 +110,7 @@ final class DeleteTest extends includes\DatabaseTestCase
         $affected = $db->deleteWhere(['id' => [1, 3]], 'myusers', ['id' => [2]]);
         self::assertSame(2, $affected);
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual  = $db->select("SELECT id, name FROM myusers");
         $reality = [
             ['id' => '2', 'name' => 'user2'],
         ];

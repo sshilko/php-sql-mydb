@@ -20,9 +20,9 @@ use Countable;
 use Iterator;
 use Override;
 use sql\MydbException\RegistryException;
-use Traversable;
 use function count;
 use function current;
+use function is_string;
 use function key;
 use function next;
 use function reset;
@@ -37,30 +37,13 @@ use function serialize;
  *
  * @psalm-suppress MissingTemplateParam
  */
-class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator
+final class MydbRegistry implements ArrayAccess, Countable, Iterator
 {
 
     /**
      * @var array<string, \sql\MydbInterface>
      */
     protected array $instance = [];
-
-/**
-     * @throws \sql\MydbException\RegistryException
-     */
-    public function serialize(): ?string
-    {
-        throw new RegistryException();
-    }
-
-    /**
-     * @throws \sql\MydbException\RegistryException
-     * @phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
-     */
-    public function unserialize(mixed $data): void
-    {
-        throw new RegistryException(serialize($data));
-    }
 
     /**
      * Return the current element
@@ -158,15 +141,18 @@ class MydbRegistry implements ArrayAccess, Countable, Traversable, Iterator
     /**
      * Offset to set
      *
+     * Runtime guards reject non-string offsets and non-MydbInterface values
+     * regardless of the ArrayAccess contract, hence the mixed parameter types.
+     *
      * @phpcs:disable SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint
-     * @param string $offset
-     * @param \sql\MydbInterface $value
+     * @param mixed $offset
+     * @param mixed $value
      * @throws \sql\MydbException\RegistryException
      */
     #[Override]
     public function offsetSet($offset, $value): void
     {
-        if ($value instanceof MydbInterface && !$this->offsetExists($offset)) {
+        if (is_string($offset) && $value instanceof MydbInterface && !$this->offsetExists($offset)) {
             $this->instance[$offset] = $value;
 
             return;

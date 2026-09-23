@@ -26,6 +26,8 @@ use sql\MydbQueryBuilderInterface;
 use Stringable;
 use function array_merge;
 use function str_replace;
+use const INF;
+use const NAN;
 use const PHP_MAJOR_VERSION;
 
 /**
@@ -111,19 +113,68 @@ final class QueryBuilderTest extends TestCase
     public function testReplaceOne(string $sql, string $table, $data): void
     {
         $real = $this->builder->insertOne($data, $table, 'REPLACE');
-        $sql = str_replace('INSERT ', 'REPLACE ', $sql);
+        $sql  = str_replace('INSERT ', 'REPLACE ', $sql);
         self::assertSame($sql, $real);
     }
 
     public function testEscape(): void
     {
-        $esc = $this->createMock(MydbMysqliEscapeStringInterface::class);
+        $esc     = $this->createMock(MydbMysqliEscapeStringInterface::class);
         $builder = new MydbQueryBuilder($esc);
 
         $esc->expects(self::once())->method('realEscapeString')->willReturn(null);
         self::expectException(QueryBuilderException::class);
         self::expectExceptionMessage('Failed to escape value: a $ b');
         $builder->escape('a $ b');
+    }
+
+    /**
+     * @return array<string, array{0: float}>
+     */
+    public static function dataProviderEscapeNonFinite(): array
+    {
+        return [
+            'inf' => [INF],
+            'nan' => [NAN],
+        ];
+    }
+
+    #[DataProvider('dataProviderEscapeNonFinite')]
+    public function testEscapeNonFiniteFloats(float $value): void
+    {
+        $esc     = $this->createMock(MydbMysqliEscapeStringInterface::class);
+        $builder = new MydbQueryBuilder($esc);
+        $esc->expects(self::never())->method('realEscapeString');
+
+        self::expectException(QueryBuilderException::class);
+        $builder->escape($value);
+    }
+
+    public function testBuildWhereEmptyInList(): void
+    {
+        self::expectException(QueryBuilderException::class);
+        $this->builder->buildWhere(['id' => []], []);
+    }
+
+    public function testBuildInsertManyException(): void
+    {
+        self::expectException(QueryBuilderException::class);
+        $this->builder->buildInsertMany(['a' => 'b'], ['c'], '', false, '');
+
+        self::expectException(QueryBuilderException::class);
+        $this->builder->buildInsertMany(['a' => 'b'], [], 'table', false, '');
+
+        self::expectException(QueryBuilderException::class);
+        $this->builder->buildInsertMany([], ['c'], 'table', false, '');
+
+        self::expectException(QueryBuilderException::class);
+        $this->builder->buildInsertMany([], [1 => '2'], 'table', false, '');
+    }
+
+    public function testInsertOneInvalidType(): void
+    {
+        self::expectException(QueryBuilderException::class);
+        $this->builder->insertOne(['a' => 'b'], 'table1', 'UPSERT');
     }
 
     #[DataProvider('dataProviderTestBuildUpdateWhereMany')]
@@ -144,21 +195,6 @@ final class QueryBuilderTest extends TestCase
     {
         self::expectException(QueryBuilderException::class);
         $this->builder->buildWhere([], []);
-    }
-
-    public function testBuildInsertManyException(): void
-    {
-        self::expectException(QueryBuilderException::class);
-        $this->builder->buildInsertMany(['a' => 'b'], ['c'], '', false, '');
-
-        self::expectException(QueryBuilderException::class);
-        $this->builder->buildInsertMany(['a' => 'b'], [], 'table', false, '');
-
-        self::expectException(QueryBuilderException::class);
-        $this->builder->buildInsertMany([], ['c'], 'table', false, '');
-
-        self::expectException(QueryBuilderException::class);
-        $this->builder->buildInsertMany([], [1 => '2'], 'table', false, '');
     }
 
     public function testBuildUpdateWhereManyException1(): void
@@ -211,7 +247,7 @@ final class QueryBuilderTest extends TestCase
     {
         return [
             'simple' => [
-                'sql' => "UPDATE table1 SET id = CASE WHEN (id = '1') THEN 2 WHEN (id = 3.3) THEN '4' ELSE id SET name = CASE WHEN (name = 'oldname') THEN NOW() ELSE name END WHERE xxx='yyy'",
+                'sql' => "UPDATE table1 SET id = CASE WHEN (id = '1') THEN 2 WHEN (id = 3.3) THEN '4' ELSE id END, name = CASE WHEN (name = 'oldname') THEN NOW() ELSE name END WHERE xxx='yyy'",
                 'columnSetWhere' => [
                     'id' => [
                         ['1', 2],
@@ -225,7 +261,7 @@ final class QueryBuilderTest extends TestCase
                 'table' => 'table1',
             ],
             'prefixed simple' => [
-                'sql' => "UPDATE db1.table1 SET table1.id = CASE WHEN (table1.id = '1') THEN 2 WHEN (table1.id = 3) THEN '4' ELSE table1.id SET table1.name = CASE WHEN (table1.name = 'oldname') THEN NOW() ELSE table1.name END WHERE table1.xxx='yyy'",
+                'sql' => "UPDATE db1.table1 SET table1.id = CASE WHEN (table1.id = '1') THEN 2 WHEN (table1.id = 3) THEN '4' ELSE table1.id END, table1.name = CASE WHEN (table1.name = 'oldname') THEN NOW() ELSE table1.name END WHERE table1.xxx='yyy'",
                 'columnSetWhere' => [
                     'table1.id' => [
                         ['1', 2],
@@ -347,7 +383,7 @@ final class QueryBuilderTest extends TestCase
                             $stest['sql'] = "WHERE id" . ($negative ? ' NOT LIKE ' : ' LIKE ') . $where;
                         }
                         $stest['likeFields'] = $like ? ['id'] : [];
-                        $result[] = $stest;
+                        $result[]            = $stest;
                     }
                 }
             }

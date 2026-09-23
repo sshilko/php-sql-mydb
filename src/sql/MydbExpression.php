@@ -22,7 +22,7 @@ use Override;
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
  */
-readonly class MydbExpression implements MydbExpressionInterface
+final readonly class MydbExpression implements MydbExpressionInterface
 {
 
     public function __construct(protected string $input)

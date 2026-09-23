@@ -33,7 +33,7 @@ final class MydbExceptionTest extends TestCase
      */
     public function testMyException(): void
     {
-        $message = 'hello world ' . time();
+        $message   = 'hello world ' . time();
         $exception = new MydbException($message);
         $this->expectException(MydbException::class);
         $this->expectExceptionMessage($message);
@@ -46,7 +46,7 @@ final class MydbExceptionTest extends TestCase
      */
     public function testQueryBuilderException(): void
     {
-        $message = 'hello builder ' . time();
+        $message   = 'hello builder ' . time();
         $exception = new QueryBuilderEscapeException($message);
         $this->expectException(QueryBuilderEscapeException::class);
         $this->expectExceptionMessage("Failed to escape value: " . $message);

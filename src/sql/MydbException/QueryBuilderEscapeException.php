@@ -15,17 +15,15 @@ declare(strict_types = 1);
 
 namespace sql\MydbException;
 
-use sql\MydbException;
 use Throwable;
 use function sprintf;
 
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
- * @category exceptions
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class QueryBuilderEscapeException extends MydbException
+final class QueryBuilderEscapeException extends QueryBuilderException
 {
     protected const string MESSAGE_TEMPLATE = 'Failed to escape value: %s';
 

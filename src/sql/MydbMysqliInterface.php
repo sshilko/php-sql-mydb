@@ -80,9 +80,6 @@ interface MydbMysqliInterface extends MydbMysqliEscapeStringInterface
 
     public function getAffectedRows(): ?int;
 
-    /**
-     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint
-     */
     public function getInsertId(): int|string|null;
 
     public function autocommit(bool $enable): bool;

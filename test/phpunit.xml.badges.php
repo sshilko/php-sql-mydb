@@ -29,7 +29,7 @@ foreach ($input as $line) {
     }
     $category = trim($matches[1]);
 
-    $query = http_build_query(
+    $query  = http_build_query(
         [
             'label' => $label . ' ' . $category,
             'color' => $color,
@@ -38,8 +38,8 @@ foreach ($input as $line) {
     );
     $remote = $source . $query;
 
-    $file = strtolower(sprintf($output, $category));
-    $image = file_get_contents($remote);
+    $file   = strtolower(sprintf($output, $category));
+    $image  = file_get_contents($remote);
     $imglen = strlen($image);
     if ($imglen > 0) {
         file_put_contents($file, $image);

@@ -15,15 +15,14 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Stringable;
+
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
  */
-interface MydbExpressionInterface
+interface MydbExpressionInterface extends Stringable
 {
-    /**
-     * As of PHP8.0 this is Stringable interface
-     */
     public function __toString(): string;
 }

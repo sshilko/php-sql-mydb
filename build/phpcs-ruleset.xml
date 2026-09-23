@@ -21,6 +21,7 @@
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>*/examples/*</exclude-pattern>
     <exclude-pattern>*/src/sql/pcntl-polyfill.php</exclude-pattern>
+    <exclude-pattern>*/tmp/*</exclude-pattern>    
 
     <arg name="error-severity" value="1" />
     <arg name="warning-severity" value="1" />
@@ -43,9 +44,6 @@
     <rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint" />
         <exclude name="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat" />
-        <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification" />
-        <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversablePropertyTypeHintSpecification" />
-        <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint" />

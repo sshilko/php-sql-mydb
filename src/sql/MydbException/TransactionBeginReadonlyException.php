@@ -18,10 +18,9 @@ namespace sql\MydbException;
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
- * @category exceptions
  * @see https://github.com/sshilko/php-sql-mydb
  */
-class TransactionBeginReadonlyException extends TransactionBeginException
+final class TransactionBeginReadonlyException extends TransactionBeginException
 {
 
 }

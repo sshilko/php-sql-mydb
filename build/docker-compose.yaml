@@ -83,42 +83,7 @@ x-app: &app
   restart: on-failure:2
 
 services:
-  # app.php:
-  #   <<: *app
-  #   image: app/php
-  #   container_name: app.php
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.php74
-  #     args:
-  #       xdebug_php_extension: xdebug-3.0.0
-  # app.php80:
-  #   <<: *app
-  #   image: app/php80
-  #   container_name: app.php80
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.php80
-  #     args:
-  #       xdebug_php_extension: xdebug-3.1.6
-  # app.php81:
-  #   <<: *app
-  #   image: app/php81
-  #   container_name: app.php81
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.php81
-  #     args:
-  #       xdebug_php_extension: xdebug-3.1.6
-  # app.php82:
-  #   <<: *app
-  #   image: app/php82
-  #   container_name: app.php82
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.php82
-  #     args:
-  #       xdebug_php_extension: xdebug-3.2.0
+  # Database services (mysql80) live in test/docker-compose.yaml.
   app.php83:
     <<: *app
     image: app/php83

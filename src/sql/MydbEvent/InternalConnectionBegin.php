@@ -15,13 +15,11 @@ declare(strict_types = 1);
 
 namespace sql\MydbEvent;
 
-class InternalConnectionBegin extends InternalEvent
+/**
+ * Fired just before a new connection attempt starts.
+ *
+ * Metadata payload keys: host (string), dbname (string).
+ */
+final class InternalConnectionBegin extends InternalEvent
 {
-    public function __construct(string $host, string $dbname)
-    {
-        $this->data = [
-            'host' => $host,
-            'dbname' => $dbname,
-        ];
-    }
 }

@@ -23,7 +23,7 @@ use SensitiveParameter;
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
  */
-readonly class MydbCredentials implements MydbCredentialsInterface
+final readonly class MydbCredentials implements MydbCredentialsInterface
 {
 
     /**

@@ -15,6 +15,8 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Stringable;
+
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
@@ -66,8 +68,8 @@ interface MydbQueryBuilderInterface
     public function buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string;
 
     /**
-     * @param float|int|string|\sql\MydbExpressionInterface|null $unescaped
+     * @param float|int|string|\Stringable|null $unescaped
      * @throws \sql\MydbException\QueryBuilderException
      */
-    public function escape($unescaped, string $quote = "'"): string;
+    public function escape(float|int|string|Stringable|null $unescaped, string $quote = "'"): string;
 }

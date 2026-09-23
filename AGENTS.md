@@ -42,6 +42,29 @@ Run tests and quality checks inside the container:
 
 Or locally after `composer install`: `composer app-phpunit`, `composer app-pre-commit`, `composer app-quality`.
 
+### Full verification run
+
+Once the containers are up, run everything in this order:
+
+- `docker compose exec -w /app app.php83 composer app-quality` - PHPCS/CBF,
+  PHPCPD, PDepend, PHPMD, PHPStan, Psalm alter, Psalm taint, Psalm main
+- `docker compose exec -w /app app.php83 composer app-phan` - Phan (not reached
+  when `app-quality` stops early)
+- `docker compose exec -w /app app.php83 composer app-phpunit-mysql80` - PHPUnit
+  against MySQL 8.0
+
+A green run means:
+
+- PHPCS, PHPCPD, PDepend, PHPMD, PHPStan, Psalm alter/taint, Phan and PHPUnit
+  report no errors (284 tests, 877 assertions).
+- `app-psalm` exits 2 on exactly two informational mysqli-stub gaps:
+  `MoreSpecificImplementedParamType` on `MydbEnvironment::set_error_handler`
+  and `TypeDoesNotContainType` on `MydbMysqli::getWarnings`; not hard gates.
+- Phan exits 0 with six informational stub/type findings in `MydbEnvironment`,
+  `MydbExpressionInterface`, `MydbMysqli` and `MydbQueryBuilder`.
+- PHPUnit emits the one expected `mysqli::real_connect()` "Connection timed out"
+  warning from the failure-path tests in `ExceptionTest`.
+
 ### Static analysis gotchas
 
 - `src/sql/pcntl-polyfill.php` is a Windows-only fallback for `pcntl_signal()` /
@@ -69,9 +92,9 @@ Or locally after `composer install`: `composer app-phpunit`, `composer app-pre-c
     --config build/psalm.xml --no-cache --threads=1
   ```
 
-- Psalm reports pre-existing mysqli-stub gaps (`UndefinedConstant MYSQLI_*`,
-  `UndefinedClass mysqli*`) in `MydbMysqli*` and `MydbEnvironment`; these are
-  informational in CI (artifacts/badges), not a hard gate.
+- Psalm reports pre-existing mysqli-stub gaps in `MydbMysqli*` and
+  `MydbEnvironment`; these are informational in CI (artifacts/badges), not a
+  hard gate (current findings are listed under "Full verification run").
 - Phan needs `ext-ast`, which is installed in the container (`composer app-phan`).
 - Calling `docker exec` from Windows PowerShell mangles `$?`, variables, and
   nested quotes; prefer simple top-level commands or a bash wrapper.

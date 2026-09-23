@@ -22,6 +22,9 @@ use const E_NOTICE;
 use const E_WARNING;
 
 /**
+ * Not declared final: PHPUnit doubles this class through createMock() in the test suite.
+ * @psalm-suppress ClassMustBeFinal
+ *
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb

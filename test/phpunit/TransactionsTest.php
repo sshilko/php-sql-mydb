@@ -32,12 +32,11 @@ use function str_replace;
 final class TransactionsTest extends includes\DatabaseTestCase
 {
     /**
-     * @throws \phpunit\MydbException
-     * @throws \phpunit\ConnectException
+     * @throws \sql\MydbException
      */
     public function testBeginTransactionReadonlyReal(): void
     {
-        $mysqli = new MydbMysqli();
+        $mysqli  = new MydbMysqli();
         $options = new MydbOptions();
         $options->setReadonly(true);
 
@@ -53,8 +52,7 @@ final class TransactionsTest extends includes\DatabaseTestCase
     }
 
     /**
-     * @throws \phpunit\MydbException
-     * @throws \phpunit\ConnectException
+     * @throws \sql\MydbException
      */
     public function testBeginTransactionReadWriteReal(): void
     {
@@ -80,7 +78,7 @@ final class TransactionsTest extends includes\DatabaseTestCase
         ];
 
         foreach ($levels as $l) {
-            $mysqli = new MydbMysqli();
+            $mysqli  = new MydbMysqli();
             $options = new MydbOptions();
             $options->setTransactionIsolationLevel($l);
 
@@ -94,9 +92,9 @@ final class TransactionsTest extends includes\DatabaseTestCase
 
     public function testBeginTransactionReadonlySuccess(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli  = $this->createMock(MydbMysqli::class);
         $options = $this->createMock(MydbOptions::class);
-        $db = $this->getDefaultDb($mysqli, $options);
+        $db      = $this->getDefaultDb($mysqli, $options);
 
         $mysqli->method('isConnected')->willReturn(true);
         $options->method('isReadonly')->willReturn(true);
@@ -107,9 +105,9 @@ final class TransactionsTest extends includes\DatabaseTestCase
 
     public function testBeginTransactionReadonlyFailure(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli  = $this->createMock(MydbMysqli::class);
         $options = $this->createMock(MydbOptions::class);
-        $db = $this->getDefaultDb($mysqli, $options);
+        $db      = $this->getDefaultDb($mysqli, $options);
 
         $mysqli->method('isConnected')->willReturn(true);
         $options->method('isReadonly')->willReturn(true);
@@ -121,9 +119,9 @@ final class TransactionsTest extends includes\DatabaseTestCase
 
     public function testBeginTransactionReadwriteSuccess(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli  = $this->createMock(MydbMysqli::class);
         $options = $this->createMock(MydbOptions::class);
-        $db = $this->getDefaultDb($mysqli, $options);
+        $db      = $this->getDefaultDb($mysqli, $options);
 
         $mysqli->method('isConnected')->willReturn(true);
         $options->method('isReadonly')->willReturn(false);
@@ -134,9 +132,9 @@ final class TransactionsTest extends includes\DatabaseTestCase
 
     public function testBeginTransactionReadwriteFailure(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli  = $this->createMock(MydbMysqli::class);
         $options = $this->createMock(MydbOptions::class);
-        $db = $this->getDefaultDb($mysqli, $options);
+        $db      = $this->getDefaultDb($mysqli, $options);
 
         $mysqli->method('isConnected')->willReturn(true);
         $options->method('isReadonly')->willReturn(false);
@@ -148,9 +146,9 @@ final class TransactionsTest extends includes\DatabaseTestCase
 
     public function testRollbackTransactionSuccess(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli  = $this->createMock(MydbMysqli::class);
         $options = $this->createMock(MydbOptions::class);
-        $db = $this->getDefaultDb($mysqli, $options);
+        $db      = $this->getDefaultDb($mysqli, $options);
 
         $mysqli->method('isConnected')->willReturn(true);
         $mysqli->expects(self::once())->method('rollback')->willReturn(true);
@@ -160,9 +158,9 @@ final class TransactionsTest extends includes\DatabaseTestCase
 
     public function testRollbackTransactionFailure(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli  = $this->createMock(MydbMysqli::class);
         $options = $this->createMock(MydbOptions::class);
-        $db = $this->getDefaultDb($mysqli, $options);
+        $db      = $this->getDefaultDb($mysqli, $options);
 
         $mysqli->method('isConnected')->willReturn(true);
         $mysqli->expects(self::once())->method('rollback')->willReturn(false);
@@ -173,9 +171,9 @@ final class TransactionsTest extends includes\DatabaseTestCase
 
     public function testCommitTransactionSuccess(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli  = $this->createMock(MydbMysqli::class);
         $options = $this->createMock(MydbOptions::class);
-        $db = $this->getDefaultDb($mysqli, $options);
+        $db      = $this->getDefaultDb($mysqli, $options);
 
         $mysqli->method('isConnected')->willReturn(true);
         $mysqli->expects(self::once())->method('commit')->willReturn(true);
@@ -185,9 +183,9 @@ final class TransactionsTest extends includes\DatabaseTestCase
 
     public function testCommitTransactionFailure(): void
     {
-        $mysqli = $this->createMock(MydbMysqli::class);
+        $mysqli  = $this->createMock(MydbMysqli::class);
         $options = $this->createMock(MydbOptions::class);
-        $db = $this->getDefaultDb($mysqli, $options);
+        $db      = $this->getDefaultDb($mysqli, $options);
 
         $mysqli->method('isConnected')->willReturn(true);
         $mysqli->expects(self::once())->method('commit')->willReturn(false);

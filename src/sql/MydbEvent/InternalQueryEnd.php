@@ -15,13 +15,11 @@ declare(strict_types = 1);
 
 namespace sql\MydbEvent;
 
-class InternalQueryEnd extends InternalEvent
+/**
+ * Fired after a raw SQL statement was executed.
+ *
+ * Metadata payload keys: sql (string), success (bool).
+ */
+final class InternalQueryEnd extends InternalEvent
 {
-    public function __construct(string $sql, bool $success)
-    {
-        $this->data = [
-            'sql' => $sql,
-            'success' => $success,
-        ];
-    }
 }

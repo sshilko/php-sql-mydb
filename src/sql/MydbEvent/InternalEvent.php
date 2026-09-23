@@ -28,9 +28,11 @@ class InternalEvent extends MydbEvent
     protected array $listeners = [];
 
     /**
-     * @psalm-var array<array-key, mixed>|null
+     * @param array<array-key, mixed>|null $data
      */
-    protected ?array $data = null;
+    public function __construct(protected ?array $data = null)
+    {
+    }
 
     #[Override]
     public function getEventMetadata(): ?array
@@ -51,6 +53,7 @@ class InternalEvent extends MydbEvent
     /**
      * @psalm-return array<\sql\MydbListenerInterface>
      */
+    #[Override]
     protected function getListeners(): array
     {
         return $this->listeners;

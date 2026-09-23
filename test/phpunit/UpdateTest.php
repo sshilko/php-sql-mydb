@@ -34,7 +34,7 @@ final class UpdateTest extends includes\DatabaseTestCase
         $db->open();
         $db->beginTransaction();
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -47,7 +47,7 @@ final class UpdateTest extends includes\DatabaseTestCase
         $db->updateWhere(['name' => 'hello2'], ['id' => 2, 'name' => 'user2'], 'myusers');
         $db->updateWhere(['name' => 'hello4', 'id' => 4], ['id' => 3, 'name' => 'user3'], 'myusers');
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual  = $db->select("SELECT id, name FROM myusers");
         $reality = [
             ['id' => '1', 'name' => 'hello1'],
             ['id' => '2', 'name' => 'hello2'],
@@ -58,7 +58,7 @@ final class UpdateTest extends includes\DatabaseTestCase
         $affectedRows = $db->updateWhere(['name' => 'hello'], ['id' => [1, 2, 3, 4, 5, 6, 77, 88]], 'myusers');
         self::assertSame(3, $affectedRows);
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual  = $db->select("SELECT id, name FROM myusers");
         $reality = [
             ['id' => '1', 'name' => 'hello'],
             ['id' => '2', 'name' => 'hello'],
@@ -76,7 +76,7 @@ final class UpdateTest extends includes\DatabaseTestCase
         $db->open();
         $db->beginTransaction();
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -87,7 +87,7 @@ final class UpdateTest extends includes\DatabaseTestCase
 
         self::assertSame(1, $db->update("UPDATE myusers SET name = 'userabc' WHERE id = 1"));
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual  = $db->select("SELECT id, name FROM myusers");
         $reality = [
             ['id' => '1', 'name' => 'userabc'],
             ['id' => '2', 'name' => 'user2'],
@@ -102,7 +102,7 @@ final class UpdateTest extends includes\DatabaseTestCase
         $db = $this->getDefaultDb();
         $db->open();
         $db->beginTransaction();
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -118,7 +118,7 @@ final class UpdateTest extends includes\DatabaseTestCase
             ],
             'myusers'
         );
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user10'],
             ['id' => '2', 'name' => 'user22'],
@@ -129,10 +129,36 @@ final class UpdateTest extends includes\DatabaseTestCase
         $db->rollbackTransaction();
     }
 
+    public function testUpdateManyMultiColumn(): void
+    {
+        $db = $this->getDefaultDb();
+        $db->open();
+        $db->beginTransaction();
+
+        $db->updateWhereMany(
+            [
+                'code' => [['US', 'UC']],
+                'country' => [['UNITED STATES', 'UNITED STATES OF AMERICA']],
+            ],
+            [
+                'id' => [1],
+            ],
+            'countries'
+        );
+
+        $actual  = $db->select("SELECT code, country FROM countries WHERE id = 1");
+        $reality = [
+            ['code' => 'UC', 'country' => 'UNITED STATES OF AMERICA'],
+        ];
+        self::assertSame($reality, $actual);
+
+        $db->rollbackTransaction();
+    }
+
     public function testUpdateInternalError(): void
     {
         $mysqli = $this->createMock(MydbMysqli::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $sql = "UPDATE myusers SET id = 10000 WHERE id IN (991, 992)";
 
@@ -152,7 +178,7 @@ final class UpdateTest extends includes\DatabaseTestCase
     public function testUpdateReturnsNull(): void
     {
         $mysqli = $this->createMock(MydbMysqli::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $sql = "UPDATE myusers SET id = 10000 WHERE id IN (991, 992)";
         $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);

@@ -34,13 +34,14 @@ use sql\MydbException\UpdateException;
 use sql\MydbInterface\RemoteResourceInterface;
 use sql\MydbListener\InternalListener;
 use sql\MydbMysqli\MydbMysqliResultInterface;
+use Stringable;
 use Throwable;
 use function array_map;
 use function count;
 use function explode;
 use function implode;
-use function preg_replace;
 use function sprintf;
+use function str_replace;
 use function stripos;
 use function strpos;
 use function substr;
@@ -49,9 +50,9 @@ use function substr;
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
- * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * @SuppressWarnings("PHPMD.CouplingBetweenObjects")
  */
-class Mydb implements MydbInterface, RemoteResourceInterface
+final class Mydb implements MydbInterface, RemoteResourceInterface
 {
 
     protected MydbMysqliInterface $mysqli;
@@ -75,10 +76,10 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         ?MydbQueryBuilderInterface $queryBuilder = null,
         ?MydbListenerInterface $eventListener = null,
     ) {
-        $this->options = $options ?? new MydbOptions();
-        $this->mysqli = $mysqli ?? new MydbMysqli();
-        $this->environment = $environment ?? new MydbEnvironment();
-        $this->queryBuilder = $queryBuilder ?? new MydbQueryBuilder($this->mysqli);
+        $this->options       = $options ?? new MydbOptions();
+        $this->mysqli        = $mysqli ?? new MydbMysqli();
+        $this->environment   = $environment ?? new MydbEnvironment();
+        $this->queryBuilder  = $queryBuilder ?? new MydbQueryBuilder($this->mysqli);
         $this->eventListener = $eventListener ?? new InternalListener($logger);
     }
 
@@ -111,7 +112,6 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * Execute raw SQL query and return results
      *
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
-     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      *
      * @psalm-return array<array-key, array<array-key, (float|int|string|null)>>|null
      * @throws \sql\MydbException\ConnectException
@@ -187,7 +187,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         $query = $this->queryBuilder->showColumnsLike($table, $column);
 
         $resultArray = $this->query($query);
-        $result = isset($resultArray[0]['Type'])
+        $result      = isset($resultArray[0]['Type'])
                 ? (string) $resultArray[0]['Type']
                 : null;
 
@@ -216,20 +216,20 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         }
         // @codeCoverageIgnoreEnd
 
-        $values = explode(',', (string) preg_replace("/'/", '', $input));
+        $values = explode(',', str_replace("'", '', $input));
 
         return array_map('strval', $values);
     }
 
     /**
-     * @param float|int|string|\sql\MydbExpressionInterface|null $unescaped
+     * @param float|int|string|\Stringable|null $unescaped
      * @throws \sql\MydbException\ConnectException
      * @throws \sql\MydbException
-     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings("PHPMD.NPathComplexity")
      * @todo reduce NPathComplexity
      */
     #[Override]
-    public function escape($unescaped, string $quote = "'"): string
+    public function escape(float|int|string|Stringable|null $unescaped, string $quote = "'"): string
     {
         if (!$this->connect()) {
             throw new ConnectException();
@@ -396,7 +396,6 @@ class Mydb implements MydbInterface, RemoteResourceInterface
     }
 
     /**
-     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint
      * @throws \sql\MydbException
      * @throws \sql\MydbException\ConnectException
      */
@@ -537,9 +536,11 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         $this->environment->startSignalsTrap();
         $this->environment->set_error_handler();
 
-        (new MydbEvent\InternalQueryBegin($query))->setListeners([$this->eventListener])->notify();
+        (new MydbEvent\InternalQueryBegin(['sql' => $query]))->setListeners([$this->eventListener])->notify();
         $result = $this->mysqli->realQuery($query);
-        (new MydbEvent\InternalQueryEnd($query, $result))->setListeners([$this->eventListener])->notify();
+        (new MydbEvent\InternalQueryEnd(['sql' => $query, 'success' => $result]))->setListeners(
+            [$this->eventListener]
+        )->notify();
 
         $this->environment->restore_error_handler();
         $hasPendingSignals = $this->environment->endSignalsTrap();
@@ -604,7 +605,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
      * @throws \sql\MydbException\EnvironmentException
      * @throws \sql\MydbException\EventException
      * @throws \sql\MydbException
-     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings("PHPMD.NPathComplexity")
      * @todo reduce NPathComplexity
      */
     protected function connect(int $retry = 0): bool
@@ -614,16 +615,16 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         }
 
         $connected = false;
-        $init0 = $this->mysqli->init();
-        $init1 = $init0 && $this->mysqli->setTransportOptions($this->options, $this->environment);
+        $init0     = $this->mysqli->init();
+        $init1     = $init0 && $this->mysqli->setTransportOptions($this->options, $this->environment);
 
         if ($init0 && $init1) {
             $reportingLevel = $this->environment->error_reporting($this->options->getErrorReporting());
 
-            $host = ($this->options->isPersistent() ? 'p:' : '') . $this->credentials->getHost();
+            $host   = ($this->options->isPersistent() ? 'p:' : '') . $this->credentials->getHost();
             $dbname = $this->credentials->getDbname();
 
-            (new MydbEvent\InternalConnectionBegin($host, $dbname))
+            (new MydbEvent\InternalConnectionBegin(['host' => $host, 'dbname' => $dbname]))
                 ->setListeners([$this->eventListener])->notify();
             $connected = $this->mysqli->realConnect(
                 $host,
@@ -634,7 +635,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
                 $this->credentials->getSocket(),
                 $this->credentials->getFlags()
             );
-            (new MydbEvent\InternalConnectionEnd($host, $dbname, $connected))
+            (new MydbEvent\InternalConnectionEnd(['host' => $host, 'dbname' => $dbname, 'success' => $connected]))
                 ->setListeners([$this->eventListener])->notify();
 
             $this->environment->error_reporting($reportingLevel);
@@ -646,7 +647,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
 
             $errorNumber = (string) (null !== $connectErrno && 0 !== $connectErrno
                 ? $connectErrno : $this->mysqli->getErrNo());
-            $errorText = (string) (null !== $connectError && '' !== $connectError
+            $errorText   = (string) (null !== $connectError && '' !== $connectError
                 ? $connectError : $this->mysqli->getError());
 
             if (false === $this->mysqli->close()) {
@@ -701,7 +702,7 @@ class Mydb implements MydbInterface, RemoteResourceInterface
         }
 
         if ($this->options->isReadonly() && false === $this->mysqli->beginTransactionReadonly()) {
-            throw new TransactionAutocommitException();
+            throw new TransactionBeginReadonlyException();
         }
 
         return true;

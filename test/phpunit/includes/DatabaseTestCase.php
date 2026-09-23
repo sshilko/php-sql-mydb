@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace phpunit\includes;
 
+use Override;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use sql\Mydb;
@@ -72,34 +73,36 @@ class DatabaseTestCase extends TestCase
     private const string ROOT_P = PHPUNIT_MYSQL_ROOT_PASS;
 
     /**
-     * @var \phpunit\includes\MockObject|\Psr\Log\LoggerInterface
+     * @var \Psr\Log\LoggerInterface&\PHPUnit\Framework\MockObject\MockObject
      */
     protected LoggerInterface $logger;
 
     private static ?MydbRegistry $registry = null;
 
+    #[Override]
     protected function setUp(): void
     {
         static::$registry = new MydbRegistry();
-        $this->logger = $this->createMock(LoggerInterface::class);
+        $this->logger     = $this->createMock(LoggerInterface::class);
     }
 
+    #[Override]
     protected function tearDown(): void
     {
-        if (count(static::$registry)) {
+        $registry = static::$registry;
+        if (null !== $registry && 0 !== count($registry)) {
             /**
              * @phpcs:disable SlevomatCodingStandard.Variables.UnusedVariable.UnusedVariable
+             * @psalm-suppress PossiblyNullArgument
+             * @psalm-suppress UnusedForeachValue
              */
-            foreach (static::$registry as $index => $value) {
-                static::$registry->offsetUnset($index);
+            foreach ($registry as $index => $value) {
+                $registry->offsetUnset($index);
             }
         }
         static::$registry = null;
     }
 
-    /**
-     * @return \sql\Mydb
-     */
     protected function getDefaultDb(
         ?MydbMysqliInterface $mysqli = null,
         ?MydbOptionsInterface $options = null,
@@ -108,6 +111,10 @@ class DatabaseTestCase extends TestCase
         bool $refresh = false,
     ): MydbInterface {
         if (!isset(static::$registry['db0']) || true === $refresh) {
+            /**
+             * Bootstrap-defined constants carry string credentials.
+             * @psalm-suppress MixedArgument
+             */
             $credentials = new MydbCredentials(self::HOST, self::USER, self::PASS, self::NAME, (int) self::PORT);
             if (isset(static::$registry['db0'])) {
                 unset(static::$registry['db0']);
@@ -118,10 +125,14 @@ class DatabaseTestCase extends TestCase
         return static::$registry['db0'];
     }
 
-    protected function getNoConnectDb(): Mydb
+    protected function getNoConnectDb(): MydbInterface
     {
         if (!isset(static::$registry['db1'])) {
             $options = new MydbOptions();
+            /**
+             * Bootstrap-defined constants carry string credentials.
+             * @psalm-suppress MixedArgument
+             */
             $credentials = new MydbCredentials('1.2.3.4', self::USER, self::PASS, self::NAME, (int) self::PORT);
 
             $options->setConnectTimeout(1);
@@ -137,7 +148,17 @@ class DatabaseTestCase extends TestCase
             $options = new MydbOptions();
             $options->setAutocommit(true);
 
-            $credentials = new MydbCredentials(self::HOST, self::ROOT_U, self::ROOT_P, self::NAME, (int) self::PORT);
+            /**
+             * Bootstrap-defined constants carry string credentials.
+             * @psalm-suppress MixedArgument
+             */
+            $credentials             = new MydbCredentials(
+                self::HOST,
+                self::ROOT_U,
+                self::ROOT_P,
+                self::NAME,
+                (int) self::PORT
+            );
             static::$registry['db2'] = new Mydb($credentials, $this->logger, $options);
         }
 
@@ -146,6 +167,10 @@ class DatabaseTestCase extends TestCase
 
     protected static function getDbName(): string
     {
+        /**
+         * Bootstrap-defined constant carries a string value.
+         * @psalm-suppress MixedReturnStatement
+         */
         return self::NAME;
     }
 }

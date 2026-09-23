@@ -18,7 +18,6 @@ namespace sql\MydbInterface;
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
- * @category interfaces
  * @see https://github.com/sshilko/php-sql-mydb
  */
 interface RemoteResourceInterface

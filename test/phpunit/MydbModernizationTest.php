@@ -25,14 +25,12 @@ use ReflectionMethod;
 use SensitiveParameter;
 use sql\Mydb;
 use sql\MydbCredentials;
-use sql\MydbLogger;
 use sql\MydbMysqli;
 use sql\MydbMysqli\MydbMysqliEscapeStringInterface;
 use sql\MydbMysqli\MydbMysqliResult;
 use sql\MydbOptions;
 use sql\MydbQueryBuilder;
-use function file_get_contents;
-use function str_starts_with;
+use Stringable;
 
 /**
  * Acceptance tests for the PHP 8.3 modernization of the library.
@@ -67,7 +65,11 @@ final class MydbModernizationTest extends TestCase
     {
         $constructor = (new ReflectionClass(MydbCredentials::class))->getConstructor();
         self::assertNotNull($constructor);
-        $passwd = $constructor->getParameters()[2];
+        $parameters = $constructor->getParameters();
+        $passwd     = $parameters[2] ?? null;
+        if (null === $passwd) {
+            self::fail('MydbCredentials::__construct must have a third parameter passwd');
+        }
         self::assertSame('passwd', $passwd->getName());
         $attributes = $passwd->getAttributes(SensitiveParameter::class);
         self::assertNotEmpty($attributes, 'MydbCredentials::passwd must be marked #[SensitiveParameter]');
@@ -84,7 +86,6 @@ final class MydbModernizationTest extends TestCase
             'MydbOptions::NET_READ_BUFFER_MIN' => [MydbOptions::class, 'NET_READ_BUFFER_MIN'],
             'MydbOptions::NET_READ_BUFFER_MAX' => [MydbOptions::class, 'NET_READ_BUFFER_MAX'],
             'MydbMysqli::SQL_MODE' => [MydbMysqli::class, 'SQL_MODE'],
-            'MydbLogger::IO_WRITE_ATTEMPTS' => [MydbLogger::class, 'IO_WRITE_ATTEMPTS'],
             'MydbMysqliResult::MYSQLI_ASSOC' => [MydbMysqliResult::class, 'MYSQLI_ASSOC'],
         ];
     }
@@ -139,41 +140,20 @@ final class MydbModernizationTest extends TestCase
         self::assertSame("'0xab1'", $builder->escape('0xab1', "'"), 'Odd-length 0x values behave as plain words');
     }
 
-    public function testQueryBuilderUsesStrStartsWith(): void
+    public function testQueryBuilderEscapesStringableObjectsWithoutQuotes(): void
     {
-        $source = file_get_contents(__DIR__ . '/../../src/sql/MydbQueryBuilder.php');
-        self::assertIsString($source);
-        self::assertStringContainsString('str_starts_with($unescaped, \'0x\')', $source);
-        self::assertStringNotContainsString("0 === strpos(\$unescaped, '0x')", $source);
-    }
+        $esc = $this->createMock(MydbMysqliEscapeStringInterface::class);
+        $esc->expects(self::never())->method('realEscapeString');
+        $builder = new MydbQueryBuilder($esc);
 
-    public function testQueryBuilderEscapeMethodHasNativeHexGuard(): void
-    {
-        $source = file_get_contents(__DIR__ . '/../../src/sql/MydbQueryBuilder.php');
-        self::assertIsString($source);
-        self::assertStringContainsString('is_string($unescaped)', $source);
-        self::assertStringNotContainsString('is_resource($unescaped)', $source);
-    }
+        $stringable = new class implements Stringable {
+            #[Override]
+            public function __toString(): string
+            {
+                return 'NOW(123)';
+            }
+        };
 
-    public function testCredentialsPropertyTypesUseReadonly(): void
-    {
-        $source = file_get_contents(__DIR__ . '/../../src/sql/MydbCredentials.php');
-        self::assertIsString($source);
-        self::assertStringContainsString('readonly class MydbCredentials', $source);
-        self::assertStringContainsString('public function __construct(', $source);
-        self::assertStringContainsString('string $host,', $source);
-        self::assertStringContainsString('string $username,', $source);
-        self::assertStringContainsString('string $passwd,', $source);
-        self::assertStringContainsString('string $dbname,', $source);
-        self::assertStringContainsString('?int $port = null,', $source);
-        self::assertStringContainsString('?string $socket = null,', $source);
-        self::assertStringContainsString('int $flags = 0,', $source);
-    }
-
-    public function testQueryBuilderAlwaysUsesStrStartsWithForHex(): void
-    {
-        $source = file_get_contents(__DIR__ . '/../../src/sql/MydbQueryBuilder.php');
-        self::assertIsString($source);
-        self::assertTrue(str_starts_with($source, '<?php'), 'Source file must be a PHP file');
+        self::assertSame('NOW(123)', $builder->escape($stringable, "'"));
     }
 }

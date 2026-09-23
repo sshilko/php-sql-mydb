@@ -27,7 +27,7 @@ include_once __DIR__ . '/MydbRepository/UserRepository.php';
 
 $registry = new MydbRegistry();
 $mylogger = new MydbLogger();
-$sqlHost  = 'mysql' === gethostbyname('mysql') ? '0.0.0.0' : gethostbyname('mysql');
+$sqlHost  = getenv('MYSQL_HOST') ?: 'mysql';
 
 $auth = new MydbCredentials($sqlHost, 'root', 'root', 'mydb', 3306);
 $factory = new MydbFactory();
@@ -77,7 +77,7 @@ assert(1 === $deletedRowsCount);
 
 assert(['10', '20'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
-assert(1, $mydb->updateWhere(['id' => 99], ['id' => 10], 'users'));
+assert(1 === $mydb->updateWhere(['id' => 99], ['id' => 10], 'users'));
 assert(['20', '99'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
 $db10 = $factory->create($auth, $mylogger, $opts);

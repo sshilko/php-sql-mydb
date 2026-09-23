@@ -53,11 +53,17 @@ final class RegistryTest extends includes\DatabaseTestCase
         $registry->offsetSet('a', 'b');
     }
 
+    public function testRegistrySetIntegerKey(): void
+    {
+        $registry = new MydbRegistry();
+        $this->expectException(RegistryException::class);
+        $registry->offsetSet(1, $this->getDefaultDb());
+    }
+
     public function testRegistryUnSet1(): void
     {
         $registry = new MydbRegistry();
-        $result = $registry->offsetUnset('abcdefg');
-        self::assertSame(null, $result);
+        self::assertSame(null, $registry->offsetUnset('abcdefg'));
     }
 
     public function testRegistryUnSet2(): void
@@ -75,20 +81,6 @@ final class RegistryTest extends includes\DatabaseTestCase
         serialize($registry);
     }
 
-    public function testRegistrySerialize2(): void
-    {
-        $registry = new MydbRegistry();
-        $this->expectException(RegistryException::class);
-        $registry->serialize();
-    }
-
-    public function testRegistryUnserialize1(): void
-    {
-        $registry = new MydbRegistry();
-        $this->expectException(RegistryException::class);
-        $registry->unserialize('hello');
-    }
-
     public function testRegistryUnserialize2(): void
     {
         $registry = new MydbRegistry();
@@ -98,8 +90,7 @@ final class RegistryTest extends includes\DatabaseTestCase
 
     public function testRegistryClone(): void
     {
-        $registry = new MydbRegistry();
         $this->expectException(RegistryException::class);
-        clone $registry;
+        clone new MydbRegistry();
     }
 }

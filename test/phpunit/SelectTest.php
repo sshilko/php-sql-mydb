@@ -32,7 +32,7 @@ use const SIGQUIT;
 final class SelectTest extends includes\DatabaseTestCase
 {
     /**
-     * @return array<array<string, string>>
+     * @return array<string, array{sql: string, expects: list<array<string, string>>}>
      */
     public static function dataProviderTestSimpleSelect(): array
     {
@@ -143,9 +143,9 @@ final class SelectTest extends includes\DatabaseTestCase
     }
 
     #[DataProvider('dataProviderTestSimpleSelect')]
-    public function testSimpleSelect(string $sql, $expects): void
+    public function testSimpleSelect(string $sql, array $expects): void
     {
-        $db = $this->getDefaultDb();
+        $db     = $this->getDefaultDb();
         $actual = $db->select($sql);
         self::assertSame($expects, $actual);
     }
@@ -158,8 +158,8 @@ final class SelectTest extends includes\DatabaseTestCase
         self::assertSame([['n' => '2']], $actual);
 
         $mysqli = $this->createMock(MydbMysqli::class);
-        $env = $this->createMock(MydbEnvironment::class);
-        $db2 = $this->getDefaultDb($mysqli, null, $env, null, true);
+        $env    = $this->createMock(MydbEnvironment::class);
+        $db2    = $this->getDefaultDb($mysqli, null, $env, null, true);
 
         $mysqli->expects(self::atLeastOnce())->method('isConnected')->willReturn(true);
 

@@ -31,7 +31,7 @@ final class MydbUnitTest extends includes\DatabaseTestCase
     public function testQueryThrowsConnectExceptionWhenLazyConnectFails(): void
     {
         $mysqli = $this->createMock(MydbMysqliInterface::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
         $mysqli->expects(self::once())->method('init')->willReturn(false);
@@ -44,7 +44,7 @@ final class MydbUnitTest extends includes\DatabaseTestCase
     public function testCommandThrowsConnectExceptionWhenLazyConnectFails(): void
     {
         $mysqli = $this->createMock(MydbMysqliInterface::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
         $mysqli->expects(self::once())->method('init')->willReturn(false);
@@ -57,7 +57,7 @@ final class MydbUnitTest extends includes\DatabaseTestCase
     public function testEscapeThrowsConnectExceptionWhenLazyConnectFails(): void
     {
         $mysqli = $this->createMock(MydbMysqliInterface::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
         $mysqli->expects(self::once())->method('init')->willReturn(false);
@@ -70,7 +70,7 @@ final class MydbUnitTest extends includes\DatabaseTestCase
     public function testOpenFailsAfterAllRetriesExhausted(): void
     {
         $mysqli = $this->createMock(MydbMysqliInterface::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $mysqli->expects(self::exactly(3))->method('isConnected')->willReturn(false);
         $mysqli->expects(self::exactly(3))->method('init')->willReturn(false);
@@ -82,10 +82,10 @@ final class MydbUnitTest extends includes\DatabaseTestCase
 
     public function testOpenRecoversOnRetry(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
-        $envs = $this->createMock(MydbEnvironment::class);
-        $db = $this->getDefaultDb($mysqli, $options, $envs);
+        $envs    = $this->createMock(MydbEnvironment::class);
+        $db      = $this->getDefaultDb($mysqli, $options, $envs);
 
         $mysqli->expects(self::exactly(2))->method('isConnected')->willReturn(false);
         $mysqli->expects(self::exactly(2))->method('init')->willReturnOnConsecutiveCalls(false, true);

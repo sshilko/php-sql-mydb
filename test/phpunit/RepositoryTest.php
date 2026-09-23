@@ -28,7 +28,7 @@ final class RepositoryTest extends includes\DatabaseTestCase
 {
     public function testRegistry(): void
     {
-        $registry = new MydbRegistry();
+        $registry        = new MydbRegistry();
         $registry['db1'] = $this->getDefaultDb();
 
         $repository = new class($registry) extends MydbRepository {

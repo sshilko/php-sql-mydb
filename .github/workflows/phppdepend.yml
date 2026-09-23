@@ -35,7 +35,7 @@ jobs:
           key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php83') }}
 
       - name: Load cached Docker image
-        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php
+        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php83
 
       - name: Docker boot
         env:
@@ -60,8 +60,8 @@ jobs:
       - name: Docker install dependencies
         run: docker compose exec -T app.php83 composer install
 
-        # Docs: https://phpunit.readthedocs.io/en/9.5/
-      - name: Docker run PHPUnit with MySQL5.7
+        # Docs: https://pdepend.org
+      - name: Docker run PDepend
         run: docker compose exec -T app.php83 composer app-pdepend
 
         # https://github.com/actions/upload-artifact
@@ -96,7 +96,7 @@ jobs:
           name: pdepend-output
           path: php/pdepend
 
-      - uses: nick-fields/retry@v2
+      - uses: nick-fields/retry@v3
         name: Commit pdepend details
         continue-on-error: true
         with:

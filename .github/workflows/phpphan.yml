@@ -12,6 +12,7 @@ name: 8.3 Phan
 on:
   push:
     branches: ["master"]
+  pull_request:
 
 permissions:
   contents: read
@@ -40,7 +41,9 @@ jobs:
         id: composer-cache
         uses: actions/cache@v5
         with:
-          path: vendor
+          path: |
+            vendor
+            ~/.composer/cache
           key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
 
       - name: PHP Version
@@ -81,7 +84,7 @@ jobs:
           name: phan-output
           path: php/phan
 
-      - uses: nick-fields/retry@v2
+      - uses: nick-fields/retry@v3
         name: Commit php/phan
         continue-on-error: true
         with:

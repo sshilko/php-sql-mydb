@@ -15,14 +15,11 @@ declare(strict_types = 1);
 
 namespace sql\MydbEvent;
 
-class InternalConnectionEnd extends InternalEvent
+/**
+ * Fired after a connection attempt finishes.
+ *
+ * Metadata payload keys: host (string), dbname (string), success (bool).
+ */
+final class InternalConnectionEnd extends InternalEvent
 {
-    public function __construct(string $host, string $dbname, bool $success)
-    {
-        $this->data = [
-            'host' => $host,
-            'dbname' => $dbname,
-            'success' => $success,
-        ];
-    }
 }

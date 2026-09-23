@@ -15,6 +15,8 @@ declare(strict_types = 1);
 
 namespace sql;
 
+use Override;
+
 abstract class MydbRepository implements MydbRepositoryInterface
 {
 
@@ -24,6 +26,7 @@ abstract class MydbRepository implements MydbRepositoryInterface
     {
     }
 
+    #[Override]
     public function getDatabase(): MydbInterface
     {
         return $this->registry[$this->getDatabaseIdentifier()];

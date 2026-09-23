@@ -29,13 +29,15 @@ use function pcntl_signal_get_handler;
 use function restore_error_handler;
 use function set_error_handler;
 use const E_ALL;
-use const E_STRICT;
 use const SIG_DFL;
 use const SIGHUP;
 use const SIGINT;
 use const SIGTERM;
 
 /**
+ * Not declared final: PHPUnit doubles this class through createMock() in the test suite.
+ * @psalm-suppress ClassMustBeFinal
+ *
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
@@ -96,15 +98,14 @@ class MydbEnvironment implements MydbEnvironmentInterface
     /**
      * Set custom PHP error handler
      *
-     * @param callable|null $callback
+     * @param (callable(int, string, string=, int=, array<array-key, mixed>=):bool|null)|null $callback
      * @see https://www.php.net/manual/en/function.set-error-handler
      * @SuppressWarnings("camelCase")
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
      */
     #[Override]
-    public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL|E_STRICT): void
+    public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL): void
     {
-        /** @var callable(int, string, string=, int=, array<array-key, mixed>=):bool|null $newHandler */
         $newHandler = $callback ?? $this->getNullErrorHandler();
 
         set_error_handler($newHandler, $error_levels);
@@ -190,7 +191,6 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * Disable custom signal handler
      *
      * @see https://wiki.php.net/rfc/async_signals
-     * @see https://blog.pascal-martin.fr/post/php71-en-other-new-things/
      * @see https://www.php.net/manual/en/function.pcntl-signal
      *
      * @return array<int>|null array of trapped signals
@@ -236,7 +236,6 @@ class MydbEnvironment implements MydbEnvironmentInterface
      * Enable custom signal handler
      *
      * @see https://wiki.php.net/rfc/async_signals
-     * @see https://blog.pascal-martin.fr/post/php71-en-other-new-things/
      * @see https://www.php.net/manual/en/function.pcntl-signal
      * @throws \sql\MydbException\EnvironmentException
      */
@@ -250,8 +249,8 @@ class MydbEnvironment implements MydbEnvironmentInterface
         };
 
         foreach ($this->knownSignals as $signalNumber) {
-            $originalNandler = pcntl_signal_get_handler($signalNumber);
-            $this->trappedHandlers[$signalNumber] = $originalNandler;
+            $originalHandler                      = pcntl_signal_get_handler($signalNumber);
+            $this->trappedHandlers[$signalNumber] = $originalHandler;
 
             if (!pcntl_signal($signalNumber, $signalHandler)) {
                 // @codeCoverageIgnoreStart
@@ -263,6 +262,7 @@ class MydbEnvironment implements MydbEnvironmentInterface
 
     /**
      * Error handler that does nothing and does not chain
+     * @psalm-return callable(int, string, string=, int=, array<array-key, mixed>=):bool
      * @see https://www.php.net/manual/en/function.set-error-handler
      */
     protected function getNullErrorHandler(): callable

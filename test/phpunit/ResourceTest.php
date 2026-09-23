@@ -42,7 +42,7 @@ final class ResourceTest extends includes\DatabaseTestCase
     public function testOpenCloseError(): void
     {
         $mysqli = $this->createMock(MydbMysqli::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
         $mysqli->expects(self::once())->method('init')->willReturn(false);
@@ -55,7 +55,7 @@ final class ResourceTest extends includes\DatabaseTestCase
     public function testOpenAutocommitFailed(): void
     {
         $mysqli = $this->createMock(MydbMysqli::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
         $mysqli->expects(self::once())->method('init')->willReturn(true);
@@ -77,17 +77,17 @@ final class ResourceTest extends includes\DatabaseTestCase
     public function testCloseNotConnected(): void
     {
         $mysqli = $this->createMock(MydbMysqli::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
         $mysqli->expects(self::once())->method('isConnected')->willReturn(false);
         $db->close();
     }
 
     public function testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
-        $envs = $this->createMock(MydbEnvironment::class);
-        $db = $this->getDefaultDb($mysqli, $options, $envs);
+        $envs    = $this->createMock(MydbEnvironment::class);
+        $db      = $this->getDefaultDb($mysqli, $options, $envs);
 
         $mysqli->method('isConnected')->willReturn(true);
 
@@ -104,10 +104,10 @@ final class ResourceTest extends includes\DatabaseTestCase
 
     public function testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
-        $envs = $this->createMock(MydbEnvironment::class);
-        $db = $this->getDefaultDb($mysqli, $options, $envs);
+        $envs    = $this->createMock(MydbEnvironment::class);
+        $db      = $this->getDefaultDb($mysqli, $options, $envs);
 
         $mysqli->method('isConnected')->willReturn(true);
         $options->method('isAutocommit')->willReturn(false);
@@ -121,7 +121,7 @@ final class ResourceTest extends includes\DatabaseTestCase
 
     public function testTransactionExceptionOnPersistentClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
 
         $db = $this->getDefaultDb($mysqli, $options);
@@ -140,7 +140,7 @@ final class ResourceTest extends includes\DatabaseTestCase
 
     public function testTransactionExceptionOnNonPersistentClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
 
         $db = $this->getDefaultDb($mysqli, $options);
@@ -159,7 +159,7 @@ final class ResourceTest extends includes\DatabaseTestCase
 
     public function testDisconnectExceptionOnClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
 
         $db = $this->getDefaultDb($mysqli, $options);
@@ -175,7 +175,7 @@ final class ResourceTest extends includes\DatabaseTestCase
 
     public function testUncaughtExceptionBecomesInternalExceptionOnClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
 
         $db = $this->getDefaultDb($mysqli, $options);
@@ -192,8 +192,8 @@ final class ResourceTest extends includes\DatabaseTestCase
     public function testNoGcWhenNotConnected(): void
     {
         $mysqli = $this->createMock(MydbMysqliInterface::class);
-        $envs = $this->createMock(MydbEnvironment::class);
-        $db = $this->getDefaultDb($mysqli, null, $envs);
+        $envs   = $this->createMock(MydbEnvironment::class);
+        $db     = $this->getDefaultDb($mysqli, null, $envs);
         $mysqli->method('isConnected')->willReturn(false);
         $envs->expects(self::never())->method('gc_collect_cycles');
         $db->close();
@@ -202,8 +202,8 @@ final class ResourceTest extends includes\DatabaseTestCase
     public function testGcWhenConnected(): void
     {
         $mysqli = $this->createMock(MydbMysqliInterface::class);
-        $envs = $this->createMock(MydbEnvironment::class);
-        $db = $this->getDefaultDb($mysqli, null, $envs);
+        $envs   = $this->createMock(MydbEnvironment::class);
+        $db     = $this->getDefaultDb($mysqli, null, $envs);
 
         $mysqli->method('isConnected')->willReturn(true);
         $mysqli->method('commitAndRelease')->willReturn(true);
@@ -217,10 +217,10 @@ final class ResourceTest extends includes\DatabaseTestCase
 
     public function testDoNoCommitTransactionWhenAutocommitEnabledOnClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
-        $envs = $this->createMock(MydbEnvironment::class);
-        $db = $this->getDefaultDb($mysqli, $options, $envs);
+        $envs    = $this->createMock(MydbEnvironment::class);
+        $db      = $this->getDefaultDb($mysqli, $options, $envs);
 
         $mysqli->method('isConnected')->willReturn(true);
         $options->method('isAutocommit')->willReturn(true);
@@ -233,10 +233,10 @@ final class ResourceTest extends includes\DatabaseTestCase
 
     public function testDoNoCommitTransactionWhenTransactionExplicitlyStartedOnClose(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
-        $envs = $this->createMock(MydbEnvironment::class);
-        $db = $this->getDefaultDb($mysqli, $options, $envs);
+        $envs    = $this->createMock(MydbEnvironment::class);
+        $db      = $this->getDefaultDb($mysqli, $options, $envs);
 
         $mysqli->method('isConnected')->willReturn(true);
         $options->method('isAutocommit')->willReturn(false);
@@ -314,9 +314,9 @@ final class ResourceTest extends includes\DatabaseTestCase
 
     public function testConnectingDefaultsFailed(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
-        $envs = $this->createMock(MydbEnvironment::class);
+        $envs    = $this->createMock(MydbEnvironment::class);
 
         $db = $this->getDefaultDb($mysqli, $options, $envs);
 
@@ -340,9 +340,9 @@ final class ResourceTest extends includes\DatabaseTestCase
 
     public function testConnectingTransactionIsolationFailed(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
-        $envs = $this->createMock(MydbEnvironment::class);
+        $envs    = $this->createMock(MydbEnvironment::class);
 
         $db = $this->getDefaultDb($mysqli, $options, $envs);
 
@@ -363,9 +363,9 @@ final class ResourceTest extends includes\DatabaseTestCase
 
     public function testConnectingTransactionAutocommitFailed(): void
     {
-        $mysqli = $this->createMock(MydbMysqliInterface::class);
+        $mysqli  = $this->createMock(MydbMysqliInterface::class);
         $options = $this->createMock(MydbOptions::class);
-        $envs = $this->createMock(MydbEnvironment::class);
+        $envs    = $this->createMock(MydbEnvironment::class);
 
         $db = $this->getDefaultDb($mysqli, $options, $envs);
 
@@ -382,7 +382,7 @@ final class ResourceTest extends includes\DatabaseTestCase
         $options->expects(self::once())->method('isReadonly')->willReturn(true);
         $mysqli->expects(self::once())->method('beginTransactionReadonly')->willReturn(false);
 
-        $this->expectException(MydbException\TransactionAutocommitException::class);
+        $this->expectException(MydbException\TransactionBeginReadonlyException::class);
 
         $db->open();
     }

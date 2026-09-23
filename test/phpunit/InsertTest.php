@@ -33,7 +33,7 @@ final class InsertTest extends includes\DatabaseTestCase
         $db->open();
         $db->beginTransaction();
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -44,7 +44,7 @@ final class InsertTest extends includes\DatabaseTestCase
 
         $db->replace("REPLACE INTO myusers (id, name) VALUES (1, 'user11')");
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual  = $db->select("SELECT id, name FROM myusers");
         $reality = [
             ['id' => '1', 'name' => 'user11'],
             ['id' => '2', 'name' => 'user2'],
@@ -62,7 +62,7 @@ final class InsertTest extends includes\DatabaseTestCase
         $db->open();
         $db->beginTransaction();
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -73,7 +73,7 @@ final class InsertTest extends includes\DatabaseTestCase
 
         $db->replaceOne(['name' => 'user111', 'id' => 1], 'myusers');
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual  = $db->select("SELECT id, name FROM myusers");
         $reality = [
             ['id' => '1', 'name' => 'user111'],
             ['id' => '2', 'name' => 'user2'],
@@ -88,7 +88,7 @@ final class InsertTest extends includes\DatabaseTestCase
     public function testInsertError(): void
     {
         $mysqli = $this->createMock(MydbMysqli::class);
-        $db = $this->getDefaultDb($mysqli);
+        $db     = $this->getDefaultDb($mysqli);
 
         $sql = "INSERT INTO myusers (id, name) VALUES (9, 'user9')";
 
@@ -105,7 +105,7 @@ final class InsertTest extends includes\DatabaseTestCase
         $db->open();
         $db->beginTransaction();
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -116,7 +116,7 @@ final class InsertTest extends includes\DatabaseTestCase
 
         $db->insert("INSERT INTO myusers (id, name) VALUES (9, 'user9')");
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual  = $db->select("SELECT id, name FROM myusers");
         $reality = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -135,7 +135,7 @@ final class InsertTest extends includes\DatabaseTestCase
         $db->open();
         $db->beginTransaction();
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -157,7 +157,7 @@ final class InsertTest extends includes\DatabaseTestCase
             'myusers'
         );
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -182,7 +182,7 @@ final class InsertTest extends includes\DatabaseTestCase
             'id=id+100'
         );
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
                 /**
                  * duplicate row id=1 is updated to id=101
@@ -205,7 +205,7 @@ final class InsertTest extends includes\DatabaseTestCase
          * Test re-open connection after close, w/o explicit open()
          */
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -221,7 +221,7 @@ final class InsertTest extends includes\DatabaseTestCase
         $db->open();
         $db->beginTransaction();
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $defaults = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -233,7 +233,7 @@ final class InsertTest extends includes\DatabaseTestCase
         $db->insertOne(['id' => 7, 'name' => new MydbExpression('666')], 'myusers');
         $db->insertOne(['id' => 8, 'name' => 'user8'], 'myusers');
 
-        $actual = $db->select("SELECT id, name FROM myusers");
+        $actual   = $db->select("SELECT id, name FROM myusers");
         $expected = [
             ['id' => '1', 'name' => 'user1'],
             ['id' => '2', 'name' => 'user2'],
@@ -243,7 +243,7 @@ final class InsertTest extends includes\DatabaseTestCase
         ];
         self::assertSame($expected, $actual);
 
-        $actual = $db->select("SELECT id, cost FROM mydecimals");
+        $actual   = $db->select("SELECT id, cost FROM mydecimals");
         $expected = [
             ['id' => '1', 'cost' => '1.10'],
             ['id' => '2', 'cost' => '1.20'],
@@ -264,7 +264,7 @@ final class InsertTest extends includes\DatabaseTestCase
             ['id' => '98', 'cost' => '3.01'],
             ['id' => '99', 'cost' => '0.00'],
         ]);
-        $actual = $db->select("SELECT id, cost FROM mydecimals");
+        $actual   = $db->select("SELECT id, cost FROM mydecimals");
         self::assertSame($expected, $actual);
 
         $db->rollbackTransaction();

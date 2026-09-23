@@ -41,7 +41,7 @@ final class MetaTest extends includes\DatabaseTestCase
 
     public function testClose(): void
     {
-        $db = $this->getDefaultDb();
+        $db     = $this->getDefaultDb();
         $actual = $db->select("SELECT 1 as n");
         self::assertSame([['n' => '1']], $actual);
         $db->close();
@@ -49,35 +49,35 @@ final class MetaTest extends includes\DatabaseTestCase
 
     public function testPrimaryKey(): void
     {
-        $db = $this->getDefaultDb();
+        $db     = $this->getDefaultDb();
         $actual = $db->getPrimaryKeys('myusers');
         self::assertSame(['id'], $actual);
     }
 
     public function testPrimaryKeyNotFound(): void
     {
-        $db = $this->getDefaultDb();
+        $db     = $this->getDefaultDb();
         $actual = $db->getPrimaryKeys('mynames');
         self::assertNull($actual);
     }
 
     public function testPrimaryKeyComposite(): void
     {
-        $db = $this->getDefaultDb();
+        $db     = $this->getDefaultDb();
         $actual = $db->getPrimaryKeys('mycitynames');
         self::assertSame(['city', 'name'], $actual);
     }
 
     public function testEnum(): void
     {
-        $db = $this->getDefaultDb();
+        $db     = $this->getDefaultDb();
         $actual = $db->getEnumValues('myusers_devices', 'handler');
         self::assertSame(['1', '2', '3'], $actual);
     }
 
     public function testSet(): void
     {
-        $db = $this->getDefaultDb();
+        $db     = $this->getDefaultDb();
         $actual = $db->getEnumValues('myusers_devices', 'provider');
         self::assertSame(['Sansunk', 'Hookle', 'Sany'], $actual);
     }
@@ -167,7 +167,7 @@ Greek (in Polytonic):
   Οὐχὶ ταὐτὰ παρίσταταί μοι γιγνώσκειν, ὦ ἄνδρες ᾿Αθηναῖοι,
   ὅταν τ᾿ εἰς τὰ πράγματα ἀποβλέψω καὶ ὅταν πρὸς τοὺς
   λόγους οὓς ἀκούω· τοὺς μὲν γὰρ λόγους περὶ τοῦ
-  τιμωρήσασθαι Φίλιππον ὁρῶ γιγνομένους, τὰ δὲ πράγματ᾿ 
+  τιμωρήσασθαι Φίλιππον ὁρῶ γιγνομένους, τὰ δὲ πράγματ᾿
   εἰς τοῦτο προήκοντα,  ὥσθ᾿ ὅπως μὴ πεισόμεθ᾿ αὐτοὶ
   πρότερον κακῶς σκέψασθαι δέον. οὐδέν οὖν ἄλλο μοι δοκοῦσιν
   οἱ τὰ τοιαῦτα λέγοντες ἢ τὴν ὑπόθεσιν, περὶ ἧς βουλεύεσθαι,
@@ -264,7 +264,7 @@ Braille:
   ⠱⠁⠞⠑⠧⠻ ⠁⠃⠳⠞ ⠹⠁⠞⠲ ⡹⠑ ⠗⠑⠛⠊⠌⠻ ⠕⠋ ⠙⠊⠎ ⠃⠥⠗⠊⠁⠇ ⠺⠁⠎
   ⠎⠊⠛⠝⠫ ⠃⠹ ⠹⠑ ⠊⠇⠻⠛⠹⠍⠁⠝⠂ ⠹⠑ ⠊⠇⠻⠅⠂ ⠹⠑ ⠥⠝⠙⠻⠞⠁⠅⠻⠂
   ⠁⠝⠙ ⠹⠑ ⠡⠊⠑⠋ ⠍⠳⠗⠝⠻⠲ ⡎⠊⠗⠕⠕⠛⠑ ⠎⠊⠛⠝⠫ ⠊⠞⠲ ⡁⠝⠙
-  ⡎⠊⠗⠕⠕⠛⠑⠰⠎ ⠝⠁⠍⠑ ⠺⠁⠎ ⠛⠕⠕⠙ ⠥⠏⠕⠝ ⠰⡡⠁⠝⠛⠑⠂ ⠋⠕⠗ ⠁⠝⠹⠹⠔⠛ ⠙⠑ 
+  ⡎⠊⠗⠕⠕⠛⠑⠰⠎ ⠝⠁⠍⠑ ⠺⠁⠎ ⠛⠕⠕⠙ ⠥⠏⠕⠝ ⠰⡡⠁⠝⠛⠑⠂ ⠋⠕⠗ ⠁⠝⠹⠹⠔⠛ ⠙⠑
   ⠡⠕⠎⠑ ⠞⠕ ⠏⠥⠞ ⠙⠊⠎ ⠙⠁⠝⠙ ⠞⠕⠲
 
   ⡕⠇⠙ ⡍⠜⠇⠑⠹ ⠺⠁⠎ ⠁⠎ ⠙⠑⠁⠙ ⠁⠎ ⠁ ⠙⠕⠕⠗⠤⠝⠁⠊⠇⠲
@@ -272,8 +272,8 @@ Braille:
   ⡍⠔⠙⠖ ⡊ ⠙⠕⠝⠰⠞ ⠍⠑⠁⠝ ⠞⠕ ⠎⠁⠹ ⠹⠁⠞ ⡊ ⠅⠝⠪⠂ ⠕⠋ ⠍⠹
   ⠪⠝ ⠅⠝⠪⠇⠫⠛⠑⠂ ⠱⠁⠞ ⠹⠻⠑ ⠊⠎ ⠏⠜⠞⠊⠊⠥⠇⠜⠇⠹ ⠙⠑⠁⠙ ⠁⠃⠳⠞
   ⠁ ⠙⠕⠕⠗⠤⠝⠁⠊⠇⠲ ⡊ ⠍⠊⠣⠞ ⠙⠁⠧⠑ ⠃⠑⠲ ⠔⠊⠇⠔⠫⠂ ⠍⠹⠎⠑⠇⠋⠂ ⠞⠕
-  ⠗⠑⠛⠜⠙ ⠁ ⠊⠕⠋⠋⠔⠤⠝⠁⠊⠇ ⠁⠎ ⠹⠑ ⠙⠑⠁⠙⠑⠌ ⠏⠊⠑⠊⠑ ⠕⠋ ⠊⠗⠕⠝⠍⠕⠝⠛⠻⠹ 
-  ⠔ ⠹⠑ ⠞⠗⠁⠙⠑⠲ ⡃⠥⠞ ⠹⠑ ⠺⠊⠎⠙⠕⠍ ⠕⠋ ⠳⠗ ⠁⠝⠊⠑⠌⠕⠗⠎ 
+  ⠗⠑⠛⠜⠙ ⠁ ⠊⠕⠋⠋⠔⠤⠝⠁⠊⠇ ⠁⠎ ⠹⠑ ⠙⠑⠁⠙⠑⠌ ⠏⠊⠑⠊⠑ ⠕⠋ ⠊⠗⠕⠝⠍⠕⠝⠛⠻⠹
+  ⠔ ⠹⠑ ⠞⠗⠁⠙⠑⠲ ⡃⠥⠞ ⠹⠑ ⠺⠊⠎⠙⠕⠍ ⠕⠋ ⠳⠗ ⠁⠝⠊⠑⠌⠕⠗⠎
   ⠊⠎ ⠔ ⠹⠑ ⠎⠊⠍⠊⠇⠑⠆ ⠁⠝⠙ ⠍⠹ ⠥⠝⠙⠁⠇⠇⠪⠫ ⠙⠁⠝⠙⠎
   ⠩⠁⠇⠇ ⠝⠕⠞ ⠙⠊⠌⠥⠗⠃ ⠊⠞⠂ ⠕⠗ ⠹⠑ ⡊⠳⠝⠞⠗⠹⠰⠎ ⠙⠕⠝⠑ ⠋⠕⠗⠲ ⡹⠳
   ⠺⠊⠇⠇ ⠹⠻⠑⠋⠕⠗⠑ ⠏⠻⠍⠊⠞ ⠍⠑ ⠞⠕ ⠗⠑⠏⠑⠁⠞⠂ ⠑⠍⠏⠙⠁⠞⠊⠊⠁⠇⠇⠹⠂ ⠹⠁⠞
@@ -312,7 +312,7 @@ You should see the Greek word 'kosme':       "κόσμε"                      
                                                                               |
 2.1  First possible sequence of a certain length                              |
                                                                               |
-2.1.1  1 byte  (U-00000000):        "�"                                        
+2.1.1  1 byte  (U-00000000):        "�"
 2.1.2  2 bytes (U-00000080):        ""                                       |
 2.1.3  3 bytes (U-00000800):        "ࠀ"                                       |
 2.1.4  4 bytes (U-00010000):        "𐀀"                                       |
@@ -321,7 +321,7 @@ You should see the Greek word 'kosme':       "κόσμε"                      
                                                                               |
 2.2  Last possible sequence of a certain length                               |
                                                                               |
-2.2.1  1 byte  (U-0000007F):        ""                                        
+2.2.1  1 byte  (U-0000007F):        ""
 2.2.2  2 bytes (U-000007FF):        "߿"                                       |
 2.2.3  3 bytes (U-0000FFFF):        "￿"                                       |
 2.2.4  4 bytes (U-001FFFFF):        "����"                                       |
@@ -571,7 +571,7 @@ ENDUTF8;
             /**
              * cleanup quotes
              */
-            $t = str_replace(["'", '"'], [".", "."], $t);
+            $t         = str_replace(["'", '"'], [".", "."], $t);
             $input[$t] = $t;
         }
 

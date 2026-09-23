@@ -13,10 +13,6 @@ LABEL author='Sergei Shilko <contact@sshilko.com>'
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# /usr/share/man/man1 needs to be created before installing openjdk-11-jre lest it will fail
-# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199#23
-RUN mkdir -p /usr/share/man/man1
-
 # https://wiki.ubuntu.com/ReducingDiskFootprint
 # Configure dpkg excludes
 RUN echo 'path-exclude /usr/share/doc/*' >> /etc/dpkg/dpkg.cfg.d/01_excludes
@@ -67,7 +63,7 @@ WORKDIR /app
 COPY --from=0 /usr/bin/composer /usr/bin/composer
 
 #https://www.phpdoc.org
-ADD https://phpdoc.org/phpDocumentor.phar /usr/bin/phpdoc
+ADD https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.10.0/phpDocumentor.phar /usr/bin/phpdoc
 RUN chmod +x /usr/bin/phpdoc
 
 #phan/phan php-ast dependency

@@ -19,42 +19,44 @@ use Override;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use sql\MydbException\LoggerException;
-use function clearstatcache;
-use function count;
+use Stringable;
+use Throwable;
+use function array_diff_key;
 use function fclose;
 use function feof;
 use function fflush;
+use function fopen;
 use function fwrite;
+use function implode;
 use function is_resource;
 use function is_scalar;
 use function restore_error_handler;
 use function set_error_handler;
 use function stream_get_meta_data;
 use function strlen;
+use function strpos;
+use function strtolower;
 use function strtr;
 use function substr;
 use function var_export;
 use const PHP_EOL;
-use const STDERR;
-use const STDOUT;
 
 /**
- * Implementation of PSR-3 Logger that will output to STDERR & STDOUT
+ * Implementation of PSR-3 Logger that writes to STDERR & STDOUT
  *
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
  * @see https://www.php-fig.org/psr/psr-3/
  */
-class MydbLogger implements LoggerInterface
+final class MydbLogger implements LoggerInterface
 {
-    protected const int IO_WRITE_ATTEMPTS = 3;
 
     /**
      * Opened resource, STDOUT
      * @see https://www.php.net/manual/en/features.commandline.io-streams.php
      *
-     * @var resource
+     * @var resource|null
      */
     protected $stdout;
 
@@ -62,7 +64,7 @@ class MydbLogger implements LoggerInterface
      * Opened resource, STDERR
      * @see https://www.php.net/manual/en/features.commandline.io-streams.php
      *
-     * @var resource
+     * @var resource|null
      */
     protected $stderr;
 
@@ -72,126 +74,88 @@ class MydbLogger implements LoggerInterface
     protected readonly string $stdeol;
 
     /**
-     * @param resource $stdout
-     * @param resource $stderr
+     * @param resource|null $stdout
+     * @param resource|null $stderr
      * @psalm-suppress MissingParamType
-     * @throws \sql\MydbException\LoggerException
      */
-    public function __construct($stdout = STDOUT, $stderr = STDERR, string $stdeol = PHP_EOL)
+    public function __construct($stdout = null, $stderr = null, string $stdeol = PHP_EOL)
     {
-        /**
-         * @psalm-suppress DocblockTypeContradiction
-         */
-        if (!is_resource($stdout) || !is_resource($stderr)) {
-            throw new LoggerException();
-        }
-
-        $this->stdout = $stdout;
-        $this->stderr = $stderr;
+        $this->stdout = is_resource($stdout) ? $stdout : self::openDefaultStream('php://stdout');
+        $this->stderr = is_resource($stderr) ? $stderr : self::openDefaultStream('php://stderr');
         $this->stdeol = $stdeol;
     }
 
     public function __destruct()
     {
-        /**
-         * @psalm-suppress RedundantConditionGivenDocblockType
-         */
         if (is_resource($this->stdout)) {
             fflush($this->stdout);
             fclose($this->stdout);
         }
 
-        /**
-         * @psalm-suppress RedundantConditionGivenDocblockType
-         */
         if (is_resource($this->stderr)) {
             fflush($this->stderr);
             fclose($this->stderr);
         }
-        clearstatcache();
     }
 
     /**
-     * @throws \sql\MydbException\LoggerException
-     * @param array|string $message
-     */
-
-    #[Override]
-    public function error($message, array $context = []): void
-    {
-        if ([] !== $message && '' !== $message) {
-            $this->writeOutput($this->stderr, static::formatter($message) . $this->stdeol);
-        }
-
-        if (!count($context)) {
-            return;
-        }
-
-        $this->writeOutput($this->stderr, static::formatter($context) . $this->stdeol);
-    }
-
-    /**
-     * @param mixed $level
-     * @param array|string $message
-     * @throws \sql\MydbException\LoggerException
-     * @phpcs:disable SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
-     */
-    #[Override]
-    public function log($level, $message, array $context = []): void
-    {
-        if ([] !== $message && '' !== $message) {
-            $this->writeOutput($this->stdout, static::formatter($message) . $this->stdeol);
-        }
-
-        if (!count($context)) {
-            return;
-        }
-
-        $this->writeOutput($this->stdout, static::formatter($context) . $this->stdeol);
-    }
-
-    /**
-     * @param array|string $message
-     * @throws \sql\MydbException\LoggerException
-     */
-    #[Override]
-    public function warning($message, array $context = []): void
-    {
-        $this->error($message, $context);
-    }
-
-    /**
-     * @param array|string $message
+     * @param float|int|string|\Stringable|array<mixed> $message
+     * @param array<mixed> $context
      * @throws \sql\MydbException\LoggerException
      */
     #[Override]
     public function emergency($message, array $context = []): void
     {
-        $this->error($message, $context);
+        $this->log(LogLevel::EMERGENCY, $message, $context);
     }
 
     /**
-     * @param array|string $message
+     * @param float|int|string|\Stringable|array<mixed> $message
+     * @param array<mixed> $context
      * @throws \sql\MydbException\LoggerException
      */
     #[Override]
     public function alert($message, array $context = []): void
     {
-        $this->error($message, $context);
+        $this->log(LogLevel::ALERT, $message, $context);
     }
 
     /**
-     * @param array|string $message
+     * @param float|int|string|\Stringable|array<mixed> $message
+     * @param array<mixed> $context
      * @throws \sql\MydbException\LoggerException
      */
     #[Override]
     public function critical($message, array $context = []): void
     {
-        $this->error($message, $context);
+        $this->log(LogLevel::CRITICAL, $message, $context);
     }
 
     /**
-     * @param array|string $message
+     * @param float|int|string|\Stringable|array<mixed> $message
+     * @param array<mixed> $context
+     * @throws \sql\MydbException\LoggerException
+     */
+    #[Override]
+    public function error($message, array $context = []): void
+    {
+        $this->log(LogLevel::ERROR, $message, $context);
+    }
+
+    /**
+     * @param float|int|string|\Stringable|array<mixed> $message
+     * @param array<mixed> $context
+     * @throws \sql\MydbException\LoggerException
+     */
+    #[Override]
+    public function warning($message, array $context = []): void
+    {
+        $this->log(LogLevel::WARNING, $message, $context);
+    }
+
+    /**
+     * @param float|int|string|\Stringable|array<mixed> $message
+     * @param array<mixed> $context
      * @throws \sql\MydbException\LoggerException
      */
     #[Override]
@@ -201,7 +165,8 @@ class MydbLogger implements LoggerInterface
     }
 
     /**
-     * @param array|string $message
+     * @param float|int|string|\Stringable|array<mixed> $message
+     * @param array<mixed> $context
      * @throws \sql\MydbException\LoggerException
      */
     #[Override]
@@ -211,13 +176,92 @@ class MydbLogger implements LoggerInterface
     }
 
     /**
-     * @param array|string $message
+     * @param float|int|string|\Stringable|array<mixed> $message
+     * @param array<mixed> $context
      * @throws \sql\MydbException\LoggerException
      */
     #[Override]
     public function debug($message, array $context = []): void
     {
         $this->log(LogLevel::DEBUG, $message, $context);
+    }
+
+    /**
+     * @param mixed $level
+     * @param float|int|string|\Stringable|array<mixed> $message
+     * @param array<mixed> $context
+     * @throws \sql\MydbException\LoggerException
+     */
+    #[Override]
+    public function log($level, $message, array $context = []): void
+    {
+        $this->writeOutput($this->route((string) $level), $this->render($message, $context));
+    }
+
+    /**
+     * Pick the target stream for the given PSR-3 log level.
+     * Error-like levels go to STDERR, informational levels go to STDOUT.
+     *
+     * @return resource|null
+     */
+    protected function route(string $level)
+    {
+        return match (strtolower($level)) {
+            LogLevel::EMERGENCY, LogLevel::ALERT, LogLevel::CRITICAL,
+            LogLevel::ERROR, LogLevel::WARNING => $this->stderr,
+            default => $this->stdout,
+        };
+    }
+
+    /**
+     * @param float|int|string|\Stringable|array<mixed> $message
+     * @param array<mixed> $context
+     */
+    protected function render($message, array $context): string
+    {
+        $lines = [];
+
+        if ([] !== $message && '' !== $message) {
+            $interpolated = self::interpolate(self::formatter($message), $context);
+            $lines[]      = $interpolated[0];
+            $context      = array_diff_key($context, $interpolated[1]);
+        }
+
+        if ([] !== $context) {
+            $lines[] = var_export($context, true);
+        }
+
+        return [] === $lines ? '' : implode($this->stdeol, $lines) . $this->stdeol;
+    }
+
+    /**
+     * PSR-3 placeholder interpolation: replace {key} with the matching context value.
+     *
+     * @param array<mixed> $context
+     * @return array{0: string, 1: array<array-key, true>}
+     */
+    protected static function interpolate(string $message, array $context): array
+    {
+        $replace = [];
+        $used    = [];
+        /**
+         * Context values may be of any type per PSR-3.
+         * @psalm-suppress MixedAssignment
+         */
+        foreach ($context as $key => $value) {
+            if (is_scalar($value) || $value instanceof Stringable) {
+                $placeholder           = '{' . $key . '}';
+                $replace[$placeholder] = (string) $value;
+                if (false !== strpos($message, $placeholder)) {
+                    $used[$key] = true;
+                }
+            }
+        }
+
+        return [
+            strtr($message, $replace),
+            $used,
+        ];
     }
 
     /**
@@ -248,37 +292,25 @@ class MydbLogger implements LoggerInterface
     }
 
     /**
-     * @param resource $stream &fs.file.pointer;
+     * @param resource|null $stream &fs.file.pointer;
      * @link https://php.net/manual/en/function.fwrite.php
      * @throws \sql\MydbException\LoggerException
      * @psalm-suppress MissingParamType
-     * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive.ComplexityTooHigh
      */
     protected function writeOutput($stream, string $data = ''): void
     {
+        if (null === $stream || '' === $data) {
+            return;
+        }
+
         $this->checkStreamResource($stream);
 
-        $tries = self::IO_WRITE_ATTEMPTS;
-        $len = strlen($data);
+        $len     = strlen($data);
+        $written = 0;
 
-        /** @phan-suppress-next-line PhanNoopConstant */
-        for ($written = 0; $written < $len; true) {
-            $chunk = substr($data, $written);
-            if ('' === $chunk) {
-                // @codeCoverageIgnoreStart
-                throw new LoggerException();
-                // @codeCoverageIgnoreEnd
-            }
-
-            $writeResult = $this->fwrite($stream, $chunk);
-
-            if (null === $writeResult || feof($stream)) {
-                // @codeCoverageIgnoreStart
-                throw new LoggerException();
-                // @codeCoverageIgnoreEnd
-            }
-
-            if (false === fflush($stream)) {
+        while ($written < $len) {
+            $writeResult = $this->fwrite($stream, substr($data, $written));
+            if (null === $writeResult || 0 === $writeResult) {
                 // @codeCoverageIgnoreStart
                 throw new LoggerException();
                 // @codeCoverageIgnoreEnd
@@ -286,19 +318,7 @@ class MydbLogger implements LoggerInterface
 
             $written += $writeResult;
 
-            if ($written < $len) {
-                // @codeCoverageIgnoreStart
-                throw new LoggerException();
-                // @codeCoverageIgnoreEnd
-            }
-
-            if (0 === $writeResult) {
-                // @codeCoverageIgnoreStart
-                --$tries;
-                // @codeCoverageIgnoreEnd
-            }
-
-            if ($tries <= 0) {
+            if (false === fflush($stream)) {
                 // @codeCoverageIgnoreStart
                 throw new LoggerException();
                 // @codeCoverageIgnoreEnd
@@ -317,9 +337,9 @@ class MydbLogger implements LoggerInterface
          * @psalm-suppress InvalidArgument
          */
         set_error_handler(
-            static function ($_, string $errstr) use (&$error): bool {
+            static function (int $errno, string $errstr) use (&$error): bool {
                 // @codeCoverageIgnoreStart
-                $error = $errstr;
+                $error = $errstr . ' (' . $errno . ')';
 
                 return true;
                 // @codeCoverageIgnoreEnd
@@ -340,14 +360,32 @@ class MydbLogger implements LoggerInterface
     }
 
     /**
-     * @param string|array $var
+     * @param float|int|string|\Stringable|array<mixed> $var
      */
     protected static function formatter($var): string
     {
         if (is_scalar($var)) {
-            return $var;
+            return (string) $var;
         }
 
         return var_export($var, true);
+    }
+
+    /**
+     * Open a non-CLI-safe default stream without crashing outside of the CLI SAPI.
+     *
+     * @return resource|null
+     */
+    protected static function openDefaultStream(string $target)
+    {
+        try {
+            $stream = fopen($target, 'wb');
+        } catch (Throwable $throwable) {
+            unset($throwable);
+
+            return null;
+        }
+
+        return false === $stream ? null : $stream;
     }
 }

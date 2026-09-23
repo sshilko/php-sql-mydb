@@ -84,18 +84,6 @@ x-mysql: &mysql
 
 services:
   #@see https://hub.docker.com/_/mysql
-  # mysql:
-  #   <<: *mysql
-  #   image: library/mysql:5.7.42-debian
-  #   container_name: mysql
-  #   expose:
-  #     - "3306"
-  #   ports:
-  #     - "3306:3306/tcp"
-  #   volumes:
-  #     - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro
-  #   #  - ./../test/tmp/mysql-dbdata57:/var/lib/mysql/:rw
-
   mysql80:
     <<: *mysql
     image: library/mysql:8.0.46-debian
@@ -107,15 +95,3 @@ services:
     volumes:
       - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro
     #  - ./../test/tmp/mysql-dbdata80:/var/lib/mysql/:rw
-
-  # maria10:
-  #   <<: *mysql
-  #   image: library/mariadb:10.11
-  #   container_name: maria10
-  #   expose:
-  #     - "5306"
-  #   ports:
-  #     - "5306:3306/tcp"
-  #   volumes:
-  #     - ./../test/fixtures/mysql/:/docker-entrypoint-initdb.d:ro
-  #   #  - ./../test/tmp/maria-dbdata10:/var/lib/mysql/:rw

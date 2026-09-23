@@ -128,10 +128,10 @@ if (!defined('SIGRTMAX')) {
 // phpcs:disable SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable.DisallowedSuperGlobalVariable
 if (!function_exists('pcntl_signal')) {
     /**
-     * Shared registry of simulated signal handlers shared by the pcntl_signal()
-     * and posix_kill() polyfills, keyed by signal number.
+     * Shared registry of simulated signal handlers keyed by signal number.
+     * Both the pcntl_signal() and posix_kill() polyfills read and write it.
      *
-     * @var array<int, int|string|callable> $pcntlPolyfillSignalHandlers
+     * @var array<int, int|callable> $pcntlPolyfillSignalHandlers
      */
     $pcntlPolyfillSignalHandlers = [];
     // phpcs:disable PSR1.Files.SideEffects.FoundWithSymbols
@@ -139,15 +139,15 @@ if (!function_exists('pcntl_signal')) {
     // phpcs:enable PSR1.Files.SideEffects.FoundWithSymbols
 
     /**
-     * Register or reset a simulated signal handler that posix_kill() will invoke.
+     * Register or reset a simulated signal handler for posix_kill() to invoke.
      *
-     * @param int|string|callable $handler
+     * @param int|callable $handler
      * @see https://www.php.net/manual/en/function.pcntl-signal.php
      */
-    function pcntl_signal(int $signal, int|string|callable $handler, bool $restartSysCalls = true): bool
+    function pcntl_signal(int $signal, int|callable $handler, bool $restart_syscalls = true): bool
     {
-        unset($restartSysCalls);
-        /** @var array<int, int|string|callable> $handlers */
+        unset($restart_syscalls);
+        /** @var array<int, int|callable> $handlers */
         $handlers = $GLOBALS['pcntl_polyfill_signal_handlers'] ?? [];
         if (SIG_DFL === $handler || SIG_IGN === $handler) {
             unset($handlers[$signal]);
@@ -171,7 +171,7 @@ if (!function_exists('posix_kill')) {
     function posix_kill(int $processId, int $signal): bool
     {
         unset($processId);
-        /** @var array<int, int|string|callable> $handlers */
+        /** @var array<int, int|callable> $handlers */
         $handlers = $GLOBALS['pcntl_polyfill_signal_handlers'] ?? [];
         if (isset($handlers[$signal]) && is_callable($handlers[$signal])) {
             call_user_func($handlers[$signal], $signal);

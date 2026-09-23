@@ -15,21 +15,13 @@ declare(strict_types = 1);
 
 namespace sql\MydbMysqli;
 
-use mysqli_result;
-
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
- * @access protected
  */
 interface MydbMysqliResultInterface
 {
-    /**
-     * @psalm-param array<array-key, string> $warnings
-     */
-    public function __construct(?mysqli_result $result, array $warnings, int $fieldsCount);
-
     public function getFieldCount(): int;
 
     /**

@@ -12,6 +12,7 @@ name: 8.3 PHPCS
 on:
   push:
     branches: ["master"]
+  pull_request:
 
 permissions:
   contents: read
@@ -35,7 +36,7 @@ jobs:
 
       # https://github.com/pre-commit/action
       - name: Pre-commit dependencies
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v6
       - run: pip install pre-commit
 
       - name: Validate composer.json and composer.lock
@@ -43,9 +44,11 @@ jobs:
 
       - name: Cache Composer packages
         id: composer-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
-          path: vendor
+          path: |
+            vendor
+            ~/.composer/cache
           key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
 
       - name: PHP Version
@@ -86,7 +89,7 @@ jobs:
           name: phpcs-output
           path: php/phpcs
 
-      - uses: nick-fields/retry@v2
+      - uses: nick-fields/retry@v3
         name: Commit php/phpcs
         continue-on-error: true
         with:

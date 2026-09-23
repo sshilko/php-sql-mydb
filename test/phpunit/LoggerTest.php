@@ -75,11 +75,10 @@ final class LoggerTest extends TestCase
 
     /**
      * @return array<array<string, string>>
-     * @throws \phpunit\Exception
      */
     public static function dataProviderStrings(): array
     {
-        $eol = PHP_EOL;
+        $eol          = PHP_EOL;
         $randomString = bin2hex(random_bytes(random_int(2, 20)));
 
         return [
@@ -103,14 +102,14 @@ final class LoggerTest extends TestCase
                 'stdout' => '',
                 'stderr' => '',
             ],
-            'something' => [
+            'something-error' => [
                 'strOrArray' => $randomString,
                 'ctx' => [],
                 'stdout' => '',
                 'stderr' => $randomString . $eol,
                 'isError' => true,
             ],
-            'something' => [
+            'something-info' => [
                 'strOrArray' => $randomString,
                 'ctx' => [],
                 'stdout' => $randomString . $eol,
@@ -130,7 +129,7 @@ final class LoggerTest extends TestCase
      */
     public function testLoggerError(): void
     {
-        $string = 'hello-world';
+        $string  = 'hello-world';
         $context = ['a' => 'b'];
         $this->logger->warning($string, $context);
         $buffers = $this->getBuffers();
@@ -147,26 +146,23 @@ final class LoggerTest extends TestCase
     /**
      * @throws \sql\MydbException\LoggerException
      */
-    public function testLoggerConstructorOut(): void
+    public function testLoggerConstructorFallbackStdout(): void
     {
         $stderr = fopen("php://memory", "rw");
-        $stdout = null;
-
-        $this->expectException(LoggerException::class);
-        new MydbLogger($stdout, $stderr, $this->stdeol);
+        $logger = new MydbLogger(null, $stderr, $this->stdeol);
+        self::assertInstanceOf(LoggerInterface::class, $logger);
+        unset($logger);
     }
 
     /**
      * @throws \sql\MydbException\LoggerException
      */
-    public function testLoggerConstructorErr(): void
+    public function testLoggerConstructorFallbackStderr(): void
     {
-        $stderr = null;
         $stdout = fopen("php://memory", "rw");
-
-
-        $this->expectException(LoggerException::class);
-        new MydbLogger($stdout, $stderr, $this->stdeol);
+        $logger = new MydbLogger($stdout, null, $this->stdeol);
+        self::assertInstanceOf(LoggerInterface::class, $logger);
+        unset($logger);
     }
 
     /**
@@ -288,8 +284,8 @@ final class LoggerTest extends TestCase
 
         $this->logger->log('warning', 'warning-message', []);
         $buffers = $this->getBuffers();
-        self::assertSame('warning-message' . $this->stdeol, $buffers['stdout'], 'STDOUT match for log');
-        self::assertSame('', $buffers['stderr'], 'STDERR match for log');
+        self::assertSame('', $buffers['stdout'], 'STDOUT match for log');
+        self::assertSame('warning-message' . $this->stdeol, $buffers['stderr'], 'STDERR match for log');
     }
 
     /**
@@ -306,6 +302,43 @@ final class LoggerTest extends TestCase
             'STDOUT match for log with context'
         );
         self::assertSame('', $buffers['stderr'], 'STDERR match for log with context');
+    }
+
+    /**
+     * @throws \sql\MydbException\LoggerException
+     */
+    public function testLoggerInterpolation(): void
+    {
+        $this->logger->log('info', 'user {user} connected', ['user' => 'joe']);
+        $buffers = $this->getBuffers();
+        self::assertSame(
+            'user joe connected' . $this->stdeol,
+            $buffers['stdout'],
+            'STDOUT match for log with interpolated placeholders'
+        );
+        self::assertSame('', $buffers['stderr'], 'STDERR match for log with interpolated placeholders');
+    }
+
+    /**
+     * @throws \sql\MydbException\LoggerException
+     */
+    public function testLoggerUnusedContextIsAppended(): void
+    {
+        $this->logger->warning('failed to read rows', ['sql' => 'SELECT 1']);
+        $buffers = $this->getBuffers();
+        self::assertSame(
+            'failed to read rows' . $this->stdeol . var_export(['sql' => 'SELECT 1'], true) . $this->stdeol,
+            $buffers['stderr'],
+            'STDERR match for log with unused context appended'
+        );
+        self::assertSame('', $buffers['stdout'], 'STDOUT match for log with unused context appended');
+    }
+
+    public function testLoggerScalarMessage(): void
+    {
+        $this->logger->info(123, []);
+        $buffers = $this->getBuffers();
+        self::assertSame('123' . $this->stdeol, $buffers['stdout'], 'STDOUT match for scalar message');
     }
 
     protected function tearDown(): void

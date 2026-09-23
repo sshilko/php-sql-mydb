@@ -19,7 +19,6 @@ namespace sql\MydbInterface;
  * @see https://dev.mysql.com/doc/refman/8.0/en/sql-server-administration-statements.html
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
- * @category interfaces
  * @see https://github.com/sshilko/php-sql-mydb
  */
 interface AdministrationStatementsInterface

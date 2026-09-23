@@ -23,9 +23,8 @@ use const MYSQLI_ASSOC;
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
- * @access protected
  */
-class MydbMysqliResult implements MydbMysqliResultInterface
+final class MydbMysqliResult implements MydbMysqliResultInterface
 {
     protected const int MYSQLI_ASSOC = MYSQLI_ASSOC;
 
@@ -38,8 +37,11 @@ class MydbMysqliResult implements MydbMysqliResultInterface
     /**
      * @psalm-param array<array-key, string> $warnings
      */
-    public function __construct(?mysqli_result $result, protected readonly array $warnings, protected int $fieldsCount)
-    {
+    public function __construct(
+        ?mysqli_result $result,
+        protected readonly array $warnings,
+        protected readonly int $fieldsCount,
+    ) {
         if (null !== $result) {
             $this->result = $result->fetch_all(self::MYSQLI_ASSOC);
             $result->free();

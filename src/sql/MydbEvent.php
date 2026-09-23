@@ -24,6 +24,7 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
     /**
      * @psalm-return array<array-key, mixed>|null
      */
+    #[Override]
     abstract public function getEventMetadata(): ?array;
 
     /**
@@ -39,6 +40,10 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
     public function notify(): void
     {
         foreach ($this->getListeners() as $listenerInstance) {
+            /**
+             * Subclass implementations may not honor the documented element type.
+             * @phpstan-ignore instanceof.alwaysTrue
+             */
             if ($listenerInstance instanceof MydbListenerInterface) {
                 if (false === $listenerInstance->observe($this)) {
                     break;
@@ -49,6 +54,7 @@ abstract class MydbEvent implements MydbEventInterface, MydbEventMetadataInterfa
         }
     }
 
+    #[Override]
     public function getEventName(): string
     {
         return static::class;

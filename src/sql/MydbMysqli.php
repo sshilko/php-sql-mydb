@@ -42,6 +42,9 @@ use const MYSQLI_TRANS_START_READ_WRITE;
 /**
  * Facade for php mysqli extension
  *
+ * Not declared final: PHPUnit doubles this class through createMock() in the test suite.
+ * @psalm-suppress ClassMustBeFinal
+ *
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
  * @see https://github.com/sshilko/php-sql-mydb
@@ -201,7 +204,7 @@ class MydbMysqli implements MydbMysqliInterface
          * @see https://php.net/manual/en/mysqli.construct.php
          * @see https://wiki.php.net/rfc/improve_mysqli
          */
-        $init = new mysqli();
+        $init         = new mysqli();
         $this->mysqli = $init;
 
         return true;
@@ -221,7 +224,7 @@ class MydbMysqli implements MydbMysqliInterface
         }
 
         $ignoreUserAbort = $environment->ignore_user_abort();
-        $selectTimeout = $options->getServerSideSelectTimeout();
+        $selectTimeout   = $options->getServerSideSelectTimeout();
 
         /**
          * Prevent entry of invalid values such as those that are out of range, or NULL specified for NOT NULL columns
@@ -235,7 +238,7 @@ class MydbMysqli implements MydbMysqliInterface
         }
 
         $connectTimeout = $options->getConnectTimeout();
-        $readTimeout = $options->getReadTimeout();
+        $readTimeout    = $options->getReadTimeout();
         $netReadTimeout = (string) (max($selectTimeout, $readTimeout) + $connectTimeout);
 
         return
@@ -303,7 +306,7 @@ class MydbMysqli implements MydbMysqliInterface
             $events = [];
 
             $warnings = [];
-            
+
             $result = $this->extractServerResponse($environment, $events);
 
             $fieldsCount = $this->getFieldCount();
@@ -437,15 +440,7 @@ class MydbMysqli implements MydbMysqliInterface
         int $flags,
     ): bool {
         if ($this->mysqli && !$this->isConnected()) {
-            $connected = $this->mysqli->real_connect(
-                $host,
-                $username,
-                $password,
-                $dbname,
-                (int) $port,
-                (string) $socket,
-                $flags
-            );
+            $connected = $this->mysqli->real_connect($host, $username, $password, $dbname, $port, $socket, $flags);
 
             if ($connected) {
                 $this->isConnected = true;
@@ -541,9 +536,6 @@ class MydbMysqli implements MydbMysqliInterface
         return null;
     }
 
-    /**
-     * @phpcs:disable SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint
-     */
     #[Override]
     public function getInsertId(): int|string|null
     {
@@ -604,7 +596,16 @@ class MydbMysqli implements MydbMysqliInterface
     public function getWarnings(): array
     {
         if ($this->mysqli) {
+            /**
+             * The mysqli stub in Psalm types get_warnings() as always returning
+             * mysqli_warning, but at runtime it can also return false.
+             * @psalm-suppress TypeDoesNotContainType
+             */
             $warnings = $this->mysqli->get_warnings();
+            if (false === $warnings) {
+                return [];
+            }
+
             $array = [];
             do {
                 $array[] = $warnings->message;

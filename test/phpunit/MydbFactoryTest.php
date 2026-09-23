@@ -51,7 +51,7 @@ final class MydbFactoryTest extends includes\DatabaseTestCase
 
     public function testCreateOptionsMatchesNewMydbOptions(): void
     {
-        $options = (new MydbFactory())->createOptions();
+        $options  = (new MydbFactory())->createOptions();
         $defaults = new MydbOptions();
 
         self::assertSame($defaults->getConnectTimeout(), $options->getConnectTimeout());
@@ -93,7 +93,7 @@ final class MydbFactoryTest extends includes\DatabaseTestCase
     public function testCreateWithOptions(): void
     {
         $credentials = new MydbCredentials('127.0.0.1', 'root', 'root', 'mydb');
-        $options = (new MydbFactory())->createReadonlyOptions();
+        $options     = (new MydbFactory())->createReadonlyOptions();
 
         $mydb = (new MydbFactory())->create($credentials, $this->logger, $options);
 

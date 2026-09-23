@@ -23,9 +23,14 @@ use sql\MydbEventMetadataInterface;
 use sql\MydbListener;
 use function in_array;
 use function is_array;
-use function is_null;
 
-class InternalListener extends MydbListener
+/**
+ * Default event listener; logs connection lifecycle events.
+ *
+ * Query begin/end events are intentionally not logged here; a custom listener
+ * can subscribe to those through the constructor-injected logger.
+ */
+final class InternalListener extends MydbListener
 {
 
     public function __construct(protected readonly ?LoggerInterface $logger = null)
@@ -43,6 +48,7 @@ class InternalListener extends MydbListener
             }
         }
 
-        return is_array($event->getEventMetadata()) || is_null($event->getEventMetadata());
+        // @phpstan-ignore booleanOr.alwaysTrue, identical.alwaysTrue
+        return is_array($event->getEventMetadata()) || null === $event->getEventMetadata();
     }
 }

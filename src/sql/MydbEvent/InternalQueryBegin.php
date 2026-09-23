@@ -15,12 +15,11 @@ declare(strict_types = 1);
 
 namespace sql\MydbEvent;
 
-class InternalQueryBegin extends InternalEvent
+/**
+ * Fired before a raw SQL statement is sent to the server.
+ *
+ * Metadata payload keys: sql (string).
+ */
+final class InternalQueryBegin extends InternalEvent
 {
-    public function __construct(string $sql)
-    {
-        $this->data = [
-            'sql' => $sql,
-        ];
-    }
 }

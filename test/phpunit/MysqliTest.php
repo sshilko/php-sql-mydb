@@ -31,6 +31,7 @@ final class MysqliTest extends includes\DatabaseTestCase
     public function testReuseResource(): void
     {
         $resource = mysqli_init();
+        /** @var \mysqli $resource */
         $mysqli = new MydbMysqli($resource);
         $result = $mysqli->init();
         self::assertFalse($result);
@@ -39,13 +40,14 @@ final class MysqliTest extends includes\DatabaseTestCase
     public function testGetMysqli(): void
     {
         $resource = mysqli_init();
+        /** @var \mysqli $resource */
         $mysqli = new MydbMysqli($resource);
         $result = $mysqli->getMysqli();
         self::assertSame($resource, $result);
     }
 
     /**
-     * @throws \phpunit\EnvironmentException
+     * @throws \sql\MydbException\EnvironmentException
      */
     public function testOptionsNoInit(): void
     {

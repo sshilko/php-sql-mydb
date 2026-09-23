@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use PHPUnit\Framework\Attributes\Medium;
 use sql\MydbException\ConnectException;
 use function sprintf;
 use function time;
@@ -25,13 +26,14 @@ use function time;
  *
  * @see https://github.com/sshilko/php-sql-mydb
  */
+#[Medium]
 final class ExceptionTest extends includes\DatabaseTestCase
 {
     public function testTableDoesNotExist(): void
     {
-        $db = $this->getDefaultDb();
+        $db        = $this->getDefaultDb();
         $tableName = 'table' . time();
-        $sql = "SELECT * from " . $tableName;
+        $sql       = "SELECT * from " . $tableName;
         $this->logger
             ->expects(self::once())
             ->method('warning')
@@ -47,9 +49,6 @@ final class ExceptionTest extends includes\DatabaseTestCase
         $db->select($sql);
     }
 
-    /**
-     * @medium
-     */
     public function testFailedToConnect(): void
     {
         $db = $this->getNoConnectDb();
@@ -58,21 +57,15 @@ final class ExceptionTest extends includes\DatabaseTestCase
         self::assertSame(false, $result);
     }
 
-    /**
-     * @medium
-     */
     public function testFailedToConnectAfterRetry(): void
     {
         $retry = 1;
-        $db = $this->getNoConnectDb();
+        $db    = $this->getNoConnectDb();
         $this->logger->expects(self::exactly($retry + 1))->method('warning')->with('2002 Connection timed out');
         $result = $db->open($retry);
         self::assertSame(false, $result);
     }
 
-    /**
-     * @medium
-     */
     public function testFailedToConnectLazy(): void
     {
         $db = $this->getNoConnectDb();
@@ -81,9 +74,6 @@ final class ExceptionTest extends includes\DatabaseTestCase
         $db->select("SELECT 1");
     }
 
-    /**
-     * @medium
-     */
     public function testFailedToCommandLazy(): void
     {
         $db = $this->getNoConnectDb();
@@ -92,9 +82,6 @@ final class ExceptionTest extends includes\DatabaseTestCase
         $db->command("SELECT 1");
     }
 
-    /**
-     * @medium
-     */
     public function testFailedToBeginTransaction(): void
     {
         $db = $this->getNoConnectDb();
@@ -102,9 +89,6 @@ final class ExceptionTest extends includes\DatabaseTestCase
         $db->beginTransaction();
     }
 
-    /**
-     * @medium
-     */
     public function testFailedToRollbackTransaction(): void
     {
         $db = $this->getNoConnectDb();
@@ -112,9 +96,6 @@ final class ExceptionTest extends includes\DatabaseTestCase
         $db->rollbackTransaction();
     }
 
-    /**
-     * @medium
-     */
     public function testFailedToCommitTransaction(): void
     {
         $db = $this->getNoConnectDb();
@@ -122,9 +103,6 @@ final class ExceptionTest extends includes\DatabaseTestCase
         $db->commitTransaction();
     }
 
-    /**
-     * @medium
-     */
     public function testFailedToEscapeLazy(): void
     {
         $db = $this->getNoConnectDb();
@@ -138,12 +116,12 @@ final class ExceptionTest extends includes\DatabaseTestCase
         $db = $this->getDefaultDb();
         $this->logger->expects(self::once())->method('warning')->with('Division by 0');
         $x = $db->select("select 1/0 as x");
-        self::assertSame($x[0]['x'], null);
+        self::assertSame(null, $x[0]['x']);
     }
 
     public function testMySqlError(): void
     {
-        $db = $this->getDefaultDb();
+        $db     = $this->getDefaultDb();
         $random = 'a' . time();
         $this->expectExceptionMessage("Unknown system variable '" . $random . "'");
         $db->select("SELECT @@" . $random);

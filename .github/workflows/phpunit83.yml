@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v4
 
       - name: List files
         run: pwd && ls -l
@@ -160,7 +160,7 @@ jobs:
           name: phpunit-output
           path: php/phpunit83
 
-      - uses: nick-fields/retry@v2
+      - uses: nick-fields/retry@v3
         name: Commit coverage details
         continue-on-error: true
         with:
