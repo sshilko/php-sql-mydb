@@ -31,8 +31,8 @@
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
@@ -55,8 +55,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
         <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
         <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
@@ -73,8 +73,8 @@
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
@@ -96,8 +96,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select ALL"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
         <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
@@ -113,8 +113,8 @@
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
@@ -136,8 +136,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select ALL"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
         <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
@@ -171,8 +171,8 @@
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
@@ -194,8 +194,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select ALL"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
         <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
@@ -214,8 +214,8 @@
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
@@ -238,8 +238,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
         <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
         <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
@@ -269,8 +269,8 @@
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
@@ -293,8 +293,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
         <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
         <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
@@ -311,8 +311,8 @@
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
@@ -334,8 +334,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select ALL"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
         <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
@@ -394,8 +394,8 @@
         <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testSet"/>
         <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
@@ -417,8 +417,8 @@
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select ALL"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
         <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>

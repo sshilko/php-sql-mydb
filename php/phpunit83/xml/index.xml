@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Wed Sep 23 10:44:53 UTC 2026" phpunit="10.5.64" coverage="10.1.16">
+  <build time="Wed Sep 23 11:02:16 UTC 2026" phpunit="10.5.64" coverage="10.1.16">
     <runtime name="PHP" version="8.3.33" url="https://www.php.net/"/>
     <driver name="xdebug" version="3.3.0"/>
   </build>
@@ -16,11 +16,11 @@
       <test name="phpunit\ExceptionTest::testMySqlError" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testMySqlWarning" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testTableDoesNotExist" size="medium" status="success"/>
-      <test name="phpunit\ExceptionTest::testFailedToConnect" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToConnectLazy" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToCommandLazy" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToBeginTransaction" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToEscapeLazy" size="medium" status="success"/>
+      <test name="phpunit\ExceptionTest::testFailedToConnect" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToConnectAfterRetry" size="medium" status="success"/>
       <test name="phpunit\InsertTest::testInsertError" size="unknown" status="success"/>
       <test name="phpunit\InsertTest::testReplaceOne" size="unknown" status="success"/>
@@ -36,7 +36,6 @@
       <test name="phpunit\LoggerTest::testLoggerWithStrings#chars" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerError" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerConstructorFallbackStderr" size="unknown" status="success"/>
-      <test name="phpunit\LoggerTest::testLoggerStreamErrEnd" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerStreamOutClosed" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerStreamErrClosed" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerStreamOutBadMode" size="unknown" status="success"/>
@@ -47,17 +46,18 @@
       <test name="phpunit\LoggerTest::testLoggerUnusedContextIsAppended" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerScalarMessage" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerConstructorFallbackStdout" size="unknown" status="success"/>
-      <test name="phpunit\MetaTest::testOpen" size="unknown" status="success"/>
+      <test name="phpunit\LoggerTest::testLoggerStreamErrEnd" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testClose" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testSingleQuotedEscape" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testDoubleQuotedEscape" size="unknown" status="success"/>
+      <test name="phpunit\MetaTest::testOpen" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testSet" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testNotRealEnumOrSet" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKeyQueryFailed" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKeyNotFound" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKeyComposite" size="unknown" status="success"/>
-      <test name="phpunit\MetaTest::testEscape" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testEnum" size="unknown" status="success"/>
+      <test name="phpunit\MetaTest::testEscape" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKey" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKeyNotDefined" size="unknown" status="success"/>
       <test name="phpunit\MydbCredentialsTest::testDefaultParameterValues" size="unknown" status="success"/>
@@ -69,8 +69,8 @@
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap#SIGINT" size="unknown" status="success"/>
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap#SIGINT,SIGTERM,SIGHUP" size="unknown" status="success"/>
       <test name="phpunit\MydbEventTest::testMydbEventListenerBreak" size="unknown" status="success"/>
-      <test name="phpunit\MydbEventTest::testMydbEventListenerException" size="unknown" status="success"/>
       <test name="phpunit\MydbEventTest::testMydbInternalEventSuccess" size="unknown" status="success"/>
+      <test name="phpunit\MydbEventTest::testMydbEventListenerException" size="unknown" status="success"/>
       <test name="phpunit\MydbExceptionTest::testQueryBuilderException" size="unknown" status="success"/>
       <test name="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions" size="unknown" status="success"/>
       <test name="phpunit\MydbFactoryTest::testCreateReadonlyOptions" size="unknown" status="success"/>
@@ -102,7 +102,6 @@
       <test name="phpunit\OptionsTest::testErrorReporting" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testReadTimeout" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testNetworkBuffer" size="unknown" status="success"/>
-      <test name="phpunit\OptionsTest::testNetworkBufferMin" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testNetworkBufferMax" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testSetReadBuffer" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testSetReadBufferMin" size="unknown" status="success"/>
@@ -115,6 +114,7 @@
       <test name="phpunit\OptionsTest::testCharset" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testPersistent" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testReadonly" size="unknown" status="success"/>
+      <test name="phpunit\OptionsTest::testNetworkBufferMin" size="unknown" status="success"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne#simple int" size="unknown" status="success"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne#simple float" size="unknown" status="success"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne#expression" size="unknown" status="success"/>
@@ -208,7 +208,6 @@
       <test name="phpunit\QueryBuilderTest::testBuildUpdateWhereExceptions5" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryEmpty1" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryEmpty2" size="unknown" status="success"/>
-      <test name="phpunit\RegistryTest::testRegistryEmpty3" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistrySet" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistrySetIntegerKey" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryUnSet1" size="unknown" status="success"/>
@@ -216,6 +215,7 @@
       <test name="phpunit\RegistryTest::testRegistrySerialize1" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryUnserialize2" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryClone" size="unknown" status="success"/>
+      <test name="phpunit\RegistryTest::testRegistryEmpty3" size="unknown" status="success"/>
       <test name="phpunit\RepositoryTest::testRegistry" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testSimpleClose" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testCloseNotConnected" size="unknown" status="success"/>
@@ -230,7 +230,6 @@
       <test name="phpunit\ResourceTest::testQueryBadClientRequest" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testQueryBadServerResponse" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult" size="unknown" status="success"/>
-      <test name="phpunit\ResourceTest::testOpen" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testOpenCloseError" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testOpenAutocommitFailed" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose" size="unknown" status="success"/>
@@ -239,6 +238,7 @@
       <test name="phpunit\ResourceTest::testConnectingDefaultsFailed" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testConnectingTransactionIsolationFailed" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed" size="unknown" status="success"/>
+      <test name="phpunit\ResourceTest::testOpen" size="unknown" status="success"/>
       <test name="phpunit\SelectTest::testSimpleSelect#simple select all" size="unknown" status="success"/>
       <test name="phpunit\SelectTest::testSimpleSelect#complex select all" size="unknown" status="success"/>
       <test name="phpunit\SelectTest::testSimpleSelect#simple select JOIN" size="unknown" status="success"/>
@@ -260,10 +260,10 @@
       <test name="phpunit\TransactionsTest::testRollbackTransactionSuccess" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testCommitTransactionSuccess" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testCommitTransactionFailure" size="unknown" status="success"/>
+      <test name="phpunit\TransactionsTest::testBeginTransactionReadWriteReal" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadwriteFailure" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testRollbackTransactionFailure" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadonlyReal" size="unknown" status="success"/>
-      <test name="phpunit\TransactionsTest::testBeginTransactionReadWriteReal" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testTransactionIsolationLevel" size="unknown" status="success"/>
       <test name="phpunit\UpdateTest::testUpdateReturnsNull" size="unknown" status="success"/>
       <test name="phpunit\UpdateTest::testDeleteWhereReturnsNull" size="unknown" status="success"/>
