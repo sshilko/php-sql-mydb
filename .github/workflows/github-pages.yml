@@ -11,22 +11,21 @@ name: Github Pages
 
 on:
   schedule:
-          # @see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
-          # * is a special character in YAML so you have to quote this string
-          #  ┌───────────── minute (0 - 59)
-          #  │ ┌───────────── hour (0 - 23)
-          #  │ │ ┌───────────── day of the month (1 - 31)
-          #  │ │ │ ┌───────────── month (1 - 12)
-          #  │ │ │ │ ┌───────────── day of the week (0 - 6)
-          #  │ │ │ │ │
-          #  │ │ │ │ │
-          #  │ │ │ │ │
-          #  * * * * *
-    - cron: "0 0 * * 0"
+    # @see https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    # * is a special character in YAML so you have to quote this string
+    #  ┌───────────── minute (0 - 59)
+    #  │ ┌───────────── hour (0 - 23)
+    #  │ │ ┌───────────── day of the month (1 - 31)
+    #  │ │ │ ┌───────────── month (1 - 12)
+    #  │ │ │ │ ┌───────────── day of the week (0 - 6)
+    #  │ │ │ │ │
+    #  │ │ │ │ │
+    #  │ │ │ │ │
+    #  * * * * *
+    - cron: "0 0 1 * 0"
 
 jobs:
   pages-directory-listing-release:
-
     runs-on: ubuntu-latest
     timeout-minutes: 3
 
@@ -45,15 +44,15 @@ jobs:
         name: Commit directory-listing
         continue-on-error: true
         with:
-            timeout_seconds: 20
-            max_attempts: 3
-            retry_on: error
-            command: |
-                git status
-                git config user.name github-actions
-                git config user.email github-actions@github.com
-                git pull
-                git add "**/index.html"
-                git reset php/phpdoc/index.html
-                git commit -m "generated directory-listing docs from revision ${GITHUB_SHA::7}"
-                git push
+          timeout_seconds: 20
+          max_attempts: 3
+          retry_on: error
+          command: |
+            git status
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git pull
+            git add "**/index.html"
+            git reset php/phpdoc/index.html
+            git commit -m "generated directory-listing docs from revision ${GITHUB_SHA::7}"
+            git push
