@@ -3,14 +3,14 @@
   <Packages>
     <Package name="sql">
       <Stats>
-        <TotalClasses>25</TotalClasses>
-        <ConcreteClasses>11</ConcreteClasses>
+        <TotalClasses>26</TotalClasses>
+        <ConcreteClasses>12</ConcreteClasses>
         <AbstractClasses>14</AbstractClasses>
         <Ca>3</Ca>
         <Ce>7</Ce>
-        <A>0.56</A>
+        <A>0.53846153846154</A>
         <I>0.7</I>
-        <D>0.26</D>
+        <D>0.23846153846154</D>
       </Stats>
       <ConcreteClasses>
         <Class sourceFile="/app/src/sql/Mydb.php">Mydb</Class>
