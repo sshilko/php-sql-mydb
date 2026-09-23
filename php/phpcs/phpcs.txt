@@ -1,8 +1,8 @@
 File,Line,Column,Type,Message,Source,Severity,Fixable
-Time: 652ms; Memory: 16MB
+Time: 881ms; Memory: 16MB
 File,Line,Column,Type,Message,Source,Severity,Fixable
-Time: 578ms; Memory: 16MB
+Time: 769ms; Memory: 16MB
 File,Line,Column,Type,Message,Source,Severity,Fixable
-Time: 611ms; Memory: 18MB
+Time: 791ms; Memory: 18MB
 File,Line,Column,Type,Message,Source,Severity,Fixable
-Time: 567ms; Memory: 18MB
+Time: 752ms; Memory: 18MB
