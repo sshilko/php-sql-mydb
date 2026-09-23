@@ -39,6 +39,7 @@
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#something-info"/>
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#chars"/>
         <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamErrEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutClosed"/>
@@ -50,7 +51,6 @@
         <covered by="phpunit\LoggerTest::testLoggerInterpolation"/>
         <covered by="phpunit\LoggerTest::testLoggerUnusedContextIsAppended"/>
         <covered by="phpunit\LoggerTest::testLoggerScalarMessage"/>
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="85">
@@ -61,6 +61,7 @@
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#something-info"/>
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#chars"/>
         <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamErrEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutClosed"/>
@@ -72,7 +73,6 @@
         <covered by="phpunit\LoggerTest::testLoggerInterpolation"/>
         <covered by="phpunit\LoggerTest::testLoggerUnusedContextIsAppended"/>
         <covered by="phpunit\LoggerTest::testLoggerScalarMessage"/>
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="86">
@@ -83,6 +83,7 @@
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#something-info"/>
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#chars"/>
         <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamErrEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutClosed"/>
@@ -94,7 +95,6 @@
         <covered by="phpunit\LoggerTest::testLoggerInterpolation"/>
         <covered by="phpunit\LoggerTest::testLoggerUnusedContextIsAppended"/>
         <covered by="phpunit\LoggerTest::testLoggerScalarMessage"/>
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="91">
@@ -105,6 +105,7 @@
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#something-info"/>
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#chars"/>
         <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamErrEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutClosed"/>
@@ -116,7 +117,6 @@
         <covered by="phpunit\LoggerTest::testLoggerInterpolation"/>
         <covered by="phpunit\LoggerTest::testLoggerUnusedContextIsAppended"/>
         <covered by="phpunit\LoggerTest::testLoggerScalarMessage"/>
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="92">
@@ -127,6 +127,7 @@
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#something-info"/>
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#chars"/>
         <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamErrEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutClosed"/>
@@ -138,7 +139,6 @@
         <covered by="phpunit\LoggerTest::testLoggerInterpolation"/>
         <covered by="phpunit\LoggerTest::testLoggerUnusedContextIsAppended"/>
         <covered by="phpunit\LoggerTest::testLoggerScalarMessage"/>
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="93">
@@ -149,6 +149,7 @@
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#something-info"/>
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#chars"/>
         <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamErrEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutClosed"/>
@@ -160,7 +161,6 @@
         <covered by="phpunit\LoggerTest::testLoggerInterpolation"/>
         <covered by="phpunit\LoggerTest::testLoggerUnusedContextIsAppended"/>
         <covered by="phpunit\LoggerTest::testLoggerScalarMessage"/>
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="96">
@@ -171,6 +171,7 @@
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#something-info"/>
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#chars"/>
         <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamErrEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutClosed"/>
@@ -182,7 +183,6 @@
         <covered by="phpunit\LoggerTest::testLoggerInterpolation"/>
         <covered by="phpunit\LoggerTest::testLoggerUnusedContextIsAppended"/>
         <covered by="phpunit\LoggerTest::testLoggerScalarMessage"/>
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="97">
@@ -193,6 +193,7 @@
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#something-info"/>
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#chars"/>
         <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamErrEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutClosed"/>
@@ -204,7 +205,6 @@
         <covered by="phpunit\LoggerTest::testLoggerInterpolation"/>
         <covered by="phpunit\LoggerTest::testLoggerUnusedContextIsAppended"/>
         <covered by="phpunit\LoggerTest::testLoggerScalarMessage"/>
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="98">
@@ -215,6 +215,7 @@
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#something-info"/>
         <covered by="phpunit\LoggerTest::testLoggerWithStrings#chars"/>
         <covered by="phpunit\LoggerTest::testLoggerError"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamErrEnd"/>
         <covered by="phpunit\LoggerTest::testLoggerStreamOutClosed"/>
@@ -226,7 +227,6 @@
         <covered by="phpunit\LoggerTest::testLoggerInterpolation"/>
         <covered by="phpunit\LoggerTest::testLoggerUnusedContextIsAppended"/>
         <covered by="phpunit\LoggerTest::testLoggerScalarMessage"/>
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="110">
@@ -1059,13 +1059,13 @@
         <covered by="phpunit\LoggerTest::testLoggerScalarMessage"/>
       </line>
       <line nr="391">
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="398">
-        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStdout"/>
+        <covered by="phpunit\LoggerTest::testLoggerConstructorFallbackStderr"/>
         <covered by="phpunit\MydbFactoryTest::testCreateDefaults"/>
       </line>
       <line nr="214">
