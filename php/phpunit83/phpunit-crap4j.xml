@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2026-09-23 01:29:10</timestamp>
+  <timestamp>2026-09-23 10:42:09</timestamp>
   <stats>
     <name>Method Crap Stats</name>
     <methodCount>174</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>426.1</totalCrap>
+    <totalCrap>428.1</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -435,8 +435,8 @@
       <methodName>set_error_handler</methodName>
       <methodSignature>set_error_handler(?callable $callback, int $error_levels): void</methodSignature>
       <fullMethod>set_error_handler(?callable $callback, int $error_levels): void</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
+      <crap>2</crap>
+      <complexity>2</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -503,17 +503,6 @@
       <fullMethod>startSignalsTrap(): void</fullMethod>
       <crap>3</crap>
       <complexity>3</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql</package>
-      <className>sql\MydbEnvironment</className>
-      <methodName>getNullErrorHandler</methodName>
-      <methodSignature>getNullErrorHandler(): callable</methodSignature>
-      <fullMethod>getNullErrorHandler(): callable</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -864,9 +853,9 @@
       <methodName>interpolate</methodName>
       <methodSignature>interpolate(string $message, array $context): array</methodSignature>
       <fullMethod>interpolate(string $message, array $context): array</fullMethod>
-      <crap>5</crap>
-      <complexity>5</complexity>
-      <coverage>100</coverage>
+      <crap>6</crap>
+      <complexity>6</complexity>
+      <coverage>95.24</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1230,6 +1219,17 @@
       <crap>3.01</crap>
       <complexity>3</complexity>
       <coverage>88.89</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
+      <methodName>getWarningsResult</methodName>
+      <methodSignature>getWarningsResult(mysqli $mysqli): \mysqli_warning|false</methodSignature>
+      <fullMethod>getWarningsResult(mysqli $mysqli): \mysqli_warning|false</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

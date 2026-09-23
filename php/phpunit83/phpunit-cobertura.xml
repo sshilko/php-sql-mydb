@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.99173553719008" branch-rate="0" lines-covered="720" lines-valid="726" branches-covered="0" branches-valid="0" complexity="423" version="0.4" timestamp="1790126950">
+<coverage line-rate="0.99064171122995" branch-rate="0" lines-covered="741" lines-valid="748" branches-covered="0" branches-valid="0" complexity="425" version="0.4" timestamp="1790160129">
   <sources>
     <source>/app/src/sql</source>
   </sources>
@@ -44,247 +44,250 @@
                 <line number="142" hits="1"/>
                 <line number="143" hits="1"/>
                 <line number="144" hits="1"/>
-                <line number="150" hits="38"/>
-                <line number="153" hits="1"/>
+                <line number="147" hits="38"/>
+                <line number="150" hits="1"/>
               </lines>
             </method>
             <method name="command" signature="string $query" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="163" hits="19"/>
-                <line number="164" hits="2"/>
-                <line number="168" hits="17"/>
-                <line number="170" hits="17"/>
-                <line number="171" hits="4"/>
-                <line number="174" hits="13"/>
-                <line number="176" hits="13"/>
+                <line number="160" hits="19"/>
+                <line number="161" hits="2"/>
+                <line number="165" hits="17"/>
+                <line number="167" hits="17"/>
+                <line number="168" hits="4"/>
+                <line number="171" hits="13"/>
+                <line number="173" hits="13"/>
               </lines>
             </method>
             <method name="getEnumValues" signature="string $table, string $column" line-rate="1" branch-rate="0" complexity="6">
               <lines>
+                <line number="184" hits="3"/>
+                <line number="186" hits="3"/>
                 <line number="187" hits="3"/>
-                <line number="189" hits="3"/>
-                <line number="190" hits="3"/>
-                <line number="191" hits="2"/>
-                <line number="192" hits="1"/>
+                <line number="188" hits="2"/>
+                <line number="189" hits="1"/>
+                <line number="191" hits="3"/>
+                <line number="192" hits="3"/>
+                <line number="193" hits="3"/>
                 <line number="194" hits="3"/>
-                <line number="195" hits="3"/>
-                <line number="196" hits="3"/>
-                <line number="197" hits="3"/>
-                <line number="198" hits="2"/>
-                <line number="200" hits="2"/>
-                <line number="204" hits="3"/>
-                <line number="205" hits="1"/>
-                <line number="208" hits="2"/>
+                <line number="195" hits="2"/>
+                <line number="197" hits="2"/>
+                <line number="201" hits="3"/>
+                <line number="202" hits="1"/>
+                <line number="205" hits="2"/>
+                <line number="216" hits="2"/>
+                <line number="218" hits="2"/>
                 <line number="219" hits="2"/>
+                <line number="220" hits="2"/>
                 <line number="221" hits="2"/>
+                <line number="222" hits="2"/>
+                <line number="223" hits="2"/>
               </lines>
             </method>
             <method name="escape" signature="float|int|string|\Stringable|null $unescaped, string $quote" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="234" hits="5"/>
-                <line number="235" hits="2"/>
-                <line number="238" hits="3"/>
+                <line number="236" hits="5"/>
+                <line number="237" hits="2"/>
+                <line number="240" hits="3"/>
               </lines>
             </method>
             <method name="getPrimaryKeys" signature="string $table" line-rate="1" branch-rate="0" complexity="7">
               <lines>
-                <line number="249" hits="5"/>
                 <line number="251" hits="5"/>
-                <line number="252" hits="1"/>
-                <line number="255" hits="4"/>
-                <line number="256" hits="4"/>
-                <line number="257" hits="3"/>
-                <line number="258" hits="2"/>
-                <line number="262" hits="4"/>
+                <line number="253" hits="5"/>
+                <line number="254" hits="1"/>
+                <line number="257" hits="4"/>
+                <line number="258" hits="4"/>
+                <line number="259" hits="3"/>
+                <line number="260" hits="2"/>
+                <line number="264" hits="4"/>
               </lines>
             </method>
             <method name="beginTransaction" signature="" line-rate="1" branch-rate="0" complexity="5">
               <lines>
-                <line number="271" hits="19"/>
-                <line number="272" hits="1"/>
-                <line number="275" hits="18"/>
-                <line number="276" hits="3"/>
-                <line number="277" hits="2"/>
-                <line number="279" hits="1"/>
-                <line number="281" hits="15"/>
-                <line number="282" hits="14"/>
-                <line number="284" hits="1"/>
+                <line number="273" hits="19"/>
+                <line number="274" hits="1"/>
+                <line number="277" hits="18"/>
+                <line number="278" hits="3"/>
+                <line number="279" hits="2"/>
+                <line number="281" hits="1"/>
+                <line number="283" hits="15"/>
+                <line number="284" hits="14"/>
+                <line number="286" hits="1"/>
               </lines>
             </method>
             <method name="rollbackTransaction" signature="" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="294" hits="15"/>
-                <line number="295" hits="1"/>
-                <line number="298" hits="14"/>
-                <line number="299" hits="13"/>
-                <line number="302" hits="1"/>
+                <line number="296" hits="15"/>
+                <line number="297" hits="1"/>
+                <line number="300" hits="14"/>
+                <line number="301" hits="13"/>
+                <line number="304" hits="1"/>
               </lines>
             </method>
             <method name="commitTransaction" signature="" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="312" hits="4"/>
-                <line number="313" hits="1"/>
-                <line number="316" hits="3"/>
-                <line number="317" hits="2"/>
-                <line number="320" hits="1"/>
+                <line number="314" hits="4"/>
+                <line number="315" hits="1"/>
+                <line number="318" hits="3"/>
+                <line number="319" hits="2"/>
+                <line number="322" hits="1"/>
               </lines>
             </method>
             <method name="close" signature="" line-rate="1" branch-rate="0" complexity="10">
               <lines>
-                <line number="329" hits="101"/>
-                <line number="330" hits="71"/>
-                <line number="340" hits="54"/>
-                <line number="345" hits="49"/>
-                <line number="346" hits="2"/>
-                <line number="347" hits="47"/>
-                <line number="349" hits="49"/>
-                <line number="350" hits="2"/>
-                <line number="358" hits="52"/>
-                <line number="359" hits="1"/>
-                <line number="361" hits="4"/>
-                <line number="362" hits="3"/>
-                <line number="363" hits="1"/>
-                <line number="364" hits="1"/>
-                <line number="367" hits="50"/>
-                <line number="368" hits="31"/>
-                <line number="371" hits="19"/>
+                <line number="331" hits="101"/>
+                <line number="332" hits="71"/>
+                <line number="342" hits="54"/>
+                <line number="347" hits="49"/>
+                <line number="348" hits="2"/>
+                <line number="349" hits="47"/>
+                <line number="351" hits="49"/>
+                <line number="352" hits="2"/>
+                <line number="360" hits="52"/>
+                <line number="361" hits="1"/>
+                <line number="363" hits="4"/>
+                <line number="364" hits="3"/>
+                <line number="365" hits="1"/>
+                <line number="366" hits="1"/>
+                <line number="369" hits="50"/>
+                <line number="370" hits="31"/>
+                <line number="373" hits="19"/>
               </lines>
             </method>
             <method name="replace" signature="string $query" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="381" hits="3"/>
+                <line number="383" hits="3"/>
               </lines>
             </method>
             <method name="insert" signature="string $query" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="391" hits="6"/>
-                <line number="392" hits="5"/>
-                <line number="395" hits="1"/>
+                <line number="393" hits="6"/>
+                <line number="394" hits="5"/>
+                <line number="397" hits="1"/>
               </lines>
             </method>
             <method name="select" signature="string $query" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="405" hits="33"/>
+                <line number="407" hits="33"/>
               </lines>
             </method>
             <method name="delete" signature="string $query" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="414" hits="4"/>
-                <line number="415" hits="3"/>
-                <line number="416" hits="3"/>
-                <line number="417" hits="1"/>
-                <line number="420" hits="2"/>
-                <line number="423" hits="1"/>
+                <line number="416" hits="4"/>
+                <line number="417" hits="3"/>
+                <line number="418" hits="3"/>
+                <line number="419" hits="1"/>
+                <line number="422" hits="2"/>
+                <line number="425" hits="1"/>
               </lines>
             </method>
             <method name="update" signature="string $query" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="432" hits="6"/>
-                <line number="433" hits="5"/>
-                <line number="434" hits="5"/>
-                <line number="435" hits="1"/>
-                <line number="438" hits="4"/>
-                <line number="441" hits="1"/>
+                <line number="434" hits="6"/>
+                <line number="435" hits="5"/>
+                <line number="436" hits="5"/>
+                <line number="437" hits="1"/>
+                <line number="440" hits="4"/>
+                <line number="443" hits="1"/>
               </lines>
             </method>
             <method name="deleteWhere" signature="array $whereFields, string $table, array $whereNotFields" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="450" hits="2"/>
-                <line number="451" hits="2"/>
-                <line number="452" hits="1"/>
-                <line number="455" hits="1"/>
+                <line number="452" hits="2"/>
+                <line number="453" hits="2"/>
+                <line number="454" hits="1"/>
+                <line number="457" hits="1"/>
               </lines>
             </method>
             <method name="updateWhere" signature="array $update, array $whereFields, string $table, array $whereNotFields" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="465" hits="2"/>
                 <line number="467" hits="2"/>
-                <line number="468" hits="1"/>
-                <line number="471" hits="1"/>
+                <line number="469" hits="2"/>
+                <line number="470" hits="1"/>
+                <line number="473" hits="1"/>
               </lines>
             </method>
             <method name="updateWhereMany" signature="array $columnSetWhere, array $where, string $table" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="483" hits="2"/>
-                <line number="484" hits="2"/>
+                <line number="485" hits="2"/>
+                <line number="486" hits="2"/>
               </lines>
             </method>
             <method name="insertMany" signature="array $data, array $cols, string $table, bool $ignore, string $onDuplicateSql" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="501" hits="1"/>
-                <line number="502" hits="1"/>
+                <line number="503" hits="1"/>
+                <line number="504" hits="1"/>
               </lines>
             </method>
             <method name="replaceOne" signature="array $data, string $table" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="512" hits="1"/>
                 <line number="514" hits="1"/>
+                <line number="516" hits="1"/>
               </lines>
             </method>
             <method name="insertOne" signature="array $data, string $table" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="524" hits="1"/>
                 <line number="526" hits="1"/>
+                <line number="528" hits="1"/>
               </lines>
             </method>
             <method name="sendClientRequest" signature="string $query" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="536" hits="51"/>
-                <line number="537" hits="51"/>
+                <line number="538" hits="51"/>
                 <line number="539" hits="51"/>
-                <line number="540" hits="51"/>
                 <line number="541" hits="51"/>
                 <line number="542" hits="51"/>
                 <line number="543" hits="51"/>
+                <line number="544" hits="51"/>
                 <line number="545" hits="51"/>
-                <line number="546" hits="51"/>
                 <line number="547" hits="51"/>
-                <line number="548" hits="1"/>
-                <line number="551" hits="51"/>
+                <line number="548" hits="51"/>
+                <line number="549" hits="51"/>
+                <line number="550" hits="1"/>
+                <line number="553" hits="51"/>
               </lines>
             </method>
             <method name="readServerResponse" signature="string $query" line-rate="1" branch-rate="0" complexity="6">
               <lines>
-                <line number="559" hits="48"/>
-                <line number="560" hits="48"/>
-                <line number="561" hits="3"/>
-                <line number="564" hits="45"/>
-                <line number="565" hits="45"/>
-                <line number="566" hits="3"/>
-                <line number="567" hits="3"/>
-                <line number="571" hits="45"/>
-                <line number="572" hits="45"/>
-                <line number="573" hits="3"/>
-                <line number="577" hits="1"/>
-                <line number="578" hits="1"/>
-                <line number="580" hits="2"/>
-                <line number="584" hits="42"/>
+                <line number="561" hits="48"/>
+                <line number="562" hits="48"/>
+                <line number="563" hits="3"/>
+                <line number="566" hits="45"/>
+                <line number="567" hits="45"/>
+                <line number="568" hits="3"/>
+                <line number="569" hits="3"/>
+                <line number="573" hits="45"/>
+                <line number="574" hits="45"/>
+                <line number="575" hits="3"/>
+                <line number="579" hits="1"/>
+                <line number="580" hits="1"/>
+                <line number="582" hits="2"/>
+                <line number="586" hits="42"/>
               </lines>
             </method>
             <method name="onWarning" signature="string $warningMessage, ?string $sql" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="589" hits="14"/>
+                <line number="591" hits="14"/>
               </lines>
             </method>
             <method name="onError" signature="sql\MydbException $exception, ?string $sql" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="597" hits="15"/>
                 <line number="599" hits="15"/>
+                <line number="601" hits="15"/>
               </lines>
             </method>
             <method name="connect" signature="int $retry" line-rate="1" branch-rate="0" complexity="19">
               <lines>
-                <line number="613" hits="76"/>
-                <line number="614" hits="35"/>
-                <line number="617" hits="61"/>
-                <line number="618" hits="61"/>
+                <line number="615" hits="76"/>
+                <line number="616" hits="35"/>
                 <line number="619" hits="61"/>
+                <line number="620" hits="61"/>
                 <line number="621" hits="61"/>
-                <line number="622" hits="56"/>
+                <line number="623" hits="61"/>
                 <line number="624" hits="56"/>
-                <line number="625" hits="56"/>
+                <line number="626" hits="56"/>
                 <line number="627" hits="56"/>
-                <line number="628" hits="56"/>
                 <line number="629" hits="56"/>
                 <line number="630" hits="56"/>
                 <line number="631" hits="56"/>
@@ -296,40 +299,42 @@
                 <line number="637" hits="56"/>
                 <line number="638" hits="56"/>
                 <line number="639" hits="56"/>
+                <line number="640" hits="56"/>
                 <line number="641" hits="56"/>
-                <line number="644" hits="61"/>
-                <line number="645" hits="12"/>
-                <line number="646" hits="12"/>
+                <line number="643" hits="56"/>
+                <line number="646" hits="61"/>
+                <line number="647" hits="12"/>
                 <line number="648" hits="12"/>
-                <line number="649" hits="12"/>
                 <line number="650" hits="12"/>
                 <line number="651" hits="12"/>
+                <line number="652" hits="12"/>
                 <line number="653" hits="12"/>
-                <line number="654" hits="1"/>
-                <line number="657" hits="11"/>
+                <line number="655" hits="12"/>
+                <line number="656" hits="1"/>
                 <line number="659" hits="11"/>
-                <line number="660" hits="3"/>
+                <line number="661" hits="11"/>
                 <line number="662" hits="3"/>
-                <line number="665" hits="10"/>
-                <line number="668" hits="50"/>
+                <line number="664" hits="3"/>
+                <line number="667" hits="10"/>
                 <line number="670" hits="50"/>
-                <line number="671" hits="1"/>
-                <line number="686" hits="49"/>
-                <line number="687" hits="49"/>
+                <line number="672" hits="50"/>
+                <line number="673" hits="1"/>
                 <line number="688" hits="49"/>
                 <line number="689" hits="49"/>
                 <line number="690" hits="49"/>
                 <line number="691" hits="49"/>
                 <line number="692" hits="49"/>
                 <line number="693" hits="49"/>
+                <line number="694" hits="49"/>
                 <line number="695" hits="49"/>
-                <line number="696" hits="1"/>
-                <line number="699" hits="48"/>
-                <line number="700" hits="48"/>
-                <line number="701" hits="1"/>
-                <line number="704" hits="47"/>
-                <line number="705" hits="1"/>
-                <line number="708" hits="46"/>
+                <line number="697" hits="49"/>
+                <line number="698" hits="1"/>
+                <line number="701" hits="48"/>
+                <line number="702" hits="48"/>
+                <line number="703" hits="1"/>
+                <line number="706" hits="47"/>
+                <line number="707" hits="1"/>
+                <line number="710" hits="46"/>
               </lines>
             </method>
           </methods>
@@ -355,151 +360,154 @@
             <line number="142" hits="1"/>
             <line number="143" hits="1"/>
             <line number="144" hits="1"/>
-            <line number="150" hits="38"/>
-            <line number="153" hits="1"/>
-            <line number="163" hits="19"/>
-            <line number="164" hits="2"/>
-            <line number="168" hits="17"/>
-            <line number="170" hits="17"/>
-            <line number="171" hits="4"/>
-            <line number="174" hits="13"/>
-            <line number="176" hits="13"/>
+            <line number="147" hits="38"/>
+            <line number="150" hits="1"/>
+            <line number="160" hits="19"/>
+            <line number="161" hits="2"/>
+            <line number="165" hits="17"/>
+            <line number="167" hits="17"/>
+            <line number="168" hits="4"/>
+            <line number="171" hits="13"/>
+            <line number="173" hits="13"/>
+            <line number="184" hits="3"/>
+            <line number="186" hits="3"/>
             <line number="187" hits="3"/>
-            <line number="189" hits="3"/>
-            <line number="190" hits="3"/>
-            <line number="191" hits="2"/>
-            <line number="192" hits="1"/>
+            <line number="188" hits="2"/>
+            <line number="189" hits="1"/>
+            <line number="191" hits="3"/>
+            <line number="192" hits="3"/>
+            <line number="193" hits="3"/>
             <line number="194" hits="3"/>
-            <line number="195" hits="3"/>
-            <line number="196" hits="3"/>
-            <line number="197" hits="3"/>
-            <line number="198" hits="2"/>
-            <line number="200" hits="2"/>
-            <line number="204" hits="3"/>
-            <line number="205" hits="1"/>
-            <line number="208" hits="2"/>
+            <line number="195" hits="2"/>
+            <line number="197" hits="2"/>
+            <line number="201" hits="3"/>
+            <line number="202" hits="1"/>
+            <line number="205" hits="2"/>
+            <line number="216" hits="2"/>
+            <line number="218" hits="2"/>
             <line number="219" hits="2"/>
+            <line number="220" hits="2"/>
             <line number="221" hits="2"/>
-            <line number="234" hits="5"/>
-            <line number="235" hits="2"/>
-            <line number="238" hits="3"/>
-            <line number="249" hits="5"/>
+            <line number="222" hits="2"/>
+            <line number="223" hits="2"/>
+            <line number="236" hits="5"/>
+            <line number="237" hits="2"/>
+            <line number="240" hits="3"/>
             <line number="251" hits="5"/>
-            <line number="252" hits="1"/>
-            <line number="255" hits="4"/>
-            <line number="256" hits="4"/>
-            <line number="257" hits="3"/>
-            <line number="258" hits="2"/>
-            <line number="262" hits="4"/>
-            <line number="271" hits="19"/>
-            <line number="272" hits="1"/>
-            <line number="275" hits="18"/>
-            <line number="276" hits="3"/>
-            <line number="277" hits="2"/>
-            <line number="279" hits="1"/>
-            <line number="281" hits="15"/>
-            <line number="282" hits="14"/>
-            <line number="284" hits="1"/>
-            <line number="294" hits="15"/>
-            <line number="295" hits="1"/>
-            <line number="298" hits="14"/>
-            <line number="299" hits="13"/>
-            <line number="302" hits="1"/>
-            <line number="312" hits="4"/>
-            <line number="313" hits="1"/>
-            <line number="316" hits="3"/>
-            <line number="317" hits="2"/>
-            <line number="320" hits="1"/>
-            <line number="329" hits="101"/>
-            <line number="330" hits="71"/>
-            <line number="340" hits="54"/>
-            <line number="345" hits="49"/>
-            <line number="346" hits="2"/>
-            <line number="347" hits="47"/>
-            <line number="349" hits="49"/>
-            <line number="350" hits="2"/>
-            <line number="358" hits="52"/>
-            <line number="359" hits="1"/>
-            <line number="361" hits="4"/>
-            <line number="362" hits="3"/>
-            <line number="363" hits="1"/>
-            <line number="364" hits="1"/>
-            <line number="367" hits="50"/>
-            <line number="368" hits="31"/>
-            <line number="371" hits="19"/>
-            <line number="381" hits="3"/>
-            <line number="391" hits="6"/>
-            <line number="392" hits="5"/>
-            <line number="395" hits="1"/>
-            <line number="405" hits="33"/>
-            <line number="414" hits="4"/>
-            <line number="415" hits="3"/>
-            <line number="416" hits="3"/>
-            <line number="417" hits="1"/>
-            <line number="420" hits="2"/>
-            <line number="423" hits="1"/>
-            <line number="432" hits="6"/>
-            <line number="433" hits="5"/>
-            <line number="434" hits="5"/>
-            <line number="435" hits="1"/>
-            <line number="438" hits="4"/>
-            <line number="441" hits="1"/>
-            <line number="450" hits="2"/>
-            <line number="451" hits="2"/>
-            <line number="452" hits="1"/>
-            <line number="455" hits="1"/>
-            <line number="465" hits="2"/>
+            <line number="253" hits="5"/>
+            <line number="254" hits="1"/>
+            <line number="257" hits="4"/>
+            <line number="258" hits="4"/>
+            <line number="259" hits="3"/>
+            <line number="260" hits="2"/>
+            <line number="264" hits="4"/>
+            <line number="273" hits="19"/>
+            <line number="274" hits="1"/>
+            <line number="277" hits="18"/>
+            <line number="278" hits="3"/>
+            <line number="279" hits="2"/>
+            <line number="281" hits="1"/>
+            <line number="283" hits="15"/>
+            <line number="284" hits="14"/>
+            <line number="286" hits="1"/>
+            <line number="296" hits="15"/>
+            <line number="297" hits="1"/>
+            <line number="300" hits="14"/>
+            <line number="301" hits="13"/>
+            <line number="304" hits="1"/>
+            <line number="314" hits="4"/>
+            <line number="315" hits="1"/>
+            <line number="318" hits="3"/>
+            <line number="319" hits="2"/>
+            <line number="322" hits="1"/>
+            <line number="331" hits="101"/>
+            <line number="332" hits="71"/>
+            <line number="342" hits="54"/>
+            <line number="347" hits="49"/>
+            <line number="348" hits="2"/>
+            <line number="349" hits="47"/>
+            <line number="351" hits="49"/>
+            <line number="352" hits="2"/>
+            <line number="360" hits="52"/>
+            <line number="361" hits="1"/>
+            <line number="363" hits="4"/>
+            <line number="364" hits="3"/>
+            <line number="365" hits="1"/>
+            <line number="366" hits="1"/>
+            <line number="369" hits="50"/>
+            <line number="370" hits="31"/>
+            <line number="373" hits="19"/>
+            <line number="383" hits="3"/>
+            <line number="393" hits="6"/>
+            <line number="394" hits="5"/>
+            <line number="397" hits="1"/>
+            <line number="407" hits="33"/>
+            <line number="416" hits="4"/>
+            <line number="417" hits="3"/>
+            <line number="418" hits="3"/>
+            <line number="419" hits="1"/>
+            <line number="422" hits="2"/>
+            <line number="425" hits="1"/>
+            <line number="434" hits="6"/>
+            <line number="435" hits="5"/>
+            <line number="436" hits="5"/>
+            <line number="437" hits="1"/>
+            <line number="440" hits="4"/>
+            <line number="443" hits="1"/>
+            <line number="452" hits="2"/>
+            <line number="453" hits="2"/>
+            <line number="454" hits="1"/>
+            <line number="457" hits="1"/>
             <line number="467" hits="2"/>
-            <line number="468" hits="1"/>
-            <line number="471" hits="1"/>
-            <line number="483" hits="2"/>
-            <line number="484" hits="2"/>
-            <line number="501" hits="1"/>
-            <line number="502" hits="1"/>
-            <line number="512" hits="1"/>
+            <line number="469" hits="2"/>
+            <line number="470" hits="1"/>
+            <line number="473" hits="1"/>
+            <line number="485" hits="2"/>
+            <line number="486" hits="2"/>
+            <line number="503" hits="1"/>
+            <line number="504" hits="1"/>
             <line number="514" hits="1"/>
-            <line number="524" hits="1"/>
+            <line number="516" hits="1"/>
             <line number="526" hits="1"/>
-            <line number="536" hits="51"/>
-            <line number="537" hits="51"/>
+            <line number="528" hits="1"/>
+            <line number="538" hits="51"/>
             <line number="539" hits="51"/>
-            <line number="540" hits="51"/>
             <line number="541" hits="51"/>
             <line number="542" hits="51"/>
             <line number="543" hits="51"/>
+            <line number="544" hits="51"/>
             <line number="545" hits="51"/>
-            <line number="546" hits="51"/>
             <line number="547" hits="51"/>
-            <line number="548" hits="1"/>
-            <line number="551" hits="51"/>
-            <line number="559" hits="48"/>
-            <line number="560" hits="48"/>
-            <line number="561" hits="3"/>
-            <line number="564" hits="45"/>
-            <line number="565" hits="45"/>
-            <line number="566" hits="3"/>
-            <line number="567" hits="3"/>
-            <line number="571" hits="45"/>
-            <line number="572" hits="45"/>
-            <line number="573" hits="3"/>
-            <line number="577" hits="1"/>
-            <line number="578" hits="1"/>
-            <line number="580" hits="2"/>
-            <line number="584" hits="42"/>
-            <line number="589" hits="14"/>
-            <line number="597" hits="15"/>
+            <line number="548" hits="51"/>
+            <line number="549" hits="51"/>
+            <line number="550" hits="1"/>
+            <line number="553" hits="51"/>
+            <line number="561" hits="48"/>
+            <line number="562" hits="48"/>
+            <line number="563" hits="3"/>
+            <line number="566" hits="45"/>
+            <line number="567" hits="45"/>
+            <line number="568" hits="3"/>
+            <line number="569" hits="3"/>
+            <line number="573" hits="45"/>
+            <line number="574" hits="45"/>
+            <line number="575" hits="3"/>
+            <line number="579" hits="1"/>
+            <line number="580" hits="1"/>
+            <line number="582" hits="2"/>
+            <line number="586" hits="42"/>
+            <line number="591" hits="14"/>
             <line number="599" hits="15"/>
-            <line number="613" hits="76"/>
-            <line number="614" hits="35"/>
-            <line number="617" hits="61"/>
-            <line number="618" hits="61"/>
+            <line number="601" hits="15"/>
+            <line number="615" hits="76"/>
+            <line number="616" hits="35"/>
             <line number="619" hits="61"/>
+            <line number="620" hits="61"/>
             <line number="621" hits="61"/>
-            <line number="622" hits="56"/>
+            <line number="623" hits="61"/>
             <line number="624" hits="56"/>
-            <line number="625" hits="56"/>
+            <line number="626" hits="56"/>
             <line number="627" hits="56"/>
-            <line number="628" hits="56"/>
             <line number="629" hits="56"/>
             <line number="630" hits="56"/>
             <line number="631" hits="56"/>
@@ -511,40 +519,42 @@
             <line number="637" hits="56"/>
             <line number="638" hits="56"/>
             <line number="639" hits="56"/>
+            <line number="640" hits="56"/>
             <line number="641" hits="56"/>
-            <line number="644" hits="61"/>
-            <line number="645" hits="12"/>
-            <line number="646" hits="12"/>
+            <line number="643" hits="56"/>
+            <line number="646" hits="61"/>
+            <line number="647" hits="12"/>
             <line number="648" hits="12"/>
-            <line number="649" hits="12"/>
             <line number="650" hits="12"/>
             <line number="651" hits="12"/>
+            <line number="652" hits="12"/>
             <line number="653" hits="12"/>
-            <line number="654" hits="1"/>
-            <line number="657" hits="11"/>
+            <line number="655" hits="12"/>
+            <line number="656" hits="1"/>
             <line number="659" hits="11"/>
-            <line number="660" hits="3"/>
+            <line number="661" hits="11"/>
             <line number="662" hits="3"/>
-            <line number="665" hits="10"/>
-            <line number="668" hits="50"/>
+            <line number="664" hits="3"/>
+            <line number="667" hits="10"/>
             <line number="670" hits="50"/>
-            <line number="671" hits="1"/>
-            <line number="686" hits="49"/>
-            <line number="687" hits="49"/>
+            <line number="672" hits="50"/>
+            <line number="673" hits="1"/>
             <line number="688" hits="49"/>
             <line number="689" hits="49"/>
             <line number="690" hits="49"/>
             <line number="691" hits="49"/>
             <line number="692" hits="49"/>
             <line number="693" hits="49"/>
+            <line number="694" hits="49"/>
             <line number="695" hits="49"/>
-            <line number="696" hits="1"/>
-            <line number="699" hits="48"/>
-            <line number="700" hits="48"/>
-            <line number="701" hits="1"/>
-            <line number="704" hits="47"/>
-            <line number="705" hits="1"/>
-            <line number="708" hits="46"/>
+            <line number="697" hits="49"/>
+            <line number="698" hits="1"/>
+            <line number="701" hits="48"/>
+            <line number="702" hits="48"/>
+            <line number="703" hits="1"/>
+            <line number="706" hits="47"/>
+            <line number="707" hits="1"/>
+            <line number="710" hits="46"/>
           </lines>
         </class>
       </classes>
@@ -625,65 +635,68 @@
                 <line number="95" hits="50"/>
               </lines>
             </method>
-            <method name="set_error_handler" signature="?callable $callback, int $error_levels" line-rate="1" branch-rate="0" complexity="1">
+            <method name="set_error_handler" signature="?callable $callback, int $error_levels" line-rate="1" branch-rate="0" complexity="2">
               <lines>
+                <line number="108" hits="50"/>
                 <line number="109" hits="50"/>
+                <line number="110" hits="50"/>
                 <line number="111" hits="50"/>
+                <line number="112" hits="50"/>
+                <line number="113" hits="50"/>
+                <line number="114" hits="50"/>
+                <line number="115" hits="3"/>
+                <line number="116" hits="3"/>
+                <line number="119" hits="2"/>
+                <line number="120" hits="50"/>
+                <line number="122" hits="50"/>
               </lines>
             </method>
             <method name="setMysqlndNetReadTimeout" signature="string $timeoutSeconds" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="140" hits="51"/>
+                <line number="151" hits="51"/>
               </lines>
             </method>
             <method name="error_reporting" signature="int $level" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="153" hits="52"/>
+                <line number="164" hits="52"/>
               </lines>
             </method>
             <method name="ignore_user_abort" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="166" hits="51"/>
+                <line number="177" hits="51"/>
               </lines>
             </method>
             <method name="ini_set" signature="string $key, string $value" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="180" hits="51"/>
-                <line number="181" hits="51"/>
-                <line number="187" hits="51"/>
+                <line number="191" hits="51"/>
+                <line number="192" hits="51"/>
+                <line number="198" hits="51"/>
               </lines>
             </method>
             <method name="endSignalsTrap" signature="" line-rate="1" branch-rate="0" complexity="5">
               <lines>
-                <line number="205" hits="54"/>
-                <line number="211" hits="54"/>
-                <line number="212" hits="54"/>
                 <line number="216" hits="54"/>
-                <line number="221" hits="54"/>
-                <line number="226" hits="54"/>
-                <line number="228" hits="54"/>
-                <line number="230" hits="54"/>
-                <line number="231" hits="4"/>
+                <line number="222" hits="54"/>
+                <line number="223" hits="54"/>
+                <line number="227" hits="54"/>
                 <line number="232" hits="54"/>
+                <line number="237" hits="54"/>
+                <line number="239" hits="54"/>
+                <line number="241" hits="54"/>
+                <line number="242" hits="4"/>
+                <line number="243" hits="54"/>
               </lines>
             </method>
             <method name="startSignalsTrap" signature="" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="245" hits="54"/>
-                <line number="247" hits="54"/>
-                <line number="248" hits="4"/>
-                <line number="249" hits="54"/>
-                <line number="251" hits="54"/>
-                <line number="252" hits="54"/>
-                <line number="253" hits="54"/>
-                <line number="255" hits="54"/>
-              </lines>
-            </method>
-            <method name="getNullErrorHandler" signature="" line-rate="1" branch-rate="0" complexity="1">
-              <lines>
-                <line number="270" hits="50"/>
-                <line number="271" hits="3"/>
-                <line number="272" hits="50"/>
+                <line number="256" hits="54"/>
+                <line number="258" hits="54"/>
+                <line number="259" hits="4"/>
+                <line number="260" hits="54"/>
+                <line number="262" hits="54"/>
+                <line number="263" hits="54"/>
+                <line number="264" hits="54"/>
+                <line number="266" hits="54"/>
               </lines>
             </method>
           </methods>
@@ -691,35 +704,42 @@
             <line number="76" hits="14"/>
             <line number="82" hits="14"/>
             <line number="95" hits="50"/>
+            <line number="108" hits="50"/>
             <line number="109" hits="50"/>
+            <line number="110" hits="50"/>
             <line number="111" hits="50"/>
-            <line number="140" hits="51"/>
-            <line number="153" hits="52"/>
-            <line number="166" hits="51"/>
-            <line number="180" hits="51"/>
-            <line number="181" hits="51"/>
-            <line number="187" hits="51"/>
-            <line number="205" hits="54"/>
-            <line number="211" hits="54"/>
-            <line number="212" hits="54"/>
+            <line number="112" hits="50"/>
+            <line number="113" hits="50"/>
+            <line number="114" hits="50"/>
+            <line number="115" hits="3"/>
+            <line number="116" hits="3"/>
+            <line number="119" hits="2"/>
+            <line number="120" hits="50"/>
+            <line number="122" hits="50"/>
+            <line number="151" hits="51"/>
+            <line number="164" hits="52"/>
+            <line number="177" hits="51"/>
+            <line number="191" hits="51"/>
+            <line number="192" hits="51"/>
+            <line number="198" hits="51"/>
             <line number="216" hits="54"/>
-            <line number="221" hits="54"/>
-            <line number="226" hits="54"/>
-            <line number="228" hits="54"/>
-            <line number="230" hits="54"/>
-            <line number="231" hits="4"/>
+            <line number="222" hits="54"/>
+            <line number="223" hits="54"/>
+            <line number="227" hits="54"/>
             <line number="232" hits="54"/>
-            <line number="245" hits="54"/>
-            <line number="247" hits="54"/>
-            <line number="248" hits="4"/>
-            <line number="249" hits="54"/>
-            <line number="251" hits="54"/>
-            <line number="252" hits="54"/>
-            <line number="253" hits="54"/>
-            <line number="255" hits="54"/>
-            <line number="270" hits="50"/>
-            <line number="271" hits="3"/>
-            <line number="272" hits="50"/>
+            <line number="237" hits="54"/>
+            <line number="239" hits="54"/>
+            <line number="241" hits="54"/>
+            <line number="242" hits="4"/>
+            <line number="243" hits="54"/>
+            <line number="256" hits="54"/>
+            <line number="258" hits="54"/>
+            <line number="259" hits="4"/>
+            <line number="260" hits="54"/>
+            <line number="262" hits="54"/>
+            <line number="263" hits="54"/>
+            <line number="264" hits="54"/>
+            <line number="266" hits="54"/>
           </lines>
         </class>
       </classes>
@@ -1203,656 +1223,680 @@
     <package name="MydbListenerInterface.php" line-rate="0" branch-rate="0" complexity="0">
       <classes/>
     </package>
-    <package name="MydbLogger.php" line-rate="0.93506493506494" branch-rate="0" complexity="48">
+    <package name="MydbLogger.php" line-rate="0.93023255813953" branch-rate="0" complexity="49">
       <classes>
-        <class name="sql\MydbLogger" filename="MydbLogger.php" line-rate="0.93506493506494" branch-rate="0" complexity="48">
+        <class name="sql\MydbLogger" filename="MydbLogger.php" line-rate="0.93023255813953" branch-rate="0" complexity="49">
           <methods>
             <method name="__construct" signature="$stdout, $stderr, string $stdeol" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="83" hits="20"/>
                 <line number="84" hits="20"/>
                 <line number="85" hits="20"/>
+                <line number="86" hits="20"/>
               </lines>
             </method>
             <method name="__destruct" signature="" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="90" hits="20"/>
                 <line number="91" hits="20"/>
                 <line number="92" hits="20"/>
-                <line number="95" hits="20"/>
+                <line number="93" hits="20"/>
                 <line number="96" hits="20"/>
                 <line number="97" hits="20"/>
+                <line number="98" hits="20"/>
               </lines>
             </method>
             <method name="emergency" signature="$message, array $context" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="109" hits="3"/>
+                <line number="110" hits="3"/>
               </lines>
             </method>
             <method name="alert" signature="$message, array $context" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="120" hits="3"/>
+                <line number="121" hits="3"/>
               </lines>
             </method>
             <method name="critical" signature="$message, array $context" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="131" hits="3"/>
+                <line number="132" hits="3"/>
               </lines>
             </method>
             <method name="error" signature="$message, array $context" line-rate="0" branch-rate="0" complexity="1">
               <lines>
-                <line number="142" hits="0"/>
+                <line number="143" hits="0"/>
               </lines>
             </method>
             <method name="warning" signature="$message, array $context" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="153" hits="8"/>
+                <line number="154" hits="8"/>
               </lines>
             </method>
             <method name="notice" signature="$message, array $context" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="164" hits="3"/>
+                <line number="165" hits="3"/>
               </lines>
             </method>
             <method name="info" signature="$message, array $context" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="175" hits="7"/>
+                <line number="176" hits="7"/>
               </lines>
             </method>
             <method name="debug" signature="$message, array $context" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="186" hits="3"/>
+                <line number="187" hits="3"/>
               </lines>
             </method>
             <method name="log" signature="$level, $message, array $context" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="198" hits="17"/>
+                <line number="199" hits="17"/>
               </lines>
             </method>
             <method name="route" signature="string $level" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="209" hits="17"/>
                 <line number="210" hits="17"/>
                 <line number="211" hits="17"/>
                 <line number="212" hits="17"/>
                 <line number="213" hits="17"/>
+                <line number="214" hits="17"/>
               </lines>
             </method>
             <method name="render" signature="$message, array $context" line-rate="1" branch-rate="0" complexity="5">
               <lines>
-                <line number="222" hits="17"/>
-                <line number="224" hits="17"/>
-                <line number="225" hits="16"/>
+                <line number="223" hits="17"/>
+                <line number="225" hits="17"/>
                 <line number="226" hits="16"/>
                 <line number="227" hits="16"/>
-                <line number="230" hits="17"/>
-                <line number="231" hits="3"/>
-                <line number="234" hits="17"/>
+                <line number="228" hits="16"/>
+                <line number="231" hits="17"/>
+                <line number="232" hits="3"/>
+                <line number="235" hits="17"/>
               </lines>
             </method>
-            <method name="interpolate" signature="string $message, array $context" line-rate="1" branch-rate="0" complexity="5">
+            <method name="interpolate" signature="string $message, array $context" line-rate="0.95238095238095" branch-rate="0" complexity="6">
               <lines>
-                <line number="245" hits="16"/>
                 <line number="246" hits="16"/>
-                <line number="251" hits="16"/>
+                <line number="247" hits="16"/>
+                <line number="249" hits="16"/>
+                <line number="250" hits="16"/>
+                <line number="251" hits="3"/>
                 <line number="252" hits="3"/>
                 <line number="253" hits="3"/>
-                <line number="254" hits="3"/>
-                <line number="255" hits="3"/>
-                <line number="256" hits="1"/>
-                <line number="261" hits="16"/>
-                <line number="262" hits="16"/>
-                <line number="263" hits="16"/>
-                <line number="264" hits="16"/>
+                <line number="254" hits="16"/>
+                <line number="255" hits="16"/>
+                <line number="256" hits="16"/>
+                <line number="258" hits="16"/>
+                <line number="259" hits="3"/>
+                <line number="260" hits="0"/>
+                <line number="263" hits="3"/>
+                <line number="264" hits="3"/>
+                <line number="265" hits="1"/>
+                <line number="266" hits="1"/>
+                <line number="270" hits="16"/>
+                <line number="271" hits="16"/>
+                <line number="272" hits="16"/>
+                <line number="273" hits="16"/>
               </lines>
             </method>
             <method name="checkStreamResource" signature="$stream" line-rate="1" branch-rate="0" complexity="7">
               <lines>
-                <line number="279" hits="17"/>
-                <line number="280" hits="2"/>
-                <line number="283" hits="15"/>
-                <line number="285" hits="15"/>
-                <line number="286" hits="2"/>
-                <line number="289" hits="13"/>
-                <line number="290" hits="2"/>
+                <line number="288" hits="17"/>
+                <line number="289" hits="2"/>
+                <line number="292" hits="15"/>
+                <line number="294" hits="15"/>
+                <line number="295" hits="2"/>
+                <line number="298" hits="13"/>
+                <line number="299" hits="2"/>
               </lines>
             </method>
             <method name="writeOutput" signature="$stream, string $data" line-rate="1" branch-rate="0" complexity="7">
               <lines>
-                <line number="302" hits="17"/>
-                <line number="303" hits="6"/>
-                <line number="306" hits="17"/>
-                <line number="308" hits="11"/>
-                <line number="309" hits="11"/>
-                <line number="311" hits="11"/>
-                <line number="312" hits="11"/>
-                <line number="313" hits="11"/>
-                <line number="319" hits="11"/>
+                <line number="311" hits="17"/>
+                <line number="312" hits="6"/>
+                <line number="315" hits="17"/>
+                <line number="317" hits="11"/>
+                <line number="318" hits="11"/>
+                <line number="320" hits="11"/>
                 <line number="321" hits="11"/>
+                <line number="322" hits="11"/>
+                <line number="328" hits="11"/>
+                <line number="330" hits="11"/>
               </lines>
             </method>
             <method name="fwrite" signature="$stream, string $data" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="334" hits="11"/>
-                <line number="339" hits="11"/>
-                <line number="340" hits="11"/>
-                <line number="346" hits="11"/>
-                <line number="347" hits="11"/>
+                <line number="343" hits="11"/>
+                <line number="348" hits="11"/>
                 <line number="349" hits="11"/>
-                <line number="351" hits="11"/>
-                <line number="353" hits="11"/>
-                <line number="359" hits="11"/>
+                <line number="355" hits="11"/>
+                <line number="356" hits="11"/>
+                <line number="358" hits="11"/>
+                <line number="360" hits="11"/>
+                <line number="362" hits="11"/>
+                <line number="368" hits="11"/>
               </lines>
             </method>
             <method name="formatter" signature="$var" line-rate="0.66666666666667" branch-rate="0" complexity="2">
               <lines>
-                <line number="367" hits="16"/>
-                <line number="368" hits="16"/>
-                <line number="371" hits="0"/>
+                <line number="376" hits="16"/>
+                <line number="377" hits="16"/>
+                <line number="380" hits="0"/>
               </lines>
             </method>
             <method name="openDefaultStream" signature="string $target" line-rate="0.4" branch-rate="0" complexity="3">
               <lines>
-                <line number="382" hits="3"/>
-                <line number="383" hits="0"/>
-                <line number="384" hits="0"/>
-                <line number="386" hits="0"/>
-                <line number="389" hits="3"/>
+                <line number="391" hits="3"/>
+                <line number="392" hits="0"/>
+                <line number="393" hits="0"/>
+                <line number="395" hits="0"/>
+                <line number="398" hits="3"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="83" hits="20"/>
             <line number="84" hits="20"/>
             <line number="85" hits="20"/>
-            <line number="90" hits="20"/>
+            <line number="86" hits="20"/>
             <line number="91" hits="20"/>
             <line number="92" hits="20"/>
-            <line number="95" hits="20"/>
+            <line number="93" hits="20"/>
             <line number="96" hits="20"/>
             <line number="97" hits="20"/>
-            <line number="109" hits="3"/>
-            <line number="120" hits="3"/>
-            <line number="131" hits="3"/>
-            <line number="142" hits="0"/>
-            <line number="153" hits="8"/>
-            <line number="164" hits="3"/>
-            <line number="175" hits="7"/>
-            <line number="186" hits="3"/>
-            <line number="198" hits="17"/>
-            <line number="209" hits="17"/>
+            <line number="98" hits="20"/>
+            <line number="110" hits="3"/>
+            <line number="121" hits="3"/>
+            <line number="132" hits="3"/>
+            <line number="143" hits="0"/>
+            <line number="154" hits="8"/>
+            <line number="165" hits="3"/>
+            <line number="176" hits="7"/>
+            <line number="187" hits="3"/>
+            <line number="199" hits="17"/>
             <line number="210" hits="17"/>
             <line number="211" hits="17"/>
             <line number="212" hits="17"/>
             <line number="213" hits="17"/>
-            <line number="222" hits="17"/>
-            <line number="224" hits="17"/>
-            <line number="225" hits="16"/>
+            <line number="214" hits="17"/>
+            <line number="223" hits="17"/>
+            <line number="225" hits="17"/>
             <line number="226" hits="16"/>
             <line number="227" hits="16"/>
-            <line number="230" hits="17"/>
-            <line number="231" hits="3"/>
-            <line number="234" hits="17"/>
-            <line number="245" hits="16"/>
+            <line number="228" hits="16"/>
+            <line number="231" hits="17"/>
+            <line number="232" hits="3"/>
+            <line number="235" hits="17"/>
             <line number="246" hits="16"/>
-            <line number="251" hits="16"/>
+            <line number="247" hits="16"/>
+            <line number="249" hits="16"/>
+            <line number="250" hits="16"/>
+            <line number="251" hits="3"/>
             <line number="252" hits="3"/>
             <line number="253" hits="3"/>
-            <line number="254" hits="3"/>
-            <line number="255" hits="3"/>
-            <line number="256" hits="1"/>
-            <line number="261" hits="16"/>
-            <line number="262" hits="16"/>
-            <line number="263" hits="16"/>
-            <line number="264" hits="16"/>
-            <line number="279" hits="17"/>
-            <line number="280" hits="2"/>
-            <line number="283" hits="15"/>
-            <line number="285" hits="15"/>
-            <line number="286" hits="2"/>
-            <line number="289" hits="13"/>
-            <line number="290" hits="2"/>
-            <line number="302" hits="17"/>
-            <line number="303" hits="6"/>
-            <line number="306" hits="17"/>
-            <line number="308" hits="11"/>
-            <line number="309" hits="11"/>
-            <line number="311" hits="11"/>
-            <line number="312" hits="11"/>
-            <line number="313" hits="11"/>
-            <line number="319" hits="11"/>
+            <line number="254" hits="16"/>
+            <line number="255" hits="16"/>
+            <line number="256" hits="16"/>
+            <line number="258" hits="16"/>
+            <line number="259" hits="3"/>
+            <line number="260" hits="0"/>
+            <line number="263" hits="3"/>
+            <line number="264" hits="3"/>
+            <line number="265" hits="1"/>
+            <line number="266" hits="1"/>
+            <line number="270" hits="16"/>
+            <line number="271" hits="16"/>
+            <line number="272" hits="16"/>
+            <line number="273" hits="16"/>
+            <line number="288" hits="17"/>
+            <line number="289" hits="2"/>
+            <line number="292" hits="15"/>
+            <line number="294" hits="15"/>
+            <line number="295" hits="2"/>
+            <line number="298" hits="13"/>
+            <line number="299" hits="2"/>
+            <line number="311" hits="17"/>
+            <line number="312" hits="6"/>
+            <line number="315" hits="17"/>
+            <line number="317" hits="11"/>
+            <line number="318" hits="11"/>
+            <line number="320" hits="11"/>
             <line number="321" hits="11"/>
-            <line number="334" hits="11"/>
-            <line number="339" hits="11"/>
-            <line number="340" hits="11"/>
-            <line number="346" hits="11"/>
-            <line number="347" hits="11"/>
+            <line number="322" hits="11"/>
+            <line number="328" hits="11"/>
+            <line number="330" hits="11"/>
+            <line number="343" hits="11"/>
+            <line number="348" hits="11"/>
             <line number="349" hits="11"/>
-            <line number="351" hits="11"/>
-            <line number="353" hits="11"/>
-            <line number="359" hits="11"/>
-            <line number="367" hits="16"/>
-            <line number="368" hits="16"/>
-            <line number="371" hits="0"/>
-            <line number="382" hits="3"/>
-            <line number="383" hits="0"/>
-            <line number="384" hits="0"/>
-            <line number="386" hits="0"/>
-            <line number="389" hits="3"/>
+            <line number="355" hits="11"/>
+            <line number="356" hits="11"/>
+            <line number="358" hits="11"/>
+            <line number="360" hits="11"/>
+            <line number="362" hits="11"/>
+            <line number="368" hits="11"/>
+            <line number="376" hits="16"/>
+            <line number="377" hits="16"/>
+            <line number="380" hits="0"/>
+            <line number="391" hits="3"/>
+            <line number="392" hits="0"/>
+            <line number="393" hits="0"/>
+            <line number="395" hits="0"/>
+            <line number="398" hits="3"/>
           </lines>
         </class>
       </classes>
     </package>
-    <package name="MydbMysqli.php" line-rate="0.99295774647887" branch-rate="0" complexity="88">
+    <package name="MydbMysqli.php" line-rate="0.99300699300699" branch-rate="0" complexity="89">
       <classes>
-        <class name="sql\MydbMysqli" filename="MydbMysqli.php" line-rate="0.99295774647887" branch-rate="0" complexity="88">
+        <class name="sql\MydbMysqli" filename="MydbMysqli.php" line-rate="0.99300699300699" branch-rate="0" complexity="89">
           <methods>
             <method name="__construct" signature="?mysqli $resource" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="181" hits="72"/>
-                <line number="182" hits="70"/>
-                <line number="185" hits="2"/>
+                <line number="182" hits="72"/>
+                <line number="183" hits="70"/>
+                <line number="186" hits="2"/>
               </lines>
             </method>
             <method name="init" signature="" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="196" hits="52"/>
-                <line number="200" hits="1"/>
-                <line number="207" hits="51"/>
+                <line number="197" hits="52"/>
+                <line number="201" hits="1"/>
                 <line number="208" hits="51"/>
-                <line number="210" hits="51"/>
+                <line number="209" hits="51"/>
+                <line number="211" hits="51"/>
               </lines>
             </method>
             <method name="setTransportOptions" signature="sql\MydbOptionsInterface $options, sql\MydbEnvironmentInterface $environment" line-rate="1" branch-rate="0" complexity="8">
               <lines>
-                <line number="222" hits="52"/>
-                <line number="223" hits="1"/>
-                <line number="226" hits="51"/>
+                <line number="223" hits="52"/>
+                <line number="224" hits="1"/>
                 <line number="227" hits="51"/>
-                <line number="235" hits="51"/>
+                <line number="228" hits="51"/>
                 <line number="236" hits="51"/>
                 <line number="237" hits="51"/>
-                <line number="240" hits="51"/>
+                <line number="238" hits="51"/>
                 <line number="241" hits="51"/>
                 <line number="242" hits="51"/>
-                <line number="244" hits="51"/>
+                <line number="243" hits="51"/>
                 <line number="245" hits="51"/>
                 <line number="246" hits="51"/>
                 <line number="247" hits="51"/>
                 <line number="248" hits="51"/>
                 <line number="249" hits="51"/>
                 <line number="250" hits="51"/>
+                <line number="251" hits="51"/>
               </lines>
             </method>
             <method name="setTransactionIsolationLevel" signature="string $level" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="262" hits="2"/>
+                <line number="263" hits="2"/>
               </lines>
             </method>
             <method name="isTransactionOpen" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="271" hits="45"/>
+                <line number="272" hits="45"/>
               </lines>
             </method>
             <method name="isConnected" signature="" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="277" hits="61"/>
+                <line number="278" hits="61"/>
               </lines>
             </method>
             <method name="getMysqli" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="283" hits="1"/>
+                <line number="284" hits="1"/>
               </lines>
             </method>
             <method name="realQuery" signature="string $query" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="292" hits="46"/>
-                <line number="293" hits="45"/>
-                <line number="296" hits="1"/>
+                <line number="293" hits="46"/>
+                <line number="294" hits="45"/>
+                <line number="297" hits="1"/>
               </lines>
             </method>
             <method name="readServerResponse" signature="sql\MydbEnvironmentInterface $environment" line-rate="1" branch-rate="0" complexity="8">
               <lines>
-                <line number="305" hits="41"/>
-                <line number="306" hits="40"/>
-                <line number="308" hits="40"/>
-                <line number="310" hits="40"/>
-                <line number="312" hits="40"/>
-                <line number="314" hits="40"/>
-                <line number="315" hits="1"/>
-                <line number="317" hits="40"/>
-                <line number="318" hits="2"/>
-                <line number="322" hits="40"/>
-                <line number="324" hits="40"/>
+                <line number="306" hits="41"/>
+                <line number="307" hits="40"/>
+                <line number="309" hits="40"/>
+                <line number="311" hits="40"/>
+                <line number="313" hits="40"/>
+                <line number="315" hits="40"/>
+                <line number="316" hits="1"/>
+                <line number="318" hits="40"/>
+                <line number="319" hits="2"/>
+                <line number="323" hits="40"/>
                 <line number="325" hits="40"/>
-                <line number="326" hits="2"/>
-                <line number="329" hits="40"/>
+                <line number="326" hits="40"/>
+                <line number="327" hits="2"/>
                 <line number="330" hits="40"/>
-                <line number="331" hits="2"/>
-                <line number="334" hits="40"/>
-                <line number="337" hits="1"/>
+                <line number="331" hits="40"/>
+                <line number="332" hits="2"/>
+                <line number="335" hits="40"/>
+                <line number="338" hits="1"/>
               </lines>
             </method>
             <method name="realEscapeString" signature="string $string" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="346" hits="6"/>
-                <line number="347" hits="1"/>
-                <line number="350" hits="5"/>
+                <line number="347" hits="6"/>
+                <line number="348" hits="1"/>
+                <line number="351" hits="5"/>
               </lines>
             </method>
             <method name="beginTransactionReadwrite" signature="" line-rate="1" branch-rate="0" complexity="4">
               <lines>
-                <line number="359" hits="15"/>
-                <line number="360" hits="14"/>
+                <line number="360" hits="15"/>
                 <line number="361" hits="14"/>
                 <line number="362" hits="14"/>
-                <line number="364" hits="14"/>
-                <line number="367" hits="2"/>
+                <line number="363" hits="14"/>
+                <line number="365" hits="14"/>
+                <line number="368" hits="2"/>
               </lines>
             </method>
             <method name="beginTransactionReadonly" signature="" line-rate="1" branch-rate="0" complexity="4">
               <lines>
-                <line number="376" hits="2"/>
-                <line number="377" hits="1"/>
+                <line number="377" hits="2"/>
                 <line number="378" hits="1"/>
                 <line number="379" hits="1"/>
-                <line number="381" hits="1"/>
-                <line number="384" hits="1"/>
+                <line number="380" hits="1"/>
+                <line number="382" hits="1"/>
+                <line number="385" hits="1"/>
               </lines>
             </method>
             <method name="rollback" signature="" line-rate="1" branch-rate="0" complexity="4">
               <lines>
-                <line number="396" hits="14"/>
-                <line number="397" hits="13"/>
-                <line number="399" hits="13"/>
-                <line number="402" hits="1"/>
+                <line number="397" hits="14"/>
+                <line number="398" hits="13"/>
+                <line number="400" hits="13"/>
+                <line number="403" hits="1"/>
               </lines>
             </method>
             <method name="commitAndRelease" signature="" line-rate="1" branch-rate="0" complexity="4">
               <lines>
-                <line number="411" hits="45"/>
-                <line number="412" hits="44"/>
-                <line number="414" hits="44"/>
-                <line number="417" hits="1"/>
+                <line number="412" hits="45"/>
+                <line number="413" hits="44"/>
+                <line number="415" hits="44"/>
+                <line number="418" hits="1"/>
               </lines>
             </method>
             <method name="commit" signature="" line-rate="1" branch-rate="0" complexity="4">
               <lines>
-                <line number="423" hits="2"/>
-                <line number="424" hits="1"/>
-                <line number="426" hits="1"/>
-                <line number="429" hits="1"/>
+                <line number="424" hits="2"/>
+                <line number="425" hits="1"/>
+                <line number="427" hits="1"/>
+                <line number="430" hits="1"/>
               </lines>
             </method>
             <method name="realConnect" signature="string $host, string $username, string $password, string $dbname, ?int $port, ?string $socket, int $flags" line-rate="1" branch-rate="0" complexity="4">
               <lines>
-                <line number="442" hits="51"/>
                 <line number="443" hits="51"/>
-                <line number="445" hits="51"/>
-                <line number="446" hits="45"/>
-                <line number="448" hits="45"/>
-                <line number="452" hits="6"/>
+                <line number="444" hits="51"/>
+                <line number="446" hits="51"/>
+                <line number="447" hits="45"/>
+                <line number="449" hits="45"/>
+                <line number="453" hits="6"/>
               </lines>
             </method>
             <method name="mysqliReport" signature="int $level" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="458" hits="45"/>
+                <line number="459" hits="45"/>
               </lines>
             </method>
             <method name="close" signature="" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="464" hits="52"/>
-                <line number="465" hits="51"/>
-                <line number="469" hits="45"/>
+                <line number="465" hits="52"/>
+                <line number="466" hits="51"/>
                 <line number="470" hits="45"/>
-                <line number="473" hits="51"/>
-                <line number="475" hits="51"/>
-                <line number="478" hits="1"/>
+                <line number="471" hits="45"/>
+                <line number="474" hits="51"/>
+                <line number="476" hits="51"/>
+                <line number="479" hits="1"/>
               </lines>
             </method>
             <method name="getConnectErrno" signature="" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="484" hits="6"/>
                 <line number="485" hits="6"/>
                 <line number="486" hits="6"/>
+                <line number="487" hits="6"/>
               </lines>
             </method>
             <method name="getConnectError" signature="" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="492" hits="6"/>
                 <line number="493" hits="6"/>
                 <line number="494" hits="6"/>
+                <line number="495" hits="6"/>
               </lines>
             </method>
             <method name="isServerGone" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="500" hits="2"/>
+                <line number="501" hits="2"/>
               </lines>
             </method>
             <method name="getError" signature="" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="506" hits="40"/>
                 <line number="507" hits="40"/>
                 <line number="508" hits="40"/>
+                <line number="509" hits="40"/>
               </lines>
             </method>
             <method name="getErrNo" signature="" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="514" hits="40"/>
                 <line number="515" hits="40"/>
                 <line number="516" hits="40"/>
+                <line number="517" hits="40"/>
               </lines>
             </method>
             <method name="getAffectedRows" signature="" line-rate="1" branch-rate="0" complexity="4">
               <lines>
-                <line number="522" hits="7"/>
-                <line number="523" hits="6"/>
-                <line number="524" hits="1"/>
-                <line number="525" hits="7"/>
-                <line number="526" hits="6"/>
-                <line number="536" hits="1"/>
+                <line number="523" hits="7"/>
+                <line number="524" hits="6"/>
+                <line number="525" hits="1"/>
+                <line number="526" hits="7"/>
+                <line number="527" hits="6"/>
+                <line number="537" hits="1"/>
               </lines>
             </method>
             <method name="getInsertId" signature="" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="542" hits="5"/>
                 <line number="543" hits="5"/>
                 <line number="544" hits="5"/>
+                <line number="545" hits="5"/>
               </lines>
             </method>
             <method name="autocommit" signature="bool $enable" line-rate="1" branch-rate="0" complexity="4">
               <lines>
-                <line number="550" hits="46"/>
-                <line number="551" hits="45"/>
-                <line number="556" hits="1"/>
-                <line number="559" hits="45"/>
-                <line number="562" hits="1"/>
+                <line number="551" hits="46"/>
+                <line number="552" hits="45"/>
+                <line number="557" hits="1"/>
+                <line number="560" hits="45"/>
+                <line number="563" hits="1"/>
               </lines>
             </method>
             <method name="extractServerResponse" signature="sql\MydbEnvironmentInterface $environment, array $events" line-rate="1" branch-rate="0" complexity="3">
               <lines>
-                <line number="572" hits="41"/>
-                <line number="573" hits="1"/>
-                <line number="579" hits="40"/>
-                <line number="580" hits="2"/>
-                <line number="582" hits="2"/>
-                <line number="583" hits="40"/>
-                <line number="585" hits="40"/>
+                <line number="573" hits="41"/>
+                <line number="574" hits="1"/>
+                <line number="580" hits="40"/>
+                <line number="581" hits="2"/>
+                <line number="583" hits="2"/>
+                <line number="584" hits="40"/>
                 <line number="586" hits="40"/>
-                <line number="588" hits="40"/>
-                <line number="589" hits="13"/>
-                <line number="592" hits="38"/>
+                <line number="587" hits="40"/>
+                <line number="589" hits="40"/>
+                <line number="590" hits="13"/>
+                <line number="593" hits="38"/>
               </lines>
             </method>
             <method name="getWarnings" signature="" line-rate="0.88888888888889" branch-rate="0" complexity="3">
               <lines>
-                <line number="598" hits="2"/>
-                <line number="604" hits="1"/>
+                <line number="599" hits="2"/>
+                <line number="600" hits="1"/>
+                <line number="601" hits="1"/>
+                <line number="602" hits="0"/>
                 <line number="605" hits="1"/>
-                <line number="606" hits="0"/>
-                <line number="609" hits="1"/>
-                <line number="611" hits="1"/>
-                <line number="612" hits="1"/>
-                <line number="614" hits="1"/>
-                <line number="617" hits="1"/>
+                <line number="607" hits="1"/>
+                <line number="608" hits="1"/>
+                <line number="610" hits="1"/>
+                <line number="613" hits="1"/>
+              </lines>
+            </method>
+            <method name="getWarningsResult" signature="mysqli $mysqli" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="625" hits="1"/>
               </lines>
             </method>
             <method name="getFieldCount" signature="" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="627" hits="40"/>
+                <line number="635" hits="40"/>
               </lines>
             </method>
             <method name="getWarningCount" signature="" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="637" hits="40"/>
-                <line number="638" hits="40"/>
-                <line number="639" hits="40"/>
+                <line number="645" hits="40"/>
+                <line number="646" hits="40"/>
+                <line number="647" hits="40"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="181" hits="72"/>
-            <line number="182" hits="70"/>
-            <line number="185" hits="2"/>
-            <line number="196" hits="52"/>
-            <line number="200" hits="1"/>
-            <line number="207" hits="51"/>
+            <line number="182" hits="72"/>
+            <line number="183" hits="70"/>
+            <line number="186" hits="2"/>
+            <line number="197" hits="52"/>
+            <line number="201" hits="1"/>
             <line number="208" hits="51"/>
-            <line number="210" hits="51"/>
-            <line number="222" hits="52"/>
-            <line number="223" hits="1"/>
-            <line number="226" hits="51"/>
+            <line number="209" hits="51"/>
+            <line number="211" hits="51"/>
+            <line number="223" hits="52"/>
+            <line number="224" hits="1"/>
             <line number="227" hits="51"/>
-            <line number="235" hits="51"/>
+            <line number="228" hits="51"/>
             <line number="236" hits="51"/>
             <line number="237" hits="51"/>
-            <line number="240" hits="51"/>
+            <line number="238" hits="51"/>
             <line number="241" hits="51"/>
             <line number="242" hits="51"/>
-            <line number="244" hits="51"/>
+            <line number="243" hits="51"/>
             <line number="245" hits="51"/>
             <line number="246" hits="51"/>
             <line number="247" hits="51"/>
             <line number="248" hits="51"/>
             <line number="249" hits="51"/>
             <line number="250" hits="51"/>
-            <line number="262" hits="2"/>
-            <line number="271" hits="45"/>
-            <line number="277" hits="61"/>
-            <line number="283" hits="1"/>
-            <line number="292" hits="46"/>
-            <line number="293" hits="45"/>
-            <line number="296" hits="1"/>
-            <line number="305" hits="41"/>
-            <line number="306" hits="40"/>
-            <line number="308" hits="40"/>
-            <line number="310" hits="40"/>
-            <line number="312" hits="40"/>
-            <line number="314" hits="40"/>
-            <line number="315" hits="1"/>
-            <line number="317" hits="40"/>
-            <line number="318" hits="2"/>
-            <line number="322" hits="40"/>
-            <line number="324" hits="40"/>
+            <line number="251" hits="51"/>
+            <line number="263" hits="2"/>
+            <line number="272" hits="45"/>
+            <line number="278" hits="61"/>
+            <line number="284" hits="1"/>
+            <line number="293" hits="46"/>
+            <line number="294" hits="45"/>
+            <line number="297" hits="1"/>
+            <line number="306" hits="41"/>
+            <line number="307" hits="40"/>
+            <line number="309" hits="40"/>
+            <line number="311" hits="40"/>
+            <line number="313" hits="40"/>
+            <line number="315" hits="40"/>
+            <line number="316" hits="1"/>
+            <line number="318" hits="40"/>
+            <line number="319" hits="2"/>
+            <line number="323" hits="40"/>
             <line number="325" hits="40"/>
-            <line number="326" hits="2"/>
-            <line number="329" hits="40"/>
+            <line number="326" hits="40"/>
+            <line number="327" hits="2"/>
             <line number="330" hits="40"/>
-            <line number="331" hits="2"/>
-            <line number="334" hits="40"/>
-            <line number="337" hits="1"/>
-            <line number="346" hits="6"/>
-            <line number="347" hits="1"/>
-            <line number="350" hits="5"/>
-            <line number="359" hits="15"/>
-            <line number="360" hits="14"/>
+            <line number="331" hits="40"/>
+            <line number="332" hits="2"/>
+            <line number="335" hits="40"/>
+            <line number="338" hits="1"/>
+            <line number="347" hits="6"/>
+            <line number="348" hits="1"/>
+            <line number="351" hits="5"/>
+            <line number="360" hits="15"/>
             <line number="361" hits="14"/>
             <line number="362" hits="14"/>
-            <line number="364" hits="14"/>
-            <line number="367" hits="2"/>
-            <line number="376" hits="2"/>
-            <line number="377" hits="1"/>
+            <line number="363" hits="14"/>
+            <line number="365" hits="14"/>
+            <line number="368" hits="2"/>
+            <line number="377" hits="2"/>
             <line number="378" hits="1"/>
             <line number="379" hits="1"/>
-            <line number="381" hits="1"/>
-            <line number="384" hits="1"/>
-            <line number="396" hits="14"/>
-            <line number="397" hits="13"/>
-            <line number="399" hits="13"/>
-            <line number="402" hits="1"/>
-            <line number="411" hits="45"/>
-            <line number="412" hits="44"/>
-            <line number="414" hits="44"/>
-            <line number="417" hits="1"/>
-            <line number="423" hits="2"/>
-            <line number="424" hits="1"/>
-            <line number="426" hits="1"/>
-            <line number="429" hits="1"/>
-            <line number="442" hits="51"/>
+            <line number="380" hits="1"/>
+            <line number="382" hits="1"/>
+            <line number="385" hits="1"/>
+            <line number="397" hits="14"/>
+            <line number="398" hits="13"/>
+            <line number="400" hits="13"/>
+            <line number="403" hits="1"/>
+            <line number="412" hits="45"/>
+            <line number="413" hits="44"/>
+            <line number="415" hits="44"/>
+            <line number="418" hits="1"/>
+            <line number="424" hits="2"/>
+            <line number="425" hits="1"/>
+            <line number="427" hits="1"/>
+            <line number="430" hits="1"/>
             <line number="443" hits="51"/>
-            <line number="445" hits="51"/>
-            <line number="446" hits="45"/>
-            <line number="448" hits="45"/>
-            <line number="452" hits="6"/>
-            <line number="458" hits="45"/>
-            <line number="464" hits="52"/>
-            <line number="465" hits="51"/>
-            <line number="469" hits="45"/>
+            <line number="444" hits="51"/>
+            <line number="446" hits="51"/>
+            <line number="447" hits="45"/>
+            <line number="449" hits="45"/>
+            <line number="453" hits="6"/>
+            <line number="459" hits="45"/>
+            <line number="465" hits="52"/>
+            <line number="466" hits="51"/>
             <line number="470" hits="45"/>
-            <line number="473" hits="51"/>
-            <line number="475" hits="51"/>
-            <line number="478" hits="1"/>
-            <line number="484" hits="6"/>
+            <line number="471" hits="45"/>
+            <line number="474" hits="51"/>
+            <line number="476" hits="51"/>
+            <line number="479" hits="1"/>
             <line number="485" hits="6"/>
             <line number="486" hits="6"/>
-            <line number="492" hits="6"/>
+            <line number="487" hits="6"/>
             <line number="493" hits="6"/>
             <line number="494" hits="6"/>
-            <line number="500" hits="2"/>
-            <line number="506" hits="40"/>
+            <line number="495" hits="6"/>
+            <line number="501" hits="2"/>
             <line number="507" hits="40"/>
             <line number="508" hits="40"/>
-            <line number="514" hits="40"/>
+            <line number="509" hits="40"/>
             <line number="515" hits="40"/>
             <line number="516" hits="40"/>
-            <line number="522" hits="7"/>
-            <line number="523" hits="6"/>
-            <line number="524" hits="1"/>
-            <line number="525" hits="7"/>
-            <line number="526" hits="6"/>
-            <line number="536" hits="1"/>
-            <line number="542" hits="5"/>
+            <line number="517" hits="40"/>
+            <line number="523" hits="7"/>
+            <line number="524" hits="6"/>
+            <line number="525" hits="1"/>
+            <line number="526" hits="7"/>
+            <line number="527" hits="6"/>
+            <line number="537" hits="1"/>
             <line number="543" hits="5"/>
             <line number="544" hits="5"/>
-            <line number="550" hits="46"/>
-            <line number="551" hits="45"/>
-            <line number="556" hits="1"/>
-            <line number="559" hits="45"/>
-            <line number="562" hits="1"/>
-            <line number="572" hits="41"/>
-            <line number="573" hits="1"/>
-            <line number="579" hits="40"/>
-            <line number="580" hits="2"/>
-            <line number="582" hits="2"/>
-            <line number="583" hits="40"/>
-            <line number="585" hits="40"/>
+            <line number="545" hits="5"/>
+            <line number="551" hits="46"/>
+            <line number="552" hits="45"/>
+            <line number="557" hits="1"/>
+            <line number="560" hits="45"/>
+            <line number="563" hits="1"/>
+            <line number="573" hits="41"/>
+            <line number="574" hits="1"/>
+            <line number="580" hits="40"/>
+            <line number="581" hits="2"/>
+            <line number="583" hits="2"/>
+            <line number="584" hits="40"/>
             <line number="586" hits="40"/>
-            <line number="588" hits="40"/>
-            <line number="589" hits="13"/>
-            <line number="592" hits="38"/>
-            <line number="598" hits="2"/>
-            <line number="604" hits="1"/>
+            <line number="587" hits="40"/>
+            <line number="589" hits="40"/>
+            <line number="590" hits="13"/>
+            <line number="593" hits="38"/>
+            <line number="599" hits="2"/>
+            <line number="600" hits="1"/>
+            <line number="601" hits="1"/>
+            <line number="602" hits="0"/>
             <line number="605" hits="1"/>
-            <line number="606" hits="0"/>
-            <line number="609" hits="1"/>
-            <line number="611" hits="1"/>
-            <line number="612" hits="1"/>
-            <line number="614" hits="1"/>
-            <line number="617" hits="1"/>
-            <line number="627" hits="40"/>
-            <line number="637" hits="40"/>
-            <line number="638" hits="40"/>
-            <line number="639" hits="40"/>
+            <line number="607" hits="1"/>
+            <line number="608" hits="1"/>
+            <line number="610" hits="1"/>
+            <line number="613" hits="1"/>
+            <line number="625" hits="1"/>
+            <line number="635" hits="40"/>
+            <line number="645" hits="40"/>
+            <line number="646" hits="40"/>
+            <line number="647" hits="40"/>
           </lines>
         </class>
       </classes>
@@ -1866,64 +1910,64 @@
           <methods>
             <method name="__construct" signature="?mysqli_result $result, array $warnings, int $fieldsCount" line-rate="1" branch-rate="0" complexity="2">
               <lines>
-                <line number="45" hits="43"/>
-                <line number="46" hits="38"/>
-                <line number="47" hits="38"/>
-                <line number="49" hits="16"/>
+                <line number="48" hits="43"/>
+                <line number="49" hits="38"/>
+                <line number="50" hits="38"/>
+                <line number="52" hits="16"/>
               </lines>
             </method>
             <method name="getFieldCount" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="56" hits="38"/>
+                <line number="59" hits="38"/>
               </lines>
             </method>
             <method name="getWarnings" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="65" hits="43"/>
+                <line number="68" hits="43"/>
               </lines>
             </method>
             <method name="setErrorMessage" signature="string $errorMessage" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="71" hits="3"/>
+                <line number="74" hits="3"/>
               </lines>
             </method>
             <method name="setErrorNumber" signature="int $errorNumber" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="77" hits="3"/>
+                <line number="80" hits="3"/>
               </lines>
             </method>
             <method name="getError" signature="" line-rate="1" branch-rate="0" complexity="6">
               <lines>
-                <line number="83" hits="43"/>
-                <line number="84" hits="38"/>
-                <line number="87" hits="16"/>
-                <line number="88" hits="3"/>
-                <line number="89" hits="3"/>
-                <line number="97" hits="13"/>
+                <line number="86" hits="43"/>
+                <line number="87" hits="38"/>
+                <line number="90" hits="16"/>
+                <line number="91" hits="3"/>
+                <line number="92" hits="3"/>
+                <line number="100" hits="13"/>
               </lines>
             </method>
             <method name="getResult" signature="" line-rate="1" branch-rate="0" complexity="1">
               <lines>
-                <line number="103" hits="38"/>
+                <line number="109" hits="38"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="45" hits="43"/>
-            <line number="46" hits="38"/>
-            <line number="47" hits="38"/>
-            <line number="49" hits="16"/>
-            <line number="56" hits="38"/>
-            <line number="65" hits="43"/>
-            <line number="71" hits="3"/>
-            <line number="77" hits="3"/>
-            <line number="83" hits="43"/>
-            <line number="84" hits="38"/>
-            <line number="87" hits="16"/>
-            <line number="88" hits="3"/>
-            <line number="89" hits="3"/>
-            <line number="97" hits="13"/>
-            <line number="103" hits="38"/>
+            <line number="48" hits="43"/>
+            <line number="49" hits="38"/>
+            <line number="50" hits="38"/>
+            <line number="52" hits="16"/>
+            <line number="59" hits="38"/>
+            <line number="68" hits="43"/>
+            <line number="74" hits="3"/>
+            <line number="80" hits="3"/>
+            <line number="86" hits="43"/>
+            <line number="87" hits="38"/>
+            <line number="90" hits="16"/>
+            <line number="91" hits="3"/>
+            <line number="92" hits="3"/>
+            <line number="100" hits="13"/>
+            <line number="109" hits="38"/>
           </lines>
         </class>
       </classes>
