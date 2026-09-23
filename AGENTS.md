@@ -55,11 +55,9 @@ Once the containers are up, run everything in this order:
 
 A green run means:
 
-- PHPCS, PHPCPD, PDepend, PHPMD, PHPStan, Psalm alter/taint, Phan and PHPUnit
-  report no errors (284 tests, 877 assertions).
-- `app-psalm` exits 2 on exactly two informational mysqli-stub gaps:
-  `MoreSpecificImplementedParamType` on `MydbEnvironment::set_error_handler`
-  and `TypeDoesNotContainType` on `MydbMysqli::getWarnings`; not hard gates.
+- PHPCS, PHPCPD, PDepend, PHPMD, PHPStan, Psalm alter/taint, Psalm main, Phan
+  and PHPUnit report no errors (284 tests, 877 assertions); Psalm infers types
+  for 100% of the codebase.
 - Phan exits 0 with six informational stub/type findings in `MydbEnvironment`,
   `MydbExpressionInterface`, `MydbMysqli` and `MydbQueryBuilder`.
 - PHPUnit emits the one expected `mysqli::real_connect()` "Connection timed out"
@@ -92,9 +90,6 @@ A green run means:
     --config build/psalm.xml --no-cache --threads=1
   ```
 
-- Psalm reports pre-existing mysqli-stub gaps in `MydbMysqli*` and
-  `MydbEnvironment`; these are informational in CI (artifacts/badges), not a
-  hard gate (current findings are listed under "Full verification run").
 - Phan needs `ext-ast`, which is installed in the container (`composer app-phan`).
 - Calling `docker exec` from Windows PowerShell mangles `$?`, variables, and
   nested quotes; prefer simple top-level commands or a bash wrapper.

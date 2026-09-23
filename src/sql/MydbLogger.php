@@ -22,6 +22,7 @@ use sql\MydbException\LoggerException;
 use Stringable;
 use Throwable;
 use function array_diff_key;
+use function array_map;
 use function fclose;
 use function feof;
 use function fflush;
@@ -244,17 +245,25 @@ final class MydbLogger implements LoggerInterface
     {
         $replace = [];
         $used    = [];
-        /**
-         * Context values may be of any type per PSR-3.
-         * @psalm-suppress MixedAssignment
-         */
-        foreach ($context as $key => $value) {
-            if (is_scalar($value) || $value instanceof Stringable) {
-                $placeholder           = '{' . $key . '}';
-                $replace[$placeholder] = (string) $value;
-                if (false !== strpos($message, $placeholder)) {
-                    $used[$key] = true;
-                }
+
+        $strings = array_map(
+            static function (mixed $value): ?string {
+                return is_scalar($value) || $value instanceof Stringable
+                    ? (string) $value
+                    : null;
+            },
+            $context
+        );
+
+        foreach ($strings as $key => $stringValue) {
+            if (null === $stringValue) {
+                continue;
+            }
+
+            $placeholder = '{' . $key . '}';
+            if (false !== strpos($message, $placeholder)) {
+                $replace[$placeholder] = $stringValue;
+                $used[$key]            = true;
             }
         }
 

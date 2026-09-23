@@ -98,7 +98,6 @@ class MydbEnvironment implements MydbEnvironmentInterface
     /**
      * Set custom PHP error handler
      *
-     * @param (callable(int, string, string=, int=, array<array-key, mixed>=):bool|null)|null $callback
      * @see https://www.php.net/manual/en/function.set-error-handler
      * @SuppressWarnings("camelCase")
      * @phpcs:disable PSR1.Methods.CamelCapsMethodName.NotCamelCaps
@@ -106,7 +105,19 @@ class MydbEnvironment implements MydbEnvironmentInterface
     #[Override]
     public function set_error_handler(?callable $callback = null, int $error_levels = E_ALL): void
     {
-        $newHandler = $callback ?? $this->getNullErrorHandler();
+        $newHandler = static function (
+            int $errno,
+            string $errstr,
+            string $errfile = '',
+            int $errline = 0,
+            array $errcontext = [],
+        ) use ($callback): bool {
+            if (null === $callback) {
+                return true;
+            }
+
+            return (bool) $callback($errno, $errstr, $errfile, $errline, $errcontext);
+        };
 
         set_error_handler($newHandler, $error_levels);
     }
@@ -258,17 +269,5 @@ class MydbEnvironment implements MydbEnvironmentInterface
                 // @codeCoverageIgnoreEnd
             }
         }
-    }
-
-    /**
-     * Error handler that does nothing and does not chain
-     * @psalm-return callable(int, string, string=, int=, array<array-key, mixed>=):bool
-     * @see https://www.php.net/manual/en/function.set-error-handler
-     */
-    protected function getNullErrorHandler(): callable
-    {
-        return static function (): bool {
-            return true;
-        };
     }
 }

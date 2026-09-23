@@ -35,5 +35,8 @@ interface MydbMysqliResultInterface
 
     public function getError(): ?string;
 
+    /**
+     * @psalm-return array<array-key, array<array-key, (float|int|string|null)>>|null
+     */
     public function getResult(): ?array;
 }

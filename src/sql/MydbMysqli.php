@@ -17,6 +17,7 @@ namespace sql;
 
 use mysqli;
 use mysqli_result;
+use mysqli_warning;
 use Override;
 use sql\MydbMysqli\MydbMysqliResult;
 use function array_merge;
@@ -596,12 +597,7 @@ class MydbMysqli implements MydbMysqliInterface
     public function getWarnings(): array
     {
         if ($this->mysqli) {
-            /**
-             * The mysqli stub in Psalm types get_warnings() as always returning
-             * mysqli_warning, but at runtime it can also return false.
-             * @psalm-suppress TypeDoesNotContainType
-             */
-            $warnings = $this->mysqli->get_warnings();
+            $warnings = $this->getWarningsResult($this->mysqli);
             if (false === $warnings) {
                 return [];
             }
@@ -615,6 +611,18 @@ class MydbMysqli implements MydbMysqliInterface
         }
 
         return [];
+    }
+
+    /**
+     * Wrapper for mysqli::get_warnings() with the correct runtime variant type:
+     * the Psalm stub types it as always returning mysqli_warning, but it returns
+     * false when the server did not report any warnings.
+     *
+     * @psalm-return \mysqli_warning|false
+     */
+    protected function getWarningsResult(mysqli $mysqli): mysqli_warning|false
+    {
+        return $mysqli->get_warnings();
     }
 
     /**

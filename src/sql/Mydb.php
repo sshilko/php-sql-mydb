@@ -144,9 +144,6 @@ final class Mydb implements MydbInterface, RemoteResourceInterface
                 );
             }
 
-            /**
-             * @var array<array-key, array<array-key, (float|int|string|null)>> $payload
-             */
             return $payload;
         }
 
@@ -218,7 +215,12 @@ final class Mydb implements MydbInterface, RemoteResourceInterface
 
         $values = explode(',', str_replace("'", '', $input));
 
-        return array_map('strval', $values);
+        return array_map(
+            static function (string $value): string {
+                return $value;
+            },
+            $values
+        );
     }
 
     /**

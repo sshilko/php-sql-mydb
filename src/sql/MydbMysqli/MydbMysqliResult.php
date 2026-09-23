@@ -28,6 +28,9 @@ final class MydbMysqliResult implements MydbMysqliResultInterface
 {
     protected const int MYSQLI_ASSOC = MYSQLI_ASSOC;
 
+    /**
+     * @psalm-var list<array<array-key, float|int|string|null>>|null
+     */
     protected readonly ?array $result;
 
     protected ?string $errorMessage = null;
@@ -97,6 +100,9 @@ final class MydbMysqliResult implements MydbMysqliResultInterface
         return null;
     }
 
+    /**
+     * @psalm-return array<array-key, array<array-key, (float|int|string|null)>>|null
+     */
     #[Override]
     public function getResult(): ?array
     {
