@@ -28,8 +28,8 @@ Insert (phpunit\Insert)
 
 Logger (phpunit\Logger)
  [x] Logger error
- [x] Logger constructor out
- [x] Logger constructor err
+ [x] Logger constructor fallback stdout
+ [x] Logger constructor fallback stderr
  [x] Logger stream err end
  [x] Logger stream out closed
  [x] Logger stream err closed
@@ -39,9 +39,13 @@ Logger (phpunit\Logger)
  [x] Logger with strings with data set "nothing"
  [x] Logger with strings with data set "nothing-array"
  [x] Logger with strings with data set "nothing-error"
- [x] Logger with strings with data set "something"
+ [x] Logger with strings with data set "something-error"
+ [x] Logger with strings with data set "something-info"
  [x] Logger with strings with data set "chars"
  [x] Logger with context
+ [x] Logger interpolation
+ [x] Logger unused context is appended
+ [x] Logger scalar message
 
 Meta (phpunit\Meta)
  [x] Open
@@ -95,7 +99,6 @@ Mydb Modernization (phpunit\MydbModernization)
  [x] Class constants have native types with data set "MydbOptions::NET_READ_BUFFER_MIN"
  [x] Class constants have native types with data set "MydbOptions::NET_READ_BUFFER_MAX"
  [x] Class constants have native types with data set "MydbMysqli::SQL_MODE"
- [x] Class constants have native types with data set "MydbLogger::IO_WRITE_ATTEMPTS"
  [x] Class constants have native types with data set "MydbMysqliResult::MYSQLI_ASSOC"
  [x] Interface methods are override annotated with data set "MydbCredentials::getHost"
  [x] Interface methods are override annotated with data set "MydbCredentials::getUsername"
@@ -106,10 +109,7 @@ Mydb Modernization (phpunit\MydbModernization)
  [x] Interface methods are override annotated with data set "MydbCredentials::getFlags"
  [x] Interface methods are override annotated with data set "Mydb::query"
  [x] Query builder escapes hex values without quotes
- [x] Query builder uses str starts with
- [x] Query builder escape method has native hex guard
- [x] Credentials property types use readonly
- [x] Query builder always uses str starts with for hex
+ [x] Query builder escapes stringable objects without quotes
 
 Mydb Unit (phpunit\MydbUnit)
  [x] Query throws connect exception when lazy connect fails
@@ -176,6 +176,11 @@ Query Builder (phpunit\QueryBuilder)
  [x] Replace one with data set "string 0x even"
  [x] Replace one with data set "string 0x mismatch"
  [x] Escape
+ [x] Escape non finite floats with data set "inf"
+ [x] Escape non finite floats with data set "nan"
+ [x] Build where empty in list
+ [x] Build insert many exception
+ [x] Insert one invalid type
  [x] Build update where many with data set "simple"
  [x] Build update where many with data set "prefixed simple"
  [x] Build where with data set "simple"
@@ -227,7 +232,6 @@ Query Builder (phpunit\QueryBuilder)
  [x] Build where with data set #34
  [x] Build where with data set #35
  [x] Build where exception
- [x] Build insert many exception
  [x] Build update where many exception 1
  [x] Build update where many exception 2
  [x] Build update where many exception 3
@@ -247,11 +251,10 @@ Registry (phpunit\Registry)
  [x] Registry empty 2
  [x] Registry empty 3
  [x] Registry set
+ [x] Registry set integer key
  [x] Registry un set 1
  [x] Registry un set 2
  [x] Registry serialize 1
- [x] Registry serialize 2
- [x] Registry unserialize 1
  [x] Registry unserialize 2
  [x] Registry clone
 
@@ -316,6 +319,7 @@ Update (phpunit\Update)
  [x] Update where
  [x] Update
  [x] Update many
+ [x] Update many multi column
  [x] Update internal error
  [x] Update returns null
  [x] Delete where returns null

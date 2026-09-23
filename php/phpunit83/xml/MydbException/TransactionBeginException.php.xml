@@ -2,13 +2,13 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="TransactionBeginException.php" path="/MydbException">
     <totals>
-      <lines total="30" comments="17" code="13" executable="0" executed="0" percent="0"/>
+      <lines total="29" comments="16" code="13" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbException\TransactionBeginException" start="26" executable="0" executed="0" crap="0">
+    <class name="sql\MydbException\TransactionBeginException" start="25" executable="0" executed="0" crap="0">
       <namespace name="sql\MydbException"/>
     </class>
     <source>
@@ -85,15 +85,12 @@
         <token name="T_DOC_COMMENT"> * @license https://opensource.org/licenses/mit-license.php MIT</token>
       </line>
       <line no="23">
-        <token name="T_DOC_COMMENT"> * @category exceptions</token>
-      </line>
-      <line no="24">
         <token name="T_DOC_COMMENT"> * @see https://github.com/sshilko/php-sql-mydb</token>
       </line>
-      <line no="25">
+      <line no="24">
         <token name="T_DOC_COMMENT"> */</token>
       </line>
-      <line no="26">
+      <line no="25">
         <token name="T_CLASS">class</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">TransactionBeginException</token>
@@ -102,14 +99,14 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">MydbException</token>
       </line>
-      <line no="27">
+      <line no="26">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="28"/>
-      <line no="29">
+      <line no="27"/>
+      <line no="28">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="30"/>
+      <line no="29"/>
     </source>
   </file>
 </phpunit>

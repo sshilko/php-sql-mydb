@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="CommandInterface.php" path="/MydbInterface">
     <totals>
-      <lines total="33" comments="22" code="11" executable="0" executed="0" percent="0"/>
+      <lines total="32" comments="21" code="11" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
@@ -75,39 +75,36 @@
         <token name="T_DOC_COMMENT"> * @license https://opensource.org/licenses/mit-license.php MIT</token>
       </line>
       <line no="21">
-        <token name="T_DOC_COMMENT"> * @category interfaces</token>
-      </line>
-      <line no="22">
         <token name="T_DOC_COMMENT"> * @see https://github.com/sshilko/php-sql-mydb</token>
       </line>
-      <line no="23">
+      <line no="22">
         <token name="T_DOC_COMMENT"> */</token>
       </line>
-      <line no="24">
+      <line no="23">
         <token name="T_INTERFACE">interface</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">CommandInterface</token>
       </line>
-      <line no="25">
+      <line no="24">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="26">
+      <line no="25">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="27">
+      <line no="26">
         <token name="T_DOC_COMMENT">     * Execute any SQL command, without returning result</token>
       </line>
-      <line no="28">
+      <line no="27">
         <token name="T_DOC_COMMENT">     * @param string $query sql command</token>
       </line>
-      <line no="29">
+      <line no="28">
         <token name="T_DOC_COMMENT">     * @return bool true success or false on failure</token>
       </line>
-      <line no="30">
+      <line no="29">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="31">
+      <line no="30">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -124,10 +121,10 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="32">
+      <line no="31">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="33"/>
+      <line no="32"/>
     </source>
   </file>
 </phpunit>

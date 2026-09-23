@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbEvent.php" path="/">
     <totals>
-      <lines total="57" comments="20" code="37" executable="6" executed="6" percent="100.00"/>
+      <lines total="63" comments="24" code="39" executable="6" executed="6" percent="100.00"/>
       <methods count="2" tested="2" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
@@ -10,128 +10,58 @@
     </totals>
     <class name="sql\MydbEvent" start="21" executable="6" executed="6" crap="5">
       <namespace name="sql"/>
-      <method name="getEventMetadata" signature="getEventMetadata(): ?array" start="27" end="27" crap="0" executable="0" executed="0" coverage="100"/>
-      <method name="getListeners" signature="getListeners(): array" start="32" end="32" crap="0" executable="0" executed="0" coverage="100"/>
-      <method name="notify" signature="notify(): void" start="38" end="50" crap="4" executable="5" executed="5" coverage="100"/>
-      <method name="getEventName" signature="getEventName(): string" start="52" end="55" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getEventMetadata" signature="getEventMetadata(): ?array" start="27" end="28" crap="0" executable="0" executed="0" coverage="100"/>
+      <method name="getListeners" signature="getListeners(): array" start="33" end="33" crap="0" executable="0" executed="0" coverage="100"/>
+      <method name="notify" signature="notify(): void" start="39" end="55" crap="4" executable="5" executed="5" coverage="100"/>
+      <method name="getEventName" signature="getEventName(): string" start="57" end="61" crap="1" executable="1" executed="1" coverage="100"/>
     </class>
     <coverage>
-      <line nr="41">
-        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\DeleteTest::testDeleteError"/>
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-        <covered by="phpunit\InsertTest::testInsertError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MydbEventTest::testMydbEventListenerBreak"/>
-        <covered by="phpunit\MydbEventTest::testMydbEventListenerException"/>
-        <covered by="phpunit\MydbUnitTest::testOpenRecoversOnRetry"/>
-        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
-        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
-        <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
-        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select all"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#complex select all"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select JOIN"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select UNION"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select ORDER BY"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select WHERE"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select COUNT"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select GROUP BY"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select HAVING"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select LIMIT"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select LIMIT OFFSET"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select ALL"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
-        <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
-        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-      </line>
       <line nr="42">
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
         <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
         <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\InsertTest::testInsertError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MydbEventTest::testMydbEventListenerBreak"/>
         <covered by="phpunit\MydbEventTest::testMydbEventListenerException"/>
         <covered by="phpunit\MydbUnitTest::testOpenRecoversOnRetry"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
         <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
         <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
         <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
         <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
         <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
         <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select all"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#complex select all"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select JOIN"/>
@@ -147,135 +77,208 @@
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
         <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
         <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
-        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-      </line>
-      <line nr="43">
-        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
-        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
-        <covered by="phpunit\DeleteTest::testDeleteError"/>
-        <covered by="phpunit\DeleteTest::testDelete"/>
-        <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
-        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
-        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
-        <covered by="phpunit\InsertTest::testInsertError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
-        <covered by="phpunit\InsertTest::testReplaceOne"/>
-        <covered by="phpunit\InsertTest::testInsert"/>
-        <covered by="phpunit\InsertTest::testInsertMany"/>
-        <covered by="phpunit\InsertTest::testInsertOne"/>
-        <covered by="phpunit\MetaTest::testClose"/>
-        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
-        <covered by="phpunit\MetaTest::testEnum"/>
-        <covered by="phpunit\MetaTest::testEscape"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
-        <covered by="phpunit\MetaTest::testPrimaryKey"/>
-        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
-        <covered by="phpunit\MydbEventTest::testMydbEventListenerBreak"/>
-        <covered by="phpunit\MydbUnitTest::testOpenRecoversOnRetry"/>
-        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
-        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
-        <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
-        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
-        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select all"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#complex select all"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select JOIN"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select UNION"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select ORDER BY"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select WHERE"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select COUNT"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select GROUP BY"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select HAVING"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select LIMIT"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select LIMIT OFFSET"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select ALL"/>
-        <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
-        <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
-        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
-        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
-        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
         <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
-        <covered by="phpunit\UpdateTest::testUpdate"/>
-        <covered by="phpunit\UpdateTest::testUpdateMany"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
-      </line>
-      <line nr="44">
-        <covered by="phpunit\MydbEventTest::testMydbEventListenerBreak"/>
+        <covered by="phpunit\UpdateTest::testUpdateManyMultiColumn"/>
       </line>
       <line nr="47">
-        <covered by="phpunit\MydbEventTest::testMydbEventListenerException"/>
-      </line>
-      <line nr="54">
         <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
         <covered by="phpunit\DeleteTest::testDeleteWhere"/>
         <covered by="phpunit\DeleteTest::testDeleteError"/>
         <covered by="phpunit\DeleteTest::testDelete"/>
         <covered by="phpunit\ExceptionTest::testMySqlError"/>
-        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
         <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
-        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
         <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
         <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
-        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
         <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
         <covered by="phpunit\InsertTest::testInsertError"/>
-        <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testReplaceOne"/>
         <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
         <covered by="phpunit\InsertTest::testInsertMany"/>
         <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
         <covered by="phpunit\MetaTest::testClose"/>
         <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
         <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
-        <covered by="phpunit\MetaTest::testOpen"/>
-        <covered by="phpunit\MetaTest::testSet"/>
-        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
         <covered by="phpunit\MetaTest::testEnum"/>
         <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MydbEventTest::testMydbEventListenerBreak"/>
+        <covered by="phpunit\MydbEventTest::testMydbEventListenerException"/>
+        <covered by="phpunit\MydbUnitTest::testOpenRecoversOnRetry"/>
+        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select all"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#complex select all"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select JOIN"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select UNION"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select ORDER BY"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select WHERE"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select COUNT"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select GROUP BY"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select HAVING"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select LIMIT"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select LIMIT OFFSET"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select ALL"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
+        <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdateManyMultiColumn"/>
+      </line>
+      <line nr="48">
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKey"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
+        <covered by="phpunit\MydbEventTest::testMydbEventListenerBreak"/>
+        <covered by="phpunit\MydbUnitTest::testOpenRecoversOnRetry"/>
+        <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
+        <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
+        <covered by="phpunit\ResourceTest::testOpen"/>
+        <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
+        <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select all"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#complex select all"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select JOIN"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select UNION"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select ORDER BY"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select WHERE"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select COUNT"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select GROUP BY"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select HAVING"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select LIMIT"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select LIMIT OFFSET"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select ALL"/>
+        <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
+        <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
+        <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
+        <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
+        <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
+        <covered by="phpunit\UpdateTest::testUpdate"/>
+        <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
+        <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdateManyMultiColumn"/>
+      </line>
+      <line nr="49">
+        <covered by="phpunit\MydbEventTest::testMydbEventListenerBreak"/>
+      </line>
+      <line nr="52">
+        <covered by="phpunit\MydbEventTest::testMydbEventListenerException"/>
+      </line>
+      <line nr="60">
+        <covered by="phpunit\DeleteTest::testDeleteInternalError"/>
+        <covered by="phpunit\DeleteTest::testDeleteWhere"/>
+        <covered by="phpunit\DeleteTest::testDeleteError"/>
+        <covered by="phpunit\DeleteTest::testDelete"/>
+        <covered by="phpunit\ExceptionTest::testMySqlError"/>
+        <covered by="phpunit\ExceptionTest::testTableDoesNotExist"/>
+        <covered by="phpunit\ExceptionTest::testMySqlWarning"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnect"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToCommandLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToBeginTransaction"/>
+        <covered by="phpunit\ExceptionTest::testFailedToEscapeLazy"/>
+        <covered by="phpunit\ExceptionTest::testFailedToConnectAfterRetry"/>
+        <covered by="phpunit\InsertTest::testInsertError"/>
+        <covered by="phpunit\InsertTest::testReplaceOne"/>
+        <covered by="phpunit\InsertTest::testInsert"/>
+        <covered by="phpunit\InsertTest::testReplace"/>
+        <covered by="phpunit\InsertTest::testInsertMany"/>
+        <covered by="phpunit\InsertTest::testInsertOne"/>
+        <covered by="phpunit\MetaTest::testOpen"/>
+        <covered by="phpunit\MetaTest::testClose"/>
+        <covered by="phpunit\MetaTest::testSingleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testDoubleQuotedEscape"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyNotFound"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyComposite"/>
+        <covered by="phpunit\MetaTest::testSet"/>
+        <covered by="phpunit\MetaTest::testNotRealEnumOrSet"/>
+        <covered by="phpunit\MetaTest::testPrimaryKeyQueryFailed"/>
+        <covered by="phpunit\MetaTest::testEnum"/>
+        <covered by="phpunit\MetaTest::testEscape"/>
         <covered by="phpunit\MetaTest::testPrimaryKey"/>
         <covered by="phpunit\MetaTest::testPrimaryKeyNotDefined"/>
         <covered by="phpunit\MydbEventTest::testMydbInternalEventSuccess"/>
         <covered by="phpunit\MydbUnitTest::testOpenRecoversOnRetry"/>
         <covered by="phpunit\MysqliTest::testTransactionsWillFinishWhenForcedAutocommit"/>
+        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
         <covered by="phpunit\ResourceTest::testQueryBadClientRequest"/>
         <covered by="phpunit\ResourceTest::testQueryBadServerResponse"/>
         <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult"/>
-        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
         <covered by="phpunit\ResourceTest::testOpen"/>
-        <covered by="phpunit\ResourceTest::testOpenAutocommitFailed"/>
         <covered by="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero"/>
         <covered by="phpunit\ResourceTest::testConnectingDefaultsFailed"/>
         <covered by="phpunit\ResourceTest::testConnectingTransactionIsolationFailed"/>
+        <covered by="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select all"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#complex select all"/>
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select JOIN"/>
@@ -291,14 +294,15 @@
         <covered by="phpunit\SelectTest::testSimpleSelect#simple select SQL_SMALL_RESULT"/>
         <covered by="phpunit\SelectTest::testServerGoneDuringQuery"/>
         <covered by="phpunit\SelectTest::testTerminationDuringQuery"/>
-        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
         <covered by="phpunit\TransactionsTest::testBeginTransactionReadonlyReal"/>
+        <covered by="phpunit\TransactionsTest::testBeginTransactionReadWriteReal"/>
         <covered by="phpunit\TransactionsTest::testTransactionIsolationLevel"/>
         <covered by="phpunit\UpdateTest::testUpdateReturnsNull"/>
-        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
         <covered by="phpunit\UpdateTest::testUpdate"/>
         <covered by="phpunit\UpdateTest::testUpdateMany"/>
+        <covered by="phpunit\UpdateTest::testUpdateInternalError"/>
         <covered by="phpunit\UpdateTest::testUpdateWhere"/>
+        <covered by="phpunit\UpdateTest::testUpdateManyMultiColumn"/>
       </line>
     </coverage>
     <source>
@@ -401,6 +405,12 @@
       </line>
       <line no="27">
         <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_STRING">Override</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">    </token>
         <token name="T_ABSTRACT">abstract</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_PUBLIC">public</token>
@@ -416,18 +426,18 @@
         <token name="T_ARRAY">array</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="28"/>
-      <line no="29">
+      <line no="29"/>
+      <line no="30">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="30">
+      <line no="31">
         <token name="T_DOC_COMMENT">     * @return array&lt;\sql\MydbListenerInterface&gt;</token>
       </line>
-      <line no="31">
+      <line no="32">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="32">
+      <line no="33">
         <token name="T_WHITESPACE">    </token>
         <token name="T_ABSTRACT">abstract</token>
         <token name="T_WHITESPACE"> </token>
@@ -443,25 +453,25 @@
         <token name="T_ARRAY">array</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="33"/>
-      <line no="34">
+      <line no="34"/>
+      <line no="35">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="35">
+      <line no="36">
         <token name="T_DOC_COMMENT">     * @throws \sql\MydbException\EventException</token>
       </line>
-      <line no="36">
+      <line no="37">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="37"/>
-      <line no="38">
+      <line no="38"/>
+      <line no="39">
         <token name="T_WHITESPACE">    </token>
         <token name="T_ATTRIBUTE">#[</token>
         <token name="T_STRING">Override</token>
         <token name="T_CLOSE_SQUARE">]</token>
       </line>
-      <line no="39">
+      <line no="40">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -474,11 +484,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">void</token>
       </line>
-      <line no="40">
+      <line no="41">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="41">
+      <line no="42">
         <token name="T_WHITESPACE">        </token>
         <token name="T_FOREACH">foreach</token>
         <token name="T_WHITESPACE"> </token>
@@ -496,7 +506,20 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="42">
+      <line no="43">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="44">
+        <token name="T_DOC_COMMENT">             * Subclass implementations may not honor the documented element type.</token>
+      </line>
+      <line no="45">
+        <token name="T_DOC_COMMENT">             * @phpstan-ignore instanceof.alwaysTrue</token>
+      </line>
+      <line no="46">
+        <token name="T_DOC_COMMENT">             */</token>
+      </line>
+      <line no="47">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -510,7 +533,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="43">
+      <line no="48">
         <token name="T_WHITESPACE">                </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -529,16 +552,16 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="44">
+      <line no="49">
         <token name="T_WHITESPACE">                    </token>
         <token name="T_BREAK">break</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="45">
+      <line no="50">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="46">
+      <line no="51">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
         <token name="T_WHITESPACE"> </token>
@@ -546,7 +569,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="47">
+      <line no="52">
         <token name="T_WHITESPACE">                </token>
         <token name="T_THROW">throw</token>
         <token name="T_WHITESPACE"> </token>
@@ -557,20 +580,26 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="48">
+      <line no="53">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="49">
+      <line no="54">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="50">
+      <line no="55">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="51"/>
-      <line no="52">
+      <line no="56"/>
+      <line no="57">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_STRING">Override</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="58">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -583,11 +612,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">string</token>
       </line>
-      <line no="53">
+      <line no="59">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="54">
+      <line no="60">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -596,14 +625,14 @@
         <token name="T_CLASS">class</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="55">
+      <line no="61">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="56">
+      <line no="62">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="57"/>
+      <line no="63"/>
     </source>
   </file>
 </phpunit>

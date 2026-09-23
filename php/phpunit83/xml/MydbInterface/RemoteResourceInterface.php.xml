@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="RemoteResourceInterface.php" path="/MydbInterface">
     <totals>
-      <lines total="37" comments="24" code="13" executable="0" executed="0" percent="0"/>
+      <lines total="36" comments="23" code="13" executable="0" executed="0" percent="0"/>
       <methods count="0" tested="0" percent="0"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="0" tested="0" percent="0"/>
@@ -75,33 +75,30 @@
         <token name="T_DOC_COMMENT"> * @license https://opensource.org/licenses/mit-license.php MIT</token>
       </line>
       <line no="21">
-        <token name="T_DOC_COMMENT"> * @category interfaces</token>
-      </line>
-      <line no="22">
         <token name="T_DOC_COMMENT"> * @see https://github.com/sshilko/php-sql-mydb</token>
       </line>
-      <line no="23">
+      <line no="22">
         <token name="T_DOC_COMMENT"> */</token>
       </line>
-      <line no="24">
+      <line no="23">
         <token name="T_INTERFACE">interface</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">RemoteResourceInterface</token>
       </line>
-      <line no="25">
+      <line no="24">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="26">
+      <line no="25">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="27">
+      <line no="26">
         <token name="T_DOC_COMMENT">     * Open remote server connection</token>
       </line>
-      <line no="28">
+      <line no="27">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="29">
+      <line no="28">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -115,21 +112,21 @@
         <token name="T_STRING">bool</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="30"/>
-      <line no="31">
+      <line no="29"/>
+      <line no="30">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="32">
+      <line no="31">
         <token name="T_DOC_COMMENT">     * Cleanup remote server connection</token>
       </line>
-      <line no="33">
+      <line no="32">
         <token name="T_DOC_COMMENT">     * will NOT close persistent connections</token>
       </line>
-      <line no="34">
+      <line no="33">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="35">
+      <line no="34">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -143,10 +140,10 @@
         <token name="T_STRING">void</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="36">
+      <line no="35">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="37"/>
+      <line no="36"/>
     </source>
   </file>
 </phpunit>

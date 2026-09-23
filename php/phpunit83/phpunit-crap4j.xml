@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2026-09-22 19:25:11</timestamp>
+  <timestamp>2026-09-23 01:29:10</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>175</methodCount>
+    <methodCount>174</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>417</totalCrap>
+    <totalCrap>426.1</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -81,8 +81,8 @@
       <package>sql</package>
       <className>sql\Mydb</className>
       <methodName>escape</methodName>
-      <methodSignature>escape($unescaped, string $quote): string</methodSignature>
-      <fullMethod>escape($unescaped, string $quote): string</fullMethod>
+      <methodSignature>escape(float|int|string|\Stringable|null $unescaped, string $quote): string</methodSignature>
+      <fullMethod>escape(float|int|string|\Stringable|null $unescaped, string $quote): string</fullMethod>
       <crap>2</crap>
       <complexity>2</complexity>
       <coverage>100</coverage>
@@ -563,21 +563,10 @@
     </method>
     <method>
       <package>sql\MydbEvent</package>
-      <className>sql\MydbEvent\InternalConnectionBegin</className>
+      <className>sql\MydbEvent\InternalEvent</className>
       <methodName>__construct</methodName>
-      <methodSignature>__construct(string $host, string $dbname)</methodSignature>
-      <fullMethod>__construct(string $host, string $dbname)</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql\MydbEvent</package>
-      <className>sql\MydbEvent\InternalConnectionEnd</className>
-      <methodName>__construct</methodName>
-      <methodSignature>__construct(string $host, string $dbname, bool $success)</methodSignature>
-      <fullMethod>__construct(string $host, string $dbname, bool $success)</fullMethod>
+      <methodSignature>__construct(?array $data)</methodSignature>
+      <fullMethod>__construct(?array $data)</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -611,28 +600,6 @@
       <methodName>getListeners</methodName>
       <methodSignature>getListeners(): array</methodSignature>
       <fullMethod>getListeners(): array</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql\MydbEvent</package>
-      <className>sql\MydbEvent\InternalQueryBegin</className>
-      <methodName>__construct</methodName>
-      <methodSignature>__construct(string $sql)</methodSignature>
-      <fullMethod>__construct(string $sql)</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql\MydbEvent</package>
-      <className>sql\MydbEvent\InternalQueryEnd</className>
-      <methodName>__construct</methodName>
-      <methodSignature>__construct(string $sql, bool $success)</methodSignature>
-      <fullMethod>__construct(string $sql, bool $success)</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -773,39 +740,6 @@
     <method>
       <package>sql</package>
       <className>sql\MydbLogger</className>
-      <methodName>error</methodName>
-      <methodSignature>error($message, array $context): void</methodSignature>
-      <fullMethod>error($message, array $context): void</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql</package>
-      <className>sql\MydbLogger</className>
-      <methodName>log</methodName>
-      <methodSignature>log($level, $message, array $context): void</methodSignature>
-      <fullMethod>log($level, $message, array $context): void</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql</package>
-      <className>sql\MydbLogger</className>
-      <methodName>warning</methodName>
-      <methodSignature>warning($message, array $context): void</methodSignature>
-      <fullMethod>warning($message, array $context): void</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql</package>
-      <className>sql\MydbLogger</className>
       <methodName>emergency</methodName>
       <methodSignature>emergency($message, array $context): void</methodSignature>
       <fullMethod>emergency($message, array $context): void</fullMethod>
@@ -831,6 +765,28 @@
       <methodName>critical</methodName>
       <methodSignature>critical($message, array $context): void</methodSignature>
       <fullMethod>critical($message, array $context): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>error</methodName>
+      <methodSignature>error($message, array $context): void</methodSignature>
+      <fullMethod>error($message, array $context): void</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>warning</methodName>
+      <methodSignature>warning($message, array $context): void</methodSignature>
+      <fullMethod>warning($message, array $context): void</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -872,6 +828,50 @@
     <method>
       <package>sql</package>
       <className>sql\MydbLogger</className>
+      <methodName>log</methodName>
+      <methodSignature>log($level, $message, array $context): void</methodSignature>
+      <fullMethod>log($level, $message, array $context): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>route</methodName>
+      <methodSignature>route(string $level)</methodSignature>
+      <fullMethod>route(string $level)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>render</methodName>
+      <methodSignature>render($message, array $context): string</methodSignature>
+      <fullMethod>render($message, array $context): string</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>interpolate</methodName>
+      <methodSignature>interpolate(string $message, array $context): array</methodSignature>
+      <fullMethod>interpolate(string $message, array $context): array</fullMethod>
+      <crap>5</crap>
+      <complexity>5</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
       <methodName>checkStreamResource</methodName>
       <methodSignature>checkStreamResource($stream): void</methodSignature>
       <fullMethod>checkStreamResource($stream): void</fullMethod>
@@ -886,8 +886,8 @@
       <methodName>writeOutput</methodName>
       <methodSignature>writeOutput($stream, string $data): void</methodSignature>
       <fullMethod>writeOutput($stream, string $data): void</fullMethod>
-      <crap>9</crap>
-      <complexity>9</complexity>
+      <crap>7</crap>
+      <complexity>7</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -908,9 +908,20 @@
       <methodName>formatter</methodName>
       <methodSignature>formatter($var): string</methodSignature>
       <fullMethod>formatter($var): string</fullMethod>
-      <crap>2</crap>
+      <crap>2.15</crap>
       <complexity>2</complexity>
-      <coverage>100</coverage>
+      <coverage>66.67</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbLogger</className>
+      <methodName>openDefaultStream</methodName>
+      <methodSignature>openDefaultStream(string $target)</methodSignature>
+      <fullMethod>openDefaultStream(string $target)</fullMethod>
+      <crap>4.94</crap>
+      <complexity>3</complexity>
+      <coverage>40</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1216,9 +1227,9 @@
       <methodName>getWarnings</methodName>
       <methodSignature>getWarnings(): array</methodSignature>
       <fullMethod>getWarnings(): array</fullMethod>
-      <crap>2</crap>
-      <complexity>2</complexity>
-      <coverage>100</coverage>
+      <crap>3.01</crap>
+      <complexity>3</complexity>
+      <coverage>88.89</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1667,8 +1678,8 @@
       <methodName>insertOne</methodName>
       <methodSignature>insertOne(array $data, string $table, string $type): string</methodSignature>
       <fullMethod>insertOne(array $data, string $table, string $type): string</fullMethod>
-      <crap>4</crap>
-      <complexity>4</complexity>
+      <crap>6</crap>
+      <complexity>6</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1678,8 +1689,8 @@
       <methodName>buildUpdateWhereMany</methodName>
       <methodSignature>buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string</methodSignature>
       <fullMethod>buildUpdateWhereMany(array $columnSetWhere, array $where, string $table): string</fullMethod>
-      <crap>10</crap>
-      <complexity>10</complexity>
+      <crap>11</crap>
+      <complexity>11</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1687,8 +1698,8 @@
       <package>sql</package>
       <className>sql\MydbQueryBuilder</className>
       <methodName>buildUpdateWhere</methodName>
-      <methodSignature>buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string</methodSignature>
-      <fullMethod>buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): ?string</fullMethod>
+      <methodSignature>buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): string</methodSignature>
+      <fullMethod>buildUpdateWhere(array $update, array $whereFields, string $table, array $whereNotFields): string</fullMethod>
       <crap>6</crap>
       <complexity>6</complexity>
       <coverage>100</coverage>
@@ -1698,8 +1709,8 @@
       <package>sql</package>
       <className>sql\MydbQueryBuilder</className>
       <methodName>buildDeleteWhere</methodName>
-      <methodSignature>buildDeleteWhere(string $table, array $fields, array $negativeFields): ?string</methodSignature>
-      <fullMethod>buildDeleteWhere(string $table, array $fields, array $negativeFields): ?string</fullMethod>
+      <methodSignature>buildDeleteWhere(string $table, array $fields, array $negativeFields): string</methodSignature>
+      <fullMethod>buildDeleteWhere(string $table, array $fields, array $negativeFields): string</fullMethod>
       <crap>4</crap>
       <complexity>4</complexity>
       <coverage>100</coverage>
@@ -1711,8 +1722,8 @@
       <methodName>buildWhere</methodName>
       <methodSignature>buildWhere(array $fields, array $negativeFields, array $likeFields): string</methodSignature>
       <fullMethod>buildWhere(array $fields, array $negativeFields, array $likeFields): string</fullMethod>
-      <crap>15</crap>
-      <complexity>15</complexity>
+      <crap>16</crap>
+      <complexity>16</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1731,32 +1742,10 @@
       <package>sql</package>
       <className>sql\MydbQueryBuilder</className>
       <methodName>escape</methodName>
-      <methodSignature>escape($unescaped, string $quote): string</methodSignature>
-      <fullMethod>escape($unescaped, string $quote): string</fullMethod>
-      <crap>17</crap>
-      <complexity>17</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql</package>
-      <className>sql\MydbRegistry</className>
-      <methodName>serialize</methodName>
-      <methodSignature>serialize(): ?string</methodSignature>
-      <fullMethod>serialize(): ?string</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
-      <coverage>100</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>sql</package>
-      <className>sql\MydbRegistry</className>
-      <methodName>unserialize</methodName>
-      <methodSignature>unserialize(mixed $data): void</methodSignature>
-      <fullMethod>unserialize(mixed $data): void</fullMethod>
-      <crap>1</crap>
-      <complexity>1</complexity>
+      <methodSignature>escape(float|int|string|\Stringable|null $unescaped, string $quote): string</methodSignature>
+      <fullMethod>escape(float|int|string|\Stringable|null $unescaped, string $quote): string</fullMethod>
+      <crap>16</crap>
+      <complexity>16</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
@@ -1854,8 +1843,8 @@
       <methodName>offsetSet</methodName>
       <methodSignature>offsetSet($offset, $value): void</methodSignature>
       <fullMethod>offsetSet($offset, $value): void</fullMethod>
-      <crap>3</crap>
-      <complexity>3</complexity>
+      <crap>4</crap>
+      <complexity>4</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>

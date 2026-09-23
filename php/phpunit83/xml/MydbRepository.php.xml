@@ -2,23 +2,23 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="MydbRepository.php" path="/">
     <totals>
-      <lines total="32" comments="11" code="21" executable="2" executed="2" percent="100.00"/>
+      <lines total="35" comments="11" code="24" executable="2" executed="2" percent="100.00"/>
       <methods count="2" tested="2" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbRepository" start="18" executable="2" executed="2" crap="2">
+    <class name="sql\MydbRepository" start="20" executable="2" executed="2" crap="2">
       <namespace name="sql"/>
-      <method name="getDatabaseIdentifier" signature="getDatabaseIdentifier(): string" start="21" end="21" crap="0" executable="0" executed="0" coverage="100"/>
-      <method name="__construct" signature="__construct(sql\MydbRegistry $registry)" start="23" end="25" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="getDatabase" signature="getDatabase(): sql\MydbInterface" start="27" end="30" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getDatabaseIdentifier" signature="getDatabaseIdentifier(): string" start="23" end="23" crap="0" executable="0" executed="0" coverage="100"/>
+      <method name="__construct" signature="__construct(sql\MydbRegistry $registry)" start="25" end="27" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getDatabase" signature="getDatabase(): sql\MydbInterface" start="29" end="33" crap="1" executable="1" executed="1" coverage="100"/>
     </class>
     <coverage>
-      <line nr="25">
+      <line nr="27">
         <covered by="phpunit\RepositoryTest::testRegistry"/>
       </line>
-      <line nr="29">
+      <line nr="32">
         <covered by="phpunit\RepositoryTest::testRegistry"/>
       </line>
     </coverage>
@@ -80,6 +80,13 @@
       </line>
       <line no="17"/>
       <line no="18">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Override</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="19"/>
+      <line no="20">
         <token name="T_ABSTRACT">abstract</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_CLASS">class</token>
@@ -90,11 +97,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">MydbRepositoryInterface</token>
       </line>
-      <line no="19">
+      <line no="21">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="20"/>
-      <line no="21">
+      <line no="22"/>
+      <line no="23">
         <token name="T_WHITESPACE">    </token>
         <token name="T_ABSTRACT">abstract</token>
         <token name="T_WHITESPACE"> </token>
@@ -110,8 +117,8 @@
         <token name="T_STRING">string</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="22"/>
-      <line no="23">
+      <line no="24"/>
+      <line no="25">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -126,16 +133,22 @@
         <token name="T_VARIABLE">$registry</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="24">
+      <line no="26">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="25">
+      <line no="27">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="26"/>
-      <line no="27">
+      <line no="28"/>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_STRING">Override</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="30">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -148,11 +161,11 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">MydbInterface</token>
       </line>
-      <line no="28">
+      <line no="31">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="29">
+      <line no="32">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -168,14 +181,14 @@
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="30">
+      <line no="33">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="31">
+      <line no="34">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="32"/>
+      <line no="35"/>
     </source>
   </file>
 </phpunit>

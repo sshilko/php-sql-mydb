@@ -2,18 +2,18 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="QueryBuilderEscapeException.php" path="/MydbException">
     <totals>
-      <lines total="37" comments="17" code="20" executable="1" executed="1" percent="100.00"/>
+      <lines total="35" comments="16" code="19" executable="1" executed="1" percent="100.00"/>
       <methods count="1" tested="1" percent="100.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="1" percent="100.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="sql\MydbException\QueryBuilderEscapeException" start="28" executable="1" executed="1" crap="1">
+    <class name="sql\MydbException\QueryBuilderEscapeException" start="26" executable="1" executed="1" crap="1">
       <namespace name="sql\MydbException"/>
-      <method name="__construct" signature="__construct(string $message, int $code, ?Throwable $previous)" start="32" end="35" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="__construct" signature="__construct(string $message, int $code, ?Throwable $previous)" start="30" end="33" crap="1" executable="1" executed="1" coverage="100"/>
     </class>
     <coverage>
-      <line nr="34">
+      <line nr="32">
         <covered by="phpunit\MydbExceptionTest::testQueryBuilderException"/>
         <covered by="phpunit\QueryBuilderTest::testEscape"/>
       </line>
@@ -78,16 +78,10 @@
       <line no="18">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">sql\MydbException</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="19">
-        <token name="T_USE">use</token>
-        <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">Throwable</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="20">
+      <line no="19">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_FUNCTION">function</token>
@@ -95,38 +89,37 @@
         <token name="T_STRING">sprintf</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="21"/>
-      <line no="22">
+      <line no="20"/>
+      <line no="21">
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="23">
+      <line no="22">
         <token name="T_DOC_COMMENT"> * @author Sergei Shilko &lt;contact@sshilko.com&gt;</token>
       </line>
-      <line no="24">
+      <line no="23">
         <token name="T_DOC_COMMENT"> * @license https://opensource.org/licenses/mit-license.php MIT</token>
       </line>
-      <line no="25">
-        <token name="T_DOC_COMMENT"> * @category exceptions</token>
-      </line>
-      <line no="26">
+      <line no="24">
         <token name="T_DOC_COMMENT"> * @see https://github.com/sshilko/php-sql-mydb</token>
       </line>
-      <line no="27">
+      <line no="25">
         <token name="T_DOC_COMMENT"> */</token>
       </line>
-      <line no="28">
+      <line no="26">
+        <token name="T_FINAL">final</token>
+        <token name="T_WHITESPACE"> </token>
         <token name="T_CLASS">class</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">QueryBuilderEscapeException</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_EXTENDS">extends</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">MydbException</token>
+        <token name="T_STRING">QueryBuilderException</token>
       </line>
-      <line no="29">
+      <line no="27">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="30">
+      <line no="28">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
@@ -141,8 +134,8 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">'Failed to escape value: %s'</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="31"/>
-      <line no="32">
+      <line no="29"/>
+      <line no="30">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -178,11 +171,11 @@
         <token name="T_STRING">null</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="33">
+      <line no="31">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="34">
+      <line no="32">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">parent</token>
         <token name="T_DOUBLE_COLON">::</token>
@@ -206,14 +199,14 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="35">
+      <line no="33">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="36">
+      <line no="34">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="37"/>
+      <line no="35"/>
     </source>
   </file>
 </phpunit>
