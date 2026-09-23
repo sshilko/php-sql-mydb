@@ -308,7 +308,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbEnvironment",
             "name": "MydbEnvironment",
-            "summary": "",
+            "summary": "Not\u0020declared\u0020final\u003A\u0020PHPUnit\u0020doubles\u0020this\u0020class\u0020through\u0020createMock\u0028\u0029\u0020in\u0020the\u0020test\u0020suite.",
             "url": "classes/sql-MydbEnvironment.html"
         },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003Agc_collect_cycles\u0028\u0029",
@@ -428,28 +428,23 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbEvent\\InternalConnectionBegin",
             "name": "InternalConnectionBegin",
-            "summary": "",
+            "summary": "Fired\u0020just\u0020before\u0020a\u0020new\u0020connection\u0020attempt\u0020starts.",
             "url": "classes/sql-MydbEvent-InternalConnectionBegin.html"
-        },                {
-            "fqsen": "\\sql\\MydbEvent\\InternalConnectionBegin\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/sql-MydbEvent-InternalConnectionBegin.html#method___construct"
         },                {
             "fqsen": "\\sql\\MydbEvent\\InternalConnectionEnd",
             "name": "InternalConnectionEnd",
-            "summary": "",
+            "summary": "Fired\u0020after\u0020a\u0020connection\u0020attempt\u0020finishes.",
             "url": "classes/sql-MydbEvent-InternalConnectionEnd.html"
-        },                {
-            "fqsen": "\\sql\\MydbEvent\\InternalConnectionEnd\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/sql-MydbEvent-InternalConnectionEnd.html#method___construct"
         },                {
             "fqsen": "\\sql\\MydbEvent\\InternalEvent",
             "name": "InternalEvent",
             "summary": "",
             "url": "classes/sql-MydbEvent-InternalEvent.html"
+        },                {
+            "fqsen": "\\sql\\MydbEvent\\InternalEvent\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/sql-MydbEvent-InternalEvent.html#method___construct"
         },                {
             "fqsen": "\\sql\\MydbEvent\\InternalEvent\u003A\u003AgetEventMetadata\u0028\u0029",
             "name": "getEventMetadata",
@@ -478,23 +473,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbEvent\\InternalQueryBegin",
             "name": "InternalQueryBegin",
-            "summary": "",
+            "summary": "Fired\u0020before\u0020a\u0020raw\u0020SQL\u0020statement\u0020is\u0020sent\u0020to\u0020the\u0020server.",
             "url": "classes/sql-MydbEvent-InternalQueryBegin.html"
-        },                {
-            "fqsen": "\\sql\\MydbEvent\\InternalQueryBegin\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/sql-MydbEvent-InternalQueryBegin.html#method___construct"
         },                {
             "fqsen": "\\sql\\MydbEvent\\InternalQueryEnd",
             "name": "InternalQueryEnd",
-            "summary": "",
+            "summary": "Fired\u0020after\u0020a\u0020raw\u0020SQL\u0020statement\u0020was\u0020executed.",
             "url": "classes/sql-MydbEvent-InternalQueryEnd.html"
-        },                {
-            "fqsen": "\\sql\\MydbEvent\\InternalQueryEnd\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/sql-MydbEvent-InternalQueryEnd.html#method___construct"
         },                {
             "fqsen": "\\sql\\MydbEvent",
             "name": "MydbEvent",
@@ -683,7 +668,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbExpression\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "As\u0020of\u0020PHP8.0\u0020this\u0020is\u0020Stringable\u0020interface",
+            "summary": "",
             "url": "classes/sql-MydbExpression.html#method___toString"
         },                {
             "fqsen": "\\sql\\MydbExpression\u003A\u003A\u0024input",
@@ -698,7 +683,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbExpressionInterface\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "As\u0020of\u0020PHP8.0\u0020this\u0020is\u0020Stringable\u0020interface",
+            "summary": "",
             "url": "classes/sql-MydbExpressionInterface.html#method___toString"
         },                {
             "fqsen": "\\sql\\MydbFactory",
@@ -868,7 +853,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbListener\\InternalListener",
             "name": "InternalListener",
-            "summary": "",
+            "summary": "Default\u0020event\u0020listener\u003B\u0020logs\u0020connection\u0020lifecycle\u0020events.",
             "url": "classes/sql-MydbListener-InternalListener.html"
         },                {
             "fqsen": "\\sql\\MydbListener\\InternalListener\u003A\u003A__construct\u0028\u0029",
@@ -913,7 +898,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbLogger",
             "name": "MydbLogger",
-            "summary": "Implementation\u0020of\u0020PSR\u002D3\u0020Logger\u0020that\u0020will\u0020output\u0020to\u0020STDERR\u0020\u0026\u0020STDOUT",
+            "summary": "Implementation\u0020of\u0020PSR\u002D3\u0020Logger\u0020that\u0020writes\u0020to\u0020STDERR\u0020\u0026\u0020STDOUT",
             "url": "classes/sql-MydbLogger.html"
         },                {
             "fqsen": "\\sql\\MydbLogger\u003A\u003A__construct\u0028\u0029",
@@ -925,21 +910,6 @@ Search.appendIndex(
             "name": "__destruct",
             "summary": "",
             "url": "classes/sql-MydbLogger.html#method___destruct"
-        },                {
-            "fqsen": "\\sql\\MydbLogger\u003A\u003Aerror\u0028\u0029",
-            "name": "error",
-            "summary": "",
-            "url": "classes/sql-MydbLogger.html#method_error"
-        },                {
-            "fqsen": "\\sql\\MydbLogger\u003A\u003Alog\u0028\u0029",
-            "name": "log",
-            "summary": "",
-            "url": "classes/sql-MydbLogger.html#method_log"
-        },                {
-            "fqsen": "\\sql\\MydbLogger\u003A\u003Awarning\u0028\u0029",
-            "name": "warning",
-            "summary": "",
-            "url": "classes/sql-MydbLogger.html#method_warning"
         },                {
             "fqsen": "\\sql\\MydbLogger\u003A\u003Aemergency\u0028\u0029",
             "name": "emergency",
@@ -956,6 +926,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbLogger.html#method_critical"
         },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003Aerror\u0028\u0029",
+            "name": "error",
+            "summary": "",
+            "url": "classes/sql-MydbLogger.html#method_error"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003Awarning\u0028\u0029",
+            "name": "warning",
+            "summary": "",
+            "url": "classes/sql-MydbLogger.html#method_warning"
+        },                {
             "fqsen": "\\sql\\MydbLogger\u003A\u003Anotice\u0028\u0029",
             "name": "notice",
             "summary": "",
@@ -970,6 +950,26 @@ Search.appendIndex(
             "name": "debug",
             "summary": "",
             "url": "classes/sql-MydbLogger.html#method_debug"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003Alog\u0028\u0029",
+            "name": "log",
+            "summary": "",
+            "url": "classes/sql-MydbLogger.html#method_log"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003Aroute\u0028\u0029",
+            "name": "route",
+            "summary": "Pick\u0020the\u0020target\u0020stream\u0020for\u0020the\u0020given\u0020PSR\u002D3\u0020log\u0020level.",
+            "url": "classes/sql-MydbLogger.html#method_route"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003Arender\u0028\u0029",
+            "name": "render",
+            "summary": "",
+            "url": "classes/sql-MydbLogger.html#method_render"
+        },                {
+            "fqsen": "\\sql\\MydbLogger\u003A\u003Ainterpolate\u0028\u0029",
+            "name": "interpolate",
+            "summary": "PSR\u002D3\u0020placeholder\u0020interpolation\u003A\u0020replace\u0020\u007Bkey\u007D\u0020with\u0020the\u0020matching\u0020context\u0020value.",
+            "url": "classes/sql-MydbLogger.html#method_interpolate"
         },                {
             "fqsen": "\\sql\\MydbLogger\u003A\u003AcheckStreamResource\u0028\u0029",
             "name": "checkStreamResource",
@@ -991,10 +991,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbLogger.html#method_formatter"
         },                {
-            "fqsen": "\\sql\\MydbLogger\u003A\u003AIO_WRITE_ATTEMPTS",
-            "name": "IO_WRITE_ATTEMPTS",
-            "summary": "",
-            "url": "classes/sql-MydbLogger.html#constant_IO_WRITE_ATTEMPTS"
+            "fqsen": "\\sql\\MydbLogger\u003A\u003AopenDefaultStream\u0028\u0029",
+            "name": "openDefaultStream",
+            "summary": "Open\u0020a\u0020non\u002DCLI\u002Dsafe\u0020default\u0020stream\u0020without\u0020crashing\u0020outside\u0020of\u0020the\u0020CLI\u0020SAPI.",
+            "url": "classes/sql-MydbLogger.html#method_openDefaultStream"
         },                {
             "fqsen": "\\sql\\MydbLogger\u003A\u003A\u0024stdout",
             "name": "stdout",
@@ -1095,11 +1095,6 @@ Search.appendIndex(
             "name": "MydbMysqliResultInterface",
             "summary": "",
             "url": "classes/sql-MydbMysqli-MydbMysqliResultInterface.html"
-        },                {
-            "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResultInterface\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/sql-MydbMysqli-MydbMysqliResultInterface.html#method___construct"
         },                {
             "fqsen": "\\sql\\MydbMysqli\\MydbMysqliResultInterface\u003A\u003AgetFieldCount\u0028\u0029",
             "name": "getFieldCount",
@@ -1503,7 +1498,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sql\\MydbOptions",
             "name": "MydbOptions",
-            "summary": "",
+            "summary": "Not\u0020declared\u0020final\u003A\u0020PHPUnit\u0020doubles\u0020this\u0020class\u0020through\u0020createMock\u0028\u0029\u0020in\u0020the\u0020test\u0020suite.",
             "url": "classes/sql-MydbOptions.html"
         },                {
             "fqsen": "\\sql\\MydbOptions\u003A\u003AgetNonInteractiveTimeout\u0028\u0029",
@@ -2096,16 +2091,6 @@ Search.appendIndex(
             "summary": "Singleton\u0020or\u0020registry\u0020helper\u0020to\u0020manage\u0020multiple\u0020Mydb\u0020instances",
             "url": "classes/sql-MydbRegistry.html"
         },                {
-            "fqsen": "\\sql\\MydbRegistry\u003A\u003Aserialize\u0028\u0029",
-            "name": "serialize",
-            "summary": "",
-            "url": "classes/sql-MydbRegistry.html#method_serialize"
-        },                {
-            "fqsen": "\\sql\\MydbRegistry\u003A\u003Aunserialize\u0028\u0029",
-            "name": "unserialize",
-            "summary": "",
-            "url": "classes/sql-MydbRegistry.html#method_unserialize"
-        },                {
             "fqsen": "\\sql\\MydbRegistry\u003A\u003Acurrent\u0028\u0029",
             "name": "current",
             "summary": "Return\u0020the\u0020current\u0020element",
@@ -2393,7 +2378,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\pcntl_signal\u0028\u0029",
             "name": "pcntl_signal",
-            "summary": "Register\u0020or\u0020reset\u0020a\u0020simulated\u0020signal\u0020handler\u0020that\u0020posix_kill\u0028\u0029\u0020will\u0020invoke.",
+            "summary": "Register\u0020or\u0020reset\u0020a\u0020simulated\u0020signal\u0020handler\u0020for\u0020posix_kill\u0028\u0029\u0020to\u0020invoke.",
             "url": "namespaces/default.html#function_pcntl_signal"
         },                {
             "fqsen": "\\posix_kill\u0028\u0029",
