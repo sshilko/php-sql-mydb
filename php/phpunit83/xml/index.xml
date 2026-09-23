@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Wed Sep 23 11:02:16 UTC 2026" phpunit="10.5.64" coverage="10.1.16">
+  <build time="Wed Sep 23 17:42:24 UTC 2026" phpunit="10.5.64" coverage="10.1.16">
     <runtime name="PHP" version="8.3.33" url="https://www.php.net/"/>
     <driver name="xdebug" version="3.3.0"/>
   </build>
@@ -23,9 +23,9 @@
       <test name="phpunit\ExceptionTest::testFailedToConnect" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToConnectAfterRetry" size="medium" status="success"/>
       <test name="phpunit\InsertTest::testInsertError" size="unknown" status="success"/>
+      <test name="phpunit\InsertTest::testReplace" size="unknown" status="success"/>
       <test name="phpunit\InsertTest::testReplaceOne" size="unknown" status="success"/>
       <test name="phpunit\InsertTest::testInsert" size="unknown" status="success"/>
-      <test name="phpunit\InsertTest::testReplace" size="unknown" status="success"/>
       <test name="phpunit\InsertTest::testInsertMany" size="unknown" status="success"/>
       <test name="phpunit\InsertTest::testInsertOne" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerWithStrings#nothing" size="unknown" status="success"/>
@@ -36,6 +36,7 @@
       <test name="phpunit\LoggerTest::testLoggerWithStrings#chars" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerError" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerConstructorFallbackStderr" size="unknown" status="success"/>
+      <test name="phpunit\LoggerTest::testLoggerStreamErrEnd" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerStreamOutClosed" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerStreamErrClosed" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerStreamOutBadMode" size="unknown" status="success"/>
@@ -46,7 +47,6 @@
       <test name="phpunit\LoggerTest::testLoggerUnusedContextIsAppended" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerScalarMessage" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerConstructorFallbackStdout" size="unknown" status="success"/>
-      <test name="phpunit\LoggerTest::testLoggerStreamErrEnd" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testClose" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testSingleQuotedEscape" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testDoubleQuotedEscape" size="unknown" status="success"/>
@@ -69,8 +69,8 @@
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap#SIGINT" size="unknown" status="success"/>
       <test name="phpunit\MydbEnvironmentTest::testSignalSighupTrap#SIGINT,SIGTERM,SIGHUP" size="unknown" status="success"/>
       <test name="phpunit\MydbEventTest::testMydbEventListenerBreak" size="unknown" status="success"/>
-      <test name="phpunit\MydbEventTest::testMydbInternalEventSuccess" size="unknown" status="success"/>
       <test name="phpunit\MydbEventTest::testMydbEventListenerException" size="unknown" status="success"/>
+      <test name="phpunit\MydbEventTest::testMydbInternalEventSuccess" size="unknown" status="success"/>
       <test name="phpunit\MydbExceptionTest::testQueryBuilderException" size="unknown" status="success"/>
       <test name="phpunit\MydbFactoryTest::testCreateOptionsMatchesNewMydbOptions" size="unknown" status="success"/>
       <test name="phpunit\MydbFactoryTest::testCreateReadonlyOptions" size="unknown" status="success"/>
