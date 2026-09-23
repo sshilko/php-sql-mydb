@@ -356,11 +356,6 @@ Search.appendIndex(
             "summary": "Enable\u0020custom\u0020signal\u0020handler",
             "url": "classes/sql-MydbEnvironment.html#method_startSignalsTrap"
         },                {
-            "fqsen": "\\sql\\MydbEnvironment\u003A\u003AgetNullErrorHandler\u0028\u0029",
-            "name": "getNullErrorHandler",
-            "summary": "Error\u0020handler\u0020that\u0020does\u0020nothing\u0020and\u0020does\u0020not\u0020chain",
-            "url": "classes/sql-MydbEnvironment.html#method_getNullErrorHandler"
-        },                {
             "fqsen": "\\sql\\MydbEnvironment\u003A\u003A\u0024knownSignals",
             "name": "knownSignals",
             "summary": "",
@@ -1270,6 +1265,11 @@ Search.appendIndex(
             "name": "getWarnings",
             "summary": "",
             "url": "classes/sql-MydbMysqli.html#method_getWarnings"
+        },                {
+            "fqsen": "\\sql\\MydbMysqli\u003A\u003AgetWarningsResult\u0028\u0029",
+            "name": "getWarningsResult",
+            "summary": "Wrapper\u0020for\u0020mysqli\u003A\u003Aget_warnings\u0028\u0029\u0020with\u0020the\u0020correct\u0020runtime\u0020variant\u0020type\u003A\nthe\u0020Psalm\u0020stub\u0020types\u0020it\u0020as\u0020always\u0020returning\u0020mysqli_warning,\u0020but\u0020it\u0020returns\nfalse\u0020when\u0020the\u0020server\u0020did\u0020not\u0020report\u0020any\u0020warnings.",
+            "url": "classes/sql-MydbMysqli.html#method_getWarningsResult"
         },                {
             "fqsen": "\\sql\\MydbMysqli\u003A\u003AgetFieldCount\u0028\u0029",
             "name": "getFieldCount",
