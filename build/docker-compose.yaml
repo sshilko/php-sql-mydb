@@ -87,7 +87,6 @@ services:
   app.php83:
     <<: *app
     image: app/php83
-    container_name: app.php83
     build:
       context: .
       dockerfile: Dockerfile.php83
