@@ -19,7 +19,7 @@ x-mysql: &mysql
   stop_grace_period: 20s
   cpus: 0.95
   cpu_percent: 95
-  mem_limit: "150M"
+  mem_limit: "600M"
   pids_limit: 100
   command:
     - --innodb-flush-log-at-trx-commit=2
@@ -52,10 +52,10 @@ x-mysql: &mysql
     - --tls-version=TLSv1.2
   healthcheck:
     test: ["CMD", "mysqladmin", "-utest", "-ppass", "ping"]
-    timeout: 1s
-    interval: 2s
-    retries: 3
-    start_period: 5s
+    timeout: 2s
+    interval: 5s
+    retries: 10
+    start_period: 30s
   logging:
     options:
       max-size: "4m"

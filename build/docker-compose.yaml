@@ -25,9 +25,9 @@ x-app: &app
     test: ["CMD", "nc", "-w1", "-zv", "mydb-mysql80", "3306"]
     #test: ["CMD", "php", "examples/example.php"]
     timeout: 2s
-    start_period: 5s
-    interval: 2s
-    retries: 3
+    start_period: 30s
+    interval: 5s
+    retries: 10
   cpus: 2
   mem_limit: "4000M"
   shm_size: "2gb"

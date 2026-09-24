@@ -35,7 +35,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php83', 'composer.lock') }}
+          key: ${{ runner.os }}-docker-php83-image-${{ hashFiles('build/Dockerfile.php83', 'composer.lock') }}
 
       - name: Load cached Docker image
         run: docker load -i /tmp/docker-save/snapshot.tar || true
@@ -66,22 +66,28 @@ jobs:
         uses: actions/cache@v5
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php83', 'composer.lock') }}
+          key: ${{ runner.os }}-docker-php83-image-${{ hashFiles('build/Dockerfile.php83', 'composer.lock') }}
 
       - name: Load cached Docker image
-        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag mydb/php83-image-cache mydb/php83 || true
+        if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
+        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag mydb/php83-image-cache mydb/php83
+
+      - name: Build Docker image
+        if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
+        run: docker build -f build/Dockerfile.php83 -t mydb/php83 ./build
+        timeout-minutes: 20
 
       - name: Docker boot
         env:
           DOCKER_BUILDKIT: "1"
           COMPOSE_DOCKER_CLI_BUILD: "1"
           SERVICES_NAME: "mydb-app-php83 mydb-mysql80"
-        run: docker compose up -d $SERVICES_NAME
-        timeout-minutes: 1
+        run: docker compose up -d --no-build $SERVICES_NAME
+        timeout-minutes: 3
 
       - name: Wait for all services to become healthy
         run: for SVC in "mydb-app-php83" "mydb-mysql80"; do while [ "\"healthy\"" != "$(docker inspect --format '{{json .State.Health.Status }}' ${SVC})" ];do docker compose ps && sleep 5; done; done
-        timeout-minutes: 2
+        timeout-minutes: 5
 
       - name: Sleep
         run: sleep 4

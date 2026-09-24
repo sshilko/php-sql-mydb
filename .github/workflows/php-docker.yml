@@ -32,7 +32,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php83') }}
+          key: ${{ runner.os }}-docker-php-image-${{ hashFiles('build/Dockerfile.php83') }}
 
       - name: Load cached Docker image
         run: docker load -i /tmp/docker-save/snapshot.tar || true

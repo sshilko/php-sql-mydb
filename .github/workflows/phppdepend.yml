@@ -32,17 +32,24 @@ jobs:
         uses: actions/cache@v5
         with:
           path: /tmp/docker-save
-          key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php83') }}
+          key: ${{ runner.os }}-docker-php-image-${{ hashFiles('build/Dockerfile.php83') }}
 
       - name: Load cached Docker image
-        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag mydb/php-image-cache mydb/php83 || true
+        if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
+        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag mydb/php-image-cache mydb/php83
+
+      - name: Build Docker image
+        if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
+        run: docker build -f build/Dockerfile.php83 -t mydb/php83 ./build
+        timeout-minutes: 20
 
       - name: Docker boot
         env:
           DOCKER_BUILDKIT: "1"
           COMPOSE_DOCKER_CLI_BUILD: "1"
           SERVICES_NAME: "mydb-app-php83"
-        run: docker compose up -d $SERVICES_NAME
+        run: docker compose up -d --no-build $SERVICES_NAME
+        timeout-minutes: 3
 
       - run: docker compose ps
 
