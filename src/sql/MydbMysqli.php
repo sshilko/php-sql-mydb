@@ -17,6 +17,7 @@ namespace sql;
 
 use mysqli;
 use mysqli_result;
+use mysqli_stmt;
 use mysqli_warning;
 use Override;
 use sql\MydbMysqli\MydbMysqliResult;
@@ -295,6 +296,24 @@ class MydbMysqli implements MydbMysqliInterface
         }
 
         return false;
+    }
+
+    /**
+     * @see https://www.php.net/manual/en/mysqli.prepare.php
+     */
+    #[Override]
+    public function prepare(string $sql): ?mysqli_stmt
+    {
+        if ($this->mysqli && $this->isConnected()) {
+            $stmt = $this->mysqli->prepare($sql);
+            if (false === $stmt) {
+                return null;
+            }
+
+            return $stmt;
+        }
+
+        return null;
     }
 
     /**

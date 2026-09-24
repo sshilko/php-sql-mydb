@@ -151,6 +151,63 @@ final class Mydb implements MydbInterface, RemoteResourceInterface
     }
 
     /**
+     * @throws \sql\MydbException\ConnectException
+     * @throws \sql\MydbException
+     */
+    #[Override]
+    public function prepare(string $sql): MydbPreparedStatementInterface
+    {
+        if (!$this->connect()) {
+            throw new ConnectException();
+        }
+
+        $stmt = $this->mysqli->prepare($sql);
+        if (null === $stmt) {
+            $errorMessage = $this->mysqli->getError() ?? 'Failed to prepare the SQL statement';
+            /**
+             * Mirrors onError(): the failure is logged and surfaced as a typed
+             * exception, never as a silent null.
+             */
+            $this->logger->error($errorMessage, ['sql' => $sql]);
+
+            throw new InternalException($errorMessage);
+        }
+
+        return new MydbPreparedStatement($stmt);
+    }
+
+    /**
+     * @param list<float|int|string|bool|null> $params
+     * @psalm-return list<array<array-key, float|int|string|null>>|null
+     * @throws \sql\MydbException\ConnectException
+     * @throws \sql\MydbException
+     */
+    #[Override]
+    public function execute(string $sql, array $params): ?array
+    {
+        $statement = $this->prepare($sql);
+        try {
+            if (false === $statement->bind($params)) {
+                $this->onError(
+                    new InternalException($this->mysqli->getError() ?? 'Failed to bind prepared statement parameters'),
+                    $sql
+                );
+            }
+
+            if (false === $statement->execute()) {
+                $this->onError(
+                    new InternalException($this->mysqli->getError() ?? 'Failed to execute prepared statement'),
+                    $sql
+                );
+            }
+
+            return $statement->fetchAll();
+        } finally {
+            $statement->close();
+        }
+    }
+
+    /**
      * @phpcs:disable SlevomatCodingStandard.Complexity.Cognitive
      * @throws \sql\MydbException
      */

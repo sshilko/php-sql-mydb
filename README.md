@@ -60,11 +60,11 @@ nothing less.
 | ✅ Pros | ⚠️ Cons |
 | --- | --- |
 | **Zero runtime dependencies beyond `psr/log`** — deterministic, auditable installs with a tiny `vendor/` footprint | A small project with a single maintainer; you are closer to the code than with a big ecosystem framework |
-| **Native `mysqlnd` speed** — no query parsing, no abstraction layers between you and the driver | Raw SQL is on you: you write and maintain the queries, and you own escaping (the `escape()` helper keeps this easy) |
+| **Native `mysqlnd` speed** — no query parsing, no abstraction layers between you and the driver | Raw SQL is on you: you write and maintain the queries, and you own escaping (the `escape()` helper, or `prepare()`/`execute()` for user values) |
 | **Fully typed and deeply analyzed** — 100% Psalm type inference, six static analyzers green in CI | Requires PHP >= 8.3; older LTS runtimes are not supported |
 | **Unit-tested against a real MySQL 8.0 server** — 284 tests, 877 assertions, high coverage | MySQL 8.0 only today; MariaDB is not yet compatible |
 | **Opinionated safe defaults** — `TRADITIONAL` SQL mode, `autocommit = 0`, explicit timeouts, `utf8mb4`, UTC | Defaults are deliberate; atypical setups may want to tune `MydbOptions` first |
-| **Production-ready reliability** — signal trapping, connection retry, commit on graceful shutdown | No prepared-statement-first API; server-side binding is traded for raw speed and simplicity |
+| **Production-ready reliability** — signal trapping, connection retry, commit on graceful shutdown | Prepared statements are opt-in: server-side binding is available on demand for user values; the raw path keeps the raw speed |
 | **Interface-driven design** — every collaborator (logging, options, mysqli, environment, query builder, listener) is swappable and mockable | DML helpers cover the common cases; complex statements are written as raw SQL by design |
 | **Raw SQL, no DSL** — zero learning curve if you already know SQL, and portable across MySQL deployments | Manual result mapping; there is no ORM to do it for you |
 
@@ -76,6 +76,8 @@ MyDb is for you.
 
 - **Raw SQL, first-class** — `select()`, `query()`, `command()`, `insert()`, `update()`,
   `delete()`, `replace()` plus helper methods for common bulk work
+- **Prepared statements, opt-in** — `prepare()` / `execute()` for parameterized
+  execution with mysqli server-side binding; the raw fast path stays untouched
 - **Helper DML** — array-based `insertOne()`, `insertMany()`, `updateWhere()`,
   `deleteWhere()`, `replaceOne()` with `MydbExpression` support for raw SQL fragments
 - **Friendly transactions** — `autocommit = 0`, explicit `commit()` / `rollback()`,
@@ -268,7 +270,8 @@ is easy to read end-to-end.
 - High-performance, low-latency, data-intensive applications
 - Services that favor hand-written SQL over ORM magic
 - Codebases that want a thin, auditable database layer without framework lock-in
-- Projects with no prepared-statement requirement and no desire for extra dependencies
+- Projects that want parameterized execution for user-controlled values at high
+  concurrency (`prepare()` / `execute()` are built in) and no extra dependencies
 - Easy drop-in [integration](https://refactoring.guru/design-patterns/php) into existing
   applications
 

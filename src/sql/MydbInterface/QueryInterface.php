@@ -15,6 +15,8 @@ declare(strict_types = 1);
 
 namespace sql\MydbInterface;
 
+use sql\MydbPreparedStatementInterface;
+
 /**
  * @author Sergei Shilko <contact@sshilko.com>
  * @license https://opensource.org/licenses/mit-license.php MIT
@@ -23,4 +25,22 @@ namespace sql\MydbInterface;
 interface QueryInterface
 {
     public function query(string $query): ?array;
+
+    /**
+     * @throws \sql\MydbException\ConnectException
+     * @throws \sql\MydbException
+     */
+    public function prepare(string $sql): MydbPreparedStatementInterface;
+
+    /**
+     * Single-shot prepared execution: prepare, bind, execute and close in one
+     * call. Returns the fetched rows, or null for statements that produce no
+     * result set (for example DML).
+     *
+     * @param list<float|int|string|bool|null> $params
+     * @psalm-return list<array<array-key, float|int|string|null>>|null
+     * @throws \sql\MydbException\ConnectException
+     * @throws \sql\MydbException
+     */
+    public function execute(string $sql, array $params): ?array;
 }

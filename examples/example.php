@@ -57,14 +57,22 @@ assert('10' === $insertedStringId);
 $insertedStringId = $mydb->insertOne(['id' => 20, 'name' => 'user20'], 'users');
 assert('20' === $insertedStringId);
 
+$statement = $mydb->prepare('INSERT INTO users (id, name) VALUES (?, ?)');
+$statement->bind([25, 'user25']);
+assert(true === $statement->execute());
+assert('25' === (string) $statement->getInsertId());
+$statement->close();
+
+assert([['id' => 25, 'name' => 'user25']] === $mydb->execute('SELECT id, name FROM users WHERE id = ?', [25]));
+
 $mydb->insertMany([[30, 'user30'], [40, 'user40']], ['id', 'name'], 'users');
 
-assert(['10', '20', '30', '40'] === array_column($mydb->query("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
+assert(['10', '20', '25', '30', '40'] === array_column($mydb->query("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
 $deletedRowsCount = $mydb->delete('DELETE FROM users WHERE id = 40');
 assert(1 === $deletedRowsCount);
 
-assert(['10', '20', '30'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
+assert(['10', '20', '25', '30'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
 $enum = $mydb->getEnumValues('users', 'myenum');
 assert(['e1', 'e2'] === $enum);
@@ -75,10 +83,10 @@ assert(['id'] === $prim);
 $deletedRowsCount = $mydb->deleteWhere(['id' => '30'], 'users');
 assert(1 === $deletedRowsCount);
 
-assert(['10', '20'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
+assert(['10', '20', '25'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
 assert(1 === $mydb->updateWhere(['id' => 99], ['id' => 10], 'users'));
-assert(['20', '99'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
+assert(['20', '25', '99'] === array_column($mydb->select("SELECT id, name FROM users ORDER BY id ASC"), 'id'));
 
 $db10 = $factory->create($auth, $mylogger, $opts);
 $db10->open();
