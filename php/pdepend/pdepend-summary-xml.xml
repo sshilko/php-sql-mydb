@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2026-09-24T11:25:57" pdepend="@package_version@" ahh="0.46666666666667" andc="0.63636363636364" calls="320" ccn="367" ccn2="438" cloc="2047" clsa="3" clsc="40" eloc="2311" fanout="87" leafs="36" lloc="1545" loc="5537" maxDIT="4" ncloc="3490" noc="43" nof="4" noi="20" nom="287" nop="7" roots="3">
+<metrics generated="2026-09-24T12:08:08" pdepend="@package_version@" ahh="0.46666666666667" andc="0.63636363636364" calls="327" ccn="370" ccn2="441" cloc="2049" clsa="3" clsc="40" eloc="2329" fanout="87" leafs="36" lloc="1554" loc="5561" maxDIT="4" ncloc="3512" noc="43" nof="4" noi="20" nom="289" nop="7" roots="3">
   <files>
     <file name="/app/src/sql/pcntl-polyfill.php" loc="213" cloc="51" eloc="150" lloc="98" ncloc="162"/>
     <file name="/app/src/sql/Mydb.php" loc="713" cloc="195" eloc="409" lloc="263" ncloc="518"/>
@@ -13,7 +13,7 @@
     <file name="/app/src/sql/MydbLogger.php" loc="401" cloc="148" eloc="201" lloc="148" ncloc="253"/>
     <file name="/app/src/sql/MydbMysqli.php" loc="650" cloc="144" eloc="277" lloc="155" ncloc="506"/>
     <file name="/app/src/sql/MydbOptions.php" loc="452" cloc="165" eloc="142" lloc="81" ncloc="287"/>
-    <file name="/app/src/sql/MydbQueryBuilder.php" loc="401" cloc="116" eloc="223" lloc="170" ncloc="285"/>
+    <file name="/app/src/sql/MydbQueryBuilder.php" loc="413" cloc="108" eloc="240" lloc="177" ncloc="305"/>
     <file name="/app/src/sql/MydbRegistry.php" loc="204" cloc="90" eloc="89" lloc="61" ncloc="114"/>
     <file name="/app/src/sql/MydbRepository.php" loc="35" cloc="12" eloc="15" lloc="8" ncloc="23"/>
     <file name="/app/src/sql/MydbEvent/InternalConnectionBegin.php" loc="26" cloc="16" eloc="6" lloc="2" ncloc="10"/>
@@ -60,7 +60,7 @@
       <file name="/app/src/sql/pcntl-polyfill.php"/>
     </function>
   </package>
-  <package name="sql" noc="14" noi="11" nom="245" nof="0" cr="0.5325" rcr="0.66">
+  <package name="sql" noc="14" noi="11" nom="247" nof="0" cr="0.5325" rcr="0.66">
     <class name="Mydb" fqname="sql\Mydb" start="55" end="712" loc="658" cloc="178" eloc="327" lloc="188" ncloc="480" dit="0" noam="0" nocc="0" noom="0" nom="28" cr="0.15" rcr="1.05525" ca="1" cbo="36" ce="36" impl="8" cis="23" csz="34" npm="23" vars="6" varsi="6" varsnp="0" wmc="97" wmci="97" wmcnp="67">
       <file name="/app/src/sql/Mydb.php"/>
       <method name="__construct" start="70" end="84" ccn="1" ccn2="1" loc="15" cloc="0" eloc="7" lloc="5" ncloc="15" npath="1" hnt="39" hnd="22" hv="173.91783312685" hd="4.125" hl="0.24242424242424" he="717.41106164828" ht="39.856170091571" hb="0.026713089820108" hi="42.161898939844" mi="65.743639866131"/>
@@ -228,18 +228,19 @@
       <method name="getTransactionIsolationLevel" start="433" end="444" ccn="2" ccn2="3" loc="12" cloc="3" eloc="7" lloc="4" ncloc="9" npath="3" hnt="20" hnd="14" hv="76.147098441152" hd="17.5" hl="0.057142857142857" he="1332.5742227202" ht="74.031901262231" hb="0.040365129546828" hi="4.3512627680658" mi="67.986191411202"/>
       <method name="setTransactionIsolationLevel" start="447" end="450" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="6" hnd="6" hv="15.509775004327" hd="4" hl="0.25" he="62.039100017308" ht="3.4466166676282" hb="0.0052238304343202" hi="3.8774437510817" mi="81.120955834208"/>
     </class>
-    <class name="MydbQueryBuilder" fqname="sql\MydbQueryBuilder" start="48" end="400" loc="353" cloc="100" eloc="179" lloc="115" ncloc="253" dit="0" noam="0" nocc="0" noom="0" nom="10" cr="0.15" rcr="0.2775" ca="1" cbo="4" ce="4" impl="1" cis="10" csz="10" npm="10" vars="0" varsi="0" varsnp="0" wmc="72" wmci="72" wmcnp="72">
+    <class name="MydbQueryBuilder" fqname="sql\MydbQueryBuilder" start="48" end="412" loc="365" cloc="92" eloc="195" lloc="121" ncloc="273" dit="0" noam="0" nocc="0" noom="0" nom="11" cr="0.15" rcr="0.2775" ca="1" cbo="4" ce="4" impl="1" cis="11" csz="11" npm="11" vars="0" varsi="0" varsnp="0" wmc="75" wmci="75" wmcnp="75">
       <file name="/app/src/sql/MydbQueryBuilder.php"/>
       <method name="__construct" start="51" end="53" ccn="1" ccn2="1" loc="3" cloc="0" eloc="2" lloc="0" ncloc="3" npath="1" hnt="2" hnd="2" hv="2" hd="2" hl="0.5" he="4" ht="0.22222222222222" hb="0.00083994736659658" hi="1" mi="91.191023588314"/>
-      <method name="showColumnsLike" start="60" end="67" ccn="2" ccn2="3" loc="8" cloc="0" eloc="6" lloc="3" ncloc="8" npath="3" hnt="30" hnd="18" hv="125.09775004327" hd="14.142857142857" hl="0.070707070707071" he="1769.2396077548" ht="98.291089319712" hb="0.048760690550609" hi="8.8452954576049" mi="67.936959270099"/>
-      <method name="showKeys" start="73" end="80" ccn="2" ccn2="2" loc="8" cloc="0" eloc="6" lloc="3" ncloc="8" npath="2" hnt="20" hnd="15" hv="78.13781191217" hd="13" hl="0.076923076923077" he="1015.7915548582" ht="56.43286415879" hb="0.033683339593362" hi="6.0106009163208" mi="69.502591430206"/>
-      <method name="insertOne" start="88" end="102" ccn="3" ccn2="6" loc="15" cloc="0" eloc="11" lloc="7" ncloc="15" npath="10" hnt="76" hnd="37" hv="395.9184557878" hd="21.789473684211" hl="0.045893719806763" he="8626.8547734815" ht="479.26970963786" hb="0.14021045651324" hi="18.170170676252" mi="58.287610277772"/>
-      <method name="buildUpdateWhereMany" start="112" end="165" ccn="8" ccn2="11" loc="54" cloc="17" eloc="29" lloc="21" ncloc="37" npath="132" hnt="152" hnd="54" hv="874.74290032885" hd="27.045454545455" hl="0.036974789915966" he="23657.819349803" ht="1314.3232972113" hb="0.27470204094056" hi="32.343434970142" mi="46.020685073855"/>
-      <method name="buildUpdateWhere" start="172" end="203" ccn="4" ccn2="6" loc="32" cloc="4" eloc="17" lloc="12" ncloc="28" npath="16" hnt="88" hnd="42" hv="474.52393320453" hd="21.065217391304" hl="0.047471620227038" he="9995.9498103302" ht="555.33054501835" hb="0.15467784871068" hi="22.526419945726" mi="53.612819378567"/>
-      <method name="buildDeleteWhere" start="209" end="219" ccn="2" ccn2="4" loc="11" cloc="1" eloc="7" lloc="4" ncloc="10" npath="4" hnt="45" hnd="27" hv="213.96993759736" hd="12.071428571429" hl="0.082840236686391" he="2582.9228181395" ht="143.49571211886" hb="0.062750862271437" hi="17.725320274337" mi="64.709889384089"/>
-      <method name="buildWhere" start="228" end="302" ccn="16" ccn2="16" loc="75" cloc="12" eloc="50" lloc="32" ncloc="63" npath="202" hnt="224" hnd="66" hv="1353.9442827363" hd="27.826086956522" hl="0.0359375" he="37674.971345706" ht="2093.0539636503" hb="0.37461114948862" hi="48.657372660836" mi="38.859172712889"/>
-      <method name="buildInsertMany" start="310" end="348" ccn="4" ccn2="7" loc="39" cloc="11" eloc="21" lloc="14" ncloc="28" npath="24" hnt="108" hnd="44" hv="589.61861481283" hd="19.833333333333" hl="0.050420168067227" he="11694.102527121" ht="649.67236261784" hb="0.17173415467972" hi="29.728669654428" mi="50.816059511614"/>
-      <method name="escape" start="358" end="399" ccn="13" ccn2="16" loc="42" cloc="3" eloc="30" lloc="19" ncloc="39" npath="2880" hnt="144" hnd="44" hv="786.15815308377" hd="31.54" hl="0.031705770450222" he="24795.428148262" ht="1377.5237860146" hb="0.28343913880862" hi="24.925749939244" mi="45.35168473468"/>
+      <method name="quoteIdentifier" start="59" end="66" ccn="2" ccn2="2" loc="8" cloc="0" eloc="6" lloc="3" ncloc="8" npath="2" hnt="18" hnd="14" hv="68.532388597037" hd="10.8" hl="0.092592592592593" he="740.149796848" ht="41.119433158222" hb="0.027274606575591" hi="6.3455915367627" mi="69.901463747239"/>
+      <method name="showColumnsLike" start="73" end="80" ccn="2" ccn2="3" loc="8" cloc="0" eloc="6" lloc="3" ncloc="8" npath="3" hnt="28" hnd="18" hv="116.75790004038" hd="10.625" hl="0.094117647058824" he="1240.5526879291" ht="68.919593773838" hb="0.03848476934437" hi="10.98897882733" mi="68.146762154153"/>
+      <method name="showKeys" start="86" end="93" ccn="2" ccn2="2" loc="8" cloc="0" eloc="6" lloc="3" ncloc="8" npath="2" hnt="18" hnd="14" hv="68.532388597037" hd="10.8" hl="0.092592592592593" he="740.149796848" ht="41.119433158222" hb="0.027274606575591" hi="6.3455915367627" mi="69.901463747239"/>
+      <method name="insertOne" start="101" end="121" ccn="3" ccn2="6" loc="21" cloc="0" eloc="17" lloc="7" ncloc="21" npath="10" hnt="76" hnd="37" hv="395.9184557878" hd="21.789473684211" hl="0.045893719806763" he="8626.8547734815" ht="479.26970963786" hb="0.14021045651324" hi="18.170170676252" mi="54.16354433954"/>
+      <method name="buildUpdateWhereMany" start="131" end="175" ccn="8" ccn2="11" loc="45" cloc="8" eloc="29" lloc="21" ncloc="37" npath="132" hnt="160" hnd="55" hv="925.01755416395" hd="27.485294117647" hl="0.036383092562868" he="25424.379540183" ht="1412.4655300101" hb="0.28821217358225" hi="33.654999295424" mi="45.850749378493"/>
+      <method name="buildUpdateWhere" start="182" end="213" ccn="4" ccn2="6" loc="32" cloc="4" eloc="17" lloc="12" ncloc="28" npath="16" hnt="92" hnd="43" hv="499.21635743259" hd="20.979166666667" hl="0.047666335650447" he="10473.143165305" ht="581.84128696137" hb="0.15956223301144" hi="23.795814455575" mi="53.458560228346"/>
+      <method name="buildDeleteWhere" start="219" end="229" ccn="2" ccn2="4" loc="11" cloc="1" eloc="7" lloc="4" ncloc="10" npath="4" hnt="43" hnd="27" hv="204.46016259303" hd="11.607142857143" hl="0.086153846153846" he="2373.1983158119" ht="131.84435087844" hb="0.059306382316444" hi="17.61502939263" mi="64.848137539176"/>
+      <method name="buildWhere" start="238" end="309" ccn="16" ccn2="16" loc="72" cloc="9" eloc="50" lloc="32" ncloc="63" npath="202" hnt="229" hnd="67" hv="1389.1344246148" hd="27.872340425532" hl="0.03587786259542" he="38718.42757969" ht="2151.0237544272" hb="0.38149649567111" hi="49.839174012898" mi="38.781145911458"/>
+      <method name="buildInsertMany" start="317" end="360" ccn="5" ccn2="8" loc="44" cloc="11" eloc="25" lloc="17" ncloc="33" npath="48" hnt="126" hnd="49" hv="707.45344035852" hd="23.433333333333" hl="0.042674253200569" he="16577.992285735" ht="920.9995714297" hb="0.21672052000617" hi="30.190047241473" mi="48.475741625757"/>
+      <method name="escape" start="370" end="411" ccn="13" ccn2="16" loc="42" cloc="3" eloc="30" lloc="19" ncloc="39" npath="2880" hnt="144" hnd="44" hv="786.15815308377" hd="31.54" hl="0.031705770450222" he="24795.428148262" ht="1377.5237860146" hb="0.28343913880862" hi="24.925749939244" mi="45.35168473468"/>
     </class>
     <class name="MydbRegistry" fqname="sql\MydbRegistry" start="40" end="203" loc="164" cloc="70" eloc="57" lloc="26" ncloc="94" dit="0" noam="0" nocc="0" noom="0" nom="13" cr="0.15" rcr="0.5325" ca="1" cbo="2" ce="2" impl="3" cis="13" csz="14" npm="13" vars="1" varsi="1" varsnp="0" wmc="20" wmci="20" wmcnp="20">
       <file name="/app/src/sql/MydbRegistry.php"/>
