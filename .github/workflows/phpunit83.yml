@@ -69,7 +69,7 @@ jobs:
           key: ${{ runner.os }}-docker-php83-build-save-${{ hashFiles('build/Dockerfile.php83', 'composer.lock') }}
 
       - name: Load cached Docker image
-        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag mydb/php83-image-cache mydb/php83
+        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag mydb/php83-image-cache mydb/php83 || true
 
       - name: Docker boot
         env:

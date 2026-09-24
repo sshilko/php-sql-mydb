@@ -35,7 +35,7 @@ jobs:
           key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php83') }}
 
       - name: Load cached Docker image
-        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag mydb/php-image-cache mydb/php83
+        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag mydb/php-image-cache mydb/php83 || true
 
       - name: Docker boot
         env:
