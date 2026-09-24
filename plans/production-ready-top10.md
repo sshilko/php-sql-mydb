@@ -128,7 +128,7 @@ first, then compatibility, CI, tooling, tests, governance).
 
 ### Verification
 
-- Integration tests against mysql80: parameterized insert/select with int,
+- Integration tests against mydb-mysql80: parameterized insert/select with int,
   string, null and bool values; verify `getInsertId()` and affected rows;
   verify injection attempt `'; DROP TABLE x; --` is executed as a single
   parameter, never as SQL.
@@ -245,7 +245,7 @@ first, then compatibility, CI, tooling, tests, governance).
 ### Verification
 
 - `composer update psr/log` resolves v3; `composer app-quality` +
-  `app-phan` + `app-phpunit-mysql80` green.
+  `app-phan` + `app-phpunit-mydb-mysql80` green.
 - CI job with `"psr/log": "^3"` forced in `composer.json` (temporary matrix
   axis) passes.
 
@@ -307,8 +307,8 @@ first, then compatibility, CI, tooling, tests, governance).
 - Add a matrix job for PHP runtimes (8.3, 8.4, 8.5) against MySQL 8.0 and an
   additional MySQL 8.4 service; each matrix cell runs PHPUnit with coverage
   disabled to keep the runtime bounded.
-- Decide the 5.7/MariaDB story explicitly: either add a `mysql57` /
-  `mariadb` CI job or document these as unsupported and remove the claims from
+- Decide the 5.7/MariaDB story explicitly: either add a `mydb-mysql57` /
+  `mydb-mariadb` CI job or document these as unsupported and remove the claims from
   the README and AGENTS.md. Record the decision in a follow-up commit; this
   plan does not rewrite the compatibility list until the decision is recorded
   (prefer adding a 5.7 job since it is currently claimed supported).
@@ -318,8 +318,8 @@ first, then compatibility, CI, tooling, tests, governance).
 ### Affected files
 
 - `.github/workflows/phpunit83.yml`
-- new or extended `test/docker-compose.yaml` services (mysql84, optional
-  mysql57/mariadb)
+- new or extended `test/docker-compose.yaml` services (mydb-mysql84, optional
+  mydb-mysql57/mydb-mariadb)
 - `composer.json` (matrix helper scripts only if needed)
 - `README.md`, `AGENTS.md` (compatibility table)
 
@@ -348,7 +348,7 @@ first, then compatibility, CI, tooling, tests, governance).
   scripts (or their psalm invocation) in `composer.json` to the working
   invocation, preserving the existing report outputs
   (`--report=$PWD/build/tmp/psalm.txt`, `--stats`).
-- Verify `composer app-quality` in the `app.php83` container runs every gate
+- Verify `composer app-quality` in the `mydb-app-php83` container runs every gate
   end to end without manual workaround.
 - Update AGENTS.md: remove the workaround note or replace it with "no
   workaround needed".
@@ -363,7 +363,7 @@ first, then compatibility, CI, tooling, tests, governance).
 ### Verification
 
 - Inside the container:
-  `docker compose exec -w /app app.php83 composer app-quality` exits 0; all
+  `docker compose exec -w /app mydb-app-php83 composer app-quality` exits 0; all
   gates reach `app-phan` without manual commands.
 
 ## 9. Close test-coverage gaps
@@ -403,7 +403,7 @@ first, then compatibility, CI, tooling, tests, governance).
 
 ### Verification
 
-- `composer app-phpunit-mysql80` green with `failOnSkipped`/`failOnIncomplete`
+- `composer app-phpunit-mydb-mysql80` green with `failOnSkipped`/`failOnIncomplete`
   still enabled; coverage text report shows the directly-tested methods now
   covered; Phan/Psalm findings in `MydbEnvironment` resolved or explicitly
   justified.
@@ -440,7 +440,7 @@ first, then compatibility, CI, tooling, tests, governance).
 ### Verification
 
 - `composer validate --strict` passes; `composer app-quality` +
-  `app-phan` + `app-phpunit-mysql80` green after the config cleanup; a dry-run
+  `app-phan` + `app-phpunit-mydb-mysql80` green after the config cleanup; a dry-run
   `composer release` (or manual tag) produces the documented 3.x artifact.
 
 ---
@@ -466,10 +466,10 @@ first, then compatibility, CI, tooling, tests, governance).
 Run in the container in this order after each implemented item (never on the
 Windows host, per AGENTS.md):
 
-1. `docker compose up -d app.php83 mysql80`
-2. `docker compose exec -w /app app.php83 composer app-quality`
-3. `docker compose exec -w /app app.php83 composer app-phan`
-4. `docker compose exec -w /app app.php83 composer app-phpunit-mysql80`
+1. `docker compose up -d mydb-app-php83 mydb-mysql80`
+2. `docker compose exec -w /app mydb-app-php83 composer app-quality`
+3. `docker compose exec -w /app mydb-app-php83 composer app-phan`
+4. `docker compose exec -w /app mydb-app-php83 composer app-phpunit-mydb-mysql80`
    - Expect 284+ tests, 877+ assertions, zero errors; the one expected
      `mysqli::real_connect()` "Connection timed out" warning from
      `ExceptionTest` remains.

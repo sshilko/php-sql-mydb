@@ -118,13 +118,13 @@ types must actually be eliminated.
 ## Verification
 
 1. Baseline is recorded above (2 errors, 99.8586%).
-2. `docker compose exec -w /app app.php83 composer app-psalm`
+2. `docker compose exec -w /app mydb-app-php83 composer app-psalm`
    - Expect: `0 errors found`, exit 0.
    - Expect: `100.0000%` total, every file `100.000% (0 mixed)`.
 3. Full gates in order (per AGENTS.md):
-   - `docker compose exec -w /app app.php83 composer app-quality`
-   - `docker compose exec -w /app app.php83 composer app-phan`
-   - `docker compose exec -w /app app.php83 composer app-phpunit-mysql80`
+   - `docker compose exec -w /app mydb-app-php83 composer app-quality`
+   - `docker compose exec -w /app mydb-app-php83 composer app-phan`
+   - `docker compose exec -w /app mydb-app-php83 composer app-phpunit-mydb-mysql80`
 4. Update AGENTS.md "Full verification run" notes if the two informational
    Psalm gaps and the 99.8586% figure are mentioned anywhere (currently they
    are described as expected findings; they must no longer be emitted).

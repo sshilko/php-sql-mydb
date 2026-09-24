@@ -84,10 +84,10 @@ x-mysql: &mysql
 
 services:
   #@see https://hub.docker.com/_/mysql
-  mysql80:
+  mydb-mysql80:
     <<: *mysql
     image: library/mysql:8.0.46-debian
-    container_name: mysql80
+    container_name: mydb-mysql80
     expose:
       - "4306"
     ports:

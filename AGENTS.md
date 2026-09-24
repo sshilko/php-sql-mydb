@@ -22,23 +22,23 @@ Guidance for AI agents and contributors working in this repository.
 ## Development workflow
 
 CI and quality tooling runs inside Docker containers (see `CONTRIBUTING`). The
-default runtime is `app.php83` (PHP 8.3.33 with mysqli, pcntl, ast, xdebug,
-opcache); MySQL 8.0 runs as `mysql80`. Do not run the quality tools directly on
+default runtime is `mydb-app-php83` (PHP 8.3.33 with mysqli, pcntl, ast, xdebug,
+opcache); MySQL 8.0 runs as `mydb-mysql80`. Do not run the quality tools directly on
 a Windows host: the host PHP interpreter is not the supported runtime and
 breaks several tools.
 
 Start the containers:
 
-- `docker compose up -d app.php83 mysql80`
-  (uses `.env`: project name `app`,
+- `docker compose up -d mydb-app-php83 mydb-mysql80`
+  (uses `.env`: project name `mydb`,
   `COMPOSE_FILE=build/docker-compose.yaml:test/docker-compose.yaml`)
 
 Run tests and quality checks inside the container:
 
-- `docker compose exec -w /app app.php83 composer app-quality` - all quality gates
-- `docker compose exec -w /app app.php83 composer app-phpunit-mysql80` - PHPUnit against MySQL 8.0
-- `docker compose exec -w /app app.php83 composer app-phpunit-mysql80 -- --filter <TestFilter>` - filtered tests
-- `docker compose exec -w /app app.php83 pre-commit run --all-files --config build/.pre-commit-config.yaml` - pre-commit hooks
+- `docker compose exec -w /app mydb-app-php83 composer app-quality` - all quality gates
+- `docker compose exec -w /app mydb-app-php83 composer app-phpunit-mydb-mysql80` - PHPUnit against MySQL 8.0
+- `docker compose exec -w /app mydb-app-php83 composer app-phpunit-mydb-mysql80 -- --filter <TestFilter>` - filtered tests
+- `docker compose exec -w /app mydb-app-php83 pre-commit run --all-files --config build/.pre-commit-config.yaml` - pre-commit hooks
 
 Or locally after `composer install`: `composer app-phpunit`, `composer app-pre-commit`, `composer app-quality`.
 
@@ -46,11 +46,11 @@ Or locally after `composer install`: `composer app-phpunit`, `composer app-pre-c
 
 Once the containers are up, run everything in this order:
 
-- `docker compose exec -w /app app.php83 composer app-quality` - PHPCS/CBF,
+- `docker compose exec -w /app mydb-app-php83 composer app-quality` - PHPCS/CBF,
   PHPCPD, PDepend, PHPMD, PHPStan, Psalm alter, Psalm taint, Psalm main
-- `docker compose exec -w /app app.php83 composer app-phan` - Phan (not reached
+- `docker compose exec -w /app mydb-app-php83 composer app-phan` - Phan (not reached
   when `app-quality` stops early)
-- `docker compose exec -w /app app.php83 composer app-phpunit-mysql80` - PHPUnit
+- `docker compose exec -w /app mydb-app-php83 composer app-phpunit-mydb-mysql80` - PHPUnit
   against MySQL 8.0
 
 A green run means:

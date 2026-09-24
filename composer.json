@@ -82,16 +82,16 @@
             "php ./vendor/phpmd/phpmd/src/bin/phpmd --reportfile build/tmp/phpmd.txt src/ ansi build/phpmd-rulesets.xml; cat build/tmp/phpmd.txt"
         ],
         "app-phpunit": [
-            "@app-phpunit-mysql80"
+            "@app-phpunit-mydb-mysql80"
         ],
-        "app-phpunit-mysql80": [
+        "app-phpunit-mydb-mysql80": [
             "@putenv XDEBUG_MODE=off",
-            "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mysql80",
+            "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mydb-mysql80",
             "php ./vendor/phpunit/phpunit/phpunit --no-coverage --configuration test/phpunit.xml $1"
         ],
-        "app-phpunit-mysql80-coverage": [
+        "app-phpunit-mydb-mysql80-coverage": [
             "@putenv XDEBUG_MODE=coverage",
-            "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mysql80",
+            "@putenv PHPUNIT_MYSQL_MYDB1_HOST=mydb-mysql80",
             "php ./vendor/phpunit/phpunit/phpunit --configuration test/phpunit.xml"
         ],
         "app-phpunit-badges-coverage": [

@@ -35,11 +35,11 @@ jobs:
           key: ${{ runner.os }}-docker-php-xbuild-save-${{ hashFiles('build/Dockerfile.php83') }}
 
       - name: Load cached Docker image
-        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag app/php-image-cache app/php83
+        run: docker load -i /tmp/docker-save/snapshot.tar && docker tag mydb/php-image-cache mydb/php83
 
       - name: Docker boot
         env:
-          SERVICES_NAME: "app.php83"
+          SERVICES_NAME: "mydb-app-php83"
         run: docker compose up -d $SERVICES_NAME
 
       - run: docker compose ps
@@ -56,11 +56,11 @@ jobs:
           key: ${{ runner.os }}-php83-${{ hashFiles('composer.lock') }}-composer-dev
 
       - name: Docker install dependencies
-        run: docker compose exec -T app.php83 composer install
+        run: docker compose exec -T mydb-app-php83 composer install
 
         # Docs: https://docs.phpdoc.org
       - name: Docker run PHPDoc
-        run: docker compose exec -T app.php83 composer app-phpdoc
+        run: docker compose exec -T mydb-app-php83 composer app-phpdoc
 
         # https://github.com/actions/upload-artifact
       - name: Upload PHPDoc artifacts

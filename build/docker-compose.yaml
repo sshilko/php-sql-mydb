@@ -9,7 +9,7 @@
 # @license https://opensource.org/licenses/mit-license.php MIT
 x-app: &app
   pull_policy: never
-  #container_name: app
+  #container_name: mydb-app-php83
   tty: true
   stdin_open: true
   dns: 1.1.1.1
@@ -22,7 +22,7 @@ x-app: &app
       max-size: "1m"
       max-file: "2"
   healthcheck:
-    test: ["CMD", "nc", "-w1", "-zv", "mysql80", "3306"]
+    test: ["CMD", "nc", "-w1", "-zv", "mydb-mysql80", "3306"]
     #test: ["CMD", "php", "examples/example.php"]
     timeout: 2s
     start_period: 5s
@@ -83,11 +83,11 @@ x-app: &app
   restart: on-failure:2
 
 services:
-  # Database services (mysql80) live in test/docker-compose.yaml.
-  app.php83:
+  # Database services (mydb-mysql80) live in test/docker-compose.yaml.
+  mydb-app-php83:
     <<: *app
-    image: app/php83
-    container_name: app.php83
+    image: mydb/php83
+    container_name: mydb-app-php83
     build:
       context: .
       dockerfile: Dockerfile.php83

@@ -39,12 +39,12 @@ jobs:
         if: steps.docker-php-image-cache.outputs.cache-hit == 'true'
 
       - name: Build Docker image
-        run: ls -l && docker build -f build/Dockerfile.php83 --build-arg BUILDKIT_INLINE_CACHE=1 -t app/php-image --cache-from=app/php-image-cache ./build
+        run: ls -l && docker build -f build/Dockerfile.php83 --build-arg BUILDKIT_INLINE_CACHE=1 -t mydb/php-image --cache-from=mydb/php-image-cache ./build
         if: steps.docker-php-image-cache.outputs.cache-hit != 'true'
         env:
           DOCKER_BUILDKIT: "1"
           COMPOSE_DOCKER_CLI_BUILD: "1"
 
       - name: Tag Docker image
-        run: docker tag app/php-image app/php-image-cache && mkdir -p /tmp/docker-save && docker save app/php-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
+        run: docker tag mydb/php-image mydb/php-image-cache && mkdir -p /tmp/docker-save && docker save mydb/php-image-cache -o /tmp/docker-save/snapshot.tar && ls -lh /tmp/docker-save || true
         if: always() && steps.docker-php-image-cache.outputs.cache-hit != 'true'
