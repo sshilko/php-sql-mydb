@@ -1976,6 +1976,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/sql-MydbQueryBuilder.html#method___construct"
         },                {
+            "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003AquoteIdentifier\u0028\u0029",
+            "name": "quoteIdentifier",
+            "summary": "Validate\u0020an\u0020SQL\u0020identifier\u0020\u0028table\u0020or\u0020column\u0020name,\u0020optionally\n\u0060db.table\u0060\u002Dprefixed\u0029\u0020and\u0020return\u0020it\u0020safe\u0020for\u0020interpolation.",
+            "url": "classes/sql-MydbQueryBuilder.html#method_quoteIdentifier"
+        },                {
             "fqsen": "\\sql\\MydbQueryBuilder\u003A\u003AshowColumnsLike\u0028\u0029",
             "name": "showColumnsLike",
             "summary": "",
@@ -2040,6 +2045,11 @@ Search.appendIndex(
             "name": "showKeys",
             "summary": "",
             "url": "classes/sql-MydbQueryBuilderInterface.html#method_showKeys"
+        },                {
+            "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003AquoteIdentifier\u0028\u0029",
+            "name": "quoteIdentifier",
+            "summary": "Validate\u0020an\u0020SQL\u0020identifier\u0020\u0028table\u0020or\u0020column\u0020name,\u0020optionally\n\u0060db.table\u0060\u002Dprefixed\u0029\u0020and\u0020return\u0020it\u0020safe\u0020for\u0020interpolation.",
+            "url": "classes/sql-MydbQueryBuilderInterface.html#method_quoteIdentifier"
         },                {
             "fqsen": "\\sql\\MydbQueryBuilderInterface\u003A\u003AinsertOne\u0028\u0029",
             "name": "insertOne",
