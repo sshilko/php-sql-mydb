@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2026-09-23T20:41:58" pdepend="@package_version@" ahh="0.46666666666667" andc="0.63636363636364" calls="320" ccn="367" ccn2="438" cloc="2047" clsa="3" clsc="40" eloc="2311" fanout="87" leafs="36" lloc="1545" loc="5537" maxDIT="4" ncloc="3490" noc="43" nof="4" noi="20" nom="287" nop="7" roots="3">
+<metrics generated="2026-09-24T11:25:57" pdepend="@package_version@" ahh="0.46666666666667" andc="0.63636363636364" calls="320" ccn="367" ccn2="438" cloc="2047" clsa="3" clsc="40" eloc="2311" fanout="87" leafs="36" lloc="1545" loc="5537" maxDIT="4" ncloc="3490" noc="43" nof="4" noi="20" nom="287" nop="7" roots="3">
   <files>
     <file name="/app/src/sql/pcntl-polyfill.php" loc="213" cloc="51" eloc="150" lloc="98" ncloc="162"/>
     <file name="/app/src/sql/Mydb.php" loc="713" cloc="195" eloc="409" lloc="263" ncloc="518"/>
