@@ -25,6 +25,7 @@ Insert (phpunit\Insert)
  [x] Insert
  [x] Insert many
  [x] Insert one
+ [x] Insert one rejects malicious table
 
 Logger (phpunit\Logger)
  [x] Logger error
@@ -110,6 +111,7 @@ Mydb Modernization (phpunit\MydbModernization)
  [x] Interface methods are override annotated with data set "Mydb::query"
  [x] Query builder escapes hex values without quotes
  [x] Query builder escapes stringable objects without quotes
+ [x] Query builder identifiers stay bare and validated
 
 Mydb Unit (phpunit\MydbUnit)
  [x] Query throws connect exception when lazy connect fails
@@ -176,6 +178,29 @@ Query Builder (phpunit\QueryBuilder)
  [x] Replace one with data set "string 0x even"
  [x] Replace one with data set "string 0x mismatch"
  [x] Escape
+ [x] Quote identifier accepts with data set "simple"
+ [x] Quote identifier accepts with data set "underscore"
+ [x] Quote identifier accepts with data set "mixed"
+ [x] Quote identifier accepts with data set "db table"
+ [x] Quote identifier accepts with data set "uppercase"
+ [x] Quote identifier rejects with data set "empty"
+ [x] Quote identifier rejects with data set "backticked"
+ [x] Quote identifier rejects with data set "backtick inside"
+ [x] Quote identifier rejects with data set "semicolon"
+ [x] Quote identifier rejects with data set "leading whitespace"
+ [x] Quote identifier rejects with data set "trailing whitespace"
+ [x] Quote identifier rejects with data set "space inside"
+ [x] Quote identifier rejects with data set "dash"
+ [x] Quote identifier rejects with data set "double dot"
+ [x] Quote identifier rejects with data set "trailing dot"
+ [x] Quote identifier rejects with data set "leading dot"
+ [x] Quote identifier rejects with data set "quote"
+ [x] Quote identifier rejects with data set "comment"
+ [x] Insert one rejects backticked table
+ [x] Insert one rejects semicolon table
+ [x] Build delete where rejects injected table
+ [x] Build update where rejects injected column
+ [x] Build where rejects injected column
  [x] Escape non finite floats with data set "inf"
  [x] Escape non finite floats with data set "nan"
  [x] Build where empty in list

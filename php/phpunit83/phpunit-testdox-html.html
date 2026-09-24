@@ -81,6 +81,7 @@
             <li class="success">Insert</li>
             <li class="success">Insert many</li>
             <li class="success">Insert one</li>
+            <li class="success">Insert one rejects malicious table</li>
         </ul>
         <h2>Logger (phpunit\Logger)</h2>
         <ul>
@@ -174,6 +175,7 @@
             <li class="success">Interface methods are override annotated with data set "Mydb::query"</li>
             <li class="success">Query builder escapes hex values without quotes</li>
             <li class="success">Query builder escapes stringable objects without quotes</li>
+            <li class="success">Query builder identifiers stay bare and validated</li>
         </ul>
         <h2>Mydb Unit (phpunit\MydbUnit)</h2>
         <ul>
@@ -244,6 +246,29 @@
             <li class="success">Replace one with data set "string 0x even"</li>
             <li class="success">Replace one with data set "string 0x mismatch"</li>
             <li class="success">Escape</li>
+            <li class="success">Quote identifier accepts with data set "simple"</li>
+            <li class="success">Quote identifier accepts with data set "underscore"</li>
+            <li class="success">Quote identifier accepts with data set "mixed"</li>
+            <li class="success">Quote identifier accepts with data set "db table"</li>
+            <li class="success">Quote identifier accepts with data set "uppercase"</li>
+            <li class="success">Quote identifier rejects with data set "empty"</li>
+            <li class="success">Quote identifier rejects with data set "backticked"</li>
+            <li class="success">Quote identifier rejects with data set "backtick inside"</li>
+            <li class="success">Quote identifier rejects with data set "semicolon"</li>
+            <li class="success">Quote identifier rejects with data set "leading whitespace"</li>
+            <li class="success">Quote identifier rejects with data set "trailing whitespace"</li>
+            <li class="success">Quote identifier rejects with data set "space inside"</li>
+            <li class="success">Quote identifier rejects with data set "dash"</li>
+            <li class="success">Quote identifier rejects with data set "double dot"</li>
+            <li class="success">Quote identifier rejects with data set "trailing dot"</li>
+            <li class="success">Quote identifier rejects with data set "leading dot"</li>
+            <li class="success">Quote identifier rejects with data set "quote"</li>
+            <li class="success">Quote identifier rejects with data set "comment"</li>
+            <li class="success">Insert one rejects backticked table</li>
+            <li class="success">Insert one rejects semicolon table</li>
+            <li class="success">Build delete where rejects injected table</li>
+            <li class="success">Build update where rejects injected column</li>
+            <li class="success">Build where rejects injected column</li>
             <li class="success">Escape non finite floats with data set "inf"</li>
             <li class="success">Escape non finite floats with data set "nan"</li>
             <li class="success">Build where empty in list</li>

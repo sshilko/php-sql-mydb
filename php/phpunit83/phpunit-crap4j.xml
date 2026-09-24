@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2026-09-23 20:42:52</timestamp>
+  <timestamp>2026-09-24 12:09:15</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>174</methodCount>
+    <methodCount>175</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>428.1</totalCrap>
+    <totalCrap>431.1</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -1653,6 +1653,17 @@
     <method>
       <package>sql</package>
       <className>sql\MydbQueryBuilder</className>
+      <methodName>quoteIdentifier</methodName>
+      <methodSignature>quoteIdentifier(string $identifier): string</methodSignature>
+      <fullMethod>quoteIdentifier(string $identifier): string</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbQueryBuilder</className>
       <methodName>showColumnsLike</methodName>
       <methodSignature>showColumnsLike(string $table, string $column): string</methodSignature>
       <fullMethod>showColumnsLike(string $table, string $column): string</fullMethod>
@@ -1733,8 +1744,8 @@
       <methodName>buildInsertMany</methodName>
       <methodSignature>buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string</methodSignature>
       <fullMethod>buildInsertMany(array $data, array $cols, string $table, bool $ignore, string $onDuplicate): string</fullMethod>
-      <crap>7</crap>
-      <complexity>7</complexity>
+      <crap>8</crap>
+      <complexity>8</complexity>
       <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
