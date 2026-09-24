@@ -55,6 +55,19 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
     /**
      * @throws \sql\MydbException\QueryBuilderException
      */
+    #[Override]
+    public function quoteIdentifier(string $identifier): string
+    {
+        if (1 !== preg_match('/^[A-Za-z0-9_]+(\.[A-Za-z0-9_]+)?$/', $identifier)) {
+            throw new QueryBuilderException();
+        }
+
+        return $identifier;
+    }
+
+    /**
+     * @throws \sql\MydbException\QueryBuilderException
+     */
 
     #[Override]
     public function showColumnsLike(string $table, string $column): string
@@ -63,7 +76,7 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
             throw new QueryBuilderException();
         }
 
-        return "SHOW COLUMNS FROM " . $this->escape($table, '') . " LIKE " . $this->escape($column);
+        return "SHOW COLUMNS FROM " . $this->quoteIdentifier($table) . " LIKE " . $this->escape($column);
     }
 
     /**
@@ -76,7 +89,7 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
             throw new QueryBuilderException();
         }
 
-        return 'SHOW KEYS FROM ' . $this->escape($table, '');
+        return 'SHOW KEYS FROM ' . $this->quoteIdentifier($table);
     }
 
     /**
@@ -94,11 +107,17 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
         $names = $values = [];
 
         foreach ($data as $name => $value) {
-            $names[]  = $this->escape($name, "");
+            $names[]  = $this->quoteIdentifier($name);
             $values[] = $this->escape($value);
         }
 
-        return sprintf('%s INTO %s (%s) VALUES (%s)', $type, $table, implode(',', $names), implode(',', $values));
+        return sprintf(
+            '%s INTO %s (%s) VALUES (%s)',
+            $type,
+            $this->quoteIdentifier($table),
+            implode(',', $names),
+            implode(',', $values)
+        );
     }
 
     /**
@@ -115,7 +134,7 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
             throw new QueryBuilderException();
         }
 
-        $sql = 'UPDATE ' . $table;
+        $sql = 'UPDATE ' . $this->quoteIdentifier($table);
         /**
          * @phpcs:disable Generic.Files.LineLength.TooLong
          * @var array<array-key, array<array-key, array<array-key, (float|int|string|\sql\MydbExpressionInterface|null)>>> $columnSetWhere
@@ -131,10 +150,7 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
             }
             $sql        .= $firstColumn ? ' SET ' : ', ';
             $firstColumn = false;
-            /**
-             * @psalm-suppress InvalidOperand
-             */
-            $sql .= $column . ' = CASE';
+            $sql        .= $this->quoteIdentifier($column) . ' = CASE';
 
             foreach ($updateValuesMap as $newValueWhere) {
                 if (!isset($newValueWhere[0], $newValueWhere[1]) || 2 !== count($newValueWhere)) {
@@ -144,17 +160,11 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
                 $escapedWhereValue = $this->escape($newValueWhere[0]);
                 $escapedThenValue  = $this->escape($newValueWhere[1]);
 
-                /**
-                 * @psalm-suppress InvalidOperand
-                 */
-                $sql .= ' WHEN (' . $column . ' = ' . $escapedWhereValue . ')';
+                $sql .= ' WHEN (' . $this->quoteIdentifier($column) . ' = ' . $escapedWhereValue . ')';
                 $sql .= ' THEN ' . $escapedThenValue;
             }
 
-            /**
-             * @psalm-suppress InvalidOperand
-             */
-            $sql .= ' ELSE ' . $column . ' END';
+            $sql .= ' ELSE ' . $this->quoteIdentifier($column) . ' END';
         }
 
         if (count($where) > 0) {
@@ -188,13 +198,13 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
             /**
              * @psalm-suppress RedundantCastGivenDocblockType
              */
-            $f        = (string) $field . ' = ' . $this->escape($value);
+            $f        = $this->quoteIdentifier((string) $field) . ' = ' . $this->escape($value);
             $values[] = $f;
         }
 
         $queryUpdate = implode(', ', $values);
 
-        $result = 'UPDATE ' . $table . ' SET ' . $queryUpdate;
+        $result = 'UPDATE ' . $this->quoteIdentifier($table) . ' SET ' . $queryUpdate;
         if ('' !== $queryWhere) {
             $result .= ' ' . $queryWhere;
         }
@@ -215,7 +225,7 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
         $queryWhere = $this->buildWhere($fields, $negativeFields);
 
         /** @lang text */
-        return 'DELETE FROM ' . $this->escape($table, '') . ' ' . $queryWhere;
+        return 'DELETE FROM ' . $this->quoteIdentifier($table) . ' ' . $queryWhere;
     }
 
     /**
@@ -237,10 +247,7 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
          * @psalm-var float|int|string|array|\sql\MydbExpressionInterface|null $value
          */
         foreach ($fields as $field => $value) {
-            /**
-             * @psalm-suppress InvalidOperand
-             */
-            $queryPart  = (string) $field;
+            $queryPart  = $this->quoteIdentifier((string) $field);
             $isNegative = in_array($field, $negativeFields, true);
             $inNull     = false;
 
@@ -287,7 +294,7 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
                     ' (%s %s %s IS %s) ',
                     $queryPart,
                     $isNegative ? 'AND' : 'OR',
-                    $field,
+                    $this->quoteIdentifier((string) $field),
                     $isNegative ? 'NOT NULL' : 'NULL',
                 );
             }
@@ -337,8 +344,13 @@ final class MydbQueryBuilder implements MydbQueryBuilderInterface
 
         $values = array_map($mapper, $data);
 
-        $query  = "INSERT " . ($ignore ? 'IGNORE ' : '') . "INTO " . $table . " ";
-        $query .= "(" . implode(', ', $cols) . ") VALUES " . implode(', ', $values);
+        $colsQuoted = [];
+        foreach ($cols as $col) {
+            $colsQuoted[] = $this->quoteIdentifier($col);
+        }
+
+        $query  = "INSERT " . ($ignore ? 'IGNORE ' : '') . "INTO " . $this->quoteIdentifier($table) . " ";
+        $query .= "(" . implode(', ', $colsQuoted) . ") VALUES " . implode(', ', $values);
 
         if ('' !== $onDuplicate && false === $ignore) {
             $query .= ' ON DUPLICATE KEY UPDATE ' . $onDuplicate;

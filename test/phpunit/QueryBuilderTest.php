@@ -128,6 +128,85 @@ final class QueryBuilderTest extends TestCase
         $builder->escape('a $ b');
     }
 
+    #[DataProvider('dataProviderQuoteIdentifierAccept')]
+    public function testQuoteIdentifierAccepts(string $identifier): void
+    {
+        self::assertSame($identifier, $this->builder->quoteIdentifier($identifier));
+    }
+
+    /**
+     * @return array<string, array{0: string}>
+     */
+    public static function dataProviderQuoteIdentifierAccept(): array
+    {
+        return [
+            'simple' => ['table1'],
+            'underscore' => ['_private'],
+            'mixed' => ['a1_b2'],
+            'db table' => ['db1.table1'],
+            'uppercase' => ['MyTable'],
+        ];
+    }
+
+    #[DataProvider('dataProviderQuoteIdentifierReject')]
+    public function testQuoteIdentifierRejects(string $identifier): void
+    {
+        self::expectException(QueryBuilderException::class);
+        $this->builder->quoteIdentifier($identifier);
+    }
+
+    /**
+     * @return array<string, array{0: string}>
+     */
+    public static function dataProviderQuoteIdentifierReject(): array
+    {
+        return [
+            'empty' => [''],
+            'backticked' => ['`table1`'],
+            'backtick inside' => ['ta`ble'],
+            'semicolon' => ['table1; DROP TABLE x; --'],
+            'leading whitespace' => [' table1'],
+            'trailing whitespace' => ['table1 '],
+            'space inside' => ['tab le'],
+            'dash' => ['ta-ble'],
+            'double dot' => ['db1..table1'],
+            'trailing dot' => ['db1.'],
+            'leading dot' => ['.table1'],
+            'quote' => ["table'1"],
+            'comment' => ['table1--'],
+        ];
+    }
+
+    public function testInsertOneRejectsBacktickedTable(): void
+    {
+        self::expectException(QueryBuilderException::class);
+        $this->builder->insertOne(['id' => 1], '`table1`', 'INSERT');
+    }
+
+    public function testInsertOneRejectsSemicolonTable(): void
+    {
+        self::expectException(QueryBuilderException::class);
+        $this->builder->insertOne(['id' => 1], 'table1; DROP TABLE x; --', 'INSERT');
+    }
+
+    public function testBuildDeleteWhereRejectsInjectedTable(): void
+    {
+        self::expectException(QueryBuilderException::class);
+        $this->builder->buildDeleteWhere('`a`-- ', ['id' => 1]);
+    }
+
+    public function testBuildUpdateWhereRejectsInjectedColumn(): void
+    {
+        self::expectException(QueryBuilderException::class);
+        $this->builder->buildUpdateWhere(['`name`-- ' => 'new'], ['id' => 1], 'table1');
+    }
+
+    public function testBuildWhereRejectsInjectedColumn(): void
+    {
+        self::expectException(QueryBuilderException::class);
+        $this->builder->buildWhere(['`id`-- ' => 1]);
+    }
+
     /**
      * @return array<string, array{0: float}>
      */

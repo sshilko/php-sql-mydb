@@ -15,6 +15,7 @@ declare(strict_types = 1);
 
 namespace phpunit;
 
+use sql\MydbException\QueryBuilderException;
 use sql\MydbExpression;
 use sql\MydbMysqli;
 use function array_merge;
@@ -266,6 +267,34 @@ final class InsertTest extends includes\DatabaseTestCase
         ]);
         $actual   = $db->select("SELECT id, cost FROM mydecimals");
         self::assertSame($expected, $actual);
+
+        $db->rollbackTransaction();
+        $db->close();
+    }
+
+    public function testInsertOneRejectsMaliciousTable(): void
+    {
+        $db = $this->getDefaultDb();
+        $db->open();
+        $db->beginTransaction();
+
+        try {
+            $db->insertOne(['id' => 666, 'name' => 'injected'], 'myusers`; DROP TABLE myusers; --');
+            self::fail('A malicious table identifier must raise QueryBuilderException');
+        } catch (QueryBuilderException $e) {
+            self::assertSame(QueryBuilderException::class, $e::class);
+            /**
+             * Expected: the identifier is rejected before any SQL is sent.
+             */
+        }
+
+        $actual  = $db->select("SELECT id, name FROM myusers");
+        $reality = [
+            ['id' => '1', 'name' => 'user1'],
+            ['id' => '2', 'name' => 'user2'],
+            ['id' => '3', 'name' => 'user3'],
+        ];
+        self::assertSame($reality, $actual, 'The injected statement must never reach the server');
 
         $db->rollbackTransaction();
         $db->close();

@@ -32,6 +32,18 @@ interface MydbQueryBuilderInterface
     public function showKeys(string $table): string;
 
     /**
+     * Validate an SQL identifier (table or column name, optionally
+     * `db.table`-prefixed) and return it safe for interpolation.
+     *
+     * The strict pattern rejects backticks, semicolons, whitespace and any
+     * other character that could alter the parsed SQL, so the returned bare
+     * identifier can never be injected.
+     *
+     * @throws \sql\MydbException\QueryBuilderException
+     */
+    public function quoteIdentifier(string $identifier): string;
+
+    /**
      * @param array<string, (float|int|\sql\MydbExpressionInterface|string|null)> $data
      * @psalm-return string
      */

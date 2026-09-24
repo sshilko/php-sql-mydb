@@ -156,4 +156,23 @@ final class MydbModernizationTest extends TestCase
 
         self::assertSame('NOW(123)', $builder->escape($stringable, "'"));
     }
+
+    public function testQueryBuilderIdentifiersStayBareAndValidated(): void
+    {
+        $esc = $this->createMock(MydbMysqliEscapeStringInterface::class);
+        $esc->method('realEscapeString')->willReturnArgument(0);
+        $builder = new MydbQueryBuilder($esc);
+
+        /**
+         * quoteIdentifier() validates but must not alter the identifier,
+         * otherwise every previously generated SQL string would change.
+         */
+        self::assertSame('myusers', $builder->quoteIdentifier('myusers'));
+        self::assertSame('db1.myusers', $builder->quoteIdentifier('db1.myusers'));
+        self::assertSame(
+            "INSERT INTO myusers (id,name) VALUES (1,'user1')",
+            $builder->insertOne(['id' => 1, 'name' => 'user1'], 'myusers', 'INSERT'),
+            'Identifier hardening must not change the generated SQL for valid input'
+        );
+    }
 }
