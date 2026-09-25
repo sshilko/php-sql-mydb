@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of the sshilko/php-sql-mydb package.
  *
@@ -11,7 +12,7 @@
  * @license https://opensource.org/licenses/mit-license.php MIT
  */
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 use Phan\Issue;
 
@@ -30,7 +31,7 @@ return [
     // The minimum severity level to report on. This can be
     // set to Issue::SEVERITY_LOW, Issue::SEVERITY_NORMAL or
     // Issue::SEVERITY_CRITICAL.
-    'minimum_severity' => Issue::SEVERITY_LOW,
+    'minimum_severity' => Issue::SEVERITY_NORMAL,
 
     'suppress_issue_types' => [
         'PhanParamNameIndicatingUnusedInClosure'
@@ -255,7 +256,7 @@ return [
     // (Phan does not check if classes with these names exist)
     //
     // Example setting: `['unknown' => '', 'number' => 'int|float', 'char' => 'string', 'long' => 'int', 'the' => '']`
-    'phpdoc_type_mapping' => [ ],
+    'phpdoc_type_mapping' => [],
 
     // Set to true in order to attempt to detect dead
     // (unreferenced) code. Keep in mind that the
