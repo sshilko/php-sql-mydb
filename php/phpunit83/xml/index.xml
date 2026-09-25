@@ -1,33 +1,33 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Thu Sep 24 12:09:15 UTC 2026" phpunit="10.5.64" coverage="10.1.16">
+  <build time="Fri Sep 25 1:01:29 UTC 2026" phpunit="10.5.64" coverage="10.1.16">
     <runtime name="PHP" version="8.3.33" url="https://www.php.net/"/>
     <driver name="xdebug" version="3.3.0"/>
   </build>
   <project source="/app/src/sql">
     <tests>
-      <test name="phpunit\DeleteTest::testDeleteWhereReturnsNull" size="unknown" status="success"/>
       <test name="phpunit\DeleteTest::testDeleteInternalError" size="unknown" status="success"/>
+      <test name="phpunit\DeleteTest::testDeleteWhereReturnsNull" size="unknown" status="success"/>
       <test name="phpunit\DeleteTest::testDeleteWhere" size="unknown" status="success"/>
       <test name="phpunit\DeleteTest::testDeleteError" size="unknown" status="success"/>
       <test name="phpunit\DeleteTest::testDelete" size="unknown" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToRollbackTransaction" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToCommitTransaction" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testMySqlError" size="medium" status="success"/>
-      <test name="phpunit\ExceptionTest::testMySqlWarning" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testTableDoesNotExist" size="medium" status="success"/>
-      <test name="phpunit\ExceptionTest::testFailedToCommandLazy" size="medium" status="success"/>
-      <test name="phpunit\ExceptionTest::testFailedToEscapeLazy" size="medium" status="success"/>
+      <test name="phpunit\ExceptionTest::testMySqlWarning" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToConnect" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToConnectLazy" size="medium" status="success"/>
+      <test name="phpunit\ExceptionTest::testFailedToCommandLazy" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToBeginTransaction" size="medium" status="success"/>
+      <test name="phpunit\ExceptionTest::testFailedToEscapeLazy" size="medium" status="success"/>
       <test name="phpunit\ExceptionTest::testFailedToConnectAfterRetry" size="medium" status="success"/>
       <test name="phpunit\InsertTest::testInsertError" size="unknown" status="success"/>
+      <test name="phpunit\InsertTest::testInsert" size="unknown" status="success"/>
       <test name="phpunit\InsertTest::testReplace" size="unknown" status="success"/>
       <test name="phpunit\InsertTest::testReplaceOne" size="unknown" status="success"/>
-      <test name="phpunit\InsertTest::testInsert" size="unknown" status="success"/>
-      <test name="phpunit\InsertTest::testInsertOneRejectsMaliciousTable" size="unknown" status="success"/>
       <test name="phpunit\InsertTest::testInsertMany" size="unknown" status="success"/>
+      <test name="phpunit\InsertTest::testInsertOneRejectsMaliciousTable" size="unknown" status="success"/>
       <test name="phpunit\InsertTest::testInsertOne" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerWithStrings#nothing" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerWithStrings#nothing-array" size="unknown" status="success"/>
@@ -36,6 +36,7 @@
       <test name="phpunit\LoggerTest::testLoggerWithStrings#something-info" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerWithStrings#chars" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerError" size="unknown" status="success"/>
+      <test name="phpunit\LoggerTest::testLoggerConstructorFallbackStdout" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerConstructorFallbackStderr" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerStreamErrEnd" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerStreamOutClosed" size="unknown" status="success"/>
@@ -47,18 +48,17 @@
       <test name="phpunit\LoggerTest::testLoggerInterpolation" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerUnusedContextIsAppended" size="unknown" status="success"/>
       <test name="phpunit\LoggerTest::testLoggerScalarMessage" size="unknown" status="success"/>
-      <test name="phpunit\LoggerTest::testLoggerConstructorFallbackStdout" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testOpen" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testClose" size="unknown" status="success"/>
-      <test name="phpunit\MetaTest::testSingleQuotedEscape" size="unknown" status="success"/>
-      <test name="phpunit\MetaTest::testDoubleQuotedEscape" size="unknown" status="success"/>
-      <test name="phpunit\MetaTest::testPrimaryKeyComposite" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testSet" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testNotRealEnumOrSet" size="unknown" status="success"/>
-      <test name="phpunit\MetaTest::testPrimaryKeyQueryFailed" size="unknown" status="success"/>
+      <test name="phpunit\MetaTest::testSingleQuotedEscape" size="unknown" status="success"/>
+      <test name="phpunit\MetaTest::testDoubleQuotedEscape" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKey" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKeyNotFound" size="unknown" status="success"/>
+      <test name="phpunit\MetaTest::testPrimaryKeyComposite" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testEnum" size="unknown" status="success"/>
+      <test name="phpunit\MetaTest::testPrimaryKeyQueryFailed" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testEscape" size="unknown" status="success"/>
       <test name="phpunit\MetaTest::testPrimaryKeyNotDefined" size="unknown" status="success"/>
       <test name="phpunit\MydbCredentialsTest::testDefaultParameterValues" size="unknown" status="success"/>
@@ -117,6 +117,13 @@
       <test name="phpunit\OptionsTest::testCharset" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testPersistent" size="unknown" status="success"/>
       <test name="phpunit\OptionsTest::testReadonly" size="unknown" status="success"/>
+      <test name="phpunit\PreparedStatementTest::testPrepareFailureRaisesInternalException" size="unknown" status="success"/>
+      <test name="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows" size="unknown" status="success"/>
+      <test name="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows" size="unknown" status="success"/>
+      <test name="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter" size="unknown" status="success"/>
+      <test name="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot" size="unknown" status="success"/>
+      <test name="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet" size="unknown" status="success"/>
+      <test name="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes" size="unknown" status="success"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne#simple int" size="unknown" status="success"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne#simple float" size="unknown" status="success"/>
       <test name="phpunit\QueryBuilderTest::testInsertOne#expression" size="unknown" status="success"/>
@@ -242,12 +249,16 @@
       <test name="phpunit\RegistryTest::testRegistryUnserialize2" size="unknown" status="success"/>
       <test name="phpunit\RegistryTest::testRegistryClone" size="unknown" status="success"/>
       <test name="phpunit\RepositoryTest::testRegistry" size="unknown" status="success"/>
+      <test name="phpunit\ResourceTest::testOpenCloseError" size="unknown" status="success"/>
+      <test name="phpunit\ResourceTest::testOpenAutocommitFailed" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testSimpleClose" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testCloseNotConnected" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testWillCommitNotPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testWillCommitIsPersistentTransactionWhenNoAutocommitAndNoTransactionOnClose" size="unknown" status="success"/>
+      <test name="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testTransactionExceptionOnNonPersistentClose" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testDisconnectExceptionOnClose" size="unknown" status="success"/>
+      <test name="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testNoGcWhenNotConnected" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testGcWhenConnected" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testDoNoCommitTransactionWhenAutocommitEnabledOnClose" size="unknown" status="success"/>
@@ -255,15 +266,11 @@
       <test name="phpunit\ResourceTest::testQueryBadClientRequest" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testQueryBadServerResponse" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsNotZeroButBadResult" size="unknown" status="success"/>
-      <test name="phpunit\ResourceTest::testOpen" size="unknown" status="success"/>
-      <test name="phpunit\ResourceTest::testOpenCloseError" size="unknown" status="success"/>
-      <test name="phpunit\ResourceTest::testOpenAutocommitFailed" size="unknown" status="success"/>
-      <test name="phpunit\ResourceTest::testTransactionExceptionOnPersistentClose" size="unknown" status="success"/>
-      <test name="phpunit\ResourceTest::testUncaughtExceptionBecomesInternalExceptionOnClose" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testQueryBadServerResponsePacketFieldCountIsZero" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testConnectingDefaultsFailed" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testConnectingTransactionIsolationFailed" size="unknown" status="success"/>
       <test name="phpunit\ResourceTest::testConnectingTransactionAutocommitFailed" size="unknown" status="success"/>
+      <test name="phpunit\ResourceTest::testOpen" size="unknown" status="success"/>
       <test name="phpunit\SelectTest::testSimpleSelect#simple select all" size="unknown" status="success"/>
       <test name="phpunit\SelectTest::testSimpleSelect#complex select all" size="unknown" status="success"/>
       <test name="phpunit\SelectTest::testSimpleSelect#simple select JOIN" size="unknown" status="success"/>
@@ -282,17 +289,17 @@
       <test name="phpunit\TransactionsTest::testBeginTransactionReadonlySuccess" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadonlyFailure" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadwriteSuccess" size="unknown" status="success"/>
+      <test name="phpunit\TransactionsTest::testBeginTransactionReadwriteFailure" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testRollbackTransactionSuccess" size="unknown" status="success"/>
+      <test name="phpunit\TransactionsTest::testRollbackTransactionFailure" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testCommitTransactionSuccess" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testCommitTransactionFailure" size="unknown" status="success"/>
-      <test name="phpunit\TransactionsTest::testBeginTransactionReadwriteFailure" size="unknown" status="success"/>
-      <test name="phpunit\TransactionsTest::testRollbackTransactionFailure" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadonlyReal" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testBeginTransactionReadWriteReal" size="unknown" status="success"/>
       <test name="phpunit\TransactionsTest::testTransactionIsolationLevel" size="unknown" status="success"/>
+      <test name="phpunit\UpdateTest::testUpdateInternalError" size="unknown" status="success"/>
       <test name="phpunit\UpdateTest::testUpdateReturnsNull" size="unknown" status="success"/>
       <test name="phpunit\UpdateTest::testDeleteWhereReturnsNull" size="unknown" status="success"/>
-      <test name="phpunit\UpdateTest::testUpdateInternalError" size="unknown" status="success"/>
       <test name="phpunit\UpdateTest::testUpdate" size="unknown" status="success"/>
       <test name="phpunit\UpdateTest::testUpdateMany" size="unknown" status="success"/>
       <test name="phpunit\UpdateTest::testUpdateWhere" size="unknown" status="success"/>
@@ -300,10 +307,10 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="5348" comments="2074" code="3274" executable="760" executed="753" percent="99.08"/>
-        <methods count="171" tested="166" percent="97.08"/>
+        <lines total="5624" comments="2179" code="3445" executable="810" executed="790" percent="97.53"/>
+        <methods count="181" tested="171" percent="94.48"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="17" tested="15" percent="88.24"/>
+        <classes count="18" tested="14" percent="77.78"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="MydbEvent">
@@ -569,7 +576,7 @@
       </directory>
       <directory name="MydbInterface">
         <totals>
-          <lines total="268" comments="155" code="113" executable="0" executed="0" percent="0"/>
+          <lines total="288" comments="169" code="119" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
@@ -613,7 +620,7 @@
         </file>
         <file name="QueryInterface.php" href="MydbInterface/QueryInterface.php.xml">
           <totals>
-            <lines total="27" comments="16" code="11" executable="0" executed="0" percent="0"/>
+            <lines total="47" comments="30" code="17" executable="0" executed="0" percent="0"/>
             <methods count="0" tested="0" percent="0"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="0" tested="0" percent="0"/>
@@ -695,10 +702,10 @@
       </directory>
       <file name="Mydb.php" href="Mydb.php.xml">
         <totals>
-          <lines total="713" comments="174" code="539" executable="216" executed="216" percent="100.00"/>
-          <methods count="28" tested="28" percent="100.00"/>
+          <lines total="770" comments="188" code="582" executable="237" executed="228" percent="96.20"/>
+          <methods count="30" tested="28" percent="93.33"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="1" tested="1" percent="100.00"/>
+          <classes count="1" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
       </file>
@@ -839,8 +846,8 @@
       </file>
       <file name="MydbMysqli.php" href="MydbMysqli.php.xml">
         <totals>
-          <lines total="650" comments="207" code="443" executable="143" executed="142" percent="99.30"/>
-          <methods count="31" tested="30" percent="96.77"/>
+          <lines total="669" comments="210" code="459" executable="149" executed="146" percent="97.99"/>
+          <methods count="32" tested="30" percent="93.75"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="1" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
@@ -848,7 +855,7 @@
       </file>
       <file name="MydbMysqliInterface.php" href="MydbMysqliInterface.php.xml">
         <totals>
-          <lines total="95" comments="20" code="75" executable="0" executed="0" percent="0"/>
+          <lines total="101" comments="23" code="78" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>
@@ -867,6 +874,24 @@
       <file name="MydbOptionsInterface.php" href="MydbOptionsInterface.php.xml">
         <totals>
           <lines total="90" comments="19" code="71" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbPreparedStatement.php" href="MydbPreparedStatement.php.xml">
+        <totals>
+          <lines total="118" comments="35" code="83" executable="23" executed="21" percent="91.30"/>
+          <methods count="7" tested="5" percent="71.43"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="0" percent="0.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="MydbPreparedStatementInterface.php" href="MydbPreparedStatementInterface.php.xml">
+        <totals>
+          <lines total="56" comments="36" code="20" executable="0" executed="0" percent="0"/>
           <methods count="0" tested="0" percent="0"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="0" tested="0" percent="0"/>

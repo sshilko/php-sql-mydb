@@ -155,6 +155,15 @@ Options (phpunit\Options)
  [x] Persistent
  [x] Readonly
 
+Prepared Statement (phpunit\PreparedStatement)
+ [x] Prepared select with all value types
+ [x] Prepared insert insert id and affected rows
+ [x] Prepared update affected rows
+ [x] Injection attempt is bound as single parameter
+ [x] Execute convenience single shot
+ [x] Prepare failure raises internal exception
+ [x] Execute with dml leaves no pending result set
+
 Query Builder (phpunit\QueryBuilder)
  [x] Show columns like
  [x] Show keys

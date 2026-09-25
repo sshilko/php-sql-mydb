@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2026-09-24 12:09:15</timestamp>
+  <timestamp>2026-09-25 01:01:28</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>175</methodCount>
+    <methodCount>185</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>431.1</totalCrap>
+    <totalCrap>455.96</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -53,6 +53,28 @@
       <crap>6</crap>
       <complexity>6</complexity>
       <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>prepare</methodName>
+      <methodSignature>prepare(string $sql): sql\MydbPreparedStatementInterface</methodSignature>
+      <fullMethod>prepare(string $sql): sql\MydbPreparedStatementInterface</fullMethod>
+      <crap>3.02</crap>
+      <complexity>3</complexity>
+      <coverage>87.5</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\Mydb</className>
+      <methodName>execute</methodName>
+      <methodSignature>execute(string $sql, array $params): ?array</methodSignature>
+      <fullMethod>execute(string $sql, array $params): ?array</fullMethod>
+      <crap>5.1</crap>
+      <complexity>3</complexity>
+      <coverage>38.46</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -1004,6 +1026,17 @@
     <method>
       <package>sql</package>
       <className>sql\MydbMysqli</className>
+      <methodName>prepare</methodName>
+      <methodSignature>prepare(string $sql): ?mysqli_stmt</methodSignature>
+      <fullMethod>prepare(string $sql): ?mysqli_stmt</fullMethod>
+      <crap>4.59</crap>
+      <complexity>4</complexity>
+      <coverage>66.67</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbMysqli</className>
       <methodName>readServerResponse</methodName>
       <methodSignature>readServerResponse(sql\MydbEnvironmentInterface $environment): ?sql\MydbMysqli\MydbMysqliResult</methodSignature>
       <fullMethod>readServerResponse(sql\MydbEnvironmentInterface $environment): ?sql\MydbMysqli\MydbMysqliResult</fullMethod>
@@ -1634,6 +1667,83 @@
       <methodName>setTransactionIsolationLevel</methodName>
       <methodSignature>setTransactionIsolationLevel(string $isolationLevel): void</methodSignature>
       <fullMethod>setTransactionIsolationLevel(string $isolationLevel): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbPreparedStatement</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(mysqli_stmt $stmt)</methodSignature>
+      <fullMethod>__construct(mysqli_stmt $stmt)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbPreparedStatement</className>
+      <methodName>bind</methodName>
+      <methodSignature>bind(array $params): bool</methodSignature>
+      <fullMethod>bind(array $params): bool</fullMethod>
+      <crap>3.01</crap>
+      <complexity>3</complexity>
+      <coverage>90</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbPreparedStatement</className>
+      <methodName>execute</methodName>
+      <methodSignature>execute(): bool</methodSignature>
+      <fullMethod>execute(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbPreparedStatement</className>
+      <methodName>fetchAll</methodName>
+      <methodSignature>fetchAll(): ?array</methodSignature>
+      <fullMethod>fetchAll(): ?array</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbPreparedStatement</className>
+      <methodName>getAffectedRows</methodName>
+      <methodSignature>getAffectedRows(): ?int</methodSignature>
+      <fullMethod>getAffectedRows(): ?int</fullMethod>
+      <crap>3.14</crap>
+      <complexity>3</complexity>
+      <coverage>75</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbPreparedStatement</className>
+      <methodName>getInsertId</methodName>
+      <methodSignature>getInsertId(): int|string|null</methodSignature>
+      <fullMethod>getInsertId(): int|string|null</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>sql</package>
+      <className>sql\MydbPreparedStatement</className>
+      <methodName>close</methodName>
+      <methodSignature>close(): void</methodSignature>
+      <fullMethod>close(): void</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>

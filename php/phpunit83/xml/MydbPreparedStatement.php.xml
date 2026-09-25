@@ -1,0 +1,871 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="MydbPreparedStatement.php" path="/">
+    <totals>
+      <lines total="118" comments="35" code="83" executable="23" executed="21" percent="91.30"/>
+      <methods count="7" tested="5" percent="71.43"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="0" percent="0.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="sql\MydbPreparedStatement" start="30" executable="23" executed="21" crap="12.09">
+      <namespace name="sql"/>
+      <method name="__construct" signature="__construct(mysqli_stmt $stmt)" start="33" end="35" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="bind" signature="bind(array $params): bool" start="37" end="69" crap="3.01" executable="10" executed="9" coverage="90"/>
+      <method name="execute" signature="execute(): bool" start="71" end="75" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="fetchAll" signature="fetchAll(): ?array" start="77" end="91" crap="2" executable="5" executed="5" coverage="100"/>
+      <method name="getAffectedRows" signature="getAffectedRows(): ?int" start="93" end="105" crap="3.14" executable="4" executed="3" coverage="75"/>
+      <method name="getInsertId" signature="getInsertId(): int|string|null" start="107" end="111" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="close" signature="close(): void" start="113" end="117" crap="1" executable="1" executed="1" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="35">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="40">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="44">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="45">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="46">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="48">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="49">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="50">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="56">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="68">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="74">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="80">
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="81">
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="82">
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+      </line>
+      <line nr="88">
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="90">
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+      <line nr="96">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+      </line>
+      <line nr="97">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+      </line>
+      <line nr="98">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+      </line>
+      <line nr="110">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+      </line>
+      <line nr="116">
+        <covered by="phpunit\PreparedStatementTest::testPreparedInsertInsertIdAndAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedUpdateAffectedRows"/>
+        <covered by="phpunit\PreparedStatementTest::testInjectionAttemptIsBoundAsSingleParameter"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteConvenienceSingleShot"/>
+        <covered by="phpunit\PreparedStatementTest::testExecuteWithDmlLeavesNoPendingResultSet"/>
+        <covered by="phpunit\PreparedStatementTest::testPreparedSelectWithAllValueTypes"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="3">
+        <token name="T_DOC_COMMENT"> * This file is part of the sshilko/php-sql-mydb package.</token>
+      </line>
+      <line no="4">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="5">
+        <token name="T_DOC_COMMENT"> * (c) Sergei Shilko &lt;contact@sshilko.com&gt;</token>
+      </line>
+      <line no="6">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="7">
+        <token name="T_DOC_COMMENT"> * MIT License</token>
+      </line>
+      <line no="8">
+        <token name="T_DOC_COMMENT"> *</token>
+      </line>
+      <line no="9">
+        <token name="T_DOC_COMMENT"> * For the full copyright and license information, please view the LICENSE</token>
+      </line>
+      <line no="10">
+        <token name="T_DOC_COMMENT"> * file that was distributed with this source code.</token>
+      </line>
+      <line no="11">
+        <token name="T_DOC_COMMENT"> * @license https://opensource.org/licenses/mit-license.php MIT</token>
+      </line>
+      <line no="12">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="13"/>
+      <line no="14">
+        <token name="T_DECLARE">declare</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strict_types</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">1</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="15"/>
+      <line no="16">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">sql</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="17"/>
+      <line no="18">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">mysqli_stmt</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="19">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Override</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="20">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">is_bool</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="21">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">is_float</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="22">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">is_int</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="23">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONST">const</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MYSQLI_ASSOC</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="24"/>
+      <line no="25">
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="26">
+        <token name="T_DOC_COMMENT"> * @author Sergei Shilko &lt;contact@sshilko.com&gt;</token>
+      </line>
+      <line no="27">
+        <token name="T_DOC_COMMENT"> * @license https://opensource.org/licenses/mit-license.php MIT</token>
+      </line>
+      <line no="28">
+        <token name="T_DOC_COMMENT"> * @see https://github.com/sshilko/php-sql-mydb</token>
+      </line>
+      <line no="29">
+        <token name="T_DOC_COMMENT"> */</token>
+      </line>
+      <line no="30">
+        <token name="T_FINAL">final</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MydbPreparedStatement</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">MydbPreparedStatementInterface</token>
+      </line>
+      <line no="31">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="32"/>
+      <line no="33">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">mysqli_stmt</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$stmt</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="34">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="36"/>
+      <line no="37">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_STRING">Override</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">bind</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_ARRAY">array</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$params</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">bool</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="40">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$params</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="41">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">true</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="42">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="43"/>
+      <line no="44">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$types</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">''</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="45">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$bound</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="46">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_FOREACH">foreach</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$params</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_AS">as</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$key</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$param</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="47">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$types</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONCAT_EQUAL">.=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_MATCH">match</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">true</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">is_int</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$param</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">is_bool</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$param</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'i'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="49">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">is_float</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$param</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'d'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="50">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_DEFAULT">default</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'s'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="51">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CLOSE_CURLY">}</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="52">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="53">
+        <token name="T_DOC_COMMENT">             * mysqli bind_param() requires arguments by reference; keep a</token>
+      </line>
+      <line no="54">
+        <token name="T_DOC_COMMENT">             * reference into the original array so unpacking works.</token>
+      </line>
+      <line no="55">
+        <token name="T_DOC_COMMENT">             */</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$bound</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$key</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_AMPERSAND_FOLLOWED_BY_VAR_OR_VARARG">&amp;</token>
+        <token name="T_VARIABLE">$params</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_VARIABLE">$key</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="57">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="58"/>
+      <line no="59">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="60">
+        <token name="T_DOC_COMMENT">         * mysqli bind_param() intentionally takes its values by reference and</token>
+      </line>
+      <line no="61">
+        <token name="T_DOC_COMMENT">         * Psalm cannot model the variadic by-reference unpacking of a spread</token>
+      </line>
+      <line no="62">
+        <token name="T_DOC_COMMENT">         * array. The values are understood at runtime (each bound key holds a</token>
+      </line>
+      <line no="63">
+        <token name="T_DOC_COMMENT">         * reference into $params), so the call is safe by construction.</token>
+      </line>
+      <line no="64">
+        <token name="T_DOC_COMMENT">         *</token>
+      </line>
+      <line no="65">
+        <token name="T_DOC_COMMENT">         * @psalm-suppress TooFewArguments</token>
+      </line>
+      <line no="66">
+        <token name="T_DOC_COMMENT">         * @psalm-suppress MixedArgumentTypeCoercion</token>
+      </line>
+      <line no="67">
+        <token name="T_DOC_COMMENT">         */</token>
+      </line>
+      <line no="68">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stmt</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">bind_param</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$types</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ELLIPSIS">...</token>
+        <token name="T_VARIABLE">$bound</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="69">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="70"/>
+      <line no="71">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_STRING">Override</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="72">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">execute</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">bool</token>
+      </line>
+      <line no="73">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="74">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stmt</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">execute</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="75">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="76"/>
+      <line no="77">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_STRING">Override</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="78">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">fetchAll</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_ARRAY">array</token>
+      </line>
+      <line no="79">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="80">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$result</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stmt</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">get_result</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="81">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">false</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$result</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="82">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="83">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="84"/>
+      <line no="85">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="86">
+        <token name="T_DOC_COMMENT">         * @psalm-suppress MixedAssignment</token>
+      </line>
+      <line no="87">
+        <token name="T_DOC_COMMENT">         */</token>
+      </line>
+      <line no="88">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$rows</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$result</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">fetch_all</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">MYSQLI_ASSOC</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="89"/>
+      <line no="90">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$rows</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="91">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="92"/>
+      <line no="93">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_STRING">Override</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="94">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getAffectedRows</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">int</token>
+      </line>
+      <line no="95">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="96">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$rows</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_INT_CAST">(int)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stmt</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">affected_rows</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="97">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_LNUMBER">0</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$rows</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_BOOLEAN_OR">||</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$rows</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_GT">&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">0</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="98">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$rows</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="99">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="100"/>
+      <line no="101">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="102">
+        <token name="T_DOC_COMMENT">         * -1 indicates that the query returned an error.</token>
+      </line>
+      <line no="103">
+        <token name="T_DOC_COMMENT">         */</token>
+      </line>
+      <line no="104">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="105">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="106"/>
+      <line no="107">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_STRING">Override</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="108">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getInsertId</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">int</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">string</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">null</token>
+      </line>
+      <line no="109">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="110">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stmt</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">insert_id</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="111">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="112"/>
+      <line no="113">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_ATTRIBUTE">#[</token>
+        <token name="T_STRING">Override</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="114">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">close</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="115">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="116">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">stmt</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">close</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="117">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="118">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+    </source>
+  </file>
+</phpunit>
